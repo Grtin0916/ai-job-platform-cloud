@@ -1,0 +1,8 @@
+NAME                      READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES       SELECTOR
+deployment.apps/gateway   0/1     1            0           17m   gateway      nginx:1.25   app=gateway
+
+NAME                           READY   STATUS             RESTARTS   AGE   IP           NODE                      NOMINATED NODE   READINESS GATES
+pod/gateway-798f44d797-8q462   0/1     ImagePullBackOff   0          17m   10.244.0.5   cloud-dev-control-plane   <none>           <none>
+
+NAME              TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE   SELECTOR
+service/gateway   ClusterIP   10.96.217.201   <none>        80/TCP    17m   app=gateway

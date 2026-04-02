@@ -1,0 +1,16 @@
+Name:                     gateway
+Namespace:                dev-platform
+Labels:                   app=gateway
+Annotations:              <none>
+Selector:                 app=gateway
+Type:                     ClusterIP
+IP Family Policy:         SingleStack
+IP Families:              IPv4
+IP:                       10.96.217.201
+IPs:                      10.96.217.201
+Port:                     http  80/TCP
+TargetPort:               80/TCP
+Endpoints:                
+Session Affinity:         None
+Internal Traffic Policy:  Cluster
+Events:                   <none>
