@@ -1,8 +1,21 @@
-NAME                      READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES       SELECTOR
-deployment.apps/gateway   0/1     1            0           17m   gateway      nginx:1.25   app=gateway
+NAMESPACE            NAME                                     READY   UP-TO-DATE   AVAILABLE   AGE
+dev-platform         deployment.apps/gateway                  0/1     1            0           18h
+kube-system          deployment.apps/coredns                  2/2     2            2           18h
+local-path-storage   deployment.apps/local-path-provisioner   1/1     1            1           18h
 
-NAME                           READY   STATUS             RESTARTS   AGE   IP           NODE                      NOMINATED NODE   READINESS GATES
-pod/gateway-798f44d797-8q462   0/1     ImagePullBackOff   0          17m   10.244.0.5   cloud-dev-control-plane   <none>           <none>
+NAMESPACE      NAME                 TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)                  AGE
+default        service/kubernetes   ClusterIP   10.96.0.1       <none>        443/TCP                  18h
+dev-platform   service/gateway      ClusterIP   10.96.217.201   <none>        80/TCP                   18h
+kube-system    service/kube-dns     ClusterIP   10.96.0.10      <none>        53/UDP,53/TCP,9153/TCP   18h
 
-NAME              TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE   SELECTOR
-service/gateway   ClusterIP   10.96.217.201   <none>        80/TCP    17m   app=gateway
+NAMESPACE            NAME                                                  READY   STATUS             RESTARTS   AGE
+dev-platform         pod/gateway-798f44d797-8q462                          0/1     ImagePullBackOff   0          18h
+kube-system          pod/coredns-7d764666f9-42t5k                          1/1     Running            0          18h
+kube-system          pod/coredns-7d764666f9-rkr5w                          1/1     Running            0          18h
+kube-system          pod/etcd-cloud-dev-control-plane                      1/1     Running            0          18h
+kube-system          pod/kindnet-fjfgv                                     1/1     Running            0          18h
+kube-system          pod/kube-apiserver-cloud-dev-control-plane            1/1     Running            0          18h
+kube-system          pod/kube-controller-manager-cloud-dev-control-plane   1/1     Running            0          18h
+kube-system          pod/kube-proxy-kg82x                                  1/1     Running            0          18h
+kube-system          pod/kube-scheduler-cloud-dev-control-plane            1/1     Running            0          18h
+local-path-storage   pod/local-path-provisioner-67b8995b4b-b48rk           1/1     Running            0          18h

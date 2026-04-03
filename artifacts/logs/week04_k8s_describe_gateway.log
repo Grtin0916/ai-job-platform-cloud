@@ -28,7 +28,4 @@ Conditions:
   Progressing    False   ProgressDeadlineExceeded
 OldReplicaSets:  <none>
 NewReplicaSet:   gateway-798f44d797 (1/1 replicas created)
-Events:
-  Type    Reason             Age   From                   Message
-  ----    ------             ----  ----                   -------
-  Normal  ScalingReplicaSet  17m   deployment-controller  Scaled up replica set gateway-798f44d797 from 0 to 1
+Events:          <none>
