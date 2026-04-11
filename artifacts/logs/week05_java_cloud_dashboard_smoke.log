@@ -1,5 +1,21 @@
+[grafana_health]
+HTTP/1.1 200 OK
+Cache-Control: no-store
+Content-Type: application/json; charset=UTF-8
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-Xss-Protection: 1; mode=block
+Date: Sat, 11 Apr 2026 07:31:11 GMT
+Content-Length: 101
+
+{
+  "database": "ok",
+  "version": "12.4.2",
+  "commit": "ebade4c739e1aface4ce094934ad85374887a680"
+}
+
 [prometheus_java_up_query]
-{"status":"success","data":{"resultType":"vector","result":[{"metric":{"__name__":"up","instance":"host.docker.internal:8080","job":"media-task-platform-java"},"value":[1775890964.478,"1"]}]}}
+{"status":"success","data":{"resultType":"vector","result":[{"metric":{"__name__":"up","instance":"host.docker.internal:8080","job":"media-task-platform-java"},"value":[1775892671.493,"0"]}]}}
 
 [grafana_dashboard_titles]
 Prometheus Up
