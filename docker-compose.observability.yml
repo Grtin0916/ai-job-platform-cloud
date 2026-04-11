@@ -2,6 +2,8 @@ services:
   prometheus:
     image: prom/prometheus:latest
     container_name: cloud-observability-prometheus
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     command:
       - --config.file=/etc/prometheus/prometheus.yml
       - --web.enable-lifecycle

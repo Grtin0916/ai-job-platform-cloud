@@ -7,9 +7,9 @@
 当前目标：
 
 - 使用 Docker Compose 启动 Prometheus + Grafana
-- Prometheus 先自抓自己，保证最小链路可见
+- Prometheus 先自抓自己，并已接入 media-task-platform-java 的 /actuator/prometheus
 - Grafana 通过 provisioning 自动加载 Prometheus datasource 与 dashboard
-- 暂不把 Java `/actuator/prometheus` 作为本轮硬前提
+- 当前已验证 Java `/actuator/prometheus` 可被 Prometheus 抓取
 
 ---
 
@@ -67,7 +67,20 @@ http://127.0.0.1:9091/targets
 curl -fsS http://127.0.0.1:3001/api/health
 ~~~
 
-### 4.4 Grafana dashboard
+### 4.4 Java metrics target
+
+~~~bash
+curl -G http://127.0.0.1:9091/api/v1/query \
+  --data-urlencode 'query=up{job="media-task-platform-java"}'
+~~~
+
+期望结果中 value 为：
+
+~~~text
+"1"
+~~~
+
+### 4.5 Grafana dashboard
 
 打开：
 
@@ -139,4 +152,18 @@ docker compose -f docker-compose.observability.yml logs grafana
 
 ### 7.3 Java 指标抓不到
 
-当前阶段这是允许的；本轮最低要求只是先让 Prometheus 自抓成功。
+当前版本的 `prometheus.yml` 已配置：
+
+~~~text
+job="media-task-platform-java"
+target="host.docker.internal:8080"
+metrics_path="/actuator/prometheus"
+~~~
+
+若 Java 指标抓不到，优先检查：
+
+- Java 服务是否以 local profile 运行
+- `http://127.0.0.1:8080/actuator/prometheus` 是否返回文本指标
+- Docker Desktop / compose 是否保留了 `host.docker.internal:host-gateway`
+- Prometheus targets 页面中 `job="media-task-platform-java"` 的状态是否为 `UP`
+

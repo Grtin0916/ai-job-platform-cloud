@@ -1,0 +1,11 @@
+[prometheus_java_up_query]
+{"status":"success","data":{"resultType":"vector","result":[{"metric":{"__name__":"up","instance":"host.docker.internal:8080","job":"media-task-platform-java"},"value":[1775890964.478,"1"]}]}}
+
+[grafana_dashboard_titles]
+Prometheus Up
+Head Series
+Config Reload Success
+Prometheus HTTP Request Rate
+Java Target Up
+Java Hikari Connections
+Java Ready Time
