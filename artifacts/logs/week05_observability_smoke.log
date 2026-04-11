@@ -1,0 +1,37 @@
+[compose ps]
+NAME                             IMAGE                    COMMAND                   SERVICE      CREATED         STATUS         PORTS
+cloud-observability-grafana      grafana/grafana:latest   "/run.sh"                 grafana      4 minutes ago   Up 4 minutes   0.0.0.0:3001->3000/tcp, [::]:3001->3000/tcp
+cloud-observability-prometheus   prom/prometheus:latest   "/bin/prometheus --c…"   prometheus   4 minutes ago   Up 4 minutes   0.0.0.0:9091->9090/tcp, [::]:9091->9090/tcp
+
+[prometheus readiness]
+HTTP/1.1 200 OK
+Date: Sat, 11 Apr 2026 03:10:49 GMT
+Content-Length: 28
+Content-Type: text/plain; charset=utf-8
+
+Prometheus Server is Ready.
+
+[grafana health]
+HTTP/1.1 200 OK
+Cache-Control: no-store
+Content-Type: application/json; charset=UTF-8
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-Xss-Protection: 1; mode=block
+Date: Sat, 11 Apr 2026 03:10:49 GMT
+Content-Length: 101
+
+{
+  "database": "ok",
+  "version": "12.4.2",
+  "commit": "ebade4c739e1aface4ce094934ad85374887a680"
+}
+[prometheus targets]
+HTTP/1.1 200 OK
+Content-Type: application/json
+Vary: Accept-Encoding
+Vary: Origin
+Date: Sat, 11 Apr 2026 03:10:49 GMT
+Content-Length: 613
+
+{"status":"success","data":{"activeTargets":[{"discoveredLabels":{"__address__":"prometheus:9090","__metrics_path__":"/metrics","__scheme__":"http","__scrape_interval__":"15s","__scrape_timeout__":"10s","job":"prometheus"},"labels":{"instance":"prometheus:9090","job":"prometheus"},"scrapePool":"prometheus","scrapeUrl":"http://prometheus:9090/metrics","globalUrl":"http://prometheus:9090/metrics","lastError":"","lastScrape":"2026-04-11T03:10:37.562246622Z","lastScrapeDuration":0.014024866,"health":"up","scrapeInterval":"15s","scrapeTimeout":"10s"}],"droppedTargets":[],"droppedTargetCounts":{"prometheus":0}}}

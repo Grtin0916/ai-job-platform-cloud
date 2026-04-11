@@ -1,0 +1,18 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["prometheus:9090"]
+
+  # 后续接入 Java /actuator/prometheus 时再打开这一段
+  # 前提：
+  # 1) Java 应用已引入 micrometer-registry-prometheus
+  # 2) 已显式暴露 /actuator/prometheus
+  #
+  # - job_name: "media-task-platform-java"
+  #   metrics_path: /actuator/prometheus
+  #   static_configs:
+  #     - targets: ["host.docker.internal:8080"]
