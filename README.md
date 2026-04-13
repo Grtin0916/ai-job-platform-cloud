@@ -6,34 +6,37 @@
 
 ## Verified Scope
 
-当前已验证：
+当前仓库已完成并留有证据的范围如下：
 
-- 本地开发工具链可用：
-  - Docker
-  - Docker Compose
-  - kind
-  - kubectl
-  - Terraform
-- `scripts/bootstrap_dev_env.sh` 可运行并完成本地工具检查
-- 本地集群方案已冻结为 `kind`
-- Terraform 基础目录已建立：
-  - `infra/terraform/envs/dev`
-  - `infra/terraform/modules`
-- Kubernetes base 目录已建立：
-  - `k8s/base`
+- 已完成本地 kind / Docker / kubectl / compose 开发环境自检
+- 已完成 `docker-compose.observability.yml`
+- 已完成 Prometheus 最小抓取配置（`observability/prometheus/prometheus.yml`）
+- 已完成 Grafana dashboard 初版（`observability/grafana/dashboards/app-overview.json`）
+- 已完成本地 observability runbook（`docs/runbooks/local-observability.md`）
+- 已完成 Java `/actuator/prometheus` 接入本地观测基线
+
+一句话说，当前仓库已经具备“本地 observability 最小链路”这一条 Week05 基线，Prometheus / Grafana 已经不是待办，而是已验证资产。
 
 ## Not Yet Verified
 
-当前尚未验证或尚未接入：
+以下内容仍未进入“已验证”范围，当前不能写满：
 
-- kind 集群上的完整服务部署
-- Prometheus / Grafana / OpenTelemetry
-- Helm / Kustomize / Argo CD
-- Terraform 真实资源创建
-- GitHub Actions / CI/CD
-- 发布 / 回滚脚本
-- SLO / 告警规则
-- Java 服务正式部署到 dev K8s 集群
+- OpenTelemetry Collector 真正跑通后的 trace 证据
+- Java agent + Collector 的最小 trace 闭环
+- richer backend / Tempo / tracing UI
+- Kubernetes 下的 OTel Collector 部署验证
+- 更完整的 runbook 与故障排查文档
+
+这些方向已经进入 Week06 路线，但截至当前仓库状态，还不应写成“已完成”。
+
+## Next Hard Milestone
+
+下一阶段目标：
+
+1. 建立 `observability/otel/otelcol-config.yaml`
+2. 建立 `docs/runbooks/otel-pipeline.md`
+3. 采用 Java agent + Collector 路线跑通至少 1 条 trace
+4. 在 README / runbook / 日志中同步证据，避免仓库叙事落后于代码现实
 
 ## Tech Stack
 
