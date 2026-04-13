@@ -1,0 +1,25 @@
+[week06][otel_trace_smoke]
+status=done
+collector_container=week06-otelcol
+collector_health=ok
+java_service=media-task-platform-java
+otel_route=javaagent -> otlp/http -> otelcol debug exporter
+
+evidence:
+- collector health_check returned Server available
+- java app started successfully with opentelemetry-javaagent
+- POST /auth/login returned 200
+- GET /auth/me returned 401
+- collector debug exporter printed spans for:
+  - POST /auth/login
+  - GET /auth/me
+- collector debug exporter resource attributes included:
+  - service.name=media-task-platform-java
+
+conclusion:
+- week06 minimum trace path is verified
+- local Prometheus/Grafana baseline remains intact
+- cloud repo has moved from observability baseline only to first trace verified
+
+next_step:
+- later this week, replace debug-only evidence with a more durable backend or richer runbook detail
