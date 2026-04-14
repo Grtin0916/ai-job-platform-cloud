@@ -64,26 +64,27 @@
 
     .
     ├── README.md
-    ├── scripts
-    │   └── bootstrap_dev_env.sh
+    ├── artifacts
+    │   └── logs
+    ├── docs
+    │   ├── runbooks
+    │   │   ├── local-observability.md
+    │   │   └── otel-pipeline.md
+    │   └── weekly
     ├── infra
     │   └── terraform
-    │       ├── README.md
     │       ├── envs
-    │       │   └── dev
     │       └── modules
     ├── k8s
     │   └── base
-    │       ├── namespace.yaml
-    │       └── gateway-deployment.yaml
-    └── docs
-        └── weekly
-            └── 2026-04-03_week01_cloud.md
+    ├── observability
+    │   ├── grafana
+    │   │   ├── dashboards
+    │   │   └── provisioning
+    │   ├── otel
+    │   │   └── otelcol-config.yaml
+    │   └── prometheus
+    │       └── prometheus.yml
+    └── scripts
+        └── bootstrap_dev_env.sh
 
-## Next Hard Milestone
-
-1. 用 kind 创建本地 dev 集群并验证 `k8s/base` 样板
-2. 完成 Terraform `envs/dev` 的最小入口文件
-3. 把 Java 服务部署到 dev K8s
-4. 接入 Prometheus / Grafana
-5. 增加 rollout / rollback / runbook
