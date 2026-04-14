@@ -14,15 +14,17 @@
 - 已完成 Grafana dashboard 初版（`observability/grafana/dashboards/app-overview.json`）
 - 已完成本地 observability runbook（`docs/runbooks/local-observability.md`）
 - 已完成 Java `/actuator/prometheus` 接入本地观测基线
+- 已完成 Week06 的 OTel Collector 配置草稿（`observability/otel/otelcol-config.yaml`）
+- 已完成 Week06 的 OTel 联调 runbook 草稿（`docs/runbooks/otel-pipeline.md`）
 
-一句话说，当前仓库已经具备“本地 observability 最小链路”这一条 Week05 基线，Prometheus / Grafana 已经不是待办，而是已验证资产。
+一句话说，当前仓库已经从“Week05 的 Prometheus / Grafana 本地观测基线”推进到“Week06 的 OTel 配置与联调入口已落盘”阶段。
 
 ## Not Yet Verified
 
 以下内容仍未进入“已验证”范围，当前不能写满：
 
-- OpenTelemetry Collector 真正跑通后的 trace 证据
-- Java agent + Collector 的最小 trace 闭环
+- OpenTelemetry Collector 的稳定 trace 闭环结论
+- Java agent + Collector 的可重复最小 trace 验证结论
 - richer backend / Tempo / tracing UI
 - Kubernetes 下的 OTel Collector 部署验证
 - 更完整的 runbook 与故障排查文档
@@ -33,10 +35,10 @@
 
 下一阶段目标：
 
-1. 建立 `observability/otel/otelcol-config.yaml`
-2. 建立 `docs/runbooks/otel-pipeline.md`
-3. 采用 Java agent + Collector 路线跑通至少 1 条 trace
-4. 在 README / runbook / 日志中同步证据，避免仓库叙事落后于代码现实
+1. 固化 Java agent + Collector 的最小 trace 闭环，给出可复验结论
+2. 把 first trace evidence 收口为更明确的日志 / runbook / README 证据链
+3. 视联调结果决定是否接入 richer backend / Tempo
+4. 在 README / runbook / 日志中继续同步证据，避免仓库叙事落后于代码现实
 
 ## Tech Stack
 
