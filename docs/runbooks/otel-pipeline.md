@@ -1,33 +1,60 @@
-# OTel pipeline (Week06 draft)
+# OTel Pipeline Runbook
 
 ## Goal
-Add the Week06 minimum OpenTelemetry path on top of the existing local observability baseline.
 
-## Chosen route
-- Java side: Java agent first
-- Collector side: OTLP receiver + batch processor + debug exporter
-- Current goal: get at least one trace through the Collector before connecting a richer backend
+Bring up a minimal OpenTelemetry Collector pipeline for local development and verify first trace evidence from a Java service.
 
-## Why this route
-- Java zero-code instrumentation can start from a Java agent without immediately modifying application code
-- Collector config is easier to validate and iterate than jumping straight into a larger backend stack
-- It matches the current Week06 scope: minimum trace path first, richer observability later
+## Scope
 
-## Current pipeline
-Java app -> OTLP -> OpenTelemetry Collector -> debug exporter
+Current scope is intentionally minimal:
 
-## Ports
-- OTLP gRPC: 4317
-- OTLP HTTP: 4318
-- health_check: 13133
+- Java agent -> OTLP -> Collector -> debug exporter
+- No Tempo / Jaeger / Grafana dependency yet
+- Focus on first trace evidence and reproducible local commands
 
-## Validation plan
-1. keep the existing Prometheus/Grafana baseline unchanged
-2. start the Collector with this config
-3. attach Java agent to the Java service
-4. trigger one request
-5. verify Collector debug output shows at least one trace
+## Prerequisites
 
-## Notes
-- This file is a Week06 draft, not the final runbook
-- Production-grade exporter/backends are explicitly out of scope for today
+- Docker available
+- Java service can run locally
+- OpenTelemetry Java agent jar available locally
+
+## Collector Config
+
+- File: `observability/otel/otelcol-config.yaml`
+- Receiver: OTLP gRPC `4317`, OTLP HTTP `4318`
+- Exporter: `debug`
+- Pipelines: traces / metrics / logs
+
+## Start Collector
+
+    docker rm -f week06-otelcol 2>/dev/null || true
+
+    docker run --name week06-otelcol --rm \
+      -p 4317:4317 \
+      -p 4318:4318 \
+      -p 13133:13133 \
+      -v "$(pwd)/observability/otel/otelcol-config.yaml:/etc/otelcol/config.yaml:ro" \
+      otel/opentelemetry-collector:latest \
+      --config=/etc/otelcol/config.yaml
+
+## Verify Collector Health
+
+    curl -s http://127.0.0.1:13133/ | cat
+
+## Expected Success
+
+- Collector starts without config error
+- Health endpoint responds
+- After Java app sends telemetry, collector stdout shows spans / metrics / logs via `debug` exporter
+
+## Evidence Capture
+
+    mkdir -p artifacts/logs
+
+    docker logs week06-otelcol > artifacts/logs/week06_otel_collector_smoke.log 2>&1
+
+## Next Step
+
+- Add a captured smoke log under `artifacts/logs/`
+- Wire Java zero-code agent against this collector
+- Only after first trace evidence is stable, consider Tempo or another richer backend

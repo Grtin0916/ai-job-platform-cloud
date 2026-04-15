@@ -1,0 +1,2001 @@
+2026-04-15T13:20:01.648Z	info	service@v0.150.0/service.go:241	Starting otelcol...	{"resource": {"service.instance.id": "bad0a91e-4c80-4884-b939-54cdcbd6311a", "service.name": "otelcol", "service.version": "0.150.1"}, "Version": "0.150.1", "NumCPU": 32}
+2026-04-15T13:20:01.648Z	info	extensions/extensions.go:40	Starting extensions...	{"resource": {"service.instance.id": "bad0a91e-4c80-4884-b939-54cdcbd6311a", "service.name": "otelcol", "service.version": "0.150.1"}}
+2026-04-15T13:20:01.648Z	info	extensions/extensions.go:44	Extension is starting...	{"resource": {"service.instance.id": "bad0a91e-4c80-4884-b939-54cdcbd6311a", "service.name": "otelcol", "service.version": "0.150.1"}, "otelcol.component.id": "health_check", "otelcol.component.kind": "extension"}
+2026-04-15T13:20:01.648Z	info	healthcheckextension@v0.150.0/healthcheckextension.go:32	Starting health_check extension	{"resource": {"service.instance.id": "bad0a91e-4c80-4884-b939-54cdcbd6311a", "service.name": "otelcol", "service.version": "0.150.1"}, "otelcol.component.id": "health_check", "otelcol.component.kind": "extension", "config": {"NetAddr":{"Endpoint":"0.0.0.0:13133","Transport":"tcp","DialerConfig":{"Timeout":0}},"TLS":{},"CORS":{},"Auth":{},"MaxRequestBodySize":0,"IncludeMetadata":false,"ResponseHeaders":null,"CompressionAlgorithms":null,"ReadTimeout":0,"ReadHeaderTimeout":0,"WriteTimeout":0,"IdleTimeout":0,"Middlewares":null,"KeepAlivesEnabled":false,"Path":"/","ResponseBody":null,"CheckCollectorPipeline":{"Enabled":false,"Interval":"5m","ExporterFailureThreshold":5},"UseV2":false,"GRPCConfig":null,"HTTPConfig":null,"ComponentHealthConfig":null}}
+2026-04-15T13:20:01.649Z	info	extensions/extensions.go:61	Extension started.	{"resource": {"service.instance.id": "bad0a91e-4c80-4884-b939-54cdcbd6311a", "service.name": "otelcol", "service.version": "0.150.1"}, "otelcol.component.id": "health_check", "otelcol.component.kind": "extension"}
+2026-04-15T13:20:01.650Z	info	otlpreceiver@v0.150.0/otlp.go:120	Starting GRPC server	{"resource": {"service.instance.id": "bad0a91e-4c80-4884-b939-54cdcbd6311a", "service.name": "otelcol", "service.version": "0.150.1"}, "otelcol.component.id": "otlp", "otelcol.component.kind": "receiver", "endpoint": "[::]:4317"}
+2026-04-15T13:20:01.650Z	info	otlpreceiver@v0.150.0/otlp.go:175	Starting HTTP server	{"resource": {"service.instance.id": "bad0a91e-4c80-4884-b939-54cdcbd6311a", "service.name": "otelcol", "service.version": "0.150.1"}, "otelcol.component.id": "otlp", "otelcol.component.kind": "receiver", "endpoint": "[::]:4318"}
+2026-04-15T13:20:01.650Z	info	healthcheck/handler.go:131	Health Check state change	{"resource": {"service.instance.id": "bad0a91e-4c80-4884-b939-54cdcbd6311a", "service.name": "otelcol", "service.version": "0.150.1"}, "otelcol.component.id": "health_check", "otelcol.component.kind": "extension", "status": "ready"}
+2026-04-15T13:20:01.650Z	info	service@v0.150.0/service.go:264	Everything is ready. Begin running and processing data.	{"resource": {"service.instance.id": "bad0a91e-4c80-4884-b939-54cdcbd6311a", "service.name": "otelcol", "service.version": "0.150.1"}}
+2026-04-15T13:33:38.426Z	info	Traces	{"resource": {"service.instance.id": "bad0a91e-4c80-4884-b939-54cdcbd6311a", "service.name": "otelcol", "service.version": "0.150.1"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 60}
+2026-04-15T13:33:38.428Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> deployment.environment: Str(dev)
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_line: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java -XX:TieredStopAtLevel=1 -javaagent:/home/GRT/work/otel/opentelemetry-javaagent.jar com.ryan.media.MediaTaskApplication)
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(494870)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> repo.name: Str(media-task-platform-java)
+     -> service.instance.id: Str(044afbef-83f6-40a0-b2cc-ffb058d1d877)
+     -> service.name: Str(media-task-platform-java)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : 5daf318bff6a9100674acfa31a138748
+    Parent ID      : 
+    ID             : d0534a140311b8bf
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.279510859 +0000 UTC
+    End time       : 2026-04-15 13:33:37.282076048 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #1
+    Trace ID       : 294ec6e5152614e512e88a0ac7a84c43
+    Parent ID      : 
+    ID             : 0ed0b39eeeb894d7
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.28283471 +0000 UTC
+    End time       : 2026-04-15 13:33:37.289898745 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SHOW TRANSACTION ISOLATION LEVEL)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #2
+    Trace ID       : c29dee05a9da86ea15b20ee48b490e52
+    Parent ID      : 
+    ID             : ed42f766f91e02f8
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.383104259 +0000 UTC
+    End time       : 2026-04-15 13:33:37.385492671 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT version())
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #3
+    Trace ID       : adf36e78a1432309673ddc26c84a9661
+    Parent ID      : 
+    ID             : bf126a79b65e681e
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.398938957 +0000 UTC
+    End time       : 2026-04-15 13:33:37.40031855 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SHOW search_path)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #4
+    Trace ID       : e3f524cfdfe02060cf76fa836d85b653
+    Parent ID      : 
+    ID             : 633810078e2b5e90
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.400558187 +0000 UTC
+    End time       : 2026-04-15 13:33:37.40169135 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT CURRENT_USER)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #5
+    Trace ID       : a0f881c11406b2cfb25a9eeed12f8e49
+    Parent ID      : 
+    ID             : 1a006afd54db2036
+    Name           : SELECT media_task.pg_roles
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.401906749 +0000 UTC
+    End time       : 2026-04-15 13:33:37.410415747 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT rolname FROM pg_roles WHERE rolname ILIKE ?;)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.sql.table: Str(pg_roles)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #6
+    Trace ID       : 4d0c450fd9007246eede2f4fa8e85c27
+    Parent ID      : 
+    ID             : cf07fbf4e9937fbb
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.410739268 +0000 UTC
+    End time       : 2026-04-15 13:33:37.411611994 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT current_schema)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #7
+    Trace ID       : a0700e84a86c64654385bcda5d5c1e76
+    Parent ID      : 
+    ID             : 42b09f21f118631b
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.411736119 +0000 UTC
+    End time       : 2026-04-15 13:33:37.412176589 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SHOW search_path)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #8
+    Trace ID       : 372ba8a7aba94ab312f4084d7bd97bb6
+    Parent ID      : 
+    ID             : f9f97045734dd368
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.413575508 +0000 UTC
+    End time       : 2026-04-15 13:33:37.414596119 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT current_schema)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #9
+    Trace ID       : 985fc8268aa72ad61807bcd27e274433
+    Parent ID      : 
+    ID             : 2eb59d6f6e45326e
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.414765018 +0000 UTC
+    End time       : 2026-04-15 13:33:37.415645725 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SHOW search_path)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #10
+    Trace ID       : 8f87d2bf7e2c8580af3b961ce36bc664
+    Parent ID      : 
+    ID             : 7fde19b2435e2290
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.41587104 +0000 UTC
+    End time       : 2026-04-15 13:33:37.416428128 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(select current_catalog)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #11
+    Trace ID       : c6cf5b5930a103d61cd94d4ce709a640
+    Parent ID      : 
+    ID             : 544b5b7b28d58edd
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.416617827 +0000 UTC
+    End time       : 2026-04-15 13:33:37.417366903 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT current_user)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #12
+    Trace ID       : e56d34e62dc1931a1c59dea9c1adb551
+    Parent ID      : 
+    ID             : 0529704c3150a6ca
+    Name           : SELECT media_task.pg_namespace
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.425860697 +0000 UTC
+    End time       : 2026-04-15 13:33:37.433582915 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT COUNT(*) FROM pg_namespace WHERE nspname=?)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.sql.table: Str(pg_namespace)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #13
+    Trace ID       : 119fa5cd5a9bec435945831d77761bda
+    Parent ID      : 
+    ID             : f635e494aacada9d
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.467776141 +0000 UTC
+    End time       : 2026-04-15 13:33:37.46934112 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SET ROLE ?)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #14
+    Trace ID       : 2b76017a8effd075bf1bd0598fd56acf
+    Parent ID      : 
+    ID             : fab358acafe6a18a
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.469874764 +0000 UTC
+    End time       : 2026-04-15 13:33:37.473873208 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT EXISTS ( SELECT ? FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace WHERE n.nspname = ? AND c.relname = ? AND c.relkind = ? ))
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #15
+    Trace ID       : aae5dfc728e4faaa0a5cb979c06d4b27
+    Parent ID      : 
+    ID             : 458e0a4d0d0683cf
+    Name           : SELECT media_task.pg_namespace
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.484623867 +0000 UTC
+    End time       : 2026-04-15 13:33:37.485944948 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT COUNT(*) FROM pg_namespace WHERE nspname=?)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.sql.table: Str(pg_namespace)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #16
+    Trace ID       : da670cee6b97bfadbaea9338eb3c816e
+    Parent ID      : 
+    ID             : e4379c48d3665c8c
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.486844391 +0000 UTC
+    End time       : 2026-04-15 13:33:37.487528353 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SET ROLE ?)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #17
+    Trace ID       : 0dbb9aa2dce3805b46cfeba6e36824e7
+    Parent ID      : 
+    ID             : d7af1c788a406624
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.487716319 +0000 UTC
+    End time       : 2026-04-15 13:33:37.489591795 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT EXISTS ( SELECT ? FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace WHERE n.nspname = ? AND c.relname = ? AND c.relkind = ? ))
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #18
+    Trace ID       : 57daac7d8ed1519f51d56fc277f81a1a
+    Parent ID      : 
+    ID             : aa69b196421a3ef5
+    Name           : SELECT media_task.pg_namespace
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.489757267 +0000 UTC
+    End time       : 2026-04-15 13:33:37.490590673 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT COUNT(*) FROM pg_namespace WHERE nspname=?)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.sql.table: Str(pg_namespace)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #19
+    Trace ID       : 2182758e19ed033e0cc25b927b776790
+    Parent ID      : 
+    ID             : d5070a4f269c1358
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.491363873 +0000 UTC
+    End time       : 2026-04-15 13:33:37.504777376 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT EXISTS ( SELECT c.oid FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace LEFT JOIN pg_catalog.pg_depend d ON d.objid = c.oid AND d.deptype = ? WHERE n.nspname = ? AND d.objid IS NULL AND c.relkind IN (?) UNION ALL SELECT t.oid FROM pg_catalog.pg_type t JOIN pg_catalog.pg_namespace n ON n.oid = t.typnamespace LEFT JOIN pg_catalog.pg_depend d ON d.objid = t.oid AND d.deptype = ? WHERE n.nspname = ? AND d.objid IS NULL AND t.typcategory NOT IN (?) UNION ALL SELECT p.oid FROM pg_catalog.pg_proc p JOIN pg_catalog.pg_namespace n ON n.oid = p.pronamespace LEFT JOIN pg_catalog.pg_depend d ON d.objid = p.oid AND d.deptype = ? WHERE n.nspname = ? AND d.objid IS NULL ))
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #20
+    Trace ID       : a8ce941e15dea02ae9f018081926999b
+    Parent ID      : 
+    ID             : a5087bbd6400c6dd
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.514210789 +0000 UTC
+    End time       : 2026-04-15 13:33:37.516696809 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT pg_try_advisory_xact_lock(?))
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #21
+    Trace ID       : 4f6f6e45139df805fb37907e005d23ed
+    Parent ID      : 
+    ID             : a420f76019ae7f3b
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.517082596 +0000 UTC
+    End time       : 2026-04-15 13:33:37.518291862 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SET ROLE ?)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #22
+    Trace ID       : 2d5d5e17c69406b980e5815cc0c2a8f5
+    Parent ID      : 
+    ID             : 2da5c09e93bd5c9e
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.518573837 +0000 UTC
+    End time       : 2026-04-15 13:33:37.520611886 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT EXISTS ( SELECT ? FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace WHERE n.nspname = ? AND c.relname = ? AND c.relkind = ? ))
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #23
+    Trace ID       : ed90b4e61b4b23bd30e5db6818efa90a
+    Parent ID      : 
+    ID             : ef1440741af68919
+    Name           : CREATE TABLE "public"."flyway_schema_history"
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.557182084 +0000 UTC
+    End time       : 2026-04-15 13:33:37.583932353 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(CREATE TABLE "public"."flyway_schema_history" ( "installed_rank" INT NOT NULL, "version" VARCHAR(?), "description" VARCHAR(?) NOT NULL, "type" VARCHAR(?) NOT NULL, "script" VARCHAR(?) NOT NULL, "checksum" INTEGER, "installed_by" VARCHAR(?) NOT NULL, "installed_on" TIMESTAMP NOT NULL DEFAULT now(), "execution_time" INTEGER NOT NULL, "success" BOOLEAN NOT NULL ))
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.sql.table: Str("public"."flyway_schema_history")
+     -> db.operation: Str(CREATE TABLE)
+     -> server.port: Int(5432)
+Span #24
+    Trace ID       : 25f2df966e7e2a390c957f1db1489f28
+    Parent ID      : 
+    ID             : a2d02471e31d41a0
+    Name           : ALTER TABLE "public"."flyway_schema_history"
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.587290011 +0000 UTC
+    End time       : 2026-04-15 13:33:37.59689982 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(ALTER TABLE "public"."flyway_schema_history" ADD CONSTRAINT "flyway_schema_history_pk" PRIMARY KEY ("installed_rank"))
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.sql.table: Str("public"."flyway_schema_history")
+     -> db.operation: Str(ALTER TABLE)
+     -> server.port: Int(5432)
+Span #25
+    Trace ID       : 697e9fe2617361b50aa4a09959b8a8f2
+    Parent ID      : 
+    ID             : 91d1aa1995a4fd10
+    Name           : CREATE INDEX media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.597333656 +0000 UTC
+    End time       : 2026-04-15 13:33:37.602371794 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(CREATE INDEX "flyway_schema_history_s_idx" ON "public"."flyway_schema_history" ("success"))
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(CREATE INDEX)
+     -> server.port: Int(5432)
+Span #26
+    Trace ID       : e07ccdc375d90e795923688749791ec2
+    Parent ID      : 
+    ID             : 401a9480a1ab1cf4
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.606360067 +0000 UTC
+    End time       : 2026-04-15 13:33:37.607283566 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SET ROLE ?)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #27
+    Trace ID       : 184bffacc5d804b54dd1002df0f39a2e
+    Parent ID      : 
+    ID             : 18cf7e96753c3e11
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.60756579 +0000 UTC
+    End time       : 2026-04-15 13:33:37.609766999 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT EXISTS ( SELECT ? FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace WHERE n.nspname = ? AND c.relname = ? AND c.relkind = ? ))
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #28
+    Trace ID       : f6e1a8911ad5d52b58cf8851ad78d357
+    Parent ID      : 
+    ID             : a80275223a4c260d
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.615443607 +0000 UTC
+    End time       : 2026-04-15 13:33:37.617016986 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SHOW search_path)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #29
+    Trace ID       : ead09cfc01431913c4f552a73544c081
+    Parent ID      : 
+    ID             : 7dde725969f09aae
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.6174378 +0000 UTC
+    End time       : 2026-04-15 13:33:37.618832449 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT CURRENT_USER)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #30
+    Trace ID       : dfb3e2c7c640ab3ae686c40ccd5cd947
+    Parent ID      : 
+    ID             : 1016e20d57a4cdf7
+    Name           : SELECT media_task.pg_roles
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.61927237 +0000 UTC
+    End time       : 2026-04-15 13:33:37.62681652 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT rolname FROM pg_roles WHERE rolname ILIKE ?;)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.sql.table: Str(pg_roles)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #31
+    Trace ID       : e89c80e45bd8ab05a5eda442d891b986
+    Parent ID      : 
+    ID             : b5872985f11c6ad8
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.632555562 +0000 UTC
+    End time       : 2026-04-15 13:33:37.633677831 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SET ROLE ?)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #32
+    Trace ID       : 4fe3b439f07245cd1274487f012fa8cb
+    Parent ID      : 
+    ID             : 5bbd38cf8fd6d19b
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.634383129 +0000 UTC
+    End time       : 2026-04-15 13:33:37.6359272 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT pg_try_advisory_xact_lock(?))
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #33
+    Trace ID       : 6f3c1f886557920201797acae04035cd
+    Parent ID      : 
+    ID             : 4ac9ba7e1a8b7552
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.63769602 +0000 UTC
+    End time       : 2026-04-15 13:33:37.638796223 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SET ROLE ?)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #34
+    Trace ID       : 6e50c2c44ecd803f63ebd2b8b8b86e78
+    Parent ID      : 
+    ID             : d4c0596de280f13c
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.639147443 +0000 UTC
+    End time       : 2026-04-15 13:33:37.641524254 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT EXISTS ( SELECT ? FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace WHERE n.nspname = ? AND c.relname = ? AND c.relkind = ? ))
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #35
+    Trace ID       : ec5b029b542d44b34d5f2ec365f538b6
+    Parent ID      : 
+    ID             : 2ca94bb4fa7f3b34
+    Name           : SELECT "public"."flyway_schema_history"
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.64768316 +0000 UTC
+    End time       : 2026-04-15 13:33:37.652452622 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(/*NO LOAD BALANCE*/ SELECT "installed_rank","version","description","type","script","checksum","installed_on","installed_by","execution_time","success" FROM "public"."flyway_schema_history" WHERE "installed_rank" > ? ORDER BY "installed_rank")
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.sql.table: Str("public"."flyway_schema_history")
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #36
+    Trace ID       : 8a5d9510251fd1a1eb267876bdf6b81a
+    Parent ID      : 
+    ID             : 27d91da52575b4e2
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.674382392 +0000 UTC
+    End time       : 2026-04-15 13:33:37.675611659 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SET ROLE ?)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #37
+    Trace ID       : a1faf317178a2107129b84c7c9f6c53a
+    Parent ID      : 
+    ID             : 9bba56ab60c97948
+    Name           : SELECT media_task.pg_namespace
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.676144583 +0000 UTC
+    End time       : 2026-04-15 13:33:37.67790638 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT COUNT(*) FROM pg_namespace WHERE nspname=?)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.sql.table: Str(pg_namespace)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #38
+    Trace ID       : 37b074edaee18a1ca1861f87a04967e9
+    Parent ID      : 
+    ID             : c5e74bc3f6e02b04
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.678699855 +0000 UTC
+    End time       : 2026-04-15 13:33:37.68033064 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT set_config(?, ?, false))
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #39
+    Trace ID       : 3d3460e467804a815bc7e076810d0bff
+    Parent ID      : 
+    ID             : 473cbff74569ab43
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.681630452 +0000 UTC
+    End time       : 2026-04-15 13:33:37.682822522 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT version())
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #40
+    Trace ID       : 13a5601d4876c5bb8c770164c4e6b5d8
+    Parent ID      : 
+    ID             : d95245e3e8f2b8f3
+    Name           : CREATE table media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.685747529 +0000 UTC
+    End time       : 2026-04-15 13:33:37.702698803 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(create table if not exists media_task ( id varchar(?) primary key, title varchar(?) not null, media_type varchar(?) not null, status varchar(?) not null, created_at timestamptz not null default now(), updated_at timestamptz not null default now() ))
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(CREATE table)
+     -> server.port: Int(5432)
+Span #41
+    Trace ID       : 177560b75c86d13e7ee2bf67d2744bec
+    Parent ID      : 
+    ID             : d00f225b4945d7dc
+    Name           : CREATE table media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.703887422 +0000 UTC
+    End time       : 2026-04-15 13:33:37.723504853 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(create table if not exists media_asset ( id varchar(?) primary key, task_id varchar(?) not null references media_task(id) on delete cascade, asset_path varchar(?) not null, asset_kind varchar(?) not null, created_at timestamptz not null default now() ))
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(CREATE table)
+     -> server.port: Int(5432)
+Span #42
+    Trace ID       : fe2922737ebd6eab10dbdbee14656d05
+    Parent ID      : 
+    ID             : bdbfd96b38c3c307
+    Name           : CREATE table media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.724366365 +0000 UTC
+    End time       : 2026-04-15 13:33:37.734566838 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(create table if not exists media_tag ( id varchar(?) primary key, task_id varchar(?) not null references media_task(id) on delete cascade, tag_name varchar(?) not null, created_at timestamptz not null default now() ))
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(CREATE table)
+     -> server.port: Int(5432)
+Span #43
+    Trace ID       : 4618abcacb6d678b96ff8d1cc4b65584
+    Parent ID      : 
+    ID             : 904623b0a3c42259
+    Name           : CREATE index media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.735178742 +0000 UTC
+    End time       : 2026-04-15 13:33:37.753482716 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(create index if not exists idx_media_asset_task_id on media_asset(task_id))
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(CREATE index)
+     -> server.port: Int(5432)
+Span #44
+    Trace ID       : efcacef5e538be0d463d27f8d9e29c6b
+    Parent ID      : 
+    ID             : ca1d1210c198e94d
+    Name           : CREATE index media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.754122897 +0000 UTC
+    End time       : 2026-04-15 13:33:37.759973893 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(create index if not exists idx_media_tag_task_id on media_tag(task_id))
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(CREATE index)
+     -> server.port: Int(5432)
+Span #45
+    Trace ID       : 3f6822562024322b3d05bceb320b4428
+    Parent ID      : 
+    ID             : c203f9532ac77281
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.761125635 +0000 UTC
+    End time       : 2026-04-15 13:33:37.762504467 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SET ROLE ?)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #46
+    Trace ID       : 0367ca421106153cda07fa7bd6d881ca
+    Parent ID      : 
+    ID             : eb058c36f97db496
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.763001393 +0000 UTC
+    End time       : 2026-04-15 13:33:37.765305806 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT EXISTS ( SELECT ? FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace WHERE n.nspname = ? AND c.relname = ? AND c.relkind = ? ))
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #47
+    Trace ID       : 0324274169af700e72e6d6e795061b14
+    Parent ID      : 
+    ID             : f8a5a7bd03a7e125
+    Name           : SELECT "public"."flyway_schema_history"
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.766153978 +0000 UTC
+    End time       : 2026-04-15 13:33:37.767573074 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(/*NO LOAD BALANCE*/ SELECT "installed_rank","version","description","type","script","checksum","installed_on","installed_by","execution_time","success" FROM "public"."flyway_schema_history" WHERE "installed_rank" > ? ORDER BY "installed_rank")
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.sql.table: Str("public"."flyway_schema_history")
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #48
+    Trace ID       : 06a0f7a12bd4601253aae79e22e54e71
+    Parent ID      : 
+    ID             : 107d95da1d6a938a
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.768826293 +0000 UTC
+    End time       : 2026-04-15 13:33:37.769946016 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SET ROLE ?)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #49
+    Trace ID       : d1ff984be1b6b5392398602dd7b68290
+    Parent ID      : 
+    ID             : 8eb4d806fe3cd600
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.773555734 +0000 UTC
+    End time       : 2026-04-15 13:33:37.774979144 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT current_user)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #50
+    Trace ID       : f08efb5ebe46b188fd3cf07fe9abca08
+    Parent ID      : 
+    ID             : 440b8e6c349c4045
+    Name           : INSERT "public"."flyway_schema_history"
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.776320493 +0000 UTC
+    End time       : 2026-04-15 13:33:37.779018018 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(INSERT INTO "public"."flyway_schema_history" ("installed_rank", "version", "description", "type", "script", "checksum", "installed_by", "execution_time", "success") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?))
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.sql.table: Str("public"."flyway_schema_history")
+     -> db.operation: Str(INSERT)
+     -> server.port: Int(5432)
+Span #51
+    Trace ID       : 02f887c66bc4f145d85e3784e3ba9b0b
+    Parent ID      : 
+    ID             : 622ed4a7b64275a5
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.785208228 +0000 UTC
+    End time       : 2026-04-15 13:33:37.786024616 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SET ROLE ?)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #52
+    Trace ID       : 0441485d96468bf854464800836a5a0c
+    Parent ID      : 
+    ID             : 631be1b83a982f87
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.786571664 +0000 UTC
+    End time       : 2026-04-15 13:33:37.787786005 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT pg_try_advisory_xact_lock(?))
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #53
+    Trace ID       : 8b8107a3023d7b10a8334b3f96618815
+    Parent ID      : 
+    ID             : 6ff2a856297d1618
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.78872364 +0000 UTC
+    End time       : 2026-04-15 13:33:37.789728424 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SET ROLE ?)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #54
+    Trace ID       : f0342014b55adccce6d03200493685fb
+    Parent ID      : 
+    ID             : 84f7cb3e4e597b62
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.790171449 +0000 UTC
+    End time       : 2026-04-15 13:33:37.792874534 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT EXISTS ( SELECT ? FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace WHERE n.nspname = ? AND c.relname = ? AND c.relkind = ? ))
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #55
+    Trace ID       : 79dd3736e25ec2c35e997690df536a76
+    Parent ID      : 
+    ID             : 3ace7822a47ad974
+    Name           : SELECT "public"."flyway_schema_history"
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.793980591 +0000 UTC
+    End time       : 2026-04-15 13:33:37.795872054 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(/*NO LOAD BALANCE*/ SELECT "installed_rank","version","description","type","script","checksum","installed_on","installed_by","execution_time","success" FROM "public"."flyway_schema_history" WHERE "installed_rank" > ? ORDER BY "installed_rank")
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.sql.table: Str("public"."flyway_schema_history")
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #56
+    Trace ID       : 99bce38ae8cd6425d4137d21d4e4f64d
+    Parent ID      : 
+    ID             : a0ea3d3536ff25e3
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.81502664 +0000 UTC
+    End time       : 2026-04-15 13:33:37.816691586 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SET ROLE ?)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #57
+    Trace ID       : d57a5dd53a6268c4993b30cc380347ad
+    Parent ID      : 
+    ID             : 12c888b136f4c4ae
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.822862067 +0000 UTC
+    End time       : 2026-04-15 13:33:37.825027642 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT set_config(?, ?, false))
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+Span #58
+    Trace ID       : a15b15706f0f86b86b11011ab64d11e8
+    Parent ID      : 
+    ID             : 729978dc87834f53
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.836971914 +0000 UTC
+    End time       : 2026-04-15 13:33:37.838552436 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SET ROLE ?)
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #59
+    Trace ID       : bf79876baede375cc51703b48c2a1358
+    Parent ID      : 
+    ID             : de8f1a3cbec3c38b
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:33:37.839134838 +0000 UTC
+    End time       : 2026-04-15 13:33:37.841159416 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str(SELECT set_config(?, ?, false))
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(main)
+     -> thread.id: Int(1)
+     -> db.name: Str(media_task)
+     -> db.operation: Str(SELECT)
+     -> server.port: Int(5432)
+	{"resource": {"service.instance.id": "bad0a91e-4c80-4884-b939-54cdcbd6311a", "service.name": "otelcol", "service.version": "0.150.1"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-15T13:35:18.580Z	info	Traces	{"resource": {"service.instance.id": "bad0a91e-4c80-4884-b939-54cdcbd6311a", "service.name": "otelcol", "service.version": "0.150.1"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 3}
+2026-04-15T13:35:18.580Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> deployment.environment: Str(dev)
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_line: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java -XX:TieredStopAtLevel=1 -javaagent:/home/GRT/work/otel/opentelemetry-javaagent.jar com.ryan.media.MediaTaskApplication)
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(494870)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> repo.name: Str(media-task-platform-java)
+     -> service.instance.id: Str(044afbef-83f6-40a0-b2cc-ffb058d1d877)
+     -> service.name: Str(media-task-platform-java)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : ba251a124f0e652e5c3f8769f7e69d80
+    Parent ID      : 
+    ID             : dd1ad1c171fe3bd8
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:35:15.049178605 +0000 UTC
+    End time       : 2026-04-15 13:35:15.050594054 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> thread.id: Int(70)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #1
+    Trace ID       : ed2d78ed44157095df1958920157ca5c
+    Parent ID      : 
+    ID             : 519fe536fd27251e
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:35:15.912408431 +0000 UTC
+    End time       : 2026-04-15 13:35:15.913669032 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> thread.id: Int(70)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #2
+    Trace ID       : d134ffe109937ae4c287384f400748d7
+    Parent ID      : 
+    ID             : 830b243aec385525
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:35:17.587378607 +0000 UTC
+    End time       : 2026-04-15 13:35:17.588479476 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> thread.id: Int(70)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+	{"resource": {"service.instance.id": "bad0a91e-4c80-4884-b939-54cdcbd6311a", "service.name": "otelcol", "service.version": "0.150.1"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-15T13:35:23.613Z	info	Traces	{"resource": {"service.instance.id": "bad0a91e-4c80-4884-b939-54cdcbd6311a", "service.name": "otelcol", "service.version": "0.150.1"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-04-15T13:35:23.613Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> deployment.environment: Str(dev)
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_line: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java -XX:TieredStopAtLevel=1 -javaagent:/home/GRT/work/otel/opentelemetry-javaagent.jar com.ryan.media.MediaTaskApplication)
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(494870)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> repo.name: Str(media-task-platform-java)
+     -> service.instance.id: Str(044afbef-83f6-40a0-b2cc-ffb058d1d877)
+     -> service.name: Str(media-task-platform-java)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : 208c81b9c96d364da5da5c87a1f773e4
+    Parent ID      : 
+    ID             : ba15edafbf4140a7
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:35:19.634167043 +0000 UTC
+    End time       : 2026-04-15 13:35:19.635664709 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> thread.id: Int(70)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+	{"resource": {"service.instance.id": "bad0a91e-4c80-4884-b939-54cdcbd6311a", "service.name": "otelcol", "service.version": "0.150.1"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-15T13:35:28.445Z	info	Traces	{"resource": {"service.instance.id": "bad0a91e-4c80-4884-b939-54cdcbd6311a", "service.name": "otelcol", "service.version": "0.150.1"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 4}
+2026-04-15T13:35:28.445Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> deployment.environment: Str(dev)
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_line: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java -XX:TieredStopAtLevel=1 -javaagent:/home/GRT/work/otel/opentelemetry-javaagent.jar com.ryan.media.MediaTaskApplication)
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(494870)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> repo.name: Str(media-task-platform-java)
+     -> service.instance.id: Str(044afbef-83f6-40a0-b2cc-ffb058d1d877)
+     -> service.name: Str(media-task-platform-java)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : d9ca7cf0730cc6a68dd07badfb7d8b6a
+    Parent ID      : 
+    ID             : 63645a729ab9ab57
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:35:26.610043156 +0000 UTC
+    End time       : 2026-04-15 13:35:26.611443358 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> thread.id: Int(70)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #1
+    Trace ID       : a69dfdefe3ebe1b7a123364104ec63ae
+    Parent ID      : 
+    ID             : ff696105db7ba810
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:35:26.620500275 +0000 UTC
+    End time       : 2026-04-15 13:35:26.621569817 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> thread.id: Int(70)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #2
+    Trace ID       : 758bb751ca958a5a6a71c99cad080288
+    Parent ID      : 
+    ID             : 66de8c1cb6fa0528
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:35:27.267656348 +0000 UTC
+    End time       : 2026-04-15 13:35:27.269174056 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> thread.id: Int(70)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #3
+    Trace ID       : f250eef2d22882645f853a06ccea12f0
+    Parent ID      : 
+    ID             : e3094e865cc1f334
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:35:27.977225874 +0000 UTC
+    End time       : 2026-04-15 13:35:27.978700147 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> thread.id: Int(70)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+	{"resource": {"service.instance.id": "bad0a91e-4c80-4884-b939-54cdcbd6311a", "service.name": "otelcol", "service.version": "0.150.1"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-15T13:35:33.475Z	info	Traces	{"resource": {"service.instance.id": "bad0a91e-4c80-4884-b939-54cdcbd6311a", "service.name": "otelcol", "service.version": "0.150.1"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 2}
+2026-04-15T13:35:33.475Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> deployment.environment: Str(dev)
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_line: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java -XX:TieredStopAtLevel=1 -javaagent:/home/GRT/work/otel/opentelemetry-javaagent.jar com.ryan.media.MediaTaskApplication)
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(494870)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> repo.name: Str(media-task-platform-java)
+     -> service.instance.id: Str(044afbef-83f6-40a0-b2cc-ffb058d1d877)
+     -> service.name: Str(media-task-platform-java)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : 7e1dfc795b91433445eef6699f0c4c14
+    Parent ID      : 
+    ID             : b9c49671526de392
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:35:28.781831209 +0000 UTC
+    End time       : 2026-04-15 13:35:28.783185889 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> thread.id: Int(70)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #1
+    Trace ID       : 5c76c6f9c4feee5eff8ab73161d437bb
+    Parent ID      : 
+    ID             : d641a798446bf4be
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:35:32.822300944 +0000 UTC
+    End time       : 2026-04-15 13:35:32.823729269 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> thread.id: Int(70)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+	{"resource": {"service.instance.id": "bad0a91e-4c80-4884-b939-54cdcbd6311a", "service.name": "otelcol", "service.version": "0.150.1"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-15T13:36:08.465Z	info	Traces	{"resource": {"service.instance.id": "bad0a91e-4c80-4884-b939-54cdcbd6311a", "service.name": "otelcol", "service.version": "0.150.1"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 6}
+2026-04-15T13:36:08.466Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> deployment.environment: Str(dev)
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_line: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java -XX:TieredStopAtLevel=1 -javaagent:/home/GRT/work/otel/opentelemetry-javaagent.jar com.ryan.media.MediaTaskApplication)
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(494870)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> repo.name: Str(media-task-platform-java)
+     -> service.instance.id: Str(044afbef-83f6-40a0-b2cc-ffb058d1d877)
+     -> service.name: Str(media-task-platform-java)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : ed9280f2da3a3395454a33b306937bc1
+    Parent ID      : 2c3f2ffd054604a9
+    ID             : 272fcd63d5bb8f8e
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:36:04.469100498 +0000 UTC
+    End time       : 2026-04-15 13:36:04.471240073 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(http-nio-8080-exec-2)
+     -> thread.id: Int(79)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+Span #1
+    Trace ID       : ed9280f2da3a3395454a33b306937bc1
+    Parent ID      : 2c3f2ffd054604a9
+    ID             : 76c8609271ff1e96
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-15 13:36:04.478055839 +0000 UTC
+    End time       : 2026-04-15 13:36:04.479616141 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> thread.name: Str(http-nio-8080-exec-2)
+     -> thread.id: Int(79)
+     -> db.name: Str(media_task)
+     -> server.port: Int(5432)
+ScopeSpans #1
+ScopeSpans SchemaURL: https://opentelemetry.io/schemas/1.37.0
+InstrumentationScope io.opentelemetry.tomcat-10.0 2.26.1-alpha
+Span #0
+    Trace ID       : bb0bfe6edc4068af04e2fff4c24c05be
+    Parent ID      : 
+    ID             : c350e14c6ef0b354
+    Name           : GET /health
+    Kind           : Server
+    Start time     : 2026-04-15 13:36:04.240878395 +0000 UTC
+    End time       : 2026-04-15 13:36:04.420827075 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> network.protocol.version: Str(1.1)
+     -> user_agent.original: Str(curl/7.81.0)
+     -> url.scheme: Str(http)
+     -> thread.name: Str(http-nio-8080-exec-1)
+     -> network.peer.port: Int(39866)
+     -> http.request.method: Str(GET)
+     -> http.route: Str(/health)
+     -> server.address: Str(127.0.0.1)
+     -> client.address: Str(127.0.0.1)
+     -> network.peer.address: Str(127.0.0.1)
+     -> url.path: Str(/health)
+     -> thread.id: Int(78)
+     -> http.response.status_code: Int(200)
+     -> server.port: Int(8080)
+Span #1
+    Trace ID       : ed9280f2da3a3395454a33b306937bc1
+    Parent ID      : 
+    ID             : 2c3f2ffd054604a9
+    Name           : GET /actuator/health
+    Kind           : Server
+    Start time     : 2026-04-15 13:36:04.440408086 +0000 UTC
+    End time       : 2026-04-15 13:36:04.499513959 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> network.protocol.version: Str(1.1)
+     -> user_agent.original: Str(curl/7.81.0)
+     -> url.scheme: Str(http)
+     -> thread.name: Str(http-nio-8080-exec-2)
+     -> network.peer.port: Int(39882)
+     -> http.request.method: Str(GET)
+     -> http.route: Str(/actuator/health)
+     -> server.address: Str(127.0.0.1)
+     -> client.address: Str(127.0.0.1)
+     -> network.peer.address: Str(127.0.0.1)
+     -> url.path: Str(/actuator/health)
+     -> thread.id: Int(79)
+     -> http.response.status_code: Int(200)
+     -> server.port: Int(8080)
+Span #2
+    Trace ID       : 602d5bb94c277d2da79ef4bd72012db8
+    Parent ID      : 
+    ID             : 84038cf4a8fb331a
+    Name           : GET /auth/me
+    Kind           : Server
+    Start time     : 2026-04-15 13:36:04.516580294 +0000 UTC
+    End time       : 2026-04-15 13:36:04.527090559 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> network.protocol.version: Str(1.1)
+     -> user_agent.original: Str(curl/7.81.0)
+     -> url.scheme: Str(http)
+     -> thread.name: Str(http-nio-8080-exec-4)
+     -> network.peer.port: Int(39884)
+     -> http.request.method: Str(GET)
+     -> http.route: Str(/auth/me)
+     -> server.address: Str(127.0.0.1)
+     -> client.address: Str(127.0.0.1)
+     -> network.peer.address: Str(127.0.0.1)
+     -> url.path: Str(/auth/me)
+     -> thread.id: Int(81)
+     -> http.response.status_code: Int(401)
+     -> server.port: Int(8080)
+Span #3
+    Trace ID       : 36f4c39d9f9ac836367f07ab7593fa3f
+    Parent ID      : 
+    ID             : d4a389f5da19d7eb
+    Name           : GET /api/media-tasks
+    Kind           : Server
+    Start time     : 2026-04-15 13:36:04.542050865 +0000 UTC
+    End time       : 2026-04-15 13:36:04.547749307 +0000 UTC
+    Status code    : Unset
+    Status message : 
+    DroppedAttributesCount: 0
+    DroppedEventsCount: 0
+    DroppedLinksCount: 0
+Attributes:
+     -> network.protocol.version: Str(1.1)
+     -> user_agent.original: Str(curl/7.81.0)
+     -> url.scheme: Str(http)
+     -> thread.name: Str(http-nio-8080-exec-5)
+     -> network.peer.port: Int(39886)
+     -> http.request.method: Str(GET)
+     -> http.route: Str(/api/media-tasks)
+     -> server.address: Str(127.0.0.1)
+     -> client.address: Str(127.0.0.1)
+     -> network.peer.address: Str(127.0.0.1)
+     -> url.path: Str(/api/media-tasks)
+     -> thread.id: Int(82)
+     -> http.response.status_code: Int(401)
+     -> server.port: Int(8080)
+	{"resource": {"service.instance.id": "bad0a91e-4c80-4884-b939-54cdcbd6311a", "service.name": "otelcol", "service.version": "0.150.1"}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}

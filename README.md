@@ -8,37 +8,39 @@
 
 当前仓库已完成并留有证据的范围如下：
 
-- 已完成本地 kind / Docker / kubectl / compose 开发环境自检
-- 已完成 `docker-compose.observability.yml`
-- 已完成 Prometheus 最小抓取配置（`observability/prometheus/prometheus.yml`）
-- 已完成 Grafana dashboard 初版（`observability/grafana/dashboards/app-overview.json`）
-- 已完成本地 observability runbook（`docs/runbooks/local-observability.md`）
-- 已完成 Java `/actuator/prometheus` 接入本地观测基线
-- 已完成 Week06 的 OTel Collector 配置草稿（`observability/otel/otelcol-config.yaml`）
-- 已完成 Week06 的 OTel 联调 runbook 草稿（`docs/runbooks/otel-pipeline.md`）
+- 已完成 `scripts/bootstrap_dev_env.sh`，可检查 Docker、Compose、kind、kubectl 等本地开发依赖
+- 已建立 `infra/terraform/` 基础目录与说明
+- 已建立 `k8s/base/` 基础目录与最小资源清单
+- 已补 `observability/otel/otelcol-config.yaml`
+- 已补 `docs/runbooks/otel-pipeline.md`
+- 已起通 OpenTelemetry Collector 最小链路
+- 已通过 Collector health check 验证 `13133` 可访问
+- 已通过 Collector debug exporter 看到来自 `media-task-platform-java` 的 traces
+- 已形成 Cloud Week06 的 first trace evidence 日志：
+  - `artifacts/logs/week06_otel_collector_trace_001.log`
 
-一句话说，当前仓库已经从“Week05 的 Prometheus / Grafana 本地观测基线”推进到“Week06 的 OTel 配置与联调入口已落盘”阶段。
+一句话说，当前 Cloud 仓库已经从“本地环境地基”推进到“OTel Collector + Java agent 最小 trace 证据”阶段，Week06 的 Cloud 主线已经真正落地。
 
 ## Not Yet Verified
 
 以下内容仍未进入“已验证”范围，当前不能写满：
 
-- OpenTelemetry Collector 的稳定 trace 闭环结论
-- Java agent + Collector 的可重复最小 trace 验证结论
-- richer backend / Tempo / tracing UI
-- Kubernetes 下的 OTel Collector 部署验证
-- 更完整的 runbook 与故障排查文档
+- Tempo / Grafana 的可视化 trace 闭环
+- Java agent + Collector 的更稳定、可重复、多轮验证说明
+- K8s 下的 OTel Collector 部署
+- 更完整的 Prometheus / Grafana / tracing 一体化基线
+- CI/CD、回滚、告警、SLO 等后续平台化闭环
 
-这些方向已经进入 Week06 路线，但截至当前仓库状态，还不应写成“已完成”。
+这些方向已经进入路线规划，但截至当前仓库状态，还不应写成“已完成”。
 
 ## Next Hard Milestone
 
 下一阶段目标：
 
-1. 固化 Java agent + Collector 的最小 trace 闭环，给出可复验结论
-2. 把 first trace evidence 收口为更明确的日志 / runbook / README 证据链
-3. 视联调结果决定是否接入 richer backend / Tempo
-4. 在 README / runbook / 日志中继续同步证据，避免仓库叙事落后于代码现实
+1. 把当前 OTel baseline 从 debug exporter 推进到更稳定的 trace 展示或 richer backend
+2. 把 Java 服务接入 Collector 的复现路径写实、写稳，补更清晰的 runbook 与日志证据
+3. 视情况补 `k8s/base/otel-collector` 的最小部署入口
+4. 同步 README / runbook / 日志证据，避免代码推进快于仓库叙事
 
 ## Tech Stack
 
