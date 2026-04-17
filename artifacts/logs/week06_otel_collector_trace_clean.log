@@ -1,0 +1,2196 @@
+Unable to find image 'otel/opentelemetry-collector:0.126.0' locally
+0.126.0: Pulling from otel/opentelemetry-collector
+3294bb1d2f34: Pulling fs layer
+bd82d4fca64b: Pulling fs layer
+252e204c2c6e: Pulling fs layer
+252e204c2c6e: Verifying Checksum
+252e204c2c6e: Download complete
+3294bb1d2f34: Verifying Checksum
+3294bb1d2f34: Download complete
+3294bb1d2f34: Pull complete
+bd82d4fca64b: Download complete
+bd82d4fca64b: Pull complete
+252e204c2c6e: Pull complete
+Digest: sha256:e02c9c8d05f282f696ae1c7122a9f06d938ce6aee78082adc35ac74bd998e3d0
+Status: Downloaded newer image for otel/opentelemetry-collector:0.126.0
+2026-04-17T06:41:33.794Z	info	service@v0.126.0/service.go:199	Setting up own telemetry...	{"resource": {}}
+2026-04-17T06:41:33.794Z	info	builders/builders.go:26	Development component. May change in the future.	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "metrics"}
+2026-04-17T06:41:33.795Z	info	builders/builders.go:26	Development component. May change in the future.	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "logs"}
+2026-04-17T06:41:33.795Z	info	builders/builders.go:26	Development component. May change in the future.	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:41:33.799Z	info	service@v0.126.0/service.go:266	Starting otelcol...	{"resource": {}, "Version": "0.126.0", "NumCPU": 32}
+2026-04-17T06:41:33.799Z	info	extensions/extensions.go:41	Starting extensions...	{"resource": {}}
+2026-04-17T06:41:33.799Z	info	extensions/extensions.go:45	Extension is starting...	{"resource": {}, "otelcol.component.id": "health_check", "otelcol.component.kind": "extension"}
+2026-04-17T06:41:33.799Z	info	healthcheckextension@v0.126.0/healthcheckextension.go:32	Starting health_check extension	{"resource": {}, "otelcol.component.id": "health_check", "otelcol.component.kind": "extension", "config": {"Endpoint":"0.0.0.0:13133","TLSSetting":null,"CORS":null,"Auth":null,"MaxRequestBodySize":0,"IncludeMetadata":false,"ResponseHeaders":null,"CompressionAlgorithms":null,"ReadTimeout":0,"ReadHeaderTimeout":0,"WriteTimeout":0,"IdleTimeout":0,"Middlewares":null,"Path":"/","ResponseBody":null,"CheckCollectorPipeline":{"Enabled":false,"Interval":"5m","ExporterFailureThreshold":5}}}
+2026-04-17T06:41:33.799Z	info	extensions/extensions.go:62	Extension started.	{"resource": {}, "otelcol.component.id": "health_check", "otelcol.component.kind": "extension"}
+2026-04-17T06:41:33.800Z	info	otlpreceiver@v0.126.0/otlp.go:116	Starting GRPC server	{"resource": {}, "otelcol.component.id": "otlp", "otelcol.component.kind": "receiver", "endpoint": "0.0.0.0:4317"}
+2026-04-17T06:41:33.800Z	info	otlpreceiver@v0.126.0/otlp.go:173	Starting HTTP server	{"resource": {}, "otelcol.component.id": "otlp", "otelcol.component.kind": "receiver", "endpoint": "0.0.0.0:4318"}
+2026-04-17T06:41:33.800Z	info	healthcheck/handler.go:132	Health Check state change	{"resource": {}, "otelcol.component.id": "health_check", "otelcol.component.kind": "extension", "status": "ready"}
+2026-04-17T06:41:33.800Z	info	service@v0.126.0/service.go:289	Everything is ready. Begin running and processing data.	{"resource": {}}
+2026-04-17T06:42:04.166Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 31}
+2026-04-17T06:42:04.167Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : ec8ccc990ca5a246e1c713cd068ad3e0
+    Parent ID      : 
+    ID             : c50f5407bc156b3d
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.488727995 +0000 UTC
+    End time       : 2026-04-17 06:41:59.493933928 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #1
+    Trace ID       : c0c8610bb42cacfebf3b6e9dfd686bc9
+    Parent ID      : 
+    ID             : acbb466e2e267534
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.495654929 +0000 UTC
+    End time       : 2026-04-17 06:41:59.509444613 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SHOW TRANSACTION ISOLATION LEVEL)
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #2
+    Trace ID       : ff5f7ad80369656f063ad6f1d2d6e019
+    Parent ID      : 
+    ID             : eceabd5714f67fc7
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.657957335 +0000 UTC
+    End time       : 2026-04-17 06:41:59.660721472 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SELECT version())
+     -> db.system: Str(postgresql)
+     -> db.operation: Str(SELECT)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #3
+    Trace ID       : 47b29c9cd0aba04f6f23d838a7b7cd9c
+    Parent ID      : 
+    ID             : aabece0a079f3f38
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.679967754 +0000 UTC
+    End time       : 2026-04-17 06:41:59.681984854 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SHOW search_path)
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #4
+    Trace ID       : 58f5097cfd2e751349caa4ee1a1151d8
+    Parent ID      : 
+    ID             : 1dfa78bce5b77773
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.682658329 +0000 UTC
+    End time       : 2026-04-17 06:41:59.684682052 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SELECT CURRENT_USER)
+     -> db.system: Str(postgresql)
+     -> db.operation: Str(SELECT)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #5
+    Trace ID       : cdc41dac4592dcc2917cd03034ec72aa
+    Parent ID      : 
+    ID             : af2b75d9ae21daec
+    Name           : SELECT media_task.pg_roles
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.68536142 +0000 UTC
+    End time       : 2026-04-17 06:41:59.694141962 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SELECT rolname FROM pg_roles WHERE rolname ILIKE ?;)
+     -> db.system: Str(postgresql)
+     -> db.sql.table: Str(pg_roles)
+     -> db.operation: Str(SELECT)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #6
+    Trace ID       : abad58aeae159eb1d0a2da245fd2214d
+    Parent ID      : 
+    ID             : bbdfaf6e1165fc3d
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.694853168 +0000 UTC
+    End time       : 2026-04-17 06:41:59.696744753 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SELECT current_schema)
+     -> db.system: Str(postgresql)
+     -> db.operation: Str(SELECT)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #7
+    Trace ID       : 07a77c812aefbe160d544207f5b352a0
+    Parent ID      : 
+    ID             : 8d9aef00d49e949d
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.697261984 +0000 UTC
+    End time       : 2026-04-17 06:41:59.698782935 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SHOW search_path)
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #8
+    Trace ID       : 2297a76ad807140084320106be47fe12
+    Parent ID      : 
+    ID             : 0f75ddbb7dd6cb85
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.702548125 +0000 UTC
+    End time       : 2026-04-17 06:41:59.704222803 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SELECT current_schema)
+     -> db.system: Str(postgresql)
+     -> db.operation: Str(SELECT)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #9
+    Trace ID       : 0a6ba4ebf2ea3821734db00b1bd7e31a
+    Parent ID      : 
+    ID             : f9c416bb37b71f2d
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.704609912 +0000 UTC
+    End time       : 2026-04-17 06:41:59.705855065 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SHOW search_path)
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #10
+    Trace ID       : 03ec0ef4b924164853be9627844e7f76
+    Parent ID      : 
+    ID             : c3dc73a311878589
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.706324668 +0000 UTC
+    End time       : 2026-04-17 06:41:59.70758243 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(select current_catalog)
+     -> db.system: Str(postgresql)
+     -> db.operation: Str(SELECT)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #11
+    Trace ID       : 22ca528c2b723625f392841f6c599cec
+    Parent ID      : 
+    ID             : f34b998bc3ddbebc
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.70801335 +0000 UTC
+    End time       : 2026-04-17 06:41:59.708964844 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SELECT current_user)
+     -> db.system: Str(postgresql)
+     -> db.operation: Str(SELECT)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #12
+    Trace ID       : a993c9035752f6fb018ff92b8f4f3099
+    Parent ID      : 
+    ID             : 23413ff7a47a464c
+    Name           : SELECT media_task.pg_namespace
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.724940499 +0000 UTC
+    End time       : 2026-04-17 06:41:59.734482341 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SELECT COUNT(*) FROM pg_namespace WHERE nspname=?)
+     -> db.system: Str(postgresql)
+     -> db.sql.table: Str(pg_namespace)
+     -> db.operation: Str(SELECT)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #13
+    Trace ID       : 06b718c95e0b7d3cbc2ba3710f56add0
+    Parent ID      : 
+    ID             : 511fb639f17ce4b6
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.766744578 +0000 UTC
+    End time       : 2026-04-17 06:41:59.769925335 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SET ROLE ?)
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #14
+    Trace ID       : 8c74c98b717b1caf53d6e84fc89d9a01
+    Parent ID      : 
+    ID             : 5d20aaba66fb3fdb
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.770689833 +0000 UTC
+    End time       : 2026-04-17 06:41:59.775642668 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SELECT EXISTS ( SELECT ? FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace WHERE n.nspname = ? AND c.relname = ? AND c.relkind = ? ))
+     -> db.system: Str(postgresql)
+     -> db.operation: Str(SELECT)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #15
+    Trace ID       : 274b770eb9839e184cdbb16e16acc31f
+    Parent ID      : 
+    ID             : ec111ad078deb81a
+    Name           : SELECT "public"."flyway_schema_history"
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.781682956 +0000 UTC
+    End time       : 2026-04-17 06:41:59.788657856 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(/*NO LOAD BALANCE*/ SELECT "installed_rank","version","description","type","script","checksum","installed_on","installed_by","execution_time","success" FROM "public"."flyway_schema_history" WHERE "installed_rank" > ? ORDER BY "installed_rank")
+     -> db.system: Str(postgresql)
+     -> db.sql.table: Str("public"."flyway_schema_history")
+     -> db.operation: Str(SELECT)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #16
+    Trace ID       : d37565de6512cfb1f5f5ed79fc946971
+    Parent ID      : 
+    ID             : 0dcc44543b8dbf7e
+    Name           : SELECT media_task.pg_namespace
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.813103602 +0000 UTC
+    End time       : 2026-04-17 06:41:59.815364062 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SELECT COUNT(*) FROM pg_namespace WHERE nspname=?)
+     -> db.system: Str(postgresql)
+     -> db.sql.table: Str(pg_namespace)
+     -> db.operation: Str(SELECT)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #17
+    Trace ID       : de6a547841dbcee9afba006676bb83ba
+    Parent ID      : 
+    ID             : 35bd4d3b3c90b49e
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.817467261 +0000 UTC
+    End time       : 2026-04-17 06:41:59.818466347 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SET ROLE ?)
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #18
+    Trace ID       : 61cce522eb176847ade633d91cf150a0
+    Parent ID      : 
+    ID             : b13f217443196b1a
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.818758217 +0000 UTC
+    End time       : 2026-04-17 06:41:59.821718144 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SELECT EXISTS ( SELECT ? FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace WHERE n.nspname = ? AND c.relname = ? AND c.relkind = ? ))
+     -> db.system: Str(postgresql)
+     -> db.operation: Str(SELECT)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #19
+    Trace ID       : ce3ae6fe0758f36ec45c0abe47db0763
+    Parent ID      : 
+    ID             : 83fcf5de9d7c0477
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.824776 +0000 UTC
+    End time       : 2026-04-17 06:41:59.82678809 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SHOW search_path)
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #20
+    Trace ID       : e6cebc1c48919705df45fc3c278878b5
+    Parent ID      : 
+    ID             : fddeb5d091a122c3
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.827238972 +0000 UTC
+    End time       : 2026-04-17 06:41:59.829756442 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SELECT CURRENT_USER)
+     -> db.system: Str(postgresql)
+     -> db.operation: Str(SELECT)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #21
+    Trace ID       : f5f4db40c825db73fb2ba8e5c3d07adf
+    Parent ID      : 
+    ID             : 23403cedaf6f92b4
+    Name           : SELECT media_task.pg_roles
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.830237304 +0000 UTC
+    End time       : 2026-04-17 06:41:59.839207773 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SELECT rolname FROM pg_roles WHERE rolname ILIKE ?;)
+     -> db.system: Str(postgresql)
+     -> db.sql.table: Str(pg_roles)
+     -> db.operation: Str(SELECT)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #22
+    Trace ID       : 5f32c1a541094dd45669586f388f8334
+    Parent ID      : 
+    ID             : 31fb353487858803
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.843830918 +0000 UTC
+    End time       : 2026-04-17 06:41:59.845988159 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SET ROLE ?)
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #23
+    Trace ID       : 54d09dccf183be090dae0f0f27785fdf
+    Parent ID      : 
+    ID             : f79cc2545141c80f
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.852256508 +0000 UTC
+    End time       : 2026-04-17 06:41:59.85489092 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SELECT pg_try_advisory_xact_lock(?))
+     -> db.system: Str(postgresql)
+     -> db.operation: Str(SELECT)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #24
+    Trace ID       : ece24edcb837369681b0561aa4e25fb2
+    Parent ID      : 
+    ID             : 094dab87ad707a8d
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.855714978 +0000 UTC
+    End time       : 2026-04-17 06:41:59.856885218 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SET ROLE ?)
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #25
+    Trace ID       : 37194aa2c470b44b49aaf74e5b85fc85
+    Parent ID      : 
+    ID             : 435fc34e58f38570
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.857234748 +0000 UTC
+    End time       : 2026-04-17 06:41:59.859353311 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SELECT EXISTS ( SELECT ? FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace WHERE n.nspname = ? AND c.relname = ? AND c.relkind = ? ))
+     -> db.system: Str(postgresql)
+     -> db.operation: Str(SELECT)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #26
+    Trace ID       : e09e6238c20e4976759611cb87f485ce
+    Parent ID      : 
+    ID             : 97613c4a5f4e92f4
+    Name           : SELECT "public"."flyway_schema_history"
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.860202852 +0000 UTC
+    End time       : 2026-04-17 06:41:59.862034246 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(/*NO LOAD BALANCE*/ SELECT "installed_rank","version","description","type","script","checksum","installed_on","installed_by","execution_time","success" FROM "public"."flyway_schema_history" WHERE "installed_rank" > ? ORDER BY "installed_rank")
+     -> db.system: Str(postgresql)
+     -> db.sql.table: Str("public"."flyway_schema_history")
+     -> db.operation: Str(SELECT)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #27
+    Trace ID       : eb3522a6d57f1467266c05057b39adae
+    Parent ID      : 
+    ID             : 05238c1def3baa7f
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.870748996 +0000 UTC
+    End time       : 2026-04-17 06:41:59.872006015 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SET ROLE ?)
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #28
+    Trace ID       : 32640e4334cca7582e6780c94157b28d
+    Parent ID      : 
+    ID             : 764c54ff5991b247
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.875825462 +0000 UTC
+    End time       : 2026-04-17 06:41:59.878072773 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SELECT set_config(?, ?, false))
+     -> db.system: Str(postgresql)
+     -> db.operation: Str(SELECT)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #29
+    Trace ID       : cd30fc20a4743fdc0beb6fff150281bf
+    Parent ID      : 
+    ID             : 48e948d8215915cd
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.884893759 +0000 UTC
+    End time       : 2026-04-17 06:41:59.88703953 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SET ROLE ?)
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+Span #30
+    Trace ID       : 84ce6d7bf3553d9b8ef9534e71c1ec9c
+    Parent ID      : 
+    ID             : 44258d62ccc2e024
+    Name           : SELECT media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:41:59.887522872 +0000 UTC
+    End time       : 2026-04-17 06:41:59.889656694 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str(SELECT set_config(?, ?, false))
+     -> db.system: Str(postgresql)
+     -> db.operation: Str(SELECT)
+     -> thread.id: Int(1)
+     -> server.port: Int(5432)
+     -> thread.name: Str(main)
+     -> db.name: Str(media_task)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:42:29.114Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 3}
+2026-04-17T06:42:29.114Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: https://opentelemetry.io/schemas/1.37.0
+InstrumentationScope io.opentelemetry.tomcat-10.0 2.26.1-alpha
+Span #0
+    Trace ID       : 13f4c4b332097abfc9b236988ddfa0d8
+    Parent ID      : 
+    ID             : 4216daac489c1596
+    Name           : GET /auth/me
+    Kind           : Server
+    Start time     : 2026-04-17 06:42:27.433711601 +0000 UTC
+    End time       : 2026-04-17 06:42:27.581085761 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> client.address: Str(127.0.0.1)
+     -> network.peer.address: Str(127.0.0.1)
+     -> url.path: Str(/auth/me)
+     -> http.request.method: Str(GET)
+     -> http.route: Str(/auth/me)
+     -> network.peer.port: Int(43906)
+     -> user_agent.original: Str(curl/7.81.0)
+     -> network.protocol.version: Str(1.1)
+     -> http.response.status_code: Int(401)
+     -> thread.id: Int(73)
+     -> url.scheme: Str(http)
+     -> server.port: Int(8080)
+     -> thread.name: Str(http-nio-8080-exec-1)
+Span #1
+    Trace ID       : 5651cf516899f8fe600b4c1afc37e821
+    Parent ID      : 
+    ID             : 1f641220a90dd179
+    Name           : GET /api/media-tasks
+    Kind           : Server
+    Start time     : 2026-04-17 06:42:27.594415827 +0000 UTC
+    End time       : 2026-04-17 06:42:27.600132896 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> client.address: Str(127.0.0.1)
+     -> network.peer.address: Str(127.0.0.1)
+     -> url.path: Str(/api/media-tasks)
+     -> http.request.method: Str(GET)
+     -> http.route: Str(/api/media-tasks)
+     -> network.peer.port: Int(43910)
+     -> user_agent.original: Str(curl/7.81.0)
+     -> network.protocol.version: Str(1.1)
+     -> http.response.status_code: Int(401)
+     -> thread.id: Int(74)
+     -> url.scheme: Str(http)
+     -> server.port: Int(8080)
+     -> thread.name: Str(http-nio-8080-exec-2)
+Span #2
+    Trace ID       : 5271db29887caae18f7f498dc48e34d0
+    Parent ID      : 
+    ID             : 9b877d6f2c4d78a5
+    Name           : POST /auth/login
+    Kind           : Server
+    Start time     : 2026-04-17 06:42:27.612543264 +0000 UTC
+    End time       : 2026-04-17 06:42:27.712147146 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> client.address: Str(127.0.0.1)
+     -> network.peer.address: Str(127.0.0.1)
+     -> url.path: Str(/auth/login)
+     -> http.request.method: Str(POST)
+     -> http.route: Str(/auth/login)
+     -> network.peer.port: Int(43918)
+     -> user_agent.original: Str(curl/7.81.0)
+     -> network.protocol.version: Str(1.1)
+     -> http.response.status_code: Int(200)
+     -> thread.id: Int(75)
+     -> url.scheme: Str(http)
+     -> server.port: Int(8080)
+     -> thread.name: Str(http-nio-8080-exec-3)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:43:44.150Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 3}
+2026-04-17T06:43:44.150Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : 4d30dd95bfd08feb6c4a556568a318af
+    Parent ID      : 
+    ID             : dd55d713a040eabb
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:43:41.959936436 +0000 UTC
+    End time       : 2026-04-17 06:43:41.962597384 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+Span #1
+    Trace ID       : 5e18e39c5cbcf861829d1911400550e0
+    Parent ID      : 
+    ID             : 58b7521ca29193a5
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:43:43.198602336 +0000 UTC
+    End time       : 2026-04-17 06:43:43.200694551 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+Span #2
+    Trace ID       : e341652cbbdebd30a8fdb1b1cb4bc85f
+    Parent ID      : 
+    ID             : 2d00f7ce7273b4f8
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:43:43.370217495 +0000 UTC
+    End time       : 2026-04-17 06:43:43.372543944 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:43:49.177Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 5}
+2026-04-17T06:43:49.177Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : 7868a1701217e3f63e467e3c2e597eb8
+    Parent ID      : 
+    ID             : c2906a483303f666
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:43:45.477720985 +0000 UTC
+    End time       : 2026-04-17 06:43:45.480163187 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+Span #1
+    Trace ID       : 3d861fbdd03c5ce62d857d2645a85f13
+    Parent ID      : 
+    ID             : fa3ccd80e13cdbf8
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:43:46.236694222 +0000 UTC
+    End time       : 2026-04-17 06:43:46.239478963 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+Span #2
+    Trace ID       : 7245813565402c12a028bf47af8de058
+    Parent ID      : 
+    ID             : 5efc338cae943900
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:43:46.54770038 +0000 UTC
+    End time       : 2026-04-17 06:43:46.550166479 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+Span #3
+    Trace ID       : 545a52564e8b5a8d2a69c7cb12990dd5
+    Parent ID      : 
+    ID             : 9cca7a9d4272db1a
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:43:47.053159084 +0000 UTC
+    End time       : 2026-04-17 06:43:47.055005897 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+Span #4
+    Trace ID       : a57bf567619bfc2fdebd419568ebae21
+    Parent ID      : 
+    ID             : 6302c9bc24277a03
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:43:47.063571692 +0000 UTC
+    End time       : 2026-04-17 06:43:47.065692514 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:43:54.209Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-04-17T06:43:54.209Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : 50b67f8651e16f135dd19c5c815ba96e
+    Parent ID      : 
+    ID             : 4727643da5cf1be5
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:43:51.836236657 +0000 UTC
+    End time       : 2026-04-17 06:43:51.838465369 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:44:04.264Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-04-17T06:44:04.265Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : 000fc507b540452c70546be5e2b1e42d
+    Parent ID      : 
+    ID             : 431c1bc6b42f7e44
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:43:59.252779929 +0000 UTC
+    End time       : 2026-04-17 06:43:59.25500753 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:45:24.089Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-04-17T06:45:24.090Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : 595348493d80c9a08c1d1cbe51e9924b
+    Parent ID      : 
+    ID             : 9780e75fdf9ce190
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:45:23.988624487 +0000 UTC
+    End time       : 2026-04-17 06:45:23.991369186 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:45:29.121Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 2}
+2026-04-17T06:45:29.122Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : a88cf02e460f3c06bf940a0aa6a92477
+    Parent ID      : 
+    ID             : 7f4e6b2704503800
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:45:26.749641755 +0000 UTC
+    End time       : 2026-04-17 06:45:26.751603029 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+Span #1
+    Trace ID       : edf3ad08a4d8a29357941461a34dc9f2
+    Parent ID      : 
+    ID             : 750ead2ab0397996
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:45:26.868570695 +0000 UTC
+    End time       : 2026-04-17 06:45:26.871041498 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:45:34.151Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 4}
+2026-04-17T06:45:34.152Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : 722323fa8a59e9d59038c73778a1e52f
+    Parent ID      : 
+    ID             : 8dbc179216bb826c
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:45:30.965333759 +0000 UTC
+    End time       : 2026-04-17 06:45:30.96794757 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+Span #1
+    Trace ID       : 146c3c36b1d68d93c7e7a218acc51cce
+    Parent ID      : 
+    ID             : 6f800008dcc6c656
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:45:32.956488424 +0000 UTC
+    End time       : 2026-04-17 06:45:32.959415312 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+Span #2
+    Trace ID       : b1adf5011381e734a914386fbfb58f0c
+    Parent ID      : 
+    ID             : ea7510f30f1de205
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:45:33.34018245 +0000 UTC
+    End time       : 2026-04-17 06:45:33.342831445 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+Span #3
+    Trace ID       : 89826ce3a70d1149b142a5c4fae49e21
+    Parent ID      : 
+    ID             : 6785f62d253dd4f8
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:45:34.062905775 +0000 UTC
+    End time       : 2026-04-17 06:45:34.064819238 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:45:39.179Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-04-17T06:45:39.179Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : 6b8bb9380e69cafa647851420af39d6e
+    Parent ID      : 
+    ID             : d668de3980687b05
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:45:34.312677146 +0000 UTC
+    End time       : 2026-04-17 06:45:34.314665068 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:45:44.213Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-04-17T06:45:44.213Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : e1ee3721d55c1dc6e5c05e974ac060f6
+    Parent ID      : 
+    ID             : 15a11852a9996fd4
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:45:43.975288874 +0000 UTC
+    End time       : 2026-04-17 06:45:43.97760571 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:45:59.304Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-04-17T06:45:59.304Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : 175335fd971c37b118fe5726cc46e6a1
+    Parent ID      : 
+    ID             : 513f1bbae3934572
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:45:58.411520041 +0000 UTC
+    End time       : 2026-04-17 06:45:58.412538912 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:47:09.132Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-04-17T06:47:09.132Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : 6a14c1c1e87ecd5ea5c37ae565f80fe1
+    Parent ID      : 
+    ID             : 3a2bfb649cd3de95
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:47:06.017210675 +0000 UTC
+    End time       : 2026-04-17 06:47:06.019255303 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:47:14.168Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 2}
+2026-04-17T06:47:14.168Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : 4cf52dc2f147665bc8a8cc9c54d8d870
+    Parent ID      : 
+    ID             : 02337c20bde786f8
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:47:10.300336364 +0000 UTC
+    End time       : 2026-04-17 06:47:10.301731263 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+Span #1
+    Trace ID       : 19662f414da9309d6bb312bddf4f7a0d
+    Parent ID      : 
+    ID             : dcfa3a466e59f717
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:47:10.366763192 +0000 UTC
+    End time       : 2026-04-17 06:47:10.368144398 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:47:19.195Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-04-17T06:47:19.195Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : a8f39205f49afd370c3eb5788584d782
+    Parent ID      : 
+    ID             : 04a426781b3344e9
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:47:16.452723401 +0000 UTC
+    End time       : 2026-04-17 06:47:16.454172415 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:47:24.230Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 4}
+2026-04-17T06:47:24.231Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : 1efc062adbc21383c120578d7151bf61
+    Parent ID      : 
+    ID             : 954cdb1013598a1d
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:47:19.676181923 +0000 UTC
+    End time       : 2026-04-17 06:47:19.677762911 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+Span #1
+    Trace ID       : 5a0185d5634d5f5cabccb19a8ed2b2c0
+    Parent ID      : 
+    ID             : 6cd6ceeb73ee2bb5
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:47:20.132588938 +0000 UTC
+    End time       : 2026-04-17 06:47:20.134014655 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+Span #2
+    Trace ID       : 0025ce708b3cf407b8b32ec06a1a54e0
+    Parent ID      : 
+    ID             : 24ddbb7d2b6ec15a
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:47:21.072550255 +0000 UTC
+    End time       : 2026-04-17 06:47:21.07429881 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+Span #3
+    Trace ID       : 124bf06851cc42e3f9988c25a6633b26
+    Parent ID      : 
+    ID             : bf3d4ad77f70e637
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:47:21.561429094 +0000 UTC
+    End time       : 2026-04-17 06:47:21.562953317 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:47:39.310Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-04-17T06:47:39.310Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : 8df1af1815848e4ec3dac056d4eaa98c
+    Parent ID      : 
+    ID             : b211f54fb4f348b4
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:47:36.114327628 +0000 UTC
+    End time       : 2026-04-17 06:47:36.115737279 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:47:59.218Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-04-17T06:47:59.218Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : c38490c6833f388c8d753fb05048eb31
+    Parent ID      : 
+    ID             : 095e925b03c89375
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:47:57.569336393 +0000 UTC
+    End time       : 2026-04-17 06:47:57.570902124 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:48:49.259Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-04-17T06:48:49.259Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : 512551afa073b2fa6472f93e91243ab2
+    Parent ID      : 
+    ID             : 461fe02a01b40938
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:48:48.045316595 +0000 UTC
+    End time       : 2026-04-17 06:48:48.048025319 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:48:54.289Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 2}
+2026-04-17T06:48:54.289Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : 2241a78a113bc6a3a781cea98de20bde
+    Parent ID      : 
+    ID             : 54238166a257bee9
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:48:53.85050312 +0000 UTC
+    End time       : 2026-04-17 06:48:53.852129985 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+Span #1
+    Trace ID       : a2b8c73c5119338a2d4ae80c605f9db6
+    Parent ID      : 
+    ID             : 135fac80b8556aff
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:48:53.864242728 +0000 UTC
+    End time       : 2026-04-17 06:48:53.866623331 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:49:04.339Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-04-17T06:49:04.339Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : 2f8e9fb810d86bce1fa7c48c186652dc
+    Parent ID      : 
+    ID             : 42327f630fee3f29
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:49:01.939148839 +0000 UTC
+    End time       : 2026-04-17 06:49:01.9414469 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:49:09.365Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 4}
+2026-04-17T06:49:09.365Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : 2db02d3613e44044273b1854ddb8966f
+    Parent ID      : 
+    ID             : f952e1379f2cc235
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:49:06.394455252 +0000 UTC
+    End time       : 2026-04-17 06:49:06.396031562 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+Span #1
+    Trace ID       : e92617b45665b33a28a21905652088a4
+    Parent ID      : 
+    ID             : c78e92a76edc6a86
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:49:06.923875601 +0000 UTC
+    End time       : 2026-04-17 06:49:06.925943243 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+Span #2
+    Trace ID       : f527699fc67fffe4f3f42c3c45e99cc8
+    Parent ID      : 
+    ID             : a0cc5ad673df3232
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:49:08.082285705 +0000 UTC
+    End time       : 2026-04-17 06:49:08.086354098 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+Span #3
+    Trace ID       : 517c2540d2972d18fc53d33d24f19911
+    Parent ID      : 
+    ID             : 98726da4fbc61f79
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:49:08.809975109 +0000 UTC
+    End time       : 2026-04-17 06:49:08.81255352 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:49:29.266Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-04-17T06:49:29.266Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : 0604e4fd92e328a875e382be3d175fc8
+    Parent ID      : 
+    ID             : 36d3e12a6763064d
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:49:28.252399932 +0000 UTC
+    End time       : 2026-04-17 06:49:28.25449158 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}
+2026-04-17T06:49:59.247Z	info	Traces	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces", "resource spans": 1, "spans": 1}
+2026-04-17T06:49:59.247Z	info	ResourceSpans #0
+Resource SchemaURL: https://opentelemetry.io/schemas/1.24.0
+Resource attributes:
+     -> host.arch: Str(amd64)
+     -> host.name: Str(aurora-Super-Server)
+     -> os.description: Str(Linux 6.8.0-107-generic)
+     -> os.type: Str(linux)
+     -> os.version: Str(6.8.0-107-generic)
+     -> process.command_args: Slice(["/usr/lib/jvm/java-21-openjdk-amd64/bin/java","-javaagent:/home/GRT/work/media-task-platform-java/tools/otel/opentelemetry-javaagent.jar","-jar","target/media-task-platform-java-0.0.1-SNAPSHOT.jar"])
+     -> process.executable.path: Str(/usr/lib/jvm/java-21-openjdk-amd64/bin/java)
+     -> process.pid: Int(2223875)
+     -> process.runtime.description: Str(Ubuntu OpenJDK 64-Bit Server VM 21.0.10+7-Ubuntu-122.04)
+     -> process.runtime.name: Str(OpenJDK Runtime Environment)
+     -> process.runtime.version: Str(21.0.10+7-Ubuntu-122.04)
+     -> service.instance.id: Str(61e7180f-a9bb-41b0-8fc0-b975dfa794a8)
+     -> service.name: Str(media-task-platform-java)
+     -> service.version: Str(0.0.1-SNAPSHOT)
+     -> telemetry.distro.name: Str(opentelemetry-java-instrumentation)
+     -> telemetry.distro.version: Str(2.26.1)
+     -> telemetry.sdk.language: Str(java)
+     -> telemetry.sdk.name: Str(opentelemetry)
+     -> telemetry.sdk.version: Str(1.60.1)
+ScopeSpans #0
+ScopeSpans SchemaURL: 
+InstrumentationScope io.opentelemetry.jdbc 2.26.1-alpha
+Span #0
+    Trace ID       : feb773446bcbba864ecd16c9eb8a0911
+    Parent ID      : 
+    ID             : 49c740349a9513a0
+    Name           : media_task
+    Kind           : Client
+    Start time     : 2026-04-17 06:49:56.727784382 +0000 UTC
+    End time       : 2026-04-17 06:49:56.730228187 +0000 UTC
+    Status code    : Unset
+    Status message : 
+Attributes:
+     -> server.address: Str(127.0.0.1)
+     -> db.connection_string: Str(postgresql://127.0.0.1:5432)
+     -> db.user: Str(media)
+     -> db.statement: Str()
+     -> db.system: Str(postgresql)
+     -> thread.id: Int(71)
+     -> server.port: Int(5432)
+     -> thread.name: Str(HikariPool-1:housekeeper)
+     -> db.name: Str(media_task)
+	{"resource": {}, "otelcol.component.id": "debug", "otelcol.component.kind": "exporter", "otelcol.signal": "traces"}

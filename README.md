@@ -16,17 +16,24 @@
 - 已起通 OpenTelemetry Collector 最小链路
 - 已通过 Collector health check 验证 `13133` 可访问
 - 已通过 Collector debug exporter 看到来自 `media-task-platform-java` 的 traces
-- 已形成 Cloud Week06 的 first trace evidence 日志：
+- 已形成 Cloud Week06 的第一份 trace evidence 日志：
   - `artifacts/logs/week06_otel_collector_trace_001.log`
+- 已形成 Cloud Week06 的第二份可复现 trace evidence 日志：
+  - `artifacts/logs/week06_otel_collector_trace_002.log`
+- 第二份证据已覆盖以下 HTTP spans：
+  - `GET /actuator/health` -> `200`
+  - `GET /health` -> `200`
+  - `GET /auth/me` -> `401`
+  - `GET /api/media-tasks` -> `401`
 
-一句话说，当前 Cloud 仓库已经从“本地环境地基”推进到“OTel Collector + Java agent 最小 trace 证据”阶段，Week06 的 Cloud 主线已经真正落地。
+一句话说，当前 Cloud 仓库已经从“Collector first trace evidence”推进到“Java agent -> OTLP -> Collector -> debug exporter 的第二次本地可复现证据”阶段。
 
 ## Not Yet Verified
 
 以下内容仍未进入“已验证”范围，当前不能写满：
 
 - Tempo / Grafana 的可视化 trace 闭环
-- Java agent + Collector 的更稳定、可重复、多轮验证说明
+- Java agent + Collector 的更多轮、长期稳定性验证说明
 - K8s 下的 OTel Collector 部署
 - 更完整的 Prometheus / Grafana / tracing 一体化基线
 - CI/CD、回滚、告警、SLO 等后续平台化闭环
@@ -37,10 +44,13 @@
 
 下一阶段目标：
 
-1. 把当前 OTel baseline 从 debug exporter 推进到更稳定的 trace 展示或 richer backend
-2. 把 Java 服务接入 Collector 的复现路径写实、写稳，补更清晰的 runbook 与日志证据
-3. 视情况补 `k8s/base/otel-collector` 的最小部署入口
-4. 同步 README / runbook / 日志证据，避免代码推进快于仓库叙事
+1. Week06 收口：README / runbook / trace evidence 同步
+   - 确保 README、`docs/runbooks/otel-pipeline.md`、`week06_otel_collector_trace_001.log`、`week06_otel_collector_trace_002.log` 一致
+   - 把当前第二次本地可复现 trace 证据固定成可引用资产
+
+2. 随后：把当前 debug exporter 基线推进到 richer backend 或更强展示
+   - 视情况接 Tempo 或等价后端
+   - 再补 K8s 下的 collector 入口与更完整的多轮验证说明
 
 ## Tech Stack
 

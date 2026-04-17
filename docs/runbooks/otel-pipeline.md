@@ -34,7 +34,7 @@ Current scope is intentionally minimal:
       -p 4318:4318 \
       -p 13133:13133 \
       -v "$(pwd)/observability/otel/otelcol-config.yaml:/etc/otelcol/config.yaml:ro" \
-      otel/opentelemetry-collector:latest \
+      otel/opentelemetry-collector:0.150.0 \
       --config=/etc/otelcol/config.yaml
 
 ## Verify Collector Health
@@ -51,10 +51,33 @@ Current scope is intentionally minimal:
 
     mkdir -p artifacts/logs
 
-    docker logs week06-otelcol > artifacts/logs/week06_otel_collector_smoke.log 2>&1
+    docker logs week06-otelcol > artifacts/logs/week06_otel_collector_trace_001.log 2>&1
+
+For a second reproducible check after Java is started with the OTel agent:
+
+    curl -sS http://127.0.0.1:8080/actuator/health
+    curl -sS http://127.0.0.1:8080/health
+    curl -i http://127.0.0.1:8080/auth/me || true
+    curl -i http://127.0.0.1:8080/api/media-tasks || true
+
+    docker logs week06-otelcol > artifacts/logs/week06_otel_collector_trace_002.log 2>&1
+
+## Reproducible Local Evidence
+
+Current reproducible local evidence includes:
+
+- `artifacts/logs/week06_otel_collector_trace_001.log`
+- `artifacts/logs/week06_otel_collector_trace_002.log`
+
+The second trace evidence should show at least these HTTP spans from `media-task-platform-java`:
+
+- `GET /actuator/health` -> `200`
+- `GET /health` -> `200`
+- `GET /auth/me` -> `401`
+- `GET /api/media-tasks` -> `401`
 
 ## Next Step
 
-- Add a captured smoke log under `artifacts/logs/`
-- Wire Java zero-code agent against this collector
-- Only after first trace evidence is stable, consider Tempo or another richer backend
+- Keep the current Java agent -> OTLP -> Collector -> debug exporter path as the stable Week06 baseline
+- If needed, add a richer backend such as Tempo only after the current reproducible trace path is documented and stable
+- Later extend the runbook with K8s collector deployment and a stronger multi-round validation procedure
