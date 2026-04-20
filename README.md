@@ -8,49 +8,42 @@
 
 当前仓库已完成并留有证据的范围如下：
 
-- 已完成 `scripts/bootstrap_dev_env.sh`，可检查 Docker、Compose、kind、kubectl 等本地开发依赖
-- 已建立 `infra/terraform/` 基础目录与说明
-- 已建立 `k8s/base/` 基础目录与最小资源清单
-- 已补 `observability/otel/otelcol-config.yaml`
-- 已补 `docs/runbooks/otel-pipeline.md`
-- 已起通 OpenTelemetry Collector 最小链路
-- 已通过 Collector health check 验证 `13133` 可访问
-- 已通过 Collector debug exporter 看到来自 `media-task-platform-java` 的 traces
-- 已形成 Cloud Week06 的第一份 trace evidence 日志：
-  - `artifacts/logs/week06_otel_collector_trace_001.log`
-- 已形成 Cloud Week06 的第二份可复现 trace evidence 日志：
-  - `artifacts/logs/week06_otel_collector_trace_002.log`
-- 第二份证据已覆盖以下 HTTP spans：
-  - `GET /actuator/health` -> `200`
-  - `GET /health` -> `200`
-  - `GET /auth/me` -> `401`
-  - `GET /api/media-tasks` -> `401`
+- 已完成 OpenTelemetry Collector 最小链路接入
+- 已保留两轮本地 trace evidence 日志
+- 已补 OTel pipeline runbook
+- 已完成 Week06 的 OTel 第二次本地可复现证据收口
+- 已新增 `.github/workflows/ci.yml`，建立最小 GitHub Actions CI 入口
+- 已新增 `scripts/ci_validate.sh`，用于仓库结构校验、Compose 配置校验与 K8s client dry-run
+- 已新增 `docs/runbooks/ci-cd-minimum.md`，说明当前最小 CI/CD 骨架范围
 
-一句话说，当前 Cloud 仓库已经从“Collector first trace evidence”推进到“Java agent -> OTLP -> Collector -> debug exporter 的第二次本地可复现证据”阶段。
+一句话说，当前仓库已经从“OTel 本地可复现”推进到“OTel 证据 + 最小 CI 骨架”阶段；Week07 的 Cloud 主线已经不再只是观测实验，而是开始具备交付入口。
 
 ## Not Yet Verified
 
 以下内容仍未进入“已验证”范围，当前不能写满：
 
-- Tempo / Grafana 的可视化 trace 闭环
-- Java agent + Collector 的更多轮、长期稳定性验证说明
-- K8s 下的 OTel Collector 部署
-- 更完整的 Prometheus / Grafana / tracing 一体化基线
-- CI/CD、回滚、告警、SLO 等后续平台化闭环
+- 真实 image build / push
+- Terraform init / validate / plan
+- 真实集群部署、rollout 与 rollback
+- 更系统的 alerts / SLO / release policy
+- 更完整的 CI/CD 发布闭环
 
 这些方向已经进入路线规划，但截至当前仓库状态，还不应写成“已完成”。
 
 ## Next Hard Milestone
 
-下一阶段目标：
+接下来的硬里程碑按顺序是：
 
-1. Week06 收口：README / runbook / trace evidence 同步
-   - 确保 README、`docs/runbooks/otel-pipeline.md`、`week06_otel_collector_trace_001.log`、`week06_otel_collector_trace_002.log` 一致
-   - 把当前第二次本地可复现 trace 证据固定成可引用资产
-
-2. 随后：把当前 debug exporter 基线推进到 richer backend 或更强展示
-   - 视情况接 Tempo 或等价后端
-   - 再补 K8s 下的 collector 入口与更完整的多轮验证说明
+1. Week07：最小 CI 骨架落盘
+   - 固定 `.github/workflows/ci.yml`
+   - 固定 `scripts/ci_validate.sh`
+   - 固定 `docs/runbooks/ci-cd-minimum.md`
+2. Week07：补更严格的本地验证链
+   - 继续完善 Compose config / K8s dry-run / repo validation
+   - 为后续 image build、Terraform 与部署流水线预留入口
+3. W8 阶段验收预热
+   - 同步 README / workflow / runbook / 日志证据
+   - 为后续 Terraform、K8s 发布与 SLO 草案做衔接
 
 ## Tech Stack
 
