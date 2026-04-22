@@ -15,8 +15,9 @@
 - 已新增 `.github/workflows/ci.yml`，建立最小 GitHub Actions CI 入口
 - 已新增 `scripts/ci_validate.sh`，用于仓库结构校验、Compose 配置校验与 K8s client dry-run
 - 已新增 `docs/runbooks/ci-cd-minimum.md`，说明当前最小 CI/CD 骨架范围
+- 已完成 1 次本地最小验证链复验：`scripts/ci_validate.sh` 通过，`docker compose -f docker-compose.observability.yml config` 通过，`kubectl apply --dry-run=client -f k8s/base` 通过
 
-一句话说，当前仓库已经从“OTel 本地可复现”推进到“OTel 证据 + 最小 CI 骨架”阶段；Week07 的 Cloud 主线已经不再只是观测实验，而是开始具备交付入口。
+一句话说，当前仓库已经从“OTel 本地可复现”推进到“OTel 证据 + 最小 CI 骨架 + 本地验证链已复验”阶段；Week07 的 Cloud 主线已经不再只是观测实验，而是已经具备可引用的交付入口证据。
 
 ## Not Yet Verified
 
