@@ -1,0 +1,59 @@
+name: ai-job-platform-cloud
+services:
+  grafana:
+    container_name: cloud-observability-grafana
+    depends_on:
+      prometheus:
+        condition: service_started
+        required: true
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin
+      GF_SECURITY_ADMIN_USER: admin
+    image: grafana/grafana:latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 3000
+        published: "3001"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /home/GRT/work/ai-job-platform-cloud/observability/grafana/provisioning/datasources
+        target: /etc/grafana/provisioning/datasources
+        read_only: true
+        bind: {}
+      - type: bind
+        source: /home/GRT/work/ai-job-platform-cloud/observability/grafana/provisioning/dashboards
+        target: /etc/grafana/provisioning/dashboards
+        read_only: true
+        bind: {}
+      - type: bind
+        source: /home/GRT/work/ai-job-platform-cloud/observability/grafana/dashboards
+        target: /var/lib/grafana/dashboards
+        read_only: true
+        bind: {}
+  prometheus:
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+      - --web.enable-lifecycle
+    container_name: cloud-observability-prometheus
+    extra_hosts:
+      - host.docker.internal=host-gateway
+    image: prom/prometheus:latest
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 9090
+        published: "9091"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: /home/GRT/work/ai-job-platform-cloud/observability/prometheus/prometheus.yml
+        target: /etc/prometheus/prometheus.yml
+        read_only: true
+        bind: {}
+networks:
+  default:
+    name: ai-job-platform-cloud_default

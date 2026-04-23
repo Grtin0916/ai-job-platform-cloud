@@ -1,0 +1,6 @@
+[1/5] required files
+[2/5] required directories
+[3/5] shell syntax
+[4/5] docker compose config
+[5/5] kubectl dry-run
+ci_validate.sh passed

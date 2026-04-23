@@ -15,9 +15,10 @@
 - 已新增 `.github/workflows/ci.yml`，建立最小 GitHub Actions CI 入口
 - 已新增 `scripts/ci_validate.sh`，用于仓库结构校验、Compose 配置校验与 K8s client dry-run
 - 已新增 `docs/runbooks/ci-cd-minimum.md`，说明当前最小 CI/CD 骨架范围
-- 已完成 1 次本地最小验证链复验：`scripts/ci_validate.sh` 通过，`docker compose -f docker-compose.observability.yml config` 通过，`kubectl apply --dry-run=client -f k8s/base` 通过
+- 已完成至少 2 次本地最小验证链复验：`scripts/ci_validate.sh` 通过，`docker compose -f docker-compose.observability.yml config` 通过，`kubectl apply --dry-run=client -f k8s/base` 通过
+- 已保留 Week07 rerun 日志：`week07_ci_validate_local_rerun.log`、`week07_compose_config_rerun.log`、`week07_k8s_dry_run_rerun.log`
 
-一句话说，当前仓库已经从“OTel 本地可复现”推进到“OTel 证据 + 最小 CI 骨架 + 本地验证链已复验”阶段；Week07 的 Cloud 主线已经不再只是观测实验，而是已经具备可引用的交付入口证据。
+一句话说，当前仓库已经从“OTel 本地可复现”推进到“OTel 证据 + 最小 CI 骨架 + 本地验证链已再次复验”阶段；Week07 的 Cloud 主线已经不再只是观测实验，而是已经具备可引用的交付入口证据。
 
 ## Not Yet Verified
 
@@ -35,16 +36,19 @@
 
 接下来的硬里程碑按顺序是：
 
-1. Week07：最小 CI 骨架落盘
+1. Week07：收口最小 CI 骨架证据与 README / runbook / weekly / 日志入口
    - 固定 `.github/workflows/ci.yml`
    - 固定 `scripts/ci_validate.sh`
    - 固定 `docs/runbooks/ci-cd-minimum.md`
-2. Week07：补更严格的本地验证链
-   - 继续完善 Compose config / K8s dry-run / repo validation
+   - 固定 rerun 日志与 `docs/weekly/2026-04-23_week07_day04_cloud.md`
+
+2. W8 预热：明确 Terraform 布局与更真实的交付对象边界
    - 为后续 image build、Terraform 与部署流水线预留入口
-3. W8 阶段验收预热
+   - 为后续 K8s 发布与 SLO 草案做衔接
+
+3. S1 阶段验收预热
    - 同步 README / workflow / runbook / 日志证据
-   - 为后续 Terraform、K8s 发布与 SLO 草案做衔接
+   - 为 W8 阶段验收准备可直接引用的 Cloud 证据链
 
 ## Tech Stack
 

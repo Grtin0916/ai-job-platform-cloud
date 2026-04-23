@@ -1,0 +1,3 @@
+deployment.apps/gateway configured (dry run)
+service/gateway configured (dry run)
+namespace/dev-platform configured (dry run)
