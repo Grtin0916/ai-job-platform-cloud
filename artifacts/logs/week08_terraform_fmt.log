@@ -1,0 +1,13 @@
+Command: terraform fmt -recursive -check ../..
+Working directory: infra/terraform/envs/dev
+Terraform version:
+Terraform v1.14.8
+on linux_amd64
+
+Your version of Terraform is out of date! The latest version
+is 1.14.9. You can update by downloading from https://developer.hashicorp.com/terraform/install
+
+Result:
+
+Exit code: 0
+terraform fmt check passed; no formatting changes required.

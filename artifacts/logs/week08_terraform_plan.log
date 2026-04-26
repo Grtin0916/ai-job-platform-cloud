@@ -1,0 +1,31 @@
+Command: terraform plan -input=false
+Working directory: infra/terraform/envs/dev
+Terraform version:
+Terraform v1.14.8
+on linux_amd64
+
+Your version of Terraform is out of date! The latest version
+is 1.14.9. You can update by downloading from https://developer.hashicorp.com/terraform/install
+
+
+Changes to Outputs:
+  [32m+[0m[0m env_summary = {
+      [32m+[0m[0m environment = "dev"
+      [32m+[0m[0m labels      = {
+          [32m+[0m[0m environment = "dev"
+          [32m+[0m[0m managed_by  = "terraform"
+          [32m+[0m[0m module      = "local_placeholder"
+          [32m+[0m[0m project     = "ai-job-platform-cloud"
+          [32m+[0m[0m stage       = "week08"
+        }
+      [32m+[0m[0m module      = "local_placeholder"
+      [32m+[0m[0m project     = "ai-job-platform-cloud"
+    }
+
+You can apply this plan to save these new output values to the Terraform
+state, without changing any real infrastructure.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.

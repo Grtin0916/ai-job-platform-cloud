@@ -10,45 +10,52 @@
 
 - 已完成 OpenTelemetry Collector 最小链路接入
 - 已保留两轮本地 trace evidence 日志
-- 已补 OTel pipeline runbook
-- 已完成 Week06 的 OTel 第二次本地可复现证据收口
-- 已新增 `.github/workflows/ci.yml`，建立最小 GitHub Actions CI 入口
-- 已新增 `scripts/ci_validate.sh`，用于仓库结构校验、Compose 配置校验与 K8s client dry-run
-- 已新增 `docs/runbooks/ci-cd-minimum.md`，说明当前最小 CI/CD 骨架范围
+- 已完成 `docs/runbooks/otel-pipeline.md` 与 `docs/runbooks/local-observability.md`
+- 已完成 Week07 最小 CI/CD 骨架：`.github/workflows/ci.yml`、`scripts/ci_validate.sh`、`docs/runbooks/ci-cd-minimum.md`
 - 已完成至少 2 次本地最小验证链复验：`scripts/ci_validate.sh` 通过，`docker compose -f docker-compose.observability.yml config` 通过，`kubectl apply --dry-run=client -f k8s/base` 通过
 - 已保留 Week07 rerun 日志：`week07_ci_validate_local_rerun.log`、`week07_compose_config_rerun.log`、`week07_k8s_dry_run_rerun.log`
+- 已完成 Week08 Terraform layout ADR：`docs/adr/0001-terraform-layout.md`
+- 已完成 Week08 Terraform root/child module 最小骨架：`infra/terraform/envs/dev/main.tf` 调用 `infra/terraform/modules/local_placeholder`
+- 已完成 Week08 Terraform 本地结构验证：`terraform fmt -recursive -check`、`terraform init -backend=false`、`terraform validate`、`terraform plan -input=false`
+- 已保留 Week08 Terraform 证据日志：`artifacts/logs/week08_terraform_fmt.log`、`artifacts/logs/week08_terraform_init_validate.log`、`artifacts/logs/week08_terraform_plan.log`
 
-一句话说，当前仓库已经从“OTel 本地可复现”推进到“OTel 证据 + 最小 CI 骨架 + 本地验证链已再次复验”阶段；Week07 的 Cloud 主线已经不再只是观测实验，而是已经具备可引用的交付入口证据。
+一句话说，当前 Cloud 仓库已经从 Week07 的 CI skeleton / local validation 阶段，推进到 Week08 的 Terraform layout、root/child module 语义与本地-only Terraform validation 阶段。
+
+* * *
 
 ## Not Yet Verified
 
-以下内容仍未进入“已验证”范围，当前不能写满：
+以下内容尚未验证，不能写成已完成：
 
-- 真实 image build / push
-- Terraform init / validate / plan
-- 真实集群部署、rollout 与 rollback
-- 更系统的 alerts / SLO / release policy
-- 更完整的 CI/CD 发布闭环
+- 真实 cloud provider 接入
+- remote backend / remote state
+- Terraform apply
+- 真实云资源创建、变更或销毁
+- image build / push
+- 真实集群部署
+- rollout / rollback
+- 生产级 SLO / alerting policy
+- Terraform plan against real cloud infrastructure
+- secrets / credentials 管理流程
 
-这些方向已经进入路线规划，但截至当前仓库状态，还不应写成“已完成”。
+当前 `terraform plan` 只验证了 local placeholder module 的 output 变化，不代表真实基础设施部署完成。
+
+* * *
 
 ## Next Hard Milestone
 
 接下来的硬里程碑按顺序是：
 
-1. Week07：收口最小 CI 骨架证据与 README / runbook / weekly / 日志入口
-   - 固定 `.github/workflows/ci.yml`
-   - 固定 `scripts/ci_validate.sh`
-   - 固定 `docs/runbooks/ci-cd-minimum.md`
-   - 固定 rerun 日志与 `docs/weekly/2026-04-23_week07_day04_cloud.md`
+1. Week08：收口 Terraform local validation
+   - 将 Terraform layout ADR、runbook、root/child module 与 evidence logs 固定为可复查证据
+   - 将 `scripts/ci_validate.sh` 扩展为可选 Terraform validation 入口
+   - 明确当前只完成 local-only validation，不接真实云账号
 
-2. W8 预热：明确 Terraform 布局与更真实的交付对象边界
-   - 为后续 image build、Terraform 与部署流水线预留入口
-   - 为后续 K8s 发布与 SLO 草案做衔接
+2. Week08：为后续真实交付对象预热
+   - 明确 provider / backend / state 的引入条件
+   - 设计 image build 与 Terraform plan 的 CI 边界
+   - 保持 Kubernetes base、observability 与 Terraform 三条线的职责分离
 
-3. S1 阶段验收预热
-   - 同步 README / workflow / runbook / 日志证据
-   - 为 W8 阶段验收准备可直接引用的 Cloud 证据链
 
 ## Tech Stack
 

@@ -1,0 +1,24 @@
+Command: terraform init -backend=false -input=false && terraform validate
+Working directory: infra/terraform/envs/dev
+Terraform version:
+Terraform v1.14.8
+on linux_amd64
+
+Your version of Terraform is out of date! The latest version
+is 1.14.9. You can update by downloading from https://developer.hashicorp.com/terraform/install
+
+[0m[1mInitializing modules...[0m
+- local_placeholder in ../../modules/local_placeholder
+[0m[1mInitializing provider plugins...[0m
+
+[0m[1m[32mTerraform has been successfully initialized![0m[32m[0m
+[0m[32m
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.[0m
+[32m[1mSuccess![0m The configuration is valid.
+[0m

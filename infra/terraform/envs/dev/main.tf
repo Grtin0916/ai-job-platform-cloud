@@ -2,19 +2,27 @@ terraform {
   required_version = ">= 1.6.0"
 }
 
-# Week04 / Week05 过渡期的最小入口文件
-# 当前阶段不接真实云账号，不创建真实资源。
-# 目标只是让 envs/dev 具备一个明确的 Terraform root module 入口，
-# 后续可以自然接 provider、backend、module 组合与 validate/plan。
+# Week08 S1 baseline:
+# This root module intentionally does not configure a real cloud provider,
+# backend, or remote state. It only proves root/child module wiring.
 
 locals {
   project     = "ai-job-platform-cloud"
   environment = "dev"
 }
 
+module "local_placeholder" {
+  source = "../../modules/local_placeholder"
+
+  project     = local.project
+  environment = local.environment
+}
+
 output "env_summary" {
   value = {
     project     = local.project
     environment = local.environment
+    module      = module.local_placeholder.module_name
+    labels      = module.local_placeholder.labels
   }
 }
