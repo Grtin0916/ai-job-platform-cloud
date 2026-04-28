@@ -1,0 +1,22 @@
+
+Changes to Outputs:
+  [32m+[0m[0m env_summary = {
+      [32m+[0m[0m environment = "dev"
+      [32m+[0m[0m labels      = {
+          [32m+[0m[0m environment = "dev"
+          [32m+[0m[0m managed_by  = "terraform"
+          [32m+[0m[0m module      = "local_placeholder"
+          [32m+[0m[0m project     = "ai-job-platform-cloud"
+          [32m+[0m[0m stage       = "week08"
+        }
+      [32m+[0m[0m module      = "local_placeholder"
+      [32m+[0m[0m project     = "ai-job-platform-cloud"
+    }
+
+You can apply this plan to save these new output values to the Terraform
+state, without changing any real infrastructure.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Note: You didn't use the -out option to save this plan, so Terraform can't
+guarantee to take exactly these actions if you run "terraform apply" now.
