@@ -1,0 +1,24 @@
+
+Changes to Outputs:
+  [32m+[0m[0m env_summary = {
+      [32m+[0m[0m environment = "dev"
+      [32m+[0m[0m labels      = {
+          [32m+[0m[0m environment = "dev"
+          [32m+[0m[0m managed_by  = "terraform"
+          [32m+[0m[0m module      = "local_placeholder"
+          [32m+[0m[0m project     = "ai-job-platform-cloud"
+          [32m+[0m[0m stage       = "week08"
+        }
+      [32m+[0m[0m module      = "local_placeholder"
+      [32m+[0m[0m project     = "ai-job-platform-cloud"
+    }
+
+You can apply this plan to save these new output values to the Terraform
+state, without changing any real infrastructure.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Saved the plan to: tfplan.local
+
+To perform exactly these actions, run the following command to apply:
+    terraform apply "tfplan.local"
