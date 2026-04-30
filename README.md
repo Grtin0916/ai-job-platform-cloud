@@ -6,6 +6,8 @@
 
 ## Verified Scope
 
+- 已完成 S1 阶段总结：`docs/weekly/2026-05-01_stage_s1_cloud.md` 已收口 W4-W8 的 Kubernetes base、observability scaffold、CI/local validation 与 Week08 Terraform local-only validation 证据，并明确当前未验证真实 cloud provider、remote state、Terraform apply 和 provider-backed infrastructure resources。
+
 当前仓库已完成并留有证据的范围如下：
 
 - 已完成 OpenTelemetry Collector 最小链路接入
