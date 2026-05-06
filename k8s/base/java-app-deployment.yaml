@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: media-task-platform-java
+  namespace: dev-platform
+  labels:
+    app: media-task-platform-java
+    app.kubernetes.io/name: media-task-platform-java
+    app.kubernetes.io/part-of: dev-platform
+    app.kubernetes.io/component: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: media-task-platform-java
+  template:
+    metadata:
+      labels:
+        app: media-task-platform-java
+        app.kubernetes.io/name: media-task-platform-java
+        app.kubernetes.io/part-of: dev-platform
+        app.kubernetes.io/component: backend
+    spec:
+      containers:
+        - name: media-task-platform-java
+          image: media-task-platform-java:week09-dev
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: local
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:postgresql://week09-postgres.dev-platform.svc.cluster.local:5432/media_task
+            - name: SPRING_DATASOURCE_USERNAME
+              value: media
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: media
+            - name: SPRING_DATA_REDIS_HOST
+              value: week09-redis.dev-platform.svc.cluster.local
+            - name: SPRING_DATA_REDIS_PORT
+              value: "6379"
+            - name: MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE
+              value: health,info,prometheus
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: http
+            initialDelaySeconds: 20
+            periodSeconds: 5
+            timeoutSeconds: 3
+            failureThreshold: 12
+          livenessProbe:
+            httpGet:
+              path: /actuator/health
+              port: http
+            initialDelaySeconds: 40
+            periodSeconds: 10
+            timeoutSeconds: 3
+            failureThreshold: 6

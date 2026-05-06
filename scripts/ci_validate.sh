@@ -37,7 +37,7 @@ fi
 
 echo "[5/6] kubectl dry-run"
 if command -v kubectl >/dev/null 2>&1; then
-  kubectl apply --dry-run=client -f k8s/base >/dev/null
+  kubectl create --dry-run=client --validate=false -f k8s/base >/dev/null
 else
   echo "skip kubectl dry-run: kubectl not found"
 fi

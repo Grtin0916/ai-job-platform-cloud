@@ -1,0 +1,90 @@
+===== Week09 Docker Desktop backend blocker =====
+2026-05-06T15:28:28+08:00
+
+===== DOCKER_HOST =====
+unix:///home/GRT/.docker/desktop/docker.sock
+
+===== docker context ls =====
+NAME            DESCRIPTION                               DOCKER ENDPOINT                                ERROR
+default *       Current DOCKER_HOST based configuration   unix:///home/GRT/.docker/desktop/docker.sock   
+desktop-linux   Docker Desktop                            unix:///home/GRT/.docker/desktop/docker.sock   
+Warning: DOCKER_HOST environment variable overrides the active context. To use a context, either set the global --context flag, or unset DOCKER_HOST environment variable.
+
+===== docker version, timeout 10s =====
+Client: Docker Engine - Community
+ Version:           28.1.1
+ API version:       1.49
+ Go version:        go1.23.8
+ Git commit:        4eba377
+ Built:             Fri Apr 18 09:52:18 2025
+ OS/Arch:           linux/amd64
+ Context:           default
+
+===== docker info, timeout 10s =====
+Client: Docker Engine - Community
+ Version:    28.1.1
+ Context:    default
+ Debug Mode: false
+ Plugins:
+  agent: create or run AI agents (Docker Inc.)
+    Version:  v1.27.1
+    Path:     /home/GRT/.docker/cli-plugins/docker-agent
+  ai: Docker AI Agent - Ask Gordon (Docker Inc.)
+    Version:  v1.18.0
+    Path:     /home/GRT/.docker/cli-plugins/docker-ai
+  buildx: Docker Buildx (Docker Inc.)
+    Version:  v0.31.1-desktop.1
+    Path:     /home/GRT/.docker/cli-plugins/docker-buildx
+  compose: Docker Compose (Docker Inc.)
+    Version:  v5.1.0
+    Path:     /home/GRT/.docker/cli-plugins/docker-compose
+  debug: Get a shell into any image or container (Docker Inc.)
+    Version:  0.0.47
+    Path:     /home/GRT/.docker/cli-plugins/docker-debug
+  desktop: Docker Desktop commands (Docker Inc.)
+    Version:  v0.3.0
+    Path:     /home/GRT/.docker/cli-plugins/docker-desktop
+  extension: Manages Docker extensions (Docker Inc.)
+    Version:  v0.2.31
+    Path:     /home/GRT/.docker/cli-plugins/docker-extension
+  init: Creates Docker-related starter files for your project (Docker Inc.)
+    Version:  v1.4.0
+    Path:     /home/GRT/.docker/cli-plugins/docker-init
+  mcp: Docker MCP Plugin (Docker Inc.)
+    Version:  v0.40.2
+    Path:     /home/GRT/.docker/cli-plugins/docker-mcp
+  offload: Docker Offload (Docker Inc.)
+    Version:  v0.5.56
+    Path:     /home/GRT/.docker/cli-plugins/docker-offload
+  pass: Docker Pass Secrets Manager Plugin (beta) (Docker Inc.)
+    Version:  v0.0.24
+    Path:     /home/GRT/.docker/cli-plugins/docker-pass
+  sandbox:  (Docker Inc.)
+    Version:  v0.12.0
+    Path:     /home/GRT/.docker/cli-plugins/docker-sandbox
+  sbom: View the packaged-based Software Bill Of Materials (SBOM) for an image (Anchore Inc.)
+    Version:  0.6.0
+    Path:     /home/GRT/.docker/cli-plugins/docker-sbom
+  scout: Docker Scout (Docker Inc.)
+    Version:  v1.20.0
+    Path:     /home/GRT/.docker/cli-plugins/docker-scout
+
+Server:
+
+===== docker system df, timeout 10s =====
+
+===== kind clusters =====
+ERROR: failed to list clusters: command "docker ps -a --filter label=io.x-k8s.kind.cluster --format '{{.Label "io.x-k8s.kind.cluster"}}'" failed with error: exit status 1
+
+Command Output: request returned 500 Internal Server Error for API route and version http://%2Fhome%2FGRT%2F.docker%2Fdesktop%2Fdocker.sock/v1.49/containers/json?all=1&filters=%7B%22label%22%3A%7B%22io.x-k8s.kind.cluster%22%3Atrue%7D%7D, check if the server supports the requested API version
+
+===== kubectl context =====
+kind-cloud-dev
+
+===== kubectl nodes =====
+Unable to connect to the server: net/http: TLS handshake timeout
+
+===== conclusion =====
+Docker Desktop backend returns 500 on Docker API calls through ~/.docker/desktop/docker.sock.
+Java package and docker build had succeeded earlier, but image export/load into kind is blocked by Docker backend health.
+Week09 Cloud real rollout is deferred; keep manifest/dry-run evidence and blocker log.

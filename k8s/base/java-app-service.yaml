@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: media-task-platform-java
+  namespace: dev-platform
+  labels:
+    app: media-task-platform-java
+    app.kubernetes.io/name: media-task-platform-java
+    app.kubernetes.io/part-of: dev-platform
+    app.kubernetes.io/component: backend
+spec:
+  selector:
+    app: media-task-platform-java
+  ports:
+    - name: http
+      port: 8080
+      targetPort: http
+  type: ClusterIP

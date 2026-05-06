@@ -1,0 +1,76 @@
+===== Week09 K8s manifest offline validation =====
+2026-05-06T15:42:55+08:00
+
+===== files =====
+-rw-rw-r-- 1 GRT GRT 1.6K  5月  6 10:57 docs/runbooks/k8s_deploy.md
+-rw-rw-r-- 1 GRT GRT  797  4月  1 22:53 k8s/base/gateway-deployment.yaml
+-rw-rw-r-- 1 GRT GRT 2.0K  5月  6 10:57 k8s/base/java-app-deployment.yaml
+-rw-rw-r-- 1 GRT GRT  416  5月  6 10:57 k8s/base/java-app-service.yaml
+-rw-rw-r-- 1 GRT GRT  166  4月  1 22:26 k8s/base/namespace.yaml
+-rwxrwxr-x 1 GRT GRT  661  5月  6 10:57 scripts/rollout_undo.sh
+
+===== shell syntax =====
+rollout_undo.sh syntax ok
+
+===== kubectl create client dry-run without server validation =====
+deployment.apps/gateway
+service/gateway
+deployment.apps/media-task-platform-java
+service/media-task-platform-java
+namespace/dev-platform
+
+===== manifest summary =====
+k8s/base/java-app-deployment.yaml:2:kind: Deployment
+k8s/base/java-app-deployment.yaml:4:  name: media-task-platform-java
+k8s/base/java-app-deployment.yaml:5:  namespace: dev-platform
+k8s/base/java-app-deployment.yaml:8:    app.kubernetes.io/name: media-task-platform-java
+k8s/base/java-app-deployment.yaml:20:        app.kubernetes.io/name: media-task-platform-java
+k8s/base/java-app-deployment.yaml:25:        - name: media-task-platform-java
+k8s/base/java-app-deployment.yaml:26:          image: media-task-platform-java:week09-dev
+k8s/base/java-app-deployment.yaml:29:            - name: http
+k8s/base/java-app-deployment.yaml:32:            - name: SPRING_PROFILES_ACTIVE
+k8s/base/java-app-deployment.yaml:34:            - name: SPRING_DATASOURCE_URL
+k8s/base/java-app-deployment.yaml:36:            - name: SPRING_DATASOURCE_USERNAME
+k8s/base/java-app-deployment.yaml:38:            - name: SPRING_DATASOURCE_PASSWORD
+k8s/base/java-app-deployment.yaml:40:            - name: SPRING_DATA_REDIS_HOST
+k8s/base/java-app-deployment.yaml:42:            - name: SPRING_DATA_REDIS_PORT
+k8s/base/java-app-deployment.yaml:44:            - name: MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE
+k8s/base/java-app-deployment.yaml:46:          readinessProbe:
+k8s/base/java-app-deployment.yaml:54:          livenessProbe:
+k8s/base/namespace.yaml:2:kind: Namespace
+k8s/base/namespace.yaml:4:  name: dev-platform
+k8s/base/namespace.yaml:6:    app.kubernetes.io/name: ai-job-platform-cloud
+k8s/base/java-app-service.yaml:2:kind: Service
+k8s/base/java-app-service.yaml:4:  name: media-task-platform-java
+k8s/base/java-app-service.yaml:5:  namespace: dev-platform
+k8s/base/java-app-service.yaml:8:    app.kubernetes.io/name: media-task-platform-java
+k8s/base/java-app-service.yaml:15:    - name: http
+k8s/base/gateway-deployment.yaml:2:kind: Deployment
+k8s/base/gateway-deployment.yaml:4:  name: gateway
+k8s/base/gateway-deployment.yaml:5:  namespace: dev-platform
+k8s/base/gateway-deployment.yaml:19:        - name: gateway
+k8s/base/gateway-deployment.yaml:20:          image: nginx:1.25
+k8s/base/gateway-deployment.yaml:24:          readinessProbe:
+k8s/base/gateway-deployment.yaml:32:kind: Service
+k8s/base/gateway-deployment.yaml:34:  name: gateway
+k8s/base/gateway-deployment.yaml:35:  namespace: dev-platform
+k8s/base/gateway-deployment.yaml:42:    - name: http
+scripts/rollout_undo.sh:8:echo "namespace: ${NS}"
+scripts/rollout_undo.sh:13:echo "===== rollout status ====="
+scripts/rollout_undo.sh:14:kubectl -n "${NS}" rollout status "deployment/${DEPLOYMENT}" --timeout=120s
+scripts/rollout_undo.sh:17:echo "===== rollout history ====="
+scripts/rollout_undo.sh:18:kubectl -n "${NS}" rollout history "deployment/${DEPLOYMENT}"
+scripts/rollout_undo.sh:21:echo "===== rollback dry-run ====="
+scripts/rollout_undo.sh:23:  kubectl -n "${NS}" rollout undo "deployment/${DEPLOYMENT}"
+scripts/rollout_undo.sh:25:  kubectl -n "${NS}" rollout undo "deployment/${DEPLOYMENT}" --dry-run=server
+docs/runbooks/k8s_deploy.md:22:- Deployment can reach rollout status.
+docs/runbooks/k8s_deploy.md:48:Check rollout:
+docs/runbooks/k8s_deploy.md:50:    kubectl -n dev-platform rollout status deployment/media-task-platform-java
+docs/runbooks/k8s_deploy.md:51:    kubectl -n dev-platform rollout history deployment/media-task-platform-java
+docs/runbooks/k8s_deploy.md:55:    MODE=dry-run scripts/rollout_undo.sh
+
+===== evidence boundary =====
+Docker Desktop backend and kind API server are unhealthy.
+kubectl apply dry-run is not fully offline because it tries to retrieve current server-side object configuration.
+This log verifies client-side manifest object construction with kubectl create --dry-run=client --validate=false.
+Real image load, rollout status, rollout history, and rollback dry-run remain deferred.

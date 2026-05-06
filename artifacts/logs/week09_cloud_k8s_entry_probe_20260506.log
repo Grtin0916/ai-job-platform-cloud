@@ -1,0 +1,287 @@
+
+===== git status =====
+## main...origin/main
+?? artifacts/logs/week09_cloud_k8s_entry_probe_20260506.log
+
+===== recent commits =====
+4b9577e (HEAD -> main, origin/main) docs(cloud): close stage s1 summary
+2e30f08 test(cloud): rerun week08 terraform local validation
+ec53ec7 test(cloud): rerun week08 terraform validation evidence
+ca531ce feat(cloud): add week08 terraform layout baseline
+353f6ee docs(cloud): close week07 ci evidence summary
+
+===== top-level tree =====
+./artifacts/logs/week02_cloud_observability.log
+./artifacts/logs/week04_bootstrap_dev_env.log
+./artifacts/logs/week04_k8s_apply_gateway.log
+./artifacts/logs/week04_k8s_apply_namespace.log
+./artifacts/logs/week04_k8s_describe_gateway.log
+./artifacts/logs/week04_k8s_describe_gateway_svc.log
+./artifacts/logs/week04_k8s_get_resources.log
+./artifacts/logs/week04_k8s_rollout_gateway.log
+./artifacts/logs/week05_java_cloud_dashboard_smoke.log
+./artifacts/logs/week05_observability_smoke.log
+./artifacts/logs/week06_otel_collector_trace_001.log
+./artifacts/logs/week06_otel_collector_trace_clean.log
+./artifacts/logs/week06_otel_trace_smoke.log
+./artifacts/logs/week07_ci_validate_local.log
+./artifacts/logs/week07_ci_validate_local_rerun.log
+./artifacts/logs/week07_compose_config.log
+./artifacts/logs/week07_compose_config_rerun.log
+./artifacts/logs/week07_k8s_dry_run.log
+./artifacts/logs/week07_k8s_dry_run_rerun.log
+./artifacts/logs/week08_terraform_boundary_grep_rerun_20260428.log
+./artifacts/logs/week08_terraform_ci_validate.log
+./artifacts/logs/week08_terraform_fmt_check_20260430.log
+./artifacts/logs/week08_terraform_fmt.log
+./artifacts/logs/week08_terraform_fmt_rerun_20260428.log
+./artifacts/logs/week08_terraform_fmt_rerun_20260501.log
+./artifacts/logs/week08_terraform_init_backend_false_20260430.log
+./artifacts/logs/week08_terraform_init_rerun_20260428.log
+./artifacts/logs/week08_terraform_init_rerun_20260501.log
+./artifacts/logs/week08_terraform_init_validate.log
+./artifacts/logs/week08_terraform_plan_20260430.log
+./artifacts/logs/week08_terraform_plan.log
+./artifacts/logs/week08_terraform_plan_rerun_20260428.log
+./artifacts/logs/week08_terraform_plan_rerun_20260501.log
+./artifacts/logs/week08_terraform_validate_20260430.log
+./artifacts/logs/week08_terraform_validate_rerun_20260428.log
+./artifacts/logs/week08_terraform_validate_rerun_20260501.log
+./artifacts/logs/week09_cloud_k8s_entry_probe_20260506.log
+./docker-compose.observability.yml
+./docs/adr/0001-terraform-layout.md
+./docs/runbooks/ci-cd-minimum.md
+./docs/runbooks/local-observability.md
+./docs/runbooks/otel-pipeline.md
+./docs/runbooks/terraform-dev-minimum.md
+./docs/weekly/2026-04-03_week01_cloud.md
+./docs/weekly/2026-04-10_week02_cloud.md
+./docs/weekly/2026-04-22_week07_cloud_day03.md
+./docs/weekly/2026-04-23_week07_day04_cloud.md
+./docs/weekly/2026-04-24_week07_cloud_ci_summary.md
+./docs/weekly/2026-05-01_stage_s1_cloud.md
+./.github/workflows/ci.yml
+./.gitignore
+./infra/terraform/README.md
+./k8s/base/gateway-deployment.yaml
+./k8s/base/namespace.yaml
+./observability/otel/otelcol-config.yaml
+./observability/prometheus/prometheus.yml
+./README.md
+./scripts/bootstrap_dev_env.sh
+./scripts/ci_validate.sh
+
+===== README Week/S1/K8s signals =====
+README.md:5:当前阶段目标不是立刻做成完整平台，而是先冻结本地开发脚手架选型、Terraform 目录约定、Kubernetes base 样板和可执行的环境检查入口，为后续 observability、CI/CD、发布回滚与 IaC 扩展打底。
+README.md:7:## Verified Scope
+README.md:9:- 已完成 S1 阶段总结：`docs/weekly/2026-05-01_stage_s1_cloud.md` 已收口 W4-W8 的 Kubernetes base、observability scaffold、CI/local validation 与 Week08 Terraform local-only validation 证据，并明确当前未验证真实 cloud provider、remote state、Terraform apply 和 provider-backed infrastructure resources。
+README.md:16:- 已完成 Week07 最小 CI/CD 骨架：`.github/workflows/ci.yml`、`scripts/ci_validate.sh`、`docs/runbooks/ci-cd-minimum.md`
+README.md:17:- 已完成至少 2 次本地最小验证链复验：`scripts/ci_validate.sh` 通过，`docker compose -f docker-compose.observability.yml config` 通过，`kubectl apply --dry-run=client -f k8s/base` 通过
+README.md:18:- 已保留 Week07 rerun 日志：`week07_ci_validate_local_rerun.log`、`week07_compose_config_rerun.log`、`week07_k8s_dry_run_rerun.log`
+README.md:19:- 已完成 Week08 Terraform layout ADR：`docs/adr/0001-terraform-layout.md`
+README.md:20:- 已完成 Week08 Terraform root/child module 最小骨架：`infra/terraform/envs/dev/main.tf` 调用 `infra/terraform/modules/local_placeholder`
+README.md:21:- 已完成 Week08 Terraform 本地结构验证：`terraform fmt -recursive -check`、`terraform init -backend=false`、`terraform validate`、`terraform plan -input=false`
+README.md:22:- 已保留 Week08 Terraform 证据日志：`artifacts/logs/week08_terraform_fmt.log`、`artifacts/logs/week08_terraform_init_validate.log`、`artifacts/logs/week08_terraform_plan.log`
+README.md:24:一句话说，当前 Cloud 仓库已经从 Week07 的 CI skeleton / local validation 阶段，推进到 Week08 的 Terraform layout、root/child module 语义与本地-only Terraform validation 阶段。
+README.md:28:## Not Yet Verified
+README.md:34:- Terraform apply
+README.md:38:- rollout / rollback
+README.md:40:- Terraform plan against real cloud infrastructure
+README.md:47:## Next Hard Milestone
+README.md:51:1. Week08：收口 Terraform local validation
+README.md:52:   - 将 Terraform layout ADR、runbook、root/child module 与 evidence logs 固定为可复查证据
+README.md:53:   - 将 `scripts/ci_validate.sh` 扩展为可选 Terraform validation 入口
+README.md:54:   - 明确当前只完成 local-only validation，不接真实云账号
+README.md:58:   - 设计 image build 与 Terraform plan 的 CI 边界
+README.md:59:   - 保持 Kubernetes base、observability 与 Terraform 三条线的职责分离
+README.md:68:- Terraform
+README.md:80:    kubectl apply -f k8s/base
+README.md:99:    ├── k8s
+
+===== k8s/base files =====
+k8s/base/namespace.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dev-platform
+  labels:
+    app.kubernetes.io/name: ai-job-platform-cloud
+    app.kubernetes.io/part-of: dev-platform
+k8s/base/gateway-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gateway
+  namespace: dev-platform
+  labels:
+    app: gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gateway
+  template:
+    metadata:
+      labels:
+        app: gateway
+    spec:
+      containers:
+        - name: gateway
+          image: nginx:1.25
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 3
+            periodSeconds: 5
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gateway
+  namespace: dev-platform
+  labels:
+    app: gateway
+spec:
+  selector:
+    app: gateway
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80
+  type: ClusterIP
+
+===== scripts =====
+scripts/ci_validate.sh
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "[1/6] required files"
+required_files=(
+  "README.md"
+  "docker-compose.observability.yml"
+  "scripts/bootstrap_dev_env.sh"
+  "observability/otel/otelcol-config.yaml"
+)
+
+for f in "${required_files[@]}"; do
+  test -f "$f" || { echo "missing file: $f" >&2; exit 1; }
+done
+
+echo "[2/6] required directories"
+required_dirs=(
+  "k8s/base"
+  "infra/terraform"
+  "docs/runbooks"
+)
+
+for d in "${required_dirs[@]}"; do
+  test -d "$d" || { echo "missing dir: $d" >&2; exit 1; }
+done
+
+echo "[3/6] shell syntax"
+bash -n scripts/bootstrap_dev_env.sh
+bash -n scripts/ci_validate.sh
+
+echo "[4/6] docker compose config"
+if command -v docker >/dev/null 2>&1; then
+  docker compose -f docker-compose.observability.yml config >/dev/null
+else
+  echo "skip docker compose config: docker not found"
+fi
+
+echo "[5/6] kubectl dry-run"
+if command -v kubectl >/dev/null 2>&1; then
+  kubectl apply --dry-run=client -f k8s/base >/dev/null
+else
+  echo "skip kubectl dry-run: kubectl not found"
+fi
+
+echo "[6/6] terraform local validation"
+if command -v terraform >/dev/null 2>&1; then
+  (
+    cd infra/terraform/envs/dev
+    trap 'rm -rf .terraform .terraform.lock.hcl' EXIT
+    rm -rf .terraform .terraform.lock.hcl
+    terraform fmt -recursive -check ../..
+    terraform init -backend=false -input=false >/dev/null
+    terraform validate >/dev/null
+  )
+else
+  echo "skip terraform validation: terraform not found"
+fi
+
+echo "ci_validate.sh passed"
+scripts/bootstrap_dev_env.sh
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "[bootstrap] checking local cloud dev tools"
+
+check_cmd() {
+  local name="$1"
+  if command -v "$name" >/dev/null 2>&1; then
+    echo "[ok] $name -> $(command -v "$name")"
+  else
+    echo "[missing] $name"
+    return 1
+  fi
+}
+
+check_cmd docker
+docker --version
+
+if docker compose version >/dev/null 2>&1; then
+  echo "[ok] docker compose"
+  docker compose version
+else
+  echo "[missing] docker compose"
+  exit 1
+fi
+
+check_cmd kind
+kind version
+
+check_cmd kubectl
+kubectl version --client --output=yaml
+
+check_cmd terraform
+terraform version
+
+echo "[bootstrap] all required tools are available"
+
+===== tool versions =====
+/home/GRT/.local/bin/kubectl
+clientVersion:
+  buildDate: "2026-03-18T18:32:54Z"
+  compiler: gc
+  gitCommit: 6c1cd99aef09161ddb07b8ade6c9564e9b9bfe27
+  gitTreeState: clean
+  gitVersion: v1.35.3
+  goVersion: go1.25.7
+  major: "1"
+  minor: "35"
+  platform: linux/amd64
+kustomizeVersion: v5.7.1
+
+/home/GRT/.local/bin/kind
+kind v0.31.0 go1.25.5 linux/amd64
+/usr/bin/docker
+29.2.1
+
+===== current k8s context =====
+kind-cloud-dev
+
+===== cluster probe =====
+NAME                      STATUS   ROLES           AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION     CONTAINER-RUNTIME
+cloud-dev-control-plane   Ready    control-plane   33d   v1.35.0   172.19.0.2    <none>        Debian GNU/Linux 12 (bookworm)   6.12.72-linuxkit   containerd://2.2.0
+NAME                 STATUS   AGE
+default              Active   33d
+dev-platform         Active   33d
+kube-node-lease      Active   33d
+kube-public          Active   33d
+kube-system          Active   33d
+local-path-storage   Active   33d
