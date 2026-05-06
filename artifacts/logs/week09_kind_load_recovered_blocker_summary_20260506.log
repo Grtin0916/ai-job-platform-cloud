@@ -1,0 +1,24 @@
+===== Week09 Cloud recovered Docker attempt summary =====
+
+Scope:
+This log summarizes the recovered Docker/kind attempt after the initial Docker Desktop backend blocker.
+
+Verified:
+- Docker Desktop server became reachable again.
+- docker build smoke test succeeded.
+- Java image build for media-task-platform-java:week09-dev succeeded.
+
+Still blocked:
+- kind load docker-image media-task-platform-java:week09-dev --name cloud-dev did not complete.
+- The load path stalled around docker save / kind image import.
+- Docker Desktop backend returned 500 again during docker exec / container inspection.
+
+Conclusion:
+Cloud Week09 real kind rollout is still not verified.
+Do not claim Java app has been deployed to kind.
+Current verified Cloud scope remains:
+- Java app Deployment / Service manifests exist.
+- rollout_undo.sh exists.
+- k8s_deploy.md exists.
+- offline client-side manifest validation passed.
+- Docker/kind blocker is documented.
