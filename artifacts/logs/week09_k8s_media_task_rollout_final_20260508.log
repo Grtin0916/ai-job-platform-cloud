@@ -1,0 +1,207 @@
+===== Week09 Cloud final K8s rollout verification =====
+2026年 05月 08日 星期五 09:26:09 CST
+
+[0] docker / kind / kubectl context
+desktop-linux
+Server=29.2.1 OSType=linux Architecture=x86_64
+cloud-dev
+kind-cloud-dev
+
+[1] namespace
+NAME           STATUS   AGE
+dev-platform   Active   12h
+
+[2] workload resources
+Warning: v1 Endpoints is deprecated in v1.33+; use discovery.k8s.io/v1 EndpointSlice
+NAME                                       READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS                 IMAGES                                SELECTOR
+deployment.apps/media-task-platform-java   1/1     1            1           11h   media-task-platform-java   media-task-platform-java:week09-dev   app=media-task-platform-java
+deployment.apps/week09-postgres            1/1     1            1           11h   postgres                   week09-postgres-local:dev             app=week09-postgres
+deployment.apps/week09-redis               1/1     1            1           11h   redis                      week09-redis-local:dev                app=week09-redis
+
+NAME                                                  DESIRED   CURRENT   READY   AGE   CONTAINERS                 IMAGES                                SELECTOR
+replicaset.apps/media-task-platform-java-679648cf5c   1         1         1       11h   media-task-platform-java   media-task-platform-java:week09-dev   app=media-task-platform-java,pod-template-hash=679648cf5c
+replicaset.apps/media-task-platform-java-784b6f9c46   0         0         0       11h   media-task-platform-java   media-task-platform-java:week09-dev   app=media-task-platform-java,pod-template-hash=784b6f9c46
+replicaset.apps/week09-postgres-5746d95b78            1         1         1       11h   postgres                   week09-postgres-local:dev             app=week09-postgres,pod-template-hash=5746d95b78
+replicaset.apps/week09-postgres-645b646df4            0         0         0       11h   postgres                   postgres:16-alpine                    app=week09-postgres,pod-template-hash=645b646df4
+replicaset.apps/week09-postgres-6885cc74b9            0         0         0       11h   postgres                   postgres:16-alpine                    app=week09-postgres,pod-template-hash=6885cc74b9
+replicaset.apps/week09-redis-6798f5469f               0         0         0       11h   redis                      redis:7-alpine                        app=week09-redis,pod-template-hash=6798f5469f
+replicaset.apps/week09-redis-685bc5cf98               0         0         0       11h   redis                      redis:7-alpine                        app=week09-redis,pod-template-hash=685bc5cf98
+replicaset.apps/week09-redis-7856c7f7b                1         1         1       11h   redis                      week09-redis-local:dev                app=week09-redis,pod-template-hash=7856c7f7b
+
+NAME                                            READY   STATUS    RESTARTS   AGE   IP            NODE                      NOMINATED NODE   READINESS GATES
+pod/media-task-platform-java-679648cf5c-5v6r8   1/1     Running   0          11h   10.244.0.16   cloud-dev-control-plane   <none>           <none>
+pod/week09-postgres-5746d95b78-ddln4            1/1     Running   0          11h   10.244.0.12   cloud-dev-control-plane   <none>           <none>
+pod/week09-redis-7856c7f7b-j7bz9                1/1     Running   0          11h   10.244.0.15   cloud-dev-control-plane   <none>           <none>
+
+NAME                               TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE   SELECTOR
+service/media-task-platform-java   ClusterIP   10.96.138.5    <none>        8080/TCP   11h   app=media-task-platform-java
+service/week09-postgres            ClusterIP   10.96.42.18    <none>        5432/TCP   11h   app=week09-postgres
+service/week09-redis               ClusterIP   10.96.171.92   <none>        6379/TCP   11h   app=week09-redis
+
+NAME                                 ENDPOINTS          AGE
+endpoints/media-task-platform-java   10.244.0.16:8080   11h
+endpoints/week09-postgres            10.244.0.12:5432   11h
+endpoints/week09-redis               10.244.0.15:6379   11h
+
+[3] rollout status: media-task-platform-java
+deployment "media-task-platform-java" successfully rolled out
+
+[4] rollout history: media-task-platform-java
+deployment.apps/media-task-platform-java 
+REVISION  CHANGE-CAUSE
+1         <none>
+2         <none>
+
+
+[5] rollback dry-run: media-task-platform-java
+deployment.apps/media-task-platform-java rolled back (server dry run)
+
+[6] describe deployment key section
+Name:                   media-task-platform-java
+Namespace:              dev-platform
+CreationTimestamp:      Thu, 07 May 2026 21:37:52 +0800
+Labels:                 app=media-task-platform-java
+                        app.kubernetes.io/component=backend
+                        app.kubernetes.io/name=media-task-platform-java
+                        app.kubernetes.io/part-of=dev-platform
+Annotations:            deployment.kubernetes.io/revision: 2
+Selector:               app=media-task-platform-java
+Replicas:               1 desired | 1 updated | 1 total | 1 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:       app=media-task-platform-java
+                app.kubernetes.io/component=backend
+                app.kubernetes.io/name=media-task-platform-java
+                app.kubernetes.io/part-of=dev-platform
+  Annotations:  kubectl.kubernetes.io/restartedAt: 2026-05-07T22:22:14+08:00
+  Containers:
+   media-task-platform-java:
+    Image:      media-task-platform-java:week09-dev
+    Port:       8080/TCP (http)
+    Host Port:  0/TCP (http)
+    Liveness:   http-get http://:http/actuator/health delay=40s timeout=3s period=10s #success=1 #failure=6
+    Readiness:  http-get http://:http/actuator/health delay=20s timeout=3s period=5s #success=1 #failure=12
+    Environment:
+      SPRING_PROFILES_ACTIVE:                     local
+      SPRING_DATASOURCE_URL:                      jdbc:postgresql://week09-postgres.dev-platform.svc.cluster.local:5432/media_task
+      SPRING_DATASOURCE_USERNAME:                 media
+      SPRING_DATASOURCE_PASSWORD:                 media
+      SPRING_DATA_REDIS_HOST:                     week09-redis.dev-platform.svc.cluster.local
+      SPRING_DATA_REDIS_PORT:                     6379
+      MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE:  health,info,prometheus
+    Mounts:                                       <none>
+  Volumes:                                        <none>
+  Node-Selectors:                                 <none>
+  Tolerations:                                    <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  media-task-platform-java-784b6f9c46 (0/0 replicas created)
+NewReplicaSet:   media-task-platform-java-679648cf5c (1/1 replicas created)
+Events:          <none>
+
+[7] pod logs tail
+POD=media-task-platform-java-679648cf5c-5v6r8
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.13)
+
+2026-05-07T14:22:17.577Z  INFO 1 --- [media-task-platform-java] [           main] com.ryan.media.MediaTaskApplication      : Starting MediaTaskApplication v0.0.1-SNAPSHOT using Java 21.0.10 with PID 1 (/app/app.jar started by root in /app)
+2026-05-07T14:22:17.581Z  INFO 1 --- [media-task-platform-java] [           main] com.ryan.media.MediaTaskApplication      : The following 1 profile is active: "local"
+2026-05-07T14:22:19.364Z  INFO 1 --- [media-task-platform-java] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-05-07T14:22:19.368Z  INFO 1 --- [media-task-platform-java] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-05-07T14:22:19.413Z  INFO 1 --- [media-task-platform-java] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 Redis repository interfaces.
+2026-05-07T14:22:20.266Z  INFO 1 --- [media-task-platform-java] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-05-07T14:22:20.285Z  INFO 1 --- [media-task-platform-java] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-07T14:22:20.285Z  INFO 1 --- [media-task-platform-java] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-05-07T14:22:20.319Z  INFO 1 --- [media-task-platform-java] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-05-07T14:22:20.320Z  INFO 1 --- [media-task-platform-java] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2667 ms
+2026-05-07T14:22:20.904Z  INFO 1 --- [media-task-platform-java] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-07T14:22:21.187Z  INFO 1 --- [media-task-platform-java] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@52b30054
+2026-05-07T14:22:21.190Z  INFO 1 --- [media-task-platform-java] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-07T14:22:21.238Z  INFO 1 --- [media-task-platform-java] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:postgresql://week09-postgres.dev-platform.svc.cluster.local:5432/media_task (PostgreSQL 16.13)
+2026-05-07T14:22:21.331Z  INFO 1 --- [media-task-platform-java] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.048s)
+2026-05-07T14:22:21.364Z  INFO 1 --- [media-task-platform-java] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "public": 2
+2026-05-07T14:22:21.369Z  INFO 1 --- [media-task-platform-java] [           main] o.f.core.internal.command.DbMigrate      : Schema "public" is up to date. No migration necessary.
+2026-05-07T14:22:22.498Z  INFO 1 --- [media-task-platform-java] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2026-05-07T14:22:22.553Z  WARN 1 --- [media-task-platform-java] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 026cdccb-3455-4424-aa5a-f0538af2c1f1
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-05-07T14:22:22.566Z  INFO 1 --- [media-task-platform-java] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-05-07T14:22:23.321Z  INFO 1 --- [media-task-platform-java] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-05-07T14:22:23.341Z  INFO 1 --- [media-task-platform-java] [           main] com.ryan.media.MediaTaskApplication      : Started MediaTaskApplication in 6.417 seconds (process running for 7.092)
+2026-05-07T14:22:39.005Z  INFO 1 --- [media-task-platform-java] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-07T14:22:39.006Z  INFO 1 --- [media-task-platform-java] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-07T14:22:39.008Z  INFO 1 --- [media-task-platform-java] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+
+[8] service port-forward health probe
+[8.1] curl /actuator/health
+HTTP/1.1 200 
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 0
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Content-Type: application/vnd.spring-boot.actuator.v3+json
+Transfer-Encoding: chunked
+Date: Fri, 08 May 2026 01:26:16 GMT
+
+{"status":"UP","groups":["liveness","readiness"]}
+[8.2] curl /actuator/prometheus first lines
+# HELP application_ready_time_seconds Time taken for the application to be ready to service requests
+# TYPE application_ready_time_seconds gauge
+application_ready_time_seconds{main_application_class="com.ryan.media.MediaTaskApplication"} 6.51
+# HELP application_started_time_seconds Time taken to start the application
+# TYPE application_started_time_seconds gauge
+application_started_time_seconds{main_application_class="com.ryan.media.MediaTaskApplication"} 6.417
+# HELP disk_free_bytes Usable space for path
+# TYPE disk_free_bytes gauge
+disk_free_bytes{path="/app/."} 5.82240256E10
+# HELP disk_total_bytes Total space for path
+# TYPE disk_total_bytes gauge
+disk_total_bytes{path="/app/."} 6.7317051392E10
+# HELP executor_active_threads The approximate number of threads that are actively executing tasks
+# TYPE executor_active_threads gauge
+executor_active_threads{name="applicationTaskExecutor"} 0.0
+# HELP executor_completed_tasks_total The approximate total number of tasks that have completed execution
+# TYPE executor_completed_tasks_total counter
+executor_completed_tasks_total{name="applicationTaskExecutor"} 0.0
+# HELP executor_pool_core_threads The core number of threads for the pool
+# TYPE executor_pool_core_threads gauge
+executor_pool_core_threads{name="applicationTaskExecutor"} 8.0
+# HELP executor_pool_max_threads The maximum allowed number of threads in the pool
+# TYPE executor_pool_max_threads gauge
+executor_pool_max_threads{name="applicationTaskExecutor"} 2.147483647E9
+# HELP executor_pool_size_threads The current number of threads in the pool
+# TYPE executor_pool_size_threads gauge
+executor_pool_size_threads{name="applicationTaskExecutor"} 0.0
+# HELP executor_queue_remaining_tasks The number of additional elements that this queue can ideally accept without blocking
+# TYPE executor_queue_remaining_tasks gauge
+executor_queue_remaining_tasks{name="applicationTaskExecutor"} 2.147483647E9
+# HELP executor_queued_tasks The approximate number of tasks that are queued for execution
+# TYPE executor_queued_tasks gauge
+executor_queued_tasks{name="applicationTaskExecutor"} 0.0
+# HELP hikaricp_connections Total connections
+# TYPE hikaricp_connections gauge
+hikaricp_connections{pool="HikariPool-1"} 10.0
+# HELP hikaricp_connections_acquire_seconds Connection acquire time
+# TYPE hikaricp_connections_acquire_seconds summary
+hikaricp_connections_acquire_seconds_count{pool="HikariPool-1"} 23892
+hikaricp_connections_acquire_seconds_sum{pool="HikariPool-1"} 7.210668614
+
+
+===== DONE =====

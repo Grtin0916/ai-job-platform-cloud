@@ -4,6 +4,35 @@
 
 当前阶段目标不是立刻做成完整平台，而是先冻结本地开发脚手架选型、Terraform 目录约定、Kubernetes base 样板和可执行的环境检查入口，为后续 observability、CI/CD、发布回滚与 IaC 扩展打底。
 
+
+### Week09 Cloud K8s rollout verified update - 2026-05-08
+
+Verified in local Docker Desktop + kind dev cluster only:
+
+- Docker context: `desktop-linux`.
+- kind cluster: `cloud-dev`; kubectl context: `kind-cloud-dev`.
+- Namespace: `dev-platform`.
+- Java backend Deployment: `media-task-platform-java`, image `media-task-platform-java:week09-dev`, status `1/1 READY`.
+- Local dependencies: `week09-postgres` and `week09-redis`, both `1/1 READY`.
+- Service endpoint verified: `service/media-task-platform-java` -> `10.244.0.16:8080` in the captured run.
+- Rollout status verified: `deployment "media-task-platform-java" successfully rolled out`.
+- Rollout history verified: revisions `1` and `2` observed.
+- Rollback dry-run verified: `deployment.apps/media-task-platform-java rolled back (server dry run)`.
+- Health probe verified through port-forward: `/actuator/health` returned HTTP 200 with `{"status":"UP"}`.
+- Prometheus scrape verified through port-forward: `/actuator/prometheus` returned application, executor, disk and HikariCP metrics.
+
+Evidence:
+
+- `artifacts/logs/week09_k8s_media_task_rollout_final_20260508.log`
+- `artifacts/logs/week09_port_forward_20260508.stdout`
+
+Boundary:
+
+- This is not a real cloud-provider deployment.
+- This is not provider-backed Terraform apply.
+- This is not a production rollout or production rollback drill.
+- It verifies the Week09 local dev K8s release semantics: Deployment, Service, rollout status, rollout history, rollback dry-run, health and Prometheus metrics.
+
 ## Verified Scope
 
 - 已完成 S1 阶段总结：`docs/weekly/2026-05-01_stage_s1_cloud.md` 已收口 W4-W8 的 Kubernetes base、observability scaffold、CI/local validation 与 Week08 Terraform local-only validation 证据，并明确当前未验证真实 cloud provider、remote state、Terraform apply 和 provider-backed infrastructure resources。
