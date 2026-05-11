@@ -1,0 +1,7 @@
+[WARN] local promtool not found.
+[WARN] Docker-based promtool could not run because prom/prometheus:latest image pull failed with unexpected EOF / short read.
+[BOUNDARY] This log records fallback YAML structure validation only, not full promtool semantic validation.
+[OK] alerts.yaml parsed as YAML
+[OK] alert groups: media-task-platform-java.local-slo
+[OK] rules: JavaAppTargetDown, JavaAppHighErrorRatio, JavaAppHighLatencyP95
+[BOUNDARY] promtool check rules not completed in this run
