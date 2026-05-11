@@ -5,6 +5,33 @@
 当前阶段目标不是立刻做成完整平台，而是先冻结本地开发脚手架选型、Terraform 目录约定、Kubernetes base 样板和可执行的环境检查入口，为后续 observability、CI/CD、发布回滚与 IaC 扩展打底。
 
 
+### Week10 Cloud SLO / alert draft verified update - 2026-05-11
+
+Verified in local Docker Desktop + kind scope only:
+
+- Added `docs/runbooks/slo.md` as the Week10 local SLO / SLI draft runbook.
+- Added `observability/prometheus/alerts.yaml` as the first Prometheus alert-rule draft.
+- Added local validation log: `artifacts/logs/week10_prometheus_alerts_check_20260511.log`.
+- The alert draft currently defines `JavaAppTargetDown`, `JavaAppHighErrorRatio`, and `JavaAppHighLatencyP95`.
+- `alerts.yaml` passed fallback YAML structure validation.
+- Docker-based `promtool check rules` did not complete because pulling `prom/prometheus:latest` failed with unexpected EOF / short read.
+
+Evidence:
+
+- `docs/runbooks/slo.md`
+- `observability/prometheus/alerts.yaml`
+- `artifacts/logs/week10_prometheus_alerts_check_20260511.log`
+
+Boundary:
+
+- This is not a production SLO.
+- This is not production alerting.
+- This is not Alertmanager routing.
+- This is not an on-call or paging policy.
+- `promtool check rules` has not yet passed.
+- HTTP metric names and labels still need to be verified against the real Spring Boot Actuator Prometheus output.
+
+
 ### Week09 Cloud K8s rollout verified update - 2026-05-08
 
 Verified in local Docker Desktop + kind dev cluster only:
@@ -77,16 +104,20 @@ Boundary:
 
 接下来的硬里程碑按顺序是：
 
-1. Week08：收口 Terraform local validation
-   - 将 Terraform layout ADR、runbook、root/child module 与 evidence logs 固定为可复查证据
-   - 将 `scripts/ci_validate.sh` 扩展为可选 Terraform validation 入口
-   - 明确当前只完成 local-only validation，不接真实云账号
+1. Week10：补强 Prometheus alert 规则校验
+   - 在 Docker 镜像拉取恢复后，复验 `promtool check rules observability/prometheus/alerts.yaml`
+   - 将当前 fallback YAML structure validation 升级为 promtool 语法级校验
+   - 不把当前 fallback 校验写成 promtool success
 
-2. Week08：为后续真实交付对象预热
-   - 明确 provider / backend / state 的引入条件
-   - 设计 image build 与 Terraform plan 的 CI 边界
-   - 保持 Kubernetes base、observability 与 Terraform 三条线的职责分离
+2. Week10：用真实 Actuator metrics 收紧告警表达式
+   - 对照 `artifacts/logs/week09_port_forward_20260508.stdout` 或重新抓取 `/actuator/prometheus`
+   - 校正 `http_server_requests_seconds_count` 与 `http_server_requests_seconds_bucket` 的真实 label
+   - 避免写出无法命中真实时序的空转 alert
 
+3. Week10：保持本地 SLO / alert 草案边界
+   - 当前仅验证 local Docker Desktop + kind dev scope
+   - 不声明生产 SLO、Alertmanager、paging、on-call 或真实云账号部署
+   - 下一步再考虑 README、runbook、alerts.yaml 与证据日志的同步复验
 
 ## Tech Stack
 
