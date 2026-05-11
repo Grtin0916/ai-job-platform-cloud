@@ -13,8 +13,8 @@ Verified in local Docker Desktop + kind scope only:
 - Added `observability/prometheus/alerts.yaml` as the first Prometheus alert-rule draft.
 - Added local validation log: `artifacts/logs/week10_prometheus_alerts_check_20260511.log`.
 - The alert draft currently defines `JavaAppTargetDown`, `JavaAppHighErrorRatio`, and `JavaAppHighLatencyP95`.
-- `alerts.yaml` passed fallback YAML structure validation.
-- Docker-based `promtool check rules` did not complete because pulling `prom/prometheus:latest` failed with unexpected EOF / short read.
+- `alerts.yaml` passed Docker-based `promtool check rules` validation.
+- Docker-based validation used `prom/prometheus:latest` with `/bin/promtool` as the entrypoint.
 
 Evidence:
 
@@ -28,7 +28,7 @@ Boundary:
 - This is not production alerting.
 - This is not Alertmanager routing.
 - This is not an on-call or paging policy.
-- `promtool check rules` has not yet passed.
+- `promtool check rules` has passed locally through Docker-based promtool.
 - HTTP metric names and labels still need to be verified against the real Spring Boot Actuator Prometheus output.
 
 
@@ -104,20 +104,19 @@ Boundary:
 
 接下来的硬里程碑按顺序是：
 
-1. Week10：补强 Prometheus alert 规则校验
-   - 在 Docker 镜像拉取恢复后，复验 `promtool check rules observability/prometheus/alerts.yaml`
-   - 将当前 fallback YAML structure validation 升级为 promtool 语法级校验
-   - 不把当前 fallback 校验写成 promtool success
-
-2. Week10：用真实 Actuator metrics 收紧告警表达式
+1. Week10：用真实 Actuator metrics 收紧告警表达式
    - 对照 `artifacts/logs/week09_port_forward_20260508.stdout` 或重新抓取 `/actuator/prometheus`
    - 校正 `http_server_requests_seconds_count` 与 `http_server_requests_seconds_bucket` 的真实 label
    - 避免写出无法命中真实时序的空转 alert
 
-3. Week10：保持本地 SLO / alert 草案边界
+2. Week10：保持本地 SLO / alert 草案边界
    - 当前仅验证 local Docker Desktop + kind dev scope
    - 不声明生产 SLO、Alertmanager、paging、on-call 或真实云账号部署
-   - 下一步再考虑 README、runbook、alerts.yaml 与证据日志的同步复验
+   - 当前 `promtool check rules` 已通过，但 HTTP metric label 仍需按真实 Actuator 输出复核
+
+3. Week10：后续再进入 Alertmanager / burn-rate 预热
+   - 仅在 SLI metric name 与 label 稳定后，再考虑 recording rules 或 burn-rate alert
+   - 不在当前阶段引入复杂告警路由和 on-call 语义
 
 ## Tech Stack
 
