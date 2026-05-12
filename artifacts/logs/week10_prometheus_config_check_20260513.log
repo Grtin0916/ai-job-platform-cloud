@@ -364,3 +364,39 @@ Checking alerts.yaml
 ## main...origin/main
  M observability/prometheus/prometheus.yml
 ?? artifacts/logs/week10_prometheus_config_check_20260513.log
+
+===== 20260513 follow-up: promtool validation after docker proxy fix =====
+2026-05-12T16:24:45+08:00
+
+===== docker / proxy final check =====
+desktop-linux
+prom/prometheus            latest       e4254400b856   2 weeks ago     578MB
+prom/prometheus            v2.55.1      2659f4c2ebb7   18 months ago   407MB
+
+===== promtool version using pulled v2.55.1 image =====
+promtool, version 2.55.1 (branch: HEAD, revision: 6d7569113f1ca814f1e149f74176656540043b8d)
+  build user:       root@194e0f5dd5e8
+  build date:       20241106-10:08:33
+  go version:       go1.23.2
+  platform:         linux/amd64
+  tags:             netgo,builtinassets,stringlabels
+
+===== promtool check rules using pulled v2.55.1 image =====
+Checking alerts.yaml
+  SUCCESS: 3 rules found
+
+
+===== promtool check config using pulled v2.55.1 image =====
+Checking prometheus.yml
+  SUCCESS: 1 rule files found
+ SUCCESS: prometheus.yml is valid prometheus config file syntax
+
+Checking alerts.yaml
+  SUCCESS: 3 rules found
+
+
+===== final status =====
+## main...origin/main
+ M artifacts/logs/week10_prometheus_config_check_20260513.log
+ .../week10_prometheus_config_check_20260513.log    | 34 ++++++++++++++++++++++
+ 1 file changed, 34 insertions(+)
