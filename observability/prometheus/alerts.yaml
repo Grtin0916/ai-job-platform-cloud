@@ -1,17 +1,15 @@
 groups:
-  - name: media-task-platform-java.local-slo
-    interval: 30s
+  - name: week10-local-slo-alerts
     rules:
       - alert: JavaAppTargetDown
         expr: up{job=~".*java.*|.*media.*"} == 0
         for: 2m
         labels:
           severity: warning
-          scope: local
-          service: media-task-platform-java
+          scope: local-dev
         annotations:
-          summary: "Java app Prometheus target is down in local dev"
-          description: "The local Prometheus target for media-task-platform-java has been down for more than 2 minutes. This is a local Docker Desktop + kind draft alert, not a production page."
+          summary: "Java media task target is down"
+          description: "Prometheus target {{ $labels.job }} has been down for more than 2 minutes in local dev."
 
       - alert: JavaAppHighErrorRatio
         expr: |
@@ -23,25 +21,28 @@ groups:
         for: 5m
         labels:
           severity: warning
-          scope: local
-          service: media-task-platform-java
+          scope: local-dev
         annotations:
-          summary: "Java app high 5xx ratio in local dev"
-          description: "More than 5% of observed HTTP requests are 5xx over the last 5 minutes. Metric labels must be verified against the actual Spring Boot Actuator Prometheus output."
+          summary: "High Java app 5xx error ratio in local dev"
+          description: "5xx request ratio is above 5% for 5 minutes. Verified against live Actuator labels: status, method, uri, outcome, exception, error."
 
-      - alert: JavaAppHighLatencyP95
+      - alert: JavaAppHighMeanLatency
         expr: |
-          histogram_quantile(
-            0.95,
-            sum by (le) (
-              rate(http_server_requests_seconds_bucket[5m])
-            )
-          ) > 1
+          (
+            (
+              sum(rate(http_server_requests_seconds_sum{uri!="/actuator/prometheus"}[5m]))
+              /
+              sum(rate(http_server_requests_seconds_count{uri!="/actuator/prometheus"}[5m]))
+            ) > 1
+          )
+          and
+          (
+            sum(rate(http_server_requests_seconds_count{uri!="/actuator/prometheus"}[5m])) > 0
+          )
         for: 5m
         labels:
           severity: warning
-          scope: local
-          service: media-task-platform-java
+          scope: local-dev
         annotations:
-          summary: "Java app high p95 latency in local dev"
-          description: "p95 HTTP request latency is above 1 second for 5 minutes. This is a local SLO draft and depends on verified histogram metrics."
+          summary: "High Java app mean latency in local dev"
+          description: "Mean request latency is above 1 second for 5 minutes. P95 is deferred because live Actuator evidence exposes summary count/sum/max but no http_server_requests_seconds_bucket."

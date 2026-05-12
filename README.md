@@ -12,7 +12,7 @@ Verified in local Docker Desktop + kind scope only:
 - Added `docs/runbooks/slo.md` as the Week10 local SLO / SLI draft runbook.
 - Added `observability/prometheus/alerts.yaml` as the first Prometheus alert-rule draft.
 - Added local validation log: `artifacts/logs/week10_prometheus_alerts_check_20260511.log`.
-- The alert draft currently defines `JavaAppTargetDown`, `JavaAppHighErrorRatio`, and `JavaAppHighLatencyP95`.
+- The alert draft currently defines `JavaAppTargetDown`, `JavaAppHighErrorRatio`, and `JavaAppHighMeanLatency`.
 - `alerts.yaml` passed Docker-based `promtool check rules` validation.
 - Docker-based validation used `prom/prometheus:latest` with `/bin/promtool` as the entrypoint.
 
@@ -21,6 +21,10 @@ Evidence:
 - `docs/runbooks/slo.md`
 - `observability/prometheus/alerts.yaml`
 - `artifacts/logs/week10_prometheus_alerts_check_20260511.log`
+- `artifacts/logs/week10_actuator_metric_label_audit_20260512.log`
+- `artifacts/logs/week10_actuator_prometheus_live_recapture_20260512.log`
+- `artifacts/logs/week10_actuator_prometheus_live_20260512.txt`
+- `artifacts/logs/week10_alerts_label_aligned_20260512.log`
 
 Boundary:
 
@@ -28,8 +32,8 @@ Boundary:
 - This is not production alerting.
 - This is not Alertmanager routing.
 - This is not an on-call or paging policy.
-- `promtool check rules` has passed locally through Docker-based promtool.
-- HTTP metric names and labels still need to be verified against the real Spring Boot Actuator Prometheus output.
+- `promtool check rules` has passed locally through Docker-based promtool, and live Actuator metrics were recaptured to validate available HTTP metric names and labels.
+- HTTP metric names and labels were checked against live Spring Boot Actuator Prometheus output; P95 latency remains deferred because `http_server_requests_seconds_bucket` was not present in the captured metrics.
 
 
 ### Week09 Cloud K8s rollout verified update - 2026-05-08
@@ -106,8 +110,8 @@ Boundary:
 
 1. Week10：用真实 Actuator metrics 收紧告警表达式
    - 对照 `artifacts/logs/week09_port_forward_20260508.stdout` 或重新抓取 `/actuator/prometheus`
-   - 校正 `http_server_requests_seconds_count` 与 `http_server_requests_seconds_bucket` 的真实 label
-   - 避免写出无法命中真实时序的空转 alert
+   - 已校正 `http_server_requests_seconds_count` / `http_server_requests_seconds_sum` 的真实 label
+   - `http_server_requests_seconds_bucket` 未出现在 live Actuator evidence 中，因此 P95 alert 暂缓，当前使用 mean latency alert
 
 2. Week10：保持本地 SLO / alert 草案边界
    - 当前仅验证 local Docker Desktop + kind dev scope

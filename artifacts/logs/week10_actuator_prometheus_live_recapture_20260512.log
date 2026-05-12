@@ -1,0 +1,288 @@
+===== [Cloud live actuator prometheus recapture] =====
+2026-05-12T11:10:58+08:00
+
+===== [git / runtime context] =====
+## main...origin/main
+?? artifacts/logs/week10_actuator_metric_label_audit_20260512.log
+?? artifacts/logs/week10_actuator_prometheus_live_20260512.txt
+?? artifacts/logs/week10_actuator_prometheus_live_recapture_20260512.log
+0	0
+desktop-linux
+Name                Value
+Status              running
+SessionID           ab46521e-1f8e-42fd-a0dc-b5bab0156d29
+kind-cloud-dev
+
+===== [cluster resources] =====
+NAME                 STATUS   AGE
+default              Active   4d13h
+dev-platform         Active   4d13h
+kube-node-lease      Active   4d13h
+kube-public          Active   4d13h
+kube-system          Active   4d13h
+local-path-storage   Active   4d13h
+NAME                                            READY   STATUS    RESTARTS   AGE     IP            NODE                      NOMINATED NODE   READINESS GATES
+pod/media-task-platform-java-679648cf5c-5v6r8   1/1     Running   0          4d12h   10.244.0.16   cloud-dev-control-plane   <none>           <none>
+pod/week09-postgres-5746d95b78-ddln4            1/1     Running   0          4d12h   10.244.0.12   cloud-dev-control-plane   <none>           <none>
+pod/week09-redis-7856c7f7b-j7bz9                1/1     Running   0          4d12h   10.244.0.15   cloud-dev-control-plane   <none>           <none>
+
+NAME                                       READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS                 IMAGES                                SELECTOR
+deployment.apps/media-task-platform-java   1/1     1            1           4d13h   media-task-platform-java   media-task-platform-java:week09-dev   app=media-task-platform-java
+deployment.apps/week09-postgres            1/1     1            1           4d13h   postgres                   week09-postgres-local:dev             app=week09-postgres
+deployment.apps/week09-redis               1/1     1            1           4d13h   redis                      week09-redis-local:dev                app=week09-redis
+
+NAME                               TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)    AGE     SELECTOR
+service/media-task-platform-java   ClusterIP   10.96.138.5    <none>        8080/TCP   4d13h   app=media-task-platform-java
+service/week09-postgres            ClusterIP   10.96.42.18    <none>        5432/TCP   4d13h   app=week09-postgres
+service/week09-redis               ClusterIP   10.96.171.92   <none>        6379/TCP   4d13h   app=week09-redis
+
+===== [start port-forward] =====
+PF_PID=895752
+
+===== [port-forward logs] =====
+Forwarding from 127.0.0.1:18080 -> 8080
+Forwarding from [::1]:18080 -> 8080
+
+===== [generate traffic] =====
+--- round 1 ---
+health http_code=200
+prometheus http_code=200
+list_anon http_code=200
+--- round 2 ---
+health http_code=200
+prometheus http_code=200
+list_anon http_code=200
+--- round 3 ---
+health http_code=200
+prometheus http_code=200
+list_anon http_code=200
+--- round 4 ---
+health http_code=200
+prometheus http_code=200
+list_anon http_code=200
+--- round 5 ---
+health http_code=200
+prometheus http_code=200
+list_anon http_code=200
+
+===== [capture actuator prometheus] =====
+
+===== [captured metrics file] =====
+-rw-rw-r-- 1 GRT GRT 35K  5月 12 11:11 artifacts/logs/week10_actuator_prometheus_live_20260512.txt
+417 artifacts/logs/week10_actuator_prometheus_live_20260512.txt
+
+===== [http metric candidates] =====
+76:# HELP http_server_requests_active_seconds  
+77:# TYPE http_server_requests_active_seconds summary
+78:http_server_requests_active_seconds_count{exception="none",method="GET",outcome="SUCCESS",status="200",uri="UNKNOWN"} 1
+79:http_server_requests_active_seconds_sum{exception="none",method="GET",outcome="SUCCESS",status="200",uri="UNKNOWN"} 0.011830737
+80:# HELP http_server_requests_active_seconds_max  
+81:# TYPE http_server_requests_active_seconds_max gauge
+82:http_server_requests_active_seconds_max{exception="none",method="GET",outcome="SUCCESS",status="200",uri="UNKNOWN"} 0.011856752
+83:# HELP http_server_requests_seconds  
+84:# TYPE http_server_requests_seconds summary
+85:http_server_requests_seconds_count{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/health"} 117529
+86:http_server_requests_seconds_sum{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/health"} 483.003703706
+87:http_server_requests_seconds_count{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/prometheus"} 7
+88:http_server_requests_seconds_sum{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/prometheus"} 0.145445064
+89:http_server_requests_seconds_count{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/api/media-tasks"} 5
+90:http_server_requests_seconds_sum{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/api/media-tasks"} 0.056894754
+91:# HELP http_server_requests_seconds_max  
+92:# TYPE http_server_requests_seconds_max gauge
+93:http_server_requests_seconds_max{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/health"} 0.005960446
+94:http_server_requests_seconds_max{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/prometheus"} 0.018990003
+95:http_server_requests_seconds_max{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/api/media-tasks"} 0.040338767
+76:# HELP http_server_requests_active_seconds  
+77:# TYPE http_server_requests_active_seconds summary
+78:http_server_requests_active_seconds_count{exception="none",method="GET",outcome="SUCCESS",status="200",uri="UNKNOWN"} 1
+79:http_server_requests_active_seconds_sum{exception="none",method="GET",outcome="SUCCESS",status="200",uri="UNKNOWN"} 0.011830737
+80:# HELP http_server_requests_active_seconds_max  
+81:# TYPE http_server_requests_active_seconds_max gauge
+82:http_server_requests_active_seconds_max{exception="none",method="GET",outcome="SUCCESS",status="200",uri="UNKNOWN"} 0.011856752
+83:# HELP http_server_requests_seconds  
+84:# TYPE http_server_requests_seconds summary
+85:http_server_requests_seconds_count{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/health"} 117529
+86:http_server_requests_seconds_sum{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/health"} 483.003703706
+87:http_server_requests_seconds_count{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/prometheus"} 7
+88:http_server_requests_seconds_sum{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/prometheus"} 0.145445064
+89:http_server_requests_seconds_count{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/api/media-tasks"} 5
+90:http_server_requests_seconds_sum{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/api/media-tasks"} 0.056894754
+91:# HELP http_server_requests_seconds_max  
+92:# TYPE http_server_requests_seconds_max gauge
+93:http_server_requests_seconds_max{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/health"} 0.005960446
+94:http_server_requests_seconds_max{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/prometheus"} 0.018990003
+95:http_server_requests_seconds_max{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/api/media-tasks"} 0.040338767
+
+===== [all request/duration candidates] =====
+1:# HELP application_ready_time_seconds Time taken for the application to be ready to service requests
+2:# TYPE application_ready_time_seconds gauge
+3:application_ready_time_seconds{main_application_class="com.ryan.media.MediaTaskApplication"} 6.51
+4:# HELP application_started_time_seconds Time taken to start the application
+5:# TYPE application_started_time_seconds gauge
+6:application_started_time_seconds{main_application_class="com.ryan.media.MediaTaskApplication"} 6.417
+37:# HELP hikaricp_connections_acquire_seconds Connection acquire time
+38:# TYPE hikaricp_connections_acquire_seconds summary
+39:hikaricp_connections_acquire_seconds_count{pool="HikariPool-1"} 235063
+40:hikaricp_connections_acquire_seconds_sum{pool="HikariPool-1"} 73.093296199
+41:# HELP hikaricp_connections_acquire_seconds_max Connection acquire time
+42:# TYPE hikaricp_connections_acquire_seconds_max gauge
+43:hikaricp_connections_acquire_seconds_max{pool="HikariPool-1"} 9.32355E-4
+47:# HELP hikaricp_connections_creation_seconds Connection creation time
+48:# TYPE hikaricp_connections_creation_seconds summary
+49:hikaricp_connections_creation_seconds_count{pool="HikariPool-1"} 2478
+50:hikaricp_connections_creation_seconds_sum{pool="HikariPool-1"} 48.716
+51:# HELP hikaricp_connections_creation_seconds_max Connection creation time
+52:# TYPE hikaricp_connections_creation_seconds_max gauge
+53:hikaricp_connections_creation_seconds_max{pool="HikariPool-1"} 0.0
+69:# HELP hikaricp_connections_usage_seconds Connection usage time
+70:# TYPE hikaricp_connections_usage_seconds summary
+71:hikaricp_connections_usage_seconds_count{pool="HikariPool-1"} 235063
+72:hikaricp_connections_usage_seconds_sum{pool="HikariPool-1"} 0.195
+73:# HELP hikaricp_connections_usage_seconds_max Connection usage time
+74:# TYPE hikaricp_connections_usage_seconds_max gauge
+75:hikaricp_connections_usage_seconds_max{pool="HikariPool-1"} 0.009
+76:# HELP http_server_requests_active_seconds  
+77:# TYPE http_server_requests_active_seconds summary
+78:http_server_requests_active_seconds_count{exception="none",method="GET",outcome="SUCCESS",status="200",uri="UNKNOWN"} 1
+79:http_server_requests_active_seconds_sum{exception="none",method="GET",outcome="SUCCESS",status="200",uri="UNKNOWN"} 0.011830737
+80:# HELP http_server_requests_active_seconds_max  
+81:# TYPE http_server_requests_active_seconds_max gauge
+82:http_server_requests_active_seconds_max{exception="none",method="GET",outcome="SUCCESS",status="200",uri="UNKNOWN"} 0.011856752
+83:# HELP http_server_requests_seconds  
+84:# TYPE http_server_requests_seconds summary
+85:http_server_requests_seconds_count{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/health"} 117529
+86:http_server_requests_seconds_sum{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/health"} 483.003703706
+87:http_server_requests_seconds_count{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/prometheus"} 7
+88:http_server_requests_seconds_sum{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/prometheus"} 0.145445064
+89:http_server_requests_seconds_count{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/api/media-tasks"} 5
+90:http_server_requests_seconds_sum{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/api/media-tasks"} 0.056894754
+91:# HELP http_server_requests_seconds_max  
+92:# TYPE http_server_requests_seconds_max gauge
+93:http_server_requests_seconds_max{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/health"} 0.005960446
+94:http_server_requests_seconds_max{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/prometheus"} 0.018990003
+95:http_server_requests_seconds_max{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/api/media-tasks"} 0.040338767
+135:# HELP jvm_gc_concurrent_phase_time_seconds Time spent in concurrent phase
+136:# TYPE jvm_gc_concurrent_phase_time_seconds summary
+137:jvm_gc_concurrent_phase_time_seconds_count{action="end of concurrent GC pause",cause="No GC",gc="G1 Concurrent GC"} 2
+138:jvm_gc_concurrent_phase_time_seconds_sum{action="end of concurrent GC pause",cause="No GC",gc="G1 Concurrent GC"} 0.008
+139:# HELP jvm_gc_concurrent_phase_time_seconds_max Time spent in concurrent phase
+140:# TYPE jvm_gc_concurrent_phase_time_seconds_max gauge
+141:jvm_gc_concurrent_phase_time_seconds_max{action="end of concurrent GC pause",cause="No GC",gc="G1 Concurrent GC"} 0.0
+157:# HELP jvm_gc_pause_seconds Time spent in GC pause
+158:# TYPE jvm_gc_pause_seconds summary
+159:jvm_gc_pause_seconds_count{action="end of minor GC",cause="G1 Evacuation Pause",gc="G1 Young Generation"} 284
+160:jvm_gc_pause_seconds_sum{action="end of minor GC",cause="G1 Evacuation Pause",gc="G1 Young Generation"} 1.027
+161:jvm_gc_pause_seconds_count{action="end of minor GC",cause="Metadata GC Threshold",gc="G1 Young Generation"} 1
+162:jvm_gc_pause_seconds_sum{action="end of minor GC",cause="Metadata GC Threshold",gc="G1 Young Generation"} 0.011
+163:# HELP jvm_gc_pause_seconds_max Time spent in GC pause
+164:# TYPE jvm_gc_pause_seconds_max gauge
+165:jvm_gc_pause_seconds_max{action="end of minor GC",cause="G1 Evacuation Pause",gc="G1 Young Generation"} 0.0
+166:jvm_gc_pause_seconds_max{action="end of minor GC",cause="Metadata GC Threshold",gc="G1 Young Generation"} 0.0
+220:# HELP lettuce_command_completion_seconds Latency between command send and command completion (complete response received
+221:# TYPE lettuce_command_completion_seconds summary
+222:lettuce_command_completion_seconds_count{command="CLIENT",local="local:any",remote="week09-redis.dev-platform.svc.cluster.local/10.96.171.92:6379"} 2
+223:lettuce_command_completion_seconds_sum{command="CLIENT",local="local:any",remote="week09-redis.dev-platform.svc.cluster.local/10.96.171.92:6379"} 0.007055726
+224:lettuce_command_completion_seconds_count{command="HELLO",local="local:any",remote="week09-redis.dev-platform.svc.cluster.local/10.96.171.92:6379"} 1
+225:lettuce_command_completion_seconds_sum{command="HELLO",local="local:any",remote="week09-redis.dev-platform.svc.cluster.local/10.96.171.92:6379"} 0.015302195
+226:lettuce_command_completion_seconds_count{command="INFO",local="local:any",remote="week09-redis.dev-platform.svc.cluster.local/10.96.171.92:6379"} 117529
+227:lettuce_command_completion_seconds_sum{command="INFO",local="local:any",remote="week09-redis.dev-platform.svc.cluster.local/10.96.171.92:6379"} 77.788750742
+228:# HELP lettuce_command_completion_seconds_max Latency between command send and command completion (complete response received
+229:# TYPE lettuce_command_completion_seconds_max gauge
+230:lettuce_command_completion_seconds_max{command="CLIENT",local="local:any",remote="week09-redis.dev-platform.svc.cluster.local/10.96.171.92:6379"} 0.0
+231:lettuce_command_completion_seconds_max{command="HELLO",local="local:any",remote="week09-redis.dev-platform.svc.cluster.local/10.96.171.92:6379"} 0.0
+232:lettuce_command_completion_seconds_max{command="INFO",local="local:any",remote="week09-redis.dev-platform.svc.cluster.local/10.96.171.92:6379"} 9.24606E-4
+233:# HELP lettuce_command_firstresponse_seconds Latency between command send and first response (first response received)
+234:# TYPE lettuce_command_firstresponse_seconds summary
+235:lettuce_command_firstresponse_seconds_count{command="CLIENT",local="local:any",remote="week09-redis.dev-platform.svc.cluster.local/10.96.171.92:6379"} 2
+236:lettuce_command_firstresponse_seconds_sum{command="CLIENT",local="local:any",remote="week09-redis.dev-platform.svc.cluster.local/10.96.171.92:6379"} 0.006523217
+237:lettuce_command_firstresponse_seconds_count{command="HELLO",local="local:any",remote="week09-redis.dev-platform.svc.cluster.local/10.96.171.92:6379"} 1
+238:lettuce_command_firstresponse_seconds_sum{command="HELLO",local="local:any",remote="week09-redis.dev-platform.svc.cluster.local/10.96.171.92:6379"} 0.008222606
+239:lettuce_command_firstresponse_seconds_count{command="INFO",local="local:any",remote="week09-redis.dev-platform.svc.cluster.local/10.96.171.92:6379"} 117529
+240:lettuce_command_firstresponse_seconds_sum{command="INFO",local="local:any",remote="week09-redis.dev-platform.svc.cluster.local/10.96.171.92:6379"} 76.101288306
+241:# HELP lettuce_command_firstresponse_seconds_max Latency between command send and first response (first response received)
+242:# TYPE lettuce_command_firstresponse_seconds_max gauge
+243:lettuce_command_firstresponse_seconds_max{command="CLIENT",local="local:any",remote="week09-redis.dev-platform.svc.cluster.local/10.96.171.92:6379"} 0.0
+244:lettuce_command_firstresponse_seconds_max{command="HELLO",local="local:any",remote="week09-redis.dev-platform.svc.cluster.local/10.96.171.92:6379"} 0.0
+245:lettuce_command_firstresponse_seconds_max{command="INFO",local="local:any",remote="week09-redis.dev-platform.svc.cluster.local/10.96.171.92:6379"} 9.14457E-4
+265:# HELP process_start_time_seconds Start time of the process since unix epoch.
+266:# TYPE process_start_time_seconds gauge
+267:process_start_time_seconds 1.778163736322E9
+268:# HELP process_uptime_seconds The uptime of the Java virtual machine
+269:# TYPE process_uptime_seconds gauge
+270:process_uptime_seconds 391761.143
+271:# HELP spring_security_authorizations_active_seconds  
+272:# TYPE spring_security_authorizations_active_seconds summary
+273:spring_security_authorizations_active_seconds_count{spring_security_authentication_type="n/a",spring_security_authorization_decision="unknown",spring_security_object="request"} 0
+274:spring_security_authorizations_active_seconds_sum{spring_security_authentication_type="n/a",spring_security_authorization_decision="unknown",spring_security_object="request"} 0.0
+275:# HELP spring_security_authorizations_active_seconds_max  
+276:# TYPE spring_security_authorizations_active_seconds_max gauge
+277:spring_security_authorizations_active_seconds_max{spring_security_authentication_type="n/a",spring_security_authorization_decision="unknown",spring_security_object="request"} 0.0
+278:# HELP spring_security_authorizations_seconds  
+279:# TYPE spring_security_authorizations_seconds summary
+280:spring_security_authorizations_seconds_count{error="none",spring_security_authentication_type="n/a",spring_security_authorization_decision="true",spring_security_object="request"} 117542
+281:spring_security_authorizations_seconds_sum{error="none",spring_security_authentication_type="n/a",spring_security_authorization_decision="true",spring_security_object="request"} 6.594978244
+282:# HELP spring_security_authorizations_seconds_max  
+283:# TYPE spring_security_authorizations_seconds_max gauge
+284:spring_security_authorizations_seconds_max{error="none",spring_security_authentication_type="n/a",spring_security_authorization_decision="true",spring_security_object="request"} 0.001199796
+291:# HELP spring_security_filterchains_active_seconds  
+292:# TYPE spring_security_filterchains_active_seconds summary
+293:spring_security_filterchains_active_seconds_count{spring_security_filterchain_position="0",spring_security_filterchain_size="0",spring_security_reached_filter_name="none",spring_security_reached_filter_section="after"} 0
+294:spring_security_filterchains_active_seconds_sum{spring_security_filterchain_position="0",spring_security_filterchain_size="0",spring_security_reached_filter_name="none",spring_security_reached_filter_section="after"} 0.0
+295:spring_security_filterchains_active_seconds_count{spring_security_filterchain_position="0",spring_security_filterchain_size="0",spring_security_reached_filter_name="none",spring_security_reached_filter_section="before"} 0
+296:spring_security_filterchains_active_seconds_sum{spring_security_filterchain_position="0",spring_security_filterchain_size="0",spring_security_reached_filter_name="none",spring_security_reached_filter_section="before"} 0.0
+297:# HELP spring_security_filterchains_active_seconds_max  
+298:# TYPE spring_security_filterchains_active_seconds_max gauge
+299:spring_security_filterchains_active_seconds_max{spring_security_filterchain_position="0",spring_security_filterchain_size="0",spring_security_reached_filter_name="none",spring_security_reached_filter_section="after"} 0.0
+300:spring_security_filterchains_active_seconds_max{spring_security_filterchain_position="0",spring_security_filterchain_size="0",spring_security_reached_filter_name="none",spring_security_reached_filter_section="before"} 0.0
+349:# HELP spring_security_filterchains_requestcache_after_total  
+350:# TYPE spring_security_filterchains_requestcache_after_total counter
+351:spring_security_filterchains_requestcache_after_total{spring_security_filterchain_position="0",spring_security_filterchain_size="0",spring_security_reached_filter_name="none",spring_security_reached_filter_section="after"} 117541.0
+352:# HELP spring_security_filterchains_requestcache_before_total  
+353:# TYPE spring_security_filterchains_requestcache_before_total counter
+354:spring_security_filterchains_requestcache_before_total{spring_security_filterchain_position="0",spring_security_filterchain_size="0",spring_security_reached_filter_name="none",spring_security_reached_filter_section="before"} 117542.0
+355:# HELP spring_security_filterchains_seconds  
+356:# TYPE spring_security_filterchains_seconds summary
+357:spring_security_filterchains_seconds_count{error="none",spring_security_filterchain_position="12",spring_security_filterchain_size="12",spring_security_reached_filter_name="AuthorizationFilter",spring_security_reached_filter_section="before"} 117542
+358:spring_security_filterchains_seconds_sum{error="none",spring_security_filterchain_position="12",spring_security_filterchain_size="12",spring_security_reached_filter_name="AuthorizationFilter",spring_security_reached_filter_section="before"} 28.384326072
+359:spring_security_filterchains_seconds_count{error="none",spring_security_filterchain_position="12",spring_security_filterchain_size="12",spring_security_reached_filter_name="DisableEncodeUrlFilter",spring_security_reached_filter_section="after"} 117541
+360:spring_security_filterchains_seconds_sum{error="none",spring_security_filterchain_position="12",spring_security_filterchain_size="12",spring_security_reached_filter_name="DisableEncodeUrlFilter",spring_security_reached_filter_section="after"} 28.622162432
+361:# HELP spring_security_filterchains_seconds_max  
+362:# TYPE spring_security_filterchains_seconds_max gauge
+363:spring_security_filterchains_seconds_max{error="none",spring_security_filterchain_position="12",spring_security_filterchain_size="12",spring_security_reached_filter_name="AuthorizationFilter",spring_security_reached_filter_section="before"} 0.001315897
+364:spring_security_filterchains_seconds_max{error="none",spring_security_filterchain_position="12",spring_security_filterchain_size="12",spring_security_reached_filter_name="DisableEncodeUrlFilter",spring_security_reached_filter_section="after"} 1.928E-4
+377:# HELP spring_security_http_secured_requests_active_seconds  
+378:# TYPE spring_security_http_secured_requests_active_seconds summary
+379:spring_security_http_secured_requests_active_seconds_count 1
+380:spring_security_http_secured_requests_active_seconds_sum 0.011997757
+381:# HELP spring_security_http_secured_requests_active_seconds_max  
+382:# TYPE spring_security_http_secured_requests_active_seconds_max gauge
+383:spring_security_http_secured_requests_active_seconds_max 0.012006248
+384:# HELP spring_security_http_secured_requests_seconds  
+385:# TYPE spring_security_http_secured_requests_seconds summary
+386:spring_security_http_secured_requests_seconds_count{error="none"} 117541
+387:spring_security_http_secured_requests_seconds_sum{error="none"} 381.613477862
+388:# HELP spring_security_http_secured_requests_seconds_max  
+389:# TYPE spring_security_http_secured_requests_seconds_max gauge
+390:spring_security_http_secured_requests_seconds_max{error="none"} 0.035202867
+406:# HELP tomcat_sessions_alive_max_seconds  
+407:# TYPE tomcat_sessions_alive_max_seconds gauge
+408:tomcat_sessions_alive_max_seconds 0.0
+
+===== [promtool check metrics] =====
+promtool: error: unexpected /work/week10_actuator_prometheus_live_20260512.txt, try --help
+
+===== [cleanup port-forward] =====
+
+===== [post status] =====
+## main...origin/main
+?? artifacts/logs/week10_actuator_metric_label_audit_20260512.log
+?? artifacts/logs/week10_actuator_prometheus_live_20260512.txt
+?? artifacts/logs/week10_actuator_prometheus_live_recapture_20260512.log
+?? artifacts/logs/week10_port_forward_18080_20260512.stderr
+?? artifacts/logs/week10_port_forward_18080_20260512.stdout
+
+===== [log paths] =====
+-rw-rw-r-- 1 GRT GRT 35K  5月 12 11:11 artifacts/logs/week10_actuator_prometheus_live_20260512.txt
+-rw-rw-r-- 1 GRT GRT 24K  5月 12 11:11 artifacts/logs/week10_actuator_prometheus_live_recapture_20260512.log
+-rw-rw-r-- 1 GRT GRT   0  5月 12 11:11 artifacts/logs/week10_port_forward_18080_20260512.stderr
+-rw-rw-r-- 1 GRT GRT 556  5月 12 11:11 artifacts/logs/week10_port_forward_18080_20260512.stdout

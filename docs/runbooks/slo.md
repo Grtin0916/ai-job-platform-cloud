@@ -31,7 +31,7 @@ Current verified service boundary:
 | availability | good health responses / total health probes | /actuator/health, Kubernetes readiness, Prometheus up | local-only |
 | scrape availability | successful Prometheus scrape / total scrapes | up{job=...} | local-only |
 | error ratio | 5xx requests / total HTTP requests | http_server_requests_seconds_count if available | metric name must be verified |
-| latency p95 | p95 HTTP request latency | http_server_requests_seconds_bucket if available | histogram metric must be verified |
+| latency mean | Mean HTTP request latency | http_server_requests_seconds_sum / http_server_requests_seconds_count | verified by live Actuator evidence on 2026-05-12 |
 | rollout success | successful rollout status / rollout attempts | kubectl rollout status logs | manual evidence only |
 | rollback dry-run success | dry-run rollback command success | scripts/rollout_undo.sh / kubectl logs | manual evidence only |
 
@@ -54,7 +54,7 @@ Initial alerts:
 
 - JavaAppTargetDown
 - JavaAppHighErrorRatio
-- JavaAppHighLatencyP95
+- JavaAppHighMeanLatency
 
 These rules are local draft rules. They are intended for syntax validation and later metric-name refinement. They do not imply Alertmanager routing, paging, on-call ownership, or production severity.
 
@@ -87,3 +87,43 @@ Docker-based validation if Prometheus image is available:
 3. Add recording rules only after metric names and label cardinality are stable.
 4. Add Alertmanager only after local alert rules are meaningful.
 5. Keep README Verified Scope synchronized with actual validated evidence.
+
+## 2026-05-12 Live Actuator Metrics Alignment
+
+Live recapture source:
+
+- `artifacts/logs/week10_actuator_prometheus_live_20260512.txt`
+- `artifacts/logs/week10_actuator_prometheus_live_recapture_20260512.log`
+- `artifacts/logs/week10_actuator_metric_label_audit_20260512.log`
+
+Observed HTTP metric labels:
+
+- `error`
+- `exception`
+- `method`
+- `outcome`
+- `status`
+- `uri`
+
+Observed HTTP request metrics:
+
+- `http_server_requests_seconds_count`
+- `http_server_requests_seconds_sum`
+- `http_server_requests_seconds_max`
+- `http_server_requests_active_seconds_count`
+- `http_server_requests_active_seconds_sum`
+- `http_server_requests_active_seconds_max`
+
+Current decision:
+
+- `JavaAppHighErrorRatio` is backed by live `http_server_requests_seconds_count{status=...}` evidence.
+- `JavaAppHighMeanLatency` is backed by live `http_server_requests_seconds_sum/count` evidence.
+- Previous P95 latency expression based on `http_server_requests_seconds_bucket` is deferred because the live Actuator evidence does not expose `http_server_requests_seconds_bucket`.
+
+Boundary:
+
+- This remains a local Docker Desktop + kind development SLO / alert draft.
+- This is not a production SLO.
+- This is not Alertmanager routing.
+- This is not paging or on-call policy.
+- The currently deployed Java image in kind may lag behind the latest Java repository security-contract commit; the live metrics recapture is used for metric-name and label validation, not for Java API auth-contract validation.

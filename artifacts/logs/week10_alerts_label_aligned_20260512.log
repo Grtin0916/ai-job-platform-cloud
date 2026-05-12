@@ -1,0 +1,704 @@
+===== [Week10 Cloud alert label alignment] =====
+2026-05-12T11:29:47+08:00
+
+===== [git status before validation] =====
+## main...origin/main
+ M observability/prometheus/alerts.yaml
+?? artifacts/logs/week10_actuator_metric_label_audit_20260512.log
+?? artifacts/logs/week10_actuator_prometheus_live_20260512.txt
+?? artifacts/logs/week10_actuator_prometheus_live_recapture_20260512.log
+?? artifacts/logs/week10_alerts_before_label_align_20260512.yaml
+?? artifacts/logs/week10_alerts_label_aligned_20260512.log
+?? artifacts/logs/week10_port_forward_18080_20260512.stderr
+?? artifacts/logs/week10_port_forward_18080_20260512.stdout
+
+===== [new alerts.yaml] =====
+groups:
+  - name: week10-local-slo-alerts
+    rules:
+      - alert: JavaAppTargetDown
+        expr: up{job=~".*java.*|.*media.*"} == 0
+        for: 2m
+        labels:
+          severity: warning
+          scope: local-dev
+        annotations:
+          summary: "Java media task target is down"
+          description: "Prometheus target {{ $labels.job }} has been down for more than 2 minutes in local dev."
+
+      - alert: JavaAppHighErrorRatio
+        expr: |
+          (
+            sum(rate(http_server_requests_seconds_count{status=~"5.."}[5m]))
+            /
+            clamp_min(sum(rate(http_server_requests_seconds_count[5m])), 1)
+          ) > 0.05
+        for: 5m
+        labels:
+          severity: warning
+          scope: local-dev
+        annotations:
+          summary: "High Java app 5xx error ratio in local dev"
+          description: "5xx request ratio is above 5% for 5 minutes. Verified against live Actuator labels: status, method, uri, outcome, exception, error."
+
+      - alert: JavaAppHighMeanLatency
+        expr: |
+          (
+            (
+              sum(rate(http_server_requests_seconds_sum{uri!="/actuator/prometheus"}[5m]))
+              /
+              sum(rate(http_server_requests_seconds_count{uri!="/actuator/prometheus"}[5m]))
+            ) > 1
+          )
+          and
+          (
+            sum(rate(http_server_requests_seconds_count{uri!="/actuator/prometheus"}[5m])) > 0
+          )
+        for: 5m
+        labels:
+          severity: warning
+          scope: local-dev
+        annotations:
+          summary: "High Java app mean latency in local dev"
+          description: "Mean request latency is above 1 second for 5 minutes. P95 is deferred because live Actuator evidence exposes summary count/sum/max but no http_server_requests_seconds_bucket."
+
+===== [live metric evidence: http server request series] =====
+78:http_server_requests_active_seconds_count{exception="none",method="GET",outcome="SUCCESS",status="200",uri="UNKNOWN"} 1
+79:http_server_requests_active_seconds_sum{exception="none",method="GET",outcome="SUCCESS",status="200",uri="UNKNOWN"} 0.011830737
+82:http_server_requests_active_seconds_max{exception="none",method="GET",outcome="SUCCESS",status="200",uri="UNKNOWN"} 0.011856752
+85:http_server_requests_seconds_count{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/health"} 117529
+86:http_server_requests_seconds_sum{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/health"} 483.003703706
+87:http_server_requests_seconds_count{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/prometheus"} 7
+88:http_server_requests_seconds_sum{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/prometheus"} 0.145445064
+89:http_server_requests_seconds_count{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/api/media-tasks"} 5
+90:http_server_requests_seconds_sum{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/api/media-tasks"} 0.056894754
+93:http_server_requests_seconds_max{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/health"} 0.005960446
+94:http_server_requests_seconds_max{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/actuator/prometheus"} 0.018990003
+95:http_server_requests_seconds_max{error="none",exception="none",method="GET",outcome="SUCCESS",status="200",uri="/api/media-tasks"} 0.040338767
+
+===== [bucket evidence check] =====
+BUCKET_MISSING_P95_DEFERRED
+
+===== [promtool check rules] =====
+Checking /etc/prometheus/alerts.yaml
+  SUCCESS: 3 rules found
+
+
+===== [promtool check metrics via stdin] =====
+http_server_requests_active_seconds no help text
+http_server_requests_active_seconds_max no help text
+http_server_requests_seconds no help text
+http_server_requests_seconds_max no help text
+jvm_compilation_time_ms_total metric names should not contain abbreviated units
+process_cpu_time_ns_total metric names should not contain abbreviated units
+spring_security_authorizations_active_seconds no help text
+spring_security_authorizations_active_seconds_max no help text
+spring_security_authorizations_seconds no help text
+spring_security_authorizations_seconds_max no help text
+spring_security_filterchains_access_exceptions_after_total no help text
+spring_security_filterchains_access_exceptions_before_total no help text
+spring_security_filterchains_active_seconds no help text
+spring_security_filterchains_active_seconds_max no help text
+spring_security_filterchains_authentication_anonymous_after_total no help text
+spring_security_filterchains_authentication_anonymous_before_total no help text
+spring_security_filterchains_authentication_basic_after_total no help text
+spring_security_filterchains_authentication_basic_before_total no help text
+spring_security_filterchains_authorization_after_total no help text
+spring_security_filterchains_authorization_before_total no help text
+spring_security_filterchains_context_async_after_total no help text
+spring_security_filterchains_context_async_before_total no help text
+spring_security_filterchains_context_holder_after_total no help text
+spring_security_filterchains_context_holder_before_total no help text
+spring_security_filterchains_context_servlet_after_total no help text
+spring_security_filterchains_context_servlet_before_total no help text
+spring_security_filterchains_header_after_total no help text
+spring_security_filterchains_header_before_total no help text
+spring_security_filterchains_logout_after_total no help text
+spring_security_filterchains_logout_before_total no help text
+spring_security_filterchains_requestcache_after_total no help text
+spring_security_filterchains_requestcache_before_total no help text
+spring_security_filterchains_seconds no help text
+spring_security_filterchains_seconds_max no help text
+spring_security_filterchains_session_management_after_total no help text
+spring_security_filterchains_session_management_before_total no help text
+spring_security_filterchains_session_urlencoding_after_total no help text
+spring_security_filterchains_session_urlencoding_before_total no help text
+spring_security_http_secured_requests_active_seconds no help text
+spring_security_http_secured_requests_active_seconds_max no help text
+spring_security_http_secured_requests_seconds no help text
+spring_security_http_secured_requests_seconds_max no help text
+system_cpu_count non-histogram and non-summary metrics should not have "_count" suffix
+tomcat_sessions_active_current_sessions no help text
+tomcat_sessions_active_max_sessions no help text
+tomcat_sessions_alive_max_seconds no help text
+tomcat_sessions_created_sessions_total no help text
+tomcat_sessions_expired_sessions_total no help text
+tomcat_sessions_rejected_sessions_total no help text
+
+===== [post status] =====
+## main...origin/main
+ M observability/prometheus/alerts.yaml
+?? artifacts/logs/week10_actuator_metric_label_audit_20260512.log
+?? artifacts/logs/week10_actuator_prometheus_live_20260512.txt
+?? artifacts/logs/week10_actuator_prometheus_live_recapture_20260512.log
+?? artifacts/logs/week10_alerts_before_label_align_20260512.yaml
+?? artifacts/logs/week10_alerts_label_aligned_20260512.log
+?? artifacts/logs/week10_port_forward_18080_20260512.stderr
+?? artifacts/logs/week10_port_forward_18080_20260512.stdout
+
+===== [log path] =====
+-rw-rw-r-- 1 GRT GRT 1.8K  5月 12 11:29 artifacts/logs/week10_alerts_before_label_align_20260512.yaml
+-rw-rw-r-- 1 GRT GRT 8.0K  5月 12 11:29 artifacts/logs/week10_alerts_label_aligned_20260512.log
+# Week10 SLO / SLI Draft Runbook
+
+Date: 2026-05-11
+Scope: local Docker Desktop + kind dev-cluster evidence only.
+
+## 1. Why this exists
+
+Week09 verified local Kubernetes rollout semantics for the Java service: Deployment, Service, rollout status, rollout history, rollback dry-run, health endpoint, and Prometheus metrics through port-forward.
+
+Week10 starts the reliability layer. The goal is not to claim production SLOs. The goal is to define local SLI / SLO semantics and create a first Prometheus alert-rule draft that can be checked locally.
+
+## 2. Current service boundary
+
+Current verified service boundary:
+
+- Runtime: local Docker Desktop
+- Cluster: kind dev cluster
+- Namespace: dev-platform
+- Java backend Deployment: media-task-platform-java
+- Service: media-task-platform-java
+- Health endpoint: /actuator/health
+- Metrics endpoint: /actuator/prometheus
+- Evidence logs:
+  - artifacts/logs/week09_k8s_media_task_rollout_final_20260508.log
+  - artifacts/logs/week09_port_forward_20260508.stdout
+
+## 3. SLI candidates
+
+| SLI | Definition | Candidate source | Current boundary |
+|---|---|---|---|
+| availability | good health responses / total health probes | /actuator/health, Kubernetes readiness, Prometheus up | local-only |
+| scrape availability | successful Prometheus scrape / total scrapes | up{job=...} | local-only |
+| error ratio | 5xx requests / total HTTP requests | http_server_requests_seconds_count if available | metric name must be verified |
+| latency p95 | p95 HTTP request latency | http_server_requests_seconds_bucket if available | histogram metric must be verified |
+| rollout success | successful rollout status / rollout attempts | kubectl rollout status logs | manual evidence only |
+| rollback dry-run success | dry-run rollback command success | scripts/rollout_undo.sh / kubectl logs | manual evidence only |
+
+## 4. Week10 local SLO draft
+
+| SLO | Draft target | Window | Why not 100 percent |
+|---|---:|---|---|
+| local scrape availability | >= 99.0% | 30m | local Docker / kind / port-forward may restart |
+| local HTTP error ratio | < 5.0% | 10m | Week10 has no production traffic model |
+| local p95 latency | < 1s | 10m | development cluster and laptop/server contention may affect latency |
+| local rollout recoverability | rollout status succeeds and rollback dry-run command remains available | per rollout test | manual release evidence, not a continuous SLO |
+
+## 5. First alert-rule draft
+
+The first alert rules live in:
+
+- observability/prometheus/alerts.yaml
+
+Initial alerts:
+
+- JavaAppTargetDown
+- JavaAppHighErrorRatio
+- JavaAppHighLatencyP95
+
+These rules are local draft rules. They are intended for syntax validation and later metric-name refinement. They do not imply Alertmanager routing, paging, on-call ownership, or production severity.
+
+## 6. Validation command
+
+Preferred validation command if promtool is available locally:
+
+    promtool check rules observability/prometheus/alerts.yaml
+
+Docker-based validation if Prometheus image is available:
+
+    docker run --rm -v "$PWD:/work" -w /work prom/prometheus:latest promtool check rules observability/prometheus/alerts.yaml
+
+## 7. Not yet verified
+
+- No production SLO.
+- No real cloud-provider workload.
+- No Alertmanager routing.
+- No paging policy.
+- No on-call workflow.
+- No burn-rate alerting.
+- No production traffic SLI.
+- No confirmed long-window error budget.
+- No verified metric-name mapping for all HTTP request metrics.
+
+## 8. Next steps
+
+1. Check which exact Spring Boot Actuator Prometheus metrics are exposed in the local Java service.
+2. Tighten labels in alerts.yaml to match real metric labels.
+3. Add recording rules only after metric names and label cardinality are stable.
+4. Add Alertmanager only after local alert rules are meaningful.
+5. Keep README Verified Scope synchronized with actual validated evidence.
+
+## 2026-05-12 Live Actuator Metrics Alignment
+
+Live recapture source:
+
+- `artifacts/logs/week10_actuator_prometheus_live_20260512.txt`
+- `artifacts/logs/week10_actuator_prometheus_live_recapture_20260512.log`
+- `artifacts/logs/week10_actuator_metric_label_audit_20260512.log`
+
+Observed HTTP metric labels:
+
+- `error`
+- `exception`
+- `method`
+- `outcome`
+- `status`
+- `uri`
+
+Observed HTTP request metrics:
+
+- `http_server_requests_seconds_count`
+- `http_server_requests_seconds_sum`
+- `http_server_requests_seconds_max`
+- `http_server_requests_active_seconds_count`
+- `http_server_requests_active_seconds_sum`
+- `http_server_requests_active_seconds_max`
+
+Current decision:
+
+- `JavaAppHighErrorRatio` is backed by live `http_server_requests_seconds_count{status=...}` evidence.
+- `JavaAppHighMeanLatency` is backed by live `http_server_requests_seconds_sum/count` evidence.
+- Previous P95 latency expression based on `http_server_requests_seconds_bucket` is deferred because the live Actuator evidence does not expose `http_server_requests_seconds_bucket`.
+
+Boundary:
+
+- This remains a local Docker Desktop + kind development SLO / alert draft.
+- This is not a production SLO.
+- This is not Alertmanager routing.
+- This is not paging or on-call policy.
+- The currently deployed Java image in kind may lag behind the latest Java repository security-contract commit; the live metrics recapture is used for metric-name and label validation, not for Java API auth-contract validation.
+# Week10 SLO / SLI Draft Runbook
+
+Date: 2026-05-11
+Scope: local Docker Desktop + kind dev-cluster evidence only.
+
+## 1. Why this exists
+
+Week09 verified local Kubernetes rollout semantics for the Java service: Deployment, Service, rollout status, rollout history, rollback dry-run, health endpoint, and Prometheus metrics through port-forward.
+
+Week10 starts the reliability layer. The goal is not to claim production SLOs. The goal is to define local SLI / SLO semantics and create a first Prometheus alert-rule draft that can be checked locally.
+
+## 2. Current service boundary
+
+Current verified service boundary:
+
+- Runtime: local Docker Desktop
+- Cluster: kind dev cluster
+- Namespace: dev-platform
+- Java backend Deployment: media-task-platform-java
+- Service: media-task-platform-java
+- Health endpoint: /actuator/health
+- Metrics endpoint: /actuator/prometheus
+- Evidence logs:
+  - artifacts/logs/week09_k8s_media_task_rollout_final_20260508.log
+  - artifacts/logs/week09_port_forward_20260508.stdout
+
+## 3. SLI candidates
+
+| SLI | Definition | Candidate source | Current boundary |
+|---|---|---|---|
+| availability | good health responses / total health probes | /actuator/health, Kubernetes readiness, Prometheus up | local-only |
+| scrape availability | successful Prometheus scrape / total scrapes | up{job=...} | local-only |
+| error ratio | 5xx requests / total HTTP requests | http_server_requests_seconds_count if available | metric name must be verified |
+| latency p95 | p95 HTTP request latency | http_server_requests_seconds_bucket if available | histogram metric must be verified |
+| rollout success | successful rollout status / rollout attempts | kubectl rollout status logs | manual evidence only |
+| rollback dry-run success | dry-run rollback command success | scripts/rollout_undo.sh / kubectl logs | manual evidence only |
+
+## 4. Week10 local SLO draft
+
+| SLO | Draft target | Window | Why not 100 percent |
+|---|---:|---|---|
+| local scrape availability | >= 99.0% | 30m | local Docker / kind / port-forward may restart |
+| local HTTP error ratio | < 5.0% | 10m | Week10 has no production traffic model |
+| local p95 latency | < 1s | 10m | development cluster and laptop/server contention may affect latency |
+| local rollout recoverability | rollout status succeeds and rollback dry-run command remains available | per rollout test | manual release evidence, not a continuous SLO |
+
+## 5. First alert-rule draft
+
+The first alert rules live in:
+
+- observability/prometheus/alerts.yaml
+
+Initial alerts:
+
+- JavaAppTargetDown
+- JavaAppHighErrorRatio
+- JavaAppHighLatencyP95
+
+These rules are local draft rules. They are intended for syntax validation and later metric-name refinement. They do not imply Alertmanager routing, paging, on-call ownership, or production severity.
+
+## 6. Validation command
+
+Preferred validation command if promtool is available locally:
+
+    promtool check rules observability/prometheus/alerts.yaml
+
+Docker-based validation if Prometheus image is available:
+
+    docker run --rm -v "$PWD:/work" -w /work prom/prometheus:latest promtool check rules observability/prometheus/alerts.yaml
+
+## 7. Not yet verified
+
+- No production SLO.
+- No real cloud-provider workload.
+- No Alertmanager routing.
+- No paging policy.
+- No on-call workflow.
+- No burn-rate alerting.
+- No production traffic SLI.
+- No confirmed long-window error budget.
+- No verified metric-name mapping for all HTTP request metrics.
+
+## 8. Next steps
+
+1. Check which exact Spring Boot Actuator Prometheus metrics are exposed in the local Java service.
+2. Tighten labels in alerts.yaml to match real metric labels.
+3. Add recording rules only after metric names and label cardinality are stable.
+4. Add Alertmanager only after local alert rules are meaningful.
+5. Keep README Verified Scope synchronized with actual validated evidence.
+
+## 2026-05-12 Live Actuator Metrics Alignment
+
+Live recapture source:
+
+- `artifacts/logs/week10_actuator_prometheus_live_20260512.txt`
+- `artifacts/logs/week10_actuator_prometheus_live_recapture_20260512.log`
+- `artifacts/logs/week10_actuator_metric_label_audit_20260512.log`
+
+Observed HTTP metric labels:
+
+- `error`
+- `exception`
+- `method`
+- `outcome`
+- `status`
+- `uri`
+
+Observed HTTP request metrics:
+
+- `http_server_requests_seconds_count`
+- `http_server_requests_seconds_sum`
+- `http_server_requests_seconds_max`
+- `http_server_requests_active_seconds_count`
+- `http_server_requests_active_seconds_sum`
+- `http_server_requests_active_seconds_max`
+
+Current decision:
+
+- `JavaAppHighErrorRatio` is backed by live `http_server_requests_seconds_count{status=...}` evidence.
+- `JavaAppHighMeanLatency` is backed by live `http_server_requests_seconds_sum/count` evidence.
+- Previous P95 latency expression based on `http_server_requests_seconds_bucket` is deferred because the live Actuator evidence does not expose `http_server_requests_seconds_bucket`.
+
+Boundary:
+
+- This remains a local Docker Desktop + kind development SLO / alert draft.
+- This is not a production SLO.
+- This is not Alertmanager routing.
+- This is not paging or on-call policy.
+- The currently deployed Java image in kind may lag behind the latest Java repository security-contract commit; the live metrics recapture is used for metric-name and label validation, not for Java API auth-contract validation.
+# ai-job-platform-cloud
+
+一个面向云原生 / SRE / 平台工程方向的最小 Cloud 工程骨架仓库。
+
+当前阶段目标不是立刻做成完整平台，而是先冻结本地开发脚手架选型、Terraform 目录约定、Kubernetes base 样板和可执行的环境检查入口，为后续 observability、CI/CD、发布回滚与 IaC 扩展打底。
+
+
+### Week10 Cloud SLO / alert draft verified update - 2026-05-11
+
+Verified in local Docker Desktop + kind scope only:
+
+- Added `docs/runbooks/slo.md` as the Week10 local SLO / SLI draft runbook.
+- Added `observability/prometheus/alerts.yaml` as the first Prometheus alert-rule draft.
+- Added local validation log: `artifacts/logs/week10_prometheus_alerts_check_20260511.log`.
+- The alert draft currently defines `JavaAppTargetDown`, `JavaAppHighErrorRatio`, and `JavaAppHighMeanLatency`.
+- `alerts.yaml` passed Docker-based `promtool check rules` validation.
+- Docker-based validation used `prom/prometheus:latest` with `/bin/promtool` as the entrypoint.
+
+Evidence:
+
+- `docs/runbooks/slo.md`
+- `observability/prometheus/alerts.yaml`
+- `artifacts/logs/week10_prometheus_alerts_check_20260511.log`
+- `artifacts/logs/week10_actuator_metric_label_audit_20260512.log`
+- `artifacts/logs/week10_actuator_prometheus_live_recapture_20260512.log`
+- `artifacts/logs/week10_actuator_prometheus_live_20260512.txt`
+- `artifacts/logs/week10_alerts_label_aligned_20260512.log`
+
+Boundary:
+
+- This is not a production SLO.
+- This is not production alerting.
+- This is not Alertmanager routing.
+- This is not an on-call or paging policy.
+- `promtool check rules` has passed locally through Docker-based promtool, and live Actuator metrics were recaptured to validate available HTTP metric names and labels.
+- HTTP metric names and labels were checked against live Spring Boot Actuator Prometheus output; P95 latency remains deferred because `http_server_requests_seconds_bucket` was not present in the captured metrics.
+
+
+### Week09 Cloud K8s rollout verified update - 2026-05-08
+
+Verified in local Docker Desktop + kind dev cluster only:
+
+- Docker context: `desktop-linux`.
+- kind cluster: `cloud-dev`; kubectl context: `kind-cloud-dev`.
+- Namespace: `dev-platform`.
+- Java backend Deployment: `media-task-platform-java`, image `media-task-platform-java:week09-dev`, status `1/1 READY`.
+- Local dependencies: `week09-postgres` and `week09-redis`, both `1/1 READY`.
+- Service endpoint verified: `service/media-task-platform-java` -> `10.244.0.16:8080` in the captured run.
+- Rollout status verified: `deployment "media-task-platform-java" successfully rolled out`.
+- Rollout history verified: revisions `1` and `2` observed.
+- Rollback dry-run verified: `deployment.apps/media-task-platform-java rolled back (server dry run)`.
+- Health probe verified through port-forward: `/actuator/health` returned HTTP 200 with `{"status":"UP"}`.
+- Prometheus scrape verified through port-forward: `/actuator/prometheus` returned application, executor, disk and HikariCP metrics.
+
+Evidence:
+
+- `artifacts/logs/week09_k8s_media_task_rollout_final_20260508.log`
+- `artifacts/logs/week09_port_forward_20260508.stdout`
+
+Boundary:
+
+- This is not a real cloud-provider deployment.
+- This is not provider-backed Terraform apply.
+- This is not a production rollout or production rollback drill.
+- It verifies the Week09 local dev K8s release semantics: Deployment, Service, rollout status, rollout history, rollback dry-run, health and Prometheus metrics.
+
+## Verified Scope
+
+- 已完成 S1 阶段总结：`docs/weekly/2026-05-01_stage_s1_cloud.md` 已收口 W4-W8 的 Kubernetes base、observability scaffold、CI/local validation 与 Week08 Terraform local-only validation 证据，并明确当前未验证真实 cloud provider、remote state、Terraform apply 和 provider-backed infrastructure resources。
+
+当前仓库已完成并留有证据的范围如下：
+
+- 已完成 OpenTelemetry Collector 最小链路接入
+- 已保留两轮本地 trace evidence 日志
+- 已完成 `docs/runbooks/otel-pipeline.md` 与 `docs/runbooks/local-observability.md`
+- 已完成 Week07 最小 CI/CD 骨架：`.github/workflows/ci.yml`、`scripts/ci_validate.sh`、`docs/runbooks/ci-cd-minimum.md`
+- 已完成至少 2 次本地最小验证链复验：`scripts/ci_validate.sh` 通过，`docker compose -f docker-compose.observability.yml config` 通过，`kubectl apply --dry-run=client -f k8s/base` 通过
+- 已保留 Week07 rerun 日志：`week07_ci_validate_local_rerun.log`、`week07_compose_config_rerun.log`、`week07_k8s_dry_run_rerun.log`
+- 已完成 Week08 Terraform layout ADR：`docs/adr/0001-terraform-layout.md`
+- 已完成 Week08 Terraform root/child module 最小骨架：`infra/terraform/envs/dev/main.tf` 调用 `infra/terraform/modules/local_placeholder`
+- 已完成 Week08 Terraform 本地结构验证：`terraform fmt -recursive -check`、`terraform init -backend=false`、`terraform validate`、`terraform plan -input=false`
+- 已保留 Week08 Terraform 证据日志：`artifacts/logs/week08_terraform_fmt.log`、`artifacts/logs/week08_terraform_init_validate.log`、`artifacts/logs/week08_terraform_plan.log`
+
+一句话说，当前 Cloud 仓库已经从 Week07 的 CI skeleton / local validation 阶段，推进到 Week08 的 Terraform layout、root/child module 语义与本地-only Terraform validation 阶段。
+
+* * *
+
+## Not Yet Verified
+
+以下内容尚未验证，不能写成已完成：
+
+- 真实 cloud provider 接入
+- remote backend / remote state
+- Terraform apply
+- 真实云资源创建、变更或销毁
+- image build / push
+- 真实集群部署
+- rollout / rollback
+- 生产级 SLO / alerting policy
+- Terraform plan against real cloud infrastructure
+- secrets / credentials 管理流程
+
+当前 `terraform plan` 只验证了 local placeholder module 的 output 变化，不代表真实基础设施部署完成。
+
+* * *
+
+## Next Hard Milestone
+
+接下来的硬里程碑按顺序是：
+
+1. Week10：用真实 Actuator metrics 收紧告警表达式
+   - 对照 `artifacts/logs/week09_port_forward_20260508.stdout` 或重新抓取 `/actuator/prometheus`
+   - 校正 `http_server_requests_seconds_count` 与 `http_server_requests_seconds_bucket` 的真实 label
+   - 避免写出无法命中真实时序的空转 alert
+
+2. Week10：保持本地 SLO / alert 草案边界
+   - 当前仅验证 local Docker Desktop + kind dev scope
+   - 不声明生产 SLO、Alertmanager、paging、on-call 或真实云账号部署
+   - 当前 `promtool check rules` 已通过，但 HTTP metric label 仍需按真实 Actuator 输出复核
+
+
+===== [final promtool check rules] =====
+Checking /etc/prometheus/alerts.yaml
+  SUCCESS: 3 rules found
+
+
+===== [final status / diff] =====
+## main...origin/main
+ M README.md
+ M docs/runbooks/slo.md
+ M observability/prometheus/alerts.yaml
+?? artifacts/logs/week10_actuator_metric_label_audit_20260512.log
+?? artifacts/logs/week10_actuator_prometheus_live_20260512.txt
+?? artifacts/logs/week10_actuator_prometheus_live_recapture_20260512.log
+?? artifacts/logs/week10_alerts_before_label_align_20260512.yaml
+?? artifacts/logs/week10_alerts_label_aligned_20260512.log
+?? artifacts/logs/week10_port_forward_18080_20260512.stderr
+?? artifacts/logs/week10_port_forward_18080_20260512.stdout
+ README.md                            | 10 ++++++---
+ docs/runbooks/slo.md                 | 40 +++++++++++++++++++++++++++++++++
+ observability/prometheus/alerts.yaml | 43 ++++++++++++++++++------------------
+ 3 files changed, 69 insertions(+), 24 deletions(-)
+diff --git a/README.md b/README.md
+index 4ec4e4f..e01a9e3 100644
+--- a/README.md
++++ b/README.md
+@@ -12,7 +12,7 @@ Verified in local Docker Desktop + kind scope only:
+ - Added `docs/runbooks/slo.md` as the Week10 local SLO / SLI draft runbook.
+ - Added `observability/prometheus/alerts.yaml` as the first Prometheus alert-rule draft.
+ - Added local validation log: `artifacts/logs/week10_prometheus_alerts_check_20260511.log`.
+-- The alert draft currently defines `JavaAppTargetDown`, `JavaAppHighErrorRatio`, and `JavaAppHighLatencyP95`.
++- The alert draft currently defines `JavaAppTargetDown`, `JavaAppHighErrorRatio`, and `JavaAppHighMeanLatency`.
+ - `alerts.yaml` passed Docker-based `promtool check rules` validation.
+ - Docker-based validation used `prom/prometheus:latest` with `/bin/promtool` as the entrypoint.
+ 
+@@ -21,6 +21,10 @@ Evidence:
+ - `docs/runbooks/slo.md`
+ - `observability/prometheus/alerts.yaml`
+ - `artifacts/logs/week10_prometheus_alerts_check_20260511.log`
++- `artifacts/logs/week10_actuator_metric_label_audit_20260512.log`
++- `artifacts/logs/week10_actuator_prometheus_live_recapture_20260512.log`
++- `artifacts/logs/week10_actuator_prometheus_live_20260512.txt`
++- `artifacts/logs/week10_alerts_label_aligned_20260512.log`
+ 
+ Boundary:
+ 
+@@ -28,8 +32,8 @@ Boundary:
+ - This is not production alerting.
+ - This is not Alertmanager routing.
+ - This is not an on-call or paging policy.
+-- `promtool check rules` has passed locally through Docker-based promtool.
+-- HTTP metric names and labels still need to be verified against the real Spring Boot Actuator Prometheus output.
++- `promtool check rules` has passed locally through Docker-based promtool, and live Actuator metrics were recaptured to validate available HTTP metric names and labels.
++- HTTP metric names and labels were checked against live Spring Boot Actuator Prometheus output; P95 latency remains deferred because `http_server_requests_seconds_bucket` was not present in the captured metrics.
+ 
+ 
+ ### Week09 Cloud K8s rollout verified update - 2026-05-08
+diff --git a/docs/runbooks/slo.md b/docs/runbooks/slo.md
+index 8b2aef1..e94eb4f 100644
+--- a/docs/runbooks/slo.md
++++ b/docs/runbooks/slo.md
+@@ -87,3 +87,43 @@ Docker-based validation if Prometheus image is available:
+ 3. Add recording rules only after metric names and label cardinality are stable.
+ 4. Add Alertmanager only after local alert rules are meaningful.
+ 5. Keep README Verified Scope synchronized with actual validated evidence.
++
++## 2026-05-12 Live Actuator Metrics Alignment
++
++Live recapture source:
++
++- `artifacts/logs/week10_actuator_prometheus_live_20260512.txt`
++- `artifacts/logs/week10_actuator_prometheus_live_recapture_20260512.log`
++- `artifacts/logs/week10_actuator_metric_label_audit_20260512.log`
++
++Observed HTTP metric labels:
++
++- `error`
++- `exception`
++- `method`
++- `outcome`
++- `status`
++- `uri`
++
++Observed HTTP request metrics:
++
++- `http_server_requests_seconds_count`
++- `http_server_requests_seconds_sum`
++- `http_server_requests_seconds_max`
++- `http_server_requests_active_seconds_count`
++- `http_server_requests_active_seconds_sum`
++- `http_server_requests_active_seconds_max`
++
++Current decision:
++
++- `JavaAppHighErrorRatio` is backed by live `http_server_requests_seconds_count{status=...}` evidence.
++- `JavaAppHighMeanLatency` is backed by live `http_server_requests_seconds_sum/count` evidence.
++- Previous P95 latency expression based on `http_server_requests_seconds_bucket` is deferred because the live Actuator evidence does not expose `http_server_requests_seconds_bucket`.
++
++Boundary:
++
++- This remains a local Docker Desktop + kind development SLO / alert draft.
++- This is not a production SLO.
++- This is not Alertmanager routing.
++- This is not paging or on-call policy.
++- The currently deployed Java image in kind may lag behind the latest Java repository security-contract commit; the live metrics recapture is used for metric-name and label validation, not for Java API auth-contract validation.
+diff --git a/observability/prometheus/alerts.yaml b/observability/prometheus/alerts.yaml
+index 5d3ecaa..fc423a6 100644
+--- a/observability/prometheus/alerts.yaml
++++ b/observability/prometheus/alerts.yaml
+@@ -1,17 +1,15 @@
+ groups:
+-  - name: media-task-platform-java.local-slo
+-    interval: 30s
++  - name: week10-local-slo-alerts
+     rules:
+       - alert: JavaAppTargetDown
+         expr: up{job=~".*java.*|.*media.*"} == 0
+         for: 2m
+         labels:
+           severity: warning
+-          scope: local
+-          service: media-task-platform-java
++          scope: local-dev
+         annotations:
+-          summary: "Java app Prometheus target is down in local dev"
+-          description: "The local Prometheus target for media-task-platform-java has been down for more than 2 minutes. This is a local Docker Desktop + kind draft alert, not a production page."
++          summary: "Java media task target is down"
++          description: "Prometheus target {{ $labels.job }} has been down for more than 2 minutes in local dev."
+ 
+       - alert: JavaAppHighErrorRatio
+         expr: |
+@@ -23,25 +21,28 @@ groups:
+         for: 5m
+         labels:
+           severity: warning
+-          scope: local
+-          service: media-task-platform-java
++          scope: local-dev
+         annotations:
+-          summary: "Java app high 5xx ratio in local dev"
+-          description: "More than 5% of observed HTTP requests are 5xx over the last 5 minutes. Metric labels must be verified against the actual Spring Boot Actuator Prometheus output."
++          summary: "High Java app 5xx error ratio in local dev"
++          description: "5xx request ratio is above 5% for 5 minutes. Verified against live Actuator labels: status, method, uri, outcome, exception, error."
+ 
+-      - alert: JavaAppHighLatencyP95
++      - alert: JavaAppHighMeanLatency
+         expr: |
+-          histogram_quantile(
+-            0.95,
+-            sum by (le) (
+-              rate(http_server_requests_seconds_bucket[5m])
+-            )
+-          ) > 1
++          (
++            (
++              sum(rate(http_server_requests_seconds_sum{uri!="/actuator/prometheus"}[5m]))
++              /
++              sum(rate(http_server_requests_seconds_count{uri!="/actuator/prometheus"}[5m]))
++            ) > 1
++          )
++          and
++          (
++            sum(rate(http_server_requests_seconds_count{uri!="/actuator/prometheus"}[5m])) > 0
++          )
+         for: 5m
+         labels:
+           severity: warning
+-          scope: local
+-          service: media-task-platform-java
++          scope: local-dev
+         annotations:
+-          summary: "Java app high p95 latency in local dev"
+-          description: "p95 HTTP request latency is above 1 second for 5 minutes. This is a local SLO draft and depends on verified histogram metrics."
++          summary: "High Java app mean latency in local dev"
++          description: "Mean request latency is above 1 second for 5 minutes. P95 is deferred because live Actuator evidence exposes summary count/sum/max but no http_server_requests_seconds_bucket."

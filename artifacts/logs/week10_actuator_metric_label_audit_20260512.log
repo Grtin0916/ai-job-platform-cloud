@@ -1,0 +1,33 @@
+===== [Cloud Week10 Actuator metric label audit] =====
+2026-05-12T10:56:49+08:00
+
+===== [alerts.yaml expressions] =====
+5:      - alert: JavaAppTargetDown
+6:        expr: up{job=~".*java.*|.*media.*"} == 0
+16:      - alert: JavaAppHighErrorRatio
+17:        expr: |
+19:            sum(rate(http_server_requests_seconds_count{status=~"5.."}[5m]))
+21:            clamp_min(sum(rate(http_server_requests_seconds_count[5m])), 1)
+32:      - alert: JavaAppHighLatencyP95
+33:        expr: |
+37:              rate(http_server_requests_seconds_bucket[5m])
+
+===== [HTTP server request metrics from captured actuator output] =====
+
+===== [All HELP/TYPE metric names around http/server/request] =====
+
+===== [Unique metric names] =====
+Forwarding
+Handling
+
+===== [promtool syntax check] =====
+Checking /etc/prometheus/alerts.yaml
+  SUCCESS: 3 rules found
+
+
+===== [post status] =====
+## main...origin/main
+?? artifacts/logs/week10_actuator_metric_label_audit_20260512.log
+
+===== [log path] =====
+-rw-rw-r-- 1 GRT GRT 982  5月 12 10:56 artifacts/logs/week10_actuator_metric_label_audit_20260512.log
