@@ -1,0 +1,366 @@
+===== date =====
+2026-05-12T15:45:12+08:00
+
+===== git pre-status =====
+## main...origin/main
+?? artifacts/logs/week10_prometheus_config_check_20260513.log
+0	0
+8e21d94 (HEAD -> main, origin/main) fix(cloud): align week10 alerts with live actuator metrics
+dccfc50 test(cloud): verify week10 prometheus alert rules
+795a5dd docs(cloud): verify week10 slo alert scope
+cbbeb9a docs(cloud): start week10 slo and alert draft
+c5f4120 docs(cloud): close week09 summary
+95aa04b test(cloud): verify week09 local k8s rollout
+
+===== docker context preflight =====
+desktop-linux
+NAME              DESCRIPTION                               DOCKER ENDPOINT                                ERROR
+default           Current DOCKER_HOST based configuration   unix:///var/run/docker.sock                    
+desktop-linux *   Docker Desktop                            unix:///home/GRT/.docker/desktop/docker.sock   
+Client=28.1.1 Server=29.2.1
+
+===== switch to desktop-linux if available =====
+desktop-linux
+Current context is now "desktop-linux"
+desktop-linux
+
+===== current prometheus files =====
+总计 16K
+drwxrwxr-x 2 GRT GRT 4.0K  5月 11 17:24 .
+drwxrwxr-x 5 GRT GRT 4.0K  4月 13 21:37 ..
+-rw-rw-r-- 1 GRT GRT 1.8K  5月 12 11:29 alerts.yaml
+-rw-rw-r-- 1 GRT GRT  307  4月 11 12:15 prometheus.yml
+
+===== prometheus.yml before =====
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["prometheus:9090"]
+
+  - job_name: "media-task-platform-java"
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ["host.docker.internal:8080"]
+
+===== alerts.yaml before =====
+groups:
+  - name: week10-local-slo-alerts
+    rules:
+      - alert: JavaAppTargetDown
+        expr: up{job=~".*java.*|.*media.*"} == 0
+        for: 2m
+        labels:
+          severity: warning
+          scope: local-dev
+        annotations:
+          summary: "Java media task target is down"
+          description: "Prometheus target {{ $labels.job }} has been down for more than 2 minutes in local dev."
+
+      - alert: JavaAppHighErrorRatio
+        expr: |
+          (
+            sum(rate(http_server_requests_seconds_count{status=~"5.."}[5m]))
+            /
+            clamp_min(sum(rate(http_server_requests_seconds_count[5m])), 1)
+          ) > 0.05
+        for: 5m
+        labels:
+          severity: warning
+          scope: local-dev
+        annotations:
+          summary: "High Java app 5xx error ratio in local dev"
+          description: "5xx request ratio is above 5% for 5 minutes. Verified against live Actuator labels: status, method, uri, outcome, exception, error."
+
+      - alert: JavaAppHighMeanLatency
+        expr: |
+          (
+            (
+              sum(rate(http_server_requests_seconds_sum{uri!="/actuator/prometheus"}[5m]))
+              /
+              sum(rate(http_server_requests_seconds_count{uri!="/actuator/prometheus"}[5m]))
+            ) > 1
+          )
+          and
+          (
+            sum(rate(http_server_requests_seconds_count{uri!="/actuator/prometheus"}[5m])) > 0
+          )
+        for: 5m
+        labels:
+          severity: warning
+          scope: local-dev
+        annotations:
+          summary: "High Java app mean latency in local dev"
+          description: "Mean request latency is above 1 second for 5 minutes. P95 is deferred because live Actuator evidence exposes summary count/sum/max but no http_server_requests_seconds_bucket."
+
+===== ensure rule_files includes alerts.yaml =====
+inserted rule_files -> alerts.yaml before scrape_configs
+
+===== prometheus.yml after =====
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  - "alerts.yaml"
+
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["prometheus:9090"]
+
+  - job_name: "media-task-platform-java"
+    metrics_path: /actuator/prometheus
+    static_configs:
+      - targets: ["host.docker.internal:8080"]
+
+===== rule_files grep =====
+observability/prometheus/prometheus.yml:5:rule_files:
+observability/prometheus/prometheus.yml:6:  - "alerts.yaml"
+
+===== promtool check rules =====
+Unable to find image 'prom/prometheus:v2.55.1' locally
+docker: Error response from daemon: failed to resolve reference "docker.io/prom/prometheus:v2.55.1": failed to do request: Head "https://registry-1.docker.io/v2/prom/prometheus/manifests/v2.55.1": writing response to registry-1.docker.io:443: connecting to 192.168.1.106:7899: dial tcp 192.168.1.106:7899: connect: connection refused
+
+Run 'docker run --help' for more information
+
+===== promtool check config =====
+Unable to find image 'prom/prometheus:v2.55.1' locally
+docker: Error response from daemon: failed to resolve reference "docker.io/prom/prometheus:v2.55.1": failed to do request: Head "https://registry-1.docker.io/v2/prom/prometheus/manifests/v2.55.1": writing response to registry-1.docker.io:443: connecting to 192.168.1.106:7899: dial tcp 192.168.1.106:7899: connect: connection refused
+
+Run 'docker run --help' for more information
+
+===== stale P95 / bucket claim scan =====
+README.md:15:- The alert draft currently defines `JavaAppTargetDown`, `JavaAppHighErrorRatio`, and `JavaAppHighMeanLatency`.
+README.md:36:- HTTP metric names and labels were checked against live Spring Boot Actuator Prometheus output; P95 latency remains deferred because `http_server_requests_seconds_bucket` was not present in the captured metrics.
+README.md:114:   - `http_server_requests_seconds_bucket` 未出现在 live Actuator evidence 中，因此 P95 alert 暂缓，当前使用 mean latency alert
+docs/runbooks/slo.md:44:| local p95 latency | < 1s | 10m | development cluster and laptop/server contention may affect latency |
+docs/runbooks/slo.md:55:- JavaAppTargetDown
+docs/runbooks/slo.md:56:- JavaAppHighErrorRatio
+docs/runbooks/slo.md:57:- JavaAppHighMeanLatency
+docs/runbooks/slo.md:119:- `JavaAppHighErrorRatio` is backed by live `http_server_requests_seconds_count{status=...}` evidence.
+docs/runbooks/slo.md:120:- `JavaAppHighMeanLatency` is backed by live `http_server_requests_seconds_sum/count` evidence.
+docs/runbooks/slo.md:121:- Previous P95 latency expression based on `http_server_requests_seconds_bucket` is deferred because the live Actuator evidence does not expose `http_server_requests_seconds_bucket`.
+observability/prometheus/alerts.yaml:4:      - alert: JavaAppTargetDown
+observability/prometheus/alerts.yaml:14:      - alert: JavaAppHighErrorRatio
+observability/prometheus/alerts.yaml:29:      - alert: JavaAppHighMeanLatency
+observability/prometheus/alerts.yaml:48:          description: "Mean request latency is above 1 second for 5 minutes. P95 is deferred because live Actuator evidence exposes summary count/sum/max but no http_server_requests_seconds_bucket."
+artifacts/logs/week09_docker_desktop_backend_blocker_20260506.log:90:Week09 Cloud real rollout is deferred; keep manifest/dry-run evidence and blocker log.
+artifacts/logs/week09_k8s_java_app_offline_validation_20260506.log:76:Real image load, rollout status, rollout history, and rollback dry-run remain deferred.
+artifacts/logs/week10_actuator_metric_label_audit_20260512.log:5:5:      - alert: JavaAppTargetDown
+artifacts/logs/week10_actuator_metric_label_audit_20260512.log:7:16:      - alert: JavaAppHighErrorRatio
+artifacts/logs/week10_actuator_metric_label_audit_20260512.log:11:32:      - alert: JavaAppHighLatencyP95
+artifacts/logs/week10_actuator_metric_label_audit_20260512.log:13:37:              rate(http_server_requests_seconds_bucket[5m])
+artifacts/logs/week10_alerts_label_aligned_20260512.log:19:      - alert: JavaAppTargetDown
+artifacts/logs/week10_alerts_label_aligned_20260512.log:29:      - alert: JavaAppHighErrorRatio
+artifacts/logs/week10_alerts_label_aligned_20260512.log:44:      - alert: JavaAppHighMeanLatency
+artifacts/logs/week10_alerts_label_aligned_20260512.log:63:          description: "Mean request latency is above 1 second for 5 minutes. P95 is deferred because live Actuator evidence exposes summary count/sum/max but no http_server_requests_seconds_bucket."
+artifacts/logs/week10_alerts_label_aligned_20260512.log:79:===== [bucket evidence check] =====
+artifacts/logs/week10_alerts_label_aligned_20260512.log:80:BUCKET_MISSING_P95_DEFERRED
+artifacts/logs/week10_alerts_label_aligned_20260512.log:185:| latency p95 | p95 HTTP request latency | http_server_requests_seconds_bucket if available | histogram metric must be verified |
+artifacts/logs/week10_alerts_label_aligned_20260512.log:195:| local p95 latency | < 1s | 10m | development cluster and laptop/server contention may affect latency |
+artifacts/logs/week10_alerts_label_aligned_20260512.log:206:- JavaAppTargetDown
+artifacts/logs/week10_alerts_label_aligned_20260512.log:207:- JavaAppHighErrorRatio
+artifacts/logs/week10_alerts_label_aligned_20260512.log:208:- JavaAppHighLatencyP95
+artifacts/logs/week10_alerts_label_aligned_20260512.log:270:- `JavaAppHighErrorRatio` is backed by live `http_server_requests_seconds_count{status=...}` evidence.
+artifacts/logs/week10_alerts_label_aligned_20260512.log:271:- `JavaAppHighMeanLatency` is backed by live `http_server_requests_seconds_sum/count` evidence.
+artifacts/logs/week10_alerts_label_aligned_20260512.log:272:- Previous P95 latency expression based on `http_server_requests_seconds_bucket` is deferred because the live Actuator evidence does not expose `http_server_requests_seconds_bucket`.
+artifacts/logs/week10_alerts_label_aligned_20260512.log:314:| latency p95 | p95 HTTP request latency | http_server_requests_seconds_bucket if available | histogram metric must be verified |
+artifacts/logs/week10_alerts_label_aligned_20260512.log:324:| local p95 latency | < 1s | 10m | development cluster and laptop/server contention may affect latency |
+artifacts/logs/week10_alerts_label_aligned_20260512.log:335:- JavaAppTargetDown
+artifacts/logs/week10_alerts_label_aligned_20260512.log:336:- JavaAppHighErrorRatio
+artifacts/logs/week10_alerts_label_aligned_20260512.log:337:- JavaAppHighLatencyP95
+artifacts/logs/week10_alerts_label_aligned_20260512.log:399:- `JavaAppHighErrorRatio` is backed by live `http_server_requests_seconds_count{status=...}` evidence.
+artifacts/logs/week10_alerts_label_aligned_20260512.log:400:- `JavaAppHighMeanLatency` is backed by live `http_server_requests_seconds_sum/count` evidence.
+artifacts/logs/week10_alerts_label_aligned_20260512.log:401:- Previous P95 latency expression based on `http_server_requests_seconds_bucket` is deferred because the live Actuator evidence does not expose `http_server_requests_seconds_bucket`.
+artifacts/logs/week10_alerts_label_aligned_20260512.log:424:- The alert draft currently defines `JavaAppTargetDown`, `JavaAppHighErrorRatio`, and `JavaAppHighMeanLatency`.
+artifacts/logs/week10_alerts_label_aligned_20260512.log:445:- HTTP metric names and labels were checked against live Spring Boot Actuator Prometheus output; P95 latency remains deferred because `http_server_requests_seconds_bucket` was not present in the captured metrics.
+artifacts/logs/week10_alerts_label_aligned_20260512.log:522:   - 校正 `http_server_requests_seconds_count` 与 `http_server_requests_seconds_bucket` 的真实 label
+artifacts/logs/week10_alerts_label_aligned_20260512.log:560:-- The alert draft currently defines `JavaAppTargetDown`, `JavaAppHighErrorRatio`, and `JavaAppHighLatencyP95`.
+artifacts/logs/week10_alerts_label_aligned_20260512.log:561:+- The alert draft currently defines `JavaAppTargetDown`, `JavaAppHighErrorRatio`, and `JavaAppHighMeanLatency`.
+artifacts/logs/week10_alerts_label_aligned_20260512.log:583:+- HTTP metric names and labels were checked against live Spring Boot Actuator Prometheus output; P95 latency remains deferred because `http_server_requests_seconds_bucket` was not present in the captured metrics.
+artifacts/logs/week10_alerts_label_aligned_20260512.log:624:+- `JavaAppHighErrorRatio` is backed by live `http_server_requests_seconds_count{status=...}` evidence.
+artifacts/logs/week10_alerts_label_aligned_20260512.log:625:+- `JavaAppHighMeanLatency` is backed by live `http_server_requests_seconds_sum/count` evidence.
+artifacts/logs/week10_alerts_label_aligned_20260512.log:626:+- Previous P95 latency expression based on `http_server_requests_seconds_bucket` is deferred because the live Actuator evidence does not expose `http_server_requests_seconds_bucket`.
+artifacts/logs/week10_alerts_label_aligned_20260512.log:645:       - alert: JavaAppTargetDown
+artifacts/logs/week10_alerts_label_aligned_20260512.log:659:       - alert: JavaAppHighErrorRatio
+artifacts/logs/week10_alerts_label_aligned_20260512.log:674:-      - alert: JavaAppHighLatencyP95
+artifacts/logs/week10_alerts_label_aligned_20260512.log:675:+      - alert: JavaAppHighMeanLatency
+artifacts/logs/week10_alerts_label_aligned_20260512.log:680:-              rate(http_server_requests_seconds_bucket[5m])
+artifacts/logs/week10_alerts_label_aligned_20260512.log:701:-          summary: "Java app high p95 latency in local dev"
+artifacts/logs/week10_alerts_label_aligned_20260512.log:702:-          description: "p95 HTTP request latency is above 1 second for 5 minutes. This is a local SLO draft and depends on verified histogram metrics."
+artifacts/logs/week10_alerts_label_aligned_20260512.log:704:+          description: "Mean request latency is above 1 second for 5 minutes. P95 is deferred because live Actuator evidence exposes summary count/sum/max but no http_server_requests_seconds_bucket."
+artifacts/logs/week10_prometheus_config_check_20260513.log:53:      - alert: JavaAppTargetDown
+artifacts/logs/week10_prometheus_config_check_20260513.log:63:      - alert: JavaAppHighErrorRatio
+artifacts/logs/week10_prometheus_config_check_20260513.log:78:      - alert: JavaAppHighMeanLatency
+artifacts/logs/week10_prometheus_config_check_20260513.log:97:          description: "Mean request latency is above 1 second for 5 minutes. P95 is deferred because live Actuator evidence exposes summary count/sum/max but no http_server_requests_seconds_bucket."
+artifacts/logs/week10_prometheus_config_check_20260513.log:136:===== stale P95 / bucket claim scan =====
+artifacts/logs/week10_cloud_slo_alert_final_verify_20260512.log:21:observability/prometheus/alerts.yaml:4:      - alert: JavaAppTargetDown
+artifacts/logs/week10_cloud_slo_alert_final_verify_20260512.log:23:observability/prometheus/alerts.yaml:14:      - alert: JavaAppHighErrorRatio
+artifacts/logs/week10_cloud_slo_alert_final_verify_20260512.log:27:observability/prometheus/alerts.yaml:29:      - alert: JavaAppHighMeanLatency
+artifacts/logs/week10_cloud_slo_alert_final_verify_20260512.log:32:observability/prometheus/alerts.yaml:48:          description: "Mean request latency is above 1 second for 5 minutes. P95 is deferred because live Actuator evidence exposes summary count/sum/max but no http_server_requests_seconds_bucket."
+artifacts/logs/week10_cloud_slo_alert_final_verify_20260512.log:37:docs/runbooks/slo.md:119:- `JavaAppHighErrorRatio` is backed by live `http_server_requests_seconds_count{status=...}` evidence.
+artifacts/logs/week10_cloud_slo_alert_final_verify_20260512.log:38:docs/runbooks/slo.md:120:- `JavaAppHighMeanLatency` is backed by live `http_server_requests_seconds_sum/count` evidence.
+artifacts/logs/week10_cloud_slo_alert_final_verify_20260512.log:39:docs/runbooks/slo.md:121:- Previous P95 latency expression based on `http_server_requests_seconds_bucket` is deferred because the live Actuator evidence does not expose `http_server_requests_seconds_bucket`.
+artifacts/logs/week10_cloud_slo_alert_final_verify_20260512.log:40:README.md:36:- HTTP metric names and labels were checked against live Spring Boot Actuator Prometheus output; P95 latency remains deferred because `http_server_requests_seconds_bucket` was not present in the captured metrics.
+artifacts/logs/week10_cloud_slo_alert_final_verify_20260512.log:42:README.md:114:   - `http_server_requests_seconds_bucket` 未出现在 live Actuator evidence 中，因此 P95 alert 暂缓，当前使用 mean latency alert
+
+===== diff stat =====
+ observability/prometheus/prometheus.yml | 3 +++
+ 1 file changed, 3 insertions(+)
+
+===== diff preview =====
+diff --git a/observability/prometheus/prometheus.yml b/observability/prometheus/prometheus.yml
+index 11a42ed..d31716f 100644
+--- a/observability/prometheus/prometheus.yml
++++ b/observability/prometheus/prometheus.yml
+@@ -2,6 +2,9 @@ global:
+   scrape_interval: 15s
+   evaluation_interval: 15s
+ 
++rule_files:
++  - "alerts.yaml"
++
+ scrape_configs:
+   - job_name: "prometheus"
+     static_configs:
+
+===== git post-status =====
+## main...origin/main
+ M observability/prometheus/prometheus.yml
+?? artifacts/logs/week10_prometheus_config_check_20260513.log
+===== date =====
+2026-05-12T15:48:51+08:00
+
+===== git status: keep current diff uncommitted =====
+## main...origin/main
+ M observability/prometheus/prometheus.yml
+?? artifacts/logs/week10_prometheus_config_check_20260513.log
+ observability/prometheus/prometheus.yml | 3 +++
+ 1 file changed, 3 insertions(+)
+
+===== docker context =====
+desktop-linux
+Client=28.1.1 Server=29.2.1
+
+===== host proxy reachability =====
+nc: connect to 192.168.1.106 port 7899 (tcp) failed: Connection refused
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (7) Failed to connect to 192.168.1.106 port 7899 after 0 ms: 连接被拒绝
+
+===== direct registry reachability from host =====
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
+curl: (28) Failed to connect to registry-1.docker.io port 443 after 2707 ms: 连接超时
+
+===== local prometheus images =====
+prom/prometheus            latest       e4254400b856   2 weeks ago    578MB
+
+===== local promtool binary =====
+
+===== retry docker pull prometheus image =====
+Error response from daemon: failed to resolve reference "docker.io/prom/prometheus:v2.55.1": failed to do request: Head "https://registry-1.docker.io/v2/prom/prometheus/manifests/v2.55.1": writing response to registry-1.docker.io:443: connecting to 192.168.1.106:7899: dial tcp 192.168.1.106:7899: connect: connection refused
+
+===== retry promtool check rules =====
+Unable to find image 'prom/prometheus:v2.55.1' locally
+docker: Error response from daemon: failed to resolve reference "docker.io/prom/prometheus:v2.55.1": failed to do request: Head "https://registry-1.docker.io/v2/prom/prometheus/manifests/v2.55.1": writing response to registry-1.docker.io:443: connecting to 192.168.1.106:7899: dial tcp 192.168.1.106:7899: connect: connection refused
+
+Run 'docker run --help' for more information
+
+===== retry promtool check config =====
+Unable to find image 'prom/prometheus:v2.55.1' locally
+docker: Error response from daemon: failed to resolve reference "docker.io/prom/prometheus:v2.55.1": failed to do request: Head "https://registry-1.docker.io/v2/prom/prometheus/manifests/v2.55.1": writing response to registry-1.docker.io:443: connecting to 192.168.1.106:7899: dial tcp 192.168.1.106:7899: connect: connection refused
+
+Run 'docker run --help' for more information
+
+===== final diff/status =====
+ observability/prometheus/prometheus.yml | 3 +++
+ 1 file changed, 3 insertions(+)
+## main...origin/main
+ M observability/prometheus/prometheus.yml
+?? artifacts/logs/week10_prometheus_config_check_20260513.log
+===== date =====
+2026-05-12T15:50:05+08:00
+
+===== git status: keep current diff uncommitted =====
+## main...origin/main
+ M observability/prometheus/prometheus.yml
+?? artifacts/logs/week10_prometheus_config_check_20260513.log
+ observability/prometheus/prometheus.yml | 3 +++
+ 1 file changed, 3 insertions(+)
+
+===== docker context =====
+desktop-linux
+Client=28.1.1 Server=29.2.1
+
+===== host proxy reachability =====
+nc: connect to 192.168.1.106 port 7899 (tcp) failed: Connection refused
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+curl: (7) Failed to connect to 192.168.1.106 port 7899 after 0 ms: 连接被拒绝
+
+===== direct registry reachability from host =====
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0  0     0    0     0    0     0      0      0 --:--:--  0:00:02 --:--:--     0
+curl: (28) Failed to connect to registry-1.docker.io port 443 after 2709 ms: 连接超时
+
+===== local prometheus images =====
+prom/prometheus            latest       e4254400b856   2 weeks ago    578MB
+
+===== local promtool binary =====
+
+===== local image promtool version =====
+Error parsing command line arguments: unexpected promtool
+prometheus: error: unexpected promtool
+
+===== promtool check rules with local image =====
+Error parsing command line arguments: unexpected promtool
+prometheus: error: unexpected promtool
+
+===== promtool check config with local image =====
+Error parsing command line arguments: unexpected promtool
+prometheus: error: unexpected promtool
+
+===== final diff/status =====
+ observability/prometheus/prometheus.yml | 3 +++
+ 1 file changed, 3 insertions(+)
+## main...origin/main
+ M observability/prometheus/prometheus.yml
+?? artifacts/logs/week10_prometheus_config_check_20260513.log
+
+===== promtool version via overridden entrypoint =====
+promtool, version 3.11.3 (branch: HEAD, revision: eb173f5256d4022afba1e9bc3d19740a76859fae)
+  build user:       root@83aad33dd38e
+  build date:       20260427-14:45:32
+  go version:       go1.26.2
+  platform:         linux/amd64
+  tags:             netgo,builtinassets
+
+===== promtool check rules =====
+Checking alerts.yaml
+  SUCCESS: 3 rules found
+
+
+===== promtool check config =====
+Checking prometheus.yml
+  SUCCESS: 1 rule files found
+ SUCCESS: prometheus.yml is valid prometheus config file syntax
+
+Checking alerts.yaml
+  SUCCESS: 3 rules found
+
+
+===== final diff/status =====
+ observability/prometheus/prometheus.yml | 3 +++
+ 1 file changed, 3 insertions(+)
+## main...origin/main
+ M observability/prometheus/prometheus.yml
+?? artifacts/logs/week10_prometheus_config_check_20260513.log
