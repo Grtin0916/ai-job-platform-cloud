@@ -1,0 +1,113 @@
+===== Week10 Cloud SLO / alert closure index =====
+Planned closure date: 2026-05-15
+Scope: local Docker Desktop + kind evidence only; not production SLO / Alertmanager / on-call.
+2026年 05月 13日 星期三 15:54:51 CST
+aurora-Super-Server
+/home/GRT/work/ai-job-platform-cloud
+
+===== git state =====
+0	0
+## main...origin/main
+?? artifacts/logs/week10_cloud_slo_alert_closure_index_20260515.log
+?? artifacts/logs/week10_prometheus_config_closure_20260515.log
+?? artifacts/logs/week10_prometheus_rules_closure_20260515.log
+7d4086a (HEAD -> main, origin/main) docs(cloud): add week10 slo target boundary
+fc1b6da test(cloud): verify prometheus config after proxy fix
+ae2002a fix(cloud): load week10 prometheus alert rules
+8e21d94 fix(cloud): align week10 alerts with live actuator metrics
+dccfc50 test(cloud): verify week10 prometheus alert rules
+795a5dd docs(cloud): verify week10 slo alert scope
+cbbeb9a docs(cloud): start week10 slo and alert draft
+c5f4120 docs(cloud): close week09 summary
+
+===== docker context / backend =====
+default
+ Context:    default
+ Server Version: 29.2.1
+ Operating System: Docker Desktop
+ Name: docker-desktop
+ HTTP Proxy: http.docker.internal:3128
+ HTTPS Proxy: http.docker.internal:3128
+ No Proxy: hubproxy.docker.internal
+
+===== closure logs =====
+-rw-rw-r-- 1 GRT GRT 214  5月 13 15:51 artifacts/logs/week10_prometheus_config_closure_20260515.log
+-rw-rw-r-- 1 GRT GRT  63  5月 13 15:52 artifacts/logs/week10_prometheus_rules_closure_20260515.log
+
+===== promtool closure result summary =====
+artifacts/logs/week10_prometheus_config_closure_20260515.log:1:Checking /etc/prometheus/prometheus.yml
+artifacts/logs/week10_prometheus_config_closure_20260515.log:2:  SUCCESS: 1 rule files found
+artifacts/logs/week10_prometheus_config_closure_20260515.log:3: SUCCESS: /etc/prometheus/prometheus.yml is valid prometheus config file syntax
+artifacts/logs/week10_prometheus_config_closure_20260515.log:5:Checking /etc/prometheus/alerts.yaml
+artifacts/logs/week10_prometheus_config_closure_20260515.log:6:  SUCCESS: 3 rules found
+artifacts/logs/week10_prometheus_rules_closure_20260515.log:1:Checking /etc/prometheus/alerts.yaml
+artifacts/logs/week10_prometheus_rules_closure_20260515.log:2:  SUCCESS: 3 rules found
+
+===== rule_files wiring =====
+observability/prometheus/prometheus.yml:5:rule_files:
+observability/prometheus/prometheus.yml:6:  - "alerts.yaml"
+
+===== SLO / alert boundary summary =====
+README.md:8:### Week10 Cloud SLO / alert draft verified update - 2026-05-11
+README.md:10:Verified in local Docker Desktop + kind scope only:
+README.md:12:- Added `docs/runbooks/slo.md` as the Week10 local SLO / SLI draft runbook.
+README.md:31:- This is not a production SLO.
+README.md:32:- This is not production alerting.
+README.md:33:- This is not Alertmanager routing.
+README.md:34:- This is not an on-call or paging policy.
+README.md:41:Verified in local Docker Desktop + kind dev cluster only:
+README.md:44:- kind cluster: `cloud-dev`; kubectl context: `kind-cloud-dev`.
+README.md:64:- This is not a production rollout or production rollback drill.
+README.md:99:- 生产级 SLO / alerting policy
+README.md:114:   - `http_server_requests_seconds_bucket` 未出现在 live Actuator evidence 中，因此 P95 alert 暂缓，当前使用 mean latency alert
+README.md:116:2. Week10：保持本地 SLO / alert 草案边界
+README.md:117:   - 当前仅验证 local Docker Desktop + kind dev scope
+README.md:118:   - 不声明生产 SLO、Alertmanager、paging、on-call 或真实云账号部署
+README.md:121:3. Week10：后续再进入 Alertmanager / burn-rate 预热
+README.md:122:   - 仅在 SLI metric name 与 label 稳定后，再考虑 recording rules 或 burn-rate alert
+README.md:123:   - 不在当前阶段引入复杂告警路由和 on-call 语义
+README.md:129:- kind
+README.md:141:    kind create cluster --name cloud-dev --wait 60s
+README.md:142:    kubectl cluster-info --context kind-cloud-dev
+docs/runbooks/slo.md:1:# Week10 SLO / SLI Draft Runbook
+docs/runbooks/slo.md:4:Scope: local Docker Desktop + kind dev-cluster evidence only.
+docs/runbooks/slo.md:10:Week10 starts the reliability layer. The goal is not to claim production SLOs. The goal is to define local SLI / SLO semantics and create a first Prometheus alert-rule draft that can be checked locally.
+docs/runbooks/slo.md:16:- Runtime: local Docker Desktop
+docs/runbooks/slo.md:17:- Cluster: kind dev cluster
+docs/runbooks/slo.md:27:## 3. SLI candidates
+docs/runbooks/slo.md:29:| SLI | Definition | Candidate source | Current boundary |
+docs/runbooks/slo.md:38:## 4. Week10 local SLO draft
+docs/runbooks/slo.md:40:| SLO | Draft target | Window | Why not 100 percent |
+docs/runbooks/slo.md:42:| local scrape availability | >= 99.0% | 30m | local Docker / kind / port-forward may restart |
+docs/runbooks/slo.md:43:| local HTTP error ratio | < 5.0% | 10m | Week10 has no production traffic model |
+docs/runbooks/slo.md:44:| local p95 latency | < 1s | 10m | development cluster and laptop/server contention may affect latency |
+docs/runbooks/slo.md:45:| local rollout recoverability | rollout status succeeds and rollback dry-run command remains available | per rollout test | manual release evidence, not a continuous SLO |
+docs/runbooks/slo.md:59:These rules are local draft rules. They are intended for syntax validation and later metric-name refinement. They do not imply Alertmanager routing, paging, on-call ownership, or production severity.
+docs/runbooks/slo.md:73:- No production SLO.
+docs/runbooks/slo.md:75:- No Alertmanager routing.
+docs/runbooks/slo.md:76:- No paging policy.
+docs/runbooks/slo.md:77:- No on-call workflow.
+docs/runbooks/slo.md:79:- No production traffic SLI.
+docs/runbooks/slo.md:88:4. Add Alertmanager only after local alert rules are meaningful.
+docs/runbooks/slo.md:125:- This remains a local Docker Desktop + kind development SLO / alert draft.
+docs/runbooks/slo.md:126:- This is not a production SLO.
+docs/runbooks/slo.md:127:- This is not Alertmanager routing.
+docs/runbooks/slo.md:128:- This is not paging or on-call policy.
+docs/runbooks/slo.md:129:- The currently deployed Java image in kind may lag behind the latest Java repository security-contract commit; the live metrics recapture is used for metric-name and label validation, not for Java API auth-contract validation.
+docs/runbooks/slo.md:133:This section fixes the Week10 local SLO target values and the non-production boundary for the Java app rollout path.
+docs/runbooks/slo.md:135:### Local Week10 SLI / SLO Targets
+docs/runbooks/slo.md:137:| SLI | Local target | Window | Evidence source | Current verification status |
+docs/runbooks/slo.md:146:The current local evidence is based on Spring Boot Actuator / Prometheus scrape output available in the Week10 local environment. The alert draft intentionally uses mean latency because the current verified metric set does not yet prove that histogram bucket series are available and correctly scraped.
+docs/runbooks/slo.md:148:Therefore, this repository must not claim a P95 latency SLO until the following are verified:
+docs/runbooks/slo.md:157:The Week10 SLO / alert work is local-only and does not claim:
+docs/runbooks/slo.md:159:- production SLOs
+docs/runbooks/slo.md:160:- customer-facing SLA
+docs/runbooks/slo.md:161:- Alertmanager routing
+docs/runbooks/slo.md:162:- paging / on-call workflow
+observability/prometheus/alerts.yaml:47:          summary: "High Java app mean latency in local dev"
+
+===== final diff =====
+## main...origin/main
+?? artifacts/logs/week10_cloud_slo_alert_closure_index_20260515.log
+?? artifacts/logs/week10_prometheus_config_closure_20260515.log
+?? artifacts/logs/week10_prometheus_rules_closure_20260515.log
