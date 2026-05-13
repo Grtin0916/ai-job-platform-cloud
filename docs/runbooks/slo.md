@@ -127,3 +127,42 @@ Boundary:
 - This is not Alertmanager routing.
 - This is not paging or on-call policy.
 - The currently deployed Java image in kind may lag behind the latest Java repository security-contract commit; the live metrics recapture is used for metric-name and label validation, not for Java API auth-contract validation.
+
+## 2026-05-14 Target Values and Verification Boundary
+
+This section fixes the Week10 local SLO target values and the non-production boundary for the Java app rollout path.
+
+### Local Week10 SLI / SLO Targets
+
+| SLI | Local target | Window | Evidence source | Current verification status |
+|---|---:|---|---|---|
+| Target availability | `up{job="media-task-platform-java"} == 1` for the local scrape target | Local check window only | Prometheus `up` metric | Draft alert covered by `JavaAppTargetDown` |
+| HTTP error ratio | Error responses should stay below `5%` of observed HTTP requests | Local check window only | `http_server_requests_seconds_count` labels | Draft alert covered by `JavaAppHighErrorRatio` |
+| Mean request latency | Mean latency should stay below `1s` for observed actuator HTTP samples | Local check window only | `http_server_requests_seconds_sum / http_server_requests_seconds_count` | Draft alert covered by `JavaAppHighMeanLatency` |
+| P95 request latency | Deferred | Not verified | Requires histogram bucket series such as `http_server_requests_seconds_bucket` | Not claimed in Week10 |
+
+### Why P95 Is Deferred
+
+The current local evidence is based on Spring Boot Actuator / Prometheus scrape output available in the Week10 local environment. The alert draft intentionally uses mean latency because the current verified metric set does not yet prove that histogram bucket series are available and correctly scraped.
+
+Therefore, this repository must not claim a P95 latency SLO until the following are verified:
+
+- `http_server_requests_seconds_bucket` is exposed by the Java app.
+- Prometheus scrapes the bucket series.
+- The alert expression uses `histogram_quantile(...)` over a valid bucket rate.
+- A local log captures the bucket samples and the corresponding promtool validation.
+
+### Non-Production Boundary
+
+The Week10 SLO / alert work is local-only and does not claim:
+
+- production SLOs
+- customer-facing SLA
+- Alertmanager routing
+- paging / on-call workflow
+- multi-instance high availability
+- burn-rate alerting
+- long-window reliability measurement
+- real traffic representativeness
+
+The current goal is to keep the local Prometheus rule draft syntactically valid and semantically honest.

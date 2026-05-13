@@ -1,0 +1,72 @@
+===== Week10 Cloud SLO target boundary verify =====
+2026年 05月 13日 星期三 14:19:00 CST
+aurora-Super-Server
+/home/GRT/work/ai-job-platform-cloud
+
+===== git state before check =====
+0	0
+## main...origin/main
+ M docs/runbooks/slo.md
+?? artifacts/logs/week10_slo_target_boundary_20260514.log
+fc1b6da (HEAD -> main, origin/main) test(cloud): verify prometheus config after proxy fix
+ae2002a fix(cloud): load week10 prometheus alert rules
+8e21d94 fix(cloud): align week10 alerts with live actuator metrics
+dccfc50 test(cloud): verify week10 prometheus alert rules
+795a5dd docs(cloud): verify week10 slo alert scope
+
+===== docker context =====
+default
+ Context:    default
+ Server Version: 29.2.1
+ Operating System: Docker Desktop
+ Name: docker-desktop
+ HTTP Proxy: http.docker.internal:3128
+ HTTPS Proxy: http.docker.internal:3128
+ No Proxy: hubproxy.docker.internal
+
+===== promtool version =====
+promtool, version 2.55.1 (branch: HEAD, revision: 6d7569113f1ca814f1e149f74176656540043b8d)
+  build user:       root@194e0f5dd5e8
+  build date:       20241106-10:08:33
+  go version:       go1.23.2
+  platform:         linux/amd64
+  tags:             netgo,builtinassets,stringlabels
+
+===== promtool check config =====
+Checking /etc/prometheus/prometheus.yml
+  SUCCESS: 1 rule files found
+ SUCCESS: /etc/prometheus/prometheus.yml is valid prometheus config file syntax
+
+Checking /etc/prometheus/alerts.yaml
+  SUCCESS: 3 rules found
+
+
+===== promtool check rules =====
+Checking /etc/prometheus/alerts.yaml
+  SUCCESS: 3 rules found
+
+
+===== SLO boundary grep =====
+10:Week10 starts the reliability layer. The goal is not to claim production SLOs. The goal is to define local SLI / SLO semantics and create a first Prometheus alert-rule draft that can be checked locally.
+43:| local HTTP error ratio | < 5.0% | 10m | Week10 has no production traffic model |
+59:These rules are local draft rules. They are intended for syntax validation and later metric-name refinement. They do not imply Alertmanager routing, paging, on-call ownership, or production severity.
+75:- No Alertmanager routing.
+88:4. Add Alertmanager only after local alert rules are meaningful.
+127:- This is not Alertmanager routing.
+131:## 2026-05-14 Target Values and Verification Boundary
+139:| Target availability | `up{job="media-task-platform-java"} == 1` for the local scrape target | Local check window only | Prometheus `up` metric | Draft alert covered by `JavaAppTargetDown` |
+140:| HTTP error ratio | Error responses should stay below `5%` of observed HTTP requests | Local check window only | `http_server_requests_seconds_count` labels | Draft alert covered by `JavaAppHighErrorRatio` |
+141:| Mean request latency | Mean latency should stay below `1s` for observed actuator HTTP samples | Local check window only | `http_server_requests_seconds_sum / http_server_requests_seconds_count` | Draft alert covered by `JavaAppHighMeanLatency` |
+144:### Why P95 Is Deferred
+155:### Non-Production Boundary
+159:- production SLOs
+161:- Alertmanager routing
+
+===== diff summary =====
+## main...origin/main
+ M docs/runbooks/slo.md
+?? artifacts/logs/week10_slo_target_boundary_20260514.log
+ docs/runbooks/slo.md | 39 +++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 39 insertions(+)
+
+===== DONE =====
