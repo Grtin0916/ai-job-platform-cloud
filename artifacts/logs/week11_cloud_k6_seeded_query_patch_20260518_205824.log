@@ -1,0 +1,34 @@
+===== patch k6 script: authenticated mode requires seeded task =====
+patched loadtest/k6_smoke.js: authenticated mode requires seeded CREATED task
+
+===== script grep =====
+3:const HAS_BASIC_AUTH = Boolean(__ENV.BASIC_USER && __ENV.BASIC_PASS);
+6:  HAS_BASIC_AUTH
+13:const BASIC_USER = __ENV.BASIC_USER || '';
+14:const BASIC_PASS = __ENV.BASIC_PASS || '';
+15:const SEEDED_TASK_ID = __ENV.SEEDED_TASK_ID || 'week11-k6-seed-created-001';
+21:    http_req_failed: ['rate<0.05'],
+28:  if (BASIC_USER && BASIC_PASS) {
+32:        Authorization: `Basic ${encoding.b64encode(`${BASIC_USER}:${BASIC_PASS}`)}`,
+71:    'query status matches auth mode': (r) => {
+72:      if (HAS_BASIC_AUTH) return r.status === 200;
+76:    'query json shape when 200': (r) => {
+90:    'query returns seeded task when authenticated': (r) => {
+91:      if (!HAS_BASIC_AUTH) return true;
+96:          && body.content.some((item) => item.id === SEEDED_TASK_ID && item.status === 'CREATED');
+
+===== status =====
+## main...origin/main
+?? artifacts/logs/week11_cloud_k6_expected_status_patch_20260518_202712.log
+?? artifacts/logs/week11_cloud_k6_seeded_query_patch_20260518_205824.log
+?? artifacts/logs/week11_cloud_k6_smoke_create_20260518_175832.log
+?? artifacts/logs/week11_cloud_k6_smoke_docker_run_20260518_194612.log
+?? artifacts/logs/week11_cloud_k6_smoke_docker_run_after_proxy_fix_20260518_202057.log
+?? artifacts/logs/week11_cloud_k6_smoke_docker_run_authenticated_20260518_203332.log
+?? artifacts/logs/week11_cloud_k6_smoke_docker_run_expected_status_20260518_202718.log
+?? artifacts/logs/week11_cloud_k6_smoke_docker_run_strict_authenticated_20260518_204625.log
+?? artifacts/logs/week11_cloud_k6_smoke_run_20260518_192435.log
+?? artifacts/logs/week11_cloud_k6_strict_auth_patch_20260518_204615.log
+?? artifacts/logs/week11_docker_proxy_after_fix_20260518_202029.log
+?? artifacts/logs/week11_docker_proxy_k6_pull_diag_20260518_195120.log
+?? loadtest/
