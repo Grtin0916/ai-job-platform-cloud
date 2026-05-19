@@ -1,0 +1,55 @@
+{
+  "schema_version": "week11_k6_gate_v2",
+  "checked_at_utc": "2026-05-19T03:09:19.368476+00:00",
+  "source_summary_json": "loadtest/reports/week11_k6_smoke_summary_docker_seeded_authenticated_20260518_205831.json",
+  "expected_task_id": "week11-k6-seed-created-001",
+  "java_repo_commit": "8bf3971",
+  "cloud_repo_commit": "d03f9fb",
+  "gate": {
+    "passed": true,
+    "failure_reasons": [],
+    "max_p95_ms": 750.0,
+    "max_failed_rate": 0.0,
+    "min_check_rate": 1.0,
+    "gate_type": "derived_from_k6_summary_metrics"
+  },
+  "metrics": {
+    "http_req_failed_rate": 0.0,
+    "http_req_duration_p95_ms": 133.39465279999993,
+    "checks_rate": 1.0,
+    "checks_passes": 324.0,
+    "checks_fails": 0.0
+  },
+  "thresholds": {
+    "native_k6_threshold_overall": null,
+    "native_k6_threshold_note": "not detected in source summary JSON",
+    "items": [
+      {
+        "metric": "http_req_failed",
+        "threshold": "rate<0.05",
+        "ok": null
+      },
+      {
+        "metric": "http_req_duration",
+        "threshold": "p(95)<750",
+        "ok": null
+      },
+      {
+        "metric": "checks",
+        "threshold": "rate>0.95",
+        "ok": null
+      }
+    ]
+  },
+  "interpretation": {
+    "scope": "Week11 authenticated seeded media-task query smoke, not production SLO.",
+    "business_meaning": "The Java media-task read path can be queried under k6 smoke load and linked to the seeded task used by the cross-repo eval bridge.",
+    "not_verified": [
+      "long-duration load",
+      "multi-instance Kubernetes rollout under load",
+      "database saturation",
+      "production alert routing",
+      "write-path task orchestration"
+    ]
+  }
+}
