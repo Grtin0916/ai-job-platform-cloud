@@ -1,0 +1,5 @@
+[OK] wrote loadtest/reports/week11_k6_slo_summary.json
+[OK] wrote docs/benchmarks/cloud_k6_week11.md
+report_count= 2
+all_reports_passed_local_smoke_gate= True
+report_kinds= {'boundary_smoke': 1, 'business_smoke': 1}

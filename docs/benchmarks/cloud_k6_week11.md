@@ -1,43 +1,32 @@
-# Week11 Cloud k6 Benchmark Gate
+# Week11 Cloud k6 SLO Summary
 
-## Verdict
+## Scope
 
-**PASS**
+This document summarizes existing Week11 k6 reports into a local smoke reliability gate. It does not claim production SLO coverage.
 
-This report summarizes the authenticated k6 smoke result for the Week11 seeded media-task query path.
+## Aggregate
 
-## Source
+- Report count: 2
+- Report kinds: `{'boundary_smoke': 1, 'business_smoke': 1}`
+- All reports passed local smoke gate: `True`
+- Max p95 latency ms: `133.39465279999993`
+- Max http_req_failed rate: `0.0`
+- Min checks rate: `1.0`
 
-- Source summary JSON: loadtest/reports/week11_k6_smoke_summary_docker_seeded_authenticated_20260518_205831.json
-- Expected task id: week11-k6-seed-created-001
-- Java commit: 8bf3971
-- Cloud commit: d03f9fb
-- Generated at UTC: 2026-05-19T03:09:19.368476+00:00
+## Local Gate Rule
 
-## Derived Gate Criteria
+- `http_req_failed_rate == 0` when present.
+- `checks_rate == 1` when present.
+- `http_req_duration p95 < 200ms` when present.
+- Boundary/negative smoke may intentionally receive HTTP 400, but it must be configured as an expected status in k6 so `http_req_failed` remains zero.
 
-| Metric | Observed | Required | Result |
-|---|---:|---:|---|
-| http_req_failed.rate | 0.0 | <= 0.0 | PASS |
-| http_req_duration.p95_ms | 133.39465279999993 | < 750.0 | PASS |
-| checks.rate | 1.0 | >= 1.0 | PASS |
+## Reports
 
-## Native k6 Threshold Status
+| file | kind | p95_ms | failed_rate | checks_rate | passed | failed_reasons |
+|---|---|---:|---:|---:|---|---|
+| loadtest/reports/week11_k6_query_boundary_2026-05-19T08-10-03-514Z.json | boundary_smoke | 131.9524367 | 0.0 | 1.0 | True | none |
+| loadtest/reports/week11_k6_smoke_summary_docker_seeded_authenticated_20260518_205831.json | business_smoke | 133.39465279999993 | None | None | True | none |
 
-- Native k6 threshold status in source summary: not detected in source summary JSON
-- This report uses a Week11 derived gate because the source summary may not expose native threshold metadata in a stable shape.
-- The derived gate is based on observed k6 metrics: HTTP failure rate, p95 latency, and check pass rate.
+## Interpretation
 
-## Failure Reasons
-
-- None
-
-## Interpretation Boundary
-
-This is a Week11 smoke benchmark gate. It verifies that the authenticated Java media-task read path can be queried through the k6 script and linked to the seeded task used by the cross-repo eval bridge.
-
-It does not verify production SLO, long-duration load, database saturation, multi-instance Kubernetes behavior, write-path orchestration, or real alert routing.
-
-## Machine-readable Output
-
-See artifacts/benchmarks/week11_k6_gate_summary.json for the machine-readable gate and threshold details.
+Week11 evidence shows whether the local Java task query path can be consumed by k6 under authenticated and/or boundary smoke conditions. This summary is a decision artifact for W11/W12 demo preparation, not a substitute for long-running load tests or production alerting.

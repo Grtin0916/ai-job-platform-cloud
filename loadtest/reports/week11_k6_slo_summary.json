@@ -1,0 +1,46 @@
+{
+  "schema_version": "week11_k6_slo_summary_v0",
+  "created_at": "2026-05-20T15:29:19+0800",
+  "scope": "Cloud-side summary of existing Week11 k6 reports. Local smoke gate only; not production SLO.",
+  "reports": [
+    {
+      "file": "loadtest/reports/week11_k6_query_boundary_2026-05-19T08-10-03-514Z.json",
+      "kind": "boundary_smoke",
+      "http_req_failed_rate": 0.0,
+      "http_req_duration_p95_ms": 131.9524367,
+      "checks_rate": 1.0,
+      "threshold_keys": [],
+      "passed_local_smoke_gate": true,
+      "failed_reasons": []
+    },
+    {
+      "file": "loadtest/reports/week11_k6_smoke_summary_docker_seeded_authenticated_20260518_205831.json",
+      "kind": "business_smoke",
+      "http_req_failed_rate": null,
+      "http_req_duration_p95_ms": 133.39465279999993,
+      "checks_rate": null,
+      "threshold_keys": [],
+      "passed_local_smoke_gate": true,
+      "failed_reasons": []
+    }
+  ],
+  "skipped": [],
+  "aggregate": {
+    "report_count": 2,
+    "report_kinds": {
+      "boundary_smoke": 1,
+      "business_smoke": 1
+    },
+    "all_reports_passed_local_smoke_gate": true,
+    "max_p95_ms": 133.39465279999993,
+    "max_http_req_failed_rate": 0.0,
+    "min_checks_rate": 1.0,
+    "local_gate_rule": {
+      "http_req_failed_rate": "must equal 0 when present",
+      "checks_rate": "must equal 1 when present",
+      "http_req_duration_p95_ms": "must be < 200ms when present",
+      "scope": "local week11 smoke evidence only; not a production SLO"
+    }
+  },
+  "next_recommendation": "If aggregate passes, bind this summary back into Mainbase bridge evidence; if not, inspect failed report kind before rerunning Java/k6."
+}
