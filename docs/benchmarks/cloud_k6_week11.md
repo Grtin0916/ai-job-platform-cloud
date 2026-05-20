@@ -22,10 +22,10 @@ This document summarizes existing Week11 k6 reports into a local smoke reliabili
 
 ## Reports
 
-| file | kind | p95_ms | failed_rate | checks_rate | passed | failed_reasons |
-|---|---|---:|---:|---:|---|---|
-| loadtest/reports/week11_k6_query_boundary_2026-05-19T08-10-03-514Z.json | boundary_smoke | 131.9524367 | 0.0 | 1.0 | True | none |
-| loadtest/reports/week11_k6_smoke_summary_docker_seeded_authenticated_20260518_205831.json | business_smoke | 133.39465279999993 | None | None | True | none |
+| file | kind | p95_ms | failed_rate | checks_rate | missing_metrics | passed | failed_reasons |
+|---|---|---:|---:|---:|---|---|---|
+| loadtest/reports/week11_k6_query_boundary_2026-05-19T08-10-03-514Z.json | boundary_smoke | 131.9524367 | 0.0 | 1.0 | none | True | none |
+| loadtest/reports/week11_k6_smoke_summary_docker_seeded_authenticated_20260518_205831.json | business_smoke | 133.39465279999993 | 0.0 | 1.0 | none | True | none |
 
 ## Interpretation
 
