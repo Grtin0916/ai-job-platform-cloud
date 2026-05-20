@@ -1,0 +1,21 @@
+{
+  "schema_version": "week11_k6_eval_artifact_link_summary_v0",
+  "created_at": "2026-05-20T16:53:05+0800",
+  "scope": "Cloud k6 external consumer smoke for Java MediaTask eval artifact link fields.",
+  "source_report": "loadtest/reports/week11_k6_eval_artifact_link_20260520_164610.json",
+  "source_log": "artifacts/logs/week11_k6_eval_artifact_link_20260520_164610.log",
+  "checks_rate": 1.0,
+  "http_req_failed_rate": 0.0,
+  "http_req_duration_p95_ms": 118.71,
+  "required_fields": [
+    "artifactUri",
+    "evalSummaryUri",
+    "qualityGateStatus"
+  ],
+  "expected_task_id": "week11-k6-seed-created-001",
+  "expected_artifact_uri": "mainbase://artifacts/manifests/week11_crossrepo_task_bridge.json",
+  "expected_eval_summary_uri": "mainbase://artifacts/evals/week11_eval_quality_gate_v0.json",
+  "expected_quality_gate_status": "PASS",
+  "passed": true,
+  "note": "Metrics are parsed from k6 stdout because current summary-export JSON shape did not expose values in the expected nested metrics.values form."
+}
