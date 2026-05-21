@@ -1,0 +1,1 @@
+{"out": "loadtest/reports/week11_k6_evidence_index.json", "cloud_commit": "08e075c", "role_counts": {"query_slo_smoke": 9, "eval_artifact_link_consumer": 3, "k6_related": 1}, "consumer_field_presence": {"artifactUri": true, "evalSummaryUri": true, "qualityGateStatus": true}, "quality_gate_pass": true}

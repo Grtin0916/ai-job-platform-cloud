@@ -1,0 +1,355 @@
+{
+  "created_at": "2026-05-21T10:47:10",
+  "index_name": "week11_k6_evidence_index",
+  "purpose": "Cloud Week11 evidence index: merge k6/SLO smoke evidence and eval artifact-link consumer evidence into one machine-readable report.",
+  "boundary": "V0 local Cloud evidence only. Not a production SLO, not Alertmanager/on-call proof, not real cloud capacity evidence.",
+  "repo": {
+    "name": "ai-job-platform-cloud",
+    "role": "Cloud: k6/SLO/consumer evidence index",
+    "commit": "08e075c",
+    "tracked_git_status": "## main...origin/main",
+    "full_git_status_at_build": "## main...origin/main\n?? artifacts/logs/week11_k6_evidence_index_20260521_104710.log\n?? scripts/build_week11_k6_evidence_index.py"
+  },
+  "cross_repo_inputs": {
+    "mainbase_evidence_commit_from_user": "1defdc4",
+    "java_evidence_contract_commit_from_user": "c6558c9",
+    "java_evidence_fields": [
+      "artifactUri",
+      "evalSummaryUri",
+      "qualityGateStatus"
+    ]
+  },
+  "evidence_roles": {
+    "counts": {
+      "query_slo_smoke": 9,
+      "eval_artifact_link_consumer": 3,
+      "k6_related": 1
+    },
+    "has_query_slo_smoke": true,
+    "has_eval_artifact_link_consumer": true
+  },
+  "consumer_field_presence": {
+    "artifactUri": true,
+    "evalSummaryUri": true,
+    "qualityGateStatus": true
+  },
+  "reports": [
+    {
+      "path": "artifacts/logs/week11_cloud_k6_seeded_query_patch_20260518_205824.log",
+      "role": "query_slo_smoke",
+      "file": {
+        "path": "artifacts/logs/week11_cloud_k6_seeded_query_patch_20260518_205824.log",
+        "exists": true,
+        "size_bytes": 1925,
+        "modified_at_epoch": 1779109104
+      }
+    },
+    {
+      "path": "artifacts/logs/week11_cloud_k6_smoke_docker_run_seeded_authenticated_20260518_205831.log",
+      "role": "query_slo_smoke",
+      "file": {
+        "path": "artifacts/logs/week11_cloud_k6_smoke_docker_run_seeded_authenticated_20260518_205831.log",
+        "exists": true,
+        "size_bytes": 7355,
+        "modified_at_epoch": 1779109144
+      }
+    },
+    {
+      "path": "artifacts/logs/week11_k6_eval_artifact_link_20260520_164610.log",
+      "role": "eval_artifact_link_consumer",
+      "file": {
+        "path": "artifacts/logs/week11_k6_eval_artifact_link_20260520_164610.log",
+        "exists": true,
+        "size_bytes": 1794,
+        "modified_at_epoch": 1779266770
+      }
+    },
+    {
+      "path": "artifacts/logs/week11_k6_evidence_index_20260521_104710.log",
+      "role": "k6_related",
+      "file": {
+        "path": "artifacts/logs/week11_k6_evidence_index_20260521_104710.log",
+        "exists": true,
+        "size_bytes": 0,
+        "modified_at_epoch": 1779331630
+      }
+    },
+    {
+      "path": "artifacts/logs/week11_k6_gate_summary_rewrite_20260519_110919.log",
+      "role": "query_slo_smoke",
+      "file": {
+        "path": "artifacts/logs/week11_k6_gate_summary_rewrite_20260519_110919.log",
+        "exists": true,
+        "size_bytes": 1666,
+        "modified_at_epoch": 1779160159
+      }
+    },
+    {
+      "path": "artifacts/logs/week11_k6_query_boundary_20260519_161002.log",
+      "role": "query_slo_smoke",
+      "file": {
+        "path": "artifacts/logs/week11_k6_query_boundary_20260519_161002.log",
+        "exists": true,
+        "size_bytes": 836,
+        "modified_at_epoch": 1779178203
+      }
+    },
+    {
+      "path": "artifacts/logs/week11_k6_slo_summary_20260520_152919.log",
+      "role": "query_slo_smoke",
+      "file": {
+        "path": "artifacts/logs/week11_k6_slo_summary_20260520_152919.log",
+        "exists": true,
+        "size_bytes": 216,
+        "modified_at_epoch": 1779262159
+      }
+    },
+    {
+      "path": "artifacts/logs/week11_k6_slo_summary_patch_20260520_153744.log",
+      "role": "query_slo_smoke",
+      "file": {
+        "path": "artifacts/logs/week11_k6_slo_summary_patch_20260520_153744.log",
+        "exists": true,
+        "size_bytes": 216,
+        "modified_at_epoch": 1779262664
+      }
+    },
+    {
+      "path": "loadtest/reports/week11_k6_eval_artifact_link_20260520_164610.json",
+      "role": "eval_artifact_link_consumer",
+      "file": {
+        "path": "loadtest/reports/week11_k6_eval_artifact_link_20260520_164610.json",
+        "exists": true,
+        "size_bytes": 4898,
+        "modified_at_epoch": 1779266770
+      },
+      "k6_metrics_subset": {
+        "http_req_duration": {
+          "p(90)": 118.719554,
+          "p(95)": 118.719554,
+          "avg": 118.719554,
+          "min": 118.719554,
+          "med": 118.719554,
+          "max": 118.719554,
+          "thresholds": {
+            "p(95)<200": false
+          }
+        },
+        "http_req_failed": {
+          "passes": 0,
+          "fails": 1,
+          "thresholds": {
+            "rate==0": false
+          },
+          "value": 0
+        },
+        "http_reqs": {
+          "rate": 8.077582204524203,
+          "count": 1
+        },
+        "checks": {
+          "passes": 6,
+          "fails": 0,
+          "thresholds": {
+            "rate==1": false
+          },
+          "value": 1
+        },
+        "iterations": {
+          "count": 1,
+          "rate": 8.077582204524203
+        }
+      },
+      "top_level_keys": [
+        "metrics",
+        "root_group"
+      ]
+    },
+    {
+      "path": "loadtest/reports/week11_k6_eval_artifact_link_summary.json",
+      "role": "eval_artifact_link_consumer",
+      "file": {
+        "path": "loadtest/reports/week11_k6_eval_artifact_link_summary.json",
+        "exists": true,
+        "size_bytes": 1015,
+        "modified_at_epoch": 1779267185
+      },
+      "k6_metrics_subset": {},
+      "top_level_keys": [
+        "checks_rate",
+        "created_at",
+        "expected_artifact_uri",
+        "expected_eval_summary_uri",
+        "expected_quality_gate_status",
+        "expected_task_id",
+        "http_req_duration_p95_ms",
+        "http_req_failed_rate",
+        "note",
+        "passed",
+        "required_fields",
+        "schema_version",
+        "scope",
+        "source_log",
+        "source_report"
+      ]
+    },
+    {
+      "path": "loadtest/reports/week11_k6_query_boundary_2026-05-19T08-10-03-514Z.json",
+      "role": "query_slo_smoke",
+      "file": {
+        "path": "loadtest/reports/week11_k6_query_boundary_2026-05-19T08-10-03-514Z.json",
+        "exists": true,
+        "size_bytes": 6266,
+        "modified_at_epoch": 1779178203
+      },
+      "k6_metrics_subset": {
+        "http_req_duration": {
+          "type": "trend",
+          "contains": "time",
+          "values": {
+            "med": 121.512506,
+            "max": 133.112429,
+            "p(90)": 130.7924444,
+            "p(95)": 131.9524367,
+            "avg": 124.59891533333332,
+            "min": 119.171811
+          },
+          "thresholds": {
+            "p(95)<750": {
+              "ok": true
+            }
+          }
+        },
+        "http_req_failed": {
+          "type": "rate",
+          "contains": "default",
+          "values": {
+            "rate": 0,
+            "passes": 0,
+            "fails": 3
+          },
+          "thresholds": {
+            "rate==0": {
+              "ok": true
+            }
+          }
+        },
+        "http_reqs": {
+          "type": "counter",
+          "contains": "default",
+          "values": {
+            "count": 3,
+            "rate": 7.812427877456184
+          }
+        },
+        "checks": {
+          "type": "rate",
+          "contains": "default",
+          "values": {
+            "rate": 1,
+            "passes": 9,
+            "fails": 0
+          },
+          "thresholds": {
+            "rate==1.0": {
+              "ok": true
+            }
+          }
+        },
+        "iterations": {
+          "type": "counter",
+          "contains": "default",
+          "values": {
+            "count": 3,
+            "rate": 7.812427877456184
+          }
+        }
+      },
+      "top_level_keys": [
+        "metrics",
+        "options",
+        "root_group",
+        "state"
+      ]
+    },
+    {
+      "path": "loadtest/reports/week11_k6_slo_summary.json",
+      "role": "query_slo_smoke",
+      "file": {
+        "path": "loadtest/reports/week11_k6_slo_summary.json",
+        "exists": true,
+        "size_bytes": 1910,
+        "modified_at_epoch": 1779262664
+      },
+      "k6_metrics_subset": {},
+      "top_level_keys": [
+        "aggregate",
+        "created_at",
+        "next_recommendation",
+        "reports",
+        "schema_version",
+        "scope",
+        "skipped"
+      ]
+    },
+    {
+      "path": "loadtest/reports/week11_k6_smoke_summary_docker_seeded_authenticated_20260518_205831.json",
+      "role": "query_slo_smoke",
+      "file": {
+        "path": "loadtest/reports/week11_k6_smoke_summary_docker_seeded_authenticated_20260518_205831.json",
+        "exists": true,
+        "size_bytes": 5267,
+        "modified_at_epoch": 1779109143
+      },
+      "k6_metrics_subset": {
+        "http_req_duration": {
+          "min": 5.175654,
+          "med": 50.0185325,
+          "max": 171.664538,
+          "p(90)": 125.7981109,
+          "p(95)": 133.39465279999993,
+          "avg": 64.4129013148148,
+          "thresholds": {
+            "p(95)<750": false
+          }
+        },
+        "http_req_failed": {
+          "passes": 0,
+          "fails": 108,
+          "thresholds": {
+            "rate<0.05": false
+          },
+          "value": 0
+        },
+        "http_reqs": {
+          "count": 108,
+          "rate": 3.525930679831371
+        },
+        "checks": {
+          "passes": 324,
+          "fails": 0,
+          "thresholds": {
+            "rate>0.95": false
+          },
+          "value": 1
+        },
+        "iterations": {
+          "count": 54,
+          "rate": 1.7629653399156855
+        }
+      },
+      "top_level_keys": [
+        "metrics",
+        "root_group"
+      ]
+    }
+  ],
+  "quality_gate": {
+    "pass": true,
+    "rule": "PASS if Cloud has at least one SLO/query k6 evidence, at least one artifact-link consumer evidence, and all expected Java evidence fields appear in reports/logs."
+  },
+  "next_recommended_edge": {
+    "repo": "ai-job-platform-cloud",
+    "action": "Use this index as the Cloud-side evidence root for README/weekly summary without rerunning long k6."
+  }
+}
