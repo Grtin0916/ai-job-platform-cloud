@@ -1,0 +1,22 @@
+===== Week12 cross-repo readiness gate =====
+repo=/home/GRT/work/ai-job-platform-cloud
+command=python scripts/verify_week12_crossrepo_readiness_gate.py
+
+[PASS] Week12 cross-repo readiness gate
+manifest=artifacts/manifests/week12_crossrepo_readiness_manifest.json
+status=PASS
+mainbase_head=4992082
+java_head=18f1f23
+cloud_head=48ea3a1
+seed_count=5
+validation_status=PASS_WITH_WARNINGS
+completion_rule=SUCCEEDED requires artifactUri + evalSummaryUri + qualityGateStatus
+cloud_boundary=local/non-production k6 evidence only; remote GitHub Actions failure remains suspended
+cloud_git_status=## main...origin/main
+?? artifacts/logs/week12_crossrepo_readiness_gate_20260522_115432.log
+?? artifacts/logs/week12_crossrepo_readiness_gate_20260522_115638.log
+?? artifacts/logs/week12_crossrepo_readiness_manifest_20260522_115039.log
+?? artifacts/manifests/
+?? scripts/build_week12_crossrepo_readiness_manifest.py
+?? scripts/verify_week12_crossrepo_readiness_gate.py
+gate_exit=0

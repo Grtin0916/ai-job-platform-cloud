@@ -1,0 +1,126 @@
+{
+  "schema_version": "week12_crossrepo_readiness_manifest_v0",
+  "generated_at_local": "2026-05-22T11:50:39",
+  "status": "PASS",
+  "repos": {
+    "mainbase": {
+      "root": "/home/GRT/work/audio_engineering_repo_skeleton_v1",
+      "git_status": "## main...origin/main",
+      "head": "4992082",
+      "origin_main": "4992082",
+      "required_files": {
+        "blueprint_seed_manifest": {
+          "path": "artifacts/manifests/week12_blueprint_seed_manifest.json",
+          "exists": true,
+          "size_bytes": 15284
+        },
+        "blueprint_schema": {
+          "path": "schemas/soundlayer_blueprint_seed_v0.schema.json",
+          "exists": true,
+          "size_bytes": 6810
+        },
+        "blueprint_validation_report": {
+          "path": "artifacts/manifests/week12_blueprint_seed_validation_report.json",
+          "exists": true,
+          "size_bytes": 2653
+        }
+      }
+    },
+    "java": {
+      "root": "/home/GRT/work/media-task-platform-java",
+      "git_status": "## main...origin/main",
+      "head": "18f1f23",
+      "origin_main": "18f1f23",
+      "required_files": {
+        "lifecycle_state": {
+          "path": "src/main/java/com/ryan/media/model/MediaTaskLifecycleState.java",
+          "exists": true,
+          "size_bytes": 415
+        },
+        "lifecycle_transition": {
+          "path": "src/main/java/com/ryan/media/model/MediaTaskLifecycleTransition.java",
+          "exists": true,
+          "size_bytes": 2847
+        },
+        "completion_gate": {
+          "path": "src/main/java/com/ryan/media/model/MediaTaskCompletionGate.java",
+          "exists": true,
+          "size_bytes": 1378
+        },
+        "evidence_links": {
+          "path": "src/main/java/com/ryan/media/model/MediaTaskEvidenceLinks.java",
+          "exists": true,
+          "size_bytes": 636
+        },
+        "completion_decision": {
+          "path": "src/main/java/com/ryan/media/service/MediaTaskCompletionDecision.java",
+          "exists": true,
+          "size_bytes": 522
+        },
+        "completion_service": {
+          "path": "src/main/java/com/ryan/media/service/MediaTaskCompletionService.java",
+          "exists": true,
+          "size_bytes": 2724
+        }
+      }
+    },
+    "cloud": {
+      "root": "/home/GRT/work/ai-job-platform-cloud",
+      "git_status": "## main...origin/main\n?? scripts/build_week12_crossrepo_readiness_manifest.py",
+      "head": "48ea3a1",
+      "origin_main": "48ea3a1",
+      "required_files": {
+        "k6_evidence_index": {
+          "path": "loadtest/reports/week11_k6_evidence_index.json",
+          "exists": true,
+          "size_bytes": 10186
+        },
+        "k6_week11_doc": {
+          "path": "docs/benchmarks/cloud_k6_week11.md",
+          "exists": true,
+          "size_bytes": 1458
+        },
+        "ci_validate": {
+          "path": "scripts/ci_validate.sh",
+          "exists": true,
+          "size_bytes": 1480
+        }
+      }
+    }
+  },
+  "readiness": {
+    "mainbase_blueprint_contract": {
+      "ready": true,
+      "seed_count": 5,
+      "quality_proxy_min": 0.892,
+      "quality_proxy_max": 0.964,
+      "validation_status": "PASS_WITH_WARNINGS"
+    },
+    "java_completion_semantics": {
+      "ready": true,
+      "expected_states": [
+        "CREATED",
+        "QUEUED",
+        "RUNNING",
+        "SUCCEEDED",
+        "FAILED"
+      ],
+      "completion_rule": "SUCCEEDED requires artifactUri + evalSummaryUri + qualityGateStatus",
+      "service_adapter": "MediaTaskCompletionService.decideCompletionExposure"
+    },
+    "cloud_local_evidence_boundary": {
+      "ready": true,
+      "boundary": "local/non-production k6 evidence only; remote GitHub Actions failure remains suspended"
+    }
+  },
+  "next_system_action": {
+    "recommended": "Build Cloud local readiness gate or dashboard from this manifest, not from remote CI state.",
+    "non_goals": [
+      "Do not claim production SLO.",
+      "Do not claim real cloud deployment.",
+      "Do not re-open GitHub Actions remote runner debugging today."
+    ]
+  },
+  "hard_failures": [],
+  "warnings": []
+}
