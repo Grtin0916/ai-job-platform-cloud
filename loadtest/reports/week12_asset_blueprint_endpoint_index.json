@@ -1,0 +1,191 @@
+{
+  "schema_version": "week12_asset_blueprint_endpoint_index_v1",
+  "created_at": "2026-06-01T11:14:57+00:00",
+  "status": "PASS",
+  "repos": {
+    "mainbase": {
+      "path": "/home/GRT/work/audio_engineering_repo_skeleton_v1",
+      "head": "0d7e146",
+      "status": "## main...origin/main"
+    },
+    "java": {
+      "path": "/home/GRT/work/media-task-platform-java",
+      "head": "7d3d51f",
+      "status": "## main...origin/main"
+    },
+    "cloud": {
+      "path": "/home/GRT/work/ai-job-platform-cloud",
+      "head": "99c72a7",
+      "status": "## main...origin/main\n?? artifacts/logs/week12_asset_blueprint_endpoint_index_20260601_191457.log\n?? scripts/build_week12_asset_blueprint_endpoint_index.py"
+    }
+  },
+  "mainbase_blueprint_v1": {
+    "manifest_path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_blueprint_v1_manifest.json",
+    "final_summary_path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_blueprint_v1_final_summary.json",
+    "schema_path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/schemas/soundlayer_blueprint_v1.schema.json",
+    "timeline_jsonl_path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_event_timeline.jsonl",
+    "timeline_csv_path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_event_timeline.csv",
+    "contact_sheet_path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/visuals/week12_event_timeline_contact_sheet.png",
+    "manifest_summary": {
+      "seed_count_in_source": 5,
+      "blueprint_count": 5,
+      "event_count": 10,
+      "status": "PASS",
+      "warning_count": 0,
+      "semantic_refined": true,
+      "semantic_refined_at": "2026-06-01T08:45:11+00:00",
+      "finalized": true,
+      "finalized_at": "2026-06-01T08:50:21+00:00",
+      "finalized_by": "scripts/finalize_week12_blueprint_v1_pack.py"
+    },
+    "final_summary": {
+      "status": "PASS",
+      "blueprint_count": 5,
+      "event_count": 10,
+      "error_count": 0,
+      "warning_count": 0
+    },
+    "blueprints": [
+      {
+        "blueprint_id": "blueprint_v1_66d315251e",
+        "source_seed_id": "seed_0001_case_48b11c",
+        "scene_description": "Urban walking scene with visible pedestrian motion, continuous street ambience, and time-aligned footsteps.",
+        "semantic_tags": [
+          "urban",
+          "walking",
+          "footsteps",
+          "street_ambience"
+        ],
+        "event_count": 2,
+        "event_labels": [
+          "contextual ambience bed",
+          "time-aligned footsteps"
+        ],
+        "blueprint_artifact_uri": "artifacts/manifests/week12_blueprint_v1_manifest.json#blueprint_v1_66d315251e",
+        "timeline_jsonl_uri": "artifacts/manifests/week12_event_timeline.jsonl"
+      },
+      {
+        "blueprint_id": "blueprint_v1_a221f75cba",
+        "source_seed_id": "seed_0002_case_adc34a",
+        "scene_description": "Indoor door-closing scene with a short foreground door impact and quiet room tone.",
+        "semantic_tags": [
+          "indoor",
+          "door_close",
+          "impact",
+          "room_tone"
+        ],
+        "event_count": 2,
+        "event_labels": [
+          "contextual ambience bed",
+          "door close impact"
+        ],
+        "blueprint_artifact_uri": "artifacts/manifests/week12_blueprint_v1_manifest.json#blueprint_v1_a221f75cba",
+        "timeline_jsonl_uri": "artifacts/manifests/week12_event_timeline.jsonl"
+      },
+      {
+        "blueprint_id": "blueprint_v1_276cc4a44c",
+        "source_seed_id": "seed_0003_case_9eb26a",
+        "scene_description": "Rain-at-window scene with continuous rainfall ambience and localized water impact texture.",
+        "semantic_tags": [
+          "rain",
+          "window",
+          "weather",
+          "water_impact"
+        ],
+        "event_count": 2,
+        "event_labels": [
+          "contextual ambience bed",
+          "raindrop impacts on window"
+        ],
+        "blueprint_artifact_uri": "artifacts/manifests/week12_blueprint_v1_manifest.json#blueprint_v1_276cc4a44c",
+        "timeline_jsonl_uri": "artifacts/manifests/week12_event_timeline.jsonl"
+      },
+      {
+        "blueprint_id": "blueprint_v1_2b95ab765d",
+        "source_seed_id": "seed_0004_case_f9f0fb",
+        "scene_description": "Desk typing scene with close foreground keystrokes and low indoor ambience.",
+        "semantic_tags": [
+          "typing",
+          "keyboard",
+          "desk",
+          "indoor"
+        ],
+        "event_count": 2,
+        "event_labels": [
+          "contextual ambience bed",
+          "keyboard typing taps"
+        ],
+        "blueprint_artifact_uri": "artifacts/manifests/week12_blueprint_v1_manifest.json#blueprint_v1_2b95ab765d",
+        "timeline_jsonl_uri": "artifacts/manifests/week12_event_timeline.jsonl"
+      },
+      {
+        "blueprint_id": "blueprint_v1_5e6fcc8a2a",
+        "source_seed_id": "seed_0005_case_06f366",
+        "scene_description": "Bicycle pass-by scene with continuous outdoor ambience and a foreground bicycle motion cue aligned to the visible pass.",
+        "semantic_tags": [
+          "bike",
+          "pass_by",
+          "motion",
+          "outdoor_ambience",
+          "foreground_foley"
+        ],
+        "event_count": 2,
+        "event_labels": [
+          "outdoor bike-pass ambience",
+          "bicycle pass-by motion cue"
+        ],
+        "blueprint_artifact_uri": "artifacts/manifests/week12_blueprint_v1_manifest.json#blueprint_v1_5e6fcc8a2a",
+        "timeline_jsonl_uri": "artifacts/manifests/week12_event_timeline.jsonl"
+      }
+    ]
+  },
+  "java_asset_blueprint_endpoint": {
+    "controller_path": "/home/GRT/work/media-task-platform-java/src/main/java/com/ryan/media/api/MediaTaskAssetBlueprintController.java",
+    "binding_path": "/home/GRT/work/media-task-platform-java/src/main/java/com/ryan/media/model/MediaTaskAssetBlueprintBinding.java",
+    "view_path": "/home/GRT/work/media-task-platform-java/src/main/java/com/ryan/media/model/MediaTaskAssetBlueprintView.java",
+    "controller_test_path": "/home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskAssetBlueprintControllerTest.java",
+    "latest_http_log": "/home/GRT/work/media-task-platform-java/artifacts/logs/week12_asset_blueprint_controller_http_20260601_190347.log",
+    "method": "GET",
+    "path": "/api/media-tasks/{taskId}/asset-blueprint",
+    "default_input_asset_uri": "file://samples/week12/city_walk.mp4",
+    "default_blueprint_id": "blueprint_v1_66d315251e",
+    "default_quality_gate_status": "PASS",
+    "query_params": [
+      "inputAssetUri",
+      "blueprintId",
+      "qualityGateStatus"
+    ],
+    "response_fields": [
+      "taskId",
+      "inputAssetUri",
+      "blueprintArtifactUri",
+      "blueprintId",
+      "timelineArtifactUri",
+      "qualityGateStatus",
+      "qualityGatePassed",
+      "blueprintManifestLinked",
+      "timelineArtifactLinked"
+    ],
+    "mockmvc_covered": true,
+    "test_evidence": {
+      "aggregate_expected": "Tests run: 19, Failures: 0, Errors: 0",
+      "aggregate_found": true,
+      "build_success_found": true
+    }
+  },
+  "cloud_handoff": {
+    "purpose": "Cloud-side index for later loadtest, dashboard, runbook, or artifact-path readiness wiring.",
+    "non_goals": [
+      "No production endpoint availability claim",
+      "No Docker/kind/k6 execution in this step",
+      "No object-store retention or signed URL lifecycle guarantee"
+    ],
+    "next_candidate_actions": [
+      "wire index into a lightweight Cloud readiness check",
+      "add optional k6 smoke only after endpoint is served by a running Java app",
+      "surface artifact path fields in dashboard/runbook after index is stable"
+    ]
+  },
+  "errors": [],
+  "warnings": []
+}

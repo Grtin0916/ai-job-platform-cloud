@@ -1,0 +1,24 @@
+===== Week12 Cloud asset-blueprint endpoint index =====
+time=2026-06-01T19:14:57+08:00
+repo=/home/GRT/work/ai-job-platform-cloud
+head=99c72a7
+command=python scripts/build_week12_asset_blueprint_endpoint_index.py
+
+[PASS] Week12 Cloud asset-blueprint endpoint index
+status=PASS
+mainbase_head=0d7e146
+java_head=7d3d51f
+cloud_head=99c72a7
+blueprint_count=5
+event_count=10
+endpoint=/api/media-tasks/{taskId}/asset-blueprint
+mockmvc_covered=True
+errors=0
+warnings=0
+out=loadtest/reports/week12_asset_blueprint_endpoint_index.json
+
+===== git status after index build =====
+## main...origin/main
+?? artifacts/logs/week12_asset_blueprint_endpoint_index_20260601_191457.log
+?? loadtest/reports/week12_asset_blueprint_endpoint_index.json
+?? scripts/build_week12_asset_blueprint_endpoint_index.py
