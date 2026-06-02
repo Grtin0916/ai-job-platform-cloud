@@ -1,0 +1,6 @@
+status=BLOCKED_BY_JAVA_RUNTIME
+reason=Flyway migration V1__init.sql uses PostgreSQL timestamptz, but the current H2-backed runtime test context rejects it.
+mainbase_pass=True
+java_contract_present=True
+runtime_blocker_type=FLYWAY_H2_POSTGRESQL_TYPE_MISMATCH
+out_path=/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week12_asset_blueprint_runtime_index.json

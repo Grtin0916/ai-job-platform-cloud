@@ -1,0 +1,102 @@
+{
+  "uid": "week12-soundlayer-artifact-dashboard",
+  "title": "Week12 SoundLayer Artifact Readiness",
+  "tags": [
+    "week12",
+    "soundlayer",
+    "artifact",
+    "blueprint",
+    "runtime-blocker"
+  ],
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "",
+  "time": {
+    "from": "now-24h",
+    "to": "now"
+  },
+  "panels": [
+    {
+      "id": 1,
+      "type": "text",
+      "title": "Readiness Overview",
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 12,
+        "h": 6
+      },
+      "options": {
+        "mode": "markdown",
+        "content": "## Week12 SoundLayer Blueprint V1\n\n- Dashboard status: `DASHBOARD_READY_WITH_JAVA_RUNTIME_BLOCKED`\n- Mainbase artifact gate: `PASS`\n- Runtime status: `BLOCKED_BY_JAVA_RUNTIME`\n- Java blocker: `FLYWAY_H2_POSTGRESQL_TYPE_MISMATCH`\n- Does not claim: Java HTTP runtime success, audio generation, production Kubernetes volume, k6 load test."
+      }
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "title": "Blueprint Artifact Counts",
+      "gridPos": {
+        "x": 12,
+        "y": 0,
+        "w": 12,
+        "h": 6
+      },
+      "options": {
+        "mode": "markdown",
+        "content": "## Artifact counts\n\n- Blueprint count: `5`\n- Event count: `10`\n- Timeline JSONL rows: `10`\n- Timeline CSV rows: `10`\n- Contact sheet exists: `True`"
+      }
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "title": "Artifact Fingerprints",
+      "gridPos": {
+        "x": 0,
+        "y": 6,
+        "w": 12,
+        "h": 7
+      },
+      "options": {
+        "mode": "markdown",
+        "content": "## Artifact fingerprints\n\n- Manifest sha256: `605bcc846874`\n- Timeline JSONL sha256: `8c1edcd1872f`\n- Timeline CSV sha256: `51b4df6882a3`\n- Contact sheet sha256: `03def2906289`"
+      }
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "title": "Cloud Path Mapping",
+      "gridPos": {
+        "x": 12,
+        "y": 6,
+        "w": 12,
+        "h": 7
+      },
+      "options": {
+        "mode": "markdown",
+        "content": "## Cloud path mapping\n\n- Suggested k8s mount: `/mnt/soundlayer-artifacts/mainbase`\n- `SOUNDLAYER_BLUEPRINT_MANIFEST=/mnt/soundlayer-artifacts/mainbase/artifacts/manifests/week12_blueprint_v1_manifest.json`\n- `SOUNDLAYER_EVENT_TIMELINE_JSONL=/mnt/soundlayer-artifacts/mainbase/artifacts/manifests/week12_event_timeline.jsonl`\n- `SOUNDLAYER_EVENT_TIMELINE_CSV=/mnt/soundlayer-artifacts/mainbase/artifacts/manifests/week12_event_timeline.csv`\n- `SOUNDLAYER_CONTACT_SHEET=/mnt/soundlayer-artifacts/mainbase/artifacts/visuals/week12_event_timeline_contact_sheet.png`"
+      }
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "title": "Java Runtime Blocker",
+      "gridPos": {
+        "x": 0,
+        "y": 13,
+        "w": 24,
+        "h": 6
+      },
+      "options": {
+        "mode": "markdown",
+        "content": "## Java runtime blocker\n\n- Status: `CONFIRMED`\n- Type: `FLYWAY_H2_POSTGRESQL_TYPE_MISMATCH`\n- Evidence log: `/home/GRT/work/media-task-platform-java/artifacts/logs/week12_asset_blueprint_runtime_http_it_20260602_124842.log`\n\nNext gate: fix Java test/runtime profile or switch DB-backed runtime verification to PostgreSQL/Testcontainers."
+      }
+    }
+  ],
+  "templating": {
+    "list": []
+  },
+  "annotations": {
+    "list": []
+  }
+}

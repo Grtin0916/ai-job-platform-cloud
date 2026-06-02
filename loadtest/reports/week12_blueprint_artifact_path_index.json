@@ -1,0 +1,122 @@
+{
+  "schemaVersion": "week12.blueprint-artifact-path-index.v1",
+  "generatedAt": "2026-06-02T08:30:19.176265+00:00",
+  "status": "READY_FOR_CLOUD_ARTIFACT_CONSUMPTION_WITH_JAVA_RUNTIME_BLOCKED",
+  "purpose": "Expose Mainbase Blueprint V1 artifacts as a Cloud-consumable artifact path catalog for dashboard, worker, or local/k8s volume mapping.",
+  "heads": {
+    "mainbase": "0d7e146",
+    "java": "7d3d51f",
+    "cloud": "e70815e"
+  },
+  "sourceRuntimeIndex": {
+    "path": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week12_asset_blueprint_runtime_index.json",
+    "exists": true,
+    "status": "BLOCKED_BY_JAVA_RUNTIME",
+    "javaRuntimeBlocker": {
+      "status": "CONFIRMED",
+      "type": "FLYWAY_H2_POSTGRESQL_TYPE_MISMATCH",
+      "message": "Flyway migration V1__init.sql uses PostgreSQL timestamptz, but the current H2-backed runtime test context rejects it.",
+      "evidence_log": "/home/GRT/work/media-task-platform-java/artifacts/logs/week12_asset_blueprint_runtime_http_it_20260602_124842.log"
+    }
+  },
+  "mainbaseArtifactGate": {
+    "status": "PASS",
+    "blueprintCount": 5,
+    "eventCount": 10,
+    "errorCount": 0,
+    "timelineJsonlRows": 10,
+    "timelineCsvRows": 10,
+    "requiredExists": {
+      "summary": true,
+      "manifest": true,
+      "timeline_jsonl": true,
+      "timeline_csv": true,
+      "contact_sheet_png": true
+    }
+  },
+  "artifactCatalog": {
+    "summary": {
+      "role": "summary",
+      "logicalUri": "mainbase://week12/blueprint-v1/week12_blueprint_v1_final_summary.json",
+      "absolutePath": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_blueprint_v1_final_summary.json",
+      "exists": true,
+      "sizeBytes": 1170,
+      "sha256": "8ff6b7c7788a1d7d94f87b79cfbd696381ce9321018edda1c87bfcfabb8f1511"
+    },
+    "manifest": {
+      "role": "manifest",
+      "logicalUri": "mainbase://week12/blueprint-v1/week12_blueprint_v1_manifest.json",
+      "absolutePath": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_blueprint_v1_manifest.json",
+      "exists": true,
+      "sizeBytes": 19694,
+      "sha256": "605bcc846874c4e43700e72fc795b1ce68de761fa328a43e055dfb846b4f2307"
+    },
+    "timeline_jsonl": {
+      "role": "timeline_jsonl",
+      "logicalUri": "mainbase://week12/blueprint-v1/week12_event_timeline.jsonl",
+      "absolutePath": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_event_timeline.jsonl",
+      "exists": true,
+      "sizeBytes": 7198,
+      "sha256": "8c1edcd1872feaab8413eb14803d2d01e5226c9a097efedc956d05c595e6bdc4"
+    },
+    "timeline_csv": {
+      "role": "timeline_csv",
+      "logicalUri": "mainbase://week12/blueprint-v1/week12_event_timeline.csv",
+      "absolutePath": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_event_timeline.csv",
+      "exists": true,
+      "sizeBytes": 4650,
+      "sha256": "51b4df6882a3b72010623840f7a84fdc38bc1b93217c42c8e1908add1548a153"
+    },
+    "semantic_report": {
+      "role": "semantic_report",
+      "logicalUri": "mainbase://week12/blueprint-v1/week12_blueprint_v1_semantic_report.json",
+      "absolutePath": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_blueprint_v1_semantic_report.json",
+      "exists": true,
+      "sizeBytes": 2369,
+      "sha256": "eefc0da258de1ac59438b0d6d3906a2ee64980c8ab5ee9273870b0dab20a02df"
+    },
+    "validation_report": {
+      "role": "validation_report",
+      "logicalUri": "mainbase://week12/blueprint-v1/week12_blueprint_v1_validation_report.json",
+      "absolutePath": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_blueprint_v1_validation_report.json",
+      "exists": true,
+      "sizeBytes": 1941,
+      "sha256": "06b0b6f993e29e5004ad6c6c452f7b2093e8d629bf276e2cb45a7ba8e2344f45"
+    },
+    "contact_sheet_png": {
+      "role": "contact_sheet_png",
+      "logicalUri": "mainbase://week12/blueprint-v1/week12_event_timeline_contact_sheet.png",
+      "absolutePath": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/visuals/week12_event_timeline_contact_sheet.png",
+      "exists": true,
+      "sizeBytes": 149771,
+      "sha256": "03def29062892ea7c2352ce015971a6e7d64019863d96afaa08ee8ab04871ede"
+    },
+    "contact_sheet_svg": {
+      "role": "contact_sheet_svg",
+      "logicalUri": "mainbase://week12/blueprint-v1/week12_event_timeline_contact_sheet.svg",
+      "absolutePath": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/visuals/week12_event_timeline_contact_sheet.svg",
+      "exists": true,
+      "sizeBytes": 5378,
+      "sha256": "3cd39ecebdcc45a55e2fe152c103789cac168277a870d9e51e574637d1be4271"
+    }
+  },
+  "cloudPathMapping": {
+    "localSourceRoot": "/home/GRT/work/audio_engineering_repo_skeleton_v1",
+    "cloudConsumerRoot": "/workspace/mainbase",
+    "k8sSuggestedMountPath": "/mnt/soundlayer-artifacts/mainbase",
+    "env": {
+      "SOUNDLAYER_BLUEPRINT_MANIFEST": "/mnt/soundlayer-artifacts/mainbase/artifacts/manifests/week12_blueprint_v1_manifest.json",
+      "SOUNDLAYER_EVENT_TIMELINE_JSONL": "/mnt/soundlayer-artifacts/mainbase/artifacts/manifests/week12_event_timeline.jsonl",
+      "SOUNDLAYER_EVENT_TIMELINE_CSV": "/mnt/soundlayer-artifacts/mainbase/artifacts/manifests/week12_event_timeline.csv",
+      "SOUNDLAYER_CONTACT_SHEET": "/mnt/soundlayer-artifacts/mainbase/artifacts/visuals/week12_event_timeline_contact_sheet.png"
+    }
+  },
+  "doesNotClaim": [
+    "Java runtime HTTP success",
+    "audio generation",
+    "production Kubernetes volume mounted",
+    "k6 load test",
+    "Grafana dashboard already wired"
+  ],
+  "nextAction": "Use this artifact path index as Cloud dashboard-ready input, then either fix Java runtime blocker or expose a lightweight artifact registry contract."
+}

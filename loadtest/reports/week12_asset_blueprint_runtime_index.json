@@ -1,0 +1,151 @@
+{
+  "schemaVersion": "week12.asset-blueprint.runtime-index.v1",
+  "generatedAt": "2026-06-02T04:55:22.435192+00:00",
+  "status": "BLOCKED_BY_JAVA_RUNTIME",
+  "reason": "Flyway migration V1__init.sql uses PostgreSQL timestamptz, but the current H2-backed runtime test context rejects it.",
+  "heads": {
+    "mainbase": "0d7e146",
+    "java": "7d3d51f",
+    "cloud": "e70815e"
+  },
+  "mainbase": {
+    "status": "PASS",
+    "summary": {
+      "schema_version": "week12_blueprint_v1_final_summary",
+      "created_at": "2026-06-01T08:50:21+00:00",
+      "status": "PASS",
+      "blueprint_count": 5,
+      "event_count": 10,
+      "error_count": 0,
+      "warning_count": 0,
+      "errors": [],
+      "warnings": [],
+      "deliverables": {
+        "schema": "schemas/soundlayer_blueprint_v1.schema.json",
+        "manifest": "artifacts/manifests/week12_blueprint_v1_manifest.json",
+        "timeline_csv": "artifacts/manifests/week12_event_timeline.csv",
+        "timeline_jsonl": "artifacts/manifests/week12_event_timeline.jsonl",
+        "semantic_report": "artifacts/manifests/week12_blueprint_v1_semantic_report.json",
+        "validation_report": "artifacts/manifests/week12_blueprint_v1_validation_report.json",
+        "contact_sheet_png": "artifacts/visuals/week12_event_timeline_contact_sheet.png",
+        "contact_sheet_svg": "artifacts/visuals/week12_event_timeline_contact_sheet.svg"
+      },
+      "boundary": "Finalized Blueprint V1 provides scene/event/layer/timing/prompt/artifact pointers. It does not claim audio generation, subjective audio quality, or downstream Java/Cloud integration.",
+      "contact_sheet_png_created": true,
+      "contact_sheet_svg_created": true
+    },
+    "artifactPaths": {
+      "mainbase_summary": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_blueprint_v1_final_summary.json",
+      "mainbase_manifest": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_blueprint_v1_manifest.json",
+      "mainbase_timeline_jsonl": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_event_timeline.jsonl",
+      "mainbase_timeline_csv": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_event_timeline.csv",
+      "mainbase_contact_sheet": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/visuals/week12_event_timeline_contact_sheet.png"
+    },
+    "artifactExists": {
+      "mainbase_summary": true,
+      "mainbase_manifest": true,
+      "mainbase_timeline_jsonl": true,
+      "mainbase_timeline_csv": true,
+      "mainbase_contact_sheet": true
+    }
+  },
+  "java": {
+    "staticContractStatus": "PASS",
+    "contractSearch": {
+      "scanned_files": 61,
+      "hits": {
+        "asset-blueprint": [
+          "src/main/java/com/ryan/media/api/MediaTaskAssetBlueprintController.java",
+          "src/test/java/com/ryan/media/MediaTaskAssetBlueprintControllerTest.java",
+          "src/test/java/com/ryan/media/MediaTaskAssetBlueprintRuntimeHttpIT.java"
+        ],
+        "MediaTaskAssetBlueprint": [
+          "src/main/java/com/ryan/media/api/MediaTaskAssetBlueprintController.java",
+          "src/main/java/com/ryan/media/model/MediaTaskAssetBlueprintBinding.java",
+          "src/main/java/com/ryan/media/model/MediaTaskAssetBlueprintView.java",
+          "src/test/java/com/ryan/media/MediaTaskAssetBlueprintBindingTest.java",
+          "src/test/java/com/ryan/media/MediaTaskAssetBlueprintControllerTest.java",
+          "src/test/java/com/ryan/media/MediaTaskAssetBlueprintRuntimeHttpIT.java",
+          "src/test/java/com/ryan/media/MediaTaskAssetBlueprintViewTest.java"
+        ],
+        "blueprintArtifactUri": [
+          "src/main/java/com/ryan/media/model/MediaTaskAssetBlueprintBinding.java",
+          "src/main/java/com/ryan/media/model/MediaTaskAssetBlueprintView.java",
+          "src/test/java/com/ryan/media/MediaTaskAssetBlueprintBindingTest.java",
+          "src/test/java/com/ryan/media/MediaTaskAssetBlueprintControllerTest.java",
+          "src/test/java/com/ryan/media/MediaTaskAssetBlueprintRuntimeHttpIT.java",
+          "src/test/java/com/ryan/media/MediaTaskAssetBlueprintViewTest.java"
+        ],
+        "timelineArtifactUri": [
+          "src/main/java/com/ryan/media/model/MediaTaskAssetBlueprintBinding.java",
+          "src/main/java/com/ryan/media/model/MediaTaskAssetBlueprintView.java",
+          "src/test/java/com/ryan/media/MediaTaskAssetBlueprintBindingTest.java",
+          "src/test/java/com/ryan/media/MediaTaskAssetBlueprintControllerTest.java",
+          "src/test/java/com/ryan/media/MediaTaskAssetBlueprintRuntimeHttpIT.java",
+          "src/test/java/com/ryan/media/MediaTaskAssetBlueprintViewTest.java"
+        ],
+        "qualityGateStatus": [
+          "docs/api/openapi.yaml",
+          "docs/api/week11-evidence-link-contract.md",
+          "src/main/java/com/ryan/media/api/MediaTaskAssetBlueprintController.java",
+          "src/main/java/com/ryan/media/model/MediaTaskAssetBlueprintBinding.java",
+          "src/main/java/com/ryan/media/model/MediaTaskAssetBlueprintView.java",
+          "src/main/java/com/ryan/media/model/MediaTaskCompletionGate.java",
+          "src/main/java/com/ryan/media/model/MediaTaskEvidenceLinks.java",
+          "src/main/java/com/ryan/media/model/MediaTaskResponse.java",
+          "src/main/java/com/ryan/media/service/MediaTaskCompletionService.java",
+          "src/test/java/com/ryan/media/ContractIT.java",
+          "src/test/java/com/ryan/media/MediaTaskAssetBlueprintBindingTest.java",
+          "src/test/java/com/ryan/media/MediaTaskAssetBlueprintControllerTest.java",
+          "src/test/java/com/ryan/media/MediaTaskAssetBlueprintRuntimeHttpIT.java",
+          "src/test/java/com/ryan/media/MediaTaskAssetBlueprintViewTest.java",
+          "src/test/java/com/ryan/media/MediaTaskCompletionGateTest.java"
+        ],
+        "task-week12-001": [
+          "src/test/java/com/ryan/media/MediaTaskAssetBlueprintBindingTest.java",
+          "src/test/java/com/ryan/media/MediaTaskAssetBlueprintControllerTest.java",
+          "src/test/java/com/ryan/media/MediaTaskAssetBlueprintRuntimeHttpIT.java",
+          "src/test/java/com/ryan/media/MediaTaskAssetBlueprintViewTest.java"
+        ]
+      },
+      "present": {
+        "asset-blueprint": true,
+        "MediaTaskAssetBlueprint": true,
+        "blueprintArtifactUri": true,
+        "timelineArtifactUri": true,
+        "qualityGateStatus": true,
+        "task-week12-001": true
+      }
+    },
+    "runtimeEvidencePath": "/home/GRT/work/media-task-platform-java/artifacts/runtime/week12_asset_blueprint_runtime_http_test.json",
+    "runtimeEvidenceExists": false,
+    "runtimeEvidence": null,
+    "runtimeBlocker": {
+      "status": "CONFIRMED",
+      "type": "FLYWAY_H2_POSTGRESQL_TYPE_MISMATCH",
+      "message": "Flyway migration V1__init.sql uses PostgreSQL timestamptz, but the current H2-backed runtime test context rejects it.",
+      "evidence_log": "/home/GRT/work/media-task-platform-java/artifacts/logs/week12_asset_blueprint_runtime_http_it_20260602_124842.log"
+    },
+    "requiredRuntimeFields": [
+      "taskId",
+      "inputAssetUri",
+      "blueprintArtifactUri",
+      "blueprintId",
+      "timelineArtifactUri",
+      "qualityGateStatus",
+      "qualityGatePassed",
+      "blueprintManifestLinked",
+      "timelineArtifactLinked"
+    ]
+  },
+  "cloud": {
+    "indexPurpose": "Record whether Mainbase Blueprint V1 artifacts are consumable through Java asset-blueprint runtime behavior.",
+    "nextGate": "Fix Java runtime blocker or provide a test profile that reaches the endpoint without Flyway/H2 dialect failure.",
+    "doesNotClaim": [
+      "production SLO",
+      "Docker or Kubernetes runtime",
+      "k6 load test",
+      "successful Java HTTP runtime when status is BLOCKED_BY_JAVA_RUNTIME"
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "week12.dashboard-ready-index.v1",
+  "generatedAt": "2026-06-02T08:32:47.235026+00:00",
+  "status": "DASHBOARD_READY_WITH_JAVA_RUNTIME_BLOCKED",
+  "sourceArtifactPathIndex": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week12_blueprint_artifact_path_index.json",
+  "sourceRuntimeIndex": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week12_asset_blueprint_runtime_index.json",
+  "grafanaDashboardJson": "/home/GRT/work/ai-job-platform-cloud/observability/grafana/dashboards/week12_soundlayer_artifact_dashboard.json",
+  "requiredReady": {
+    "artifact_index_exists": true,
+    "runtime_index_exists": true,
+    "mainbase_gate_pass": true,
+    "blueprint_count_is_5": true,
+    "event_count_is_10": true,
+    "timeline_jsonl_rows_is_10": true,
+    "timeline_csv_rows_is_10": true,
+    "manifest_hash_present": true,
+    "timeline_jsonl_hash_present": true,
+    "contact_sheet_exists": true,
+    "runtime_blocker_recorded": true,
+    "k8s_mount_path_present": true
+  },
+  "summary": {
+    "mainbaseArtifactGate": "PASS",
+    "runtimeStatus": "BLOCKED_BY_JAVA_RUNTIME",
+    "javaRuntimeBlockerType": "FLYWAY_H2_POSTGRESQL_TYPE_MISMATCH",
+    "blueprintCount": 5,
+    "eventCount": 10,
+    "timelineJsonlRows": 10,
+    "timelineCsvRows": 10,
+    "k8sSuggestedMountPath": "/mnt/soundlayer-artifacts/mainbase",
+    "manifestSha256": "605bcc846874c4e43700e72fc795b1ce68de761fa328a43e055dfb846b4f2307",
+    "timelineJsonlSha256": "8c1edcd1872feaab8413eb14803d2d01e5226c9a097efedc956d05c595e6bdc4",
+    "contactSheetExists": true
+  },
+  "doesNotClaim": [
+    "dashboard imported into a live Grafana server",
+    "Prometheus datasource wired",
+    "Java runtime HTTP success",
+    "production Kubernetes storage",
+    "k6 load test"
+  ],
+  "nextAction": "Import or provision this dashboard JSON after Grafana is available; meanwhile use the dashboard-ready index as a machine-readable Cloud readiness gate."
+}
