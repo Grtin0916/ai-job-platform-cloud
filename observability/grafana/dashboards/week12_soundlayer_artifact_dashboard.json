@@ -1,16 +1,16 @@
 {
   "uid": "week12-soundlayer-artifact-dashboard",
-  "title": "Week12 SoundLayer Artifact Readiness",
+  "title": "Week12 SoundLayer Handoff Readiness",
   "tags": [
     "week12",
     "soundlayer",
-    "artifact",
+    "handoff",
     "blueprint",
     "runtime-blocker"
   ],
   "timezone": "browser",
   "schemaVersion": 39,
-  "version": 1,
+  "version": 2,
   "refresh": "",
   "time": {
     "from": "now-24h",
@@ -20,7 +20,7 @@
     {
       "id": 1,
       "type": "text",
-      "title": "Readiness Overview",
+      "title": "Handoff Readiness Overview",
       "gridPos": {
         "x": 0,
         "y": 0,
@@ -29,13 +29,13 @@
       },
       "options": {
         "mode": "markdown",
-        "content": "## Week12 SoundLayer Blueprint V1\n\n- Dashboard status: `DASHBOARD_READY_WITH_JAVA_RUNTIME_BLOCKED`\n- Mainbase artifact gate: `PASS`\n- Runtime status: `BLOCKED_BY_JAVA_RUNTIME`\n- Java blocker: `FLYWAY_H2_POSTGRESQL_TYPE_MISMATCH`\n- Does not claim: Java HTTP runtime success, audio generation, production Kubernetes volume, k6 load test."
+        "content": "## Week12 SoundLayer handoff readiness\n\n- Artifact status: `READY_FOR_CLOUD_HANDOFF_CONSUMPTION_WITH_JAVA_RUNTIME_BLOCKED`\n- Mainbase repo head: `8bf1e25`\n- Handoff source head: `0d7e146`\n- Runtime status: `BLOCKED_BY_JAVA_RUNTIME`\n- Java blocker: `FLYWAY_H2_POSTGRESQL_TYPE_MISMATCH`\n- Tar sha256: `cd247df784db`"
       }
     },
     {
       "id": 2,
       "type": "text",
-      "title": "Blueprint Artifact Counts",
+      "title": "Handoff Bundle Gate",
       "gridPos": {
         "x": 12,
         "y": 0,
@@ -44,37 +44,37 @@
       },
       "options": {
         "mode": "markdown",
-        "content": "## Artifact counts\n\n- Blueprint count: `5`\n- Event count: `10`\n- Timeline JSONL rows: `10`\n- Timeline CSV rows: `10`\n- Contact sheet exists: `True`"
+        "content": "## Handoff bundle\n\n- Bundle name: `week12_soundlayer_blueprint_v1_cloud_handoff`\n- Bundle checksum status: `PASS`\n- Tar sha256 matches: `True`\n- Required roles present: `True`\n- Missing roles: `[]`"
       }
     },
     {
       "id": 3,
       "type": "text",
-      "title": "Artifact Fingerprints",
+      "title": "Blueprint Counts",
       "gridPos": {
         "x": 0,
         "y": 6,
         "w": 12,
-        "h": 7
+        "h": 6
       },
       "options": {
         "mode": "markdown",
-        "content": "## Artifact fingerprints\n\n- Manifest sha256: `605bcc846874`\n- Timeline JSONL sha256: `8c1edcd1872f`\n- Timeline CSV sha256: `51b4df6882a3`\n- Contact sheet sha256: `03def2906289`"
+        "content": "## Blueprint counts\n\n- Blueprint count: `5`\n- Event count: `10`\n- Timeline JSONL rows: `10`\n- Timeline CSV rows: `10`"
       }
     },
     {
       "id": 4,
       "type": "text",
-      "title": "Cloud Path Mapping",
+      "title": "Handoff Mount Mapping",
       "gridPos": {
         "x": 12,
         "y": 6,
         "w": 12,
-        "h": 7
+        "h": 6
       },
       "options": {
         "mode": "markdown",
-        "content": "## Cloud path mapping\n\n- Suggested k8s mount: `/mnt/soundlayer-artifacts/mainbase`\n- `SOUNDLAYER_BLUEPRINT_MANIFEST=/mnt/soundlayer-artifacts/mainbase/artifacts/manifests/week12_blueprint_v1_manifest.json`\n- `SOUNDLAYER_EVENT_TIMELINE_JSONL=/mnt/soundlayer-artifacts/mainbase/artifacts/manifests/week12_event_timeline.jsonl`\n- `SOUNDLAYER_EVENT_TIMELINE_CSV=/mnt/soundlayer-artifacts/mainbase/artifacts/manifests/week12_event_timeline.csv`\n- `SOUNDLAYER_CONTACT_SHEET=/mnt/soundlayer-artifacts/mainbase/artifacts/visuals/week12_event_timeline_contact_sheet.png`"
+        "content": "## Handoff mount mapping\n\n- `SOUNDLAYER_HANDOFF_ROOT=/mnt/soundlayer-artifacts/week12_soundlayer_blueprint_v1_cloud_handoff`\n- `SOUNDLAYER_BLUEPRINT_MANIFEST=${SOUNDLAYER_HANDOFF_ROOT}/manifests/week12_blueprint_v1_manifest.json`\n- `SOUNDLAYER_EVENT_TIMELINE_JSONL=${SOUNDLAYER_HANDOFF_ROOT}/manifests/week12_event_timeline.jsonl`\n- `SOUNDLAYER_CONTACT_SHEET=${SOUNDLAYER_HANDOFF_ROOT}/visuals/week12_event_timeline_contact_sheet.png`"
       }
     },
     {
@@ -83,13 +83,13 @@
       "title": "Java Runtime Blocker",
       "gridPos": {
         "x": 0,
-        "y": 13,
+        "y": 12,
         "w": 24,
         "h": 6
       },
       "options": {
         "mode": "markdown",
-        "content": "## Java runtime blocker\n\n- Status: `CONFIRMED`\n- Type: `FLYWAY_H2_POSTGRESQL_TYPE_MISMATCH`\n- Evidence log: `/home/GRT/work/media-task-platform-java/artifacts/logs/week12_asset_blueprint_runtime_http_it_20260602_124842.log`\n\nNext gate: fix Java test/runtime profile or switch DB-backed runtime verification to PostgreSQL/Testcontainers."
+        "content": "## Java runtime blocker\n\n- Status: `CONFIRMED`\n- Type: `FLYWAY_H2_POSTGRESQL_TYPE_MISMATCH`\n- Evidence log: `/home/GRT/work/media-task-platform-java/artifacts/logs/week12_asset_blueprint_runtime_http_it_20260602_124842.log`\n\nThis dashboard does not claim Java HTTP runtime success."
       }
     }
   ],

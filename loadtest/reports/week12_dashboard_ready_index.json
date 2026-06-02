@@ -1,36 +1,37 @@
 {
-  "schemaVersion": "week12.dashboard-ready-index.v1",
-  "generatedAt": "2026-06-02T08:32:47.235026+00:00",
-  "status": "DASHBOARD_READY_WITH_JAVA_RUNTIME_BLOCKED",
+  "schemaVersion": "week12.dashboard-ready-index.v2",
+  "generatedAt": "2026-06-02T08:58:52.178854+00:00",
+  "status": "DASHBOARD_READY_WITH_MAINBASE_HANDOFF_AND_JAVA_RUNTIME_BLOCKED",
   "sourceArtifactPathIndex": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week12_blueprint_artifact_path_index.json",
   "sourceRuntimeIndex": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week12_asset_blueprint_runtime_index.json",
+  "sourceHandoffManifest": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/exports/week12_soundlayer_blueprint_v1_cloud_handoff/handoff_manifest.json",
+  "sourceHandoffTar": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/exports/week12_soundlayer_blueprint_v1_cloud_handoff.tar.gz",
   "grafanaDashboardJson": "/home/GRT/work/ai-job-platform-cloud/observability/grafana/dashboards/week12_soundlayer_artifact_dashboard.json",
   "requiredReady": {
-    "artifact_index_exists": true,
-    "runtime_index_exists": true,
-    "mainbase_gate_pass": true,
-    "blueprint_count_is_5": true,
-    "event_count_is_10": true,
+    "handoff_manifest_exists": true,
+    "handoff_status_pass": true,
+    "mainbase_blueprint_count_is_5": true,
+    "mainbase_event_count_is_10": true,
     "timeline_jsonl_rows_is_10": true,
     "timeline_csv_rows_is_10": true,
-    "manifest_hash_present": true,
-    "timeline_jsonl_hash_present": true,
-    "contact_sheet_exists": true,
-    "runtime_blocker_recorded": true,
-    "k8s_mount_path_present": true
+    "required_roles_present": true,
+    "bundle_checksums_pass": true,
+    "tar_exists": true,
+    "tar_sha256_matches": true,
+    "runtime_blocker_recorded": true
   },
   "summary": {
-    "mainbaseArtifactGate": "PASS",
+    "mainbaseRepoHead": "8bf1e25",
+    "mainbaseHandoffSourceHead": "0d7e146",
     "runtimeStatus": "BLOCKED_BY_JAVA_RUNTIME",
     "javaRuntimeBlockerType": "FLYWAY_H2_POSTGRESQL_TYPE_MISMATCH",
     "blueprintCount": 5,
     "eventCount": 10,
     "timelineJsonlRows": 10,
     "timelineCsvRows": 10,
-    "k8sSuggestedMountPath": "/mnt/soundlayer-artifacts/mainbase",
-    "manifestSha256": "605bcc846874c4e43700e72fc795b1ce68de761fa328a43e055dfb846b4f2307",
-    "timelineJsonlSha256": "8c1edcd1872feaab8413eb14803d2d01e5226c9a097efedc956d05c595e6bdc4",
-    "contactSheetExists": true
+    "handoffRoot": "/mnt/soundlayer-artifacts/week12_soundlayer_blueprint_v1_cloud_handoff",
+    "handoffTarSha256": "cd247df784dbf5947df77b7b6cb1f63e56757796be7421c1fb03e202cf63edc0",
+    "bundleChecksumStatus": "PASS"
   },
   "doesNotClaim": [
     "dashboard imported into a live Grafana server",
@@ -39,5 +40,5 @@
     "production Kubernetes storage",
     "k6 load test"
   ],
-  "nextAction": "Import or provision this dashboard JSON after Grafana is available; meanwhile use the dashboard-ready index as a machine-readable Cloud readiness gate."
+  "nextAction": "Commit the handoff-aware Cloud indexes, then decide whether to fix Java runtime with a PostgreSQL-backed test profile."
 }
