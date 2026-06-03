@@ -1,7 +1,8 @@
 {
-  "schemaVersion": "week12.asset-blueprint-runtime-index.v3",
-  "generatedAt": "2026-06-03T09:00:06.271393+00:00",
+  "schemaVersion": "week12.asset-blueprint-runtime-index.v2",
+  "generatedAt": "2026-06-03T08:54:35.285895+00:00",
   "status": "PASS",
+  "javaRuntimeSummaryPath": "/home/GRT/work/media-task-platform-java/artifacts/logs/week12_asset_blueprint_http_runtime_smoke_summary.json",
   "javaRuntimeSummarySha256": "7c22f9fe82ea5c9d63af8381d1e21fc4658cc1d69b72e7b287549cce2fc3350e",
   "javaRuntimeStatus": "PASS",
   "javaRuntimeHttpCode": "200",
@@ -38,16 +39,5 @@
     "full Redis-backed readiness",
     "durable object storage",
     "real cloud provider deployment"
-  ],
-  "javaRuntimeEvidence": {
-    "repo": "git@github.com:Grtin0916/media-task-platform-java.git",
-    "commit": "a8dc59a",
-    "summaryPath": "artifacts/logs/week12_asset_blueprint_http_runtime_smoke_summary.json",
-    "summarySha256": "7c22f9fe82ea5c9d63af8381d1e21fc4658cc1d69b72e7b287549cce2fc3350e",
-    "endpoint": "/api/media-tasks/task-week12-001/asset-blueprint",
-    "status": "PASS",
-    "httpCode": "200",
-    "healthCode": "200",
-    "redisHealthDisabledForSmoke": true
-  }
+  ]
 }
