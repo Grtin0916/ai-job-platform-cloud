@@ -1,0 +1,305 @@
+{
+  "uid": "week12-audio-candidate",
+  "title": "Week12 Audio Candidate Runtime Gate",
+  "tags": [
+    "week12",
+    "audio-candidate",
+    "local",
+    "artifact-index"
+  ],
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "",
+  "panels": [
+    {
+      "type": "stat",
+      "title": "Candidate Count",
+      "description": "Expected 10 candidates from Java API.",
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 0,
+        "y": 0
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": ""
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      },
+      "targets": [],
+      "transparent": false,
+      "datasource": null,
+      "pluginVersion": "local-json-stub",
+      "week12StaticValue": 10
+    },
+    {
+      "type": "stat",
+      "title": "Audio Probe OK",
+      "description": "Expected 10 WAV metadata probes passed.",
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 0,
+        "y": 5
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": ""
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      },
+      "targets": [],
+      "transparent": false,
+      "datasource": null,
+      "pluginVersion": "local-json-stub",
+      "week12StaticValue": 10
+    },
+    {
+      "type": "stat",
+      "title": "Quality Gate",
+      "description": "Should remain HUMAN_AUDITION_REQUIRED.",
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 0,
+        "y": 10
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": ""
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      },
+      "targets": [],
+      "transparent": false,
+      "datasource": null,
+      "pluginVersion": "local-json-stub",
+      "week12StaticValue": "HUMAN_AUDITION_REQUIRED"
+    },
+    {
+      "type": "stat",
+      "title": "Semantic Claimed",
+      "description": "Must remain false.",
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 0,
+        "y": 15
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": ""
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      },
+      "targets": [],
+      "transparent": false,
+      "datasource": null,
+      "pluginVersion": "local-json-stub",
+      "week12StaticValue": false
+    },
+    {
+      "type": "stat",
+      "title": "Mix Ready Claimed",
+      "description": "Must remain false.",
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 0,
+        "y": 20
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": ""
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      },
+      "targets": [],
+      "transparent": false,
+      "datasource": null,
+      "pluginVersion": "local-json-stub",
+      "week12StaticValue": false
+    },
+    {
+      "type": "stat",
+      "title": "Blocker Count",
+      "description": "Must be zero.",
+      "gridPos": {
+        "h": 5,
+        "w": 6,
+        "x": 0,
+        "y": 25
+      },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "values": false,
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": ""
+        },
+        "orientation": "auto",
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "auto"
+      },
+      "targets": [],
+      "transparent": false,
+      "datasource": null,
+      "pluginVersion": "local-json-stub",
+      "week12StaticValue": 0
+    }
+  ],
+  "templating": {
+    "list": []
+  },
+  "annotations": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "week12StaticSource": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week12_audio_candidate_runtime_index.json",
+  "week12Boundary": [
+    "local_cloud_index_only",
+    "not_production_object_storage",
+    "not_human_audition_passed",
+    "not_semantic_audio_quality_passed",
+    "not_final_mix_ready",
+    "not_real_prometheus_datasource_panel"
+  ]
+}
