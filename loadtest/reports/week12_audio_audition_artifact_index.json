@@ -1,0 +1,100 @@
+{
+  "schemaVersion": "week12.audio-audition-artifact-index.v0",
+  "generatedAt": "2026-06-04T01:57:46.885065+00:00",
+  "status": "PASS",
+  "mainbaseAuditionEvidence": {
+    "repo": "git@github.com:Grtin0916/A-structured-sound-layer-generation-system-for-generative-video-and-long-video-creation-workflows.git",
+    "commit": "b416e06",
+    "auditionManifestPath": "artifacts/manifests/week12_procedural_audio_audition_manifest_v0.json",
+    "auditionManifestSha256": "cfc979bbc37cdc9338a6d4b9e0e796dabe48cafe903c42751f3fbe07ef95f025",
+    "auditionHtmlPath": "artifacts/audition/week12_procedural_baseline_v0/index.html",
+    "auditionHtmlSha256": "c1acdc14bb125ec7cc33e0c825a868a11a50fac2f01bdc9e3e7ca9d438f549ec",
+    "waveformContactSheetSvgPath": "artifacts/audition/week12_procedural_baseline_v0/waveform_contact_sheet.svg",
+    "waveformContactSheetSvgSha256": "9ce80704d12b8c22e2bfc52a4ae96aa1a84965d7f27a47b1c5c8568da55014fd",
+    "metricsJsonlPath": "artifacts/manifests/week12_procedural_audio_audition_metrics_v0.jsonl",
+    "metricsJsonlSha256": "b608b1d27727847fb20bfd2b54d373bde303cdc0693104a4795fe44158126c2f",
+    "metricsCsvPath": "artifacts/manifests/week12_procedural_audio_audition_metrics_v0.csv",
+    "metricsCsvSha256": "f85ed734b9a9e6a745847e6676ca54adb5e1d73902926d700a032cc72af471f7"
+  },
+  "cloudEvidence": {
+    "repo": "git@github.com:Grtin0916/ai-job-platform-cloud.git",
+    "commitBeforeIndex": "6dbcb5a",
+    "indexPath": "loadtest/reports/week12_audio_audition_artifact_index.json"
+  },
+  "auditionSummary": {
+    "candidateCount": 10,
+    "qaRecordCount": 10,
+    "allFormatOk": true,
+    "allDurationMatchesExpected": true,
+    "allRequireHumanAudition": true,
+    "semanticFidelityClaimedAny": false,
+    "mixReadyClaimedAny": false,
+    "aggregateMetrics": {
+      "rmsDbfsMin": -44.779,
+      "rmsDbfsMax": -35.729,
+      "rmsDbfsMedian": -42.27,
+      "silenceFrameRatioMax": 0.982709
+    },
+    "importantVisual": "artifacts/audition/week12_procedural_baseline_v0/waveform_contact_sheet.svg",
+    "importantAuditionHtml": "artifacts/audition/week12_procedural_baseline_v0/index.html"
+  },
+  "consumedMetricExamples": [
+    {
+      "candidateId": "procedural_v0_0001",
+      "layer": "ambience",
+      "eventLabel": "contextual ambience bed",
+      "durationSec": 8.0,
+      "rmsDbfs": -36.419,
+      "peakDbfs": -26.684,
+      "formatOk": true,
+      "durationMatchesExpected": true,
+      "candidateUri": "artifacts/audio_candidates/week12_procedural_baseline_v0/0001_slot_v0_0001_generation_fallback.wav"
+    },
+    {
+      "candidateId": "procedural_v0_0002",
+      "layer": "foley",
+      "eventLabel": "time-aligned footsteps",
+      "durationSec": 4.32,
+      "rmsDbfs": -41.214,
+      "peakDbfs": -15.546,
+      "formatOk": true,
+      "durationMatchesExpected": true,
+      "candidateUri": "artifacts/audio_candidates/week12_procedural_baseline_v0/0002_slot_v0_0002_generation_fallback.wav"
+    },
+    {
+      "candidateId": "procedural_v0_0003",
+      "layer": "ambience",
+      "eventLabel": "contextual ambience bed",
+      "durationSec": 8.0,
+      "rmsDbfs": -43.421,
+      "peakDbfs": -33.659,
+      "formatOk": true,
+      "durationMatchesExpected": true,
+      "candidateUri": "artifacts/audio_candidates/week12_procedural_baseline_v0/0003_slot_v0_0003_generation_fallback.wav"
+    }
+  ],
+  "checks": {
+    "mainbaseAuditionManifestPass": true,
+    "candidateCountMatchesMetrics": true,
+    "qaRecordCountMatchesMetrics": true,
+    "allFormatOk": true,
+    "allDurationMatchesExpected": true,
+    "allRequireHumanAudition": true,
+    "semanticFidelityNotClaimed": true,
+    "mixReadyNotClaimed": true,
+    "htmlExists": true,
+    "waveformContactSheetExists": true,
+    "metricsJsonlExists": true,
+    "metricsCsvExists": true,
+    "noMissingArtifacts": true
+  },
+  "blockers": [],
+  "doesNotClaim": [
+    "semantic audio quality",
+    "human audition has passed",
+    "final mix readiness",
+    "text-to-audio model inference",
+    "production asset storage",
+    "real cloud object storage upload"
+  ]
+}
