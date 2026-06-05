@@ -1,0 +1,135 @@
+{
+  "status": "PASS",
+  "scope": "cloud_consumes_week12_mainbase_audio_timing_alignment_handoff",
+  "source": {
+    "mainbasePath": "/home/GRT/work/audio_engineering_repo_skeleton_v1",
+    "mainbaseCommit": "28e79ff",
+    "mainbaseOriginMain": "28e79ff",
+    "mainbaseHandoff": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_mainbase_audio_timing_handoff_index.json",
+    "cloudCommitBefore": "9bbf43f"
+  },
+  "metrics": {
+    "candidateCount": 10,
+    "audioReadableCount": 10,
+    "timingBoundCount": 10,
+    "timingBindingMethodCounts": {
+      "scene_event_id": 10
+    },
+    "alignmentPassCount": 10,
+    "alignmentFailCount": 0,
+    "assetTimeModeCounts": {
+      "full_clip": 5,
+      "event_local": 5
+    },
+    "layerCounts": {
+      "ambience": 5,
+      "foley": 5
+    },
+    "layerDecisionCounts": {
+      "ambience:PASS": 5,
+      "foley:PASS": 5
+    }
+  },
+  "runtimeSemantics": {
+    "fullClipMode": {
+      "assetTimeMode": "full_clip",
+      "placement": "use scene/global timeline directly",
+      "expectedConsumerBehavior": "visualize or mix from t=0 unless the blueprint later defines a global offset"
+    },
+    "eventLocalMode": {
+      "assetTimeMode": "event_local",
+      "placement": "place asset at expectedStartSec",
+      "expectedConsumerBehavior": "convert local timestamps to global timestamps by adding expectedStartSec",
+      "requiredForMixer": true,
+      "requiredForDashboard": true
+    },
+    "requiredRuntimeSemantics": [
+      "full_clip assets are interpreted directly on the scene/global timeline",
+      "event_local assets must be placed at expectedStartSec before runtime visualization or mixing",
+      "event_local peakLocalSec must be converted to peakGlobalSec through expectedStartSec offset",
+      "PASS only covers timing binding and RMS/onset-proxy timing compatibility",
+      "PASS does not imply semantic quality, human audition, final mix readiness, or production readiness"
+    ]
+  },
+  "eventLocalPlacementOffsets": [
+    {
+      "candidateId": "procedural_v0_0002",
+      "sceneId": "seed_0001_case_48b11c",
+      "eventId": "evt_002",
+      "layer": "foley",
+      "label": "time-aligned footsteps",
+      "audioUri": "artifacts/audio_candidates/week12_procedural_baseline_v0/0002_slot_v0_0002_generation_fallback.wav",
+      "expectedStartSec": "1.44",
+      "expectedEndSec": "5.76",
+      "expectedWindowDurationSec": "4.32",
+      "peakLocalSec": "2.75",
+      "peakGlobalSec": "4.19",
+      "placementRequired": true
+    },
+    {
+      "candidateId": "procedural_v0_0004",
+      "sceneId": "seed_0002_case_adc34a",
+      "eventId": "evt_002",
+      "layer": "foley",
+      "label": "door close impact",
+      "audioUri": "artifacts/audio_candidates/week12_procedural_baseline_v0/0004_slot_v0_0004_generation_fallback.wav",
+      "expectedStartSec": "1.44",
+      "expectedEndSec": "5.76",
+      "expectedWindowDurationSec": "4.32",
+      "peakLocalSec": "2.35",
+      "peakGlobalSec": "3.79",
+      "placementRequired": true
+    },
+    {
+      "candidateId": "procedural_v0_0006",
+      "sceneId": "seed_0003_case_9eb26a",
+      "eventId": "evt_002",
+      "layer": "foley",
+      "label": "raindrop impacts on window",
+      "audioUri": "artifacts/audio_candidates/week12_procedural_baseline_v0/0006_slot_v0_0006_generation_fallback.wav",
+      "expectedStartSec": "1.44",
+      "expectedEndSec": "5.76",
+      "expectedWindowDurationSec": "4.32",
+      "peakLocalSec": "3.85",
+      "peakGlobalSec": "5.29",
+      "placementRequired": true
+    },
+    {
+      "candidateId": "procedural_v0_0008",
+      "sceneId": "seed_0004_case_f9f0fb",
+      "eventId": "evt_002",
+      "layer": "foley",
+      "label": "keyboard typing taps",
+      "audioUri": "artifacts/audio_candidates/week12_procedural_baseline_v0/0008_slot_v0_0008_generation_fallback.wav",
+      "expectedStartSec": "1.44",
+      "expectedEndSec": "5.76",
+      "expectedWindowDurationSec": "4.32",
+      "peakLocalSec": "2.15",
+      "peakGlobalSec": "3.59",
+      "placementRequired": true
+    },
+    {
+      "candidateId": "procedural_v0_0010",
+      "sceneId": "seed_0005_case_06f366",
+      "eventId": "evt_002",
+      "layer": "foley",
+      "label": "bicycle pass-by motion cue",
+      "audioUri": "artifacts/audio_candidates/week12_procedural_baseline_v0/0010_slot_v0_0010_generation_fallback.wav",
+      "expectedStartSec": "1.2",
+      "expectedEndSec": "5.44",
+      "expectedWindowDurationSec": "4.24",
+      "peakLocalSec": "1.05",
+      "peakGlobalSec": "2.25",
+      "placementRequired": true
+    }
+  ],
+  "runtimeWarnings": [
+    "EVENT_LOCAL_ASSETS_REQUIRE_EXPECTED_START_SEC_PLACEMENT"
+  ],
+  "blockers": [],
+  "outputs": {
+    "runtimeIndex": "artifacts/manifests/week12_cloud_mainbase_audio_timing_runtime_index.json",
+    "dashboardStub": "observability/grafana/dashboards/week12_audio_timing_alignment_runtime_stub.json"
+  },
+  "boundaryStatement": "Cloud consumed Mainbase audio timing evidence and converted it into runtime semantics. This is not a real production deployment, not a final mixer, not human audition, and not semantic quality validation."
+}

@@ -1,0 +1,114 @@
+{
+  "title": "Week12 Audio Timing Runtime Semantics",
+  "tags": [
+    "week12",
+    "soundlayer",
+    "timing",
+    "runtime-semantics"
+  ],
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "30s",
+  "annotations": {
+    "list": []
+  },
+  "panels": [
+    {
+      "id": 1,
+      "type": "stat",
+      "title": "Timing Binding PASS",
+      "description": "Mainbase candidate-to-event timing binding result consumed by Cloud.",
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      },
+      "targets": []
+    },
+    {
+      "id": 2,
+      "type": "stat",
+      "title": "Temporal Alignment PASS",
+      "description": "RMS/onset-proxy timing compatibility after coordinate-frame repair.",
+      "gridPos": {
+        "x": 6,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ]
+        }
+      },
+      "targets": []
+    },
+    {
+      "id": 3,
+      "type": "table",
+      "title": "Asset Time Modes",
+      "description": "full_clip assets use scene timeline; event_local assets require expectedStartSec placement.",
+      "gridPos": {
+        "x": 0,
+        "y": 4,
+        "w": 12,
+        "h": 6
+      },
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "targets": []
+    },
+    {
+      "id": 4,
+      "type": "table",
+      "title": "Runtime Placement Requirements",
+      "description": "Cloud/runtime/mixer must preserve placement offsets for event-local foley assets.",
+      "gridPos": {
+        "x": 12,
+        "y": 0,
+        "w": 12,
+        "h": 10
+      },
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "targets": []
+    }
+  ],
+  "week12RuntimeSummary": {
+    "status": "PASS",
+    "sourceMainbaseCommit": "28e79ff",
+    "candidateCount": 10,
+    "timingBoundCount": 10,
+    "alignmentPassCount": 10,
+    "assetTimeModeCounts": {
+      "full_clip": 5,
+      "event_local": 5
+    },
+    "runtimeWarnings": [
+      "EVENT_LOCAL_ASSETS_REQUIRE_EXPECTED_START_SEC_PLACEMENT"
+    ]
+  }
+}
