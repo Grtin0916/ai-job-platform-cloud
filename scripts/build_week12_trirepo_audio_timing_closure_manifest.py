@@ -49,11 +49,32 @@ def status_porcelain(repo: Path) -> List[str]:
 
 
 def status_path(line: str) -> str:
-    # porcelain v1: XY + space + path. Keep simple because we only need known closure paths.
-    s = line[3:] if len(line) > 3 else line
-    if " -> " in s:
-        s = s.split(" -> ", 1)[1]
-    return s.strip()
+    """Extract path from git status --porcelain=v1 line.
+
+    Handles common forms:
+      - ' M path'
+      - 'M  path'
+      - 'M path'
+      - '?? path'
+      - 'R  old -> new'
+    """
+    raw = line.rstrip("
+")
+    if not raw:
+        return ""
+
+    # Most porcelain v1 lines have a status token followed by whitespace and a path.
+    parts = raw.split(maxsplit=1)
+    if len(parts) == 1:
+        candidate = parts[0]
+    else:
+        candidate = parts[1]
+
+    # For rename/copy entries, use the destination path.
+    if " -> " in candidate:
+        candidate = candidate.split(" -> ", 1)[1]
+
+    return candidate.strip()
 
 
 def unexpected_dirty_entries(repo: Path, allowed_patterns: List[str]) -> List[str]:
@@ -256,7 +277,7 @@ def main() -> int:
             "It does not prove semantic audio quality, human audition, final mix readiness, production SLO, or real cloud deployment."
         ),
         "repairNote": (
-            "v2 fixes the self-referential clean-state bug in the first closure manifest: Cloud closure files are allowed "
+            "v3 fixes the self-referential clean-state bug and robustly parses porcelain dirty paths in the first closure manifest: Cloud closure files are allowed "
             "while generating the closure, but unexpected dirty files still block the manifest."
         ),
     }

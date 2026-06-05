@@ -1,0 +1,4 @@
+  File "/home/GRT/work/ai-job-platform-cloud/scripts/build_week12_trirepo_audio_timing_closure_manifest.py", line 61
+    raw = line.rstrip("
+                       ^
+SyntaxError: EOL while scanning string literal
