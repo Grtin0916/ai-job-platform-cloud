@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "scope": "week13_cloud_audio_artifact_storage_manifest_v0",
+  "generatedAtUtc": "2026-06-08T09:09:04.063781+00:00",
+  "outputs": {
+    "storageIndex": "loadtest/reports/week13_audio_artifact_storage_index.json",
+    "runbook": "docs/runbooks/audio-artifact-storage.md",
+    "dashboard": "observability/grafana/dashboards/week13_mix_placement_dashboard.json",
+    "log": "artifacts/logs/week13_audio_artifact_storage_index_20260608_170904.log"
+  },
+  "metrics": {
+    "candidateCount": 10,
+    "fullClipCount": 5,
+    "eventLocalCount": 5,
+    "placementRequiredCount": 5,
+    "fixedPlacementMisplacedCount": 0,
+    "naiveZeroWouldMisplaceCount": 5,
+    "dashboardPanelCount": 4,
+    "totalLogicalDurationSec": 61.52
+  },
+  "blockers": [],
+  "boundaryStatement": "Cloud indexes Mainbase/Java Week13 audio artifacts for local Docker Desktop/kind storage and dashboard semantics. This does not implement production object storage, durable registry, final mixer, semantic quality validation, human audition, or production SLO."
+}

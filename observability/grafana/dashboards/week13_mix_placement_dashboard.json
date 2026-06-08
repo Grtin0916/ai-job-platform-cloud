@@ -1,0 +1,110 @@
+{
+  "title": "Week13 Mix Placement / Audio Artifact Storage",
+  "uid": "week13-mix-placement-storage",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "30s",
+  "tags": [
+    "week13",
+    "audio-artifact",
+    "mix-placement",
+    "local-kind"
+  ],
+  "timezone": "browser",
+  "panels": [
+    {
+      "id": 1,
+      "type": "stat",
+      "title": "Candidate Count",
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 0,
+        "y": 0
+      },
+      "description": "Expected 10 candidates from Mainbase Week13 placement table.",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "targets": []
+    },
+    {
+      "id": 2,
+      "type": "stat",
+      "title": "Event-local Placement Required",
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 6,
+        "y": 0
+      },
+      "description": "Expected 5 event_local candidates requiring expectedStartSec placement.",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "targets": []
+    },
+    {
+      "id": 3,
+      "type": "stat",
+      "title": "Naive Zero Would Misplace",
+      "gridPos": {
+        "h": 4,
+        "w": 6,
+        "x": 12,
+        "y": 0
+      },
+      "description": "Negative control: naive t=0 placement would misplace all 5 event_local assets.",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        }
+      },
+      "targets": []
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "title": "Boundary",
+      "gridPos": {
+        "h": 6,
+        "w": 18,
+        "x": 0,
+        "y": 4
+      },
+      "options": {
+        "mode": "markdown",
+        "content": "Week13 dashboard stub is versioned for local Docker Desktop/kind semantics only.\\n\\n- Not production object storage\\n- Not final mixer readiness\\n- Not semantic quality validation\\n- Not production SLO"
+      },
+      "targets": []
+    }
+  ]
+}
