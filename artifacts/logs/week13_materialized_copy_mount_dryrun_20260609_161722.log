@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "candidateCount": 10,
+  "copyPlanCount": 10,
+  "sourceExistsCount": 10,
+  "missingSourceCount": 0,
+  "invalidTargetCount": 0,
+  "placementErrorCount": 0,
+  "blockers": []
+}
