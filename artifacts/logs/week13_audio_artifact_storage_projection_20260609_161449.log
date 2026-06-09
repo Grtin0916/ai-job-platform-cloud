@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "candidateCount": 10,
+  "fullClipCount": 5,
+  "eventLocalCount": 5,
+  "placementRequiredCount": 5,
+  "objectKeyCount": 10,
+  "localObjectPathCount": 10,
+  "podPathCount": 10,
+  "fixedPlacementMisplacedCount": 0,
+  "naiveZeroWouldMisplaceCount": 5,
+  "blockers": []
+}

@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "javaCandidateCount": 10,
+  "cloudCandidateCount": 10,
+  "candidateCount": 10,
+  "missingInJavaCount": 0,
+  "missingInCloudCount": 0,
+  "fieldMismatchCount": 0,
+  "placementDriftCount": 0,
+  "objectKeyMissingCount": 0,
+  "storagePathMissingCount": 0,
+  "blockers": []
+}
