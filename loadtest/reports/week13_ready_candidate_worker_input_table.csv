@@ -1,0 +1,11 @@
+candidateId,workerReadiness,assetTimeMode,placementPolicy,timelineStartSec,timelineEndSec,durationSec,podPath,sampleRateHz,channels,sizeBytes,sourceType
+procedural_v0_0001,READY,full_clip,PLACE_AT_GLOBAL_ZERO,0.0,8.0,8.0,/mnt/audio-candidates/week13/full_clip/procedural_v0_0001.wav,16000,1,256044,procedural_baseline_v0
+procedural_v0_0002,READY,event_local,PLACE_AT_EXPECTED_START_SEC,1.44,5.76,4.32,/mnt/audio-candidates/week13/event_local/procedural_v0_0002.wav,16000,1,138284,procedural_baseline_v0
+procedural_v0_0003,READY,full_clip,PLACE_AT_GLOBAL_ZERO,0.0,8.0,8.0,/mnt/audio-candidates/week13/full_clip/procedural_v0_0003.wav,16000,1,256044,procedural_baseline_v0
+procedural_v0_0004,READY,event_local,PLACE_AT_EXPECTED_START_SEC,1.44,5.76,4.32,/mnt/audio-candidates/week13/event_local/procedural_v0_0004.wav,16000,1,138284,procedural_baseline_v0
+procedural_v0_0005,READY,full_clip,PLACE_AT_GLOBAL_ZERO,0.0,8.0,8.0,/mnt/audio-candidates/week13/full_clip/procedural_v0_0005.wav,16000,1,256044,procedural_baseline_v0
+procedural_v0_0006,READY,event_local,PLACE_AT_EXPECTED_START_SEC,1.44,5.76,4.32,/mnt/audio-candidates/week13/event_local/procedural_v0_0006.wav,16000,1,138284,procedural_baseline_v0
+procedural_v0_0007,READY,full_clip,PLACE_AT_GLOBAL_ZERO,0.0,8.0,8.0,/mnt/audio-candidates/week13/full_clip/procedural_v0_0007.wav,16000,1,256044,procedural_baseline_v0
+procedural_v0_0008,READY,event_local,PLACE_AT_EXPECTED_START_SEC,1.44,5.76,4.32,/mnt/audio-candidates/week13/event_local/procedural_v0_0008.wav,16000,1,138284,procedural_baseline_v0
+procedural_v0_0009,READY,full_clip,PLACE_AT_GLOBAL_ZERO,0.0,8.0,8.0,/mnt/audio-candidates/week13/full_clip/procedural_v0_0009.wav,16000,1,256044,procedural_baseline_v0
+procedural_v0_0010,READY,event_local,PLACE_AT_EXPECTED_START_SEC,1.2,5.44,4.24,/mnt/audio-candidates/week13/event_local/procedural_v0_0010.wav,16000,1,135724,procedural_baseline_v0
