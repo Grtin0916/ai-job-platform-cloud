@@ -1,0 +1,15 @@
+{
+  "report": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week13_pod_audio_read_simulation_report.json",
+  "status": "PASS",
+  "candidateCount": 10,
+  "podPathMappedCount": 10,
+  "localExistsCount": 10,
+  "audioReadableCount": 10,
+  "sha256VerifiedCount": 10,
+  "sizeVerifiedCount": 10,
+  "assetTimeModeCounts": {
+    "full_clip": 5,
+    "event_local": 5
+  },
+  "blockers": []
+}

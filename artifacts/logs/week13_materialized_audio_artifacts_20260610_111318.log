@@ -1,0 +1,14 @@
+{
+  "manifest": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week13_materialized_audio_artifact_manifest.json",
+  "mountContract": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week13_mount_read_contract.json",
+  "status": "PASS",
+  "mountStatus": "PASS",
+  "candidateCount": 10,
+  "extractedRecordCount": 10,
+  "materializedCount": 10,
+  "sizeMatchedCount": 10,
+  "hashMatchedCount": 10,
+  "missingSourceCount": 0,
+  "readableCount": 10,
+  "blockers": []
+}
