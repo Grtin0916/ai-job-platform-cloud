@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "csvOut": "loadtest/reports/week13_candidate_bank_platform_drilldown_table.csv",
+  "jsonOut": "loadtest/reports/week13_candidate_bank_platform_drilldown_table.json",
+  "summaryOut": "loadtest/reports/week13_candidate_bank_platform_drilldown_summary.json",
+  "counts": {
+    "candidateCount": 10,
+    "readyCount": 10,
+    "fullClipLikeCount": 5,
+    "eventLocalLikeCount": 5
+  },
+  "detectedColumns": {
+    "placementIdKey": "candidateId",
+    "workerInputIdKey": "candidateId",
+    "workerSmokeIdKey": "candidateId",
+    "placementModeKey": "assetTimeMode",
+    "workerInputModeKey": "assetTimeMode",
+    "workerSmokeSuccessKey": "workerStatus"
+  },
+  "failedChecks": [],
+  "blockers": []
+}

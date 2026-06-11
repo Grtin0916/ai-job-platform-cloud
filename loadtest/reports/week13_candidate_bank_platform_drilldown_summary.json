@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "week13.cloud_candidate_bank_platform_drilldown_summary.v1",
+  "generatedAt": "2026-06-11T16:57:40",
+  "status": "PASS",
+  "scope": "candidate-level-dashboard-drilldown-data",
+  "sourcePlacementTable": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/evals/week13_mix_global_placement_table.csv",
+  "sourceWorkerInputTable": "loadtest/reports/week13_ready_candidate_worker_input_table.csv",
+  "sourceWorkerSmokeTable": "loadtest/reports/week13_local_audio_worker_smoke_table.csv",
+  "sourceGate": "loadtest/reports/week13_java_api_platform_readiness_gate.json",
+  "csvOut": "loadtest/reports/week13_candidate_bank_platform_drilldown_table.csv",
+  "jsonOut": "loadtest/reports/week13_candidate_bank_platform_drilldown_table.json",
+  "counts": {
+    "candidateCount": 10,
+    "readyCount": 10,
+    "fullClipLikeCount": 5,
+    "eventLocalLikeCount": 5
+  },
+  "detectedColumns": {
+    "placementIdKey": "candidateId",
+    "workerInputIdKey": "candidateId",
+    "workerSmokeIdKey": "candidateId",
+    "placementModeKey": "assetTimeMode",
+    "workerInputModeKey": "assetTimeMode",
+    "workerSmokeSuccessKey": "workerStatus"
+  },
+  "hardChecks": {
+    "gateStatusPass": true,
+    "rowCountIsTen": true,
+    "readyCountIsTen": true,
+    "noBlockers": true,
+    "allPlacementRowsPresent": true,
+    "allWorkerInputRowsPresent": true,
+    "allWorkerSmokeRowsPresent": true,
+    "allWorkerSmokeSuccess": true
+  },
+  "blockers": [],
+  "boundary": [
+    "does_not_claim_semantic_audio_quality",
+    "does_not_claim_human_audition_pass",
+    "does_not_claim_final_mix_readiness",
+    "does_not_claim_live_grafana_import",
+    "does_not_claim_production_kubernetes_job",
+    "does_not_claim_s3_minio_csi_or_cloud_object_storage"
+  ]
+}
