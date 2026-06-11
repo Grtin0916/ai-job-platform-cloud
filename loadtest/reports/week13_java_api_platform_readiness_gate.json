@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "week13.cloud_java_api_platform_readiness_gate.v1",
+  "generatedAt": "2026-06-11T16:41:24",
+  "status": "PASS",
+  "scope": "cloud-dashboard-ready-platform-readiness-gate",
+  "sourceJavaApiContract": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week13_candidate_bank_demo_readiness_api_contract_report.json",
+  "sourceCloudWorkerSmoke": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week13_local_audio_worker_smoke_result.json",
+  "endpoint": "/api/week13/candidate-bank-demo-readiness",
+  "testMode": "SpringBootTest.RANDOM_PORT",
+  "testSummary": {
+    "testsRun": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "consumedCounts": {
+    "candidateCount": 10,
+    "placementTableRows": 10,
+    "materializedCount": 10,
+    "mountReadableCount": 10,
+    "workerReadyCount": 10,
+    "workerSuccessCount": 10,
+    "feedbackReadyForPlatformConsumptionCount": 10
+  },
+  "cloudWorkerSmokeSummary": {
+    "status": "PASS",
+    "candidateCount": 10,
+    "workerSuccessCount": 10,
+    "blockers": []
+  },
+  "boundary": [
+    "does_not_claim_live_java_service_probe",
+    "does_not_claim_production_kubernetes_job",
+    "does_not_claim_s3_minio_csi_or_cloud_object_storage",
+    "does_not_claim_semantic_audio_quality",
+    "does_not_claim_human_audition_pass",
+    "does_not_claim_final_mix_readiness"
+  ],
+  "hardChecks": {
+    "javaApiContractPass": true,
+    "javaEndpointExpected": true,
+    "javaTestModeRandomPort": true,
+    "javaApiItRan": true,
+    "javaApiItNoFailures": true,
+    "javaApiItNoErrors": true,
+    "javaCandidateCountIsTen": true,
+    "javaWorkerSuccessCountIsTen": true,
+    "cloudWorkerSmokePass": true,
+    "cloudWorkerSuccessCountIsTen": true,
+    "cloudWorkerSmokeNoBlockers": true,
+    "javaContractNoBlockers": true
+  },
+  "blockers": [],
+  "platformDecision": "PASS: Cloud can consume the Java Week13 candidate bank demo readiness API contract as a dashboard-ready platform gate.",
+  "nextRecommendedStep": "Render this gate into a lightweight Grafana dashboard JSON or dashboard-ready panel summary."
+}

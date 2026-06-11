@@ -1,0 +1,26 @@
+{
+  "out": "loadtest/reports/week13_java_api_platform_readiness_gate.json",
+  "status": "PASS",
+  "failedChecks": [],
+  "testSummary": {
+    "testsRun": 1,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "consumedCounts": {
+    "candidateCount": 10,
+    "placementTableRows": 10,
+    "materializedCount": 10,
+    "mountReadableCount": 10,
+    "workerReadyCount": 10,
+    "workerSuccessCount": 10,
+    "feedbackReadyForPlatformConsumptionCount": 10
+  },
+  "cloudWorkerSmokeSummary": {
+    "status": "PASS",
+    "candidateCount": 10,
+    "workerSuccessCount": 10,
+    "blockers": []
+  }
+}
