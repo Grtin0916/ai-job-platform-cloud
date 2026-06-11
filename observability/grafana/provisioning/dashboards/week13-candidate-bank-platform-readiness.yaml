@@ -1,0 +1,11 @@
+apiVersion: 1
+
+providers:
+  - name: week13-candidate-bank-platform-readiness
+    orgId: 1
+    folder: Week13
+    type: file
+    disableDeletion: false
+    editable: true
+    options:
+      path: /etc/grafana/provisioning/dashboards

@@ -1,0 +1,20 @@
+{
+  "summaryOut": "loadtest/reports/week13_candidate_bank_platform_readiness_dashboard_summary.json",
+  "dashboardOut": "observability/grafana/dashboards/week13_candidate_bank_platform_readiness_dashboard.json",
+  "provisioningOut": "observability/grafana/provisioning/dashboards/week13-candidate-bank-platform-readiness.yaml",
+  "status": "PASS",
+  "dashboardValues": {
+    "status": "PASS",
+    "candidateCount": 10,
+    "workerSuccessCount": 10,
+    "workerReadyCount": 10,
+    "materializedCount": 10,
+    "mountReadableCount": 10,
+    "testsRun": 1,
+    "failures": 0,
+    "errors": 0,
+    "cloudWorkerSmokeStatus": "PASS",
+    "cloudWorkerSmokeSuccessCount": 10
+  },
+  "failedChecks": []
+}

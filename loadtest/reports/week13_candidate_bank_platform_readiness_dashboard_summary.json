@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "week13.cloud_candidate_bank_platform_readiness_dashboard_summary.v1",
+  "generatedAt": "2026-06-11T16:44:17",
+  "status": "PASS",
+  "scope": "dashboard-ready-summary-only",
+  "sourceGate": "loadtest/reports/week13_java_api_platform_readiness_gate.json",
+  "dashboardJson": "observability/grafana/dashboards/week13_candidate_bank_platform_readiness_dashboard.json",
+  "provisioningStub": "observability/grafana/provisioning/dashboards/week13-candidate-bank-platform-readiness.yaml",
+  "dashboardValues": {
+    "status": "PASS",
+    "candidateCount": 10,
+    "workerSuccessCount": 10,
+    "workerReadyCount": 10,
+    "materializedCount": 10,
+    "mountReadableCount": 10,
+    "testsRun": 1,
+    "failures": 0,
+    "errors": 0,
+    "cloudWorkerSmokeStatus": "PASS",
+    "cloudWorkerSmokeSuccessCount": 10
+  },
+  "hardChecks": {
+    "gateStatusPass": true,
+    "candidateCountIsTen": true,
+    "workerSuccessCountIsTen": true,
+    "javaApiItNoFailures": true,
+    "javaApiItNoErrors": true,
+    "cloudWorkerSmokePass": true,
+    "cloudWorkerSmokeSuccessCountIsTen": true,
+    "noGateBlockers": true
+  },
+  "blockers": [],
+  "boundary": [
+    "does_not_claim_live_grafana_import",
+    "does_not_claim_production_slo",
+    "does_not_claim_production_alerting",
+    "does_not_claim_live_java_service_probe",
+    "does_not_claim_production_kubernetes_job",
+    "does_not_claim_s3_minio_csi_or_cloud_object_storage"
+  ]
+}
