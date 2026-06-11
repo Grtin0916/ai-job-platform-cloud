@@ -1,0 +1,46 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: week13-audio-worker-smoke
+  labels:
+    app.kubernetes.io/name: week13-audio-worker-smoke
+    app.kubernetes.io/part-of: ai-job-platform-cloud
+    week: "13"
+spec:
+  completions: 1
+  parallelism: 1
+  backoffLimit: 1
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: week13-audio-worker-smoke
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: worker-smoke
+          image: python:3.11-slim
+          command: ["python", "-c"]
+          args:
+            - |
+              import json, pathlib, wave
+              manifest = pathlib.Path("/workspace/loadtest/reports/week13_ready_candidate_worker_input_manifest.json")
+              data = json.loads(manifest.read_text())
+              assert data["status"] == "PASS"
+              assert data["candidateCount"] == 10
+              print("week13 worker input manifest is readable from pod contract")
+          volumeMounts:
+            - name: audio-candidates
+              mountPath: /mnt/audio-candidates
+              readOnly: true
+            - name: workspace
+              mountPath: /workspace
+              readOnly: true
+      volumes:
+        - name: audio-candidates
+          hostPath:
+            path: /home/GRT/work/ai-job-platform-cloud/artifacts/local-object-store/audio-candidates
+            type: Directory
+        - name: workspace
+          hostPath:
+            path: /home/GRT/work/ai-job-platform-cloud
+            type: Directory

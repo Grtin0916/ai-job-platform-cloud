@@ -1,0 +1,11 @@
+workerIndex,candidateId,workerStatus,assetTimeMode,placementPolicy,timelineStartSec,timelineEndSec,durationSecDeclared,durationSecActual,sampleRateHz,channels,sizeVerified,sha256Verified,durationVerified,audioReadable,podPath
+0,procedural_v0_0001,SUCCESS,full_clip,PLACE_AT_GLOBAL_ZERO,0.0,8.0,8.0,8.0,16000,1,True,True,True,True,/mnt/audio-candidates/week13/full_clip/procedural_v0_0001.wav
+1,procedural_v0_0002,SUCCESS,event_local,PLACE_AT_EXPECTED_START_SEC,1.44,5.76,4.32,4.32,16000,1,True,True,True,True,/mnt/audio-candidates/week13/event_local/procedural_v0_0002.wav
+2,procedural_v0_0003,SUCCESS,full_clip,PLACE_AT_GLOBAL_ZERO,0.0,8.0,8.0,8.0,16000,1,True,True,True,True,/mnt/audio-candidates/week13/full_clip/procedural_v0_0003.wav
+3,procedural_v0_0004,SUCCESS,event_local,PLACE_AT_EXPECTED_START_SEC,1.44,5.76,4.32,4.32,16000,1,True,True,True,True,/mnt/audio-candidates/week13/event_local/procedural_v0_0004.wav
+4,procedural_v0_0005,SUCCESS,full_clip,PLACE_AT_GLOBAL_ZERO,0.0,8.0,8.0,8.0,16000,1,True,True,True,True,/mnt/audio-candidates/week13/full_clip/procedural_v0_0005.wav
+5,procedural_v0_0006,SUCCESS,event_local,PLACE_AT_EXPECTED_START_SEC,1.44,5.76,4.32,4.32,16000,1,True,True,True,True,/mnt/audio-candidates/week13/event_local/procedural_v0_0006.wav
+6,procedural_v0_0007,SUCCESS,full_clip,PLACE_AT_GLOBAL_ZERO,0.0,8.0,8.0,8.0,16000,1,True,True,True,True,/mnt/audio-candidates/week13/full_clip/procedural_v0_0007.wav
+7,procedural_v0_0008,SUCCESS,event_local,PLACE_AT_EXPECTED_START_SEC,1.44,5.76,4.32,4.32,16000,1,True,True,True,True,/mnt/audio-candidates/week13/event_local/procedural_v0_0008.wav
+8,procedural_v0_0009,SUCCESS,full_clip,PLACE_AT_GLOBAL_ZERO,0.0,8.0,8.0,8.0,16000,1,True,True,True,True,/mnt/audio-candidates/week13/full_clip/procedural_v0_0009.wav
+9,procedural_v0_0010,SUCCESS,event_local,PLACE_AT_EXPECTED_START_SEC,1.2,5.44,4.24,4.24,16000,1,True,True,True,True,/mnt/audio-candidates/week13/event_local/procedural_v0_0010.wav
