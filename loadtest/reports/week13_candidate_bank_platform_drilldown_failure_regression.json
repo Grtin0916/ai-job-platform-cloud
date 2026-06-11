@@ -1,0 +1,78 @@
+{
+  "schemaVersion": "week13.cloud_candidate_bank_platform_drilldown_failure_regression.v1",
+  "generatedAt": "2026-06-11T17:16:01",
+  "status": "PASS",
+  "scope": "negative-path-failure-regression-only",
+  "corruption": {
+    "source": "loadtest/reports/week13_local_audio_worker_smoke_table.csv",
+    "corruptedCopy": "artifacts/tmp/week13_drilldown_failure_regression/20260611_171601/week13_local_audio_worker_smoke_table_corrupted.csv",
+    "candidateId": "procedural_v0_0002",
+    "statusColumn": "workerStatus",
+    "originalStatus": "SUCCESS",
+    "failedValue": "FAILED",
+    "touchedRows": 1
+  },
+  "builderCommand": [
+    "/home/GRT/anaconda3/envs/audio-mini/bin/python",
+    "scripts/build_week13_candidate_bank_platform_drilldown.py",
+    "--mainbase-placement-table",
+    "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/evals/week13_mix_global_placement_table.csv",
+    "--cloud-worker-input-table",
+    "loadtest/reports/week13_ready_candidate_worker_input_table.csv",
+    "--cloud-worker-smoke-table",
+    "artifacts/tmp/week13_drilldown_failure_regression/20260611_171601/week13_local_audio_worker_smoke_table_corrupted.csv",
+    "--cloud-gate",
+    "loadtest/reports/week13_java_api_platform_readiness_gate.json",
+    "--csv-out",
+    "artifacts/tmp/week13_drilldown_failure_regression/20260611_171601/week13_candidate_bank_platform_drilldown_table_fail.csv",
+    "--json-out",
+    "artifacts/tmp/week13_drilldown_failure_regression/20260611_171601/week13_candidate_bank_platform_drilldown_table_fail.json",
+    "--summary-out",
+    "artifacts/tmp/week13_drilldown_failure_regression/20260611_171601/week13_candidate_bank_platform_drilldown_summary_fail.json"
+  ],
+  "builderReturnCode": 2,
+  "builderStdout": "{\n  \"status\": \"FAIL\",\n  \"csvOut\": \"artifacts/tmp/week13_drilldown_failure_regression/20260611_171601/week13_candidate_bank_platform_drilldown_table_fail.csv\",\n  \"jsonOut\": \"artifacts/tmp/week13_drilldown_failure_regression/20260611_171601/week13_candidate_bank_platform_drilldown_table_fail.json\",\n  \"summaryOut\": \"artifacts/tmp/week13_drilldown_failure_regression/20260611_171601/week13_candidate_bank_platform_drilldown_summary_fail.json\",\n  \"counts\": {\n    \"candidateCount\": 10,\n    \"readyCount\": 9,\n    \"fullClipLikeCount\": 5,\n    \"eventLocalLikeCount\": 5\n  },\n  \"detectedColumns\": {\n    \"placementIdKey\": \"candidateId\",\n    \"workerInputIdKey\": \"candidateId\",\n    \"workerSmokeIdKey\": \"candidateId\",\n    \"placementModeKey\": \"assetTimeMode\",\n    \"workerInputModeKey\": \"assetTimeMode\",\n    \"workerSmokeSuccessKey\": \"workerStatus\"\n  },\n  \"failedChecks\": [\n    \"readyCountIsTen\",\n    \"noBlockers\",\n    \"allWorkerSmokeSuccess\"\n  ],\n  \"blockers\": [\n    \"procedural_v0_0002:worker_smoke_not_success:FAILED\"\n  ]\n}\n",
+  "builderStderr": "",
+  "failureOutputs": {
+    "csv": "artifacts/tmp/week13_drilldown_failure_regression/20260611_171601/week13_candidate_bank_platform_drilldown_table_fail.csv",
+    "json": "artifacts/tmp/week13_drilldown_failure_regression/20260611_171601/week13_candidate_bank_platform_drilldown_table_fail.json",
+    "summary": "artifacts/tmp/week13_drilldown_failure_regression/20260611_171601/week13_candidate_bank_platform_drilldown_summary_fail.json"
+  },
+  "failureSummaryStatus": "FAIL",
+  "failureSummaryCounts": {
+    "candidateCount": 10,
+    "readyCount": 9,
+    "fullClipLikeCount": 5,
+    "eventLocalLikeCount": 5
+  },
+  "failureSummaryHardChecks": {
+    "gateStatusPass": true,
+    "rowCountIsTen": true,
+    "readyCountIsTen": false,
+    "noBlockers": false,
+    "allPlacementRowsPresent": true,
+    "allWorkerInputRowsPresent": true,
+    "allWorkerSmokeRowsPresent": true,
+    "allWorkerSmokeSuccess": false
+  },
+  "failureSummaryBlockers": [
+    "procedural_v0_0002:worker_smoke_not_success:FAILED"
+  ],
+  "expectedChecks": {
+    "builderExitedNonZero": true,
+    "failureSummaryExists": true,
+    "failureSummaryStatusFail": true,
+    "targetCandidateMentionedInBlockers": true,
+    "workerSmokeFailureDetected": true,
+    "officialSmokeTableNotModified": true
+  },
+  "blockers": [],
+  "boundary": [
+    "uses_temporary_corrupted_copy_only",
+    "does_not_modify_official_pass_tables",
+    "does_not_claim_semantic_audio_quality",
+    "does_not_claim_human_audition_pass",
+    "does_not_claim_final_mix_readiness",
+    "does_not_claim_production_kubernetes_job"
+  ]
+}

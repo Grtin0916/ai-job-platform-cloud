@@ -1,0 +1,19 @@
+{
+  "out": "loadtest/reports/week13_candidate_bank_platform_drilldown_failure_regression.json",
+  "status": "PASS",
+  "targetCandidate": "procedural_v0_0002",
+  "builderReturnCode": 2,
+  "failureSummaryStatus": "FAIL",
+  "failureSummaryBlockers": [
+    "procedural_v0_0002:worker_smoke_not_success:FAILED"
+  ],
+  "expectedChecks": {
+    "builderExitedNonZero": true,
+    "failureSummaryExists": true,
+    "failureSummaryStatusFail": true,
+    "targetCandidateMentionedInBlockers": true,
+    "workerSmokeFailureDetected": true,
+    "officialSmokeTableNotModified": true
+  },
+  "blockers": []
+}
