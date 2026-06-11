@@ -1,0 +1,33 @@
+{
+  "gate": "loadtest/reports/week13_candidate_bank_platform_promotion_gate.json",
+  "status": "PASS",
+  "promotionDecision": "PROMOTE_TO_WEEK13_DEMO_READY",
+  "checks": {
+    "statusPass": true,
+    "promotionDecisionReady": true,
+    "candidateCountIsTen": true,
+    "workerSuccessCountIsTen": true,
+    "javaApiItRan": true,
+    "javaApiNoFailures": true,
+    "javaApiNoErrors": true,
+    "drilldownReadyCountIsTen": true,
+    "fullClipLikeCountIsFive": true,
+    "eventLocalLikeCountIsFive": true,
+    "negativeRegressionTargetExpected": true,
+    "negativeRegressionDetectedFail": true,
+    "negativeRegressionLocatedBlocker": true,
+    "noGateBlockers": true,
+    "allEmbeddedHardChecksTrue": true
+  },
+  "failedChecks": [],
+  "boundary": [
+    "checker_only",
+    "does_not_regenerate_artifacts",
+    "does_not_claim_live_grafana_import",
+    "does_not_claim_production_slo",
+    "does_not_claim_production_kubernetes_job",
+    "does_not_claim_s3_minio_csi_or_cloud_object_storage",
+    "does_not_claim_semantic_audio_quality",
+    "does_not_claim_final_mix_readiness"
+  ]
+}

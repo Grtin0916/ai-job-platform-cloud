@@ -1,0 +1,28 @@
+name: Week13 Candidate Bank Platform Gate
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "scripts/check_week13_candidate_bank_platform_promotion_gate.py"
+      - "loadtest/reports/week13_candidate_bank_platform_promotion_gate.json"
+      - ".github/workflows/week13-candidate-bank-platform-gate.yml"
+  pull_request:
+    branches: [ main ]
+    paths:
+      - "scripts/check_week13_candidate_bank_platform_promotion_gate.py"
+      - "loadtest/reports/week13_candidate_bank_platform_promotion_gate.json"
+      - ".github/workflows/week13-candidate-bank-platform-gate.yml"
+  workflow_dispatch:
+
+jobs:
+  candidate-bank-platform-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check Week13 promotion gate
+        run: |
+          python scripts/check_week13_candidate_bank_platform_promotion_gate.py \
+            --gate loadtest/reports/week13_candidate_bank_platform_promotion_gate.json
