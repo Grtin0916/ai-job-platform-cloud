@@ -1,2 +1,0 @@
-E0611 15:46:37.895047  309965 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://127.0.0.1:43443/api?timeout=32s\": dial tcp 127.0.0.1:43443: connect: connection refused"
-error: unable to recognize "k8s/base/week13-audio-worker-job-template.yaml": Get "https://127.0.0.1:43443/api?timeout=32s": dial tcp 127.0.0.1:43443: connect: connection refused

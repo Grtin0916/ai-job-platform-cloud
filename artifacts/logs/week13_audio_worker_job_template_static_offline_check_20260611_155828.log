@@ -1,0 +1,16 @@
+CHECK=week13_audio_worker_job_template_static_offline_check
+TIME=2026-06-11T15:58:28
+FILE=k8s/base/week13-audio-worker-job-template.yaml
+SCOPE=static-offline-token-check-only
+BOUNDARY=does-not-contact-kube-apiserver;does-not-claim-server-side-schema-validation;does-not-claim-production-job
+TOKEN_PASS=apiVersion:
+TOKEN_PASS=kind: Job
+TOKEN_PASS=metadata:
+TOKEN_PASS=name:
+TOKEN_PASS=spec:
+TOKEN_PASS=template:
+TOKEN_PASS=containers:
+TOKEN_PASS=restartPolicy: Never
+TOKEN_PASS=hostPath:
+TOKEN_PASS=/mnt/audio-candidates
+STATUS=PASS
