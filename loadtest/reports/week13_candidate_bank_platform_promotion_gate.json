@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "week13.cloud_candidate_bank_platform_promotion_gate.v1",
+  "generatedAt": "2026-06-11T17:39:01",
+  "status": "PASS",
+  "promotionDecision": "PROMOTE_TO_WEEK13_DEMO_READY",
+  "scope": "local-platform-promotion-gate-only",
+  "sources": {
+    "javaApiGate": "loadtest/reports/week13_java_api_platform_readiness_gate.json",
+    "dashboardSummary": "loadtest/reports/week13_candidate_bank_platform_readiness_dashboard_summary.json",
+    "drilldownSummary": "loadtest/reports/week13_candidate_bank_platform_drilldown_summary.json",
+    "failureRegression": "loadtest/reports/week13_candidate_bank_platform_drilldown_failure_regression.json"
+  },
+  "positivePath": {
+    "candidateCount": 10,
+    "workerSuccessCount": 10,
+    "testsRun": 1,
+    "failures": 0,
+    "errors": 0,
+    "drilldownReadyCount": 10,
+    "fullClipLikeCount": 5,
+    "eventLocalLikeCount": 5
+  },
+  "negativePath": {
+    "targetCandidate": "procedural_v0_0002",
+    "originalStatus": "SUCCESS",
+    "failedValue": "FAILED",
+    "builderReturnCode": 2,
+    "failureSummaryStatus": "FAIL",
+    "failureSummaryBlockers": [
+      "procedural_v0_0002:worker_smoke_not_success:FAILED"
+    ]
+  },
+  "hardChecks": {
+    "javaApiPlatformGatePass": true,
+    "javaApiEndpointExpected": true,
+    "javaApiItNoFailures": true,
+    "javaApiItNoErrors": true,
+    "javaCandidateCountIsTen": true,
+    "javaWorkerSuccessCountIsTen": true,
+    "dashboardSummaryPass": true,
+    "dashboardCandidateCountIsTen": true,
+    "dashboardWorkerSuccessCountIsTen": true,
+    "drilldownSummaryPass": true,
+    "drilldownCandidateCountIsTen": true,
+    "drilldownReadyCountIsTen": true,
+    "drilldownFullClipCountIsFive": true,
+    "drilldownEventLocalCountIsFive": true,
+    "negativeRegressionPass": true,
+    "negativeRegressionBuilderExitedNonZero": true,
+    "negativeRegressionFailureDetected": true,
+    "negativeRegressionTargetCandidateLocated": true,
+    "negativeRegressionOfficialTableNotModified": true
+  },
+  "blockers": [],
+  "boundary": [
+    "does_not_claim_live_grafana_import",
+    "does_not_claim_production_slo",
+    "does_not_claim_production_alerting",
+    "does_not_claim_live_java_service_probe",
+    "does_not_claim_production_kubernetes_job",
+    "does_not_claim_s3_minio_csi_or_cloud_object_storage",
+    "does_not_claim_semantic_audio_quality",
+    "does_not_claim_human_audition_pass",
+    "does_not_claim_final_mix_readiness"
+  ],
+  "platformDecision": "PASS: Candidate Audio Bank V1 is ready for Week13 local demo promotion with positive-path evidence and negative-path regression evidence.",
+  "nextRecommendedStep": "Create a concise Week13 Thursday engineering closure note or wire this promotion gate into Friday's stage gate."
+}
