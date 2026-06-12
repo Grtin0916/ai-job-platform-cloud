@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "week13.friday_stage_gate_input.v1",
+  "generatedAtUtc": "2026-06-12T08:20:25.577967+00:00",
+  "status": "PASS",
+  "stageGateDecision": "READY_FOR_FRIDAY_STAGE_GATE",
+  "verifiedScope": {
+    "allowedClaims": [
+      "Candidate Audio Bank V1 local demo-ready evidence is aggregated.",
+      "Positive path and negative regression evidence are both represented.",
+      "This report is a Friday stage gate input, not a production readiness declaration."
+    ],
+    "forbiddenClaims": [
+      "semantic audio quality",
+      "human audition passed",
+      "final mix readiness",
+      "production Kubernetes Job",
+      "live Grafana import",
+      "S3/MinIO/CSI-backed object storage",
+      "production SLO"
+    ]
+  },
+  "inputs": {
+    "mainbaseFeedback": {
+      "path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week13_platform_promotion_feedback_index.json",
+      "exists": true
+    },
+    "javaReadinessApiContract": {
+      "path": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week13_candidate_bank_demo_readiness_api_contract_report.json",
+      "exists": true
+    },
+    "cloudPromotionGate": {
+      "path": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week13_candidate_bank_platform_promotion_gate.json",
+      "exists": true
+    }
+  },
+  "latestCloudPromotionGateCheckerLog": "/home/GRT/work/ai-job-platform-cloud/artifacts/logs/week13_candidate_bank_platform_promotion_gate_check_20260611_174717.log",
+  "summary": {
+    "mainbaseStatus": "PASS",
+    "mainbasePromotionDecision": "PROMOTE_TO_WEEK13_DEMO_READY",
+    "javaStatus": "PASS",
+    "javaApiTestsRun": 1,
+    "javaFailures": 0,
+    "javaErrors": 0,
+    "cloudStatus": "PASS",
+    "cloudPromotionDecision": "PROMOTE_TO_WEEK13_DEMO_READY",
+    "candidateCount": 10,
+    "workerSuccessCount": 10,
+    "drilldownReadyCount": 10,
+    "negativeTarget": "procedural_v0_0002"
+  },
+  "blockers": [],
+  "nextStageEntry": {
+    "ifPass": [
+      "Record stage gate transition feedback in Mainbase.",
+      "Use this report as Week15 Temporal Alignment Eval / human audition rubric / semantic quality evaluation entry input."
+    ],
+    "ifFail": [
+      "Do not modify upstream Mainbase or Java evidence blindly.",
+      "Inspect blockers and rerun the focused failing gate only."
+    ]
+  }
+}
