@@ -1,0 +1,20 @@
+{
+  "output": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_platform_gate.json",
+  "status": "PASS",
+  "platformDecision": "TEMPORAL_ALIGNMENT_REMEDIATION_PLATFORM_READY_INPUT",
+  "summary": {
+    "candidateCount": 10,
+    "originalFailCount": 2,
+    "remediatedFailCount": 0,
+    "originalEventLocalPassCount": 3,
+    "remediatedEventLocalPassCount": 5,
+    "eventLocalPassDelta": 2,
+    "failCountDelta": -2,
+    "remediatedCandidateIds": [
+      "procedural_v0_0004",
+      "procedural_v0_0010"
+    ]
+  },
+  "failedChecks": [],
+  "blockers": []
+}

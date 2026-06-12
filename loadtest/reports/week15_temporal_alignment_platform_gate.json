@@ -1,0 +1,60 @@
+{
+  "schemaVersion": "week15.temporal_alignment_platform_gate.v1",
+  "generatedAtUtc": "2026-06-12T09:05:09.157791+00:00",
+  "status": "PASS",
+  "platformDecision": "TEMPORAL_ALIGNMENT_REMEDIATION_PLATFORM_READY_INPUT",
+  "inputs": {
+    "mainbaseRegressionGate": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/evals/week15_temporal_alignment_regression_gate.json",
+    "javaRemediationApiContractReport": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week15_temporal_alignment_remediation_api_contract_report.json"
+  },
+  "checks": {
+    "mainbaseGatePass": true,
+    "mainbaseDecisionGuarded": true,
+    "mainbaseOriginalFailCountTwo": true,
+    "mainbaseRemediatedFailCountZero": true,
+    "mainbaseEventLocalPassDeltaTwo": true,
+    "mainbaseRemediatedTargetsExpected": true,
+    "javaContractPass": true,
+    "javaApiTestsRunOne": true,
+    "javaApiNoFailures": true,
+    "javaApiNoErrors": true,
+    "javaOriginalFailCountTwo": true,
+    "javaRemediatedFailCountZero": true,
+    "javaEventLocalPassDeltaTwo": true,
+    "javaFailCountDeltaMinusTwo": true,
+    "javaRemediatedTargetsExpected": true
+  },
+  "failedChecks": [],
+  "summary": {
+    "candidateCount": 10,
+    "originalFailCount": 2,
+    "remediatedFailCount": 0,
+    "originalEventLocalPassCount": 3,
+    "remediatedEventLocalPassCount": 5,
+    "eventLocalPassDelta": 2,
+    "failCountDelta": -2,
+    "remediatedCandidateIds": [
+      "procedural_v0_0004",
+      "procedural_v0_0010"
+    ]
+  },
+  "platformMeaning": {
+    "businessClaim": "Temporal alignment drift is detectable, remediable, regression-guarded, and exposed through Java API contract evidence.",
+    "nextCloudUse": [
+      "dashboard-ready platform readiness input",
+      "future alert/log field input",
+      "future worker result contract input"
+    ]
+  },
+  "blockers": [],
+  "boundary": [
+    "platform_gate_input_only",
+    "consumes_mainbase_and_java_evidence",
+    "does_not_run_production_kubernetes_job",
+    "does_not_claim_live_grafana_import",
+    "does_not_claim_production_slo",
+    "does_not_claim_semantic_audio_quality",
+    "does_not_claim_human_audition_passed",
+    "does_not_claim_final_mix_readiness"
+  ]
+}
