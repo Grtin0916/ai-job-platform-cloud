@@ -1,0 +1,18 @@
+# HELP week15_temporal_alignment_visual_evidence_candidate_total Candidates with waveform/RMS visual evidence.
+# TYPE week15_temporal_alignment_visual_evidence_candidate_total gauge
+week15_temporal_alignment_visual_evidence_candidate_total 2
+# HELP week15_temporal_alignment_visual_evidence_figure_total Waveform/RMS figures available for temporal alignment candidates.
+# TYPE week15_temporal_alignment_visual_evidence_figure_total gauge
+week15_temporal_alignment_visual_evidence_figure_total 2
+# HELP week15_temporal_alignment_duration_trim_total_sec Total audio duration trimmed across remediated candidates.
+# TYPE week15_temporal_alignment_duration_trim_total_sec gauge
+week15_temporal_alignment_duration_trim_total_sec 3.06
+# HELP week15_temporal_alignment_duration_trim_mean_sec Mean audio duration trimmed across remediated candidates.
+# TYPE week15_temporal_alignment_duration_trim_mean_sec gauge
+week15_temporal_alignment_duration_trim_mean_sec 1.53
+# HELP week15_temporal_alignment_onset_proxy_abs_delta_total_sec Total absolute local RMS onset proxy delta across visual evidence candidates.
+# TYPE week15_temporal_alignment_onset_proxy_abs_delta_total_sec gauge
+week15_temporal_alignment_onset_proxy_abs_delta_total_sec 0.0
+# HELP week15_temporal_alignment_visual_evidence_platform_index_ready Cloud consumed Mainbase waveform/RMS evidence successfully.
+# TYPE week15_temporal_alignment_visual_evidence_platform_index_ready gauge
+week15_temporal_alignment_visual_evidence_platform_index_ready{status="PASS"} 1

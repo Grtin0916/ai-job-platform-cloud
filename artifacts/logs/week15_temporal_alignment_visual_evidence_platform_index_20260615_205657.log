@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "week15.temporal_alignment_visual_evidence_platform_index.v1",
+  "generatedAt": "2026-06-15T12:56:57.360269+00:00",
+  "status": "PASS",
+  "platformDecision": "WAVEFORM_RMS_EVIDENCE_CONSUMED_BY_CLOUD_PLATFORM_INDEX",
+  "inputs": {
+    "mainbaseWaveformRmsIndex": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/evals/week15_temporal_alignment_waveform_rms_index.json",
+    "cloudScoreSummaryPlatformIndex": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_score_summary_platform_index.json"
+  },
+  "sourceHeads": {
+    "mainbaseWaveformRmsCommitHead": "3a5b12a",
+    "cloudScoreSummaryCommitHead": "f24ae4a",
+    "javaScoreSummaryCommitHead": "466e30b"
+  },
+  "visualEvidence": [
+    {
+      "candidateId": "procedural_v0_0004",
+      "figure": "artifacts/figures/week15_temporal_alignment/procedural_v0_0004_waveform_rms_original_vs_remediated.png",
+      "originalAudio": "artifacts/audio_candidates/week12_procedural_baseline_v0/0004_slot_v0_0004_generation_fallback.wav",
+      "remediatedAudio": "artifacts/audio_candidates/week15_temporal_alignment_remediated/procedural_v0_0004_trimmed_preroll_20ms.wav",
+      "originalDurationSec": 4.32,
+      "remediatedDurationSec": 2.285,
+      "durationTrimSec": 2.035,
+      "originalOnsetProxySec": 0.0325,
+      "remediatedOnsetProxySec": 0.0325,
+      "onsetProxyDeltaSec": 0.0,
+      "interpretation": "remediation evidence primarily shows duration trimming while preserving the local RMS onset proxy"
+    },
+    {
+      "candidateId": "procedural_v0_0010",
+      "figure": "artifacts/figures/week15_temporal_alignment/procedural_v0_0010_waveform_rms_original_vs_remediated.png",
+      "originalAudio": "artifacts/audio_candidates/week12_procedural_baseline_v0/0010_slot_v0_0010_generation_fallback.wav",
+      "remediatedAudio": "artifacts/audio_candidates/week15_temporal_alignment_remediated/procedural_v0_0010_trimmed_preroll_20ms.wav",
+      "originalDurationSec": 4.24,
+      "remediatedDurationSec": 3.215,
+      "durationTrimSec": 1.025,
+      "originalOnsetProxySec": 0.0325,
+      "remediatedOnsetProxySec": 0.0325,
+      "onsetProxyDeltaSec": 0.0,
+      "interpretation": "remediation evidence primarily shows duration trimming while preserving the local RMS onset proxy"
+    }
+  ],
+  "metrics": {
+    "visual_evidence_candidate_total": 2,
+    "visual_evidence_figure_total": 2,
+    "duration_trim_total_sec": 3.06,
+    "duration_trim_mean_sec": 1.53,
+    "onset_proxy_abs_delta_total_sec": 0.0
+  },
+  "interpretation": {
+    "primaryFinding": "0004/0010 remediation is supported by waveform/RMS figures and duration trimming evidence.",
+    "importantCaveat": "The local RMS onset proxy is unchanged in the current index; do not describe this as onset-proxy shift evidence.",
+    "nextAction": "manual audition or semantic-quality evaluation is still required before claiming human-audition pass or final mix readiness."
+  },
+  "boundary": [
+    "cloud_visual_evidence_index_only",
+    "consumes_mainbase_waveform_rms_evidence",
+    "does_not_score_semantic_audio_quality",
+    "does_not_claim_human_audition_passed",
+    "does_not_claim_final_mix_readiness",
+    "does_not_import_live_grafana_dashboard",
+    "does_not_claim_production_slo"
+  ]
+}
+WROTE_INDEX=/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_visual_evidence_platform_index.json
+WROTE_METRICS=/home/GRT/work/ai-job-platform-cloud/observability/prometheus/week15_temporal_alignment_visual_evidence_metrics.prom
