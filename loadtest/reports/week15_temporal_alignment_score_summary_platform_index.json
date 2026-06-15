@@ -1,0 +1,102 @@
+{
+  "schemaVersion": "week15.temporal_alignment_score_summary_platform_index.v1",
+  "generatedAt": "2026-06-15T12:42:55.875077+00:00",
+  "status": "PASS",
+  "platformDecision": "SCORE_SUMMARY_CONSUMED_BY_CLOUD_PLATFORM_INDEX",
+  "inputs": {
+    "javaScoreSummaryContractReport": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week15_java_temporal_alignment_score_summary_contract_report.json",
+    "cloudDashboardReadyReport": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_dashboard_ready.json",
+    "cloudPlatformGateReport": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_platform_gate.json"
+  },
+  "sourceHeads": {
+    "mainbaseInputHead": "c0b4870",
+    "javaInputHead": "d09b4f5",
+    "javaScoreSummaryCommitHead": "466e30b",
+    "cloudInputHead": "94341d9"
+  },
+  "scoreSummary": {
+    "candidateCount": 10,
+    "originalPassCount": 7,
+    "originalWarnNearMissCount": 1,
+    "originalFailCount": 2,
+    "remediatedPassCount": 9,
+    "remediatedWarnNearMissCount": 1,
+    "remediatedFailCount": 0,
+    "eventLocalCount": 5,
+    "originalEventLocalPassCount": 3,
+    "remediatedEventLocalPassCount": 5
+  },
+  "remediationDelta": {
+    "eventLocalPassDelta": 2,
+    "failCountDelta": -2,
+    "remediatedCandidateIds": [
+      "procedural_v0_0004",
+      "procedural_v0_0010"
+    ],
+    "remediationAction": "trim_leading_low_energy_with_20ms_preroll"
+  },
+  "candidateDrifts": [
+    {
+      "candidateId": "procedural_v0_0004",
+      "originalStatus": "FAIL_DRIFT",
+      "remediatedStatus": "PASS",
+      "failureMode": "leading_low_energy_or_silence_before_local_onset",
+      "remediationAction": "trim_leading_low_energy_with_20ms_preroll",
+      "requiresHumanAudition": true
+    },
+    {
+      "candidateId": "procedural_v0_0010",
+      "originalStatus": "FAIL_DRIFT",
+      "remediatedStatus": "PASS",
+      "failureMode": "leading_low_energy_or_silence_before_local_onset",
+      "remediationAction": "trim_leading_low_energy_with_20ms_preroll",
+      "requiresHumanAudition": true
+    }
+  ],
+  "artifactLinks": {
+    "remediatedAudio0004": "artifacts/audio_candidates/week15_temporal_alignment_remediated/procedural_v0_0004_trimmed_preroll_20ms.wav",
+    "remediatedAudio0010": "artifacts/audio_candidates/week15_temporal_alignment_remediated/procedural_v0_0010_trimmed_preroll_20ms.wav",
+    "mainbaseDiagnostics": "artifacts/evals/week15_temporal_alignment_diagnostics.json",
+    "cloudDashboard": "observability/grafana/dashboards/week15_temporal_alignment_remediation_dashboard.json",
+    "cloudReadyReport": "loadtest/reports/week15_temporal_alignment_dashboard_ready.json"
+  },
+  "cloudEvidence": {
+    "dashboardReadyStatus": "MISSING_OPTIONAL_INPUT",
+    "dashboardReadyMissing": true,
+    "platformGateStatus": "PASS",
+    "dashboardJson": "observability/grafana/dashboards/week15_temporal_alignment_remediation_dashboard.json",
+    "cloudReadyReport": "loadtest/reports/week15_temporal_alignment_dashboard_ready.json"
+  },
+  "metrics": {
+    "candidate_total": 10,
+    "original_fail_total": 2,
+    "remediated_fail_total": 0,
+    "original_event_local_pass_total": 3,
+    "remediated_event_local_pass_total": 5,
+    "event_local_pass_delta": 2,
+    "fail_count_delta": -2,
+    "remediated_candidate_total": 2
+  },
+  "routingHints": {
+    "dashboardPanel": "Temporal Alignment Remediation",
+    "alertClass": "alignment_debt",
+    "humanReviewQueue": [
+      "procedural_v0_0004",
+      "procedural_v0_0010"
+    ],
+    "nextAction": "inspect waveform/RMS PNG for remediated candidates before claiming human-audition or final-mix readiness"
+  },
+  "boundary": [
+    "api_contract_only",
+    "consumes_mainbase_and_cloud_artifact_evidence",
+    "does_not_score_semantic_audio_quality",
+    "does_not_claim_human_audition_passed",
+    "does_not_claim_final_mix_readiness",
+    "does_not_claim_live_grafana_import",
+    "does_not_claim_production_slo",
+    "cloud_index_only",
+    "does_not_call_live_java_service",
+    "does_not_import_live_grafana_dashboard",
+    "dashboard_ready_report_optional_for_score_summary_index"
+  ]
+}

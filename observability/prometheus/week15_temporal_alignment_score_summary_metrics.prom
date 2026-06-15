@@ -1,0 +1,18 @@
+# HELP week15_temporal_alignment_candidates_total Candidate count in Week15 temporal alignment score summary.
+# TYPE week15_temporal_alignment_candidates_total gauge
+week15_temporal_alignment_candidates_total 10
+# HELP week15_temporal_alignment_original_fail_total Original temporal alignment fail count.
+# TYPE week15_temporal_alignment_original_fail_total gauge
+week15_temporal_alignment_original_fail_total 2
+# HELP week15_temporal_alignment_remediated_fail_total Remediated temporal alignment fail count.
+# TYPE week15_temporal_alignment_remediated_fail_total gauge
+week15_temporal_alignment_remediated_fail_total 0
+# HELP week15_temporal_alignment_event_local_pass_delta Event-local pass count improvement after remediation.
+# TYPE week15_temporal_alignment_event_local_pass_delta gauge
+week15_temporal_alignment_event_local_pass_delta 2
+# HELP week15_temporal_alignment_remediated_candidate_total Count of candidates remediated by drift trimming.
+# TYPE week15_temporal_alignment_remediated_candidate_total gauge
+week15_temporal_alignment_remediated_candidate_total 2
+# HELP week15_temporal_alignment_score_summary_platform_index_ready Cloud consumed Java score summary contract successfully.
+# TYPE week15_temporal_alignment_score_summary_platform_index_ready gauge
+week15_temporal_alignment_score_summary_platform_index_ready{status="PASS"} 1
