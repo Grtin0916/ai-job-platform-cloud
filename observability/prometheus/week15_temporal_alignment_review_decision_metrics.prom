@@ -1,0 +1,18 @@
+# HELP week15_temporal_alignment_review_decision_platform_index_ready Cloud consumed Mainbase manual review decision successfully.
+# TYPE week15_temporal_alignment_review_decision_platform_index_ready gauge
+week15_temporal_alignment_review_decision_platform_index_ready{status="PASS"} 1
+# HELP week15_temporal_alignment_review_candidate_total Candidate count in manual review decision.
+# TYPE week15_temporal_alignment_review_candidate_total gauge
+week15_temporal_alignment_review_candidate_total 2
+# HELP week15_temporal_alignment_visual_pass_total Visual/signal review PASS count.
+# TYPE week15_temporal_alignment_visual_pass_total gauge
+week15_temporal_alignment_visual_pass_total 2
+# HELP week15_temporal_alignment_audition_not_performed_total Audition NOT_PERFORMED count.
+# TYPE week15_temporal_alignment_audition_not_performed_total gauge
+week15_temporal_alignment_audition_not_performed_total 2
+# HELP week15_temporal_alignment_human_review_partial Human review partial status.
+# TYPE week15_temporal_alignment_human_review_partial gauge
+week15_temporal_alignment_human_review_partial 1
+# HELP week15_temporal_alignment_human_review_pass Human review pass status.
+# TYPE week15_temporal_alignment_human_review_pass gauge
+week15_temporal_alignment_human_review_pass 0

@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "week15.temporal_alignment_review_decision_platform_index.v1",
+  "generatedAt": "2026-06-15T13:33:49.479401+00:00",
+  "status": "PASS",
+  "platformDecision": "MANUAL_REVIEW_DECISION_CONSUMED_BY_CLOUD_PLATFORM_INDEX",
+  "inputs": {
+    "mainbaseManualReviewDecision": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/reviews/week15_temporal_alignment_manual_review_decision.json",
+    "cloudEvidenceGate": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_evidence_gate.json"
+  },
+  "sourceHeads": {
+    "mainbaseManualReviewDecisionCommitHead": "3c4579a",
+    "cloudEvidenceGateCommitHead": "e7fd36b"
+  },
+  "reviewStatus": "HUMAN_REVIEW_PARTIAL",
+  "reviewDecision": {
+    "humanVisualInspection": "PASS",
+    "humanAudition": "PARTIAL",
+    "semanticQualityReview": "NOT_PERFORMED",
+    "finalMixReadiness": "NOT_CLAIMED"
+  },
+  "candidateDecisions": [
+    {
+      "candidateId": "procedural_v0_0004",
+      "visualInspection": "PASS",
+      "audition": "NOT_PERFORMED",
+      "note": "Assistant signal audit: remediated audio is an exact suffix of original starting at 2.035s; duration trimming is supported; human audition not performed by user yet.",
+      "figure": "artifacts/figures/week15_temporal_alignment/procedural_v0_0004_waveform_rms_original_vs_remediated.png",
+      "originalAudio": "artifacts/audio_candidates/week12_procedural_baseline_v0/0004_slot_v0_0004_generation_fallback.wav",
+      "remediatedAudio": "artifacts/audio_candidates/week15_temporal_alignment_remediated/procedural_v0_0004_trimmed_preroll_20ms.wav",
+      "durationTrimSec": 2.035,
+      "onsetProxyDeltaSec": 0.0
+    },
+    {
+      "candidateId": "procedural_v0_0010",
+      "visualInspection": "PASS",
+      "audition": "NOT_PERFORMED",
+      "note": "Assistant signal audit: remediated audio is an exact suffix of original starting at 1.025s; duration trimming is supported; human audition not performed by user yet.",
+      "figure": "artifacts/figures/week15_temporal_alignment/procedural_v0_0010_waveform_rms_original_vs_remediated.png",
+      "originalAudio": "artifacts/audio_candidates/week12_procedural_baseline_v0/0010_slot_v0_0010_generation_fallback.wav",
+      "remediatedAudio": "artifacts/audio_candidates/week15_temporal_alignment_remediated/procedural_v0_0010_trimmed_preroll_20ms.wav",
+      "durationTrimSec": 1.025,
+      "onsetProxyDeltaSec": 0.0
+    }
+  ],
+  "allowedClaim": "Remediation for procedural_v0_0004 and procedural_v0_0010 is supported by duration-trimming evidence while preserving the local RMS onset proxy.",
+  "blockedClaims": [
+    "Do not claim semantic audio quality is solved.",
+    "Do not claim human audition passed.",
+    "Do not claim final mix readiness.",
+    "Do not claim live Grafana import.",
+    "Do not claim production SLO.",
+    "Do not describe the current evidence as onset-proxy shift evidence."
+  ],
+  "metrics": {
+    "review_candidate_total": 2,
+    "visual_pass_total": 2,
+    "audition_not_performed_total": 2,
+    "human_review_partial": 1,
+    "human_review_pass": 0,
+    "semantic_quality_review_performed": 0,
+    "final_mix_readiness_claimed": 0
+  },
+  "allowedPlatformClaim": "Signal/visual review supports duration trimming for procedural_v0_0004 and procedural_v0_0010; human audition remains partial/not performed.",
+  "blockedPlatformClaims": [
+    "Do not claim full human review pass.",
+    "Do not claim human audition passed.",
+    "Do not claim semantic quality review passed.",
+    "Do not claim final mix readiness.",
+    "Do not claim onset-proxy shift evidence.",
+    "Do not claim production SLO or live Grafana import."
+  ],
+  "nextAction": "Stop engineering expansion for today; upload/inspect the two waveform/RMS images or perform actual audition only if you want to upgrade from HUMAN_REVIEW_PARTIAL to HUMAN_REVIEW_PASS.",
+  "boundary": [
+    "cloud_review_decision_index_only",
+    "consumes_mainbase_manual_review_decision",
+    "does_not_call_live_java_service",
+    "does_not_claim_full_human_review_pass",
+    "does_not_claim_semantic_audio_quality",
+    "does_not_claim_final_mix_readiness",
+    "does_not_claim_production_slo"
+  ]
+}
