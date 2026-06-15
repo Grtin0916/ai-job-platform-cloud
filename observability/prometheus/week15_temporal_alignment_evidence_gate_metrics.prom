@@ -1,0 +1,12 @@
+# HELP week15_temporal_alignment_evidence_gate_ready Temporal alignment evidence gate pass status.
+# TYPE week15_temporal_alignment_evidence_gate_ready gauge
+week15_temporal_alignment_evidence_gate_ready{status="PASS"} 1
+# HELP week15_temporal_alignment_evidence_gate_duration_trim_total_sec Duration trim total accepted by evidence gate.
+# TYPE week15_temporal_alignment_evidence_gate_duration_trim_total_sec gauge
+week15_temporal_alignment_evidence_gate_duration_trim_total_sec 3.06
+# HELP week15_temporal_alignment_evidence_gate_onset_proxy_abs_delta_total_sec Onset proxy absolute delta total accepted by evidence gate.
+# TYPE week15_temporal_alignment_evidence_gate_onset_proxy_abs_delta_total_sec gauge
+week15_temporal_alignment_evidence_gate_onset_proxy_abs_delta_total_sec 0.0
+# HELP week15_temporal_alignment_evidence_gate_blocked_overclaim_total Number of blocked overclaim categories in evidence gate.
+# TYPE week15_temporal_alignment_evidence_gate_blocked_overclaim_total gauge
+week15_temporal_alignment_evidence_gate_blocked_overclaim_total 6

@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "week15.temporal_alignment_evidence_gate.v1",
+  "generatedAt": "2026-06-15T13:04:50.230220+00:00",
+  "status": "PASS",
+  "gateDecision": "TEMPORAL_ALIGNMENT_EVIDENCE_GATE_PASS",
+  "inputs": {
+    "scoreSummaryPlatformIndex": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_score_summary_platform_index.json",
+    "visualEvidencePlatformIndex": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_visual_evidence_platform_index.json"
+  },
+  "sourceHeads": {
+    "mainbaseWaveformRmsCommitHead": "3a5b12a",
+    "javaScoreSummaryCommitHead": "466e30b",
+    "cloudScoreSummaryCommitHead": "f24ae4a",
+    "cloudVisualEvidenceCommitHead": "b5e84ea"
+  },
+  "allowedClaim": "Remediation for procedural_v0_0004 and procedural_v0_0010 is supported by duration-trimming evidence while preserving the local RMS onset proxy.",
+  "blockedClaims": [
+    "Do not claim semantic audio quality is solved.",
+    "Do not claim human audition passed.",
+    "Do not claim final mix readiness.",
+    "Do not claim live Grafana import.",
+    "Do not claim production SLO.",
+    "Do not describe the current evidence as onset-proxy shift evidence."
+  ],
+  "scoreMetrics": {
+    "candidate_total": 10,
+    "original_fail_total": 2,
+    "remediated_fail_total": 0,
+    "original_event_local_pass_total": 3,
+    "remediated_event_local_pass_total": 5,
+    "event_local_pass_delta": 2,
+    "fail_count_delta": -2,
+    "remediated_candidate_total": 2
+  },
+  "visualMetrics": {
+    "visual_evidence_candidate_total": 2,
+    "visual_evidence_figure_total": 2,
+    "duration_trim_total_sec": 3.06,
+    "duration_trim_mean_sec": 1.53,
+    "onset_proxy_abs_delta_total_sec": 0.0
+  },
+  "visualEvidenceIds": [
+    "procedural_v0_0004",
+    "procedural_v0_0010"
+  ],
+  "nextAction": "Use the two waveform/RMS PNGs for manual visual inspection; after that, add human-audition or semantic-quality checks only if explicitly performed.",
+  "boundary": [
+    "offline_evidence_gate_only",
+    "consumes_cloud_score_summary_and_visual_evidence_indexes",
+    "does_not_call_live_java_service",
+    "does_not_import_live_grafana_dashboard",
+    "does_not_claim_production_slo"
+  ]
+}
+WROTE_REPORT=/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_evidence_gate.json
+WROTE_METRICS=/home/GRT/work/ai-job-platform-cloud/observability/prometheus/week15_temporal_alignment_evidence_gate_metrics.prom
