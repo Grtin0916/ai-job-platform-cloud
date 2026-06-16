@@ -1,0 +1,14 @@
+{
+  "platformDecision": "SEMANTIC_REVIEW_READY_FOR_PLATFORM",
+  "claimBoundaryOk": true,
+  "candidateCount": 10,
+  "riskyCandidateCount": 4,
+  "riskCandidateIds": [
+    "procedural_v0_0002",
+    "procedural_v0_0003",
+    "procedural_v0_0004",
+    "procedural_v0_0007"
+  ],
+  "index": "loadtest/reports/week15_temporal_alignment_semantic_quality_platform_index.json",
+  "metrics": "observability/prometheus/week15_temporal_alignment_semantic_quality_metrics.prom"
+}

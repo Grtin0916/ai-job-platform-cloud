@@ -1,0 +1,80 @@
+{
+  "schemaVersion": "week15.semantic-quality-platform-index.v0",
+  "generatedAtUtc": "2026-06-16T02:36:53.445472+00:00",
+  "source": {
+    "mainbaseReviewJson": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/reviews/week15_temporal_alignment_semantic_quality_review_v0.json",
+    "mainbaseSchemaVersion": "week15.semantic-quality-review.v0",
+    "mainbaseGeneratedAtUtc": "2026-06-16T02:29:28.824984+00:00"
+  },
+  "platformDecision": "SEMANTIC_REVIEW_READY_FOR_PLATFORM",
+  "claimBoundaryOk": true,
+  "qualityGateLiteStatus": "SEMANTIC_REVIEW_READY",
+  "reviewBoundary": {
+    "humanReviewStatus": "HUMAN_REVIEW_PARTIAL",
+    "auditionStatus": "NOT_PERFORMED",
+    "semanticQualityReviewStatus": "NOT_PERFORMED",
+    "finalMixReadiness": "NOT_CLAIMED"
+  },
+  "summary": {
+    "candidateCount": 10,
+    "candidatesWithAnyAudio": 10,
+    "candidatesWithOriginalAudio": 10,
+    "candidatesWithRemediatedAudio": 2,
+    "riskyCandidateCount": 4,
+    "riskCandidateIds": [
+      "procedural_v0_0002",
+      "procedural_v0_0003",
+      "procedural_v0_0004",
+      "procedural_v0_0007"
+    ]
+  },
+  "riskDrilldown": [
+    {
+      "candidateId": "procedural_v0_0002",
+      "riskFlags": [
+        "HIGH_LOW_ENERGY_RATIO_REVIEW_EVENT_PRESENCE"
+      ],
+      "audioPaths": {
+        "original": "artifacts/audio_candidates/week12_procedural_baseline_v0/0002_slot_v0_0002_generation_fallback.wav"
+      }
+    },
+    {
+      "candidateId": "procedural_v0_0003",
+      "riskFlags": [
+        "LOW_PEAK_AMPLITUDE"
+      ],
+      "audioPaths": {
+        "original": "artifacts/audio_candidates/week12_procedural_baseline_v0/0003_slot_v0_0003_generation_fallback.wav"
+      }
+    },
+    {
+      "candidateId": "procedural_v0_0004",
+      "riskFlags": [
+        "HIGH_LOW_ENERGY_RATIO_REVIEW_EVENT_PRESENCE"
+      ],
+      "audioPaths": {
+        "original": "artifacts/audio_candidates/week12_procedural_baseline_v0/0004_slot_v0_0004_generation_fallback.wav",
+        "remediated": "artifacts/audio_candidates/week15_temporal_alignment_remediated/procedural_v0_0004_trimmed_preroll_20ms.wav"
+      }
+    },
+    {
+      "candidateId": "procedural_v0_0007",
+      "riskFlags": [
+        "LOW_PEAK_AMPLITUDE"
+      ],
+      "audioPaths": {
+        "original": "artifacts/audio_candidates/week12_procedural_baseline_v0/0007_slot_v0_0007_generation_fallback.wav"
+      }
+    }
+  ],
+  "allowedClaims": [
+    "Cloud consumed a local Mainbase semantic-quality review packet.",
+    "Platform can expose SEMANTIC_REVIEW_READY_FOR_PLATFORM when source is ready and claim boundaries are safe."
+  ],
+  "blockedClaims": [
+    "Do not claim human audition PASS.",
+    "Do not claim semantic audio quality PASS.",
+    "Do not claim final mix readiness.",
+    "Do not claim live Grafana import or production SLO."
+  ]
+}
