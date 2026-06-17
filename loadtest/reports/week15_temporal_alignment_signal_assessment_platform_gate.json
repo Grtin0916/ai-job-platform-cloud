@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "week15.cloud.temporal-alignment.signal-assessment-platform-gate.v1",
+  "generatedAtUtc": "2026-06-17T12:43:15.717331+00:00",
+  "decision": "PASS_SIGNAL_ASSESSMENT_PLATFORM_GATE",
+  "indexPath": "loadtest/reports/week15_temporal_alignment_signal_assessment_platform_index.json",
+  "metricsPath": "observability/prometheus/week15_temporal_alignment_signal_assessment_metrics.prom",
+  "checks": {
+    "platform_decision_pass": true,
+    "mainbase_gate_pass": true,
+    "all_mainbase_checks_true": true,
+    "0004_timing_signal_supported": true,
+    "semantic_not_promoted": true,
+    "human_review_not_promoted": true,
+    "visual_risk_carried": true,
+    "mainbase_head_recorded": true,
+    "mainbase_gate_sha_recorded": true
+  }
+}
