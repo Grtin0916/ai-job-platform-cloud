@@ -1,0 +1,40 @@
+{
+  "schemaVersion": "week15.cloud.temporal-alignment-review-state.registry-backed-platform-gate.v1",
+  "generatedAtUtc": "2026-06-17T10:04:20.176335+00:00",
+  "decision": "PASS_WEEK15_REGISTRY_BACKED_PLATFORM_GATE",
+  "indexPath": "loadtest/reports/week15_temporal_alignment_review_state_registry_backed_platform_index.json",
+  "metricsPath": "observability/prometheus/week15_temporal_alignment_review_state_registry_backed_metrics.prom",
+  "platformDecision": "PASS_JAVA_REGISTRY_BACKED_REVIEW_STATE_PLATFORM_CONSUMPTION",
+  "riskCandidateIds": [
+    "procedural_v0_0002",
+    "procedural_v0_0003",
+    "procedural_v0_0004",
+    "procedural_v0_0007"
+  ],
+  "randomPortCompatibilityStatus": "DEFERRED_TERMINAL_SESSION_CRASHED_TWICE",
+  "metricValues": {
+    "platform_pass": 1,
+    "claim_boundary_ok": 1,
+    "required_risk_candidate_present": 1,
+    "random_port_compatibility_checked": 0,
+    "risk_candidate_count": 4
+  },
+  "checks": {
+    "platform_decision_pass": true,
+    "claim_boundary_index_true": true,
+    "required_risk_index_true": true,
+    "required_candidate_id_present": true,
+    "random_port_deferred_carried": true,
+    "java_source_snapshot_recorded": true,
+    "java_report_sha256_recorded": true,
+    "metric_platform_pass_matches": true,
+    "metric_claim_boundary_matches": true,
+    "metric_required_risk_matches": true,
+    "metric_random_port_checked_matches_boundary": true,
+    "metric_risk_candidate_count_matches_index": true
+  },
+  "claimBoundary": {
+    "cloudClaim": "Cloud consumed Java lightweight registry contract only; RANDOM_PORT E2E compatibility is not claimed.",
+    "randomPortCompatibilityCheckedMetric": 0
+  }
+}
