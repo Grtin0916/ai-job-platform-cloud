@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "week15.cloud.temporal-alignment-review-state.registry-backed-platform-index.v1",
+  "generatedAtUtc": "2026-06-17T09:59:39.458548+00:00",
+  "platformDecision": "PASS_JAVA_REGISTRY_BACKED_REVIEW_STATE_PLATFORM_CONSUMPTION",
+  "claimBoundaryOk": true,
+  "javaContract": {
+    "path": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week15_java_temporal_alignment_review_state_registry_backed_contract_report.json",
+    "decision": "PASS_REGISTRY_BACKED_REVIEW_STATE_CONTRACT",
+    "sourceType": "ARTIFACT_REGISTRY_BACKED",
+    "artifactRegistryBacked": true,
+    "resourceSafeCheckMode": "LIGHTWEIGHT_REGISTRY_CONTRACT",
+    "registryBackedLoaderContractChecked": true,
+    "springBootRandomPortCompatibilityChecked": false,
+    "springBootRandomPortCompatibilityStatus": "DEFERRED_TERMINAL_SESSION_CRASHED_TWICE"
+  },
+  "riskCandidateIds": [
+    "procedural_v0_0002",
+    "procedural_v0_0003",
+    "procedural_v0_0004",
+    "procedural_v0_0007"
+  ],
+  "requiredRiskCandidatePresent": true,
+  "requiredRiskCandidateId": "procedural_v0_0004",
+  "randomPortCompatibilityBoundary": {
+    "status": "DEFERRED_TERMINAL_SESSION_CRASHED_TWICE",
+    "platformClaim": "Cloud consumed Java lightweight registry contract only; RANDOM_PORT E2E compatibility is not claimed."
+  },
+  "artifactLinks": {
+    "javaRegistryBackedContractReport": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week15_java_temporal_alignment_review_state_registry_backed_contract_report.json",
+    "cloudPlatformIndex": "loadtest/reports/week15_temporal_alignment_review_state_registry_backed_platform_index.json",
+    "cloudPrometheusReadyMetrics": "observability/prometheus/week15_temporal_alignment_review_state_registry_backed_metrics.prom"
+  }
+}
