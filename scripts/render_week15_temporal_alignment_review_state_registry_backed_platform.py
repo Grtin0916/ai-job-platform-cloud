@@ -1,8 +1,30 @@
 #!/usr/bin/env python3
 import argparse
 import json
+import hashlib
+import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
+
+
+def sha256_file(path):
+    h = hashlib.sha256()
+    with Path(path).open("rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+def git_head(repo_path):
+    return subprocess.check_output(
+        ["git", "-C", str(repo_path), "rev-parse", "--short", "HEAD"],
+        text=True,
+    ).strip()
+
+def git_origin_main(repo_path):
+    return subprocess.check_output(
+        ["git", "-C", str(repo_path), "rev-parse", "--short", "origin/main"],
+        text=True,
+    ).strip()
 
 def bool01(v):
     return 1 if v is True else 0
@@ -21,6 +43,13 @@ def main():
     java_report_path = Path(args.java_report)
     if not java_report_path.exists():
         raise SystemExit(f"missing java report: {java_report_path}")
+
+    java_repo_root = java_report_path.resolve().parents[2]
+    cloud_repo_root = Path.cwd().resolve()
+    java_report_sha256 = sha256_file(java_report_path)
+    java_repo_head_at_consumption = git_head(java_repo_root)
+    java_origin_main_at_consumption = git_origin_main(java_repo_root)
+    cloud_input_head = git_head(cloud_repo_root)
 
     report = json.loads(java_report_path.read_text(encoding="utf-8"))
 
@@ -53,6 +82,13 @@ def main():
         "generatedAtUtc": datetime.now(timezone.utc).isoformat(),
         "platformDecision": platform_decision,
         "claimBoundaryOk": boundary_ok,
+        "sourceSnapshot": {
+            "javaRepoRoot": str(java_repo_root),
+            "javaRepoHeadAtConsumption": java_repo_head_at_consumption,
+            "javaOriginMainAtConsumption": java_origin_main_at_consumption,
+            "javaReportSha256": java_report_sha256,
+            "cloudInputHead": cloud_input_head,
+        },
         "javaContract": {
             "path": str(java_report_path),
             "decision": decision,
