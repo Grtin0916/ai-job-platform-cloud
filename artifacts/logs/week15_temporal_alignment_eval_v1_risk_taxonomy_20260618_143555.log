@@ -1,0 +1,10 @@
+{
+  "decision": "PASS",
+  "candidateRiskTotal": 5,
+  "riskClassCounts": {
+    "mentioned_only": 3,
+    "remediation_or_drift": 2
+  },
+  "out": "loadtest/reports/week15_temporal_alignment_eval_v1_risk_taxonomy.json",
+  "prom": "observability/prometheus/week15_temporal_alignment_eval_v1_risk_taxonomy_metrics.prom"
+}

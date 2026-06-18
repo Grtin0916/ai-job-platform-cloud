@@ -1,0 +1,197 @@
+{
+  "schemaVersion": "week15.temporal_alignment.eval_v1_risk_taxonomy.v1",
+  "generatedAt": "2026-06-18T06:35:55.366545+00:00",
+  "scope": "offline repository evidence taxonomy; not human-review pass/fail",
+  "decision": "PASS",
+  "sourceGate": "loadtest/reports/week15_temporal_alignment_eval_v1_gate.json",
+  "gateDecision": "PASS_EVAL_V1_PLATFORM_GATE_WITH_BLOCKED_CLAIMS",
+  "candidateRiskTotal": 5,
+  "riskClassCounts": {
+    "mentioned_only": 3,
+    "remediation_or_drift": 2
+  },
+  "candidates": [
+    {
+      "candidateId": "procedural_v0_0002",
+      "primaryRiskClass": "mentioned_only",
+      "riskClasses": [
+        "mentioned_only"
+      ],
+      "evidenceCount": 1,
+      "evidence": [
+        {
+          "source": "reviewStateRegistryBacked",
+          "sourcePath": "loadtest/reports/week15_temporal_alignment_review_state_registry_backed_platform_gate.json",
+          "jsonPath": "$.riskCandidateIds[0]",
+          "classes": [
+            "mentioned_only"
+          ],
+          "snippet": "procedural_v0_0002"
+        }
+      ]
+    },
+    {
+      "candidateId": "procedural_v0_0003",
+      "primaryRiskClass": "mentioned_only",
+      "riskClasses": [
+        "mentioned_only"
+      ],
+      "evidenceCount": 1,
+      "evidence": [
+        {
+          "source": "reviewStateRegistryBacked",
+          "sourcePath": "loadtest/reports/week15_temporal_alignment_review_state_registry_backed_platform_gate.json",
+          "jsonPath": "$.riskCandidateIds[1]",
+          "classes": [
+            "mentioned_only"
+          ],
+          "snippet": "procedural_v0_0003"
+        }
+      ]
+    },
+    {
+      "candidateId": "procedural_v0_0004",
+      "primaryRiskClass": "remediation_or_drift",
+      "riskClasses": [
+        "mentioned_only",
+        "remediation_or_drift",
+        "review_required_or_blocked",
+        "signal_proxy"
+      ],
+      "evidenceCount": 6,
+      "evidence": [
+        {
+          "source": "scoreSummary",
+          "sourcePath": "loadtest/reports/week15_temporal_alignment_score_summary_platform_index.json",
+          "jsonPath": "$.remediationDelta.remediatedCandidateIds[0]",
+          "classes": [
+            "remediation_or_drift"
+          ],
+          "snippet": "procedural_v0_0004"
+        },
+        {
+          "source": "scoreSummary",
+          "sourcePath": "loadtest/reports/week15_temporal_alignment_score_summary_platform_index.json",
+          "jsonPath": "$.candidateDrifts[0].candidateId",
+          "classes": [
+            "remediation_or_drift"
+          ],
+          "snippet": "procedural_v0_0004"
+        },
+        {
+          "source": "scoreSummary",
+          "sourcePath": "loadtest/reports/week15_temporal_alignment_score_summary_platform_index.json",
+          "jsonPath": "$.artifactLinks.remediatedAudio0004",
+          "classes": [
+            "remediation_or_drift"
+          ],
+          "snippet": "artifacts/audio_candidates/week15_temporal_alignment_remediated/procedural_v0_0004_trimmed_preroll_20ms.wav"
+        },
+        {
+          "source": "scoreSummary",
+          "sourcePath": "loadtest/reports/week15_temporal_alignment_score_summary_platform_index.json",
+          "jsonPath": "$.routingHints.humanReviewQueue[0]",
+          "classes": [
+            "review_required_or_blocked"
+          ],
+          "snippet": "procedural_v0_0004"
+        },
+        {
+          "source": "reviewStateRegistryBacked",
+          "sourcePath": "loadtest/reports/week15_temporal_alignment_review_state_registry_backed_platform_gate.json",
+          "jsonPath": "$.riskCandidateIds[2]",
+          "classes": [
+            "mentioned_only"
+          ],
+          "snippet": "procedural_v0_0004"
+        },
+        {
+          "source": "legacyThreeRepoClosure",
+          "sourcePath": "loadtest/reports/week15_temporal_alignment_three_repo_signal_review_chain_closure.json",
+          "jsonPath": "$.summary.claim",
+          "classes": [
+            "remediation_or_drift",
+            "review_required_or_blocked",
+            "signal_proxy"
+          ],
+          "snippet": "Signal-level partial support for procedural_v0_0004 timing remediation only. Semantic PASS and HUMAN_REVIEW_PASS are not claimed."
+        }
+      ]
+    },
+    {
+      "candidateId": "procedural_v0_0007",
+      "primaryRiskClass": "mentioned_only",
+      "riskClasses": [
+        "mentioned_only"
+      ],
+      "evidenceCount": 1,
+      "evidence": [
+        {
+          "source": "reviewStateRegistryBacked",
+          "sourcePath": "loadtest/reports/week15_temporal_alignment_review_state_registry_backed_platform_gate.json",
+          "jsonPath": "$.riskCandidateIds[3]",
+          "classes": [
+            "mentioned_only"
+          ],
+          "snippet": "procedural_v0_0007"
+        }
+      ]
+    },
+    {
+      "candidateId": "procedural_v0_0010",
+      "primaryRiskClass": "remediation_or_drift",
+      "riskClasses": [
+        "remediation_or_drift",
+        "review_required_or_blocked"
+      ],
+      "evidenceCount": 4,
+      "evidence": [
+        {
+          "source": "scoreSummary",
+          "sourcePath": "loadtest/reports/week15_temporal_alignment_score_summary_platform_index.json",
+          "jsonPath": "$.remediationDelta.remediatedCandidateIds[1]",
+          "classes": [
+            "remediation_or_drift"
+          ],
+          "snippet": "procedural_v0_0010"
+        },
+        {
+          "source": "scoreSummary",
+          "sourcePath": "loadtest/reports/week15_temporal_alignment_score_summary_platform_index.json",
+          "jsonPath": "$.candidateDrifts[1].candidateId",
+          "classes": [
+            "remediation_or_drift"
+          ],
+          "snippet": "procedural_v0_0010"
+        },
+        {
+          "source": "scoreSummary",
+          "sourcePath": "loadtest/reports/week15_temporal_alignment_score_summary_platform_index.json",
+          "jsonPath": "$.artifactLinks.remediatedAudio0010",
+          "classes": [
+            "remediation_or_drift"
+          ],
+          "snippet": "artifacts/audio_candidates/week15_temporal_alignment_remediated/procedural_v0_0010_trimmed_preroll_20ms.wav"
+        },
+        {
+          "source": "scoreSummary",
+          "sourcePath": "loadtest/reports/week15_temporal_alignment_score_summary_platform_index.json",
+          "jsonPath": "$.routingHints.humanReviewQueue[1]",
+          "classes": [
+            "review_required_or_blocked"
+          ],
+          "snippet": "procedural_v0_0010"
+        }
+      ]
+    }
+  ],
+  "blockedClaimsPreserved": [
+    "HUMAN_REVIEW_PASS is not established.",
+    "SEMANTIC_AUDIO_QUALITY_PASS is not established.",
+    "FINAL_MIX_READINESS is not established.",
+    "LIVE_GRAFANA_IMPORT is not established.",
+    "PRODUCTION_SLO is not established.",
+    "REAL_CLOUD_DEPLOYMENT is not established."
+  ],
+  "nextAction": "Use taxonomy classes as dashboard dimensions or refine source reports to emit explicit risk fields."
+}

@@ -1,0 +1,7 @@
+# HELP week15_temporal_alignment_eval_v1_risk_candidate_by_class Candidate risk count by taxonomy class.
+# TYPE week15_temporal_alignment_eval_v1_risk_candidate_by_class gauge
+week15_temporal_alignment_eval_v1_risk_candidate_by_class{risk_class="mentioned_only"} 3
+week15_temporal_alignment_eval_v1_risk_candidate_by_class{risk_class="remediation_or_drift"} 2
+# HELP week15_temporal_alignment_eval_v1_risk_taxonomy_pass Risk taxonomy generation pass flag.
+# TYPE week15_temporal_alignment_eval_v1_risk_taxonomy_pass gauge
+week15_temporal_alignment_eval_v1_risk_taxonomy_pass 1
