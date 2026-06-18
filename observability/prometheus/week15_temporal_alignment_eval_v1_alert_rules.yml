@@ -1,0 +1,32 @@
+groups:
+  - name: week15_temporal_alignment_eval_v1_actionability
+    rules:
+      - alert: Week15TemporalAlignmentEvalV1ActionabilityGateNotReady
+        expr: week15_temporal_alignment_eval_v1_actionability_gate_pass != 1
+        for: 0m
+        labels:
+          severity: warning
+          scope: local_evidence
+        annotations:
+          summary: "Week15 Eval V1 actionability gate is not ready"
+          description: "The local evidence actionability gate failed or contains unknown risk classes."
+
+      - alert: Week15TemporalAlignmentEvalV1ActionableRiskPresent
+        expr: week15_temporal_alignment_eval_v1_risk_candidate_by_actionability{actionability="actionable"} > 0
+        for: 0m
+        labels:
+          severity: warning
+          scope: local_evidence
+        annotations:
+          summary: "Week15 Eval V1 actionable temporal-alignment risk exists"
+          description: "Only actionable remediation/drift candidates should trigger this alert; mentioned_only candidates must not alert."
+
+      - alert: Week15TemporalAlignmentEvalV1UnknownRiskClassPresent
+        expr: week15_temporal_alignment_eval_v1_risk_candidate_by_actionability{actionability="unknown"} > 0
+        for: 0m
+        labels:
+          severity: warning
+          scope: local_evidence
+        annotations:
+          summary: "Week15 Eval V1 unknown risk class exists"
+          description: "Unknown risk classes indicate the taxonomy schema needs refinement before dashboard or alert consumption."

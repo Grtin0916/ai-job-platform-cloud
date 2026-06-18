@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "week15.temporal_alignment.eval_v1_alert_simulation.v1",
+  "generatedAt": "2026-06-18T07:57:56.139810+00:00",
+  "scope": "offline Prometheus-rule simulation from repository evidence; no live Alertmanager or production SLO claim",
+  "decision": "PASS",
+  "sourceActionabilityGate": "loadtest/reports/week15_temporal_alignment_eval_v1_actionability_gate.json",
+  "alertRulesPath": "observability/prometheus/week15_temporal_alignment_eval_v1_alert_rules.yml",
+  "checks": [
+    {
+      "name": "actionability_gate_pass",
+      "status": "PASS",
+      "detail": {
+        "decision": "PASS_ACTIONABILITY_GATE_WITH_PROXY_RISK_EXCLUDED",
+        "failures": []
+      }
+    },
+    {
+      "name": "actionable_alert_selective",
+      "status": "PASS",
+      "detail": {
+        "expectedActionableCount": 2,
+        "actualActionableCount": 2,
+        "actionableRiskCandidateIds": [
+          "procedural_v0_0004",
+          "procedural_v0_0010"
+        ]
+      }
+    },
+    {
+      "name": "mentioned_only_suppressed",
+      "status": "PASS",
+      "detail": {
+        "nonActionableMentionedOnlyCandidateIds": [
+          "procedural_v0_0002",
+          "procedural_v0_0003",
+          "procedural_v0_0007"
+        ],
+        "mentionedOnlyCount": 3
+      }
+    },
+    {
+      "name": "unknown_risk_absent",
+      "status": "PASS",
+      "detail": {
+        "unknownRiskCandidateIds": [],
+        "unknownRiskCount": 0
+      }
+    }
+  ],
+  "failureCount": 0,
+  "simulatedAlerts": [
+    {
+      "alert": "Week15TemporalAlignmentEvalV1ActionableRiskPresent",
+      "wouldFire": true,
+      "severity": "warning",
+      "reason": {
+        "actionableRiskCandidateIds": [
+          "procedural_v0_0004",
+          "procedural_v0_0010"
+        ],
+        "actionableRiskCount": 2
+      }
+    }
+  ],
+  "suppressedNonActionableMentionedOnlyCandidateIds": [
+    "procedural_v0_0002",
+    "procedural_v0_0003",
+    "procedural_v0_0007"
+  ],
+  "nextAction": "Use the generated rule file as dashboard/alert-ready evidence; keep mentioned_only candidates out of alerting."
+}

@@ -1,0 +1,25 @@
+{
+  "decision": "PASS",
+  "failureCount": 0,
+  "simulatedAlerts": [
+    {
+      "alert": "Week15TemporalAlignmentEvalV1ActionableRiskPresent",
+      "wouldFire": true,
+      "severity": "warning",
+      "reason": {
+        "actionableRiskCandidateIds": [
+          "procedural_v0_0004",
+          "procedural_v0_0010"
+        ],
+        "actionableRiskCount": 2
+      }
+    }
+  ],
+  "suppressedNonActionableMentionedOnlyCandidateIds": [
+    "procedural_v0_0002",
+    "procedural_v0_0003",
+    "procedural_v0_0007"
+  ],
+  "alertRulesPath": "observability/prometheus/week15_temporal_alignment_eval_v1_alert_rules.yml",
+  "out": "loadtest/reports/week15_temporal_alignment_eval_v1_alert_simulation.json"
+}
