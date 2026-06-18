@@ -1,0 +1,13 @@
+{
+  "gateDecision": "PASS_EVAL_V1_PLATFORM_GATE_WITH_BLOCKED_CLAIMS",
+  "blockers": [],
+  "riskCandidateIds": [
+    "procedural_v0_0002",
+    "procedural_v0_0003",
+    "procedural_v0_0004",
+    "procedural_v0_0007",
+    "procedural_v0_0010"
+  ],
+  "outGate": "loadtest/reports/week15_temporal_alignment_eval_v1_gate.json",
+  "outProm": "observability/prometheus/week15_temporal_alignment_eval_v1_metrics.prom"
+}

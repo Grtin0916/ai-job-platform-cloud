@@ -1,0 +1,105 @@
+{
+  "schemaVersion": "week15.temporal_alignment.eval_v1_gate.v1",
+  "generatedAt": "2026-06-18T06:28:55.194680+00:00",
+  "scope": "local Docker Desktop / repository evidence only",
+  "gateDecision": "PASS_EVAL_V1_PLATFORM_GATE_WITH_BLOCKED_CLAIMS",
+  "blockers": [],
+  "allowedClaims": [
+    "Temporal Alignment Eval V1 can be consumed as a local repository evidence gate.",
+    "Cloud metrics-ready evidence can represent alignment gate state.",
+    "Java registry-backed review state is consumable by Cloud evidence aggregation.",
+    "Mainbase signal assessment can be used as quantitative timing/signal risk evidence."
+  ],
+  "blockedClaims": [
+    "HUMAN_REVIEW_PASS is not established.",
+    "SEMANTIC_AUDIO_QUALITY_PASS is not established.",
+    "FINAL_MIX_READINESS is not established.",
+    "LIVE_GRAFANA_IMPORT is not established.",
+    "PRODUCTION_SLO is not established.",
+    "REAL_CLOUD_DEPLOYMENT is not established."
+  ],
+  "riskCandidateIds": [
+    "procedural_v0_0002",
+    "procedural_v0_0003",
+    "procedural_v0_0004",
+    "procedural_v0_0007",
+    "procedural_v0_0010"
+  ],
+  "riskCandidateCount": 5,
+  "sourceReports": {
+    "scoreSummary": {
+      "path": "loadtest/reports/week15_temporal_alignment_score_summary_platform_index.json",
+      "exists": true,
+      "parseOk": true,
+      "error": null,
+      "topLevelKeys": [
+        "artifactLinks",
+        "boundary",
+        "candidateDrifts",
+        "cloudEvidence",
+        "generatedAt",
+        "inputs",
+        "metrics",
+        "platformDecision",
+        "remediationDelta",
+        "routingHints",
+        "schemaVersion",
+        "scoreSummary",
+        "sourceHeads",
+        "status"
+      ]
+    },
+    "reviewStateRegistryBacked": {
+      "path": "loadtest/reports/week15_temporal_alignment_review_state_registry_backed_platform_gate.json",
+      "exists": true,
+      "parseOk": true,
+      "error": null,
+      "topLevelKeys": [
+        "checks",
+        "claimBoundary",
+        "decision",
+        "generatedAtUtc",
+        "indexPath",
+        "metricValues",
+        "metricsPath",
+        "platformDecision",
+        "randomPortCompatibilityStatus",
+        "riskCandidateIds",
+        "schemaVersion"
+      ]
+    },
+    "signalAssessment": {
+      "path": "loadtest/reports/week15_temporal_alignment_signal_assessment_platform_gate.json",
+      "exists": true,
+      "parseOk": true,
+      "error": null,
+      "topLevelKeys": [
+        "checks",
+        "decision",
+        "generatedAtUtc",
+        "indexPath",
+        "metricsPath",
+        "schemaVersion"
+      ]
+    },
+    "legacyThreeRepoClosure": {
+      "path": "loadtest/reports/week15_temporal_alignment_three_repo_signal_review_chain_closure.json",
+      "exists": true,
+      "parseOk": true,
+      "error": null,
+      "topLevelKeys": [
+        "0004SignalDelta",
+        "artifactHashes",
+        "checks",
+        "decision",
+        "generatedAtUtc",
+        "inputs",
+        "platformBoundary",
+        "schemaVersion",
+        "snapshots",
+        "summary"
+      ]
+    }
+  },
+  "nextAction": "Commit Eval V1 gate artifacts and run optional offline threshold smoke."
+}

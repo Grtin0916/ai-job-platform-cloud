@@ -1,0 +1,84 @@
+{
+  "schemaVersion": "week15.three-repo.temporal-alignment.signal-review-chain-closure.v1",
+  "generatedAtUtc": "2026-06-17T12:48:09.110033+00:00",
+  "decision": "FAIL_WEEK15_THREE_REPO_SIGNAL_REVIEW_CHAIN_CLOSURE",
+  "summary": {
+    "chain": "Java registry-backed review-state -> Cloud registry platform gate -> Mainbase signal gate -> Cloud signal platform gate -> three-repo closure",
+    "claim": "Signal-level partial support for procedural_v0_0004 timing remediation only. Semantic PASS and HUMAN_REVIEW_PASS are not claimed.",
+    "nextAllowedAction": "Record human audition decision only after explicit user-provided semantic/timing/usable judgements."
+  },
+  "snapshots": {
+    "mainbase": {
+      "repo": "/home/GRT/work/audio_engineering_repo_skeleton_v1",
+      "head": "98af90c",
+      "originMain": "98af90c",
+      "aheadBehind": "0\t0",
+      "porcelainCount": 0
+    },
+    "java": {
+      "repo": "/home/GRT/work/media-task-platform-java",
+      "head": "c62f304",
+      "originMain": "c62f304",
+      "aheadBehind": "0\t0",
+      "porcelainCount": 0
+    },
+    "cloud": {
+      "repo": "/home/GRT/work/ai-job-platform-cloud",
+      "head": "40ecc4e",
+      "originMain": "40ecc4e",
+      "aheadBehind": "0\t0",
+      "porcelainCount": 2
+    }
+  },
+  "artifactHashes": {
+    "javaRegistryContractSha256": "616a28f6a21de55ff366b4a70677c82a442b3e1a96a92c4ee007ebf8d15b1e57",
+    "mainbaseSignalGateSha256": "f413bcef7bf6384f7979502fc72c31d8a084a0e67512ec92ffb8c2b98f9cfc93",
+    "cloudRegistryGateSha256": "7fa4917a24ffe6f6eadc1018aa7c2f4ec21b4f4dd6bce80f2384c9f84449a14a",
+    "cloudSignalPlatformGateSha256": "5190f74ee12d0c01dea4f7d140065532261420f43f7f95d5a219108856a5665d"
+  },
+  "inputs": {
+    "javaRegistryContract": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week15_java_temporal_alignment_review_state_registry_backed_contract_report.json",
+    "mainbaseSignalGate": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/reviews/week15_temporal_alignment_registry_backed_signal_assessment_gate.json",
+    "cloudRegistryPlatformGate": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_review_state_registry_backed_platform_gate.json",
+    "cloudSignalPlatformIndex": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_signal_assessment_platform_index.json",
+    "cloudSignalPlatformGate": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_signal_assessment_platform_gate.json"
+  },
+  "checks": {
+    "mainbase_clean": true,
+    "java_clean": true,
+    "cloud_clean_before_outputs": false,
+    "mainbase_head_synced": true,
+    "java_head_synced": true,
+    "cloud_head_synced": true,
+    "java_registry_contract_pass": true,
+    "java_source_registry_backed": true,
+    "java_required_risk_present": true,
+    "java_claim_boundary_preserved": true,
+    "java_random_port_not_claimed": true,
+    "mainbase_signal_gate_pass": true,
+    "mainbase_visual_risk_preserved": true,
+    "mainbase_0004_burst_shift_supported": true,
+    "mainbase_no_human_review_pass": true,
+    "cloud_registry_platform_gate_pass": true,
+    "cloud_signal_platform_gate_pass": true,
+    "cloud_signal_platform_partial_pass": true,
+    "cloud_0004_timing_supported": true,
+    "cloud_semantic_not_promoted": true,
+    "cloud_human_review_not_promoted": true,
+    "cloud_visual_risk_carried": true
+  },
+  "0004SignalDelta": {
+    "baselineFirstBurstSec": 2.06,
+    "remediatedFirstBurstSec": 0.02,
+    "baselineBurstCount": 2,
+    "remediatedBurstCount": 2,
+    "baselinePeakAbs": 0.168335,
+    "remediatedPeakAbs": 0.168335
+  },
+  "platformBoundary": {
+    "semanticPassClaimed": false,
+    "humanReviewPassClaimed": false,
+    "randomPortCompatibilityClaimed": false,
+    "visualRiskCarried": "POSSIBLE_ONSET_PROXY_ANNOTATION_BUG_OR_OVER_SENSITIVE_THRESHOLD"
+  }
+}

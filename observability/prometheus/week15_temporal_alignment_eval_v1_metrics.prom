@@ -1,0 +1,9 @@
+# HELP week15_temporal_alignment_eval_v1_gate_pass Eval V1 platform gate pass flag.
+# TYPE week15_temporal_alignment_eval_v1_gate_pass gauge
+week15_temporal_alignment_eval_v1_gate_pass{decision="PASS_EVAL_V1_PLATFORM_GATE_WITH_BLOCKED_CLAIMS",scope="local_evidence"} 1
+# HELP week15_temporal_alignment_eval_v1_blocked_claim_total Blocked claim count.
+# TYPE week15_temporal_alignment_eval_v1_blocked_claim_total gauge
+week15_temporal_alignment_eval_v1_blocked_claim_total 6
+# HELP week15_temporal_alignment_eval_v1_risk_candidate_total Risk candidate count.
+# TYPE week15_temporal_alignment_eval_v1_risk_candidate_total gauge
+week15_temporal_alignment_eval_v1_risk_candidate_total 5
