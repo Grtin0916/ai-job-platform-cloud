@@ -97,7 +97,7 @@ gate = {
     "riskCandidateCount": len(risk_ids),
     "sourceReports": sources,
     "nextAction": (
-        "Commit Eval V1 gate artifacts and run optional offline threshold smoke."
+        "Run Eval V1 offline threshold smoke, then proceed to minimal Cloud runbook or weekly evidence."
         if not blockers
         else "Inspect missing or unparseable required source reports."
     )

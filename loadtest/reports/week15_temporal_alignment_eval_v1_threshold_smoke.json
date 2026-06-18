@@ -1,0 +1,82 @@
+{
+  "schemaVersion": "week15.temporal_alignment.eval_v1_threshold_smoke.v1",
+  "generatedAt": "2026-06-18T06:33:51.080470+00:00",
+  "scope": "offline repository evidence threshold smoke; no live Grafana or production SLO claim",
+  "decision": "PASS",
+  "checks": [
+    {
+      "name": "gate_exists",
+      "status": "PASS",
+      "detail": "loadtest/reports/week15_temporal_alignment_eval_v1_gate.json"
+    },
+    {
+      "name": "prom_exists",
+      "status": "PASS",
+      "detail": "observability/prometheus/week15_temporal_alignment_eval_v1_metrics.prom"
+    },
+    {
+      "name": "gate_decision",
+      "status": "PASS",
+      "detail": "PASS_EVAL_V1_PLATFORM_GATE_WITH_BLOCKED_CLAIMS"
+    },
+    {
+      "name": "blockers_empty",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "blocked_claims_complete",
+      "status": "PASS",
+      "detail": [
+        "FINAL_MIX_READINESS is not established.",
+        "HUMAN_REVIEW_PASS is not established.",
+        "LIVE_GRAFANA_IMPORT is not established.",
+        "PRODUCTION_SLO is not established.",
+        "REAL_CLOUD_DEPLOYMENT is not established.",
+        "SEMANTIC_AUDIO_QUALITY_PASS is not established."
+      ]
+    },
+    {
+      "name": "risk_candidate_count_consistent",
+      "status": "PASS",
+      "detail": {
+        "riskCandidateCount": 5,
+        "riskCandidateIds": [
+          "procedural_v0_0002",
+          "procedural_v0_0003",
+          "procedural_v0_0004",
+          "procedural_v0_0007",
+          "procedural_v0_0010"
+        ]
+      }
+    },
+    {
+      "name": "prometheus_text_tokens",
+      "status": "PASS",
+      "detail": [
+        "# HELP week15_temporal_alignment_eval_v1_gate_pass",
+        "# TYPE week15_temporal_alignment_eval_v1_gate_pass gauge",
+        "week15_temporal_alignment_eval_v1_gate_pass",
+        "week15_temporal_alignment_eval_v1_blocked_claim_total 6",
+        "week15_temporal_alignment_eval_v1_risk_candidate_total 5"
+      ]
+    },
+    {
+      "name": "prom_gate_pass_value",
+      "status": "PASS",
+      "detail": "1"
+    }
+  ],
+  "warnings": [
+    {
+      "name": "risk_candidate_precision",
+      "status": "WARN",
+      "detail": "riskCandidateIds contains more than the known 0004/0010 remediation pair; treat it as proxy risk evidence, not final human-review failures."
+    }
+  ],
+  "failureCount": 0,
+  "warningCount": 1,
+  "sourceGate": "loadtest/reports/week15_temporal_alignment_eval_v1_gate.json",
+  "sourceProm": "observability/prometheus/week15_temporal_alignment_eval_v1_metrics.prom",
+  "nextAction": "Proceed to minimal Cloud runbook/weekly note or dashboard-ready index."
+}

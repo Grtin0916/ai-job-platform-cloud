@@ -1,6 +1,6 @@
 {
   "schemaVersion": "week15.temporal_alignment.eval_v1_gate.v1",
-  "generatedAt": "2026-06-18T06:28:55.194680+00:00",
+  "generatedAt": "2026-06-18T06:33:42.921778+00:00",
   "scope": "local Docker Desktop / repository evidence only",
   "gateDecision": "PASS_EVAL_V1_PLATFORM_GATE_WITH_BLOCKED_CLAIMS",
   "blockers": [],
@@ -101,5 +101,5 @@
       ]
     }
   },
-  "nextAction": "Commit Eval V1 gate artifacts and run optional offline threshold smoke."
+  "nextAction": "Run Eval V1 offline threshold smoke, then proceed to minimal Cloud runbook or weekly evidence."
 }
