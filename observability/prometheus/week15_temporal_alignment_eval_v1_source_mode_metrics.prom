@@ -1,0 +1,4 @@
+# HELP week15_temporal_alignment_eval_v1_preferred_source_mode Preferred source mode for Eval V1 dashboard and alert evidence.
+# TYPE week15_temporal_alignment_eval_v1_preferred_source_mode gauge
+week15_temporal_alignment_eval_v1_preferred_source_mode{source_mode="java_explicit_risk_contract"} 1
+week15_temporal_alignment_eval_v1_preferred_source_mode{source_mode="cloud_inferred_taxonomy"} 0

@@ -1,0 +1,12 @@
+{
+  "decision": "PASS",
+  "failures": [],
+  "preferredSourceMode": "java_explicit_risk_contract",
+  "dashboardPath": "observability/grafana/dashboards/week15_temporal_alignment_eval_v1_java_contract_dashboard.json",
+  "sourceModeMetricsPath": "observability/prometheus/week15_temporal_alignment_eval_v1_source_mode_metrics.prom",
+  "actionableRiskCandidateIds": [
+    "procedural_v0_0004",
+    "procedural_v0_0010"
+  ],
+  "nextAction": "Commit Java-contract-first dashboard-ready artifact, then run a final three-repo Week15 closure index."
+}

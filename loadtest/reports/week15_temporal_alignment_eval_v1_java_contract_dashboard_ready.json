@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "week15.temporal_alignment.eval_v1.java_contract_dashboard_ready.v1",
+  "generatedAt": "2026-06-18T08:12:41.293740+00:00",
+  "scope": "dashboard-ready repository evidence; no live Grafana import, no live Java service, no production SLO claim",
+  "decision": "PASS",
+  "failures": [],
+  "preferredSourceMode": "java_explicit_risk_contract",
+  "legacySourceMode": "cloud_inferred_taxonomy",
+  "dashboardPath": "observability/grafana/dashboards/week15_temporal_alignment_eval_v1_java_contract_dashboard.json",
+  "sourceModeMetricsPath": "observability/prometheus/week15_temporal_alignment_eval_v1_source_mode_metrics.prom",
+  "sourceReports": {
+    "javaExplicitRiskContractPlatformGate": "loadtest/reports/week15_temporal_alignment_java_explicit_risk_contract_platform_gate.json",
+    "previousDashboardReadyProvenance": "loadtest/reports/week15_temporal_alignment_eval_v1_dashboard_ready.json"
+  },
+  "summary": {
+    "javaGateDecision": "PASS_JAVA_EXPLICIT_RISK_CONTRACT_PLATFORM_GATE",
+    "javaApiEndpoint": "/api/week15/temporal-alignment/explicit-risk-contract",
+    "candidateTotal": 10,
+    "actionableRiskCandidateIds": [
+      "procedural_v0_0004",
+      "procedural_v0_0010"
+    ],
+    "alertEligibleCandidateIds": [
+      "procedural_v0_0004",
+      "procedural_v0_0010"
+    ],
+    "javaNonActionableCandidateIds": [
+      "procedural_v0_0001",
+      "procedural_v0_0002",
+      "procedural_v0_0003",
+      "procedural_v0_0005",
+      "procedural_v0_0006",
+      "procedural_v0_0007",
+      "procedural_v0_0008",
+      "procedural_v0_0009"
+    ],
+    "cloudSuppressedMentionedOnlyCandidateIds": [
+      "procedural_v0_0002",
+      "procedural_v0_0003",
+      "procedural_v0_0007"
+    ],
+    "blockedClaims": [
+      "This contract does not establish HUMAN_REVIEW_PASS.",
+      "This contract does not establish SEMANTIC_AUDIO_QUALITY_PASS.",
+      "This contract does not establish FINAL_MIX_READINESS."
+    ],
+    "previousDashboardDecision": "PASS"
+  },
+  "dashboardPanels": [
+    "Java Explicit Contract Gate",
+    "Actionable Risk Candidates",
+    "Non-actionable Candidates",
+    "Preferred Source Mode",
+    "Actionable Candidate IDs",
+    "Scope Boundaries"
+  ],
+  "allowedClaims": [
+    "Java explicit risk contract is the preferred Cloud source mode for Week15 Eval V1 dashboard evidence.",
+    "Dashboard-ready JSON uses Java explicit risk contract metrics as primary panels.",
+    "Legacy Cloud inferred taxonomy is retained only as provenance."
+  ],
+  "blockedClaims": [
+    "No live Java service availability claim.",
+    "No live Grafana import claim.",
+    "No production SLO claim.",
+    "No human-review pass claim.",
+    "No semantic audio quality pass claim.",
+    "No final mix readiness claim."
+  ],
+  "nextAction": "Commit Java-contract-first dashboard-ready artifact, then run a final three-repo Week15 closure index."
+}

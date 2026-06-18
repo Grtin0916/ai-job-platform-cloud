@@ -1,0 +1,129 @@
+{
+  "title": "Week15 Temporal Alignment Eval V1 - Java Explicit Contract",
+  "uid": "week15-temporal-alignment-eval-v1-java-contract",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": false,
+  "tags": [
+    "week15",
+    "temporal-alignment",
+    "eval-v1",
+    "java-explicit-contract",
+    "local-evidence"
+  ],
+  "timezone": "browser",
+  "annotations": {
+    "list": []
+  },
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-24h",
+    "to": "now"
+  },
+  "panels": [
+    {
+      "id": 1,
+      "type": "stat",
+      "title": "Java Explicit Contract Gate",
+      "description": "Preferred Cloud source mode. Offline repository evidence only.",
+      "targets": [
+        {
+          "expr": "week15_temporal_alignment_java_explicit_risk_contract_platform_gate_pass",
+          "legendFormat": "java contract gate"
+        }
+      ],
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": 2,
+      "type": "stat",
+      "title": "Actionable Risk Candidates",
+      "description": "Actionable candidates from Java explicit contract.",
+      "targets": [
+        {
+          "expr": "week15_temporal_alignment_java_explicit_risk_contract_actionable_total",
+          "legendFormat": "actionable"
+        }
+      ],
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 6,
+        "y": 0
+      }
+    },
+    {
+      "id": 3,
+      "type": "stat",
+      "title": "Non-actionable Candidates",
+      "description": "Non-actionable candidates from Java explicit contract.",
+      "targets": [
+        {
+          "expr": "week15_temporal_alignment_java_explicit_risk_contract_non_actionable_total",
+          "legendFormat": "non-actionable"
+        }
+      ],
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 12,
+        "y": 0
+      }
+    },
+    {
+      "id": 4,
+      "type": "stat",
+      "title": "Preferred Source Mode",
+      "description": "1 means Java explicit contract is the selected source of truth.",
+      "targets": [
+        {
+          "expr": "week15_temporal_alignment_eval_v1_preferred_source_mode{source_mode=\"java_explicit_risk_contract\"}",
+          "legendFormat": "java_explicit_risk_contract"
+        }
+      ],
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 18,
+        "y": 0
+      }
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "title": "Actionable Candidate IDs",
+      "options": {
+        "mode": "markdown",
+        "content": "- actionable: procedural_v0_0004, procedural_v0_0010\n- source: Java explicit risk contract API snapshot\n- alertEligible equals actionable"
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 8
+      }
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "title": "Scope Boundaries",
+      "options": {
+        "mode": "markdown",
+        "content": "Dashboard-ready only. No live Java service availability claim, no live Grafana import, no production SLO, no human-review pass, no semantic audio quality pass, no final mix readiness."
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      }
+    }
+  ]
+}
