@@ -1,0 +1,16 @@
+{
+  "decision": "PASS_ACTIONABILITY_GATE_WITH_PROXY_RISK_EXCLUDED",
+  "failures": [],
+  "actionableRiskCandidateIds": [
+    "procedural_v0_0004",
+    "procedural_v0_0010"
+  ],
+  "nonActionableMentionedOnlyCandidateIds": [
+    "procedural_v0_0002",
+    "procedural_v0_0003",
+    "procedural_v0_0007"
+  ],
+  "unknownRiskCandidateIds": [],
+  "out": "loadtest/reports/week15_temporal_alignment_eval_v1_actionability_gate.json",
+  "prom": "observability/prometheus/week15_temporal_alignment_eval_v1_actionability_metrics.prom"
+}

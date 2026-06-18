@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "week15.temporal_alignment.eval_v1_actionability_gate.v1",
+  "generatedAt": "2026-06-18T07:55:59.892675+00:00",
+  "scope": "offline repository evidence actionability gate; no human-review or production alert claim",
+  "decision": "PASS_ACTIONABILITY_GATE_WITH_PROXY_RISK_EXCLUDED",
+  "failures": [],
+  "sourceTaxonomy": "loadtest/reports/week15_temporal_alignment_eval_v1_risk_taxonomy.json",
+  "actionableRiskCandidateIds": [
+    "procedural_v0_0004",
+    "procedural_v0_0010"
+  ],
+  "nonActionableMentionedOnlyCandidateIds": [
+    "procedural_v0_0002",
+    "procedural_v0_0003",
+    "procedural_v0_0007"
+  ],
+  "unknownRiskCandidateIds": [],
+  "actionableRiskCount": 2,
+  "nonActionableMentionedOnlyCount": 3,
+  "unknownRiskCount": 0,
+  "policy": {
+    "remediation_or_drift": "actionable",
+    "mentioned_only": "non_actionable_context",
+    "other": "unknown_requires_schema_refinement"
+  },
+  "nextAction": "Use actionability metrics as dashboard dimensions; do not alert on mentioned_only candidates."
+}
