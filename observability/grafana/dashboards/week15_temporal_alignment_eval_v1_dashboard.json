@@ -1,0 +1,150 @@
+{
+  "title": "Week15 Temporal Alignment Eval V1",
+  "uid": "week15-temporal-alignment-eval-v1",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": false,
+  "tags": [
+    "week15",
+    "temporal-alignment",
+    "eval-v1",
+    "local-evidence"
+  ],
+  "timezone": "browser",
+  "annotations": {
+    "list": []
+  },
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-24h",
+    "to": "now"
+  },
+  "panels": [
+    {
+      "id": 1,
+      "type": "stat",
+      "title": "Eval V1 Gate Pass",
+      "description": "Local repository evidence only; not production SLO.",
+      "targets": [
+        {
+          "expr": "week15_temporal_alignment_eval_v1_gate_pass",
+          "legendFormat": "gate"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "green",
+                "value": 1
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": 2,
+      "type": "bargauge",
+      "title": "Risk Candidates by Actionability",
+      "description": "Alert only on actionable remediation/drift candidates; mentioned_only is context.",
+      "targets": [
+        {
+          "expr": "week15_temporal_alignment_eval_v1_risk_candidate_by_actionability",
+          "legendFormat": "{{actionability}}"
+        }
+      ],
+      "gridPos": {
+        "h": 8,
+        "w": 9,
+        "x": 6,
+        "y": 0
+      }
+    },
+    {
+      "id": 3,
+      "type": "stat",
+      "title": "Blocked Claims",
+      "description": "Claims intentionally blocked to avoid overstatement.",
+      "targets": [
+        {
+          "expr": "week15_temporal_alignment_eval_v1_blocked_claim_total",
+          "legendFormat": "blocked claims"
+        }
+      ],
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 15,
+        "y": 0
+      }
+    },
+    {
+      "id": 4,
+      "type": "stat",
+      "title": "Actionability Gate Pass",
+      "description": "Proxy risk is excluded from alerting.",
+      "targets": [
+        {
+          "expr": "week15_temporal_alignment_eval_v1_actionability_gate_pass",
+          "legendFormat": "actionability"
+        }
+      ],
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
+        "y": 8
+      }
+    },
+    {
+      "id": 5,
+      "type": "timeseries",
+      "title": "Actionable Risk Alert",
+      "description": "Would fire when actionable risk count > 0.",
+      "targets": [
+        {
+          "expr": "week15_temporal_alignment_eval_v1_risk_candidate_by_actionability{actionability=\"actionable\"}",
+          "legendFormat": "actionable"
+        }
+      ],
+      "gridPos": {
+        "h": 8,
+        "w": 9,
+        "x": 6,
+        "y": 8
+      }
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "title": "Scope Boundaries",
+      "options": {
+        "mode": "markdown",
+        "content": "Dashboard-ready only. No live Grafana import, no production SLO, no human-review pass, no semantic audio quality pass, no final mix readiness, no real cloud deployment."
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 9,
+        "x": 15,
+        "y": 8
+      }
+    }
+  ]
+}

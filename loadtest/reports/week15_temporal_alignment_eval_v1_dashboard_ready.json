@@ -1,0 +1,69 @@
+{
+  "schemaVersion": "week15.temporal_alignment.eval_v1_dashboard_ready.v1",
+  "generatedAt": "2026-06-18T08:00:20.975338+00:00",
+  "scope": "dashboard-ready repository evidence; no live Grafana import or production SLO claim",
+  "decision": "PASS",
+  "failures": [],
+  "dashboardPath": "observability/grafana/dashboards/week15_temporal_alignment_eval_v1_dashboard.json",
+  "sourceReports": {
+    "gate": "loadtest/reports/week15_temporal_alignment_eval_v1_gate.json",
+    "threshold": "loadtest/reports/week15_temporal_alignment_eval_v1_threshold_smoke.json",
+    "taxonomy": "loadtest/reports/week15_temporal_alignment_eval_v1_risk_taxonomy.json",
+    "actionability": "loadtest/reports/week15_temporal_alignment_eval_v1_actionability_gate.json",
+    "alertSimulation": "loadtest/reports/week15_temporal_alignment_eval_v1_alert_simulation.json"
+  },
+  "summary": {
+    "gateDecision": "PASS_EVAL_V1_PLATFORM_GATE_WITH_BLOCKED_CLAIMS",
+    "thresholdDecision": "PASS",
+    "taxonomyDecision": "PASS",
+    "actionabilityDecision": "PASS_ACTIONABILITY_GATE_WITH_PROXY_RISK_EXCLUDED",
+    "alertSimulationDecision": "PASS",
+    "actionableRiskCandidateIds": [
+      "procedural_v0_0004",
+      "procedural_v0_0010"
+    ],
+    "nonActionableMentionedOnlyCandidateIds": [
+      "procedural_v0_0002",
+      "procedural_v0_0003",
+      "procedural_v0_0007"
+    ],
+    "unknownRiskCandidateIds": [],
+    "blockedClaimCount": 6,
+    "simulatedAlerts": [
+      {
+        "alert": "Week15TemporalAlignmentEvalV1ActionableRiskPresent",
+        "wouldFire": true,
+        "severity": "warning",
+        "reason": {
+          "actionableRiskCandidateIds": [
+            "procedural_v0_0004",
+            "procedural_v0_0010"
+          ],
+          "actionableRiskCount": 2
+        }
+      }
+    ]
+  },
+  "dashboardPanels": [
+    "Eval V1 Gate Pass",
+    "Risk Candidates by Actionability",
+    "Blocked Claims",
+    "Actionability Gate Pass",
+    "Actionable Risk Alert",
+    "Scope Boundaries"
+  ],
+  "allowedClaims": [
+    "Dashboard JSON is ready for local Grafana import or platform rendering.",
+    "Actionable risk count can be displayed separately from mentioned_only candidates.",
+    "Alert-ready semantics suppress non-actionable mentioned_only candidates."
+  ],
+  "blockedClaims": [
+    "HUMAN_REVIEW_PASS is not established.",
+    "SEMANTIC_AUDIO_QUALITY_PASS is not established.",
+    "FINAL_MIX_READINESS is not established.",
+    "LIVE_GRAFANA_IMPORT is not established.",
+    "PRODUCTION_SLO is not established.",
+    "REAL_CLOUD_DEPLOYMENT is not established."
+  ],
+  "nextAction": "Run JSON validation and commit dashboard-ready artifact."
+}
