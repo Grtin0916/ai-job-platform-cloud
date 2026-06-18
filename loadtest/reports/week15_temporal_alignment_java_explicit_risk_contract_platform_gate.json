@@ -1,0 +1,53 @@
+{
+  "schemaVersion": "week15.cloud.java_explicit_risk_contract_platform_gate.v1",
+  "generatedAt": "2026-06-18T08:10:39.950671+00:00",
+  "scope": "offline Cloud consumption of Java explicit risk contract; no live service or production SLO claim",
+  "decision": "PASS_JAVA_EXPLICIT_RISK_CONTRACT_PLATFORM_GATE",
+  "failures": [],
+  "sourceJavaReport": "artifacts/manifests/week15_java_explicit_risk_contract_consumer_report.json",
+  "sourceCloudActionabilityGate": "loadtest/reports/week15_temporal_alignment_eval_v1_actionability_gate.json",
+  "javaApiEndpoint": "/api/week15/temporal-alignment/explicit-risk-contract",
+  "sourceMode": "java_explicit_risk_contract",
+  "summary": {
+    "candidateTotal": 10,
+    "actionableRiskCandidateIds": [
+      "procedural_v0_0004",
+      "procedural_v0_0010"
+    ],
+    "alertEligibleCandidateIds": [
+      "procedural_v0_0004",
+      "procedural_v0_0010"
+    ],
+    "javaNonActionableCandidateIds": [
+      "procedural_v0_0001",
+      "procedural_v0_0002",
+      "procedural_v0_0003",
+      "procedural_v0_0005",
+      "procedural_v0_0006",
+      "procedural_v0_0007",
+      "procedural_v0_0008",
+      "procedural_v0_0009"
+    ],
+    "cloudSuppressedMentionedOnlyCandidateIds": [
+      "procedural_v0_0002",
+      "procedural_v0_0003",
+      "procedural_v0_0007"
+    ],
+    "blockedClaims": [
+      "This contract does not establish HUMAN_REVIEW_PASS.",
+      "This contract does not establish SEMANTIC_AUDIO_QUALITY_PASS.",
+      "This contract does not establish FINAL_MIX_READINESS."
+    ]
+  },
+  "allowedClaims": [
+    "Cloud can consume Java explicit risk contract evidence instead of inferring risk from text.",
+    "Cloud actionable alert semantics match Java explicit contract output."
+  ],
+  "blockedClaims": [
+    "This gate does not establish live Java service availability.",
+    "This gate does not establish live Grafana import.",
+    "This gate does not establish production SLO.",
+    "This gate does not establish human-review pass or semantic audio quality pass."
+  ],
+  "nextAction": "Use java_explicit_risk_contract as the preferred Cloud source mode for Week15 dashboard and alert evidence."
+}

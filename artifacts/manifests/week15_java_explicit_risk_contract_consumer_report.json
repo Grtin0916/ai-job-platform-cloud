@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "week15.java.explicit_risk_contract.consumer_report.v1",
+  "generatedAt": "2026-06-18T08:06:12.476371+00:00",
+  "decision": "PASS",
+  "failures": [],
+  "sourceContract": "artifacts/manifests/week15_mainbase_explicit_risk_contract.json",
+  "apiEndpoint": "/api/week15/temporal-alignment/explicit-risk-contract",
+  "summary": {
+    "candidateTotal": 10,
+    "actionableRiskCandidateIds": [
+      "procedural_v0_0004",
+      "procedural_v0_0010"
+    ],
+    "alertEligibleCandidateIds": [
+      "procedural_v0_0004",
+      "procedural_v0_0010"
+    ],
+    "nonActionableCandidateIds": [
+      "procedural_v0_0001",
+      "procedural_v0_0002",
+      "procedural_v0_0003",
+      "procedural_v0_0005",
+      "procedural_v0_0006",
+      "procedural_v0_0007",
+      "procedural_v0_0008",
+      "procedural_v0_0009"
+    ],
+    "blockedClaims": [
+      "This contract does not establish HUMAN_REVIEW_PASS.",
+      "This contract does not establish SEMANTIC_AUDIO_QUALITY_PASS.",
+      "This contract does not establish FINAL_MIX_READINESS."
+    ]
+  },
+  "nextAction": "Cloud can switch from inferred taxonomy to Java explicit risk contract API."
+}

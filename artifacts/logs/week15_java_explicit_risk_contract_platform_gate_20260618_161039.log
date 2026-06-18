@@ -1,0 +1,16 @@
+{
+  "decision": "PASS_JAVA_EXPLICIT_RISK_CONTRACT_PLATFORM_GATE",
+  "failures": [],
+  "sourceMode": "java_explicit_risk_contract",
+  "actionableRiskCandidateIds": [
+    "procedural_v0_0004",
+    "procedural_v0_0010"
+  ],
+  "cloudSuppressedMentionedOnlyCandidateIds": [
+    "procedural_v0_0002",
+    "procedural_v0_0003",
+    "procedural_v0_0007"
+  ],
+  "out": "loadtest/reports/week15_temporal_alignment_java_explicit_risk_contract_platform_gate.json",
+  "prom": "observability/prometheus/week15_temporal_alignment_java_explicit_risk_contract_metrics.prom"
+}

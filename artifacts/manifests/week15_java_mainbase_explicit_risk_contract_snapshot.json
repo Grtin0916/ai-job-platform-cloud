@@ -1,0 +1,562 @@
+{
+  "schemaVersion": "week15.temporal_alignment.explicit_risk_contract.v1",
+  "generatedAt": "2026-06-18T08:02:42.652737+00:00",
+  "scope": "Mainbase evaluation evidence; source contract for Java/Cloud consumption",
+  "decision": "PASS",
+  "failures": [],
+  "sourceFiles": {
+    "originalAlignment": {
+      "path": "artifacts/evals/week15_temporal_alignment.csv",
+      "exists": true
+    },
+    "originalSummary": {
+      "path": "artifacts/evals/week15_temporal_alignment_summary.json",
+      "exists": true
+    },
+    "remediatedAlignment": {
+      "path": "artifacts/evals/week15_temporal_alignment_remediated.csv",
+      "exists": true
+    },
+    "remediatedSummary": {
+      "path": "artifacts/evals/week15_temporal_alignment_remediated_summary.json",
+      "exists": true
+    },
+    "remediationPlan": {
+      "path": "artifacts/evals/week15_temporal_alignment_remediation_plan.json",
+      "exists": true
+    },
+    "signalAssessmentGate": {
+      "path": "artifacts/reviews/week15_temporal_alignment_registry_backed_signal_assessment_gate.json",
+      "exists": true
+    },
+    "manualReviewDecision": {
+      "path": "artifacts/reviews/week15_temporal_alignment_manual_review_decision.json",
+      "exists": true
+    }
+  },
+  "candidateRiskRows": [
+    {
+      "candidateId": "procedural_v0_0001",
+      "riskClass": "mentioned_only",
+      "actionability": "non_actionable_context",
+      "evidenceType": "context_mention",
+      "alertEligible": false,
+      "requiresHumanReview": false,
+      "reason": "Candidate is mentioned in Week15 evidence but is not part of the explicit drift/remediation action set.",
+      "sourceCount": 4,
+      "sources": [
+        {
+          "source": "originalAlignment",
+          "path": "artifacts/evals/week15_temporal_alignment.csv",
+          "hasRemediationToken": false,
+          "hasDriftToken": true,
+          "hasReviewToken": false,
+          "hasSignalToken": true
+        },
+        {
+          "source": "originalSummary",
+          "path": "artifacts/evals/week15_temporal_alignment_summary.json",
+          "hasRemediationToken": false,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        },
+        {
+          "source": "remediatedAlignment",
+          "path": "artifacts/evals/week15_temporal_alignment_remediated.csv",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": false,
+          "hasSignalToken": true
+        },
+        {
+          "source": "remediatedSummary",
+          "path": "artifacts/evals/week15_temporal_alignment_remediated_summary.json",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        }
+      ]
+    },
+    {
+      "candidateId": "procedural_v0_0002",
+      "riskClass": "mentioned_only",
+      "actionability": "non_actionable_context",
+      "evidenceType": "context_mention",
+      "alertEligible": false,
+      "requiresHumanReview": false,
+      "reason": "Candidate is mentioned in Week15 evidence but is not part of the explicit drift/remediation action set.",
+      "sourceCount": 5,
+      "sources": [
+        {
+          "source": "originalAlignment",
+          "path": "artifacts/evals/week15_temporal_alignment.csv",
+          "hasRemediationToken": false,
+          "hasDriftToken": true,
+          "hasReviewToken": false,
+          "hasSignalToken": true
+        },
+        {
+          "source": "originalSummary",
+          "path": "artifacts/evals/week15_temporal_alignment_summary.json",
+          "hasRemediationToken": false,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        },
+        {
+          "source": "remediatedAlignment",
+          "path": "artifacts/evals/week15_temporal_alignment_remediated.csv",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": false,
+          "hasSignalToken": true
+        },
+        {
+          "source": "remediatedSummary",
+          "path": "artifacts/evals/week15_temporal_alignment_remediated_summary.json",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        },
+        {
+          "source": "signalAssessmentGate",
+          "path": "artifacts/reviews/week15_temporal_alignment_registry_backed_signal_assessment_gate.json",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        }
+      ]
+    },
+    {
+      "candidateId": "procedural_v0_0003",
+      "riskClass": "mentioned_only",
+      "actionability": "non_actionable_context",
+      "evidenceType": "context_mention",
+      "alertEligible": false,
+      "requiresHumanReview": false,
+      "reason": "Candidate is mentioned in Week15 evidence but is not part of the explicit drift/remediation action set.",
+      "sourceCount": 5,
+      "sources": [
+        {
+          "source": "originalAlignment",
+          "path": "artifacts/evals/week15_temporal_alignment.csv",
+          "hasRemediationToken": false,
+          "hasDriftToken": true,
+          "hasReviewToken": false,
+          "hasSignalToken": true
+        },
+        {
+          "source": "originalSummary",
+          "path": "artifacts/evals/week15_temporal_alignment_summary.json",
+          "hasRemediationToken": false,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        },
+        {
+          "source": "remediatedAlignment",
+          "path": "artifacts/evals/week15_temporal_alignment_remediated.csv",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": false,
+          "hasSignalToken": true
+        },
+        {
+          "source": "remediatedSummary",
+          "path": "artifacts/evals/week15_temporal_alignment_remediated_summary.json",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        },
+        {
+          "source": "signalAssessmentGate",
+          "path": "artifacts/reviews/week15_temporal_alignment_registry_backed_signal_assessment_gate.json",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        }
+      ]
+    },
+    {
+      "candidateId": "procedural_v0_0004",
+      "riskClass": "remediation_or_drift",
+      "actionability": "actionable",
+      "evidenceType": "temporal_alignment_drift_remediation",
+      "alertEligible": true,
+      "requiresHumanReview": false,
+      "reason": "Candidate belongs to the Week15 original drift/remediation pair and has remediation evidence.",
+      "sourceCount": 6,
+      "sources": [
+        {
+          "source": "originalAlignment",
+          "path": "artifacts/evals/week15_temporal_alignment.csv",
+          "hasRemediationToken": false,
+          "hasDriftToken": true,
+          "hasReviewToken": false,
+          "hasSignalToken": true
+        },
+        {
+          "source": "originalSummary",
+          "path": "artifacts/evals/week15_temporal_alignment_summary.json",
+          "hasRemediationToken": false,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        },
+        {
+          "source": "remediatedAlignment",
+          "path": "artifacts/evals/week15_temporal_alignment_remediated.csv",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": false,
+          "hasSignalToken": true
+        },
+        {
+          "source": "remediatedSummary",
+          "path": "artifacts/evals/week15_temporal_alignment_remediated_summary.json",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        },
+        {
+          "source": "remediationPlan",
+          "path": "artifacts/evals/week15_temporal_alignment_remediation_plan.json",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": false,
+          "hasSignalToken": true
+        },
+        {
+          "source": "manualReviewDecision",
+          "path": "artifacts/reviews/week15_temporal_alignment_manual_review_decision.json",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        }
+      ]
+    },
+    {
+      "candidateId": "procedural_v0_0005",
+      "riskClass": "mentioned_only",
+      "actionability": "non_actionable_context",
+      "evidenceType": "context_mention",
+      "alertEligible": false,
+      "requiresHumanReview": false,
+      "reason": "Candidate is mentioned in Week15 evidence but is not part of the explicit drift/remediation action set.",
+      "sourceCount": 4,
+      "sources": [
+        {
+          "source": "originalAlignment",
+          "path": "artifacts/evals/week15_temporal_alignment.csv",
+          "hasRemediationToken": false,
+          "hasDriftToken": true,
+          "hasReviewToken": false,
+          "hasSignalToken": true
+        },
+        {
+          "source": "originalSummary",
+          "path": "artifacts/evals/week15_temporal_alignment_summary.json",
+          "hasRemediationToken": false,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        },
+        {
+          "source": "remediatedAlignment",
+          "path": "artifacts/evals/week15_temporal_alignment_remediated.csv",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": false,
+          "hasSignalToken": true
+        },
+        {
+          "source": "remediatedSummary",
+          "path": "artifacts/evals/week15_temporal_alignment_remediated_summary.json",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        }
+      ]
+    },
+    {
+      "candidateId": "procedural_v0_0006",
+      "riskClass": "mentioned_only",
+      "actionability": "non_actionable_context",
+      "evidenceType": "context_mention",
+      "alertEligible": false,
+      "requiresHumanReview": false,
+      "reason": "Candidate is mentioned in Week15 evidence but is not part of the explicit drift/remediation action set.",
+      "sourceCount": 4,
+      "sources": [
+        {
+          "source": "originalAlignment",
+          "path": "artifacts/evals/week15_temporal_alignment.csv",
+          "hasRemediationToken": false,
+          "hasDriftToken": true,
+          "hasReviewToken": false,
+          "hasSignalToken": true
+        },
+        {
+          "source": "originalSummary",
+          "path": "artifacts/evals/week15_temporal_alignment_summary.json",
+          "hasRemediationToken": false,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        },
+        {
+          "source": "remediatedAlignment",
+          "path": "artifacts/evals/week15_temporal_alignment_remediated.csv",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": false,
+          "hasSignalToken": true
+        },
+        {
+          "source": "remediatedSummary",
+          "path": "artifacts/evals/week15_temporal_alignment_remediated_summary.json",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        }
+      ]
+    },
+    {
+      "candidateId": "procedural_v0_0007",
+      "riskClass": "mentioned_only",
+      "actionability": "non_actionable_context",
+      "evidenceType": "context_mention",
+      "alertEligible": false,
+      "requiresHumanReview": false,
+      "reason": "Candidate is mentioned in Week15 evidence but is not part of the explicit drift/remediation action set.",
+      "sourceCount": 5,
+      "sources": [
+        {
+          "source": "originalAlignment",
+          "path": "artifacts/evals/week15_temporal_alignment.csv",
+          "hasRemediationToken": false,
+          "hasDriftToken": true,
+          "hasReviewToken": false,
+          "hasSignalToken": true
+        },
+        {
+          "source": "originalSummary",
+          "path": "artifacts/evals/week15_temporal_alignment_summary.json",
+          "hasRemediationToken": false,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        },
+        {
+          "source": "remediatedAlignment",
+          "path": "artifacts/evals/week15_temporal_alignment_remediated.csv",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": false,
+          "hasSignalToken": true
+        },
+        {
+          "source": "remediatedSummary",
+          "path": "artifacts/evals/week15_temporal_alignment_remediated_summary.json",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        },
+        {
+          "source": "signalAssessmentGate",
+          "path": "artifacts/reviews/week15_temporal_alignment_registry_backed_signal_assessment_gate.json",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        }
+      ]
+    },
+    {
+      "candidateId": "procedural_v0_0008",
+      "riskClass": "mentioned_only",
+      "actionability": "non_actionable_context",
+      "evidenceType": "context_mention",
+      "alertEligible": false,
+      "requiresHumanReview": false,
+      "reason": "Candidate is mentioned in Week15 evidence but is not part of the explicit drift/remediation action set.",
+      "sourceCount": 4,
+      "sources": [
+        {
+          "source": "originalAlignment",
+          "path": "artifacts/evals/week15_temporal_alignment.csv",
+          "hasRemediationToken": false,
+          "hasDriftToken": true,
+          "hasReviewToken": false,
+          "hasSignalToken": true
+        },
+        {
+          "source": "originalSummary",
+          "path": "artifacts/evals/week15_temporal_alignment_summary.json",
+          "hasRemediationToken": false,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        },
+        {
+          "source": "remediatedAlignment",
+          "path": "artifacts/evals/week15_temporal_alignment_remediated.csv",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": false,
+          "hasSignalToken": true
+        },
+        {
+          "source": "remediatedSummary",
+          "path": "artifacts/evals/week15_temporal_alignment_remediated_summary.json",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        }
+      ]
+    },
+    {
+      "candidateId": "procedural_v0_0009",
+      "riskClass": "mentioned_only",
+      "actionability": "non_actionable_context",
+      "evidenceType": "context_mention",
+      "alertEligible": false,
+      "requiresHumanReview": false,
+      "reason": "Candidate is mentioned in Week15 evidence but is not part of the explicit drift/remediation action set.",
+      "sourceCount": 4,
+      "sources": [
+        {
+          "source": "originalAlignment",
+          "path": "artifacts/evals/week15_temporal_alignment.csv",
+          "hasRemediationToken": false,
+          "hasDriftToken": true,
+          "hasReviewToken": false,
+          "hasSignalToken": true
+        },
+        {
+          "source": "originalSummary",
+          "path": "artifacts/evals/week15_temporal_alignment_summary.json",
+          "hasRemediationToken": false,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        },
+        {
+          "source": "remediatedAlignment",
+          "path": "artifacts/evals/week15_temporal_alignment_remediated.csv",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": false,
+          "hasSignalToken": true
+        },
+        {
+          "source": "remediatedSummary",
+          "path": "artifacts/evals/week15_temporal_alignment_remediated_summary.json",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        }
+      ]
+    },
+    {
+      "candidateId": "procedural_v0_0010",
+      "riskClass": "remediation_or_drift",
+      "actionability": "actionable",
+      "evidenceType": "temporal_alignment_drift_remediation",
+      "alertEligible": true,
+      "requiresHumanReview": false,
+      "reason": "Candidate belongs to the Week15 original drift/remediation pair and has remediation evidence.",
+      "sourceCount": 6,
+      "sources": [
+        {
+          "source": "originalAlignment",
+          "path": "artifacts/evals/week15_temporal_alignment.csv",
+          "hasRemediationToken": false,
+          "hasDriftToken": true,
+          "hasReviewToken": false,
+          "hasSignalToken": true
+        },
+        {
+          "source": "originalSummary",
+          "path": "artifacts/evals/week15_temporal_alignment_summary.json",
+          "hasRemediationToken": false,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        },
+        {
+          "source": "remediatedAlignment",
+          "path": "artifacts/evals/week15_temporal_alignment_remediated.csv",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": false,
+          "hasSignalToken": true
+        },
+        {
+          "source": "remediatedSummary",
+          "path": "artifacts/evals/week15_temporal_alignment_remediated_summary.json",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        },
+        {
+          "source": "remediationPlan",
+          "path": "artifacts/evals/week15_temporal_alignment_remediation_plan.json",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": false,
+          "hasSignalToken": true
+        },
+        {
+          "source": "manualReviewDecision",
+          "path": "artifacts/reviews/week15_temporal_alignment_manual_review_decision.json",
+          "hasRemediationToken": true,
+          "hasDriftToken": true,
+          "hasReviewToken": true,
+          "hasSignalToken": true
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "candidateTotal": 10,
+    "actionableRiskCandidateIds": [
+      "procedural_v0_0004",
+      "procedural_v0_0010"
+    ],
+    "nonActionableCandidateIds": [
+      "procedural_v0_0001",
+      "procedural_v0_0002",
+      "procedural_v0_0003",
+      "procedural_v0_0005",
+      "procedural_v0_0006",
+      "procedural_v0_0007",
+      "procedural_v0_0008",
+      "procedural_v0_0009"
+    ],
+    "alertEligibleCandidateIds": [
+      "procedural_v0_0004",
+      "procedural_v0_0010"
+    ],
+    "blockedClaims": [
+      "This contract does not establish HUMAN_REVIEW_PASS.",
+      "This contract does not establish SEMANTIC_AUDIO_QUALITY_PASS.",
+      "This contract does not establish FINAL_MIX_READINESS."
+    ]
+  },
+  "nextAction": "Update Java/Cloud to consume explicit riskClass/actionability fields instead of inferring from text."
+}
