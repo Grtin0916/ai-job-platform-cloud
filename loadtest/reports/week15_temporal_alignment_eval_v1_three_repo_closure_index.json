@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "week15.temporal_alignment.eval_v1.three_repo_closure_index.v1",
+  "generatedAt": "2026-06-18T08:14:26.549364+00:00",
+  "scope": "repository evidence closure only; no live service, live Grafana, production SLO, human-review pass, semantic audio quality pass, or final mix readiness claim",
+  "decision": "FAIL_WEEK15_TEMPORAL_ALIGNMENT_EVAL_V1_THREE_REPO_CLOSURE",
+  "failures": [
+    "CLOUD_DIRTY"
+  ],
+  "preferredSourceMode": "java_explicit_risk_contract",
+  "repositories": {
+    "mainbase": {
+      "path": "/home/GRT/work/audio_engineering_repo_skeleton_v1",
+      "head": "2689658",
+      "originMain": "2689658",
+      "aheadBehind": "0 0",
+      "porcelainCount": 0,
+      "latestCommit": "2689658 feat: add week15 explicit risk contract"
+    },
+    "java": {
+      "path": "/home/GRT/work/media-task-platform-java",
+      "head": "97fa705",
+      "originMain": "97fa705",
+      "aheadBehind": "0 0",
+      "porcelainCount": 0,
+      "latestCommit": "97fa705 feat: consume week15 explicit risk contract"
+    },
+    "cloud": {
+      "path": "/home/GRT/work/ai-job-platform-cloud",
+      "head": "0c245c7",
+      "originMain": "0c245c7",
+      "aheadBehind": "0 0",
+      "porcelainCount": 2,
+      "latestCommit": "0c245c7 feat: render week15 java-contract dashboard view"
+    }
+  },
+  "artifacts": {
+    "mainbaseExplicitRiskContract": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/evals/week15_temporal_alignment_explicit_risk_contract.json",
+    "javaExplicitRiskConsumerReport": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week15_java_explicit_risk_contract_consumer_report.json",
+    "cloudJavaContractPlatformGate": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_java_explicit_risk_contract_platform_gate.json",
+    "cloudJavaContractDashboardReady": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_eval_v1_java_contract_dashboard_ready.json"
+  },
+  "summary": {
+    "mainbaseDecision": "PASS",
+    "javaDecision": "PASS",
+    "cloudPlatformGateDecision": "PASS_JAVA_EXPLICIT_RISK_CONTRACT_PLATFORM_GATE",
+    "cloudDashboardReadyDecision": "PASS",
+    "javaApiEndpoint": "/api/week15/temporal-alignment/explicit-risk-contract",
+    "candidateTotal": 10,
+    "actionableRiskCandidateIds": [
+      "procedural_v0_0004",
+      "procedural_v0_0010"
+    ],
+    "nonActionableCandidateCount": 8,
+    "preferredSourceMode": "java_explicit_risk_contract",
+    "legacySourceMode": "cloud_inferred_taxonomy"
+  },
+  "allowedClaims": [
+    "Week15 Temporal Alignment Eval V1 has a repository-evidence closure across Mainbase, Java, and Cloud.",
+    "Mainbase emits explicit risk/actionability fields.",
+    "Java consumes and exposes the explicit risk contract.",
+    "Cloud uses Java explicit risk contract as preferred dashboard and alert evidence source."
+  ],
+  "blockedClaims": [
+    "No live Java service availability claim.",
+    "No live Grafana import claim.",
+    "No production SLO claim.",
+    "No human-review pass claim.",
+    "No semantic audio quality pass claim.",
+    "No final mix readiness claim."
+  ],
+  "nextAction": "Fix failed closure invariants before any weekly or stage summary."
+}

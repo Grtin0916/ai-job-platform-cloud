@@ -1,0 +1,50 @@
+{
+  "decision": "FAIL_WEEK15_TEMPORAL_ALIGNMENT_EVAL_V1_THREE_REPO_CLOSURE",
+  "failures": [
+    "CLOUD_DIRTY"
+  ],
+  "preferredSourceMode": "java_explicit_risk_contract",
+  "repos": {
+    "mainbase": {
+      "path": "/home/GRT/work/audio_engineering_repo_skeleton_v1",
+      "head": "2689658",
+      "originMain": "2689658",
+      "aheadBehind": "0 0",
+      "porcelainCount": 0,
+      "latestCommit": "2689658 feat: add week15 explicit risk contract"
+    },
+    "java": {
+      "path": "/home/GRT/work/media-task-platform-java",
+      "head": "97fa705",
+      "originMain": "97fa705",
+      "aheadBehind": "0 0",
+      "porcelainCount": 0,
+      "latestCommit": "97fa705 feat: consume week15 explicit risk contract"
+    },
+    "cloud": {
+      "path": "/home/GRT/work/ai-job-platform-cloud",
+      "head": "0c245c7",
+      "originMain": "0c245c7",
+      "aheadBehind": "0 0",
+      "porcelainCount": 2,
+      "latestCommit": "0c245c7 feat: render week15 java-contract dashboard view"
+    }
+  },
+  "summary": {
+    "mainbaseDecision": "PASS",
+    "javaDecision": "PASS",
+    "cloudPlatformGateDecision": "PASS_JAVA_EXPLICIT_RISK_CONTRACT_PLATFORM_GATE",
+    "cloudDashboardReadyDecision": "PASS",
+    "javaApiEndpoint": "/api/week15/temporal-alignment/explicit-risk-contract",
+    "candidateTotal": 10,
+    "actionableRiskCandidateIds": [
+      "procedural_v0_0004",
+      "procedural_v0_0010"
+    ],
+    "nonActionableCandidateCount": 8,
+    "preferredSourceMode": "java_explicit_risk_contract",
+    "legacySourceMode": "cloud_inferred_taxonomy"
+  },
+  "out": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_eval_v1_three_repo_closure_index.json",
+  "prom": "/home/GRT/work/ai-job-platform-cloud/observability/prometheus/week15_temporal_alignment_eval_v1_three_repo_closure_metrics.prom"
+}
