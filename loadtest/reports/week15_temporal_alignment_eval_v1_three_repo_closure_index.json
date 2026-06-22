@@ -1,11 +1,9 @@
 {
   "schemaVersion": "week15.temporal_alignment.eval_v1.three_repo_closure_index.v2",
-  "generatedAt": "2026-06-18T08:17:06.693920+00:00",
+  "generatedAt": "2026-06-22T14:05:28.138227+00:00",
   "scope": "repository evidence closure only; closure self-artifacts are excluded from Cloud dirty detection; no live service, live Grafana, production SLO, human-review pass, semantic audio quality pass, or final mix readiness claim",
-  "decision": "FAIL_WEEK15_TEMPORAL_ALIGNMENT_EVAL_V1_THREE_REPO_CLOSURE",
-  "failures": [
-    "CLOUD_DIRTY"
-  ],
+  "decision": "PASS_WEEK15_TEMPORAL_ALIGNMENT_EVAL_V1_THREE_REPO_CLOSURE",
+  "failures": [],
   "preferredSourceMode": "java_explicit_risk_contract",
   "repositories": {
     "mainbase": {
@@ -34,19 +32,17 @@
     },
     "cloud": {
       "path": "/home/GRT/work/ai-job-platform-cloud",
-      "head": "e9f2d98",
-      "originMain": "e9f2d98",
+      "head": "92ad26e",
+      "originMain": "92ad26e",
       "aheadBehind": "0 0",
-      "porcelainCount": 1,
-      "rawPorcelainCount": 2,
+      "porcelainCount": 0,
+      "rawPorcelainCount": 1,
       "excludedSelfArtifactDirtyCount": 1,
-      "relevantDirtyLines": [
-        "M scripts/build_week15_temporal_alignment_three_repo_closure_index.py"
-      ],
+      "relevantDirtyLines": [],
       "excludedSelfArtifactDirtyLines": [
-        "?? artifacts/logs/week15_temporal_alignment_eval_v1_three_repo_closure_20260618_161706.log"
+        "?? artifacts/logs/week15_temporal_alignment_eval_v1_three_repo_closure_final_20260622_220528.log"
       ],
-      "latestCommit": "e9f2d98 feat: close week15 eval v1 three-repo evidence chain"
+      "latestCommit": "92ad26e fix: make week15 three-repo closure self-consistent"
     }
   },
   "artifacts": {
@@ -93,5 +89,5 @@
     "No semantic audio quality pass claim.",
     "No final mix readiness claim."
   ],
-  "nextAction": "Fix failed closure invariants before any weekly or stage summary."
+  "nextAction": "Stop adding new Week15 gate layers today; use this closure index for weekly summary and start the next step from product-level Eval V1 handoff."
 }
