@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "week16.cloud.temporal_alignment.failure_taxonomy.platform_gate.v1",
+  "generatedAtUtc": "2026-06-22T15:05:28.452620+00:00",
+  "decision": "PASS_WEEK16_CLOUD_FAILURE_TAXONOMY_PLATFORM_GATE",
+  "decisionErrors": [],
+  "sourceMode": "java_week16_failure_taxonomy_api_it_artifact",
+  "java": {
+    "repo": "/home/GRT/work/media-task-platform-java",
+    "head": "8b0170f",
+    "originMain": "8b0170f",
+    "apiReport": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week16_java_failure_taxonomy_api_it_report.json",
+    "payload": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week16_java_temporal_alignment_failure_taxonomy_payload.json",
+    "consumerReport": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week16_java_temporal_alignment_failure_taxonomy_consumer_report.json",
+    "apiEndpoint": "/api/week16/temporal-alignment/failure-taxonomy",
+    "apiDecision": "PASS_WEEK16_JAVA_FAILURE_TAXONOMY_API_RANDOM_PORT_IT",
+    "randomHttpPortEvidence": 40631
+  },
+  "cloudGit": {
+    "head": "b70303c",
+    "originMain": "b70303c",
+    "aheadBehind": "0\t0"
+  },
+  "summary": {
+    "candidateTotal": 10,
+    "bucketCounts": {
+      "pass_low_risk_with_numeric_margin": 7,
+      "timing_drift_actionable_remediated": 2,
+      "warn_near_miss_threshold_margin": 1
+    },
+    "p1RegressionFixtureIds": [
+      "procedural_v0_0004",
+      "procedural_v0_0010"
+    ],
+    "thresholdFixtureIds": [
+      "procedural_v0_0007"
+    ],
+    "passControlCount": 7,
+    "blockedClaims": [
+      "No semantic audio quality pass claim.",
+      "No human-review pass claim.",
+      "No final mix readiness claim.",
+      "No production SLO claim."
+    ]
+  },
+  "platformSignals": {
+    "apiEvidencePass": true,
+    "p1RegressionFixtureCount": 2,
+    "thresholdFixtureCount": 1,
+    "passControlCount": 7,
+    "blockedClaimCount": 4,
+    "dashboardReady": true,
+    "metricsReady": true
+  },
+  "boundary": [
+    "Cloud consumes Java W16 API IT evidence and normalized payload artifacts.",
+    "Does not claim live Java service availability.",
+    "Does not claim live Grafana import.",
+    "Does not claim production SLO.",
+    "Does not claim semantic audio quality pass.",
+    "Does not claim human-review pass.",
+    "Does not claim final mix readiness."
+  ]
+}
