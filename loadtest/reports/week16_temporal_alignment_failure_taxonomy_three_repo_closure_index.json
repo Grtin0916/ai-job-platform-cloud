@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "week16.temporal_alignment.failure_taxonomy.three_repo_closure.v1",
+  "generatedAtUtc": "2026-06-22T15:11:09.057893+00:00",
+  "decision": "PASS_WEEK16_THREE_REPO_FAILURE_TAXONOMY_CLOSURE",
+  "decisionErrors": [],
+  "repositories": {
+    "mainbase": {
+      "path": "/home/GRT/work/audio_engineering_repo_skeleton_v1",
+      "head": "1fc18a4",
+      "originMain": "1fc18a4",
+      "aheadBehind": "0\t0",
+      "porcelainCount": 0,
+      "relevantDirtyLines": [],
+      "excludedSelfArtifactDirtyLines": []
+    },
+    "java": {
+      "path": "/home/GRT/work/media-task-platform-java",
+      "head": "8b0170f",
+      "originMain": "8b0170f",
+      "aheadBehind": "0\t0",
+      "porcelainCount": 0,
+      "relevantDirtyLines": [],
+      "excludedSelfArtifactDirtyLines": []
+    },
+    "cloud": {
+      "path": "/home/GRT/work/ai-job-platform-cloud",
+      "head": "4c48c59",
+      "originMain": "4c48c59",
+      "aheadBehind": "0\t0",
+      "porcelainCount": 4,
+      "relevantDirtyLines": [],
+      "excludedSelfArtifactDirtyLines": [
+        "?? artifacts/logs/week16_three_repo_failure_taxonomy_closure_20260622_231108.log",
+        "?? loadtest/reports/week16_temporal_alignment_failure_taxonomy_three_repo_closure_index.json",
+        "?? observability/prometheus/week16_temporal_alignment_failure_taxonomy_three_repo_closure_metrics.prom",
+        "?? scripts/build_week16_three_repo_failure_taxonomy_closure.py"
+      ]
+    }
+  },
+  "sourceOfTruth": {
+    "mainbaseTaxonomy": "artifacts/evals/week16_temporal_alignment_failure_taxonomy_seed.json",
+    "javaConsumerReport": "artifacts/manifests/week16_java_temporal_alignment_failure_taxonomy_consumer_report.json",
+    "javaApiItReport": "artifacts/manifests/week16_java_failure_taxonomy_api_it_report.json",
+    "cloudPlatformGate": "loadtest/reports/week16_temporal_alignment_failure_taxonomy_platform_gate.json",
+    "cloudMetrics": "observability/prometheus/week16_temporal_alignment_failure_taxonomy_metrics.prom"
+  },
+  "summary": {
+    "candidateTotal": 10,
+    "bucketCounts": {
+      "pass_low_risk_with_numeric_margin": 7,
+      "timing_drift_actionable_remediated": 2,
+      "warn_near_miss_threshold_margin": 1
+    },
+    "p1RegressionFixtureIds": [
+      "procedural_v0_0004",
+      "procedural_v0_0010"
+    ],
+    "thresholdFixtureIds": [
+      "procedural_v0_0007"
+    ],
+    "passControlCount": 7,
+    "javaApiEndpoint": "/api/week16/temporal-alignment/failure-taxonomy",
+    "javaApiRandomPortEvidence": 40631,
+    "cloudPlatformSignals": {
+      "apiEvidencePass": true,
+      "p1RegressionFixtureCount": 2,
+      "thresholdFixtureCount": 1,
+      "passControlCount": 7,
+      "blockedClaimCount": 4,
+      "dashboardReady": true,
+      "metricsReady": true
+    },
+    "blockedClaims": [
+      "No live Java service availability claim.",
+      "No live Grafana import claim.",
+      "No production SLO claim.",
+      "No semantic audio quality pass claim.",
+      "No human-review pass claim.",
+      "No final mix readiness claim."
+    ]
+  },
+  "handoff": {
+    "w16NextInput": [
+      "Use procedural_v0_0004 and procedural_v0_0010 as paired original-FAIL/remediated-PASS regression fixtures.",
+      "Use procedural_v0_0007 as near-miss threshold-margin fixture.",
+      "Use the seven pass controls as numeric-margin distribution baseline.",
+      "Do not promote semantic quality, human review, final mix, live Java service, live Grafana, or production SLO claims."
+    ]
+  },
+  "boundary": [
+    "No live Java service availability claim.",
+    "No live Grafana import claim.",
+    "No production SLO claim.",
+    "No semantic audio quality pass claim.",
+    "No human-review pass claim.",
+    "No final mix readiness claim."
+  ]
+}

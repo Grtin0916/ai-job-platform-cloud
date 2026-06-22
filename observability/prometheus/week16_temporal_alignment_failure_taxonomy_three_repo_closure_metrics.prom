@@ -1,0 +1,18 @@
+# HELP week16_three_repo_failure_taxonomy_closure_pass W16 three-repo failure taxonomy closure pass flag.
+# TYPE week16_three_repo_failure_taxonomy_closure_pass gauge
+week16_three_repo_failure_taxonomy_closure_pass{decision="PASS_WEEK16_THREE_REPO_FAILURE_TAXONOMY_CLOSURE",mainbase_head="1fc18a4",java_head="8b0170f",cloud_head="4c48c59"} 1
+# HELP week16_three_repo_failure_taxonomy_candidate_total W16 closure candidate total.
+# TYPE week16_three_repo_failure_taxonomy_candidate_total gauge
+week16_three_repo_failure_taxonomy_candidate_total 10
+# HELP week16_three_repo_failure_taxonomy_p1_regression_fixture_total W16 closure P1 regression fixture total.
+# TYPE week16_three_repo_failure_taxonomy_p1_regression_fixture_total gauge
+week16_three_repo_failure_taxonomy_p1_regression_fixture_total 2
+# HELP week16_three_repo_failure_taxonomy_threshold_fixture_total W16 closure threshold fixture total.
+# TYPE week16_three_repo_failure_taxonomy_threshold_fixture_total gauge
+week16_three_repo_failure_taxonomy_threshold_fixture_total 1
+# HELP week16_three_repo_failure_taxonomy_pass_control_total W16 closure pass control total.
+# TYPE week16_three_repo_failure_taxonomy_pass_control_total gauge
+week16_three_repo_failure_taxonomy_pass_control_total 7
+# HELP week16_three_repo_failure_taxonomy_blocked_claim_total W16 closure blocked claim total.
+# TYPE week16_three_repo_failure_taxonomy_blocked_claim_total gauge
+week16_three_repo_failure_taxonomy_blocked_claim_total 6
