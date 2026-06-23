@@ -1,10 +1,8 @@
 {
   "schemaVersion": "week16.s3.failure_taxonomy_closure.v1",
-  "generatedAt": "2026-06-23T08:35:30.988479+00:00",
-  "decision": "FAIL_WEEK16_S3_FAILURE_TAXONOMY_CLOSURE",
-  "decisionErrors": [
-    "one or more repositories are not clean and synced with origin/main"
-  ],
+  "generatedAt": "2026-06-23T08:38:02.845426+00:00",
+  "decision": "PASS_WEEK16_S3_FAILURE_TAXONOMY_CLOSURE",
+  "decisionErrors": [],
   "repositories": {
     "mainbase": {
       "path": "/home/GRT/work/audio_engineering_repo_skeleton_v1",
@@ -40,24 +38,22 @@
     },
     "cloud": {
       "path": "/home/GRT/work/ai-job-platform-cloud",
-      "head": "722dd37",
-      "originMain": "722dd37",
+      "head": "b0eb8c1",
+      "originMain": "b0eb8c1",
       "aheadBehind": "0 0",
-      "rawPorcelainCount": 3,
-      "porcelainCount": 1,
-      "porcelain": [
-        "?? scripts/__pycache__/build_week16_s3_failure_taxonomy_closure_index.cpython-39.pyc"
-      ],
+      "rawPorcelainCount": 2,
+      "porcelainCount": 0,
+      "porcelain": [],
       "ignoredCurrentClosurePorcelain": [
-        "?? artifacts/logs/week16_s3_failure_taxonomy_closure_20260623_083530.log",
-        "?? scripts/build_week16_s3_failure_taxonomy_closure_index.py"
+        "D  artifacts/logs/week16_s3_failure_taxonomy_closure_20260623_083530.log",
+        "?? artifacts/logs/week16_s3_failure_taxonomy_closure_20260623_083802.log"
       ],
       "recentCommits": [
+        "b0eb8c1 chore: close week16 s3 failure taxonomy chain",
         "722dd37 feat: simulate week16 failure taxonomy fault drill",
-        "09a56b1 chore: close week16 failure taxonomy three-repo chain",
-        "4c48c59 feat: consume week16 failure taxonomy api evidence"
+        "09a56b1 chore: close week16 failure taxonomy three-repo chain"
       ],
-      "cleanAndSynced": false
+      "cleanAndSynced": true
     }
   },
   "evidenceChain": {

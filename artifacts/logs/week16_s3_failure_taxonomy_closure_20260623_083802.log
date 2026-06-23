@@ -1,6 +1,6 @@
-decision=FAIL_WEEK16_S3_FAILURE_TAXONOMY_CLOSURE
-decisionErrors=['one or more repositories are not clean and synced with origin/main']
+decision=PASS_WEEK16_S3_FAILURE_TAXONOMY_CLOSURE
+decisionErrors=[]
 mainbaseHead=70d6a7f
 javaHead=03f8f21
-cloudHead=722dd37
+cloudHead=b0eb8c1
 summary={'candidateTotal': 10, 'p1RegressionFixtureTotal': 2, 'thresholdFixtureTotal': 1, 'passControlTotal': 7, 'evidenceGapFixtureTotal': 0, 'scenarioTotal': 3, 'criticalAlertTotal': 1, 'warningAlertTotal': 2, 'blockedClaimTotal': 12, 'blockedClaims': ['final_mix_readiness_not_verified', 'human_review_pass_not_verified', 'live_java_service_availability_not_verified', 'live_prometheus_or_grafana_import_not_verified', 'no async rerun worker execution claim', 'no live Grafana import claim', 'no live Java service availability claim', 'no live Prometheus scrape claim', 'no production SLO or real cloud deployment claim', 'production_slo_or_real_cloud_deployment_not_verified', 'semantic_audio_quality_pass_not_verified', 'synthetic local fault drill only']}

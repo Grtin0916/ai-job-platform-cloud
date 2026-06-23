@@ -1,11 +1,11 @@
 # HELP week16_s3_failure_taxonomy_closure_decision Week16 S3 failure taxonomy closure decision, 1 means pass.
 # TYPE week16_s3_failure_taxonomy_closure_decision gauge
-week16_s3_failure_taxonomy_closure_decision{decision="FAIL_WEEK16_S3_FAILURE_TAXONOMY_CLOSURE"} 0
+week16_s3_failure_taxonomy_closure_decision{decision="PASS_WEEK16_S3_FAILURE_TAXONOMY_CLOSURE"} 1
 # HELP week16_s3_failure_taxonomy_closure_repo_synced Whether each repository is clean and synced with origin/main.
 # TYPE week16_s3_failure_taxonomy_closure_repo_synced gauge
 week16_s3_failure_taxonomy_closure_repo_synced{repo="mainbase"} 1
 week16_s3_failure_taxonomy_closure_repo_synced{repo="java"} 1
-week16_s3_failure_taxonomy_closure_repo_synced{repo="cloud"} 0
+week16_s3_failure_taxonomy_closure_repo_synced{repo="cloud"} 1
 # HELP week16_s3_failure_taxonomy_closure_candidate_total Candidate total from the S3 failure taxonomy chain.
 # TYPE week16_s3_failure_taxonomy_closure_candidate_total gauge
 week16_s3_failure_taxonomy_closure_candidate_total 10
