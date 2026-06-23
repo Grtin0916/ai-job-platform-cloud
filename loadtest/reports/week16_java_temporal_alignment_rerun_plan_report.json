@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "week16.java.temporal_alignment.rerun_plan_report.v1",
+  "generatedAt": "2026-06-23T08:06:49.071592+00:00",
+  "decision": "PASS_WEEK16_JAVA_RERUN_PLAN_IT",
+  "decisionErrors": [],
+  "apiEndpoint": "/api/week16/temporal-alignment/rerun-plan",
+  "sourceMainbaseDecision": "PASS_WEEK16_FAILURE_REGRESSION_REPORT_V0_EVIDENCE_DRIVEN",
+  "sourceClassificationMode": "evidence_driven_with_expected_fixture_consistency_guard",
+  "summary": {
+    "candidateTotal": 10,
+    "p1RegressionFixtureTotal": 2,
+    "thresholdFixtureTotal": 1,
+    "passControlTotal": 7,
+    "evidenceGapFixtureTotal": 0,
+    "p1RegressionFixtureIds": [
+      "procedural_v0_0004",
+      "procedural_v0_0010"
+    ],
+    "thresholdFixtureIds": [
+      "procedural_v0_0007"
+    ],
+    "passControlIds": [
+      "procedural_v0_0001",
+      "procedural_v0_0002",
+      "procedural_v0_0003",
+      "procedural_v0_0005",
+      "procedural_v0_0006",
+      "procedural_v0_0008",
+      "procedural_v0_0009"
+    ],
+    "evidenceGapFixtureIds": [],
+    "blockedClaimTotal": 6,
+    "blockedClaims": [
+      "semantic_audio_quality_pass_not_verified",
+      "human_review_pass_not_verified",
+      "final_mix_readiness_not_verified",
+      "live_java_service_availability_not_verified",
+      "live_prometheus_or_grafana_import_not_verified",
+      "production_slo_or_real_cloud_deployment_not_verified"
+    ]
+  },
+  "implementationBoundary": [
+    "RANDOM_PORT IT only",
+    "test-scoped permitAll only",
+    "no live service availability claim",
+    "no async worker execution",
+    "no production auth claim",
+    "no exactly-once rerun claim"
+  ],
+  "artifacts": {
+    "sourceRegressionReport": "artifacts/manifests/week16_java_temporal_alignment_failure_regression_report.json",
+    "testLog": "artifacts/logs/week16_java_rerun_plan_20260623_080639.log",
+    "controller": "src/main/java/com/ryan/media/controller/Week16TemporalAlignmentRerunPlanController.java",
+    "test": "src/test/java/com/ryan/media/controller/Week16TemporalAlignmentRerunPlanIT.java"
+  }
+}

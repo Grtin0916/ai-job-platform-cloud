@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 39,
+  "title": "Week16 Failure Taxonomy Fault Drill",
+  "tags": [
+    "week16",
+    "failure-taxonomy",
+    "fault-drill",
+    "dashboard-ready"
+  ],
+  "timezone": "browser",
+  "editable": true,
+  "panels": [
+    {
+      "id": 1,
+      "type": "stat",
+      "title": "Fault Drill Decision",
+      "description": "Dashboard-ready only; not imported into live Grafana.",
+      "targets": [
+        {
+          "expr": "week16_failure_taxonomy_fault_drill_decision",
+          "legendFormat": "{{decision}}"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "stat",
+      "title": "Source Candidate Total",
+      "targets": [
+        {
+          "expr": "week16_failure_taxonomy_fault_drill_source_candidate_total",
+          "legendFormat": "candidate_total"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "timeseries",
+      "title": "Fault Drill Scenario Signals",
+      "targets": [
+        {
+          "expr": "week16_failure_taxonomy_fault_drill_scenario_signal",
+          "legendFormat": "{{scenario}}/{{signal}}"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "bargauge",
+      "title": "Alert Count by Severity",
+      "targets": [
+        {
+          "expr": "week16_failure_taxonomy_fault_drill_alert_total",
+          "legendFormat": "{{severity}}"
+        }
+      ]
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "name": "Boundary",
+        "enable": true,
+        "type": "dashboard",
+        "text": "dashboard-ready artifact only; no live Grafana import or production SLO claim"
+      }
+    ]
+  },
+  "week16Source": {
+    "sourceJavaDecision": "PASS_WEEK16_JAVA_RERUN_PLAN_IT",
+    "sourceMainbaseDecision": "PASS_WEEK16_FAILURE_REGRESSION_REPORT_V0_EVIDENCE_DRIVEN",
+    "sourceClassificationMode": "evidence_driven_with_expected_fixture_consistency_guard",
+    "sourceSummary": {
+      "candidateTotal": 10,
+      "p1RegressionFixtureTotal": 2,
+      "thresholdFixtureTotal": 1,
+      "passControlTotal": 7,
+      "evidenceGapFixtureTotal": 0,
+      "p1RegressionFixtureIds": [
+        "procedural_v0_0004",
+        "procedural_v0_0010"
+      ],
+      "thresholdFixtureIds": [
+        "procedural_v0_0007"
+      ],
+      "passControlIds": [
+        "procedural_v0_0001",
+        "procedural_v0_0002",
+        "procedural_v0_0003",
+        "procedural_v0_0005",
+        "procedural_v0_0006",
+        "procedural_v0_0008",
+        "procedural_v0_0009"
+      ],
+      "evidenceGapFixtureIds": [],
+      "blockedClaimTotal": 6,
+      "blockedClaims": [
+        "semantic_audio_quality_pass_not_verified",
+        "human_review_pass_not_verified",
+        "final_mix_readiness_not_verified",
+        "live_java_service_availability_not_verified",
+        "live_prometheus_or_grafana_import_not_verified",
+        "production_slo_or_real_cloud_deployment_not_verified"
+      ]
+    },
+    "scenarioIds": [
+      "service_unavailable",
+      "high_error_ratio",
+      "high_latency"
+    ],
+    "decision": "PASS_WEEK16_FAILURE_TAXONOMY_FAULT_DRILL"
+  }
+}

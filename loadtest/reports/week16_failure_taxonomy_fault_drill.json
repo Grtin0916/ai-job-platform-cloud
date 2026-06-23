@@ -1,0 +1,132 @@
+{
+  "schemaVersion": "week16.failure_taxonomy_fault_drill.v1",
+  "generatedAt": "2026-06-23T08:23:56.802770+00:00",
+  "decision": "PASS_WEEK16_FAILURE_TAXONOMY_FAULT_DRILL",
+  "decisionErrors": [],
+  "sourceJavaReport": "loadtest/reports/week16_java_temporal_alignment_rerun_plan_report.json",
+  "sourceJavaDecision": "PASS_WEEK16_JAVA_RERUN_PLAN_IT",
+  "sourceJavaApiEndpoint": "/api/week16/temporal-alignment/rerun-plan",
+  "sourceMainbaseDecision": "PASS_WEEK16_FAILURE_REGRESSION_REPORT_V0_EVIDENCE_DRIVEN",
+  "sourceClassificationMode": "evidence_driven_with_expected_fixture_consistency_guard",
+  "summary": {
+    "candidateTotal": 10,
+    "p1RegressionFixtureTotal": 2,
+    "thresholdFixtureTotal": 1,
+    "passControlTotal": 7,
+    "evidenceGapFixtureTotal": 0,
+    "scenarioTotal": 3,
+    "criticalAlertTotal": 1,
+    "warningAlertTotal": 2,
+    "blockedClaimTotal": 6,
+    "blockedClaims": [
+      "semantic_audio_quality_pass_not_verified",
+      "human_review_pass_not_verified",
+      "final_mix_readiness_not_verified",
+      "live_java_service_availability_not_verified",
+      "live_prometheus_or_grafana_import_not_verified",
+      "production_slo_or_real_cloud_deployment_not_verified"
+    ]
+  },
+  "scenarios": [
+    {
+      "scenarioId": "service_unavailable",
+      "platformSignal": {
+        "availability": 0.0,
+        "errorRatio": 1.0,
+        "p95LatencyMs": null,
+        "sampleWindow": "synthetic_fault_drill"
+      },
+      "expectedAlert": "CRITICAL_SERVICE_UNAVAILABLE",
+      "alertSeverity": "critical",
+      "recommendedAction": "Preserve rerun-plan evidence, block automated rerun execution, and escalate service availability recovery.",
+      "decision": "ALERT_CRITICAL_BLOCK_RERUN",
+      "blockedClaims": [
+        "semantic_audio_quality_pass_not_verified",
+        "human_review_pass_not_verified",
+        "final_mix_readiness_not_verified",
+        "live_java_service_availability_not_verified",
+        "live_prometheus_or_grafana_import_not_verified",
+        "production_slo_or_real_cloud_deployment_not_verified"
+      ],
+      "sourceBoundary": [
+        "RANDOM_PORT IT only",
+        "test-scoped permitAll only",
+        "no live service availability claim",
+        "no async worker execution",
+        "no production auth claim",
+        "no exactly-once rerun claim"
+      ]
+    },
+    {
+      "scenarioId": "high_error_ratio",
+      "platformSignal": {
+        "availability": 1.0,
+        "errorRatio": 0.35,
+        "p95LatencyMs": 850,
+        "sampleWindow": "synthetic_fault_drill"
+      },
+      "expectedAlert": "WARN_HIGH_ERROR_RATIO",
+      "alertSeverity": "warning",
+      "recommendedAction": "Do not reclassify candidate failure buckets; inspect Java API error path and retry budget before rerun scheduling.",
+      "decision": "ALERT_WARNING_HOLD_RERUN",
+      "blockedClaims": [
+        "semantic_audio_quality_pass_not_verified",
+        "human_review_pass_not_verified",
+        "final_mix_readiness_not_verified",
+        "live_java_service_availability_not_verified",
+        "live_prometheus_or_grafana_import_not_verified",
+        "production_slo_or_real_cloud_deployment_not_verified"
+      ],
+      "sourceBoundary": [
+        "RANDOM_PORT IT only",
+        "test-scoped permitAll only",
+        "no live service availability claim",
+        "no async worker execution",
+        "no production auth claim",
+        "no exactly-once rerun claim"
+      ]
+    },
+    {
+      "scenarioId": "high_latency",
+      "platformSignal": {
+        "availability": 1.0,
+        "errorRatio": 0.0,
+        "p95LatencyMs": 2500,
+        "sampleWindow": "synthetic_fault_drill"
+      },
+      "expectedAlert": "WARN_HIGH_LATENCY",
+      "alertSeverity": "warning",
+      "recommendedAction": "Preserve previous attempts and delay rerun scheduling until latency returns within local drill threshold.",
+      "decision": "ALERT_WARNING_DELAY_RERUN",
+      "blockedClaims": [
+        "semantic_audio_quality_pass_not_verified",
+        "human_review_pass_not_verified",
+        "final_mix_readiness_not_verified",
+        "live_java_service_availability_not_verified",
+        "live_prometheus_or_grafana_import_not_verified",
+        "production_slo_or_real_cloud_deployment_not_verified"
+      ],
+      "sourceBoundary": [
+        "RANDOM_PORT IT only",
+        "test-scoped permitAll only",
+        "no live service availability claim",
+        "no async worker execution",
+        "no production auth claim",
+        "no exactly-once rerun claim"
+      ]
+    }
+  ],
+  "boundary": [
+    "synthetic local fault drill only",
+    "no live Java service availability claim",
+    "no live Prometheus scrape claim",
+    "no live Grafana import claim",
+    "no production SLO or real cloud deployment claim",
+    "no async rerun worker execution claim"
+  ],
+  "artifacts": {
+    "faultDrillReport": "loadtest/reports/week16_failure_taxonomy_fault_drill.json",
+    "prometheusMetrics": "observability/prometheus/week16_failure_taxonomy_fault_drill_metrics.prom",
+    "grafanaDashboard": "observability/grafana/dashboards/week16_failure_taxonomy_dashboard.json"
+  }
+}

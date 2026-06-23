@@ -1,0 +1,26 @@
+# HELP week16_failure_taxonomy_fault_drill_decision Week16 failure taxonomy fault drill decision, 1 means pass.
+# TYPE week16_failure_taxonomy_fault_drill_decision gauge
+week16_failure_taxonomy_fault_drill_decision{decision="PASS_WEEK16_FAILURE_TAXONOMY_FAULT_DRILL"} 1
+# HELP week16_failure_taxonomy_fault_drill_source_candidate_total Candidate total inherited from Java rerun-plan report.
+# TYPE week16_failure_taxonomy_fault_drill_source_candidate_total gauge
+week16_failure_taxonomy_fault_drill_source_candidate_total 10
+# HELP week16_failure_taxonomy_fault_drill_source_p1_rerun_fixture_total P1 actionable rerun fixture total inherited from Java rerun-plan report.
+# TYPE week16_failure_taxonomy_fault_drill_source_p1_rerun_fixture_total gauge
+week16_failure_taxonomy_fault_drill_source_p1_rerun_fixture_total 2
+# HELP week16_failure_taxonomy_fault_drill_scenario_total Total number of synthetic fault drill scenarios.
+# TYPE week16_failure_taxonomy_fault_drill_scenario_total gauge
+week16_failure_taxonomy_fault_drill_scenario_total 3
+# HELP week16_failure_taxonomy_fault_drill_alert_total Fault drill alert count by alert severity.
+# TYPE week16_failure_taxonomy_fault_drill_alert_total gauge
+week16_failure_taxonomy_fault_drill_alert_total{severity="critical"} 1
+week16_failure_taxonomy_fault_drill_alert_total{severity="warning"} 2
+# HELP week16_failure_taxonomy_fault_drill_scenario_signal Synthetic platform signal values by scenario and signal type.
+# TYPE week16_failure_taxonomy_fault_drill_scenario_signal gauge
+week16_failure_taxonomy_fault_drill_scenario_signal{scenario="service_unavailable",signal="availability"} 0.0
+week16_failure_taxonomy_fault_drill_scenario_signal{scenario="service_unavailable",signal="error_ratio"} 1.0
+week16_failure_taxonomy_fault_drill_scenario_signal{scenario="high_error_ratio",signal="availability"} 1.0
+week16_failure_taxonomy_fault_drill_scenario_signal{scenario="high_error_ratio",signal="error_ratio"} 0.35
+week16_failure_taxonomy_fault_drill_scenario_signal{scenario="high_error_ratio",signal="p95_latency_ms"} 850.0
+week16_failure_taxonomy_fault_drill_scenario_signal{scenario="high_latency",signal="availability"} 1.0
+week16_failure_taxonomy_fault_drill_scenario_signal{scenario="high_latency",signal="error_ratio"} 0.0
+week16_failure_taxonomy_fault_drill_scenario_signal{scenario="high_latency",signal="p95_latency_ms"} 2500.0

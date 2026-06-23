@@ -1,0 +1,9 @@
+decision=PASS_WEEK16_FAILURE_TAXONOMY_FAULT_DRILL
+decisionErrors=[]
+sourceJavaDecision=PASS_WEEK16_JAVA_RERUN_PLAN_IT
+sourceMainbaseDecision=PASS_WEEK16_FAILURE_REGRESSION_REPORT_V0_EVIDENCE_DRIVEN
+sourceClassificationMode=evidence_driven_with_expected_fixture_consistency_guard
+summary={'candidateTotal': 10, 'p1RegressionFixtureTotal': 2, 'thresholdFixtureTotal': 1, 'passControlTotal': 7, 'evidenceGapFixtureTotal': 0, 'scenarioTotal': 3, 'criticalAlertTotal': 1, 'warningAlertTotal': 2, 'blockedClaimTotal': 6, 'blockedClaims': ['semantic_audio_quality_pass_not_verified', 'human_review_pass_not_verified', 'final_mix_readiness_not_verified', 'live_java_service_availability_not_verified', 'live_prometheus_or_grafana_import_not_verified', 'production_slo_or_real_cloud_deployment_not_verified']}
+scenario=service_unavailable alertSeverity=critical decision=ALERT_CRITICAL_BLOCK_RERUN expectedAlert=CRITICAL_SERVICE_UNAVAILABLE
+scenario=high_error_ratio alertSeverity=warning decision=ALERT_WARNING_HOLD_RERUN expectedAlert=WARN_HIGH_ERROR_RATIO
+scenario=high_latency alertSeverity=warning decision=ALERT_WARNING_DELAY_RERUN expectedAlert=WARN_HIGH_LATENCY
