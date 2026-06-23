@@ -1,0 +1,18 @@
+# HELP week16_s3_failure_taxonomy_closure_decision Week16 S3 failure taxonomy closure decision, 1 means pass.
+# TYPE week16_s3_failure_taxonomy_closure_decision gauge
+week16_s3_failure_taxonomy_closure_decision{decision="FAIL_WEEK16_S3_FAILURE_TAXONOMY_CLOSURE"} 0
+# HELP week16_s3_failure_taxonomy_closure_repo_synced Whether each repository is clean and synced with origin/main.
+# TYPE week16_s3_failure_taxonomy_closure_repo_synced gauge
+week16_s3_failure_taxonomy_closure_repo_synced{repo="mainbase"} 1
+week16_s3_failure_taxonomy_closure_repo_synced{repo="java"} 1
+week16_s3_failure_taxonomy_closure_repo_synced{repo="cloud"} 0
+# HELP week16_s3_failure_taxonomy_closure_candidate_total Candidate total from the S3 failure taxonomy chain.
+# TYPE week16_s3_failure_taxonomy_closure_candidate_total gauge
+week16_s3_failure_taxonomy_closure_candidate_total 10
+# HELP week16_s3_failure_taxonomy_closure_scenario_total Synthetic Cloud fault-drill scenario total.
+# TYPE week16_s3_failure_taxonomy_closure_scenario_total gauge
+week16_s3_failure_taxonomy_closure_scenario_total 3
+# HELP week16_s3_failure_taxonomy_closure_alert_total Alert total by severity from Cloud fault drill.
+# TYPE week16_s3_failure_taxonomy_closure_alert_total gauge
+week16_s3_failure_taxonomy_closure_alert_total{severity="critical"} 1
+week16_s3_failure_taxonomy_closure_alert_total{severity="warning"} 2

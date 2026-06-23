@@ -1,0 +1,211 @@
+{
+  "schemaVersion": "week16.s3.failure_taxonomy_closure.v1",
+  "generatedAt": "2026-06-23T08:35:30.988479+00:00",
+  "decision": "FAIL_WEEK16_S3_FAILURE_TAXONOMY_CLOSURE",
+  "decisionErrors": [
+    "one or more repositories are not clean and synced with origin/main"
+  ],
+  "repositories": {
+    "mainbase": {
+      "path": "/home/GRT/work/audio_engineering_repo_skeleton_v1",
+      "head": "70d6a7f",
+      "originMain": "70d6a7f",
+      "aheadBehind": "0 0",
+      "rawPorcelainCount": 0,
+      "porcelainCount": 0,
+      "porcelain": [],
+      "ignoredCurrentClosurePorcelain": [],
+      "recentCommits": [
+        "70d6a7f feat: build week16 failure regression report",
+        "1fc18a4 feat: seed week16 temporal alignment failure taxonomy",
+        "2689658 feat: add week15 explicit risk contract"
+      ],
+      "cleanAndSynced": true
+    },
+    "java": {
+      "path": "/home/GRT/work/media-task-platform-java",
+      "head": "03f8f21",
+      "originMain": "03f8f21",
+      "aheadBehind": "0 0",
+      "rawPorcelainCount": 0,
+      "porcelainCount": 0,
+      "porcelain": [],
+      "ignoredCurrentClosurePorcelain": [],
+      "recentCommits": [
+        "03f8f21 feat: add week16 temporal alignment rerun plan api",
+        "8b0170f feat: expose week16 failure taxonomy api",
+        "209f56c feat: consume week16 temporal alignment failure taxonomy"
+      ],
+      "cleanAndSynced": true
+    },
+    "cloud": {
+      "path": "/home/GRT/work/ai-job-platform-cloud",
+      "head": "722dd37",
+      "originMain": "722dd37",
+      "aheadBehind": "0 0",
+      "rawPorcelainCount": 3,
+      "porcelainCount": 1,
+      "porcelain": [
+        "?? scripts/__pycache__/build_week16_s3_failure_taxonomy_closure_index.cpython-39.pyc"
+      ],
+      "ignoredCurrentClosurePorcelain": [
+        "?? artifacts/logs/week16_s3_failure_taxonomy_closure_20260623_083530.log",
+        "?? scripts/build_week16_s3_failure_taxonomy_closure_index.py"
+      ],
+      "recentCommits": [
+        "722dd37 feat: simulate week16 failure taxonomy fault drill",
+        "09a56b1 chore: close week16 failure taxonomy three-repo chain",
+        "4c48c59 feat: consume week16 failure taxonomy api evidence"
+      ],
+      "cleanAndSynced": false
+    }
+  },
+  "evidenceChain": {
+    "mainbase": {
+      "path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/evals/week16_temporal_alignment_failure_regression_report.json",
+      "decision": "PASS_WEEK16_FAILURE_REGRESSION_REPORT_V0_EVIDENCE_DRIVEN",
+      "classificationMode": "evidence_driven_with_expected_fixture_consistency_guard",
+      "summary": {
+        "candidateTotal": 10,
+        "p1RegressionFixtureTotal": 2,
+        "thresholdFixtureTotal": 1,
+        "passControlTotal": 7,
+        "evidenceGapFixtureTotal": 0,
+        "p1RegressionFixtureIds": [
+          "procedural_v0_0004",
+          "procedural_v0_0010"
+        ],
+        "thresholdFixtureIds": [
+          "procedural_v0_0007"
+        ],
+        "passControlIds": [
+          "procedural_v0_0001",
+          "procedural_v0_0002",
+          "procedural_v0_0003",
+          "procedural_v0_0005",
+          "procedural_v0_0006",
+          "procedural_v0_0008",
+          "procedural_v0_0009"
+        ],
+        "evidenceGapFixtureIds": [],
+        "blockedClaimTotal": 6,
+        "blockedClaims": [
+          "semantic_audio_quality_pass_not_verified",
+          "human_review_pass_not_verified",
+          "final_mix_readiness_not_verified",
+          "live_java_service_availability_not_verified",
+          "live_prometheus_or_grafana_import_not_verified",
+          "production_slo_or_real_cloud_deployment_not_verified"
+        ]
+      }
+    },
+    "java": {
+      "path": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week16_java_temporal_alignment_rerun_plan_report.json",
+      "decision": "PASS_WEEK16_JAVA_RERUN_PLAN_IT",
+      "apiEndpoint": "/api/week16/temporal-alignment/rerun-plan",
+      "sourceMainbaseDecision": "PASS_WEEK16_FAILURE_REGRESSION_REPORT_V0_EVIDENCE_DRIVEN",
+      "sourceClassificationMode": "evidence_driven_with_expected_fixture_consistency_guard",
+      "summary": {
+        "candidateTotal": 10,
+        "p1RegressionFixtureTotal": 2,
+        "thresholdFixtureTotal": 1,
+        "passControlTotal": 7,
+        "evidenceGapFixtureTotal": 0,
+        "p1RegressionFixtureIds": [
+          "procedural_v0_0004",
+          "procedural_v0_0010"
+        ],
+        "thresholdFixtureIds": [
+          "procedural_v0_0007"
+        ],
+        "passControlIds": [
+          "procedural_v0_0001",
+          "procedural_v0_0002",
+          "procedural_v0_0003",
+          "procedural_v0_0005",
+          "procedural_v0_0006",
+          "procedural_v0_0008",
+          "procedural_v0_0009"
+        ],
+        "evidenceGapFixtureIds": [],
+        "blockedClaimTotal": 6,
+        "blockedClaims": [
+          "semantic_audio_quality_pass_not_verified",
+          "human_review_pass_not_verified",
+          "final_mix_readiness_not_verified",
+          "live_java_service_availability_not_verified",
+          "live_prometheus_or_grafana_import_not_verified",
+          "production_slo_or_real_cloud_deployment_not_verified"
+        ]
+      }
+    },
+    "cloud": {
+      "path": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week16_failure_taxonomy_fault_drill.json",
+      "decision": "PASS_WEEK16_FAILURE_TAXONOMY_FAULT_DRILL",
+      "sourceJavaDecision": "PASS_WEEK16_JAVA_RERUN_PLAN_IT",
+      "sourceMainbaseDecision": "PASS_WEEK16_FAILURE_REGRESSION_REPORT_V0_EVIDENCE_DRIVEN",
+      "sourceClassificationMode": "evidence_driven_with_expected_fixture_consistency_guard",
+      "summary": {
+        "candidateTotal": 10,
+        "p1RegressionFixtureTotal": 2,
+        "thresholdFixtureTotal": 1,
+        "passControlTotal": 7,
+        "evidenceGapFixtureTotal": 0,
+        "scenarioTotal": 3,
+        "criticalAlertTotal": 1,
+        "warningAlertTotal": 2,
+        "blockedClaimTotal": 6,
+        "blockedClaims": [
+          "semantic_audio_quality_pass_not_verified",
+          "human_review_pass_not_verified",
+          "final_mix_readiness_not_verified",
+          "live_java_service_availability_not_verified",
+          "live_prometheus_or_grafana_import_not_verified",
+          "production_slo_or_real_cloud_deployment_not_verified"
+        ]
+      }
+    }
+  },
+  "summary": {
+    "candidateTotal": 10,
+    "p1RegressionFixtureTotal": 2,
+    "thresholdFixtureTotal": 1,
+    "passControlTotal": 7,
+    "evidenceGapFixtureTotal": 0,
+    "scenarioTotal": 3,
+    "criticalAlertTotal": 1,
+    "warningAlertTotal": 2,
+    "blockedClaimTotal": 12,
+    "blockedClaims": [
+      "final_mix_readiness_not_verified",
+      "human_review_pass_not_verified",
+      "live_java_service_availability_not_verified",
+      "live_prometheus_or_grafana_import_not_verified",
+      "no async rerun worker execution claim",
+      "no live Grafana import claim",
+      "no live Java service availability claim",
+      "no live Prometheus scrape claim",
+      "no production SLO or real cloud deployment claim",
+      "production_slo_or_real_cloud_deployment_not_verified",
+      "semantic_audio_quality_pass_not_verified",
+      "synthetic local fault drill only"
+    ]
+  },
+  "boundary": [
+    "local repository evidence closure only",
+    "does not claim semantic audio quality pass",
+    "does not claim human review pass",
+    "does not claim final mix readiness",
+    "does not claim live Java service availability",
+    "does not claim live Prometheus scrape or live Grafana import",
+    "does not claim production SLO or real cloud deployment",
+    "does not claim async rerun worker execution"
+  ],
+  "artifacts": {
+    "closureIndex": "loadtest/reports/week16_s3_failure_taxonomy_closure_index.json",
+    "closureMetrics": "observability/prometheus/week16_s3_failure_taxonomy_closure_metrics.prom",
+    "mainbaseReport": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/evals/week16_temporal_alignment_failure_regression_report.json",
+    "javaReport": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week16_java_temporal_alignment_rerun_plan_report.json",
+    "cloudFaultDrillReport": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week16_failure_taxonomy_fault_drill.json"
+  }
+}
