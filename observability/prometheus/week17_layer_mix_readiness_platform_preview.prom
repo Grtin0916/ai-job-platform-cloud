@@ -1,0 +1,19 @@
+# HELP week17_layer_mix_readiness_candidates_total Total candidates seen by the W17 readiness platform preview.
+# TYPE week17_layer_mix_readiness_candidates_total gauge
+week17_layer_mix_readiness_candidates_total{source="java_readiness_report"} 10
+# HELP week17_layer_mix_readiness_mix_eligibility_total Candidate count by mix eligibility.
+# TYPE week17_layer_mix_readiness_mix_eligibility_total gauge
+week17_layer_mix_readiness_mix_eligibility_total{eligibility="BLOCK_AUTOMIX_REGRESSION_ONLY"} 2
+week17_layer_mix_readiness_mix_eligibility_total{eligibility="ELIGIBLE_CONTROL_ONLY"} 7
+week17_layer_mix_readiness_mix_eligibility_total{eligibility="MONITOR_ONLY_THRESHOLD_MARGIN"} 1
+# HELP week17_layer_mix_readiness_fixture_role_total Candidate count by fixture role.
+# TYPE week17_layer_mix_readiness_fixture_role_total gauge
+week17_layer_mix_readiness_fixture_role_total{role="P1_PAIRED_REGRESSION_FIXTURE"} 2
+week17_layer_mix_readiness_fixture_role_total{role="P2_THRESHOLD_MARGIN_FIXTURE"} 1
+week17_layer_mix_readiness_fixture_role_total{role="P4_NUMERIC_MARGIN_CONTROL"} 7
+# HELP week17_layer_mix_readiness_platform_gate_info Platform preview gate decision as labeled info metric.
+# TYPE week17_layer_mix_readiness_platform_gate_info gauge
+week17_layer_mix_readiness_platform_gate_info{decision="PASS_WEEK17_LAYER_MIX_READINESS_PLATFORM_PREVIEW",source_decision="PASS_WEEK17_LAYER_MIX_INPUT_READINESS_CONSUMED"} 1
+# HELP week17_layer_mix_readiness_score Control-only candidates divided by candidate total.
+# TYPE week17_layer_mix_readiness_score gauge
+week17_layer_mix_readiness_score 0.7

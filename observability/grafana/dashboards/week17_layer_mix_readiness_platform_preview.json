@@ -1,0 +1,58 @@
+{
+  "title": "Week17 Layer Mix Readiness Platform Preview",
+  "schemaVersion": 1,
+  "tags": [
+    "week17",
+    "layer-mix",
+    "readiness",
+    "artifact-ready"
+  ],
+  "timezone": "browser",
+  "panels": [
+    {
+      "type": "stat",
+      "title": "Candidate Total",
+      "targets": [
+        {
+          "expr": "week17_layer_mix_readiness_candidates_total"
+        }
+      ]
+    },
+    {
+      "type": "bargauge",
+      "title": "Mix Eligibility",
+      "targets": [
+        {
+          "expr": "week17_layer_mix_readiness_mix_eligibility_total"
+        }
+      ]
+    },
+    {
+      "type": "bargauge",
+      "title": "Fixture Roles",
+      "targets": [
+        {
+          "expr": "week17_layer_mix_readiness_fixture_role_total"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Readiness Score",
+      "targets": [
+        {
+          "expr": "week17_layer_mix_readiness_score"
+        }
+      ]
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "name": "Non-claims",
+        "enable": true,
+        "text": "dashboard-ready only; no live Grafana import, no production SLO, no final mix readiness"
+      }
+    ]
+  }
+}

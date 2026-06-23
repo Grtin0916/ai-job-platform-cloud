@@ -1,0 +1,52 @@
+{
+  "schemaVersion": "week17.layer_mix_readiness.platform_preview.v0",
+  "generatedAtUtc": "2026-06-23T09:46:17.461020+00:00",
+  "decision": "PASS_WEEK17_LAYER_MIX_READINESS_PLATFORM_PREVIEW",
+  "decisionErrors": [],
+  "source": "java_readiness_report",
+  "sourcePath": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week17_layer_mix_input_readiness_api_report.json",
+  "sourceSha256": "7b7e4839b05eb3eaf22afaf6aabbf5db2e24fe5baa5ba1e5ceef5f6ac8f5ba78",
+  "sourceDecision": "PASS_WEEK17_LAYER_MIX_INPUT_READINESS_CONSUMED",
+  "sourceMainbaseDecision": "PASS_WEEK16_S3_TO_W17_LAYER_MIX_INPUT_READINESS",
+  "summary": {
+    "candidateTotal": 10,
+    "automixBlockedTotal": 2,
+    "controlOnlyTotal": 7,
+    "thresholdMonitorTotal": 1,
+    "platformReadinessScore": 0.7
+  },
+  "fixtureRoleCounts": {
+    "P1_PAIRED_REGRESSION_FIXTURE": 2,
+    "P2_THRESHOLD_MARGIN_FIXTURE": 1,
+    "P4_NUMERIC_MARGIN_CONTROL": 7
+  },
+  "mixEligibilityCounts": {
+    "BLOCK_AUTOMIX_REGRESSION_ONLY": 2,
+    "ELIGIBLE_CONTROL_ONLY": 7,
+    "MONITOR_ONLY_THRESHOLD_MARGIN": 1
+  },
+  "alertProjection": {
+    "automixBlockedAlert": true,
+    "thresholdMonitorAlert": true,
+    "controlInputAvailable": true,
+    "dashboardReady": true,
+    "metricsReady": true,
+    "livePrometheusScrapeClaimed": false,
+    "liveGrafanaImportClaimed": false,
+    "productionSloClaimed": false
+  },
+  "blockedClaims": [
+    "automatic layer mix eligibility",
+    "exactly-once rerun",
+    "final mix readiness",
+    "human review pass",
+    "live Grafana import",
+    "live Java service availability",
+    "live Prometheus scrape",
+    "production SLO",
+    "production auth boundary",
+    "production mixer availability",
+    "real layer mixer executed",
+    "semantic audio quality pass"
+  ]
+}

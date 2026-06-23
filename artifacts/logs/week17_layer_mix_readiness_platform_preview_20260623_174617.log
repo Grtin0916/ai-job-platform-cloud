@@ -1,0 +1,24 @@
+{
+  "decision": "PASS_WEEK17_LAYER_MIX_READINESS_PLATFORM_PREVIEW",
+  "summary": {
+    "candidateTotal": 10,
+    "automixBlockedTotal": 2,
+    "controlOnlyTotal": 7,
+    "thresholdMonitorTotal": 1,
+    "platformReadinessScore": 0.7
+  },
+  "fixtureRoleCounts": {
+    "P1_PAIRED_REGRESSION_FIXTURE": 2,
+    "P2_THRESHOLD_MARGIN_FIXTURE": 1,
+    "P4_NUMERIC_MARGIN_CONTROL": 7
+  },
+  "mixEligibilityCounts": {
+    "BLOCK_AUTOMIX_REGRESSION_ONLY": 2,
+    "ELIGIBLE_CONTROL_ONLY": 7,
+    "MONITOR_ONLY_THRESHOLD_MARGIN": 1
+  },
+  "outJson": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week17_layer_mix_readiness_platform_preview.json",
+  "outProm": "/home/GRT/work/ai-job-platform-cloud/observability/prometheus/week17_layer_mix_readiness_platform_preview.prom",
+  "outDashboard": "/home/GRT/work/ai-job-platform-cloud/observability/grafana/dashboards/week17_layer_mix_readiness_platform_preview.json",
+  "outRunbook": "/home/GRT/work/ai-job-platform-cloud/docs/runbooks/week17-layer-mix-readiness-platform-preview.md"
+}
