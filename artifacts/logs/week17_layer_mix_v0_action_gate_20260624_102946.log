@@ -1,0 +1,12 @@
+{
+  "decision": "PASS_WEEK17_LAYER_MIX_V0_ACTION_GATE_WITH_NEGATIVE_CONTROLS",
+  "scenarioTotal": 5,
+  "realCurrentDecision": "PASS_WEEK17_LAYER_MIX_V0_ACTION_GATE",
+  "realCurrentAction": "ALLOW_PLACEHOLDER_CONTROL_PLATFORM_PREVIEW_ONLY",
+  "negativeControlsAllBlocked": true,
+  "outputs": [
+    "loadtest/reports/week17_layer_mix_v0_action_gate.json",
+    "loadtest/reports/week17_layer_mix_v0_action_gate.csv",
+    "observability/prometheus/week17_layer_mix_v0_action_gate.prom"
+  ]
+}

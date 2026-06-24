@@ -1,0 +1,119 @@
+{
+  "schemaVersion": "week17.layer_mix_v0.action_gate.v1",
+  "generatedAtUtc": "2026-06-24T02:29:46.625328+00:00",
+  "decision": "PASS_WEEK17_LAYER_MIX_V0_ACTION_GATE_WITH_NEGATIVE_CONTROLS",
+  "cloudHeadBeforeCommit": "a0714d4",
+  "sourcePreview": "loadtest/reports/week17_layer_mix_v0_result_platform_preview.json",
+  "scenarioTotal": 5,
+  "realCurrentScenarioTotal": 1,
+  "negativeControlTotal": 4,
+  "passScenarioTotal": 1,
+  "blockScenarioTotal": 4,
+  "realCurrentDecision": "PASS_WEEK17_LAYER_MIX_V0_ACTION_GATE",
+  "realCurrentAction": "ALLOW_PLACEHOLDER_CONTROL_PLATFORM_PREVIEW_ONLY",
+  "negativeControlsAllBlocked": true,
+  "expectedTrackTotal": 7,
+  "maxClipRate": 0.0,
+  "minRms": 0.01,
+  "platformBehavior": "healthy preview is allowed as placeholder-control preview only; malformed or overclaimed mix results are blocked",
+  "blockedClaimsPreserved": true,
+  "livePrometheusScrapeClaimed": false,
+  "liveGrafanaImportClaimed": false,
+  "productionSloClaimed": false,
+  "finalMixReadinessClaimed": false,
+  "scenarios": [
+    {
+      "scenarioId": "real_current_healthy_preview",
+      "scenarioKind": "real_current",
+      "decision": "PASS_WEEK17_LAYER_MIX_V0_ACTION_GATE",
+      "action": "ALLOW_PLACEHOLDER_CONTROL_PLATFORM_PREVIEW_ONLY",
+      "issues": [],
+      "sourceJavaHead": "d6928dc",
+      "sourceMainbaseHead": "d9a6df0",
+      "trackTotal": 7,
+      "finalPeak": 0.8912509083747864,
+      "finalRms": 0.15652422606945038,
+      "finalClipRateBeforeClip": 0.0,
+      "finalMixReadinessClaimed": false,
+      "productionSloClaimed": false,
+      "livePrometheusScrapeClaimed": false,
+      "liveGrafanaImportClaimed": false
+    },
+    {
+      "scenarioId": "synthetic_high_clip_rate",
+      "scenarioKind": "negative_control",
+      "decision": "BLOCK_WEEK17_LAYER_MIX_V0_ACTION_GATE",
+      "action": "BLOCK_AUDIO_CLIPPING_RISK",
+      "issues": [
+        "CLIP_RATE_ABOVE_ZERO"
+      ],
+      "sourceJavaHead": "d6928dc",
+      "sourceMainbaseHead": "d9a6df0",
+      "trackTotal": 7,
+      "finalPeak": 0.8912509083747864,
+      "finalRms": 0.15652422606945038,
+      "finalClipRateBeforeClip": 0.025,
+      "finalMixReadinessClaimed": false,
+      "productionSloClaimed": false,
+      "livePrometheusScrapeClaimed": false,
+      "liveGrafanaImportClaimed": false
+    },
+    {
+      "scenarioId": "synthetic_missing_track",
+      "scenarioKind": "negative_control",
+      "decision": "BLOCK_WEEK17_LAYER_MIX_V0_ACTION_GATE",
+      "action": "BLOCK_INCOMPLETE_LAYER_INPUT",
+      "issues": [
+        "TRACK_TOTAL_MISMATCH"
+      ],
+      "sourceJavaHead": "d6928dc",
+      "sourceMainbaseHead": "d9a6df0",
+      "trackTotal": 6,
+      "finalPeak": 0.8912509083747864,
+      "finalRms": 0.15652422606945038,
+      "finalClipRateBeforeClip": 0.0,
+      "finalMixReadinessClaimed": false,
+      "productionSloClaimed": false,
+      "livePrometheusScrapeClaimed": false,
+      "liveGrafanaImportClaimed": false
+    },
+    {
+      "scenarioId": "synthetic_low_rms_silentish",
+      "scenarioKind": "negative_control",
+      "decision": "BLOCK_WEEK17_LAYER_MIX_V0_ACTION_GATE",
+      "action": "BLOCK_INVALID_AUDIO_ENERGY",
+      "issues": [
+        "RMS_TOO_LOW_OR_SILENT"
+      ],
+      "sourceJavaHead": "d6928dc",
+      "sourceMainbaseHead": "d9a6df0",
+      "trackTotal": 7,
+      "finalPeak": 0.8912509083747864,
+      "finalRms": 0.0,
+      "finalClipRateBeforeClip": 0.0,
+      "finalMixReadinessClaimed": false,
+      "productionSloClaimed": false,
+      "livePrometheusScrapeClaimed": false,
+      "liveGrafanaImportClaimed": false
+    },
+    {
+      "scenarioId": "synthetic_final_mix_overclaim",
+      "scenarioKind": "negative_control",
+      "decision": "BLOCK_WEEK17_LAYER_MIX_V0_ACTION_GATE",
+      "action": "BLOCK_OVERCLAIMED_CAPABILITY",
+      "issues": [
+        "FINAL_MIX_READINESS_OVERCLAIM"
+      ],
+      "sourceJavaHead": "d6928dc",
+      "sourceMainbaseHead": "d9a6df0",
+      "trackTotal": 7,
+      "finalPeak": 0.8912509083747864,
+      "finalRms": 0.15652422606945038,
+      "finalClipRateBeforeClip": 0.0,
+      "finalMixReadinessClaimed": true,
+      "productionSloClaimed": false,
+      "livePrometheusScrapeClaimed": false,
+      "liveGrafanaImportClaimed": false
+    }
+  ]
+}
