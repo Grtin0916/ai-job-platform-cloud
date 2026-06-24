@@ -1,0 +1,18 @@
+# HELP week17_layer_mix_v0_platform_preview_info Week17 layer mix v0 platform preview information.
+# TYPE week17_layer_mix_v0_platform_preview_info gauge
+week17_layer_mix_v0_platform_preview_info{alert_decision="NO_ALERT_PLACEHOLDER_CONTROL_MIX_HEALTHY",decision="PASS_WEEK17_LAYER_MIX_V0_PLATFORM_PREVIEW",source_java_head="d6928dc",source_mainbase_head="d9a6df0"} 1
+# HELP week17_layer_mix_v0_track_total Number of tracks included in the Week17 layer mix v0 placeholder-control mix.
+# TYPE week17_layer_mix_v0_track_total gauge
+week17_layer_mix_v0_track_total{alert_decision="NO_ALERT_PLACEHOLDER_CONTROL_MIX_HEALTHY",decision="PASS_WEEK17_LAYER_MIX_V0_PLATFORM_PREVIEW",source_java_head="d6928dc",source_mainbase_head="d9a6df0"} 7
+# HELP week17_layer_mix_v0_final_peak Final peak amplitude of the Week17 layer mix v0 placeholder-control mix.
+# TYPE week17_layer_mix_v0_final_peak gauge
+week17_layer_mix_v0_final_peak{alert_decision="NO_ALERT_PLACEHOLDER_CONTROL_MIX_HEALTHY",decision="PASS_WEEK17_LAYER_MIX_V0_PLATFORM_PREVIEW",source_java_head="d6928dc",source_mainbase_head="d9a6df0"} 0.8912509083747864
+# HELP week17_layer_mix_v0_final_rms Final RMS amplitude of the Week17 layer mix v0 placeholder-control mix.
+# TYPE week17_layer_mix_v0_final_rms gauge
+week17_layer_mix_v0_final_rms{alert_decision="NO_ALERT_PLACEHOLDER_CONTROL_MIX_HEALTHY",decision="PASS_WEEK17_LAYER_MIX_V0_PLATFORM_PREVIEW",source_java_head="d6928dc",source_mainbase_head="d9a6df0"} 0.15652422606945038
+# HELP week17_layer_mix_v0_clip_rate_before_clip Clip rate before output clipping for the Week17 layer mix v0 placeholder-control mix.
+# TYPE week17_layer_mix_v0_clip_rate_before_clip gauge
+week17_layer_mix_v0_clip_rate_before_clip{alert_decision="NO_ALERT_PLACEHOLDER_CONTROL_MIX_HEALTHY",decision="PASS_WEEK17_LAYER_MIX_V0_PLATFORM_PREVIEW",source_java_head="d6928dc",source_mainbase_head="d9a6df0"} 0.0
+# HELP week17_layer_mix_v0_blocked_claim_total Number of explicit blocked claims preserved by the Cloud platform preview.
+# TYPE week17_layer_mix_v0_blocked_claim_total gauge
+week17_layer_mix_v0_blocked_claim_total{alert_decision="NO_ALERT_PLACEHOLDER_CONTROL_MIX_HEALTHY",decision="PASS_WEEK17_LAYER_MIX_V0_PLATFORM_PREVIEW",source_java_head="d6928dc",source_mainbase_head="d9a6df0"} 8

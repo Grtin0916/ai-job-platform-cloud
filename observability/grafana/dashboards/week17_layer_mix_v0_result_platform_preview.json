@@ -1,0 +1,106 @@
+{
+  "title": "Week17 Layer Mix V0 Result Platform Preview",
+  "uid": "week17-layer-mix-v0-result-preview",
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "30s",
+  "tags": [
+    "week17",
+    "layer-mix",
+    "placeholder-control",
+    "dashboard-ready"
+  ],
+  "panels": [
+    {
+      "id": 1,
+      "type": "stat",
+      "title": "Platform Preview Pass",
+      "targets": [
+        {
+          "expr": "week17_layer_mix_v0_platform_preview_info"
+        }
+      ],
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
+        "y": 0
+      }
+    },
+    {
+      "id": 2,
+      "type": "stat",
+      "title": "Track Total",
+      "targets": [
+        {
+          "expr": "week17_layer_mix_v0_track_total"
+        }
+      ],
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 6,
+        "y": 0
+      }
+    },
+    {
+      "id": 3,
+      "type": "stat",
+      "title": "Clip Rate Before Clip",
+      "targets": [
+        {
+          "expr": "week17_layer_mix_v0_clip_rate_before_clip"
+        }
+      ],
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 12,
+        "y": 0
+      }
+    },
+    {
+      "id": 4,
+      "type": "stat",
+      "title": "Final RMS",
+      "targets": [
+        {
+          "expr": "week17_layer_mix_v0_final_rms"
+        }
+      ],
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 18,
+        "y": 0
+      }
+    },
+    {
+      "id": 5,
+      "type": "stat",
+      "title": "Blocked Claims",
+      "targets": [
+        {
+          "expr": "week17_layer_mix_v0_blocked_claim_total"
+        }
+      ],
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
+        "y": 8
+      }
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "name": "Boundary",
+        "enable": true,
+        "iconColor": "rgba(255, 96, 96, 1)",
+        "type": "dashboard"
+      }
+    ]
+  }
+}

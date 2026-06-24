@@ -1,0 +1,15 @@
+{
+  "decision": "PASS_WEEK17_LAYER_MIX_V0_PLATFORM_PREVIEW",
+  "alertDecision": "NO_ALERT_PLACEHOLDER_CONTROL_MIX_HEALTHY",
+  "sourceJavaHead": "d6928dc",
+  "sourceMainbaseHead": "d9a6df0",
+  "trackTotal": 7,
+  "finalRms": 0.15652422606945038,
+  "finalClipRateBeforeClip": 0.0,
+  "outputs": [
+    "loadtest/reports/week17_layer_mix_v0_result_platform_preview.json",
+    "observability/prometheus/week17_layer_mix_v0_result_platform_preview.prom",
+    "observability/grafana/dashboards/week17_layer_mix_v0_result_platform_preview.json",
+    "docs/runbooks/week17-layer-mix-v0-result-platform-preview.md"
+  ]
+}
