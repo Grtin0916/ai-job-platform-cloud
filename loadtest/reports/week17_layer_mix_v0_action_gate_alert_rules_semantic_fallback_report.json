@@ -1,0 +1,265 @@
+{
+  "alertNames": [
+    "Week17LayerMixV0ActionGateBlocked",
+    "Week17LayerMixV0ActionGateIssueDetected",
+    "Week17LayerMixV0ClipRisk",
+    "Week17LayerMixV0HealthyCaseUnexpectedlyBlocked"
+  ],
+  "blockedClaims": [
+    "no_promtool_pass_claim",
+    "no_production_alerting_claim",
+    "no_alertmanager_routing_claim",
+    "no_production_paging_claim",
+    "no_live_prometheus_scrape_claim",
+    "no_production_slo_claim"
+  ],
+  "checks": [
+    {
+      "details": [
+        {
+          "bytes": 1825,
+          "exists": true,
+          "path": "observability/prometheus/week17_layer_mix_v0_action_gate_alert_rules.yml",
+          "requiredForPass": true
+        },
+        {
+          "bytes": 7692,
+          "exists": true,
+          "path": "observability/prometheus/week17_layer_mix_v0_action_gate_alert_rule_test.yml",
+          "requiredForPass": true
+        },
+        {
+          "bytes": 1534,
+          "exists": true,
+          "path": "loadtest/reports/week17_layer_mix_v0_action_gate_alert_rules_report.json",
+          "requiredForPass": true
+        },
+        {
+          "bytes": 4231,
+          "exists": true,
+          "path": "loadtest/reports/week17_layer_mix_v0_action_gate.json",
+          "requiredForPass": false
+        },
+        {
+          "bytes": 1310,
+          "exists": true,
+          "path": "loadtest/reports/week17_layer_mix_v0_action_gate.csv",
+          "requiredForPass": false
+        }
+      ],
+      "name": "required_source_files_exist",
+      "passed": true
+    },
+    {
+      "alertNames": [
+        "Week17LayerMixV0ActionGateBlocked",
+        "Week17LayerMixV0ActionGateIssueDetected",
+        "Week17LayerMixV0ClipRisk",
+        "Week17LayerMixV0HealthyCaseUnexpectedlyBlocked"
+      ],
+      "name": "alert_rules_have_alert_definitions",
+      "note": "Fallback requires at least one alert definition; exact count is left to promtool.",
+      "passed": true
+    },
+    {
+      "name": "promtool_test_file_has_alert_rule_test",
+      "passed": true
+    },
+    {
+      "name": "promtool_test_file_has_expected_alerts_field",
+      "passed": true
+    },
+    {
+      "items": [
+        {
+          "acceptedTerms": [
+            "clip",
+            "clip_rate",
+            "high_clip"
+          ],
+          "matchedTerms": [
+            "clip",
+            "clip_rate",
+            "high_clip"
+          ],
+          "name": "clip_risk",
+          "passed": true
+        },
+        {
+          "acceptedTerms": [
+            "missing",
+            "missing_track",
+            "track"
+          ],
+          "matchedTerms": [
+            "missing",
+            "missing_track",
+            "track"
+          ],
+          "name": "missing_track",
+          "passed": true
+        },
+        {
+          "acceptedTerms": [
+            "low_rms",
+            "rms",
+            "silent",
+            "silence",
+            "quiet"
+          ],
+          "matchedTerms": [
+            "low_rms",
+            "rms",
+            "silent"
+          ],
+          "name": "low_rms_or_silent",
+          "passed": true
+        },
+        {
+          "acceptedTerms": [
+            "final_mix_overclaim",
+            "overclaim",
+            "final_mix",
+            "readiness",
+            "claim"
+          ],
+          "matchedTerms": [
+            "final_mix_overclaim",
+            "overclaim",
+            "final_mix",
+            "readiness",
+            "claim"
+          ],
+          "name": "final_mix_overclaim",
+          "passed": true
+        }
+      ],
+      "name": "required_rule_or_scenario_concepts_present",
+      "passed": true
+    },
+    {
+      "items": [
+        {
+          "acceptedTerms": [
+            "synthetic_high_clip_rate",
+            "high_clip",
+            "clip_rate",
+            "clip"
+          ],
+          "matchedTerms": [
+            "synthetic_high_clip_rate",
+            "high_clip",
+            "clip_rate",
+            "clip"
+          ],
+          "name": "synthetic_high_clip_rate",
+          "passed": true
+        },
+        {
+          "acceptedTerms": [
+            "missing_track",
+            "missing track",
+            "missing"
+          ],
+          "matchedTerms": [
+            "missing_track",
+            "missing"
+          ],
+          "name": "missing_track",
+          "passed": true
+        },
+        {
+          "acceptedTerms": [
+            "low_rms",
+            "low rms",
+            "silent",
+            "silence",
+            "quiet",
+            "rms"
+          ],
+          "matchedTerms": [
+            "low_rms",
+            "silent",
+            "rms"
+          ],
+          "name": "low_rms",
+          "passed": true
+        },
+        {
+          "acceptedTerms": [
+            "final_mix_overclaim",
+            "final mix overclaim",
+            "overclaim",
+            "final_mix",
+            "readiness"
+          ],
+          "matchedTerms": [
+            "final_mix_overclaim",
+            "overclaim",
+            "final_mix",
+            "readiness"
+          ],
+          "name": "final_mix_overclaim",
+          "passed": true
+        }
+      ],
+      "name": "required_negative_control_scenarios_present",
+      "passed": true
+    },
+    {
+      "acceptedHealthyTerms": [
+        "healthy",
+        "placeholder",
+        "placeholder_control"
+      ],
+      "acceptedNonAlertTerms": [
+        "no_alert",
+        "no alert",
+        "pass",
+        "passed"
+      ],
+      "name": "healthy_placeholder_case_present_and_not_alerted",
+      "passed": true
+    },
+    {
+      "name": "promtool_blocked_is_explicit",
+      "passed": true
+    },
+    {
+      "name": "no_unsafe_promtool_pass_claim",
+      "passed": true
+    }
+  ],
+  "decision": "PARTIAL_WEEK17_LAYER_MIX_V0_ALERT_RULES_PROMTOOL_BLOCKED_LOCAL_SEMANTIC_PASS",
+  "failedChecks": [],
+  "generatedAtUtc": "2026-06-25T02:55:36.161570Z",
+  "notes": [
+    "This is a local semantic fallback, not an official promtool pass.",
+    "The fallback validates source file presence, alert/test structure, scenario coverage, blocked promtool boundary, and blocked claims.",
+    "Run promtool check/test later when local promtool or Docker Desktop becomes available."
+  ],
+  "promtoolBlocked": true,
+  "scope": "local_semantic_fallback_for_week17_layer_mix_v0_action_gate_alert_rules",
+  "semanticFallbackPassed": true,
+  "sourceFiles": {
+    "actionGateCsv": "loadtest/reports/week17_layer_mix_v0_action_gate.csv",
+    "actionGateJson": "loadtest/reports/week17_layer_mix_v0_action_gate.json",
+    "generateLogs": [
+      "artifacts/logs/week17_layer_mix_v0_action_gate_alert_rules_generate_20260624_104143.log"
+    ],
+    "rulesFile": "observability/prometheus/week17_layer_mix_v0_action_gate_alert_rules.yml",
+    "semanticLogs": [
+      "artifacts/logs/week17_layer_mix_v0_action_gate_alert_rules_semantic_fallback_20260625_103906.log",
+      "artifacts/logs/week17_layer_mix_v0_action_gate_alert_rules_semantic_fallback_v2_20260625_104454.log",
+      "artifacts/logs/week17_layer_mix_v0_action_gate_alert_rules_semantic_fallback_v3_20260625_105119.log",
+      "artifacts/logs/week17_layer_mix_v0_action_gate_alert_rules_semantic_fallback_v3_fixed_20260625_105536.log"
+    ],
+    "sourceReportFile": "loadtest/reports/week17_layer_mix_v0_action_gate_alert_rules_report.json",
+    "testFile": "observability/prometheus/week17_layer_mix_v0_action_gate_alert_rule_test.yml",
+    "testLogs": [
+      "artifacts/logs/week17_layer_mix_v0_action_gate_alert_rules_test_20260624_104148.log"
+    ]
+  },
+  "unsafePromtoolPassClaimDetected": false,
+  "validatorVersion": "v3_structural_semantic_contract_safe_promtool_boundary"
+}

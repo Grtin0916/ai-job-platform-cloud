@@ -1,0 +1,46 @@
+groups:
+- name: week17_layer_mix_v0_action_gate
+  rules:
+  - alert: Week17LayerMixV0ActionGateBlocked
+    expr: week17_layer_mix_v0_action_gate_block{scenario_kind="negative_control"} == 1
+    for: 0m
+    labels:
+      severity: warning
+      stage: week17
+      component: layer_mix_v0
+    annotations:
+      summary: "Week17 layer mix v0 action gate blocked a negative-control scenario"
+      description: "The layer mix v0 action gate blocked scenario {{ $labels.scenario }} with action {{ $labels.action }}."
+
+  - alert: Week17LayerMixV0ActionGateIssueDetected
+    expr: week17_layer_mix_v0_action_gate_issue_total{scenario_kind="negative_control"} > 0
+    for: 0m
+    labels:
+      severity: warning
+      stage: week17
+      component: layer_mix_v0
+    annotations:
+      summary: "Week17 layer mix v0 action gate detected issues"
+      description: "The layer mix v0 action gate detected {{ $value }} issue(s) for scenario {{ $labels.scenario }}."
+
+  - alert: Week17LayerMixV0ClipRisk
+    expr: week17_layer_mix_v0_action_gate_clip_rate{scenario_kind="negative_control"} > 0
+    for: 0m
+    labels:
+      severity: critical
+      stage: week17
+      component: layer_mix_v0
+    annotations:
+      summary: "Week17 layer mix v0 clip risk detected"
+      description: "Clip rate is above zero for scenario {{ $labels.scenario }}."
+
+  - alert: Week17LayerMixV0HealthyCaseUnexpectedlyBlocked
+    expr: week17_layer_mix_v0_action_gate_block{scenario="real_current_healthy_preview",scenario_kind="real_current"} == 1
+    for: 0m
+    labels:
+      severity: critical
+      stage: week17
+      component: layer_mix_v0
+    annotations:
+      summary: "Week17 layer mix v0 healthy preview was unexpectedly blocked"
+      description: "The real current healthy preview should remain allowed as placeholder-control preview only."

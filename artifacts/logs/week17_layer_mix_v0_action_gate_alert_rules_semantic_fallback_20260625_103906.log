@@ -1,0 +1,47 @@
+{
+  "alertNames": [
+    "Week17LayerMixV0ActionGateBlocked",
+    "Week17LayerMixV0ActionGateIssueDetected",
+    "Week17LayerMixV0ClipRisk",
+    "Week17LayerMixV0HealthyCaseUnexpectedlyBlocked"
+  ],
+  "decision": "FAIL_WEEK17_LAYER_MIX_V0_ALERT_RULES_LOCAL_SEMANTIC_FALLBACK",
+  "exitCode": 2,
+  "failedChecks": [
+    {
+      "matchedGroups": [
+        [
+          "layer"
+        ]
+      ],
+      "missingGroups": [
+        [
+          "missing"
+        ]
+      ],
+      "name": "missing_track_rule_intent",
+      "passed": false
+    },
+    {
+      "matchedGroups": [
+        [
+          "mix"
+        ]
+      ],
+      "missingGroups": [
+        [
+          "overclaim",
+          "claim",
+          "readiness"
+        ]
+      ],
+      "name": "final_mix_overclaim_rule_intent",
+      "passed": false
+    }
+  ],
+  "fallbackReport": "loadtest/reports/week17_layer_mix_v0_action_gate_alert_rules_semantic_fallback_report.json",
+  "promtoolBlocked": true,
+  "semanticFallbackPassed": false,
+  "unsafePromtoolPassClaimDetected": false,
+  "updatedReport": "loadtest/reports/week17_layer_mix_v0_action_gate_alert_rules_report.json"
+}

@@ -1,0 +1,120 @@
+rule_files:
+  - week17_layer_mix_v0_action_gate_alert_rules.yml
+
+evaluation_interval: 1m
+
+tests:
+- interval: 1m
+  input_series:
+  - series: 'week17_layer_mix_v0_action_gate_block{scenario="real_current_healthy_preview",scenario_kind="real_current",action="ALLOW_PLACEHOLDER_CONTROL_PLATFORM_PREVIEW_ONLY",decision="PASS_WEEK17_LAYER_MIX_V0_ACTION_GATE",source_java_head="d6928dc",source_mainbase_head="d9a6df0"}'
+    values: '0'
+  - series: 'week17_layer_mix_v0_action_gate_issue_total{scenario="real_current_healthy_preview",scenario_kind="real_current",action="ALLOW_PLACEHOLDER_CONTROL_PLATFORM_PREVIEW_ONLY",decision="PASS_WEEK17_LAYER_MIX_V0_ACTION_GATE",source_java_head="d6928dc",source_mainbase_head="d9a6df0"}'
+    values: '0'
+  - series: 'week17_layer_mix_v0_action_gate_clip_rate{scenario="real_current_healthy_preview",scenario_kind="real_current",action="ALLOW_PLACEHOLDER_CONTROL_PLATFORM_PREVIEW_ONLY",decision="PASS_WEEK17_LAYER_MIX_V0_ACTION_GATE",source_java_head="d6928dc",source_mainbase_head="d9a6df0"}'
+    values: '0'
+
+  - series: 'week17_layer_mix_v0_action_gate_block{scenario="synthetic_high_clip_rate",scenario_kind="negative_control",action="BLOCK_AUDIO_CLIPPING_RISK",decision="BLOCK_WEEK17_LAYER_MIX_V0_ACTION_GATE",source_java_head="d6928dc",source_mainbase_head="d9a6df0"}'
+    values: '1'
+  - series: 'week17_layer_mix_v0_action_gate_issue_total{scenario="synthetic_high_clip_rate",scenario_kind="negative_control",action="BLOCK_AUDIO_CLIPPING_RISK",decision="BLOCK_WEEK17_LAYER_MIX_V0_ACTION_GATE",source_java_head="d6928dc",source_mainbase_head="d9a6df0"}'
+    values: '1'
+  - series: 'week17_layer_mix_v0_action_gate_clip_rate{scenario="synthetic_high_clip_rate",scenario_kind="negative_control",action="BLOCK_AUDIO_CLIPPING_RISK",decision="BLOCK_WEEK17_LAYER_MIX_V0_ACTION_GATE",source_java_head="d6928dc",source_mainbase_head="d9a6df0"}'
+    values: '0.025'
+
+  - series: 'week17_layer_mix_v0_action_gate_block{scenario="synthetic_missing_track",scenario_kind="negative_control",action="BLOCK_INCOMPLETE_LAYER_INPUT",decision="BLOCK_WEEK17_LAYER_MIX_V0_ACTION_GATE",source_java_head="d6928dc",source_mainbase_head="d9a6df0"}'
+    values: '1'
+  - series: 'week17_layer_mix_v0_action_gate_issue_total{scenario="synthetic_missing_track",scenario_kind="negative_control",action="BLOCK_INCOMPLETE_LAYER_INPUT",decision="BLOCK_WEEK17_LAYER_MIX_V0_ACTION_GATE",source_java_head="d6928dc",source_mainbase_head="d9a6df0"}'
+    values: '1'
+  - series: 'week17_layer_mix_v0_action_gate_clip_rate{scenario="synthetic_missing_track",scenario_kind="negative_control",action="BLOCK_INCOMPLETE_LAYER_INPUT",decision="BLOCK_WEEK17_LAYER_MIX_V0_ACTION_GATE",source_java_head="d6928dc",source_mainbase_head="d9a6df0"}'
+    values: '0'
+
+  - series: 'week17_layer_mix_v0_action_gate_block{scenario="synthetic_low_rms_silentish",scenario_kind="negative_control",action="BLOCK_INVALID_AUDIO_ENERGY",decision="BLOCK_WEEK17_LAYER_MIX_V0_ACTION_GATE",source_java_head="d6928dc",source_mainbase_head="d9a6df0"}'
+    values: '1'
+  - series: 'week17_layer_mix_v0_action_gate_issue_total{scenario="synthetic_low_rms_silentish",scenario_kind="negative_control",action="BLOCK_INVALID_AUDIO_ENERGY",decision="BLOCK_WEEK17_LAYER_MIX_V0_ACTION_GATE",source_java_head="d6928dc",source_mainbase_head="d9a6df0"}'
+    values: '1'
+  - series: 'week17_layer_mix_v0_action_gate_clip_rate{scenario="synthetic_low_rms_silentish",scenario_kind="negative_control",action="BLOCK_INVALID_AUDIO_ENERGY",decision="BLOCK_WEEK17_LAYER_MIX_V0_ACTION_GATE",source_java_head="d6928dc",source_mainbase_head="d9a6df0"}'
+    values: '0'
+
+  - series: 'week17_layer_mix_v0_action_gate_block{scenario="synthetic_final_mix_overclaim",scenario_kind="negative_control",action="BLOCK_OVERCLAIMED_CAPABILITY",decision="BLOCK_WEEK17_LAYER_MIX_V0_ACTION_GATE",source_java_head="d6928dc",source_mainbase_head="d9a6df0"}'
+    values: '1'
+  - series: 'week17_layer_mix_v0_action_gate_issue_total{scenario="synthetic_final_mix_overclaim",scenario_kind="negative_control",action="BLOCK_OVERCLAIMED_CAPABILITY",decision="BLOCK_WEEK17_LAYER_MIX_V0_ACTION_GATE",source_java_head="d6928dc",source_mainbase_head="d9a6df0"}'
+    values: '1'
+  - series: 'week17_layer_mix_v0_action_gate_clip_rate{scenario="synthetic_final_mix_overclaim",scenario_kind="negative_control",action="BLOCK_OVERCLAIMED_CAPABILITY",decision="BLOCK_WEEK17_LAYER_MIX_V0_ACTION_GATE",source_java_head="d6928dc",source_mainbase_head="d9a6df0"}'
+    values: '0'
+
+  alert_rule_test:
+  - eval_time: 0m
+    alertname: Week17LayerMixV0ActionGateBlocked
+    exp_alerts:
+    - exp_labels:
+        severity: warning
+        stage: week17
+        component: layer_mix_v0
+        scenario: synthetic_high_clip_rate
+        scenario_kind: negative_control
+        action: BLOCK_AUDIO_CLIPPING_RISK
+        decision: BLOCK_WEEK17_LAYER_MIX_V0_ACTION_GATE
+        source_java_head: d6928dc
+        source_mainbase_head: d9a6df0
+      exp_annotations:
+        summary: "Week17 layer mix v0 action gate blocked a negative-control scenario"
+        description: "The layer mix v0 action gate blocked scenario synthetic_high_clip_rate with action BLOCK_AUDIO_CLIPPING_RISK."
+    - exp_labels:
+        severity: warning
+        stage: week17
+        component: layer_mix_v0
+        scenario: synthetic_missing_track
+        scenario_kind: negative_control
+        action: BLOCK_INCOMPLETE_LAYER_INPUT
+        decision: BLOCK_WEEK17_LAYER_MIX_V0_ACTION_GATE
+        source_java_head: d6928dc
+        source_mainbase_head: d9a6df0
+      exp_annotations:
+        summary: "Week17 layer mix v0 action gate blocked a negative-control scenario"
+        description: "The layer mix v0 action gate blocked scenario synthetic_missing_track with action BLOCK_INCOMPLETE_LAYER_INPUT."
+    - exp_labels:
+        severity: warning
+        stage: week17
+        component: layer_mix_v0
+        scenario: synthetic_low_rms_silentish
+        scenario_kind: negative_control
+        action: BLOCK_INVALID_AUDIO_ENERGY
+        decision: BLOCK_WEEK17_LAYER_MIX_V0_ACTION_GATE
+        source_java_head: d6928dc
+        source_mainbase_head: d9a6df0
+      exp_annotations:
+        summary: "Week17 layer mix v0 action gate blocked a negative-control scenario"
+        description: "The layer mix v0 action gate blocked scenario synthetic_low_rms_silentish with action BLOCK_INVALID_AUDIO_ENERGY."
+    - exp_labels:
+        severity: warning
+        stage: week17
+        component: layer_mix_v0
+        scenario: synthetic_final_mix_overclaim
+        scenario_kind: negative_control
+        action: BLOCK_OVERCLAIMED_CAPABILITY
+        decision: BLOCK_WEEK17_LAYER_MIX_V0_ACTION_GATE
+        source_java_head: d6928dc
+        source_mainbase_head: d9a6df0
+      exp_annotations:
+        summary: "Week17 layer mix v0 action gate blocked a negative-control scenario"
+        description: "The layer mix v0 action gate blocked scenario synthetic_final_mix_overclaim with action BLOCK_OVERCLAIMED_CAPABILITY."
+
+  - eval_time: 0m
+    alertname: Week17LayerMixV0ClipRisk
+    exp_alerts:
+    - exp_labels:
+        severity: critical
+        stage: week17
+        component: layer_mix_v0
+        scenario: synthetic_high_clip_rate
+        scenario_kind: negative_control
+        action: BLOCK_AUDIO_CLIPPING_RISK
+        decision: BLOCK_WEEK17_LAYER_MIX_V0_ACTION_GATE
+        source_java_head: d6928dc
+        source_mainbase_head: d9a6df0
+      exp_annotations:
+        summary: "Week17 layer mix v0 clip risk detected"
+        description: "Clip rate is above zero for scenario synthetic_high_clip_rate."
+
+  - eval_time: 0m
+    alertname: Week17LayerMixV0HealthyCaseUnexpectedlyBlocked
+    exp_alerts: []

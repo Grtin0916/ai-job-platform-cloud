@@ -1,0 +1,16 @@
+{
+  "alertNames": [
+    "Week17LayerMixV0ActionGateBlocked",
+    "Week17LayerMixV0ActionGateIssueDetected",
+    "Week17LayerMixV0ClipRisk",
+    "Week17LayerMixV0HealthyCaseUnexpectedlyBlocked"
+  ],
+  "decision": "PARTIAL_WEEK17_LAYER_MIX_V0_ALERT_RULES_PROMTOOL_BLOCKED_LOCAL_SEMANTIC_PASS",
+  "failedChecks": [],
+  "fallbackReport": "loadtest/reports/week17_layer_mix_v0_action_gate_alert_rules_semantic_fallback_report.json",
+  "promtoolBlocked": true,
+  "semanticFallbackPassed": true,
+  "unsafePromtoolPassClaimDetected": false,
+  "updatedReport": "loadtest/reports/week17_layer_mix_v0_action_gate_alert_rules_report.json",
+  "validatorVersion": "v3_structural_semantic_contract_safe_promtool_boundary"
+}

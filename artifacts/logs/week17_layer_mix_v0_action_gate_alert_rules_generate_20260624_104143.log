@@ -1,0 +1,8 @@
+{
+  "decision": "READY_TO_RUN_PROMTOOL_ALERT_RULE_TEST",
+  "rulesFile": "observability/prometheus/week17_layer_mix_v0_action_gate_alert_rules.yml",
+  "testFile": "observability/prometheus/week17_layer_mix_v0_action_gate_alert_rule_test.yml",
+  "reportFile": "loadtest/reports/week17_layer_mix_v0_action_gate_alert_rules_report.json",
+  "expectedNegativeControlAlerts": 4,
+  "expectedClipRiskAlerts": 1
+}

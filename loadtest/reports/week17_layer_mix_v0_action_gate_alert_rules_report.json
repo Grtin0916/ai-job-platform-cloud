@@ -1,0 +1,31 @@
+{
+  "alertmanagerRoutingClaimed": false,
+  "blockedClaims": [
+    "no_promtool_pass_claim",
+    "no_production_alerting_claim",
+    "no_alertmanager_routing_claim",
+    "no_production_paging_claim",
+    "no_live_prometheus_scrape_claim",
+    "no_production_slo_claim"
+  ],
+  "cloudHeadBeforeCommit": "d47101b",
+  "decision": "PARTIAL_WEEK17_LAYER_MIX_V0_ALERT_RULES_PROMTOOL_BLOCKED_LOCAL_SEMANTIC_PASS",
+  "expectedClipRiskAlerts": 1,
+  "expectedHealthyUnexpectedlyBlockedAlerts": 0,
+  "expectedNegativeControlAlerts": 4,
+  "generatedAtUtc": "2026-06-24T02:41:43.243010+00:00",
+  "livePrometheusScrapeClaimed": false,
+  "localSemanticFallbackReport": "loadtest/reports/week17_layer_mix_v0_action_gate_alert_rules_semantic_fallback_report.json",
+  "localSemanticFallbackValidatorVersion": "v3_structural_semantic_contract_safe_promtool_boundary",
+  "previousDecisionBeforeSemanticFallback": "READY_TO_RUN_PROMTOOL_ALERT_RULE_TEST",
+  "previousDecisionBeforeSemanticFallbackV2": "FAIL_WEEK17_LAYER_MIX_V0_ALERT_RULES_LOCAL_SEMANTIC_FALLBACK",
+  "productionPagingClaimed": false,
+  "promtoolBlocked": true,
+  "rulesFile": "observability/prometheus/week17_layer_mix_v0_action_gate_alert_rules.yml",
+  "schemaVersion": "week17.layer_mix_v0.action_gate_alert_rules_report.v1",
+  "semanticFallbackPassed": true,
+  "sourceActionGate": "loadtest/reports/week17_layer_mix_v0_action_gate.json",
+  "testFile": "observability/prometheus/week17_layer_mix_v0_action_gate_alert_rule_test.yml",
+  "unsafePromtoolPassClaimDetected": false,
+  "updatedAtUtc": "2026-06-25T02:55:36.161570Z"
+}

@@ -1,0 +1,13 @@
+## promtool docker
+docker: Cannot connect to the Docker daemon at unix:///home/GRT/.docker/desktop/docker.sock. Is the docker daemon running?
+
+Run 'docker run --help' for more information
+CHECK_RULES_RC=125
+docker: Cannot connect to the Docker daemon at unix:///home/GRT/.docker/desktop/docker.sock. Is the docker daemon running?
+
+Run 'docker run --help' for more information
+TEST_RULES_RC=125
+docker: Cannot connect to the Docker daemon at unix:///home/GRT/.docker/desktop/docker.sock. Is the docker daemon running?
+
+Run 'docker run --help' for more information
+CHECK_METRICS_RC=125
