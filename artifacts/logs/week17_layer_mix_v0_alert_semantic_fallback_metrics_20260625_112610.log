@@ -1,0 +1,10 @@
+{
+  "alertRulesTotal": 4,
+  "blockedClaimsTotal": 6,
+  "decision": "PASS_WEEK17_LAYER_MIX_V0_ALERT_SEMANTIC_FALLBACK_METRICS_READY",
+  "guardErrors": [],
+  "metricFormatErrors": [],
+  "metricsFile": "observability/prometheus/week17_layer_mix_v0_action_gate_alert_semantic_fallback.prom",
+  "metricsReady": true,
+  "metricsReport": "loadtest/reports/week17_layer_mix_v0_alert_semantic_fallback_metrics_report.json"
+}

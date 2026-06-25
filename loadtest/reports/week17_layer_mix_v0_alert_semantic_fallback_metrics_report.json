@@ -1,0 +1,40 @@
+{
+  "alertRulesTotal": 4,
+  "blockedClaims": [
+    "no_promtool_pass_claim",
+    "no_production_alerting_claim",
+    "no_alertmanager_routing_claim",
+    "no_production_paging_claim",
+    "no_live_prometheus_scrape_claim",
+    "no_production_slo_claim"
+  ],
+  "blockedClaimsPreserved": true,
+  "blockedOperationalClaims": [
+    "no_official_promtool_pass",
+    "no_live_prometheus_scrape",
+    "no_alertmanager_routing",
+    "no_production_paging",
+    "no_production_slo"
+  ],
+  "decision": "PASS_WEEK17_LAYER_MIX_V0_ALERT_SEMANTIC_FALLBACK_METRICS_READY",
+  "failedChecksTotal": 0,
+  "generatedAtUtc": "2026-06-25T03:26:10.655951Z",
+  "guardErrors": [],
+  "metricFormatErrors": [],
+  "metricsFile": "observability/prometheus/week17_layer_mix_v0_action_gate_alert_semantic_fallback.prom",
+  "metricsReady": true,
+  "notes": [
+    "This metrics file is metrics-ready evidence only.",
+    "It does not claim live Prometheus scrape.",
+    "It does not claim official promtool pass.",
+    "It does not claim production alerting or Alertmanager routing."
+  ],
+  "promtoolBlocked": true,
+  "semanticFallbackPassed": true,
+  "sourceAlertRulesReport": "loadtest/reports/week17_layer_mix_v0_action_gate_alert_rules_report.json",
+  "sourceDecision": "PARTIAL_WEEK17_LAYER_MIX_V0_ALERT_RULES_PROMTOOL_BLOCKED_LOCAL_SEMANTIC_PASS",
+  "sourceFallbackReport": "loadtest/reports/week17_layer_mix_v0_action_gate_alert_rules_semantic_fallback_report.json",
+  "sourceReportDecision": "PARTIAL_WEEK17_LAYER_MIX_V0_ALERT_RULES_PROMTOOL_BLOCKED_LOCAL_SEMANTIC_PASS",
+  "unsafePromtoolPassClaimDetected": false,
+  "validatorVersion": "v3_structural_semantic_contract_safe_promtool_boundary"
+}
