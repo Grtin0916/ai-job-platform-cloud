@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "week17.observability_evidence_index.k6_threshold_smoke.v1",
+  "decision": "BLOCK_WEEK17_OBSERVABILITY_EVIDENCE_INDEX_K6_THRESHOLD_SMOKE_RUNTIME_BLOCKED",
+  "runtimeBlocked": true,
+  "runtimeBlockReason": "k6 binary is not available in PATH",
+  "inputReport": "loadtest/reports/week17_observability_evidence_index_consumer_smoke.json",
+  "failedThresholds": [],
+  "officialPromtoolStillRequired": true,
+  "blockedClaimsPreserved": true,
+  "notes": [
+    "k6 runtime was not available; no live k6 threshold result is claimed.",
+    "This preserves the boundary and prevents false PASS."
+  ]
+}
