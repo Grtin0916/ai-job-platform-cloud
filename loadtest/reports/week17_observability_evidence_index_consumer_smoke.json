@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "week17.observability_evidence_index.consumer_smoke.v1",
+  "decision": "PASS_WEEK17_OBSERVABILITY_EVIDENCE_INDEX_CONSUMER_SMOKE",
+  "inputIndexPath": "loadtest/reports/week17_layer_mix_v0_observability_evidence_index.json",
+  "inputIndexCommit": "3e80b2c",
+  "inputIndexDecision": "PASS_WEEK17_LAYER_MIX_V0_OBSERVABILITY_EVIDENCE_INDEX",
+  "inputIndexSchemaVersion": "week17.layer_mix_v0.observability_evidence_index.v3",
+  "readyForNextWeek17DashboardAggregation": true,
+  "readyForNextWeek17K6ThresholdSmoke": true,
+  "readyForNextWeek17SloBoundaryExplanation": true,
+  "officialPromtoolStillRequired": true,
+  "errors": [],
+  "sourceDecisionCount": 8,
+  "blockedClaimsCount": 8,
+  "sourceDecisions": {
+    "mainbase_layer_mix_manifest": "PASS_WEEK17_LAYER_MIX_V0_PLACEHOLDER_CONTROL",
+    "java_result_preview_report": "PASS_WEEK17_LAYER_MIX_V0_RESULT_PREVIEW_API",
+    "java_result_preview_payload": "PASS_WEEK17_LAYER_MIX_V0_PLACEHOLDER_CONTROL",
+    "cloud_result_platform_preview": "PASS_WEEK17_LAYER_MIX_V0_PLATFORM_PREVIEW",
+    "cloud_action_gate_report": "PASS_WEEK17_LAYER_MIX_V0_ACTION_GATE_WITH_NEGATIVE_CONTROLS",
+    "cloud_alert_rules_report": "PARTIAL_WEEK17_LAYER_MIX_V0_ALERT_RULES_PROMTOOL_BLOCKED_LOCAL_SEMANTIC_PASS",
+    "cloud_alert_semantic_fallback_report": "PARTIAL_WEEK17_LAYER_MIX_V0_ALERT_RULES_PROMTOOL_BLOCKED_LOCAL_SEMANTIC_PASS",
+    "cloud_alert_semantic_fallback_metrics_report": "PASS_WEEK17_LAYER_MIX_V0_ALERT_SEMANTIC_FALLBACK_METRICS_READY"
+  }
+}
