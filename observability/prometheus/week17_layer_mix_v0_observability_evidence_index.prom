@@ -1,0 +1,27 @@
+# HELP week17_layer_mix_v0_observability_evidence_index_ready Whether the offline Week17 layer mix v0 observability evidence index is ready.
+# TYPE week17_layer_mix_v0_observability_evidence_index_ready gauge
+week17_layer_mix_v0_observability_evidence_index_ready 1
+# HELP week17_layer_mix_v0_required_inputs_present Whether all required upstream evidence files are present.
+# TYPE week17_layer_mix_v0_required_inputs_present gauge
+week17_layer_mix_v0_required_inputs_present 1
+# HELP week17_layer_mix_v0_official_promtool_passed Whether official promtool rules test has passed.
+# TYPE week17_layer_mix_v0_official_promtool_passed gauge
+week17_layer_mix_v0_official_promtool_passed 0
+# HELP week17_layer_mix_v0_promtool_blocked Whether official promtool path is blocked locally.
+# TYPE week17_layer_mix_v0_promtool_blocked gauge
+week17_layer_mix_v0_promtool_blocked 1
+# HELP week17_layer_mix_v0_semantic_fallback_passed Whether local semantic fallback passed.
+# TYPE week17_layer_mix_v0_semantic_fallback_passed gauge
+week17_layer_mix_v0_semantic_fallback_passed 1
+# HELP week17_layer_mix_v0_metrics_ready Whether metrics-ready artifact is available.
+# TYPE week17_layer_mix_v0_metrics_ready gauge
+week17_layer_mix_v0_metrics_ready 1
+# HELP week17_layer_mix_v0_blocked_claims_preserved Whether blocked claims are preserved.
+# TYPE week17_layer_mix_v0_blocked_claims_preserved gauge
+week17_layer_mix_v0_blocked_claims_preserved 1
+# HELP week17_layer_mix_v0_unsafe_claim_detected Whether unsafe official/live/production claim was detected.
+# TYPE week17_layer_mix_v0_unsafe_claim_detected gauge
+week17_layer_mix_v0_unsafe_claim_detected 0
+# HELP week17_layer_mix_v0_cloud_worktree_only_expected_outputs Whether Cloud worktree changes are limited to expected evidence index outputs.
+# TYPE week17_layer_mix_v0_cloud_worktree_only_expected_outputs gauge
+week17_layer_mix_v0_cloud_worktree_only_expected_outputs 1

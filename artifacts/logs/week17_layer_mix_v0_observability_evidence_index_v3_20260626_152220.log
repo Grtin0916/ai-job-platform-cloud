@@ -1,0 +1,13 @@
+decision=PASS_WEEK17_LAYER_MIX_V0_OBSERVABILITY_EVIDENCE_INDEX
+evidenceIndexReady=True
+officialPromtoolPassed=False
+promtoolBlocked=True
+semanticFallbackPassed=True
+metricsReady=True
+blockedClaimsPreserved=True
+unsafeClaimDetected=False
+cloudWorktreeOnlyExpectedOutputs=True
+cloudUnexpectedChanges=[]
+json=/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week17_layer_mix_v0_observability_evidence_index.json
+prom=/home/GRT/work/ai-job-platform-cloud/observability/prometheus/week17_layer_mix_v0_observability_evidence_index.prom
+runbook=/home/GRT/work/ai-job-platform-cloud/docs/runbooks/week17-layer-mix-v0-observability-evidence-index.md
