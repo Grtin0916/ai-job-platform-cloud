@@ -1,0 +1,19 @@
+groups:
+- name: week17_model_race_cloud_gate
+  rules:
+  - alert: Week17ModelRaceCloudGateFailed
+    expr: week17_cloud_gate_pass == 0
+    for: 1m
+    labels:
+      severity: warning
+    annotations:
+      summary: Week17 model race cloud gate failed
+      description: Cloud aggregation reports a failed demo gate.
+  - alert: Week17SyntheticV2AInputsPresent
+    expr: week17_synthetic_v2a_slots > 0
+    for: 1m
+    labels:
+      severity: info
+    annotations:
+      summary: Synthetic V2A inputs remain in Week17 demo
+      description: Synthetic placeholder videos validate pipeline mechanics but not real V2A semantic quality.

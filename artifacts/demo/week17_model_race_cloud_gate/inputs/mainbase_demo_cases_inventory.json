@@ -1,0 +1,87 @@
+{
+  "generated_at": "2026-06-29T07:08:36.332119+00:00",
+  "decision": "PASS_WITH_SOURCE_GAP",
+  "case_count": 6,
+  "event_total": 24,
+  "real_video_count": 1,
+  "stub_video_count": 5,
+  "source_gap_count": 5,
+  "candidate_slot_count": 12,
+  "cases_root": "cases",
+  "failure_explanation": "Fewer real input videos than target; V2A claims must remain blocked for stub cases.",
+  "case_hash": "bc5bb945647e",
+  "cases": [
+    {
+      "case_id": "street_rain_crosswalk_001",
+      "duration_s": 9.0,
+      "event_count": 4,
+      "input_kind": "local_video",
+      "input_path": "cases/street_rain_crosswalk_001/input_video.mp4",
+      "source_video": "data/interim/test_video_probe_smoke/335040.mp4",
+      "dss_path": "cases/street_rain_crosswalk_001/director_sound_script.yaml",
+      "expected_events_path": "cases/street_rain_crosswalk_001/expected_events.csv",
+      "baseline_prompt_path": "cases/street_rain_crosswalk_001/baseline_prompt.txt",
+      "case_notes_path": "cases/street_rain_crosswalk_001/case_notes.md"
+    },
+    {
+      "case_id": "kitchen_chop_sizzle_001",
+      "duration_s": 10.0,
+      "event_count": 4,
+      "input_kind": "stub",
+      "input_path": "cases/kitchen_chop_sizzle_001/input_video_stub.json",
+      "source_video": "",
+      "dss_path": "cases/kitchen_chop_sizzle_001/director_sound_script.yaml",
+      "expected_events_path": "cases/kitchen_chop_sizzle_001/expected_events.csv",
+      "baseline_prompt_path": "cases/kitchen_chop_sizzle_001/baseline_prompt.txt",
+      "case_notes_path": "cases/kitchen_chop_sizzle_001/case_notes.md"
+    },
+    {
+      "case_id": "robot_warehouse_pick_001",
+      "duration_s": 11.0,
+      "event_count": 4,
+      "input_kind": "stub",
+      "input_path": "cases/robot_warehouse_pick_001/input_video_stub.json",
+      "source_video": "",
+      "dss_path": "cases/robot_warehouse_pick_001/director_sound_script.yaml",
+      "expected_events_path": "cases/robot_warehouse_pick_001/expected_events.csv",
+      "baseline_prompt_path": "cases/robot_warehouse_pick_001/baseline_prompt.txt",
+      "case_notes_path": "cases/robot_warehouse_pick_001/case_notes.md"
+    },
+    {
+      "case_id": "forest_bird_branch_001",
+      "duration_s": 8.0,
+      "event_count": 4,
+      "input_kind": "stub",
+      "input_path": "cases/forest_bird_branch_001/input_video_stub.json",
+      "source_video": "",
+      "dss_path": "cases/forest_bird_branch_001/director_sound_script.yaml",
+      "expected_events_path": "cases/forest_bird_branch_001/expected_events.csv",
+      "baseline_prompt_path": "cases/forest_bird_branch_001/baseline_prompt.txt",
+      "case_notes_path": "cases/forest_bird_branch_001/case_notes.md"
+    },
+    {
+      "case_id": "subway_arrival_door_001",
+      "duration_s": 12.0,
+      "event_count": 4,
+      "input_kind": "stub",
+      "input_path": "cases/subway_arrival_door_001/input_video_stub.json",
+      "source_video": "",
+      "dss_path": "cases/subway_arrival_door_001/director_sound_script.yaml",
+      "expected_events_path": "cases/subway_arrival_door_001/expected_events.csv",
+      "baseline_prompt_path": "cases/subway_arrival_door_001/baseline_prompt.txt",
+      "case_notes_path": "cases/subway_arrival_door_001/case_notes.md"
+    },
+    {
+      "case_id": "glass_drop_room_001",
+      "duration_s": 7.0,
+      "event_count": 4,
+      "input_kind": "stub",
+      "input_path": "cases/glass_drop_room_001/input_video_stub.json",
+      "source_video": "",
+      "dss_path": "cases/glass_drop_room_001/director_sound_script.yaml",
+      "expected_events_path": "cases/glass_drop_room_001/expected_events.csv",
+      "baseline_prompt_path": "cases/glass_drop_room_001/baseline_prompt.txt",
+      "case_notes_path": "cases/glass_drop_room_001/case_notes.md"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-06-29T07:22:49.668380+00:00",
+  "decision": "PASS_WITH_REPAIR_QUEUE",
+  "case_count": 6,
+  "ranked_candidate_count": 6,
+  "winner_seed_count": 5,
+  "usable_candidate_count": 5,
+  "repair_case_count": 1,
+  "repair_item_count": 1,
+  "missing_candidate_count": 0,
+  "limitation": "This is event-window energy scoring for control-rule Foley only; it is not perceptual quality judgment and not V2A semantic validation.",
+  "next_use": "Feed Java/Cloud as a model-race seed payload and compare MMAudio/FoleyCrafter candidates against this baseline later."
+}

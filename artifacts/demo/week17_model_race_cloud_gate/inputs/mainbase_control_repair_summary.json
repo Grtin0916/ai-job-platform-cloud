@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-06-29T07:25:38.636817+00:00",
+  "decision": "PASS_REPAIR_CLOSED_QUEUE",
+  "input_repair_item_count": 1,
+  "repaired_case_count": 1,
+  "repaired_to_winner_count": 1,
+  "still_required_count": 0,
+  "failed_count": 0,
+  "limitation": "Repair is deterministic event-region reinforcement for control baseline only; it is not a generative model quality claim.",
+  "before_after": [
+    {
+      "case_id": "kitchen_chop_sizzle_001",
+      "repair_status": "repaired_to_winner",
+      "before_score": 0.75,
+      "after_score": 1.0,
+      "score_delta": 0.25,
+      "before_status": "repair_required",
+      "after_status": "winner_seed",
+      "before_coverage": 0.615385,
+      "after_coverage": 1.0,
+      "before_priority_miss_count": 1,
+      "after_priority_miss_count": 0,
+      "before_rms": 0.110776,
+      "after_rms": 0.122269,
+      "before_peak": 0.38562,
+      "after_peak": 0.813934,
+      "before_clip_rate": 0.0,
+      "after_clip_rate": 0.0,
+      "before_silence_ratio": 0.064533,
+      "after_silence_ratio": 0.058152,
+      "repaired_path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/model_runs/week17_control_repaired/kitchen_chop_sizzle_001/kitchen_chop_sizzle_001__control_rule_foley_v0_repair_v1.wav",
+      "repair_actions": "[{\"event_id\": \"knife_chops\", \"repair_action\": \"added 16 transient pulses in event window\", \"target_event_threshold\": 0.016}]"
+    }
+  ]
+}

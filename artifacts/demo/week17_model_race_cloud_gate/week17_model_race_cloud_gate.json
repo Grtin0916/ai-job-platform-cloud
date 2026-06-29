@@ -1,0 +1,45 @@
+{
+  "generated_at": "2026-06-29T08:25:39.845099+00:00",
+  "decision": "PASS_CLOUD_DEMO_GATE_READY_WITH_SYNTHETIC_VIDEO_LIMITATION",
+  "source": "cloud",
+  "repo_heads": {
+    "mainbase": "8aada59",
+    "java": "84f046e",
+    "cloud": "e83bcaf"
+  },
+  "checks": {
+    "case_count_ok": true,
+    "event_total_ok": true,
+    "media_ready_ok": true,
+    "control_wav_ok": true,
+    "race_seed_ok": true,
+    "repair_closed_ok": true,
+    "java_api_ok": true,
+    "java_counts_ok": true
+  },
+  "business_summary": {
+    "case_count": 6,
+    "event_total": 24,
+    "candidate_slot_count": 12,
+    "control_wav_count": 6,
+    "ranked_candidate_count": 6,
+    "repair_closed_count": 1,
+    "java_endpoint_count": 3,
+    "synthetic_v2a_slots": 5
+  },
+  "limitations": [
+    "Cloud gate aggregates committed artifacts; it is not a live production SLO.",
+    "Synthetic placeholder videos validate pipeline mechanics but cannot prove real V2A semantic quality.",
+    "k6/promtool are reported as runtime boundary unless executed and validated explicitly."
+  ],
+  "runtime_boundary": {
+    "k6_available": false,
+    "k6_path": "",
+    "promtool_available": false,
+    "promtool_path": "",
+    "k6_claim": "not_run_in_this_step",
+    "prometheus_rule_claim": "generated_not_validated",
+    "production_slo_claim": "not_claimed"
+  },
+  "next_action": "Commit this Cloud demo gate, then optionally add alert rule validation or k6 HTTP smoke only if the local runtime is available."
+}

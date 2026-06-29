@@ -1,0 +1,17 @@
+{
+  "generated_at": "2026-06-29T08:10:40.160949+00:00",
+  "decision": "PASS_JAVA_MODEL_RACE_SEED_API_READY",
+  "source": "mainbase",
+  "endpoints": [
+    "/api/week17/model-race-seed",
+    "/api/week17/repair-seed",
+    "/api/week17/model-race-seed/summary"
+  ],
+  "model_race_decision": "PASS_WITH_REPAIR_QUEUE",
+  "repair_decision": "PASS_REPAIR_CLOSED_QUEUE",
+  "model_race_result_count": 6,
+  "repair_result_count": 1,
+  "repair_closed": true,
+  "test_class": "Week17ModelRaceSeedControllerIT",
+  "limitation": "Java exposes committed Mainbase seed payloads; it does not yet implement async task lifecycle or artifact registry."
+}
