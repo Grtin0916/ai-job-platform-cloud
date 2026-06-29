@@ -1,0 +1,162 @@
+{
+  "generated_at": "2026-06-29T09:00:39.070688+00:00",
+  "decision": "PASS_JAVA_LIVE_CONSUMER_SMOKE",
+  "base_url": "http://127.0.0.1:18080",
+  "checks": {
+    "all_http_2xx": true,
+    "model_schema_ok": true,
+    "repair_schema_ok": true,
+    "summary_source_ok": true,
+    "model_result_count_ok": true,
+    "repair_result_count_ok": true,
+    "repair_closed_ok": true
+  },
+  "observed": {
+    "model_race_decision": "PASS_WITH_REPAIR_QUEUE",
+    "repair_decision": "PASS_REPAIR_CLOSED_QUEUE",
+    "model_result_count": 6,
+    "repair_result_count": 1,
+    "repair_closed": true,
+    "max_elapsed_ms": 78.37
+  },
+  "runtime_boundary": {
+    "k6_used": false,
+    "claim": "direct urllib HTTP smoke only; no k6 threshold or production SLO claimed"
+  },
+  "responses": {
+    "model_race_seed": {
+      "endpoint": "/api/week17/model-race-seed",
+      "ok": true,
+      "status": 200,
+      "elapsed_ms": 78.37,
+      "error": "",
+      "payload": {
+        "schema_version": "model_race_seed.v0.1",
+        "generated_at": "2026-06-29T07:22:49.669625+00:00",
+        "source": "mainbase",
+        "decision": "PASS_WITH_REPAIR_QUEUE",
+        "summary": {
+          "generated_at": "2026-06-29T07:22:49.668380+00:00",
+          "decision": "PASS_WITH_REPAIR_QUEUE",
+          "case_count": 6,
+          "ranked_candidate_count": 6,
+          "winner_seed_count": 5,
+          "usable_candidate_count": 5,
+          "repair_case_count": 1,
+          "repair_item_count": 1,
+          "missing_candidate_count": 0,
+          "limitation": "This is event-window energy scoring for control-rule Foley only; it is not perceptual quality judgment and not V2A semantic validation.",
+          "next_use": "Feed Java/Cloud as a model-race seed payload and compare MMAudio/FoleyCrafter candidates against this baseline later."
+        },
+        "results": [
+          {
+            "case_id": "forest_bird_branch_001",
+            "winner_candidate_id": "forest_bird_branch_001__control_rule_foley_v0",
+            "winner_path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/model_runs/week17_control_baseline/forest_bird_branch_001/forest_bird_branch_001__control_rule_foley_v0.wav",
+            "score": 1.0,
+            "status": "winner_seed",
+            "selection_reason": "control baseline covers DSS event windows with acceptable signal quality",
+            "repair_required": false
+          },
+          {
+            "case_id": "glass_drop_room_001",
+            "winner_candidate_id": "glass_drop_room_001__control_rule_foley_v0",
+            "winner_path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/model_runs/week17_control_baseline/glass_drop_room_001/glass_drop_room_001__control_rule_foley_v0.wav",
+            "score": 1.0,
+            "status": "winner_seed",
+            "selection_reason": "control baseline covers DSS event windows with acceptable signal quality",
+            "repair_required": false
+          },
+          {
+            "case_id": "kitchen_chop_sizzle_001",
+            "winner_candidate_id": "kitchen_chop_sizzle_001__control_rule_foley_v0",
+            "winner_path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/model_runs/week17_control_baseline/kitchen_chop_sizzle_001/kitchen_chop_sizzle_001__control_rule_foley_v0.wav",
+            "score": 0.75,
+            "status": "repair_required",
+            "selection_reason": "1 high-priority event(s) weak or missing",
+            "repair_required": true
+          },
+          {
+            "case_id": "robot_warehouse_pick_001",
+            "winner_candidate_id": "robot_warehouse_pick_001__control_rule_foley_v0",
+            "winner_path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/model_runs/week17_control_baseline/robot_warehouse_pick_001/robot_warehouse_pick_001__control_rule_foley_v0.wav",
+            "score": 1.0,
+            "status": "winner_seed",
+            "selection_reason": "control baseline covers DSS event windows with acceptable signal quality",
+            "repair_required": false
+          },
+          {
+            "case_id": "street_rain_crosswalk_001",
+            "winner_candidate_id": "street_rain_crosswalk_001__control_rule_foley_v0",
+            "winner_path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/model_runs/week17_control_baseline/street_rain_crosswalk_001/street_rain_crosswalk_001__control_rule_foley_v0.wav",
+            "score": 1.0,
+            "status": "winner_seed",
+            "selection_reason": "control baseline covers DSS event windows with acceptable signal quality",
+            "repair_required": false
+          },
+          {
+            "case_id": "subway_arrival_door_001",
+            "winner_candidate_id": "subway_arrival_door_001__control_rule_foley_v0",
+            "winner_path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/model_runs/week17_control_baseline/subway_arrival_door_001/subway_arrival_door_001__control_rule_foley_v0.wav",
+            "score": 1.0,
+            "status": "winner_seed",
+            "selection_reason": "control baseline covers DSS event windows with acceptable signal quality",
+            "repair_required": false
+          }
+        ]
+      }
+    },
+    "repair_seed": {
+      "endpoint": "/api/week17/repair-seed",
+      "ok": true,
+      "status": 200,
+      "elapsed_ms": 6.54,
+      "error": "",
+      "payload": {
+        "schema_version": "repair_seed.v0.1",
+        "generated_at": "2026-06-29T07:25:38.637455+00:00",
+        "source": "mainbase",
+        "decision": "PASS_REPAIR_CLOSED_QUEUE",
+        "summary": {
+          "generated_at": "2026-06-29T07:25:38.636817+00:00",
+          "decision": "PASS_REPAIR_CLOSED_QUEUE",
+          "input_repair_item_count": 1,
+          "repaired_case_count": 1,
+          "repaired_to_winner_count": 1,
+          "still_required_count": 0,
+          "failed_count": 0,
+          "limitation": "Repair is deterministic event-region reinforcement for control baseline only; it is not a generative model quality claim."
+        },
+        "results": [
+          {
+            "case_id": "kitchen_chop_sizzle_001",
+            "source_candidate_id": "kitchen_chop_sizzle_001__control_rule_foley_v0",
+            "repaired_candidate_id": "kitchen_chop_sizzle_001__control_rule_foley_v0_repair_v1",
+            "repaired_path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/model_runs/week17_control_repaired/kitchen_chop_sizzle_001/kitchen_chop_sizzle_001__control_rule_foley_v0_repair_v1.wav",
+            "repair_status": "repaired_to_winner",
+            "before_score": 0.75,
+            "after_score": 1.0,
+            "score_delta": 0.25,
+            "winner_after_repair": true
+          }
+        ]
+      }
+    },
+    "summary": {
+      "endpoint": "/api/week17/model-race-seed/summary",
+      "ok": true,
+      "status": 200,
+      "elapsed_ms": 7.82,
+      "error": "",
+      "payload": {
+        "source": "mainbase",
+        "model_race_decision": "PASS_WITH_REPAIR_QUEUE",
+        "repair_decision": "PASS_REPAIR_CLOSED_QUEUE",
+        "model_race_result_count": 6,
+        "repair_result_count": 1,
+        "repair_closed": true,
+        "java_next_action": "Expose these payloads through Week17 model race seed and repair seed API controllers."
+      }
+    }
+  }
+}
