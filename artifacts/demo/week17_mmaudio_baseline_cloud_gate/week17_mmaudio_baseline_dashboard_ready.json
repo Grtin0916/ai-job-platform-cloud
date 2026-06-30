@@ -1,0 +1,35 @@
+{
+  "status": "DASHBOARD_READY",
+  "title": "Week17 MMAudio Baseline Cloud Gate",
+  "panels": [
+    {
+      "name": "case_count",
+      "value": 6
+    },
+    {
+      "name": "candidate_count",
+      "value": 12
+    },
+    {
+      "name": "winner_count",
+      "value": 6
+    },
+    {
+      "name": "repair_queue_count",
+      "value": 6
+    },
+    {
+      "name": "true_mmaudio_generated_count",
+      "value": 0
+    },
+    {
+      "name": "java_endpoint_count",
+      "value": 5
+    },
+    {
+      "name": "fallback_boundary",
+      "value": true
+    }
+  ],
+  "boundary_note": "Cloud gate consumes Mainbase fallback baseline and Java API report. Current state is demo-gate-ready with fallback boundary; it is not true MMAudio V2A, not k6 threshold pass, and not production SLO."
+}

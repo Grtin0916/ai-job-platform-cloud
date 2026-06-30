@@ -1,0 +1,18 @@
+{
+  "decision": "YELLOW_FALLBACK_CONTROL_AUDIO_READY_MMAUDIO_BLOCKED",
+  "case_count": 6,
+  "candidate_count": 12,
+  "winner_count": 6,
+  "rejected_count": 6,
+  "repair_queue_count": 6,
+  "bad_prompt_count": 0,
+  "all_outputs_are_fallback": true,
+  "true_mmaudio_generated_count": 0,
+  "claim_boundary": {
+    "can_claim_readable_candidate_audio": true,
+    "can_claim_dss_conditioned_control_baseline": true,
+    "can_claim_true_mmaudio_v2a_success": false,
+    "can_claim_video_synchronized_quality": false
+  },
+  "bad_prompts": []
+}

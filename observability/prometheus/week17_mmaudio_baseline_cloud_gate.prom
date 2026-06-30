@@ -1,0 +1,21 @@
+# HELP week17_mmaudio_baseline_cloud_gate_ready Whether the cloud gate is ready under fallback boundary.
+# TYPE week17_mmaudio_baseline_cloud_gate_ready gauge
+week17_mmaudio_baseline_cloud_gate_ready{system="soundlayer",week="17",component="cloud_gate"} 1
+# HELP week17_mmaudio_baseline_candidate_count Number of candidate audio files in baseline.
+# TYPE week17_mmaudio_baseline_candidate_count gauge
+week17_mmaudio_baseline_candidate_count{system="soundlayer",week="17",component="cloud_gate"} 12
+# HELP week17_mmaudio_baseline_winner_count Number of selected winners.
+# TYPE week17_mmaudio_baseline_winner_count gauge
+week17_mmaudio_baseline_winner_count{system="soundlayer",week="17",component="cloud_gate"} 6
+# HELP week17_mmaudio_baseline_repair_queue_count Number of repair targets.
+# TYPE week17_mmaudio_baseline_repair_queue_count gauge
+week17_mmaudio_baseline_repair_queue_count{system="soundlayer",week="17",component="cloud_gate"} 6
+# HELP week17_mmaudio_baseline_true_mmaudio_generated_count Number of true MMAudio generated candidates.
+# TYPE week17_mmaudio_baseline_true_mmaudio_generated_count gauge
+week17_mmaudio_baseline_true_mmaudio_generated_count{system="soundlayer",week="17",component="cloud_gate"} 0
+# HELP week17_mmaudio_baseline_java_endpoint_count Number of Java endpoints exposed for this baseline.
+# TYPE week17_mmaudio_baseline_java_endpoint_count gauge
+week17_mmaudio_baseline_java_endpoint_count{system="soundlayer",week="17",component="cloud_gate"} 5
+# HELP week17_mmaudio_baseline_can_claim_true_v2a Whether true MMAudio V2A success can be claimed.
+# TYPE week17_mmaudio_baseline_can_claim_true_v2a gauge
+week17_mmaudio_baseline_can_claim_true_v2a{system="soundlayer",week="17",component="cloud_gate"} 0

@@ -1,0 +1,23 @@
+{
+  "status": "PASS_JAVA_MMAUDIO_BASELINE_API_READY",
+  "created_at_utc": "2026-06-30T02:45:56.176417+00:00",
+  "source_payload": "artifacts/manifests/week17_mmaudio_baseline/mainbase_mmaudio_baseline_java_seed_payload.json",
+  "endpoints": [
+    "GET /api/week17/mmaudio-baseline",
+    "GET /api/week17/mmaudio-baseline/summary",
+    "GET /api/week17/mmaudio-baseline/winners",
+    "GET /api/week17/mmaudio-baseline/repair-queue",
+    "GET /api/week17/mmaudio-baseline/health"
+  ],
+  "case_count": 6,
+  "candidate_count": 12,
+  "winner_count": 6,
+  "rejected_count": 6,
+  "repair_queue_count": 6,
+  "bad_prompt_count": 0,
+  "true_mmaudio_generated_count": 0,
+  "all_outputs_are_fallback": true,
+  "can_claim_true_mmaudio_v2a_success": false,
+  "can_claim_video_synchronized_quality": false,
+  "boundary_note": "Java exposes Mainbase baseline as API behavior. Current audio is fallback control, not true MMAudio V2A."
+}

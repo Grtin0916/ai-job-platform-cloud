@@ -1,0 +1,46 @@
+{
+  "status": "PASS_CLOUD_MMAUDIO_BASELINE_GATE_READY_WITH_FALLBACK_BOUNDARY",
+  "created_at_utc": "2026-06-30T02:54:45.998878+00:00",
+  "source": {
+    "mainbase_boundary": "artifacts/demo/week17_mmaudio_baseline_cloud_gate/mainbase_mmaudio_baseline_boundary.json",
+    "mainbase_payload": "artifacts/demo/week17_mmaudio_baseline_cloud_gate/mainbase_mmaudio_baseline_java_seed_payload.json",
+    "java_api_report": "artifacts/demo/week17_mmaudio_baseline_cloud_gate/java_mmaudio_baseline_api_report.json"
+  },
+  "checks": {
+    "mainbase_case_count_6": true,
+    "mainbase_candidate_count_12": true,
+    "mainbase_winner_count_6": true,
+    "mainbase_repair_queue_count_6": true,
+    "mainbase_bad_prompt_count_0": true,
+    "mainbase_boundary_honest_no_true_mmaudio": true,
+    "java_api_ready": true,
+    "java_endpoint_count_5": true,
+    "java_matches_mainbase_case_count": true,
+    "java_matches_mainbase_candidate_count": true,
+    "java_matches_mainbase_winner_count": true,
+    "repair_queue_payload_consistent": true,
+    "winner_payload_consistent": true
+  },
+  "pass_count": 13,
+  "fail_count": 0,
+  "case_count": 6,
+  "candidate_count": 12,
+  "winner_count": 6,
+  "rejected_count": 6,
+  "repair_queue_count": 6,
+  "bad_prompt_count": 0,
+  "true_mmaudio_generated_count": 0,
+  "all_outputs_are_fallback": true,
+  "java_endpoint_count": 5,
+  "claim_boundary": {
+    "cloud_can_claim_demo_gate_ready": true,
+    "cloud_can_claim_java_api_consumed": true,
+    "cloud_can_claim_readable_candidate_audio": true,
+    "cloud_can_claim_dss_conditioned_control_baseline": true,
+    "cloud_can_claim_true_mmaudio_v2a_success": false,
+    "cloud_can_claim_video_synchronized_quality": false,
+    "cloud_can_claim_k6_threshold_pass": false,
+    "cloud_can_claim_production_slo": false
+  },
+  "boundary_note": "Cloud gate consumes Mainbase fallback baseline and Java API report. Current state is demo-gate-ready with fallback boundary; it is not true MMAudio V2A, not k6 threshold pass, and not production SLO."
+}

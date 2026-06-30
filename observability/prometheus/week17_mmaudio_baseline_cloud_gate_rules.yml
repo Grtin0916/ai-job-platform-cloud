@@ -1,0 +1,19 @@
+groups:
+- name: week17_mmaudio_baseline_cloud_gate
+  rules:
+  - alert: Week17MmaudioBaselineCloudGateNotReady
+    expr: week17_mmaudio_baseline_cloud_gate_ready{system="soundlayer",week="17",component="cloud_gate"} < 1
+    for: 0m
+    labels:
+      severity: warning
+    annotations:
+      summary: "Week17 MMAudio baseline cloud gate is not ready"
+      description: "Cloud gate failed at least one consistency check."
+  - alert: Week17MmaudioTrueV2aStillMissing
+    expr: week17_mmaudio_baseline_true_mmaudio_generated_count{system="soundlayer",week="17",component="cloud_gate"} < 1
+    for: 0m
+    labels:
+      severity: info
+    annotations:
+      summary: "True MMAudio V2A output is still missing"
+      description: "Current baseline is fallback control audio. Do not claim true V2A success."
