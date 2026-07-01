@@ -1,0 +1,18 @@
+# HELP week17_model_race_case_count Number of demo cases in fallback-aware model race.
+# TYPE week17_model_race_case_count gauge
+week17_model_race_case_count 6
+# HELP week17_model_race_winner_count Number of selected winners.
+# TYPE week17_model_race_winner_count gauge
+week17_model_race_winner_count 6
+# HELP week17_model_race_canonical_candidate_count Canonical candidate count after deduplication.
+# TYPE week17_model_race_canonical_candidate_count gauge
+week17_model_race_canonical_candidate_count 28
+# HELP week17_true_mmaudio_success Whether true MMAudio V2A succeeded.
+# TYPE week17_true_mmaudio_success gauge
+week17_true_mmaudio_success 0
+# HELP week17_java_consumer_it_pass Whether Java RANDOM_PORT consumer IT passed.
+# TYPE week17_java_consumer_it_pass gauge
+week17_java_consumer_it_pass 1
+# HELP week17_fallback_aware_cloud_gate_ready Whether Cloud fallback-aware gate is ready.
+# TYPE week17_fallback_aware_cloud_gate_ready gauge
+week17_fallback_aware_cloud_gate_ready 1

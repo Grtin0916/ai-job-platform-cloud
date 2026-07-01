@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-07-01T02:37:06.538858+00:00",
+  "status": "GREEN_FALLBACK_AWARE_CLOUD_GATE_READY",
+  "gate_ready": true,
+  "source": "java_week17_fallback_aware_model_race_api_report",
+  "checks": {
+    "java_api_finalized": true,
+    "java_it_passed": true,
+    "artifact_type_ok": true,
+    "true_mmaudio_blocked_declared": true,
+    "case_count_ok": true,
+    "winner_count_ok": true,
+    "canonical_candidate_count_ok": true,
+    "payload_item_count_ok": true
+  },
+  "summary": {
+    "case_count": 6,
+    "winner_count": 6,
+    "canonical_candidate_count": 28,
+    "true_mmaudio_status": "blocked_by_torch_torchaudio_abi",
+    "java_test_status": "passed"
+  },
+  "claim_boundary": {
+    "true_mmaudio_v2a_success": false,
+    "fallback_aware_reranker_ready": true,
+    "java_consumer_verified": true,
+    "cloud_dashboard_ready": true,
+    "k6_threshold_pass": false,
+    "production_slo_claim": false
+  },
+  "inputs": {
+    "java_report": "artifacts/demo/week17_fallback_aware_model_race_cloud_gate/inputs/week17_fallback_aware_model_race_api_report.json",
+    "java_payload": "artifacts/demo/week17_fallback_aware_model_race_cloud_gate/inputs/mainbase_week17_model_race_java_payload_20260701.json"
+  },
+  "outputs": {
+    "gate_json": "artifacts/demo/week17_fallback_aware_model_race_cloud_gate/week17_fallback_aware_model_race_cloud_gate.json",
+    "dashboard_json": "artifacts/demo/week17_fallback_aware_model_race_cloud_gate/week17_fallback_aware_model_race_dashboard_ready.json",
+    "loadtest_json": "loadtest/reports/week17_fallback_aware_model_race_cloud_gate.json",
+    "prom_metrics": "loadtest/reports/week17_fallback_aware_model_race_metrics.prom",
+    "alert_rules": "observability/prometheus/week17_fallback_aware_model_race.rules.yml"
+  }
+}

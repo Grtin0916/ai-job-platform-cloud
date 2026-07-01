@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-07-01T02:22:52.963416+00:00",
+  "status": "finalized",
+  "test_status": "passed",
+  "api_path": "/api/week17/fallback-aware-model-race/result",
+  "controller": "src/main/java/com/ryan/media/controller/Week17FallbackAwareModelRaceController.java",
+  "integration_test": "src/test/java/com/ryan/media/controller/Week17FallbackAwareModelRaceControllerIT.java",
+  "payload": "artifacts/manifests/week17_fallback_aware_model_race/mainbase_week17_model_race_java_payload_20260701.json",
+  "artifact_type": "week17_fallback_aware_model_race_result",
+  "true_mmaudio_status": "blocked_by_torch_torchaudio_abi",
+  "case_count": 6,
+  "winner_count": 6,
+  "canonical_candidate_count": 28,
+  "claim_boundary": {
+    "true_mmaudio_v2a_success": false,
+    "fallback_aware_reranker_ready": true,
+    "production_slo_claim": false
+  },
+  "surefire_report": "target/surefire-reports/com.ryan.media.controller.Week17FallbackAwareModelRaceControllerIT.txt",
+  "surefire_exists": true,
+  "surefire_tail": "-------------------------------------------------------------------------------\nTest set: com.ryan.media.controller.Week17FallbackAwareModelRaceControllerIT\n-------------------------------------------------------------------------------\nTests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.199 s -- in com.ryan.media.controller.Week17FallbackAwareModelRaceControllerIT"
+}

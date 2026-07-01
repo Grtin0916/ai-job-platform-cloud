@@ -1,0 +1,62 @@
+{
+  "artifact_type": "week17_fallback_aware_model_race_result",
+  "generated_at": "2026-07-01T02:18:50.056321+00:00",
+  "source": "mainbase",
+  "true_mmaudio_status": "blocked_by_torch_torchaudio_abi",
+  "case_count": 6,
+  "winner_count": 6,
+  "canonical_candidate_count": 28,
+  "ranking_csv": "reports/week17_fallback_aware_ranking_20260701.csv",
+  "winners_json": "reports/week17_fallback_aware_winners_20260701.json",
+  "repair_queue_json": "reports/week17_fallback_aware_repair_queue_20260701.json",
+  "items": [
+    {
+      "case_id": "forest_bird_branch_001",
+      "winner_candidate_id": "forest_bird_branch_001__mmaudio__dss_avoid_priority",
+      "source": "fallback_mmaudio",
+      "score": 1.0,
+      "artifact_path": "experiments/mmaudio_baseline_2026_06_30/candidates/forest_bird_branch_001__mmaudio__dss_avoid_priority.wav",
+      "why_selected": "source=fallback_mmaudio; readable=True; path_exists=True; duration=8.0; peak=0.350006103515625; rms=0.016114918515086174; silence=0.0088671875; merge_count=3"
+    },
+    {
+      "case_id": "glass_drop_room_001",
+      "winner_candidate_id": "glass_drop_room_001__mmaudio__dss_avoid_priority",
+      "source": "fallback_mmaudio",
+      "score": 1.0,
+      "artifact_path": "experiments/mmaudio_baseline_2026_06_30/candidates/glass_drop_room_001__mmaudio__dss_avoid_priority.wav",
+      "why_selected": "source=fallback_mmaudio; readable=True; path_exists=True; duration=7.0; peak=0.352752685546875; rms=0.01716248132288456; silence=0.00842857142857143; merge_count=3"
+    },
+    {
+      "case_id": "kitchen_chop_sizzle_001",
+      "winner_candidate_id": "kitchen_chop_sizzle_001__mmaudio__dss_avoid_priority",
+      "source": "fallback_mmaudio",
+      "score": 1.0,
+      "artifact_path": "experiments/mmaudio_baseline_2026_06_30/candidates/kitchen_chop_sizzle_001__mmaudio__dss_avoid_priority.wav",
+      "why_selected": "source=fallback_mmaudio; readable=True; path_exists=True; duration=10.0; peak=0.377410888671875; rms=0.015005960129201412; silence=0.0087; merge_count=3"
+    },
+    {
+      "case_id": "robot_warehouse_pick_001",
+      "winner_candidate_id": "robot_warehouse_pick_001__mmaudio__dss_avoid_priority",
+      "source": "fallback_mmaudio",
+      "score": 1.0,
+      "artifact_path": "experiments/mmaudio_baseline_2026_06_30/candidates/robot_warehouse_pick_001__mmaudio__dss_avoid_priority.wav",
+      "why_selected": "source=fallback_mmaudio; readable=True; path_exists=True; duration=11.0; peak=0.3558349609375; rms=0.01481595914810896; silence=0.009130681818181819; merge_count=3"
+    },
+    {
+      "case_id": "street_rain_crosswalk_001",
+      "winner_candidate_id": "street_rain_crosswalk_001__mmaudio__dss_avoid_priority",
+      "source": "fallback_mmaudio",
+      "score": 1.0,
+      "artifact_path": "experiments/mmaudio_baseline_2026_06_30/candidates/street_rain_crosswalk_001__mmaudio__dss_avoid_priority.wav",
+      "why_selected": "source=fallback_mmaudio; readable=True; path_exists=True; duration=9.0; peak=0.32318115234375; rms=0.015169627964496613; silence=0.009055555555555556; merge_count=3"
+    },
+    {
+      "case_id": "subway_arrival_door_001",
+      "winner_candidate_id": "subway_arrival_door_001__mmaudio__dss_avoid_priority",
+      "source": "fallback_mmaudio",
+      "score": 1.0,
+      "artifact_path": "experiments/mmaudio_baseline_2026_06_30/candidates/subway_arrival_door_001__mmaudio__dss_avoid_priority.wav",
+      "why_selected": "source=fallback_mmaudio; readable=True; path_exists=True; duration=12.0; peak=0.320068359375; rms=0.014108228497207165; silence=0.008489583333333333; merge_count=3"
+    }
+  ]
+}

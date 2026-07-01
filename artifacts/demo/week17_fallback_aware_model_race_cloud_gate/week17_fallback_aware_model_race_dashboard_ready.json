@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-07-01T02:37:06.538858+00:00",
+  "dashboard_ready": true,
+  "title": "Week17 fallback-aware model race cloud gate",
+  "panels": [
+    {
+      "title": "Model race winners",
+      "metric": "week17_model_race_winner_count",
+      "value": 6
+    },
+    {
+      "title": "Canonical candidates",
+      "metric": "week17_model_race_canonical_candidate_count",
+      "value": 28
+    },
+    {
+      "title": "True MMAudio success",
+      "metric": "week17_true_mmaudio_success",
+      "value": 0,
+      "note": "blocked_by_torch_torchaudio_abi"
+    },
+    {
+      "title": "Java consumer IT",
+      "metric": "week17_java_consumer_it_pass",
+      "value": 1
+    }
+  ]
+}

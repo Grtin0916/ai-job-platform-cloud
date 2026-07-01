@@ -1,0 +1,21 @@
+groups:
+- name: week17_fallback_aware_model_race
+  rules:
+  - alert: Week17FallbackAwareCloudGateNotReady
+    expr: week17_fallback_aware_cloud_gate_ready < 1
+    for: 1m
+    labels:
+      severity: warning
+      project: soundlayer
+    annotations:
+      summary: "Week17 fallback-aware cloud gate is not ready"
+      description: "Java consumer or model race payload failed the fallback-aware gate."
+  - alert: Week17TrueMmaudioStillBlocked
+    expr: week17_true_mmaudio_success < 1
+    for: 1m
+    labels:
+      severity: info
+      project: soundlayer
+    annotations:
+      summary: "True MMAudio remains blocked"
+      description: "This is an honest runtime boundary, not a production failure claim."
