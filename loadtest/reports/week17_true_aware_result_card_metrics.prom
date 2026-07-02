@@ -1,0 +1,21 @@
+# HELP soundlayer_true_aware_single_success Whether one true MMAudio V2A candidate is safely available.
+# TYPE soundlayer_true_aware_single_success gauge
+soundlayer_true_aware_single_success 1
+# HELP soundlayer_true_aware_safe_true_mmaudio_record_count Claim-safe true MMAudio artifact count.
+# TYPE soundlayer_true_aware_safe_true_mmaudio_record_count gauge
+soundlayer_true_aware_safe_true_mmaudio_record_count 1
+# HELP soundlayer_true_aware_raw_candidate_record_count Raw candidate context record count.
+# TYPE soundlayer_true_aware_raw_candidate_record_count gauge
+soundlayer_true_aware_raw_candidate_record_count 9
+# HELP soundlayer_true_aware_batch_success Whether true MMAudio batch success is verified.
+# TYPE soundlayer_true_aware_batch_success gauge
+soundlayer_true_aware_batch_success 0
+# HELP soundlayer_true_aware_full_ranking_available Whether full candidate ranking is verified.
+# TYPE soundlayer_true_aware_full_ranking_available gauge
+soundlayer_true_aware_full_ranking_available 0
+# HELP soundlayer_true_aware_production_slo_verified Whether production SLO is verified.
+# TYPE soundlayer_true_aware_production_slo_verified gauge
+soundlayer_true_aware_production_slo_verified 0
+# HELP soundlayer_true_aware_k6_threshold_pass_verified Whether k6 threshold pass is verified.
+# TYPE soundlayer_true_aware_k6_threshold_pass_verified gauge
+soundlayer_true_aware_k6_threshold_pass_verified 0

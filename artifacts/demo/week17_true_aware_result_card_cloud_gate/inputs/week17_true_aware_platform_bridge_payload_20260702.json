@@ -1,0 +1,53 @@
+{
+  "schema_version": "week17.true_aware.platform_bridge.v1",
+  "generated_at_utc": "2026-07-02T03:09:30.360851+00:00",
+  "source_repo_role": "mainbase",
+  "consumer_order": [
+    "java_result_card_api",
+    "cloud_demo_gate_seed"
+  ],
+  "strict_boundary": {
+    "true_mmaudio_single_success": true,
+    "true_mmaudio_audio_artifact_count": 1,
+    "true_mmaudio_case_count": 1,
+    "true_mmaudio_batch_success": false,
+    "full_candidate_ranking_available": false,
+    "production_slo_verified": false,
+    "k6_threshold_pass_verified": false,
+    "hf_cache_or_model_weight_included": false
+  },
+  "claim_guard": {
+    "claim_level": "single_true_v2a_candidate_available",
+    "allowed_claims": [
+      "One true MMAudio video-conditioned audio artifact exists.",
+      "The artifact can be used as a result-card input for Java and Cloud demo-gate seeding.",
+      "The system can compare this true candidate against existing fallback-aware model-race evidence."
+    ],
+    "forbidden_claims": [
+      "Do not claim true MMAudio batch success.",
+      "Do not claim all model-race candidates are true MMAudio outputs.",
+      "Do not claim full 28-candidate ranking availability.",
+      "Do not claim production SLO verification.",
+      "Do not claim k6 threshold pass.",
+      "Do not include model weights or Hugging Face cache in Git."
+    ],
+    "why_this_guard_exists": "The raw payload contains multiple candidate/winner records, but only one confirmed true MMAudio audio artifact. Platform consumers must not inflate this into batch success."
+  },
+  "platform_result_card": {
+    "title": "Week17 true-aware result card bridge",
+    "status": "consumer_ready",
+    "primary_case_id": "glass_drop_room_001",
+    "primary_model": "MMAudio",
+    "primary_audio_artifact": "experiments/mmaudio_true_replacement_2026_06_30/candidates/glass_drop_room_001__mmaudio__true_replacement_v0.flac",
+    "primary_audio_exists": true,
+    "primary_audio_size_bytes": 138401,
+    "primary_audio_sha256": "9637fc444bb1c2d2ac9b214711f801b0d2ebb044ce52fe1bd080932b8c28c32e",
+    "raw_candidate_record_count": 9,
+    "raw_winner_record_count": 6,
+    "safe_true_mmaudio_record_count": 1,
+    "raw_payload_path": "reports/week17_true_aware_result_card_payload_20260702.json",
+    "recommended_java_behavior": "Expose this as a result-card endpoint and keep raw fallback-aware counts as context, not as true-MMAudio batch evidence.",
+    "recommended_cloud_behavior": "Use this bridge as a Friday demo gate seed with single=true, batch=false, fullRanking=false, productionSlo=false."
+  },
+  "source_artifact_count": 7
+}

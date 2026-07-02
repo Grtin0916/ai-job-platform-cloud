@@ -1,0 +1,22 @@
+groups:
+  - name: week17_true_aware_result_card
+    rules:
+      - alert: Week17TrueAwareSingleCandidateMissing
+        expr: soundlayer_true_aware_single_success < 1
+        for: 0m
+        labels:
+          severity: warning
+          scope: demo-gate
+        annotations:
+          summary: "Week17 true-aware single candidate is not available"
+          description: "The Cloud demo gate requires one claim-safe true MMAudio candidate before Friday demo packaging."
+
+      - alert: Week17TrueAwareClaimInflationRisk
+        expr: soundlayer_true_aware_batch_success > 0 or soundlayer_true_aware_full_ranking_available > 0
+        for: 0m
+        labels:
+          severity: critical
+          scope: claim-boundary
+        annotations:
+          summary: "Week17 true-aware claim boundary was inflated"
+          description: "This gate must not claim true MMAudio batch success or full candidate ranking availability."

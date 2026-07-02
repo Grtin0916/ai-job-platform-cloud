@@ -1,0 +1,42 @@
+{
+  "schema_version": "week17.true_aware.java_api_report.v1",
+  "generated_at_utc": "2026-07-02T03:13:55.941515+00:00",
+  "source": "Mainbase true-aware platform bridge",
+  "copied_artifacts": {
+    "bridge": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week17_true_aware_result_card/week17_true_aware_platform_bridge_payload_20260702.json",
+    "claim_guard": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week17_true_aware_result_card/week17_true_aware_claim_guard_20260702.json",
+    "raw_payload": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week17_true_aware_result_card/week17_true_aware_result_card_payload_20260702.json"
+  },
+  "controller": "/home/GRT/work/media-task-platform-java/src/main/java/com/ryan/media/controller/Week17TrueAwareResultCardController.java",
+  "integration_test": "/home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/controller/Week17TrueAwareResultCardControllerIT.java",
+  "endpoints": [
+    "GET /api/week17/true-aware/result-card/health",
+    "GET /api/week17/true-aware/result-card/summary",
+    "GET /api/week17/true-aware/result-card/bridge",
+    "GET /api/week17/true-aware/result-card/claim-guard",
+    "GET /api/week17/true-aware/result-card/artifacts"
+  ],
+  "strict_boundary": {
+    "true_mmaudio_single_success": true,
+    "true_mmaudio_audio_artifact_count": 1,
+    "true_mmaudio_case_count": 1,
+    "true_mmaudio_batch_success": false,
+    "full_candidate_ranking_available": false,
+    "production_slo_verified": false,
+    "k6_threshold_pass_verified": false,
+    "hf_cache_or_model_weight_included": false
+  },
+  "platform_result_card": {
+    "status": "consumer_ready",
+    "primary_case_id": "glass_drop_room_001",
+    "primary_model": "MMAudio",
+    "safe_true_mmaudio_record_count": 1,
+    "raw_candidate_record_count": 9
+  },
+  "explicit_non_claims": [
+    "No true MMAudio batch success.",
+    "No full candidate ranking claim.",
+    "No production SLO claim.",
+    "No k6 threshold pass claim."
+  ]
+}

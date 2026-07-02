@@ -1,0 +1,85 @@
+{
+  "title": "Week17 True-aware Result Card Gate",
+  "uid": "week17-true-aware-result-card",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "30s",
+  "tags": [
+    "week17",
+    "true-aware",
+    "demo-gate",
+    "soundlayer"
+  ],
+  "panels": [
+    {
+      "type": "stat",
+      "title": "Single true MMAudio available",
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      "targets": [
+        {
+          "expr": "soundlayer_true_aware_single_success"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Safe true count",
+      "gridPos": {
+        "x": 6,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      "targets": [
+        {
+          "expr": "soundlayer_true_aware_safe_true_mmaudio_record_count"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Raw candidate context",
+      "gridPos": {
+        "x": 12,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      "targets": [
+        {
+          "expr": "soundlayer_true_aware_raw_candidate_record_count"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "title": "Forbidden batch claim",
+      "gridPos": {
+        "x": 18,
+        "y": 0,
+        "w": 6,
+        "h": 4
+      },
+      "targets": [
+        {
+          "expr": "soundlayer_true_aware_batch_success"
+        }
+      ]
+    }
+  ],
+  "week17SeedValues": {
+    "single_success": 1,
+    "safe_true_count": 1,
+    "raw_candidate_count": 9,
+    "batch_success": 0,
+    "full_ranking": 0,
+    "production_slo": 0,
+    "k6_pass": 0
+  },
+  "boundary": "Dashboard seed only. No live Grafana import, no production SLO, no k6 threshold pass claimed."
+}

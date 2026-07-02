@@ -1,0 +1,17 @@
+{
+  "claim_level": "single_true_v2a_candidate_available",
+  "allowed_claims": [
+    "One true MMAudio video-conditioned audio artifact exists.",
+    "The artifact can be used as a result-card input for Java and Cloud demo-gate seeding.",
+    "The system can compare this true candidate against existing fallback-aware model-race evidence."
+  ],
+  "forbidden_claims": [
+    "Do not claim true MMAudio batch success.",
+    "Do not claim all model-race candidates are true MMAudio outputs.",
+    "Do not claim full 28-candidate ranking availability.",
+    "Do not claim production SLO verification.",
+    "Do not claim k6 threshold pass.",
+    "Do not include model weights or Hugging Face cache in Git."
+  ],
+  "why_this_guard_exists": "The raw payload contains multiple candidate/winner records, but only one confirmed true MMAudio audio artifact. Platform consumers must not inflate this into batch success."
+}

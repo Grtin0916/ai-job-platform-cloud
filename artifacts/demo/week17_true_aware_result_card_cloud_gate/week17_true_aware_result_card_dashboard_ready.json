@@ -1,0 +1,18 @@
+{
+  "schema_version": "week17.true_aware.dashboard_ready.v1",
+  "generated_at_utc": "2026-07-02T03:18:18.004783+00:00",
+  "dashboard_ready": true,
+  "dashboard_path": "/home/GRT/work/ai-job-platform-cloud/observability/grafana/dashboards/week17_true_aware_result_card_dashboard.json",
+  "metrics_path": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week17_true_aware_result_card_metrics.prom",
+  "rules_path": "/home/GRT/work/ai-job-platform-cloud/observability/prometheus/week17_true_aware_result_card.rules.yml",
+  "seed_values": {
+    "single_success": 1,
+    "safe_true_count": 1,
+    "raw_candidate_count": 9,
+    "batch_success": 0,
+    "full_ranking": 0,
+    "production_slo": 0,
+    "k6_pass": 0
+  },
+  "boundary": "Ready as seed artifacts only; no live dashboard import or production SLO verification claimed."
+}

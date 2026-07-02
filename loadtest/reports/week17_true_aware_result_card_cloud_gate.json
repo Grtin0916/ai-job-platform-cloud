@@ -1,0 +1,76 @@
+{
+  "schema_version": "week17.true_aware.cloud_gate.v1",
+  "generated_at_utc": "2026-07-02T03:18:18.004766+00:00",
+  "source_repo_role": "cloud",
+  "input_contracts": {
+    "java_api_report": "/home/GRT/work/ai-job-platform-cloud/artifacts/demo/week17_true_aware_result_card_cloud_gate/inputs/week17_true_aware_result_card_api_report.json",
+    "java_bridge": "/home/GRT/work/ai-job-platform-cloud/artifacts/demo/week17_true_aware_result_card_cloud_gate/inputs/week17_true_aware_platform_bridge_payload_20260702.json",
+    "java_claim_guard": "/home/GRT/work/ai-job-platform-cloud/artifacts/demo/week17_true_aware_result_card_cloud_gate/inputs/week17_true_aware_claim_guard_20260702.json",
+    "mainbase_bridge": "/home/GRT/work/ai-job-platform-cloud/artifacts/demo/week17_true_aware_result_card_cloud_gate/inputs/week17_true_aware_platform_bridge_payload_20260702.json"
+  },
+  "decision": {
+    "readyForFridayDemoPack": true,
+    "cloudGateSeedReady": true,
+    "javaResultCardApiReady": true,
+    "singleTrueMmaudioAvailable": true,
+    "safeTrueMmaudioRecordCount": 1,
+    "rawCandidateRecordCount": 9,
+    "trueMmaudioBatchSuccess": false,
+    "fullCandidateRankingAvailable": false,
+    "productionSloVerified": false,
+    "k6ThresholdPassVerified": false
+  },
+  "runtime_boundary": {
+    "dashboardSeedOnly": true,
+    "prometheusMetricsSampleOnly": true,
+    "liveGrafanaImportVerified": false,
+    "promtoolVerifiedInThisRun": false,
+    "k6ThresholdExecutedInThisRun": false,
+    "productionSloClaimAllowed": false
+  },
+  "claim_guard": {
+    "claim_level": "single_true_v2a_candidate_available",
+    "allowed_claims": [
+      "One true MMAudio video-conditioned audio artifact exists.",
+      "The artifact can be used as a result-card input for Java and Cloud demo-gate seeding.",
+      "The system can compare this true candidate against existing fallback-aware model-race evidence."
+    ],
+    "forbidden_claims": [
+      "Do not claim true MMAudio batch success.",
+      "Do not claim all model-race candidates are true MMAudio outputs.",
+      "Do not claim full 28-candidate ranking availability.",
+      "Do not claim production SLO verification.",
+      "Do not claim k6 threshold pass.",
+      "Do not include model weights or Hugging Face cache in Git."
+    ],
+    "why_this_guard_exists": "The raw payload contains multiple candidate/winner records, but only one confirmed true MMAudio audio artifact. Platform consumers must not inflate this into batch success."
+  },
+  "java_api_report_summary": {
+    "endpoints": [
+      "GET /api/week17/true-aware/result-card/health",
+      "GET /api/week17/true-aware/result-card/summary",
+      "GET /api/week17/true-aware/result-card/bridge",
+      "GET /api/week17/true-aware/result-card/claim-guard",
+      "GET /api/week17/true-aware/result-card/artifacts"
+    ],
+    "strict_boundary": {
+      "true_mmaudio_single_success": true,
+      "true_mmaudio_audio_artifact_count": 1,
+      "true_mmaudio_case_count": 1,
+      "true_mmaudio_batch_success": false,
+      "full_candidate_ranking_available": false,
+      "production_slo_verified": false,
+      "k6_threshold_pass_verified": false,
+      "hf_cache_or_model_weight_included": false
+    },
+    "platform_result_card": {
+      "status": "consumer_ready",
+      "primary_case_id": "glass_drop_room_001",
+      "primary_model": "MMAudio",
+      "safe_true_mmaudio_record_count": 1,
+      "raw_candidate_record_count": 9
+    }
+  },
+  "mainbase_bridge_status": "consumer_ready",
+  "next_step": "Build Friday demo pack using single=true, batch=false, fullRanking=false."
+}
