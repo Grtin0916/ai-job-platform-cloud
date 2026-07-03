@@ -1,0 +1,19 @@
+groups:
+  - name: week18_prompt_task_seed
+    rules:
+      - alert: Week18PromptTaskSeedGateNotReady
+        expr: week18_prompt_task_seed_gate_ready != 1
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "W18 prompt task seed gate is not ready"
+          description: "Check Mainbase prompt task queue, Java seed API report, and claim boundary."
+      - alert: Week18PromptTaskSeedOverclaimRisk
+        expr: week18_prompt_task_seed_k6_threshold_pass_verified == 1 or week18_prompt_task_seed_live_grafana_import_verified == 1
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "W18 prompt task seed has overclaim risk"
+          description: "k6 or live Grafana flag is true without a verified run."

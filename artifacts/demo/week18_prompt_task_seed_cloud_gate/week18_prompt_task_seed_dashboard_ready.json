@@ -1,0 +1,11 @@
+{
+  "dashboardReady": true,
+  "liveGrafanaImportVerified": false,
+  "dashboardPath": "observability/grafana/dashboards/week18_prompt_task_seed_dashboard.json",
+  "panelCount": 6,
+  "gateSummary": {
+    "decision": "PASS",
+    "gateReady": true,
+    "interpretation": "Cloud-side seed gate for W18 DSS-vs-naive prompt ablation. Not a model-quality or production-SLO claim."
+  }
+}

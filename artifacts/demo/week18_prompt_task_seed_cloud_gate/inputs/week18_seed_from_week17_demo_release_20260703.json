@@ -1,0 +1,127 @@
+{
+  "seed_id": "week18_seed_from_week17_demo_release_20260703",
+  "generated_at_utc": "2026-07-03T03:01:53.528295+00:00",
+  "decision": "READY_FOR_W18_DSS_PROMPT_COMPILER",
+  "week17_release": {
+    "verify_decision": "PASS",
+    "release_zip": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/demo/week17_true_aware_demo_release_20260703.zip",
+    "release_zip_exists": true,
+    "release_zip_size_bytes": 316311,
+    "zip_valid": true,
+    "zip_contains_index": true,
+    "zip_contains_wav": true,
+    "safe_true_mmaudio_record_count": 1,
+    "manifest_release_id": "week17_true_aware_demo_release_20260703"
+  },
+  "claim_boundary": {
+    "safeTrueMmaudioRecordCount": 1,
+    "trueMmaudioBatchSuccess": false,
+    "fullCandidateRankingAvailable": false,
+    "productionSloVerified": false,
+    "k6ThresholdPassVerified": false,
+    "liveGrafanaImportVerified": false
+  },
+  "w18_objectives": [
+    "Build DSS v1 schema and prompt compiler.",
+    "Compare naive prompt vs DSS prompt on W17 case bank.",
+    "Use the single true MMAudio result as a positive anchor, not as batch-success evidence.",
+    "Convert failed/fallback cases into repair targets instead of hiding them.",
+    "Keep Java/Cloud fields ready for downstream task lifecycle and dashboard aggregation."
+  ],
+  "case_records": [
+    {
+      "case_id": "forest_bird_branch_001",
+      "week18_role": "dss_prompt_compiler_seed",
+      "source_week": "W17",
+      "has_true_mmaudio": false,
+      "recommended_next_action": "generate DSS prompt variants and evaluate event coverage / forbidden leakage"
+    },
+    {
+      "case_id": "glass_drop_room_001",
+      "week18_role": "true_anchor",
+      "source_week": "W17",
+      "has_true_mmaudio": true,
+      "recommended_next_action": "preserve as positive anchor; compare DSS prompt vs naive prompt"
+    },
+    {
+      "case_id": "kitchen_chop_sizzle_001",
+      "week18_role": "dss_prompt_compiler_seed",
+      "source_week": "W17",
+      "has_true_mmaudio": false,
+      "recommended_next_action": "generate DSS prompt variants and evaluate event coverage / forbidden leakage"
+    },
+    {
+      "case_id": "robot_warehouse_pick_001",
+      "week18_role": "dss_prompt_compiler_seed",
+      "source_week": "W17",
+      "has_true_mmaudio": false,
+      "recommended_next_action": "generate DSS prompt variants and evaluate event coverage / forbidden leakage"
+    },
+    {
+      "case_id": "street_rain_crosswalk_001",
+      "week18_role": "dss_prompt_compiler_seed",
+      "source_week": "W17",
+      "has_true_mmaudio": false,
+      "recommended_next_action": "generate DSS prompt variants and evaluate event coverage / forbidden leakage"
+    },
+    {
+      "case_id": "subway_arrival_door_001",
+      "week18_role": "dss_prompt_compiler_seed",
+      "source_week": "W17",
+      "has_true_mmaudio": false,
+      "recommended_next_action": "generate DSS prompt variants and evaluate event coverage / forbidden leakage"
+    }
+  ],
+  "repair_targets": [
+    {
+      "case_id": "glass_drop_room_001",
+      "target_type": "positive_anchor",
+      "failure_mode": "none_for_true_single; use as reference",
+      "week18_action": "protect timing and claim boundary while expanding prompt compiler",
+      "priority": "P0"
+    },
+    {
+      "case_id": "forest_bird_branch_001",
+      "target_type": "candidate_or_fallback",
+      "failure_mode": "needs DSS-aware regeneration or repair inspection",
+      "week18_action": "run naive prompt vs DSS prompt; if onset/coverage fails, add to repair bank",
+      "priority": "P1"
+    },
+    {
+      "case_id": "kitchen_chop_sizzle_001",
+      "target_type": "candidate_or_fallback",
+      "failure_mode": "needs DSS-aware regeneration or repair inspection",
+      "week18_action": "run naive prompt vs DSS prompt; if onset/coverage fails, add to repair bank",
+      "priority": "P1"
+    },
+    {
+      "case_id": "robot_warehouse_pick_001",
+      "target_type": "candidate_or_fallback",
+      "failure_mode": "needs DSS-aware regeneration or repair inspection",
+      "week18_action": "run naive prompt vs DSS prompt; if onset/coverage fails, add to repair bank",
+      "priority": "P1"
+    },
+    {
+      "case_id": "street_rain_crosswalk_001",
+      "target_type": "candidate_or_fallback",
+      "failure_mode": "needs DSS-aware regeneration or repair inspection",
+      "week18_action": "run naive prompt vs DSS prompt; if onset/coverage fails, add to repair bank",
+      "priority": "P1"
+    },
+    {
+      "case_id": "subway_arrival_door_001",
+      "target_type": "candidate_or_fallback",
+      "failure_mode": "needs DSS-aware regeneration or repair inspection",
+      "week18_action": "run naive prompt vs DSS prompt; if onset/coverage fails, add to repair bank",
+      "priority": "P1"
+    }
+  ],
+  "source_artifacts": {
+    "release_verify": "/home/GRT/work/audio_engineering_repo_skeleton_v1/reports/week17_demo_release_verify_20260703.json",
+    "release_manifest": "/home/GRT/work/audio_engineering_repo_skeleton_v1/reports/week17_demo_release_manifest_20260703.json",
+    "claim_card": "/home/GRT/work/audio_engineering_repo_skeleton_v1/reports/week17_demo_claim_boundary_card_20260703.json",
+    "candidate_registry": "/home/GRT/work/audio_engineering_repo_skeleton_v1/reports/week17_true_aware_candidate_registry_20260702.csv",
+    "true_aware_winners": "/home/GRT/work/audio_engineering_repo_skeleton_v1/reports/week17_true_aware_winners_20260701.json",
+    "fallback_ranking": "/home/GRT/work/audio_engineering_repo_skeleton_v1/reports/week17_fallback_aware_ranking_20260701.csv"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "decision": "PASS",
+  "generated_at_utc": "2026-07-03T03:11:59.089442+00:00",
+  "task_count": 12,
+  "case_count": 6,
+  "prompt_type_counts": {
+    "naive": 6,
+    "dss": 6
+  },
+  "true_anchor_task_count": 2,
+  "repair_target_count": 6,
+  "all_cases_have_naive_and_dss": true,
+  "claim_boundary": {
+    "safeTrueMmaudioRecordCount": 1,
+    "trueMmaudioBatchSuccess": false,
+    "fullCandidateRankingAvailable": false,
+    "productionSloVerified": false,
+    "k6ThresholdPassVerified": false,
+    "liveGrafanaImportVerified": false
+  },
+  "outputs": {
+    "jsonl": "/home/GRT/work/audio_engineering_repo_skeleton_v1/reports/week18_prompt_tasks_20260703.jsonl",
+    "summary_csv": "/home/GRT/work/audio_engineering_repo_skeleton_v1/reports/week18_prompt_task_summary_20260703.csv",
+    "artifact_jsonl": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/demo/week18_prompt_compiler_seed/week18_prompt_tasks_20260703.jsonl",
+    "manifest": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/demo/week18_prompt_compiler_seed/week18_prompt_task_manifest_20260703.json"
+  }
+}

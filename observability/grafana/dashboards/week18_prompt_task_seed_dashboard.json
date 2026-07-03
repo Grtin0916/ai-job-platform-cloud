@@ -1,0 +1,73 @@
+{
+  "title": "Week18 Prompt Task Seed",
+  "tags": [
+    "week18",
+    "dss",
+    "prompt-seed"
+  ],
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "30s",
+  "panels": [
+    {
+      "id": 1,
+      "type": "stat",
+      "title": "Gate Ready",
+      "targets": [
+        {
+          "expr": "week18_prompt_task_seed_gate_ready"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "stat",
+      "title": "Task Count",
+      "targets": [
+        {
+          "expr": "week18_prompt_task_seed_task_count"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "stat",
+      "title": "Case Count",
+      "targets": [
+        {
+          "expr": "week18_prompt_task_seed_case_count"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "stat",
+      "title": "Naive Prompt Count",
+      "targets": [
+        {
+          "expr": "week18_prompt_task_seed_naive_count"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "type": "stat",
+      "title": "DSS Prompt Count",
+      "targets": [
+        {
+          "expr": "week18_prompt_task_seed_dss_count"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "stat",
+      "title": "Java IT Verified",
+      "targets": [
+        {
+          "expr": "week18_prompt_task_seed_java_it_verified"
+        }
+      ]
+    }
+  ]
+}

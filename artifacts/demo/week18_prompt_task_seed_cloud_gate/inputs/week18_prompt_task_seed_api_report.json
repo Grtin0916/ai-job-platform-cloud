@@ -1,0 +1,174 @@
+{
+  "contractVersion": "week18-prompt-task-seed-v1",
+  "generatedAtUtc": "2026-07-03T03:21:16.886175+00:00",
+  "promptTaskSeedReady": true,
+  "source": {
+    "mainbaseRoot": "/home/GRT/work/audio_engineering_repo_skeleton_v1",
+    "seedId": "week18_seed_from_week17_demo_release_20260703",
+    "mainbaseVerifyDecision": "PASS"
+  },
+  "promptTasks": {
+    "taskCount": 12,
+    "caseCount": 6,
+    "caseIds": [
+      "forest_bird_branch_001",
+      "glass_drop_room_001",
+      "kitchen_chop_sizzle_001",
+      "robot_warehouse_pick_001",
+      "street_rain_crosswalk_001",
+      "subway_arrival_door_001"
+    ],
+    "promptTypeCounts": {
+      "naive": 6,
+      "dss": 6
+    },
+    "allCasesHaveNaiveAndDss": true,
+    "trueAnchorTaskCount": 2,
+    "repairTargetCount": 6,
+    "taskPreview": [
+      {
+        "seed_id": "week18_seed_from_week17_demo_release_20260703",
+        "case_id": "forest_bird_branch_001",
+        "source_week": "W17",
+        "has_true_mmaudio": false,
+        "week18_role": "dss_prompt_compiler_seed",
+        "scene": "forest close-up with a bird moving on a branch",
+        "events": [
+          {
+            "time": 0.6,
+            "object": "leaves",
+            "action": "rustle",
+            "sound": "soft leaf rustle",
+            "priority": "medium"
+          },
+          {
+            "time": 1.5,
+            "object": "bird",
+            "action": "wing movement",
+            "sound": "light feather flap",
+            "priority": "high"
+          },
+          {
+            "time": 2.4,
+            "object": "branch",
+            "action": "bounce",
+            "sound": "subtle branch creak",
+            "priority": "medium"
+          }
+        ],
+        "avoid": [
+          "human speech",
+          "heavy wind",
+          "music bed",
+          "urban traffic"
+        ],
+        "layer_roles": {
+          "ambience": "forest ambience",
+          "foley": "bird and branch motion",
+          "music": "none"
+        },
+        "expected_output": {
+          "audio_format": "wav",
+          "duration_policy": "match_input_video_or_case_duration",
+          "evaluation": [
+            "event_coverage",
+            "onset_alignment_proxy",
+            "forbidden_leakage",
+            "rms",
+            "peak",
+            "silence_ratio"
+          ]
+        },
+        "task_id": "forest_bird_branch_001__naive_prompt",
+        "prompt_type": "naive",
+        "prompt": "Generate realistic sound effects for a short silent video: forest close-up with a bird moving on a branch. Make it natural, synchronized, and without speech or music."
+      },
+      {
+        "seed_id": "week18_seed_from_week17_demo_release_20260703",
+        "case_id": "forest_bird_branch_001",
+        "source_week": "W17",
+        "has_true_mmaudio": false,
+        "week18_role": "dss_prompt_compiler_seed",
+        "scene": "forest close-up with a bird moving on a branch",
+        "events": [
+          {
+            "time": 0.6,
+            "object": "leaves",
+            "action": "rustle",
+            "sound": "soft leaf rustle",
+            "priority": "medium"
+          },
+          {
+            "time": 1.5,
+            "object": "bird",
+            "action": "wing movement",
+            "sound": "light feather flap",
+            "priority": "high"
+          },
+          {
+            "time": 2.4,
+            "object": "branch",
+            "action": "bounce",
+            "sound": "subtle branch creak",
+            "priority": "medium"
+          }
+        ],
+        "avoid": [
+          "human speech",
+          "heavy wind",
+          "music bed",
+          "urban traffic"
+        ],
+        "layer_roles": {
+          "ambience": "forest ambience",
+          "foley": "bird and branch motion",
+          "music": "none"
+        },
+        "expected_output": {
+          "audio_format": "wav",
+          "duration_policy": "match_input_video_or_case_duration",
+          "evaluation": [
+            "event_coverage",
+            "onset_alignment_proxy",
+            "forbidden_leakage",
+            "rms",
+            "peak",
+            "silence_ratio"
+          ]
+        },
+        "task_id": "forest_bird_branch_001__dss_prompt",
+        "prompt_type": "dss",
+        "prompt": "DirectorSound Script for forest_bird_branch_001. Scene: forest close-up with a bird moving on a branch. Events: 0.6s leaves rustle -> soft leaf rustle (priority=medium); 1.5s bird wing movement -> light feather flap (priority=high); 2.4s branch bounce -> subtle branch creak (priority=medium). Layer roles: ambience=forest ambience; foley=bird and branch motion; music=none. Avoid: human speech, heavy wind, music bed, urban traffic. Keep event timing tight and prioritize high-priority Foley cues."
+      }
+    ]
+  },
+  "claimBoundary": {
+    "safeTrueMmaudioRecordCount": 1,
+    "trueMmaudioBatchSuccess": false,
+    "fullCandidateRankingAvailable": false,
+    "productionSloVerified": false,
+    "k6ThresholdPassVerified": false,
+    "liveGrafanaImportVerified": false,
+    "boundaryPreserved": true
+  },
+  "javaApi": {
+    "endpoint": "/api/week18/prompt-task-seed",
+    "method": "GET",
+    "contractPurpose": "Expose Mainbase W18 DSS-vs-naive prompt task queue as a Java platform seed artifact.",
+    "randomPortITOnly": true,
+    "liveServiceAvailabilityClaimed": false
+  },
+  "traceInputs": {
+    "seedJson": "artifacts/manifests/week18_prompt_task_seed/inputs/week18_seed_from_week17_demo_release_20260703.json",
+    "tasksJsonl": "artifacts/manifests/week18_prompt_task_seed/inputs/week18_prompt_tasks_20260703.jsonl",
+    "summaryCsv": "artifacts/manifests/week18_prompt_task_seed/inputs/week18_prompt_task_summary_20260703.csv",
+    "verifyJson": "artifacts/manifests/week18_prompt_task_seed/inputs/week18_prompt_task_verify_20260703.json",
+    "repairCsv": "artifacts/manifests/week18_prompt_task_seed/inputs/week18_seed_repair_targets_20260703.csv"
+  },
+  "nextWeekUse": [
+    "Use the JSONL task queue as model-runner input.",
+    "Run naive prompt vs DSS prompt ablation.",
+    "Promote true anchor as reference only, not batch-success evidence.",
+    "Convert failed prompt runs into repair bank targets."
+  ]
+}

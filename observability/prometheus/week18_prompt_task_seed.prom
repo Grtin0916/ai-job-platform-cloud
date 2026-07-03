@@ -1,0 +1,27 @@
+# HELP week18_prompt_task_seed_gate_ready Whether W18 prompt task seed cloud gate is ready.
+# TYPE week18_prompt_task_seed_gate_ready gauge
+week18_prompt_task_seed_gate_ready 1
+# HELP week18_prompt_task_seed_task_count Number of prompt tasks.
+# TYPE week18_prompt_task_seed_task_count gauge
+week18_prompt_task_seed_task_count 12
+# HELP week18_prompt_task_seed_case_count Number of W18 seed cases.
+# TYPE week18_prompt_task_seed_case_count gauge
+week18_prompt_task_seed_case_count 6
+# HELP week18_prompt_task_seed_naive_count Number of naive prompt tasks.
+# TYPE week18_prompt_task_seed_naive_count gauge
+week18_prompt_task_seed_naive_count 6
+# HELP week18_prompt_task_seed_dss_count Number of DSS prompt tasks.
+# TYPE week18_prompt_task_seed_dss_count gauge
+week18_prompt_task_seed_dss_count 6
+# HELP week18_prompt_task_seed_java_it_verified Whether Java RANDOM_PORT IT is explicitly verified.
+# TYPE week18_prompt_task_seed_java_it_verified gauge
+week18_prompt_task_seed_java_it_verified 1
+# HELP week18_prompt_task_seed_boundary_preserved Whether claim boundary is preserved.
+# TYPE week18_prompt_task_seed_boundary_preserved gauge
+week18_prompt_task_seed_boundary_preserved 1
+# HELP week18_prompt_task_seed_k6_threshold_pass_verified Whether k6 threshold pass is verified.
+# TYPE week18_prompt_task_seed_k6_threshold_pass_verified gauge
+week18_prompt_task_seed_k6_threshold_pass_verified 0
+# HELP week18_prompt_task_seed_live_grafana_import_verified Whether live Grafana import is verified.
+# TYPE week18_prompt_task_seed_live_grafana_import_verified gauge
+week18_prompt_task_seed_live_grafana_import_verified 0

@@ -1,0 +1,135 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------< com.ryan.media:media-task-platform-java >---------------
+[INFO] Building media-task-platform-java 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ media-task-platform-java ---
+[INFO] Copying 2 resources from src/main/resources to target/classes
+[INFO] Copying 5 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.14.1:compile (default-compile) @ media-task-platform-java ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 48 source files with javac [debug parameters release 21] to target/classes
+[INFO] /home/GRT/work/media-task-platform-java/src/main/java/com/ryan/media/week15/TemporalAlignmentReviewStateRegistry.java: /home/GRT/work/media-task-platform-java/src/main/java/com/ryan/media/week15/TemporalAlignmentReviewStateRegistry.java使用或覆盖了已过时的 API。
+[INFO] /home/GRT/work/media-task-platform-java/src/main/java/com/ryan/media/week15/TemporalAlignmentReviewStateRegistry.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] /home/GRT/work/media-task-platform-java/src/main/java/com/ryan/media/messaging/Consumer.java: /home/GRT/work/media-task-platform-java/src/main/java/com/ryan/media/messaging/Consumer.java使用了未经检查或不安全的操作。
+[INFO] /home/GRT/work/media-task-platform-java/src/main/java/com/ryan/media/messaging/Consumer.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ media-task-platform-java ---
+[INFO] Copying 3 resources from src/test/resources to target/test-classes
+[INFO] 
+[INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ media-task-platform-java ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 41 source files with javac [debug parameters release 21] to target/test-classes
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthIT.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthIT.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthIT.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthIT.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthIT.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[26,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[26,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[26,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[26,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[26,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[36,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[36,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[36,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[36,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[36,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[39,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[39,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[39,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[39,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[39,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[44,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[44,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[44,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[44,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[44,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[47,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[47,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[47,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[47,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[47,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/SmokeTest.java:[15,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/SmokeTest.java:[15,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/SmokeTest.java:[15,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/SmokeTest.java:[15,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/SmokeTest.java:[15,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[INFO] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/PostgresSmokeIT.java: 某些输入文件使用或覆盖了已过时的 API。
+[INFO] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/PostgresSmokeIT.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/controller/Week15TemporalAlignmentReviewStateIT.java: 某些输入文件使用了未经检查或不安全的操作。
+[INFO] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/controller/Week15TemporalAlignmentReviewStateIT.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[INFO] 
+[INFO] --- surefire:3.5.5:test (default-test) @ media-task-platform-java ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.ryan.media.controller.Week18PromptTaskSeedControllerIT
+11:21:23.936 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.ryan.media.controller.Week18PromptTaskSeedControllerIT]: Week18PromptTaskSeedControllerIT does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+11:21:24.167 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.ryan.media.MediaTaskApplication for test class com.ryan.media.controller.Week18PromptTaskSeedControllerIT
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::               (v3.5.13)
+
+2026-07-03T11:21:24.629+08:00  INFO 263223 --- [media-task-platform-java] [           main] c.r.m.c.Week18PromptTaskSeedControllerIT : Starting Week18PromptTaskSeedControllerIT using Java 21.0.10 with PID 263223 (started by GRT in /home/GRT/work/media-task-platform-java)
+2026-07-03T11:21:24.630+08:00  INFO 263223 --- [media-task-platform-java] [           main] c.r.m.c.Week18PromptTaskSeedControllerIT : No active profile set, falling back to 1 default profile: "default"
+2026-07-03T11:21:25.630+08:00  INFO 263223 --- [media-task-platform-java] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-07-03T11:21:25.632+08:00  INFO 263223 --- [media-task-platform-java] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-07-03T11:21:25.669+08:00  INFO 263223 --- [media-task-platform-java] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 Redis repository interfaces.
+2026-07-03T11:21:26.329+08:00  INFO 263223 --- [media-task-platform-java] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 0 (http)
+2026-07-03T11:21:26.344+08:00  INFO 263223 --- [media-task-platform-java] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-07-03T11:21:26.345+08:00  INFO 263223 --- [media-task-platform-java] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.53]
+2026-07-03T11:21:26.408+08:00  INFO 263223 --- [media-task-platform-java] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-07-03T11:21:26.410+08:00  INFO 263223 --- [media-task-platform-java] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1765 ms
+2026-07-03T11:21:26.823+08:00  INFO 263223 --- [media-task-platform-java] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-07-03T11:21:26.979+08:00  INFO 263223 --- [media-task-platform-java] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:2e03cc5e-7b5d-4eb1-8ca8-913f254be85e user=SA
+2026-07-03T11:21:26.981+08:00  INFO 263223 --- [media-task-platform-java] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-07-03T11:21:27.025+08:00  INFO 263223 --- [media-task-platform-java] [           main] org.flywaydb.core.FlywayExecutor         : Database: jdbc:h2:mem:2e03cc5e-7b5d-4eb1-8ca8-913f254be85e (H2 2.3)
+2026-07-03T11:21:27.058+08:00  INFO 263223 --- [media-task-platform-java] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Schema history table "PUBLIC"."flyway_schema_history" does not exist yet
+2026-07-03T11:21:27.061+08:00  INFO 263223 --- [media-task-platform-java] [           main] o.f.core.internal.command.DbValidate     : Successfully validated 2 migrations (execution time 00:00.012s)
+2026-07-03T11:21:27.067+08:00  INFO 263223 --- [media-task-platform-java] [           main] o.f.c.i.s.JdbcTableSchemaHistory         : Creating Schema History table "PUBLIC"."flyway_schema_history" ...
+2026-07-03T11:21:27.106+08:00  INFO 263223 --- [media-task-platform-java] [           main] o.f.core.internal.command.DbMigrate      : Current version of schema "PUBLIC": << Empty Schema >>
+2026-07-03T11:21:27.115+08:00  INFO 263223 --- [media-task-platform-java] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "1 - init"
+2026-07-03T11:21:27.134+08:00  INFO 263223 --- [media-task-platform-java] [           main] o.f.core.internal.command.DbMigrate      : Migrating schema "PUBLIC" to version "2 - indexes"
+2026-07-03T11:21:27.145+08:00  INFO 263223 --- [media-task-platform-java] [           main] o.f.core.internal.command.DbMigrate      : Successfully applied 2 migrations to schema "PUBLIC", now at version v2 (execution time 00:00.011s)
+2026-07-03T11:21:27.818+08:00  INFO 263223 --- [media-task-platform-java] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoints beneath base path '/actuator'
+2026-07-03T11:21:27.853+08:00  WARN 263223 --- [media-task-platform-java] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 6f549e9a-550a-4598-ae68-911453bb54db
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-07-03T11:21:27.860+08:00  INFO 263223 --- [media-task-platform-java] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-07-03T11:21:28.502+08:00  INFO 263223 --- [media-task-platform-java] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 38089 (http) with context path '/'
+2026-07-03T11:21:28.517+08:00  INFO 263223 --- [media-task-platform-java] [           main] c.r.m.c.Week18PromptTaskSeedControllerIT : Started Week18PromptTaskSeedControllerIT in 4.214 seconds (process running for 5.25)
+2026-07-03T11:21:29.279+08:00  INFO 263223 --- [media-task-platform-java] [o-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-07-03T11:21:29.279+08:00  INFO 263223 --- [media-task-platform-java] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-07-03T11:21:29.281+08:00  INFO 263223 --- [media-task-platform-java] [o-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.659 s -- in com.ryan.media.controller.Week18PromptTaskSeedControllerIT
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  11.669 s
+[INFO] Finished at: 2026-07-03T11:21:29+08:00
+[INFO] ------------------------------------------------------------------------

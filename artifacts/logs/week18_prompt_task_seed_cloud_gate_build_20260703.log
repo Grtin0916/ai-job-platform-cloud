@@ -1,0 +1,17 @@
+{
+  "decision": "PASS",
+  "gateReady": true,
+  "mainbaseReady": true,
+  "javaReady": true,
+  "javaItVerified": true,
+  "taskCount": 12,
+  "caseCount": 6,
+  "promptTypeCounts": {
+    "naive": 6,
+    "dss": 6
+  },
+  "boundaryPreserved": true,
+  "k6ThresholdPassVerified": false,
+  "liveGrafanaImportVerified": false,
+  "gateJson": "artifacts/demo/week18_prompt_task_seed_cloud_gate/week18_prompt_task_seed_cloud_gate.json"
+}

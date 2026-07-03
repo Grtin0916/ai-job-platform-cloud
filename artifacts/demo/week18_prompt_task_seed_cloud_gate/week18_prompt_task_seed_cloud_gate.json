@@ -1,0 +1,71 @@
+{
+  "contractVersion": "week18-prompt-task-seed-cloud-gate-v1",
+  "generatedAtUtc": "2026-07-03T03:32:27.464304+00:00",
+  "summary": {
+    "decision": "PASS",
+    "gateReady": true,
+    "interpretation": "Cloud-side seed gate for W18 DSS-vs-naive prompt ablation. Not a model-quality or production-SLO claim."
+  },
+  "mainbase": {
+    "ready": true,
+    "taskCount": 12,
+    "caseCount": 6,
+    "promptTypeCounts": {
+      "naive": 6,
+      "dss": 6
+    },
+    "trueAnchorTaskCount": 2,
+    "repairTargetCount": 6,
+    "allCasesHaveNaiveAndDss": true
+  },
+  "java": {
+    "ready": true,
+    "endpoint": "/api/week18/prompt-task-seed",
+    "randomPortIt": {
+      "logExists": true,
+      "logPath": "/home/GRT/work/media-task-platform-java/artifacts/logs/week18_prompt_task_seed_api_it_20260703.log",
+      "logSizeBytes": 20186,
+      "summaryDetected": true,
+      "failureKeywordDetected": false,
+      "buildSuccessDetected": true,
+      "testsRunLineDetected": true,
+      "zeroFailureLineDetected": true,
+      "verified": true
+    }
+  },
+  "cloudGate": {
+    "dashboardReady": true,
+    "prometheusSampleReady": true,
+    "alertRulesDraftReady": true,
+    "runbookReady": true,
+    "k6ThresholdPassVerified": false,
+    "liveGrafanaImportVerified": false,
+    "productionSloVerified": false
+  },
+  "claimBoundary": {
+    "safeTrueMmaudioRecordCount": 1,
+    "trueMmaudioBatchSuccess": false,
+    "fullCandidateRankingAvailable": false,
+    "productionSloVerified": false,
+    "k6ThresholdPassVerified": false,
+    "liveGrafanaImportVerified": false,
+    "boundaryPreserved": true
+  },
+  "inputs": {
+    "mainbaseVerify": "artifacts/demo/week18_prompt_task_seed_cloud_gate/inputs/week18_prompt_task_verify_20260703.json",
+    "mainbaseTasks": "artifacts/demo/week18_prompt_task_seed_cloud_gate/inputs/week18_prompt_tasks_20260703.jsonl",
+    "mainbaseSummary": "artifacts/demo/week18_prompt_task_seed_cloud_gate/inputs/week18_prompt_task_summary_20260703.csv",
+    "mainbaseSeed": "artifacts/demo/week18_prompt_task_seed_cloud_gate/inputs/week18_seed_from_week17_demo_release_20260703.json",
+    "javaReport": "artifacts/demo/week18_prompt_task_seed_cloud_gate/inputs/week18_prompt_task_seed_api_report.json",
+    "javaItLog": "artifacts/demo/week18_prompt_task_seed_cloud_gate/inputs/week18_prompt_task_seed_api_it_20260703.log"
+  },
+  "metrics": {
+    "gateReady": 1,
+    "taskCount": 12,
+    "caseCount": 6,
+    "naiveCount": 6,
+    "dssCount": 6,
+    "javaItVerified": 1,
+    "boundaryPreserved": 1
+  }
+}
