@@ -1,0 +1,55 @@
+{
+  "contractVersion": "week17-demo-release-handoff-v1",
+  "generatedAtUtc": "2026-07-03T02:42:07.071698+00:00",
+  "releaseHandoffReady": true,
+  "source": {
+    "mainbaseRoot": "/home/GRT/work/audio_engineering_repo_skeleton_v1",
+    "releaseZip": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/demo/week17_true_aware_demo_release_20260703.zip",
+    "releaseZipExists": true,
+    "releaseZipSizeBytes": 316311,
+    "mainbaseVerifyDecision": "PASS",
+    "mainbaseManifestReleaseId": "week17_true_aware_demo_release_20260703",
+    "mainbaseClaimDecision": "CLAIM_SAFE_RELEASE_CANDIDATE"
+  },
+  "audioDemo": {
+    "wavCount": 1,
+    "trueMmaudioWavCount": 1,
+    "safeTrueMmaudioRecordCount": 1,
+    "zipContainsIndex": true,
+    "zipContainsWav": true,
+    "zipValid": true
+  },
+  "claimBoundary": {
+    "trueMmaudioBatchSuccess": false,
+    "fullCandidateRankingAvailable": false,
+    "productionSloVerified": false,
+    "k6ThresholdPassVerified": false,
+    "liveGrafanaImportVerified": false,
+    "boundaryPreserved": true,
+    "allowedClaims": [
+      "A single true MMAudio replacement candidate is present and traceable.",
+      "A portable demo ZIP is available for local preview.",
+      "The demo keeps WAV fallback playback for browser compatibility.",
+      "Java and Cloud artifacts are trace-linked as offline/demo contracts."
+    ],
+    "blockedClaims": [
+      "Do not claim true MMAudio batch success.",
+      "Do not claim full 28-candidate ranking availability.",
+      "Do not claim production SLO verification.",
+      "Do not claim k6 threshold pass unless k6 is actually executed.",
+      "Do not claim live Grafana import unless Grafana import is actually verified."
+    ]
+  },
+  "javaApi": {
+    "endpoint": "/api/week17/demo-release-handoff",
+    "method": "GET",
+    "contractPurpose": "Expose Mainbase release candidate as a Java platform handoff artifact.",
+    "randomPortITOnly": true,
+    "liveServiceAvailabilityClaimed": false
+  },
+  "traceInputs": {
+    "verify": "artifacts/manifests/week17_demo_release_handoff/inputs/week17_demo_release_verify_20260703.json",
+    "manifest": "artifacts/manifests/week17_demo_release_handoff/inputs/week17_demo_release_manifest_20260703.json",
+    "claim": "artifacts/manifests/week17_demo_release_handoff/inputs/week17_demo_claim_boundary_card_20260703.json"
+  }
+}

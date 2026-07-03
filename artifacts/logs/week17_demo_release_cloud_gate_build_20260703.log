@@ -1,0 +1,16 @@
+{
+  "decision": "PASS",
+  "releaseGateReady": true,
+  "mainbaseReady": true,
+  "javaHandoffReady": true,
+  "javaRandomPortItVerified": true,
+  "javaRandomPortItSummaryDetected": true,
+  "dashboardReady": true,
+  "prometheusSampleReady": true,
+  "k6ThresholdPassVerified": false,
+  "liveGrafanaImportVerified": false,
+  "gateJson": "artifacts/demo/week17_demo_release_cloud_gate/week17_demo_release_cloud_gate.json",
+  "prometheusSample": "observability/prometheus/week17_demo_release.prom",
+  "dashboardReadyJson": "artifacts/demo/week17_demo_release_cloud_gate/week17_demo_release_dashboard_ready.json",
+  "runbook": "docs/runbooks/week17-demo-release-cloud-gate.md"
+}

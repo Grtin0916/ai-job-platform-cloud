@@ -1,0 +1,124 @@
+{
+  "release_id": "week17_true_aware_demo_release_20260703",
+  "generated_at_utc": "2026-07-03T02:35:49.027037+00:00",
+  "release_dir": "artifacts/demo/week17_true_aware_demo_release",
+  "release_zip": "artifacts/demo/week17_true_aware_demo_release_20260703.zip",
+  "index_html": "artifacts/demo/week17_true_aware_demo_release/index.html",
+  "wav_count": 1,
+  "true_mmaudio_wav_count": 1,
+  "claim_boundary_card": "reports/week17_demo_claim_boundary_card_20260703.json",
+  "release_notes": "reports/week17_demo_release_notes_20260703.md",
+  "walkthrough": "docs/demo/week17_true_aware_demo_walkthrough.md",
+  "interview_script": "docs/demo/week17_true_aware_interview_script.md",
+  "source_artifacts": [
+    {
+      "path": "artifacts/demo/week17_true_aware_demo_pack_export_20260702.zip",
+      "exists": true,
+      "size_bytes": 317597
+    },
+    {
+      "path": "reports/week17_true_aware_demo_export_portability_smoke_20260702.json",
+      "exists": true,
+      "size_bytes": 1228
+    },
+    {
+      "path": "reports/week17_true_aware_claim_guard_20260702.json",
+      "exists": true,
+      "size_bytes": 910
+    },
+    {
+      "path": "reports/week17_true_aware_candidate_registry_20260702.csv",
+      "exists": true,
+      "size_bytes": 1570
+    },
+    {
+      "path": "reports/week17_true_aware_result_card_payload_20260702.json",
+      "exists": true,
+      "size_bytes": 6766
+    },
+    {
+      "path": "reports/week17_true_aware_platform_bridge_payload_20260702.json",
+      "exists": true,
+      "size_bytes": 2607
+    }
+  ],
+  "release_files": [
+    {
+      "path": "artifacts/demo/week17_true_aware_demo_release/artifact_manifest.csv",
+      "size_bytes": 1930,
+      "sha256": "354007defa3be4c396092c19c4360b5ddfb49f103d7a20be28011b753cd1e1b4"
+    },
+    {
+      "path": "artifacts/demo/week17_true_aware_demo_release/audio/glass_drop_room_001__mmaudio__true_replacement_v0.flac",
+      "size_bytes": 138401,
+      "sha256": "9637fc444bb1c2d2ac9b214711f801b0d2ebb044ce52fe1bd080932b8c28c32e"
+    },
+    {
+      "path": "artifacts/demo/week17_true_aware_demo_release/audio/glass_drop_room_001__mmaudio__true_replacement_v0.wav",
+      "size_bytes": 614478,
+      "sha256": "784951f93a2187aac9e2fde711fa395f33e13409cd692f7cfd3bb54b4080db27"
+    },
+    {
+      "path": "artifacts/demo/week17_true_aware_demo_release/case_card_glass_drop_room_001.json",
+      "size_bytes": 1811,
+      "sha256": "171f4d4bd469b870f77b4312b68444f02393c6240ad0df6295d55bdf1900f98a"
+    },
+    {
+      "path": "artifacts/demo/week17_true_aware_demo_release/claim_boundary_card.json",
+      "size_bytes": 1513,
+      "sha256": "37c4cda2cee8f1dcee6494264aa2199f32252b30d0909064465907d8ed929cfd"
+    },
+    {
+      "path": "artifacts/demo/week17_true_aware_demo_release/demo_pack_index.json",
+      "size_bytes": 3991,
+      "sha256": "5c86ead73afa109419569b73afb69c58bfa6299fadde960aa26005ba3f5a0767"
+    },
+    {
+      "path": "artifacts/demo/week17_true_aware_demo_release/index.html",
+      "size_bytes": 2510,
+      "sha256": "fc64efc96dfaea50c0cfc882d89c228458ea198f78105bdeb98e3585961af115"
+    },
+    {
+      "path": "artifacts/demo/week17_true_aware_demo_release/inputs/true_aware_result_card_20260702.json",
+      "size_bytes": 770,
+      "sha256": "97763b98f674e4396ad84b0325302944b103412598789690899d96605b308d5c"
+    },
+    {
+      "path": "artifacts/demo/week17_true_aware_demo_release/inputs/week17_true_aware_platform_bridge_payload_20260702.json",
+      "size_bytes": 2607,
+      "sha256": "7b42cce2558f824fb6da785540e2f527ff761f578269d4a7674879cdcfb02f1c"
+    },
+    {
+      "path": "artifacts/demo/week17_true_aware_demo_release/inputs/week17_true_aware_result_card_api_report.json",
+      "size_bytes": 2022,
+      "sha256": "a0c9e2b65a6b8a218e9f3e9c93d38427bdf78ad531489e81104162fd9db009a7"
+    },
+    {
+      "path": "artifacts/demo/week17_true_aware_demo_release/inputs/week17_true_aware_result_card_cloud_gate.json",
+      "size_bytes": 3588,
+      "sha256": "9789bc8ad6d8e8455b8ba3a494c6a61209703180c87aa1789db33db9d5fd8ec3"
+    },
+    {
+      "path": "artifacts/demo/week17_true_aware_demo_release/reports/week17_true_aware_result_card_dashboard.json",
+      "size_bytes": 1674,
+      "sha256": "3224dd671bd0f27d1c9567bd7a1fa4c096eb1e6a7bc81f76234ba0bc387670a0"
+    },
+    {
+      "path": "artifacts/demo/week17_true_aware_demo_release/reports/week17_true_aware_result_card_metrics.prom",
+      "size_bytes": 1402,
+      "sha256": "9bc91daa60c37f6c210a15913611a0cf10df1c1364dfb542538fef81123c785c"
+    },
+    {
+      "path": "artifacts/demo/week17_true_aware_demo_release/walkthrough.md",
+      "size_bytes": 1073,
+      "sha256": "2ce32115765ba62c84e410b5f63ab774f042bff550e60845a6678cd78899dd38"
+    }
+  ],
+  "claim_boundary": {
+    "trueMmaudioBatchSuccess": false,
+    "fullCandidateRankingAvailable": false,
+    "productionSloVerified": false,
+    "k6ThresholdPassVerified": false,
+    "liveGrafanaImportVerified": false
+  }
+}

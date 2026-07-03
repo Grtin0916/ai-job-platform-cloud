@@ -1,0 +1,19 @@
+groups:
+  - name: week17_demo_release
+    rules:
+      - alert: Week17DemoReleaseGateNotReady
+        expr: week17_demo_release_gate_ready != 1
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Week17 demo release gate is not ready"
+          description: "The artifact-backed demo release gate is not ready. Check Mainbase release, Java handoff, and claim boundary."
+      - alert: Week17DemoReleaseOverclaimRisk
+        expr: week17_demo_release_production_slo_verified == 1 or week17_demo_release_k6_threshold_pass_verified == 1 or week17_demo_release_live_grafana_import_verified == 1
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Week17 demo release has overclaim risk"
+          description: "A production/k6/Grafana flag is true. This should only happen after real tool verification."

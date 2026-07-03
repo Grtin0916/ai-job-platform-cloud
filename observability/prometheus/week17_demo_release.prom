@@ -1,0 +1,24 @@
+# HELP week17_demo_release_gate_ready Whether the demo release cloud gate is artifact-ready.
+# TYPE week17_demo_release_gate_ready gauge
+week17_demo_release_gate_ready 1
+# HELP week17_demo_release_safe_true_mmaudio_records Number of safe true MMAudio records in the release.
+# TYPE week17_demo_release_safe_true_mmaudio_records gauge
+week17_demo_release_safe_true_mmaudio_records 1
+# HELP week17_demo_release_zip_valid Whether the release ZIP passed zip validation.
+# TYPE week17_demo_release_zip_valid gauge
+week17_demo_release_zip_valid 1
+# HELP week17_demo_release_java_handoff_ready Whether Java handoff artifact is ready.
+# TYPE week17_demo_release_java_handoff_ready gauge
+week17_demo_release_java_handoff_ready 1
+# HELP week17_demo_release_java_random_port_it_verified Whether Java RANDOM_PORT IT pass is explicitly visible in logs.
+# TYPE week17_demo_release_java_random_port_it_verified gauge
+week17_demo_release_java_random_port_it_verified 1
+# HELP week17_demo_release_production_slo_verified Whether production SLO is verified.
+# TYPE week17_demo_release_production_slo_verified gauge
+week17_demo_release_production_slo_verified 0
+# HELP week17_demo_release_k6_threshold_pass_verified Whether k6 threshold pass is verified.
+# TYPE week17_demo_release_k6_threshold_pass_verified gauge
+week17_demo_release_k6_threshold_pass_verified 0
+# HELP week17_demo_release_live_grafana_import_verified Whether live Grafana import is verified.
+# TYPE week17_demo_release_live_grafana_import_verified gauge
+week17_demo_release_live_grafana_import_verified 0

@@ -1,0 +1,87 @@
+{
+  "contractVersion": "week17-demo-release-cloud-gate-v1",
+  "generatedAtUtc": "2026-07-03T02:48:40.285223+00:00",
+  "summary": {
+    "decision": "PASS",
+    "releaseGateReady": true,
+    "interpretation": "Artifact-backed demo release gate. Not a production SLO, k6 threshold, or live Grafana import claim."
+  },
+  "mainbase": {
+    "releaseReady": true,
+    "verifyDecision": "PASS",
+    "releaseId": "week17_true_aware_demo_release_20260703",
+    "releaseZip": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/demo/week17_true_aware_demo_release_20260703.zip",
+    "releaseZipExists": true,
+    "releaseZipSizeBytes": 316311,
+    "zipValid": true,
+    "zipContainsIndex": true,
+    "zipContainsWav": true,
+    "wavCount": 1,
+    "trueMmaudioWavCount": 1
+  },
+  "java": {
+    "handoffReady": true,
+    "contractVersion": "week17-demo-release-handoff-v1",
+    "endpoint": "/api/week17/demo-release-handoff",
+    "randomPortIt": {
+      "logExists": true,
+      "logPath": "/home/GRT/work/media-task-platform-java/artifacts/logs/week17_demo_release_handoff_api_it_20260703.log",
+      "logSizeBytes": 8820,
+      "summaryDetected": true,
+      "failureKeywordDetected": false,
+      "buildSuccessDetected": true,
+      "testsRunLineDetected": true,
+      "zeroFailureLineDetected": true,
+      "verified": true
+    }
+  },
+  "cloudGate": {
+    "releaseGateReady": true,
+    "dashboardReady": true,
+    "prometheusSampleReady": true,
+    "alertRulesDraftReady": true,
+    "runbookReady": true,
+    "productionSloVerified": false,
+    "k6ThresholdPassVerified": false,
+    "liveGrafanaImportVerified": false
+  },
+  "claimBoundary": {
+    "safeTrueMmaudioRecordCount": 1,
+    "trueMmaudioBatchSuccess": false,
+    "fullCandidateRankingAvailable": false,
+    "productionSloVerified": false,
+    "k6ThresholdPassVerified": false,
+    "liveGrafanaImportVerified": false,
+    "boundaryPreserved": true,
+    "allowedClaims": [
+      "A single true MMAudio replacement candidate is present and traceable.",
+      "A portable demo ZIP is available for local preview.",
+      "The demo keeps WAV fallback playback for browser compatibility.",
+      "Java and Cloud artifacts are trace-linked as offline/demo contracts."
+    ],
+    "blockedClaims": [
+      "Do not claim true MMAudio batch success.",
+      "Do not claim full 28-candidate ranking availability.",
+      "Do not claim production SLO verification.",
+      "Do not claim k6 threshold pass unless k6 is actually executed.",
+      "Do not claim live Grafana import unless Grafana import is actually verified."
+    ]
+  },
+  "inputs": {
+    "mainbaseVerify": "artifacts/demo/week17_demo_release_cloud_gate/inputs/week17_demo_release_verify_20260703.json",
+    "mainbaseManifest": "artifacts/demo/week17_demo_release_cloud_gate/inputs/week17_demo_release_manifest_20260703.json",
+    "mainbaseClaim": "artifacts/demo/week17_demo_release_cloud_gate/inputs/week17_demo_claim_boundary_card_20260703.json",
+    "javaHandoff": "artifacts/demo/week17_demo_release_cloud_gate/inputs/week17_demo_release_handoff_report.json",
+    "javaItLog": "artifacts/demo/week17_demo_release_cloud_gate/inputs/week17_demo_release_handoff_api_it_20260703.log"
+  },
+  "metrics": {
+    "releaseGateReady": 1,
+    "safeTrueMmaudioRecordCount": 1,
+    "zipValid": 1,
+    "javaHandoffReady": 1,
+    "javaRandomPortItVerified": 1,
+    "productionSloVerified": 0,
+    "k6ThresholdPassVerified": 0,
+    "liveGrafanaImportVerified": 0
+  }
+}

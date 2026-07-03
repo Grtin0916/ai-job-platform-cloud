@@ -1,0 +1,74 @@
+{
+  "title": "Week17 Demo Release Candidate",
+  "tags": [
+    "week17",
+    "true-aware",
+    "demo-release"
+  ],
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "30s",
+  "panels": [
+    {
+      "id": 1,
+      "type": "stat",
+      "title": "Release Gate Ready",
+      "targets": [
+        {
+          "expr": "week17_demo_release_gate_ready"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "stat",
+      "title": "Safe True MMAudio Records",
+      "targets": [
+        {
+          "expr": "week17_demo_release_safe_true_mmaudio_records"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "stat",
+      "title": "ZIP Valid",
+      "targets": [
+        {
+          "expr": "week17_demo_release_zip_valid"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "stat",
+      "title": "Java Handoff Ready",
+      "targets": [
+        {
+          "expr": "week17_demo_release_java_handoff_ready"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "type": "stat",
+      "title": "Java RANDOM_PORT IT Verified",
+      "targets": [
+        {
+          "expr": "week17_demo_release_java_random_port_it_verified"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "stat",
+      "title": "k6 Threshold Pass Verified",
+      "targets": [
+        {
+          "expr": "week17_demo_release_k6_threshold_pass_verified"
+        }
+      ]
+    }
+  ]
+}

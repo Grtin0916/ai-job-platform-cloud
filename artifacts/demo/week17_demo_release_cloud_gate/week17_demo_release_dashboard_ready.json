@@ -1,0 +1,12 @@
+{
+  "dashboardReady": true,
+  "liveGrafanaImportVerified": false,
+  "dashboardPath": "observability/grafana/dashboards/week17_demo_release_dashboard.json",
+  "panelCount": 6,
+  "dataSourceExpectation": "Prometheus-compatible metrics sample generated locally; no live Grafana import claimed.",
+  "gateSummary": {
+    "decision": "PASS",
+    "releaseGateReady": true,
+    "interpretation": "Artifact-backed demo release gate. Not a production SLO, k6 threshold, or live Grafana import claim."
+  }
+}

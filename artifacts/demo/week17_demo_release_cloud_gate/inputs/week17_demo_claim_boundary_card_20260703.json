@@ -1,0 +1,38 @@
+{
+  "release_id": "week17_true_aware_demo_release_20260703",
+  "generated_at_utc": "2026-07-03T02:35:49.024115+00:00",
+  "decision": "CLAIM_SAFE_RELEASE_CANDIDATE",
+  "safeTrueMmaudioRecordCount": 1,
+  "trueMmaudioBatchSuccess": false,
+  "fullCandidateRankingAvailable": false,
+  "productionSloVerified": false,
+  "k6ThresholdPassVerified": false,
+  "liveGrafanaImportVerified": false,
+  "allowed_claims": [
+    "A single true MMAudio replacement candidate is present and traceable.",
+    "A portable demo ZIP is available for local preview.",
+    "The demo keeps WAV fallback playback for browser compatibility.",
+    "Java and Cloud artifacts are trace-linked as offline/demo contracts."
+  ],
+  "blocked_claims": [
+    "Do not claim true MMAudio batch success.",
+    "Do not claim full 28-candidate ranking availability.",
+    "Do not claim production SLO verification.",
+    "Do not claim k6 threshold pass unless k6 is actually executed.",
+    "Do not claim live Grafana import unless Grafana import is actually verified."
+  ],
+  "evidence_inputs": {
+    "source_pack_exists": true,
+    "source_zip_exists": true,
+    "prior_portability_smoke_exists": true,
+    "prior_claim_guard_exists": true,
+    "prior_registry_exists": true,
+    "prior_result_card_exists": true,
+    "prior_platform_bridge_exists": true,
+    "registry_row_count": 7,
+    "wav_count": 1,
+    "true_wav_paths": [
+      "artifacts/demo/week17_true_aware_demo_release/audio/glass_drop_room_001__mmaudio__true_replacement_v0.wav"
+    ]
+  }
+}
