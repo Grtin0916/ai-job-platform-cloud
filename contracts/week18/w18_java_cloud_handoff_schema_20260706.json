@@ -1,0 +1,41 @@
+{
+  "contract_version": "w18-generation-handoff-v1",
+  "required_top_level_keys": [
+    "date",
+    "scope",
+    "status",
+    "summary",
+    "contract_version",
+    "consumer_expectation",
+    "claim_boundary",
+    "cases",
+    "source_reports"
+  ],
+  "case_required_keys": [
+    "case_id",
+    "default_candidate_variant",
+    "default_candidate_audio_path",
+    "review_variants",
+    "variant_count",
+    "generated_count",
+    "variants"
+  ],
+  "variant_required_keys": [
+    "job_id",
+    "variant",
+    "selected_audio_path",
+    "original_audio_path",
+    "artifact_status",
+    "is_repaired",
+    "review_reason",
+    "basic_metrics"
+  ],
+  "valid_status": [
+    "ready_for_java_contract",
+    "review_required"
+  ],
+  "valid_artifact_status": [
+    "generated_candidate",
+    "repaired_candidate"
+  ]
+}

@@ -1,0 +1,562 @@
+{
+  "date": "2026-07-06",
+  "scope": "w18_java_cloud_handoff",
+  "status": "ready_for_java_contract",
+  "source_commits": {
+    "mainbase_latest_expected": "fd1ded9"
+  },
+  "summary": {
+    "case_count": 6,
+    "job_count": 30,
+    "generated_count": 30,
+    "playlist_item_count": 30,
+    "repair_applied_count": 2,
+    "variant_counts": {
+      "naive": 6,
+      "naive_rich": 6,
+      "dss_global": 6,
+      "dss_event_timeline": 6,
+      "dss_layer_avoid": 6
+    }
+  },
+  "contract_version": "w18-generation-handoff-v1",
+  "consumer_expectation": {
+    "java": [
+      "Read this manifest as the W18 result-card source.",
+      "Expose case list, default candidate, variants, review flags, and artifact status.",
+      "Do not serve audio bytes from Git; audio paths are local artifact references unless mounted."
+    ],
+    "cloud": [
+      "Use Java result-card API as the deployment object.",
+      "SLO/dashboard should track manifest availability, case_count, generated_count, and repair_applied_count."
+    ]
+  },
+  "claim_boundary": [
+    "Generation coverage is complete for 6 cases x 5 variants.",
+    "This handoff does not claim DSS superiority.",
+    "This handoff does not claim final production mix readiness.",
+    "Human listening and reranking remain next-phase tasks."
+  ],
+  "cases": [
+    {
+      "case_id": "forest_bird_branch_001",
+      "default_candidate_variant": "naive_rich",
+      "default_candidate_audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/naive_rich/w18_002_forest_bird_branch_001_naive_rich.wav",
+      "review_variants": [],
+      "variant_count": 5,
+      "generated_count": 5,
+      "variants": [
+        {
+          "job_id": "w18_001_forest_bird_branch_001_naive",
+          "variant": "naive",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/naive/w18_001_forest_bird_branch_001_naive.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/naive/w18_001_forest_bird_branch_001_naive.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-34.2595",
+            "peak_dbfs": "-14.8157",
+            "clipped_ratio": "0.0",
+            "status": "ok"
+          }
+        },
+        {
+          "job_id": "w18_002_forest_bird_branch_001_naive_rich",
+          "variant": "naive_rich",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/naive_rich/w18_002_forest_bird_branch_001_naive_rich.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/naive_rich/w18_002_forest_bird_branch_001_naive_rich.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-30.642",
+            "peak_dbfs": "-13.4768",
+            "clipped_ratio": "0.0",
+            "status": "ok"
+          }
+        },
+        {
+          "job_id": "w18_003_forest_bird_branch_001_dss_global",
+          "variant": "dss_global",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/dss_global/w18_003_forest_bird_branch_001_dss_global.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/dss_global/w18_003_forest_bird_branch_001_dss_global.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-15.6334",
+            "peak_dbfs": "0.0",
+            "clipped_ratio": "0.00056373",
+            "status": "ok"
+          }
+        },
+        {
+          "job_id": "w18_004_forest_bird_branch_001_dss_event_timeline",
+          "variant": "dss_event_timeline",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/dss_event_timeline/w18_004_forest_bird_branch_001_dss_event_timeline.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/dss_event_timeline/w18_004_forest_bird_branch_001_dss_event_timeline.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-24.873",
+            "peak_dbfs": "0.0",
+            "clipped_ratio": "5.69e-06",
+            "status": "ok"
+          }
+        },
+        {
+          "job_id": "w18_005_forest_bird_branch_001_dss_layer_avoid",
+          "variant": "dss_layer_avoid",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/dss_layer_avoid/w18_005_forest_bird_branch_001_dss_layer_avoid.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/dss_layer_avoid/w18_005_forest_bird_branch_001_dss_layer_avoid.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-24.0057",
+            "peak_dbfs": "0.0",
+            "clipped_ratio": "2.85e-06",
+            "status": "ok"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "glass_drop_room_001",
+      "default_candidate_variant": "dss_layer_avoid",
+      "default_candidate_audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/dss_layer_avoid/w18_010_glass_drop_room_001_dss_layer_avoid.wav",
+      "review_variants": [],
+      "variant_count": 5,
+      "generated_count": 5,
+      "variants": [
+        {
+          "job_id": "w18_006_glass_drop_room_001_naive",
+          "variant": "naive",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/naive/w18_006_glass_drop_room_001_naive.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/naive/w18_006_glass_drop_room_001_naive.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-28.8087",
+            "peak_dbfs": "-0.0003",
+            "clipped_ratio": "1.628e-05",
+            "status": "ok"
+          }
+        },
+        {
+          "job_id": "w18_007_glass_drop_room_001_naive_rich",
+          "variant": "naive_rich",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/naive_rich/w18_007_glass_drop_room_001_naive_rich.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/naive_rich/w18_007_glass_drop_room_001_naive_rich.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-36.791",
+            "peak_dbfs": "-22.9395",
+            "clipped_ratio": "0.0",
+            "status": "ok"
+          }
+        },
+        {
+          "job_id": "w18_008_glass_drop_room_001_dss_global",
+          "variant": "dss_global",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/dss_global/w18_008_glass_drop_room_001_dss_global.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/dss_global/w18_008_glass_drop_room_001_dss_global.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-28.5421",
+            "peak_dbfs": "-0.0681",
+            "clipped_ratio": "0.0",
+            "status": "ok"
+          }
+        },
+        {
+          "job_id": "w18_009_glass_drop_room_001_dss_event_timeline",
+          "variant": "dss_event_timeline",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/dss_event_timeline/w18_009_glass_drop_room_001_dss_event_timeline.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/dss_event_timeline/w18_009_glass_drop_room_001_dss_event_timeline.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-36.765",
+            "peak_dbfs": "-23.0593",
+            "clipped_ratio": "0.0",
+            "status": "ok"
+          }
+        },
+        {
+          "job_id": "w18_010_glass_drop_room_001_dss_layer_avoid",
+          "variant": "dss_layer_avoid",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/dss_layer_avoid/w18_010_glass_drop_room_001_dss_layer_avoid.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/dss_layer_avoid/w18_010_glass_drop_room_001_dss_layer_avoid.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-33.8753",
+            "peak_dbfs": "-0.5245",
+            "clipped_ratio": "0.0",
+            "status": "ok"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "kitchen_chop_sizzle_001",
+      "default_candidate_variant": "dss_global",
+      "default_candidate_audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/dss_global/w18_013_kitchen_chop_sizzle_001_dss_global.wav",
+      "review_variants": [],
+      "variant_count": 5,
+      "generated_count": 5,
+      "variants": [
+        {
+          "job_id": "w18_011_kitchen_chop_sizzle_001_naive",
+          "variant": "naive",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/naive/w18_011_kitchen_chop_sizzle_001_naive.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/naive/w18_011_kitchen_chop_sizzle_001_naive.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-17.9157",
+            "peak_dbfs": "0.0",
+            "clipped_ratio": "4.55e-06",
+            "status": "ok"
+          }
+        },
+        {
+          "job_id": "w18_012_kitchen_chop_sizzle_001_naive_rich",
+          "variant": "naive_rich",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/naive_rich/w18_012_kitchen_chop_sizzle_001_naive_rich.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/naive_rich/w18_012_kitchen_chop_sizzle_001_naive_rich.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-23.4798",
+            "peak_dbfs": "-0.0003",
+            "clipped_ratio": "9.11e-06",
+            "status": "ok"
+          }
+        },
+        {
+          "job_id": "w18_013_kitchen_chop_sizzle_001_dss_global",
+          "variant": "dss_global",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/dss_global/w18_013_kitchen_chop_sizzle_001_dss_global.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/dss_global/w18_013_kitchen_chop_sizzle_001_dss_global.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-23.1706",
+            "peak_dbfs": "-0.1368",
+            "clipped_ratio": "0.0",
+            "status": "ok"
+          }
+        },
+        {
+          "job_id": "w18_014_kitchen_chop_sizzle_001_dss_event_timeline",
+          "variant": "dss_event_timeline",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/dss_event_timeline/w18_014_kitchen_chop_sizzle_001_dss_event_timeline.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/dss_event_timeline/w18_014_kitchen_chop_sizzle_001_dss_event_timeline.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-25.7272",
+            "peak_dbfs": "-0.1024",
+            "clipped_ratio": "0.0",
+            "status": "ok"
+          }
+        },
+        {
+          "job_id": "w18_015_kitchen_chop_sizzle_001_dss_layer_avoid",
+          "variant": "dss_layer_avoid",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/dss_layer_avoid/w18_015_kitchen_chop_sizzle_001_dss_layer_avoid.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/dss_layer_avoid/w18_015_kitchen_chop_sizzle_001_dss_layer_avoid.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-23.2495",
+            "peak_dbfs": "-0.1024",
+            "clipped_ratio": "0.0",
+            "status": "ok"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "robot_warehouse_pick_001",
+      "default_candidate_variant": "dss_event_timeline",
+      "default_candidate_audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/dss_event_timeline/w18_019_robot_warehouse_pick_001_dss_event_timeline.wav",
+      "review_variants": [],
+      "variant_count": 5,
+      "generated_count": 5,
+      "variants": [
+        {
+          "job_id": "w18_016_robot_warehouse_pick_001_naive",
+          "variant": "naive",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/naive/w18_016_robot_warehouse_pick_001_naive.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/naive/w18_016_robot_warehouse_pick_001_naive.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-18.0394",
+            "peak_dbfs": "-0.3109",
+            "clipped_ratio": "0.0",
+            "status": "ok"
+          }
+        },
+        {
+          "job_id": "w18_017_robot_warehouse_pick_001_naive_rich",
+          "variant": "naive_rich",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/naive_rich/w18_017_robot_warehouse_pick_001_naive_rich.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/naive_rich/w18_017_robot_warehouse_pick_001_naive_rich.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-14.0528",
+            "peak_dbfs": "-0.206",
+            "clipped_ratio": "0.0",
+            "status": "ok"
+          }
+        },
+        {
+          "job_id": "w18_018_robot_warehouse_pick_001_dss_global",
+          "variant": "dss_global",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/dss_global/w18_018_robot_warehouse_pick_001_dss_global.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/dss_global/w18_018_robot_warehouse_pick_001_dss_global.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-14.1672",
+            "peak_dbfs": "-0.034",
+            "clipped_ratio": "0.0",
+            "status": "ok"
+          }
+        },
+        {
+          "job_id": "w18_019_robot_warehouse_pick_001_dss_event_timeline",
+          "variant": "dss_event_timeline",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/dss_event_timeline/w18_019_robot_warehouse_pick_001_dss_event_timeline.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/dss_event_timeline/w18_019_robot_warehouse_pick_001_dss_event_timeline.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-22.7657",
+            "peak_dbfs": "-7.1032",
+            "clipped_ratio": "0.0",
+            "status": "ok"
+          }
+        },
+        {
+          "job_id": "w18_020_robot_warehouse_pick_001_dss_layer_avoid",
+          "variant": "dss_layer_avoid",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/dss_layer_avoid/w18_020_robot_warehouse_pick_001_dss_layer_avoid.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/dss_layer_avoid/w18_020_robot_warehouse_pick_001_dss_layer_avoid.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-16.7288",
+            "peak_dbfs": "-1.4757",
+            "clipped_ratio": "0.0",
+            "status": "ok"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "street_rain_crosswalk_001",
+      "default_candidate_variant": "dss_event_timeline",
+      "default_candidate_audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/dss_event_timeline/w18_024_street_rain_crosswalk_001_dss_event_timeline.wav",
+      "review_variants": [],
+      "variant_count": 5,
+      "generated_count": 5,
+      "variants": [
+        {
+          "job_id": "w18_021_street_rain_crosswalk_001_naive",
+          "variant": "naive",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/naive/w18_021_street_rain_crosswalk_001_naive.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/naive/w18_021_street_rain_crosswalk_001_naive.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-11.5997",
+            "peak_dbfs": "0.0",
+            "clipped_ratio": "1.015e-05",
+            "status": "ok"
+          }
+        },
+        {
+          "job_id": "w18_022_street_rain_crosswalk_001_naive_rich",
+          "variant": "naive_rich",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/naive_rich/w18_022_street_rain_crosswalk_001_naive_rich.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/naive_rich/w18_022_street_rain_crosswalk_001_naive_rich.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-16.952",
+            "peak_dbfs": "-2.3641",
+            "clipped_ratio": "0.0",
+            "status": "ok"
+          }
+        },
+        {
+          "job_id": "w18_023_street_rain_crosswalk_001_dss_global",
+          "variant": "dss_global",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/dss_global/w18_023_street_rain_crosswalk_001_dss_global.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/dss_global/w18_023_street_rain_crosswalk_001_dss_global.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-10.0348",
+            "peak_dbfs": "0.0",
+            "clipped_ratio": "7.356e-05",
+            "status": "ok"
+          }
+        },
+        {
+          "job_id": "w18_024_street_rain_crosswalk_001_dss_event_timeline",
+          "variant": "dss_event_timeline",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/dss_event_timeline/w18_024_street_rain_crosswalk_001_dss_event_timeline.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/dss_event_timeline/w18_024_street_rain_crosswalk_001_dss_event_timeline.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-16.5888",
+            "peak_dbfs": "-3.0593",
+            "clipped_ratio": "0.0",
+            "status": "ok"
+          }
+        },
+        {
+          "job_id": "w18_025_street_rain_crosswalk_001_dss_layer_avoid",
+          "variant": "dss_layer_avoid",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/dss_layer_avoid/w18_025_street_rain_crosswalk_001_dss_layer_avoid.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/dss_layer_avoid/w18_025_street_rain_crosswalk_001_dss_layer_avoid.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-16.1286",
+            "peak_dbfs": "-2.8684",
+            "clipped_ratio": "0.0",
+            "status": "ok"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "subway_arrival_door_001",
+      "default_candidate_variant": "naive",
+      "default_candidate_audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/naive/w18_026_subway_arrival_door_001_naive.wav",
+      "review_variants": [
+        "dss_event_timeline",
+        "dss_layer_avoid"
+      ],
+      "variant_count": 5,
+      "generated_count": 5,
+      "variants": [
+        {
+          "job_id": "w18_026_subway_arrival_door_001_naive",
+          "variant": "naive",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/naive/w18_026_subway_arrival_door_001_naive.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/naive/w18_026_subway_arrival_door_001_naive.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-22.3956",
+            "peak_dbfs": "-4.9374",
+            "clipped_ratio": "0.0",
+            "status": "ok"
+          }
+        },
+        {
+          "job_id": "w18_027_subway_arrival_door_001_naive_rich",
+          "variant": "naive_rich",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/naive_rich/w18_027_subway_arrival_door_001_naive_rich.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/naive_rich/w18_027_subway_arrival_door_001_naive_rich.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-15.7839",
+            "peak_dbfs": "-0.2758",
+            "clipped_ratio": "0.0",
+            "status": "ok"
+          }
+        },
+        {
+          "job_id": "w18_028_subway_arrival_door_001_dss_global",
+          "variant": "dss_global",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/dss_global/w18_028_subway_arrival_door_001_dss_global.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/dss_global/w18_028_subway_arrival_door_001_dss_global.wav",
+          "artifact_status": "generated_candidate",
+          "is_repaired": false,
+          "review_reason": "",
+          "basic_metrics": {
+            "rms_dbfs": "-16.0454",
+            "peak_dbfs": "-0.1713",
+            "clipped_ratio": "0.0",
+            "status": "ok"
+          }
+        },
+        {
+          "job_id": "w18_029_subway_arrival_door_001_dss_event_timeline",
+          "variant": "dss_event_timeline",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/dss_event_timeline/w18_029_subway_arrival_door_001_dss_event_timeline_repaired_peak_m3db.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/dss_event_timeline/w18_029_subway_arrival_door_001_dss_event_timeline.wav",
+          "artifact_status": "repaired_candidate",
+          "is_repaired": true,
+          "review_reason": "clipping_review|uses_peak_repaired_version",
+          "basic_metrics": {
+            "rms_dbfs": "-9.6374",
+            "peak_dbfs": "0.0",
+            "clipped_ratio": "0.00260341",
+            "status": "clipping_review"
+          }
+        },
+        {
+          "job_id": "w18_030_subway_arrival_door_001_dss_layer_avoid",
+          "variant": "dss_layer_avoid",
+          "selected_audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/dss_layer_avoid/w18_030_subway_arrival_door_001_dss_layer_avoid_repaired_peak_m3db.wav",
+          "original_audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/dss_layer_avoid/w18_030_subway_arrival_door_001_dss_layer_avoid.wav",
+          "artifact_status": "repaired_candidate",
+          "is_repaired": true,
+          "review_reason": "clipping_review|uses_peak_repaired_version",
+          "basic_metrics": {
+            "rms_dbfs": "-10.2822",
+            "peak_dbfs": "0.0",
+            "clipped_ratio": "0.00129831",
+            "status": "clipping_review"
+          }
+        }
+      ]
+    }
+  ],
+  "source_reports": {
+    "full_generation": "reports/w18_full_30job_generation_summary_20260706.json",
+    "analysis": "reports/w18_full_30job_ablation_analysis_20260706.json",
+    "repair": "reports/w18_clipping_repair_report_20260706.json",
+    "listening_pack": "reports/w18_repair_aware_listening_pack_20260706.json",
+    "closure": "reports/w18_generation_closure_report_20260706.json"
+  }
+}

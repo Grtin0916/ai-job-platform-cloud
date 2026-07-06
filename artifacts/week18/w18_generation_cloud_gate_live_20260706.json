@@ -1,0 +1,53 @@
+{
+  "date": "2026-07-06",
+  "scope": "w18_generation_cloud_gate",
+  "status": "blocked",
+  "manifest": "contracts/week18/w18_java_cloud_handoff_manifest_20260706.json",
+  "schema": "contracts/week18/w18_java_cloud_handoff_schema_20260706.json",
+  "contract_version": "w18-generation-handoff-v1",
+  "manifest_summary": {
+    "case_count": 6,
+    "job_count": 30,
+    "generated_count": 30,
+    "playlist_item_count": 30,
+    "repair_applied_count": 2,
+    "variant_counts": {
+      "naive": 6,
+      "naive_rich": 6,
+      "dss_global": 6,
+      "dss_event_timeline": 6,
+      "dss_layer_avoid": 6
+    }
+  },
+  "schema_required_top_level_keys": [
+    "date",
+    "scope",
+    "status",
+    "summary",
+    "contract_version",
+    "consumer_expectation",
+    "claim_boundary",
+    "cases",
+    "source_reports"
+  ],
+  "manifest_error_count": 0,
+  "manifest_errors": [],
+  "live_api": {
+    "base_url": "http://localhost:8080",
+    "checked": true,
+    "ok": false,
+    "errors": [
+      "health: URLError: <urlopen error [Errno 111] Connection refused>",
+      "summary: URLError: <urlopen error [Errno 111] Connection refused>",
+      "cases: URLError: <urlopen error [Errno 111] Connection refused>",
+      "default_candidates: URLError: <urlopen error [Errno 111] Connection refused>"
+    ],
+    "responses": {}
+  },
+  "claim_boundary": [
+    "This validates Cloud-side contract readiness for the Java W18 API.",
+    "It does not deploy Kubernetes resources.",
+    "It does not prove production SLO.",
+    "Live API check is only enforced when --require-live is used."
+  ]
+}
