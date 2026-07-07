@@ -1,0 +1,43 @@
+{
+  "gate": "week18_evaluation_cloud_gate",
+  "createdUtc": "2026-07-07T15:17:19.723813+00:00",
+  "status": "PASS",
+  "scope": "offline_dashboard_ready_seed",
+  "claimBoundary": [
+    "This is an offline Cloud aggregation gate.",
+    "It does not claim k6 threshold pass.",
+    "It does not claim production SLO.",
+    "It does not claim live Grafana import."
+  ],
+  "inputs": [
+    "contracts/week18/evaluation/w18_audio_metrics_eval_20260707.json",
+    "contracts/week18/evaluation/w18_dss_aware_selector_eval_20260707.json",
+    "contracts/week18/evaluation/w18_dss_vs_naive_pairwise_report_20260707.json",
+    "contracts/week18/evaluation/w18_eval_closure_20260707.json",
+    "contracts/week18/evaluation/w18_repair_aware_selector_seed_20260707.json",
+    "contracts/week18/evaluation/week18_evaluation_handoff_report.json"
+  ],
+  "mainbase": {
+    "expectedCaseCount": 6,
+    "expectedVariantCount": 5,
+    "expectedCandidateJobs": 30,
+    "w18AudioFilesWavOrFlac": 92,
+    "plotCount": 6,
+    "audioMetricsRows": 30,
+    "pairwiseRows": 18,
+    "selectorRows": 30
+  },
+  "java": {
+    "endpoint": "/api/week18/evaluation/summary",
+    "controller": "src/main/java/com/ryan/media/week18/W18EvaluationHandoffController.java",
+    "test": "src/test/java/com/ryan/media/week18/W18EvaluationHandoffControllerIT.java"
+  },
+  "dod": {
+    "hasClosure": true,
+    "hasAudioMetrics": true,
+    "hasPairwise": true,
+    "hasSelector": true,
+    "hasRepairSeed": true,
+    "hasJavaHandoff": true
+  }
+}

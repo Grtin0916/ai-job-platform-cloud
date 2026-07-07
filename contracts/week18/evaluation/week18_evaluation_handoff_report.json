@@ -1,0 +1,19 @@
+{
+  "report": "week18_evaluation_handoff_report",
+  "createdUtc": "2026-07-07T15:15:01.909825+00:00",
+  "endpoint": "/api/week18/evaluation/summary",
+  "controller": "src/main/java/com/ryan/media/week18/W18EvaluationHandoffController.java",
+  "test": "src/test/java/com/ryan/media/week18/W18EvaluationHandoffControllerIT.java",
+  "inputs": [
+    "artifacts/manifests/week18_evaluation_handoff/inputs/w18_audio_metrics_eval_20260707.json",
+    "artifacts/manifests/week18_evaluation_handoff/inputs/w18_dss_aware_selector_eval_20260707.json",
+    "artifacts/manifests/week18_evaluation_handoff/inputs/w18_dss_vs_naive_pairwise_report_20260707.json",
+    "artifacts/manifests/week18_evaluation_handoff/inputs/w18_eval_closure_20260707.json",
+    "artifacts/manifests/week18_evaluation_handoff/inputs/w18_repair_aware_selector_seed_20260707.json"
+  ],
+  "claimBoundary": [
+    "Artifact-backed local evaluation handoff only.",
+    "Does not claim production service availability.",
+    "Does not claim k6 threshold pass or live Grafana import."
+  ]
+}

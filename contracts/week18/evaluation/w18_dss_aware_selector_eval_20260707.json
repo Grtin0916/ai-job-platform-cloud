@@ -1,0 +1,857 @@
+{
+  "date": "2026-07-07",
+  "scope": "w18_dss_aware_selector_eval",
+  "status": "success",
+  "case_count": 6,
+  "candidate_count": 30,
+  "winner_counts": {
+    "naive_rich": 1,
+    "dss_layer_avoid": 3,
+    "naive": 2
+  },
+  "dss_winner_count": 3,
+  "classification_counts": {
+    "dss_worse": 1,
+    "dss_neutral": 4,
+    "dss_improves": 1
+  },
+  "decision_counts": {
+    "selector_candidate": 14,
+    "listen_review": 12,
+    "rejected": 4
+  },
+  "repair_queue_count": 0,
+  "listen_review_count": 12,
+  "invalid_all_rejected": false,
+  "case_results": [
+    {
+      "case_id": "forest_bird_branch_001",
+      "winner": {
+        "case_id": "forest_bird_branch_001",
+        "variant": "naive_rich",
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/naive_rich/w18_002_forest_bird_branch_001_naive_rich.wav",
+        "acoustic_score": 100.0,
+        "selector_score": 101.0,
+        "decision": "selector_candidate",
+        "reasons": [
+          "variant_prior:+1.0"
+        ]
+      },
+      "runner_up": {
+        "case_id": "forest_bird_branch_001",
+        "variant": "naive",
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/naive/w18_001_forest_bird_branch_001_naive.wav",
+        "acoustic_score": 100.0,
+        "selector_score": 100.0,
+        "decision": "selector_candidate",
+        "reasons": []
+      },
+      "best_dss_variant": "dss_layer_avoid",
+      "best_baseline_variant": "naive_rich",
+      "dss_delta_vs_best_baseline": -6.5285,
+      "case_classification": "dss_worse",
+      "repair_queue": [],
+      "listen_review": [
+        {
+          "case_id": "forest_bird_branch_001",
+          "variant": "dss_layer_avoid",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/dss_layer_avoid/w18_005_forest_bird_branch_001_dss_layer_avoid.wav",
+          "acoustic_score": 91.9715,
+          "selector_score": 94.4715,
+          "decision": "listen_review",
+          "reasons": [
+            "minor_clip:-0.0285",
+            "near_full_scale_peak:0.0",
+            "variant_prior:+2.5",
+            "downgrade_selector_candidate_due_to_near_full_scale_peak"
+          ]
+        },
+        {
+          "case_id": "forest_bird_branch_001",
+          "variant": "dss_event_timeline",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/dss_event_timeline/w18_004_forest_bird_branch_001_dss_event_timeline.wav",
+          "acoustic_score": 91.9431,
+          "selector_score": 93.9431,
+          "decision": "listen_review",
+          "reasons": [
+            "minor_clip:-0.0569",
+            "near_full_scale_peak:0.0",
+            "variant_prior:+2.0",
+            "downgrade_selector_candidate_due_to_near_full_scale_peak"
+          ]
+        }
+      ],
+      "rejected": [
+        {
+          "case_id": "forest_bird_branch_001",
+          "variant": "dss_global",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/dss_global/w18_003_forest_bird_branch_001_dss_global.wav",
+          "acoustic_score": 80.3627,
+          "selector_score": 80.8627,
+          "decision": "rejected",
+          "reasons": [
+            "minor_clip:-5.6373",
+            "near_full_scale_peak:0.0",
+            "loud_rms:-15.6334",
+            "variant_prior:+0.5"
+          ]
+        }
+      ],
+      "all_candidates": [
+        {
+          "case_id": "forest_bird_branch_001",
+          "variant": "naive_rich",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/naive_rich/w18_002_forest_bird_branch_001_naive_rich.wav",
+          "acoustic_score": 100.0,
+          "selector_score": 101.0,
+          "decision": "selector_candidate",
+          "reasons": [
+            "variant_prior:+1.0"
+          ]
+        },
+        {
+          "case_id": "forest_bird_branch_001",
+          "variant": "naive",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/naive/w18_001_forest_bird_branch_001_naive.wav",
+          "acoustic_score": 100.0,
+          "selector_score": 100.0,
+          "decision": "selector_candidate",
+          "reasons": []
+        },
+        {
+          "case_id": "forest_bird_branch_001",
+          "variant": "dss_layer_avoid",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/dss_layer_avoid/w18_005_forest_bird_branch_001_dss_layer_avoid.wav",
+          "acoustic_score": 91.9715,
+          "selector_score": 94.4715,
+          "decision": "listen_review",
+          "reasons": [
+            "minor_clip:-0.0285",
+            "near_full_scale_peak:0.0",
+            "variant_prior:+2.5",
+            "downgrade_selector_candidate_due_to_near_full_scale_peak"
+          ]
+        },
+        {
+          "case_id": "forest_bird_branch_001",
+          "variant": "dss_event_timeline",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/dss_event_timeline/w18_004_forest_bird_branch_001_dss_event_timeline.wav",
+          "acoustic_score": 91.9431,
+          "selector_score": 93.9431,
+          "decision": "listen_review",
+          "reasons": [
+            "minor_clip:-0.0569",
+            "near_full_scale_peak:0.0",
+            "variant_prior:+2.0",
+            "downgrade_selector_candidate_due_to_near_full_scale_peak"
+          ]
+        },
+        {
+          "case_id": "forest_bird_branch_001",
+          "variant": "dss_global",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/dss_global/w18_003_forest_bird_branch_001_dss_global.wav",
+          "acoustic_score": 80.3627,
+          "selector_score": 80.8627,
+          "decision": "rejected",
+          "reasons": [
+            "minor_clip:-5.6373",
+            "near_full_scale_peak:0.0",
+            "loud_rms:-15.6334",
+            "variant_prior:+0.5"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "glass_drop_room_001",
+      "winner": {
+        "case_id": "glass_drop_room_001",
+        "variant": "dss_layer_avoid",
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/dss_layer_avoid/w18_010_glass_drop_room_001_dss_layer_avoid.wav",
+        "acoustic_score": 97.0,
+        "selector_score": 99.5,
+        "decision": "selector_candidate",
+        "reasons": [
+          "hot_peak:-0.5245",
+          "variant_prior:+2.5"
+        ]
+      },
+      "runner_up": {
+        "case_id": "glass_drop_room_001",
+        "variant": "dss_event_timeline",
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/dss_event_timeline/w18_009_glass_drop_room_001_dss_event_timeline.wav",
+        "acoustic_score": 95.0,
+        "selector_score": 97.0,
+        "decision": "selector_candidate",
+        "reasons": [
+          "quiet_rms:-36.765",
+          "variant_prior:+2.0"
+        ]
+      },
+      "best_dss_variant": "dss_layer_avoid",
+      "best_baseline_variant": "naive_rich",
+      "dss_delta_vs_best_baseline": 3.5,
+      "case_classification": "dss_neutral",
+      "repair_queue": [],
+      "listen_review": [
+        {
+          "case_id": "glass_drop_room_001",
+          "variant": "dss_global",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/dss_global/w18_008_glass_drop_room_001_dss_global.wav",
+          "acoustic_score": 92.0,
+          "selector_score": 92.5,
+          "decision": "listen_review",
+          "reasons": [
+            "near_full_scale_peak:-0.0681",
+            "variant_prior:+0.5",
+            "downgrade_selector_candidate_due_to_near_full_scale_peak"
+          ]
+        },
+        {
+          "case_id": "glass_drop_room_001",
+          "variant": "naive",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/naive/w18_006_glass_drop_room_001_naive.wav",
+          "acoustic_score": 91.8372,
+          "selector_score": 91.8372,
+          "decision": "listen_review",
+          "reasons": [
+            "minor_clip:-0.1628",
+            "near_full_scale_peak:-0.0003"
+          ]
+        }
+      ],
+      "rejected": [],
+      "all_candidates": [
+        {
+          "case_id": "glass_drop_room_001",
+          "variant": "dss_layer_avoid",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/dss_layer_avoid/w18_010_glass_drop_room_001_dss_layer_avoid.wav",
+          "acoustic_score": 97.0,
+          "selector_score": 99.5,
+          "decision": "selector_candidate",
+          "reasons": [
+            "hot_peak:-0.5245",
+            "variant_prior:+2.5"
+          ]
+        },
+        {
+          "case_id": "glass_drop_room_001",
+          "variant": "dss_event_timeline",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/dss_event_timeline/w18_009_glass_drop_room_001_dss_event_timeline.wav",
+          "acoustic_score": 95.0,
+          "selector_score": 97.0,
+          "decision": "selector_candidate",
+          "reasons": [
+            "quiet_rms:-36.765",
+            "variant_prior:+2.0"
+          ]
+        },
+        {
+          "case_id": "glass_drop_room_001",
+          "variant": "naive_rich",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/naive_rich/w18_007_glass_drop_room_001_naive_rich.wav",
+          "acoustic_score": 95.0,
+          "selector_score": 96.0,
+          "decision": "selector_candidate",
+          "reasons": [
+            "quiet_rms:-36.791",
+            "variant_prior:+1.0"
+          ]
+        },
+        {
+          "case_id": "glass_drop_room_001",
+          "variant": "dss_global",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/dss_global/w18_008_glass_drop_room_001_dss_global.wav",
+          "acoustic_score": 92.0,
+          "selector_score": 92.5,
+          "decision": "listen_review",
+          "reasons": [
+            "near_full_scale_peak:-0.0681",
+            "variant_prior:+0.5",
+            "downgrade_selector_candidate_due_to_near_full_scale_peak"
+          ]
+        },
+        {
+          "case_id": "glass_drop_room_001",
+          "variant": "naive",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/naive/w18_006_glass_drop_room_001_naive.wav",
+          "acoustic_score": 91.8372,
+          "selector_score": 91.8372,
+          "decision": "listen_review",
+          "reasons": [
+            "minor_clip:-0.1628",
+            "near_full_scale_peak:-0.0003"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "kitchen_chop_sizzle_001",
+      "winner": {
+        "case_id": "kitchen_chop_sizzle_001",
+        "variant": "dss_layer_avoid",
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/dss_layer_avoid/w18_015_kitchen_chop_sizzle_001_dss_layer_avoid.wav",
+        "acoustic_score": 95.0,
+        "selector_score": 97.5,
+        "decision": "selector_candidate",
+        "reasons": [
+          "hot_peak:-0.1024",
+          "moderate_silence_ratio:0.07221782",
+          "variant_prior:+2.5"
+        ]
+      },
+      "runner_up": {
+        "case_id": "kitchen_chop_sizzle_001",
+        "variant": "dss_event_timeline",
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/dss_event_timeline/w18_014_kitchen_chop_sizzle_001_dss_event_timeline.wav",
+        "acoustic_score": 92.0,
+        "selector_score": 94.0,
+        "decision": "selector_candidate",
+        "reasons": [
+          "hot_peak:-0.1024",
+          "high_silence_ratio:0.09992351",
+          "variant_prior:+2.0"
+        ]
+      },
+      "best_dss_variant": "dss_layer_avoid",
+      "best_baseline_variant": "naive_rich",
+      "dss_delta_vs_best_baseline": 6.5911,
+      "case_classification": "dss_improves",
+      "repair_queue": [],
+      "listen_review": [
+        {
+          "case_id": "kitchen_chop_sizzle_001",
+          "variant": "naive_rich",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/naive_rich/w18_012_kitchen_chop_sizzle_001_naive_rich.wav",
+          "acoustic_score": 89.9089,
+          "selector_score": 90.9089,
+          "decision": "listen_review",
+          "reasons": [
+            "minor_clip:-0.0911",
+            "near_full_scale_peak:-0.0003",
+            "moderate_silence_ratio:0.05057638",
+            "variant_prior:+1.0"
+          ]
+        },
+        {
+          "case_id": "kitchen_chop_sizzle_001",
+          "variant": "naive",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/naive/w18_011_kitchen_chop_sizzle_001_naive.wav",
+          "acoustic_score": 89.9545,
+          "selector_score": 89.9545,
+          "decision": "listen_review",
+          "reasons": [
+            "minor_clip:-0.0455",
+            "near_full_scale_peak:0.0",
+            "moderate_silence_ratio:0.03737799"
+          ]
+        }
+      ],
+      "rejected": [],
+      "all_candidates": [
+        {
+          "case_id": "kitchen_chop_sizzle_001",
+          "variant": "dss_layer_avoid",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/dss_layer_avoid/w18_015_kitchen_chop_sizzle_001_dss_layer_avoid.wav",
+          "acoustic_score": 95.0,
+          "selector_score": 97.5,
+          "decision": "selector_candidate",
+          "reasons": [
+            "hot_peak:-0.1024",
+            "moderate_silence_ratio:0.07221782",
+            "variant_prior:+2.5"
+          ]
+        },
+        {
+          "case_id": "kitchen_chop_sizzle_001",
+          "variant": "dss_event_timeline",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/dss_event_timeline/w18_014_kitchen_chop_sizzle_001_dss_event_timeline.wav",
+          "acoustic_score": 92.0,
+          "selector_score": 94.0,
+          "decision": "selector_candidate",
+          "reasons": [
+            "hot_peak:-0.1024",
+            "high_silence_ratio:0.09992351",
+            "variant_prior:+2.0"
+          ]
+        },
+        {
+          "case_id": "kitchen_chop_sizzle_001",
+          "variant": "dss_global",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/dss_global/w18_013_kitchen_chop_sizzle_001_dss_global.wav",
+          "acoustic_score": 92.0,
+          "selector_score": 92.5,
+          "decision": "selector_candidate",
+          "reasons": [
+            "hot_peak:-0.1368",
+            "high_silence_ratio:0.10153291",
+            "variant_prior:+0.5"
+          ]
+        },
+        {
+          "case_id": "kitchen_chop_sizzle_001",
+          "variant": "naive_rich",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/naive_rich/w18_012_kitchen_chop_sizzle_001_naive_rich.wav",
+          "acoustic_score": 89.9089,
+          "selector_score": 90.9089,
+          "decision": "listen_review",
+          "reasons": [
+            "minor_clip:-0.0911",
+            "near_full_scale_peak:-0.0003",
+            "moderate_silence_ratio:0.05057638",
+            "variant_prior:+1.0"
+          ]
+        },
+        {
+          "case_id": "kitchen_chop_sizzle_001",
+          "variant": "naive",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/naive/w18_011_kitchen_chop_sizzle_001_naive.wav",
+          "acoustic_score": 89.9545,
+          "selector_score": 89.9545,
+          "decision": "listen_review",
+          "reasons": [
+            "minor_clip:-0.0455",
+            "near_full_scale_peak:0.0",
+            "moderate_silence_ratio:0.03737799"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "robot_warehouse_pick_001",
+      "winner": {
+        "case_id": "robot_warehouse_pick_001",
+        "variant": "naive",
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/naive/w18_016_robot_warehouse_pick_001_naive.wav",
+        "acoustic_score": 92.0,
+        "selector_score": 92.0,
+        "decision": "selector_candidate",
+        "reasons": [
+          "hot_peak:-0.3109",
+          "high_silence_ratio:0.08360825"
+        ]
+      },
+      "runner_up": {
+        "case_id": "robot_warehouse_pick_001",
+        "variant": "dss_layer_avoid",
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/dss_layer_avoid/w18_020_robot_warehouse_pick_001_dss_layer_avoid.wav",
+        "acoustic_score": 87.0,
+        "selector_score": 89.5,
+        "decision": "listen_review",
+        "reasons": [
+          "very_high_silence_ratio:0.13005501",
+          "over_dense_onset_proxy:33.0_vs_expected:4",
+          "variant_prior:+2.5"
+        ]
+      },
+      "best_dss_variant": "dss_layer_avoid",
+      "best_baseline_variant": "naive",
+      "dss_delta_vs_best_baseline": -2.5,
+      "case_classification": "dss_neutral",
+      "repair_queue": [],
+      "listen_review": [
+        {
+          "case_id": "robot_warehouse_pick_001",
+          "variant": "dss_layer_avoid",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/dss_layer_avoid/w18_020_robot_warehouse_pick_001_dss_layer_avoid.wav",
+          "acoustic_score": 87.0,
+          "selector_score": 89.5,
+          "decision": "listen_review",
+          "reasons": [
+            "very_high_silence_ratio:0.13005501",
+            "over_dense_onset_proxy:33.0_vs_expected:4",
+            "variant_prior:+2.5"
+          ]
+        },
+        {
+          "case_id": "robot_warehouse_pick_001",
+          "variant": "dss_event_timeline",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/dss_event_timeline/w18_019_robot_warehouse_pick_001_dss_event_timeline.wav",
+          "acoustic_score": 87.0,
+          "selector_score": 89.0,
+          "decision": "listen_review",
+          "reasons": [
+            "very_high_silence_ratio:0.12822877",
+            "over_dense_onset_proxy:33.0_vs_expected:4",
+            "variant_prior:+2.0"
+          ]
+        },
+        {
+          "case_id": "robot_warehouse_pick_001",
+          "variant": "naive_rich",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/naive_rich/w18_017_robot_warehouse_pick_001_naive_rich.wav",
+          "acoustic_score": 86.0,
+          "selector_score": 87.0,
+          "decision": "listen_review",
+          "reasons": [
+            "hot_peak:-0.206",
+            "loud_rms:-14.0528",
+            "high_silence_ratio:0.11828188",
+            "variant_prior:+1.0"
+          ]
+        }
+      ],
+      "rejected": [
+        {
+          "case_id": "robot_warehouse_pick_001",
+          "variant": "dss_global",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/dss_global/w18_018_robot_warehouse_pick_001_dss_global.wav",
+          "acoustic_score": 78.0,
+          "selector_score": 78.5,
+          "decision": "rejected",
+          "reasons": [
+            "near_full_scale_peak:-0.034",
+            "loud_rms:-14.1672",
+            "very_high_silence_ratio:0.12992586",
+            "variant_prior:+0.5"
+          ]
+        }
+      ],
+      "all_candidates": [
+        {
+          "case_id": "robot_warehouse_pick_001",
+          "variant": "naive",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/naive/w18_016_robot_warehouse_pick_001_naive.wav",
+          "acoustic_score": 92.0,
+          "selector_score": 92.0,
+          "decision": "selector_candidate",
+          "reasons": [
+            "hot_peak:-0.3109",
+            "high_silence_ratio:0.08360825"
+          ]
+        },
+        {
+          "case_id": "robot_warehouse_pick_001",
+          "variant": "dss_layer_avoid",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/dss_layer_avoid/w18_020_robot_warehouse_pick_001_dss_layer_avoid.wav",
+          "acoustic_score": 87.0,
+          "selector_score": 89.5,
+          "decision": "listen_review",
+          "reasons": [
+            "very_high_silence_ratio:0.13005501",
+            "over_dense_onset_proxy:33.0_vs_expected:4",
+            "variant_prior:+2.5"
+          ]
+        },
+        {
+          "case_id": "robot_warehouse_pick_001",
+          "variant": "dss_event_timeline",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/dss_event_timeline/w18_019_robot_warehouse_pick_001_dss_event_timeline.wav",
+          "acoustic_score": 87.0,
+          "selector_score": 89.0,
+          "decision": "listen_review",
+          "reasons": [
+            "very_high_silence_ratio:0.12822877",
+            "over_dense_onset_proxy:33.0_vs_expected:4",
+            "variant_prior:+2.0"
+          ]
+        },
+        {
+          "case_id": "robot_warehouse_pick_001",
+          "variant": "naive_rich",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/naive_rich/w18_017_robot_warehouse_pick_001_naive_rich.wav",
+          "acoustic_score": 86.0,
+          "selector_score": 87.0,
+          "decision": "listen_review",
+          "reasons": [
+            "hot_peak:-0.206",
+            "loud_rms:-14.0528",
+            "high_silence_ratio:0.11828188",
+            "variant_prior:+1.0"
+          ]
+        },
+        {
+          "case_id": "robot_warehouse_pick_001",
+          "variant": "dss_global",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/dss_global/w18_018_robot_warehouse_pick_001_dss_global.wav",
+          "acoustic_score": 78.0,
+          "selector_score": 78.5,
+          "decision": "rejected",
+          "reasons": [
+            "near_full_scale_peak:-0.034",
+            "loud_rms:-14.1672",
+            "very_high_silence_ratio:0.12992586",
+            "variant_prior:+0.5"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "street_rain_crosswalk_001",
+      "winner": {
+        "case_id": "street_rain_crosswalk_001",
+        "variant": "dss_layer_avoid",
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/dss_layer_avoid/w18_025_street_rain_crosswalk_001_dss_layer_avoid.wav",
+        "acoustic_score": 100.0,
+        "selector_score": 102.5,
+        "decision": "selector_candidate",
+        "reasons": [
+          "variant_prior:+2.5"
+        ]
+      },
+      "runner_up": {
+        "case_id": "street_rain_crosswalk_001",
+        "variant": "dss_event_timeline",
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/dss_event_timeline/w18_024_street_rain_crosswalk_001_dss_event_timeline.wav",
+        "acoustic_score": 100.0,
+        "selector_score": 102.0,
+        "decision": "selector_candidate",
+        "reasons": [
+          "variant_prior:+2.0"
+        ]
+      },
+      "best_dss_variant": "dss_layer_avoid",
+      "best_baseline_variant": "naive_rich",
+      "dss_delta_vs_best_baseline": 1.5,
+      "case_classification": "dss_neutral",
+      "repair_queue": [],
+      "listen_review": [],
+      "rejected": [
+        {
+          "case_id": "street_rain_crosswalk_001",
+          "variant": "naive",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/naive/w18_021_street_rain_crosswalk_001_naive.wav",
+          "acoustic_score": 77.8985,
+          "selector_score": 77.8985,
+          "decision": "rejected",
+          "reasons": [
+            "minor_clip:-0.1015",
+            "near_full_scale_peak:0.0",
+            "very_loud_rms:-11.5997"
+          ]
+        },
+        {
+          "case_id": "street_rain_crosswalk_001",
+          "variant": "dss_global",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/dss_global/w18_023_street_rain_crosswalk_001_dss_global.wav",
+          "acoustic_score": 77.2644,
+          "selector_score": 77.7644,
+          "decision": "rejected",
+          "reasons": [
+            "minor_clip:-0.7356",
+            "near_full_scale_peak:0.0",
+            "very_loud_rms:-10.0348",
+            "variant_prior:+0.5"
+          ]
+        }
+      ],
+      "all_candidates": [
+        {
+          "case_id": "street_rain_crosswalk_001",
+          "variant": "dss_layer_avoid",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/dss_layer_avoid/w18_025_street_rain_crosswalk_001_dss_layer_avoid.wav",
+          "acoustic_score": 100.0,
+          "selector_score": 102.5,
+          "decision": "selector_candidate",
+          "reasons": [
+            "variant_prior:+2.5"
+          ]
+        },
+        {
+          "case_id": "street_rain_crosswalk_001",
+          "variant": "dss_event_timeline",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/dss_event_timeline/w18_024_street_rain_crosswalk_001_dss_event_timeline.wav",
+          "acoustic_score": 100.0,
+          "selector_score": 102.0,
+          "decision": "selector_candidate",
+          "reasons": [
+            "variant_prior:+2.0"
+          ]
+        },
+        {
+          "case_id": "street_rain_crosswalk_001",
+          "variant": "naive_rich",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/naive_rich/w18_022_street_rain_crosswalk_001_naive_rich.wav",
+          "acoustic_score": 100.0,
+          "selector_score": 101.0,
+          "decision": "selector_candidate",
+          "reasons": [
+            "variant_prior:+1.0"
+          ]
+        },
+        {
+          "case_id": "street_rain_crosswalk_001",
+          "variant": "naive",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/naive/w18_021_street_rain_crosswalk_001_naive.wav",
+          "acoustic_score": 77.8985,
+          "selector_score": 77.8985,
+          "decision": "rejected",
+          "reasons": [
+            "minor_clip:-0.1015",
+            "near_full_scale_peak:0.0",
+            "very_loud_rms:-11.5997"
+          ]
+        },
+        {
+          "case_id": "street_rain_crosswalk_001",
+          "variant": "dss_global",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/dss_global/w18_023_street_rain_crosswalk_001_dss_global.wav",
+          "acoustic_score": 77.2644,
+          "selector_score": 77.7644,
+          "decision": "rejected",
+          "reasons": [
+            "minor_clip:-0.7356",
+            "near_full_scale_peak:0.0",
+            "very_loud_rms:-10.0348",
+            "variant_prior:+0.5"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "subway_arrival_door_001",
+      "winner": {
+        "case_id": "subway_arrival_door_001",
+        "variant": "naive",
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/naive/w18_026_subway_arrival_door_001_naive.wav",
+        "acoustic_score": 98.0,
+        "selector_score": 98.0,
+        "decision": "selector_candidate",
+        "reasons": [
+          "moderate_silence_ratio:0.05893136"
+        ]
+      },
+      "runner_up": {
+        "case_id": "subway_arrival_door_001",
+        "variant": "dss_global",
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/dss_global/w18_028_subway_arrival_door_001_dss_global.wav",
+        "acoustic_score": 95.0,
+        "selector_score": 95.5,
+        "decision": "selector_candidate",
+        "reasons": [
+          "hot_peak:-0.1713",
+          "moderate_silence_ratio:0.07413038",
+          "variant_prior:+0.5"
+        ]
+      },
+      "best_dss_variant": "dss_global",
+      "best_baseline_variant": "naive",
+      "dss_delta_vs_best_baseline": -2.5,
+      "case_classification": "dss_neutral",
+      "repair_queue": [],
+      "listen_review": [
+        {
+          "case_id": "subway_arrival_door_001",
+          "variant": "naive_rich",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/naive_rich/w18_027_subway_arrival_door_001_naive_rich.wav",
+          "acoustic_score": 89.0,
+          "selector_score": 90.0,
+          "decision": "listen_review",
+          "reasons": [
+            "hot_peak:-0.2758",
+            "loud_rms:-15.7839",
+            "moderate_silence_ratio:0.07366363",
+            "variant_prior:+1.0"
+          ]
+        },
+        {
+          "case_id": "subway_arrival_door_001",
+          "variant": "dss_layer_avoid",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/dss_layer_avoid/w18_030_subway_arrival_door_001_dss_layer_avoid_repaired_peak_m3db.wav",
+          "acoustic_score": 86.0,
+          "selector_score": 85.5,
+          "decision": "listen_review",
+          "reasons": [
+            "loud_rms:-13.2822",
+            "very_high_silence_ratio:0.13215768",
+            "variant_prior:+2.5",
+            "repaired_candidate_penalty:-3.0"
+          ]
+        },
+        {
+          "case_id": "subway_arrival_door_001",
+          "variant": "dss_event_timeline",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/dss_event_timeline/w18_029_subway_arrival_door_001_dss_event_timeline_repaired_peak_m3db.wav",
+          "acoustic_score": 86.0,
+          "selector_score": 85.0,
+          "decision": "listen_review",
+          "reasons": [
+            "loud_rms:-12.6374",
+            "very_high_silence_ratio:0.13714925",
+            "variant_prior:+2.0",
+            "repaired_candidate_penalty:-3.0"
+          ]
+        }
+      ],
+      "rejected": [],
+      "all_candidates": [
+        {
+          "case_id": "subway_arrival_door_001",
+          "variant": "naive",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/naive/w18_026_subway_arrival_door_001_naive.wav",
+          "acoustic_score": 98.0,
+          "selector_score": 98.0,
+          "decision": "selector_candidate",
+          "reasons": [
+            "moderate_silence_ratio:0.05893136"
+          ]
+        },
+        {
+          "case_id": "subway_arrival_door_001",
+          "variant": "dss_global",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/dss_global/w18_028_subway_arrival_door_001_dss_global.wav",
+          "acoustic_score": 95.0,
+          "selector_score": 95.5,
+          "decision": "selector_candidate",
+          "reasons": [
+            "hot_peak:-0.1713",
+            "moderate_silence_ratio:0.07413038",
+            "variant_prior:+0.5"
+          ]
+        },
+        {
+          "case_id": "subway_arrival_door_001",
+          "variant": "naive_rich",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/naive_rich/w18_027_subway_arrival_door_001_naive_rich.wav",
+          "acoustic_score": 89.0,
+          "selector_score": 90.0,
+          "decision": "listen_review",
+          "reasons": [
+            "hot_peak:-0.2758",
+            "loud_rms:-15.7839",
+            "moderate_silence_ratio:0.07366363",
+            "variant_prior:+1.0"
+          ]
+        },
+        {
+          "case_id": "subway_arrival_door_001",
+          "variant": "dss_layer_avoid",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/dss_layer_avoid/w18_030_subway_arrival_door_001_dss_layer_avoid_repaired_peak_m3db.wav",
+          "acoustic_score": 86.0,
+          "selector_score": 85.5,
+          "decision": "listen_review",
+          "reasons": [
+            "loud_rms:-13.2822",
+            "very_high_silence_ratio:0.13215768",
+            "variant_prior:+2.5",
+            "repaired_candidate_penalty:-3.0"
+          ]
+        },
+        {
+          "case_id": "subway_arrival_door_001",
+          "variant": "dss_event_timeline",
+          "audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/dss_event_timeline/w18_029_subway_arrival_door_001_dss_event_timeline_repaired_peak_m3db.wav",
+          "acoustic_score": 86.0,
+          "selector_score": 85.0,
+          "decision": "listen_review",
+          "reasons": [
+            "loud_rms:-12.6374",
+            "very_high_silence_ratio:0.13714925",
+            "variant_prior:+2.0",
+            "repaired_candidate_penalty:-3.0"
+          ]
+        }
+      ]
+    }
+  ],
+  "claim_boundary": [
+    "Selector v0 uses acoustic sanity + small DSS prior.",
+    "It is not a human preference model.",
+    "It produces winner/runner-up/listen-review/repair queue for W18 candidates.",
+    "Onset proxy is a weak signal and should be upgraded before semantic claims."
+  ],
+  "outputs": {
+    "json": "reports/w18_dss_aware_selector_eval_20260707.json",
+    "csv": "reports/w18_dss_aware_selector_eval_20260707.csv"
+  }
+}

@@ -1,0 +1,12 @@
+# HELP week18_evaluation_gate_status Offline W18 evaluation cloud gate status. 1 means pass.
+# TYPE week18_evaluation_gate_status gauge
+week18_evaluation_gate_status 1
+# HELP week18_evaluation_candidate_jobs_expected Expected W18 candidate jobs.
+# TYPE week18_evaluation_candidate_jobs_expected gauge
+week18_evaluation_candidate_jobs_expected 30
+# HELP week18_evaluation_plot_count Evaluation plot count.
+# TYPE week18_evaluation_plot_count gauge
+week18_evaluation_plot_count 6
+# HELP week18_evaluation_audio_metric_rows Audio metrics CSV row count.
+# TYPE week18_evaluation_audio_metric_rows gauge
+week18_evaluation_audio_metric_rows 30

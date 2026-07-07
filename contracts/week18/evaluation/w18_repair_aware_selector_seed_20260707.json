@@ -1,0 +1,249 @@
+{
+  "date": "2026-07-07",
+  "scope": "w18_repair_aware_selector_seed",
+  "status": "success",
+  "case_count": 6,
+  "selector_seed": [
+    {
+      "case_id": "forest_bird_branch_001",
+      "winner": {
+        "variant": "naive",
+        "score": 100.0,
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/naive/w18_001_forest_bird_branch_001_naive.wav"
+      },
+      "runner_up": {
+        "variant": "naive_rich",
+        "score": 100.0,
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/naive_rich/w18_002_forest_bird_branch_001_naive_rich.wav"
+      },
+      "classification": "worse",
+      "baseline_variant": "naive",
+      "best_dss_variant": "dss_layer_avoid",
+      "best_dss_delta": -8.0285
+    },
+    {
+      "case_id": "glass_drop_room_001",
+      "winner": {
+        "variant": "dss_layer_avoid",
+        "score": 97.0,
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/dss_layer_avoid/w18_010_glass_drop_room_001_dss_layer_avoid.wav"
+      },
+      "runner_up": {
+        "variant": "naive_rich",
+        "score": 95.0,
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/naive_rich/w18_007_glass_drop_room_001_naive_rich.wav"
+      },
+      "classification": "neutral",
+      "baseline_variant": "naive_rich",
+      "best_dss_variant": "dss_layer_avoid",
+      "best_dss_delta": 2.0
+    },
+    {
+      "case_id": "kitchen_chop_sizzle_001",
+      "winner": {
+        "variant": "dss_layer_avoid",
+        "score": 93.0,
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/dss_layer_avoid/w18_015_kitchen_chop_sizzle_001_dss_layer_avoid.wav"
+      },
+      "runner_up": {
+        "variant": "naive",
+        "score": 87.9545,
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/naive/w18_011_kitchen_chop_sizzle_001_naive.wav"
+      },
+      "classification": "improves",
+      "baseline_variant": "naive",
+      "best_dss_variant": "dss_layer_avoid",
+      "best_dss_delta": 5.0455
+    },
+    {
+      "case_id": "robot_warehouse_pick_001",
+      "winner": {
+        "variant": "naive",
+        "score": 87.0,
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/naive/w18_016_robot_warehouse_pick_001_naive.wav"
+      },
+      "runner_up": {
+        "variant": "dss_event_timeline",
+        "score": 85.0,
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/dss_event_timeline/w18_019_robot_warehouse_pick_001_dss_event_timeline.wav"
+      },
+      "classification": "neutral",
+      "baseline_variant": "naive",
+      "best_dss_variant": "dss_event_timeline",
+      "best_dss_delta": -2.0
+    },
+    {
+      "case_id": "street_rain_crosswalk_001",
+      "winner": {
+        "variant": "naive_rich",
+        "score": 100.0,
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/naive_rich/w18_022_street_rain_crosswalk_001_naive_rich.wav"
+      },
+      "runner_up": {
+        "variant": "dss_event_timeline",
+        "score": 100.0,
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/dss_event_timeline/w18_024_street_rain_crosswalk_001_dss_event_timeline.wav"
+      },
+      "classification": "neutral",
+      "baseline_variant": "naive_rich",
+      "best_dss_variant": "dss_event_timeline",
+      "best_dss_delta": 0.0
+    },
+    {
+      "case_id": "subway_arrival_door_001",
+      "winner": {
+        "variant": "naive",
+        "score": 96.0,
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/naive/w18_026_subway_arrival_door_001_naive.wav"
+      },
+      "runner_up": {
+        "variant": "dss_global",
+        "score": 93.0,
+        "audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/dss_global/w18_028_subway_arrival_door_001_dss_global.wav"
+      },
+      "classification": "neutral",
+      "baseline_variant": "naive",
+      "best_dss_variant": "dss_global",
+      "best_dss_delta": -3.0
+    }
+  ],
+  "repair_targets": [
+    {
+      "case_id": "forest_bird_branch_001",
+      "variant": "dss_global",
+      "priority": "repair_target",
+      "score": 80.3627,
+      "reasons": [
+        "minor_clip:0.00056373",
+        "near_full_scale_peak:0.0",
+        "loud_rms:-15.6334"
+      ],
+      "audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/dss_global/w18_003_forest_bird_branch_001_dss_global.wav"
+    },
+    {
+      "case_id": "forest_bird_branch_001",
+      "variant": "dss_event_timeline",
+      "priority": "repair_target",
+      "score": 91.9431,
+      "reasons": [
+        "minor_clip:5.69e-06",
+        "near_full_scale_peak:0.0"
+      ],
+      "audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/dss_event_timeline/w18_004_forest_bird_branch_001_dss_event_timeline.wav"
+    },
+    {
+      "case_id": "forest_bird_branch_001",
+      "variant": "dss_layer_avoid",
+      "priority": "repair_target",
+      "score": 91.9715,
+      "reasons": [
+        "minor_clip:2.85e-06",
+        "near_full_scale_peak:0.0"
+      ],
+      "audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/dss_layer_avoid/w18_005_forest_bird_branch_001_dss_layer_avoid.wav"
+    },
+    {
+      "case_id": "glass_drop_room_001",
+      "variant": "naive",
+      "priority": "repair_target",
+      "score": 91.8372,
+      "reasons": [
+        "minor_clip:1.628e-05",
+        "near_full_scale_peak:-0.0003"
+      ],
+      "audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/naive/w18_006_glass_drop_room_001_naive.wav"
+    },
+    {
+      "case_id": "glass_drop_room_001",
+      "variant": "dss_global",
+      "priority": "repair_target",
+      "score": 92.0,
+      "reasons": [
+        "near_full_scale_peak:-0.0681"
+      ],
+      "audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/dss_global/w18_008_glass_drop_room_001_dss_global.wav"
+    },
+    {
+      "case_id": "kitchen_chop_sizzle_001",
+      "variant": "naive",
+      "priority": "repair_target",
+      "score": 87.9545,
+      "reasons": [
+        "minor_clip:4.55e-06",
+        "near_full_scale_peak:0.0",
+        "moderate_silence_ratio:0.03737799"
+      ],
+      "audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/naive/w18_011_kitchen_chop_sizzle_001_naive.wav"
+    },
+    {
+      "case_id": "kitchen_chop_sizzle_001",
+      "variant": "naive_rich",
+      "priority": "repair_target",
+      "score": 87.9089,
+      "reasons": [
+        "minor_clip:9.11e-06",
+        "near_full_scale_peak:-0.0003",
+        "moderate_silence_ratio:0.05057638"
+      ],
+      "audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/naive_rich/w18_012_kitchen_chop_sizzle_001_naive_rich.wav"
+    },
+    {
+      "case_id": "robot_warehouse_pick_001",
+      "variant": "dss_global",
+      "priority": "repair_target",
+      "score": 76.0,
+      "reasons": [
+        "near_full_scale_peak:-0.034",
+        "loud_rms:-14.1672",
+        "high_silence_ratio:0.12992586"
+      ],
+      "audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/dss_global/w18_018_robot_warehouse_pick_001_dss_global.wav"
+    },
+    {
+      "case_id": "robot_warehouse_pick_001",
+      "variant": "dss_event_timeline",
+      "priority": "listen_review",
+      "score": 85.0,
+      "reasons": [
+        "high_silence_ratio:0.12822877",
+        "over_dense_onset_proxy:33.0_vs_expected:4"
+      ],
+      "audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/dss_event_timeline/w18_019_robot_warehouse_pick_001_dss_event_timeline.wav"
+    },
+    {
+      "case_id": "robot_warehouse_pick_001",
+      "variant": "dss_layer_avoid",
+      "priority": "listen_review",
+      "score": 85.0,
+      "reasons": [
+        "high_silence_ratio:0.13005501",
+        "over_dense_onset_proxy:33.0_vs_expected:4"
+      ],
+      "audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/dss_layer_avoid/w18_020_robot_warehouse_pick_001_dss_layer_avoid.wav"
+    },
+    {
+      "case_id": "street_rain_crosswalk_001",
+      "variant": "naive",
+      "priority": "repair_target",
+      "score": 77.8985,
+      "reasons": [
+        "minor_clip:1.015e-05",
+        "near_full_scale_peak:0.0",
+        "very_loud_rms:-11.5997"
+      ],
+      "audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/naive/w18_021_street_rain_crosswalk_001_naive.wav"
+    },
+    {
+      "case_id": "street_rain_crosswalk_001",
+      "variant": "dss_global",
+      "priority": "repair_target",
+      "score": 77.2644,
+      "reasons": [
+        "minor_clip:7.356e-05",
+        "near_full_scale_peak:0.0",
+        "very_loud_rms:-10.0348"
+      ],
+      "audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/dss_global/w18_023_street_rain_crosswalk_001_dss_global.wav"
+    }
+  ]
+}

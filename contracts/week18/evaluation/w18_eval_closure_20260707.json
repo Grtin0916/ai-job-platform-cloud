@@ -1,0 +1,125 @@
+{
+  "report": "w18_eval_closure_20260707",
+  "created_utc": "2026-07-07T15:14:02.812739+00:00",
+  "claim_boundary": [
+    "This closes local W18 evaluation artifacts only.",
+    "It does not claim DSS is globally better than naive prompts.",
+    "It does not claim production SLO, k6 threshold pass, or live Grafana import.",
+    "It does not rerun MMAudio generation."
+  ],
+  "input_scope": {
+    "case_count_expected": 6,
+    "variant_count_expected": 5,
+    "candidate_jobs_expected": 30,
+    "w18_audio_file_count_wav_or_flac": 92,
+    "plot_count": 6
+  },
+  "reports": {
+    "audio_metrics_csv_rows": 30,
+    "pairwise_csv_rows": 18,
+    "selector_csv_rows": 30,
+    "audio_metrics_json": {
+      "exists": true,
+      "type": "dict",
+      "keys": [
+        "candidate_count",
+        "case_count",
+        "date",
+        "metric_boundary",
+        "outputs",
+        "plot_count",
+        "plots",
+        "read_error_count",
+        "read_errors",
+        "readable_count",
+        "rows",
+        "scope",
+        "status"
+      ]
+    },
+    "pairwise_json": {
+      "exists": true,
+      "type": "dict",
+      "keys": [
+        "candidate_count",
+        "case_count",
+        "case_summaries",
+        "classification_counts",
+        "date",
+        "metric_boundary",
+        "outputs",
+        "pairwise_count",
+        "repair_target_count",
+        "repair_targets",
+        "scope",
+        "status"
+      ]
+    },
+    "selector_json": {
+      "exists": true,
+      "type": "dict",
+      "keys": [
+        "candidate_count",
+        "case_count",
+        "case_results",
+        "claim_boundary",
+        "classification_counts",
+        "date",
+        "decision_counts",
+        "dss_winner_count",
+        "invalid_all_rejected",
+        "listen_review_count",
+        "outputs",
+        "repair_queue_count",
+        "scope",
+        "status",
+        "winner_counts"
+      ]
+    },
+    "repair_seed_json": {
+      "exists": true,
+      "type": "dict",
+      "keys": [
+        "case_count",
+        "date",
+        "repair_targets",
+        "scope",
+        "selector_seed",
+        "status"
+      ]
+    }
+  },
+  "generated_artifacts": {
+    "plots": [
+      "artifacts/eval/w18_audio_metrics_20260707/forest_bird_branch_001_waveform_energy_onset_proxy.png",
+      "artifacts/eval/w18_audio_metrics_20260707/glass_drop_room_001_waveform_energy_onset_proxy.png",
+      "artifacts/eval/w18_audio_metrics_20260707/kitchen_chop_sizzle_001_waveform_energy_onset_proxy.png",
+      "artifacts/eval/w18_audio_metrics_20260707/robot_warehouse_pick_001_waveform_energy_onset_proxy.png",
+      "artifacts/eval/w18_audio_metrics_20260707/street_rain_crosswalk_001_waveform_energy_onset_proxy.png",
+      "artifacts/eval/w18_audio_metrics_20260707/subway_arrival_door_001_waveform_energy_onset_proxy.png"
+    ],
+    "primary_reports": [
+      "reports/w18_audio_metrics_eval_20260707.csv",
+      "reports/w18_audio_metrics_eval_20260707.json",
+      "reports/w18_dss_vs_naive_pairwise_report_20260707.csv",
+      "reports/w18_dss_vs_naive_pairwise_report_20260707.json",
+      "reports/w18_dss_aware_selector_eval_20260707.csv",
+      "reports/w18_dss_aware_selector_eval_20260707.json",
+      "reports/w18_repair_aware_selector_seed_20260707.json"
+    ],
+    "scripts": [
+      "scripts/evaluate_w18_candidate_audio_metrics.py",
+      "scripts/build_w18_dss_naive_pairwise_report.py",
+      "scripts/evaluate_w18_dss_aware_selector.py",
+      "src/soundlayer/ranking/dss_aware_selector.py"
+    ],
+    "dsa": "algo/leetcode/lc787_cheapest_flights_within_k_stops.py"
+  },
+  "dod": {
+    "metrics_report_created": true,
+    "pairwise_report_created": true,
+    "selector_report_created": true,
+    "plot_count_at_least_6": true,
+    "dsa_lc787_added": true
+  }
+}
