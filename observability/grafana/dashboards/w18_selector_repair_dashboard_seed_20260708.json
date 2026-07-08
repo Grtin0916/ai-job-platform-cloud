@@ -1,0 +1,51 @@
+{
+  "title": "W18 Selector Repair Dashboard Seed",
+  "schemaVersion": 1,
+  "tags": [
+    "week18",
+    "selector",
+    "repair",
+    "offline-gate"
+  ],
+  "boundary": "Offline Cloud aggregation only. This is dashboard-ready evidence, not k6 threshold pass, not live Grafana import, and not production SLO.",
+  "panels": [
+    {
+      "title": "Gate Status",
+      "metric": "w18_selector_repair_gate_status",
+      "expected": 1
+    },
+    {
+      "title": "Selector Winners",
+      "metric": "w18_selector_repair_winner_count",
+      "expected": 6
+    },
+    {
+      "title": "Repair Probes",
+      "metric": "w18_selector_repair_probe_count",
+      "expected": 6
+    },
+    {
+      "title": "Proxy Improved",
+      "metric": "w18_selector_repair_proxy_improved_count",
+      "expected_min": 2
+    },
+    {
+      "title": "Missing Assets",
+      "metric": "w18_selector_repair_missing_asset_count",
+      "expected": 0
+    },
+    {
+      "title": "Failure Categories",
+      "metric": "w18_selector_repair_failure_category_count"
+    },
+    {
+      "title": "Repair Actions",
+      "metric": "w18_selector_repair_action_count"
+    }
+  ],
+  "source_files": {
+    "contract": "contracts/week18/w18_selector_repair_handoff_20260708.json",
+    "gate": "loadtest/reports/w18_selector_repair_cloud_gate_20260708.json",
+    "prometheus_sample": "observability/prometheus/w18_selector_repair_metrics_20260708.prom"
+  }
+}

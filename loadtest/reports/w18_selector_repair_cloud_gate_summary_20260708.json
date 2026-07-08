@@ -1,0 +1,30 @@
+{
+  "task": "build_w18_selector_repair_cloud_gate",
+  "status": "PASS",
+  "winner_count": 6,
+  "failure_count": 12,
+  "repair_probe_count": 6,
+  "proxy_improved_count": 6,
+  "missing_asset_count": 0,
+  "panel_count": 7,
+  "checks": {
+    "contract_file_exists": true,
+    "contract_name_ok": true,
+    "producer_mainbase": true,
+    "cloud_listed_as_consumer": true,
+    "winner_count_eq_6": true,
+    "repair_probe_count_eq_6": true,
+    "proxy_improved_count_ge_2": true,
+    "missing_asset_count_eq_0": true,
+    "boundary_present": true,
+    "not_claiming_production_slo": true,
+    "not_claiming_full_repair_engine": true
+  },
+  "outputs": {
+    "gate": "loadtest/reports/w18_selector_repair_cloud_gate_20260708.json",
+    "prometheus": "observability/prometheus/w18_selector_repair_metrics_20260708.prom",
+    "dashboard": "observability/grafana/dashboards/w18_selector_repair_dashboard_seed_20260708.json",
+    "summary": "loadtest/reports/w18_selector_repair_cloud_gate_summary_20260708.json"
+  },
+  "boundary": "Offline Cloud aggregation only. This is dashboard-ready evidence, not k6 threshold pass, not live Grafana import, and not production SLO."
+}

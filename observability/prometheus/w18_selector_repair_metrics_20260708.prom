@@ -1,0 +1,23 @@
+# HELP w18_selector_repair_gate_status 1 if the offline selector repair cloud gate passes.
+# TYPE w18_selector_repair_gate_status gauge
+w18_selector_repair_gate_status{gate_version="2026-07-08.v1"} 1
+# HELP w18_selector_repair_winner_count Number of selector v2 winners.
+# TYPE w18_selector_repair_winner_count gauge
+w18_selector_repair_winner_count{source="mainbase_contract"} 6
+# HELP w18_selector_repair_probe_count Number of micro repair probes.
+# TYPE w18_selector_repair_probe_count gauge
+w18_selector_repair_probe_count{source="mainbase_contract"} 6
+# HELP w18_selector_repair_proxy_improved_count Number of repair probes improved by proxy metrics.
+# TYPE w18_selector_repair_proxy_improved_count gauge
+w18_selector_repair_proxy_improved_count{source="mainbase_contract"} 6
+# HELP w18_selector_repair_missing_asset_count Missing asset count reported by contract.
+# TYPE w18_selector_repair_missing_asset_count gauge
+w18_selector_repair_missing_asset_count{source="mainbase_contract"} 0
+w18_selector_repair_failure_category_count{category="clipping"} 8
+w18_selector_repair_failure_category_count{category="layer_conflict_or_repairable"} 1
+w18_selector_repair_failure_category_count{category="naive_less_controllable"} 2
+w18_selector_repair_failure_category_count{category="silence"} 1
+w18_selector_repair_action_count{action="clipping_attenuation"} 3
+w18_selector_repair_action_count{action="event_local_gain"} 1
+w18_selector_repair_action_count{action="peak_normalize_only"} 1
+w18_selector_repair_action_count{action="silence_trim_or_gain"} 1

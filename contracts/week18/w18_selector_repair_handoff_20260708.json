@@ -1,0 +1,291 @@
+{
+  "contract_name": "week18_selector_repair_handoff",
+  "contract_version": "2026-07-08.v1",
+  "producer": "mainbase",
+  "intended_consumers": [
+    "java",
+    "cloud"
+  ],
+  "boundary": "Selector v2 and micro repair probe are proxy-backed engineering signals. They are not subjective listening labels, not production SLO, and not a full repair engine.",
+  "inputs": {
+    "selector_v2": "reports/w18_selector_v2_scores_20260708.csv",
+    "failure_bank": "reports/w18_failure_bank_20260708.csv",
+    "repair_probe": "reports/w18_micro_repair_probe_20260708.csv"
+  },
+  "summary": {
+    "winner_count": 6,
+    "failure_count": 12,
+    "repair_probe_count": 6,
+    "proxy_improved_count": 6,
+    "failure_category_counts": {
+      "clipping": 8,
+      "layer_conflict_or_repairable": 1,
+      "naive_less_controllable": 2,
+      "silence": 1
+    },
+    "repair_action_counts": {
+      "silence_trim_or_gain": 1,
+      "event_local_gain": 1,
+      "peak_normalize_only": 1,
+      "clipping_attenuation": 3
+    },
+    "missing_asset_count": 0
+  },
+  "winners": [
+    {
+      "case_id": "forest_bird_branch_001",
+      "candidate_key": "forest_bird_branch_001|naive_rich",
+      "variant": "naive_rich",
+      "selector_v2_score": "0.694984",
+      "metric_confidence": "0.622759",
+      "repairability": "0.720000",
+      "audio_path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/naive_rich/w18_002_forest_bird_branch_001_naive_rich.wav"
+    },
+    {
+      "case_id": "glass_drop_room_001",
+      "candidate_key": "glass_drop_room_001|dss_layer_avoid",
+      "variant": "dss_layer_avoid",
+      "selector_v2_score": "0.760986",
+      "metric_confidence": "0.619579",
+      "repairability": "0.720000",
+      "audio_path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/dss_layer_avoid/w18_010_glass_drop_room_001_dss_layer_avoid.wav"
+    },
+    {
+      "case_id": "kitchen_chop_sizzle_001",
+      "candidate_key": "kitchen_chop_sizzle_001|dss_layer_avoid",
+      "variant": "dss_layer_avoid",
+      "selector_v2_score": "0.716121",
+      "metric_confidence": "0.572444",
+      "repairability": "0.720000",
+      "audio_path": "artifacts/model_runs/w18_dss_ablation/kitchen_chop_sizzle_001/dss_layer_avoid/w18_015_kitchen_chop_sizzle_001_dss_layer_avoid.wav"
+    },
+    {
+      "case_id": "robot_warehouse_pick_001",
+      "candidate_key": "robot_warehouse_pick_001|dss_layer_avoid",
+      "variant": "dss_layer_avoid",
+      "selector_v2_score": "0.580543",
+      "metric_confidence": "0.530184",
+      "repairability": "0.720000",
+      "audio_path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/dss_layer_avoid/w18_020_robot_warehouse_pick_001_dss_layer_avoid.wav"
+    },
+    {
+      "case_id": "street_rain_crosswalk_001",
+      "candidate_key": "street_rain_crosswalk_001|dss_event_timeline",
+      "variant": "dss_event_timeline",
+      "selector_v2_score": "0.800940",
+      "metric_confidence": "0.624739",
+      "repairability": "0.720000",
+      "audio_path": "artifacts/model_runs/w18_dss_ablation/street_rain_crosswalk_001/dss_event_timeline/w18_024_street_rain_crosswalk_001_dss_event_timeline.wav"
+    },
+    {
+      "case_id": "subway_arrival_door_001",
+      "candidate_key": "subway_arrival_door_001|dss_global",
+      "variant": "dss_global",
+      "selector_v2_score": "0.684977",
+      "metric_confidence": "0.571046",
+      "repairability": "0.720000",
+      "audio_path": "artifacts/model_runs/w18_dss_ablation/subway_arrival_door_001/dss_global/w18_028_subway_arrival_door_001_dss_global.wav"
+    }
+  ],
+  "repaired_candidates": [
+    {
+      "probe_id": "mr_001",
+      "failure_id": "fb_011",
+      "case_id": "glass_drop_room_001",
+      "variant": "naive_rich",
+      "failure_category": "silence",
+      "repair_action": "silence_trim_or_gain",
+      "proxy_improved": "true",
+      "improve_reason": "rms_mean_up;silence_ratio_not_worse",
+      "before_audio": {
+        "path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/naive_rich/w18_007_glass_drop_room_001_naive_rich.wav",
+        "exists": true,
+        "size": 614478
+      },
+      "after_audio": {
+        "path": "artifacts/repair/w18_micro_repair_20260708/wav/mr_001__glass_drop_room_001__naive_rich__silence_trim_or_gain__after.wav",
+        "exists": true,
+        "size": 614444
+      },
+      "before_after_plot": {
+        "path": "artifacts/repair/w18_micro_repair_20260708/plots/mr_001__glass_drop_room_001__naive_rich__silence_trim_or_gain__before_after.png",
+        "exists": true,
+        "size": 246932
+      },
+      "before_peak_abs": "0.071289",
+      "after_peak_abs": "0.213867",
+      "before_clip_ratio": "0.0",
+      "after_clip_ratio": "0.0",
+      "before_rms_mean": "0.013837",
+      "after_rms_mean": "0.041512",
+      "before_silence_ratio": "0.188648",
+      "after_silence_ratio": "0.0"
+    },
+    {
+      "probe_id": "mr_002",
+      "failure_id": "fb_003",
+      "case_id": "robot_warehouse_pick_001",
+      "variant": "dss_event_timeline",
+      "failure_category": "layer_conflict_or_repairable",
+      "repair_action": "event_local_gain",
+      "proxy_improved": "true",
+      "improve_reason": "onset_count_not_worse;rms_mean_not_worse",
+      "before_audio": {
+        "path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/dss_event_timeline/w18_019_robot_warehouse_pick_001_dss_event_timeline.wav",
+        "exists": true,
+        "size": 882766
+      },
+      "after_audio": {
+        "path": "artifacts/repair/w18_micro_repair_20260708/wav/mr_002__robot_warehouse_pick_001__dss_event_timeline__event_local_gain__after.wav",
+        "exists": true,
+        "size": 882732
+      },
+      "before_after_plot": {
+        "path": "artifacts/repair/w18_micro_repair_20260708/plots/mr_002__robot_warehouse_pick_001__dss_event_timeline__event_local_gain__before_after.png",
+        "exists": true,
+        "size": 143820
+      },
+      "before_peak_abs": "0.441406",
+      "after_peak_abs": "0.520859",
+      "before_clip_ratio": "0.0",
+      "after_clip_ratio": "0.0",
+      "before_rms_mean": "0.063511",
+      "after_rms_mean": "0.063953",
+      "before_silence_ratio": "0.219512",
+      "after_silence_ratio": "0.219512"
+    },
+    {
+      "probe_id": "mr_003",
+      "failure_id": "fb_004",
+      "case_id": "robot_warehouse_pick_001",
+      "variant": "naive",
+      "failure_category": "naive_less_controllable",
+      "repair_action": "peak_normalize_only",
+      "proxy_improved": "true",
+      "improve_reason": "safe_peak;clip_ratio_not_worse",
+      "before_audio": {
+        "path": "artifacts/model_runs/w18_dss_ablation/robot_warehouse_pick_001/naive/w18_016_robot_warehouse_pick_001_naive.wav",
+        "exists": true,
+        "size": 882766
+      },
+      "after_audio": {
+        "path": "artifacts/repair/w18_micro_repair_20260708/wav/mr_003__robot_warehouse_pick_001__naive__peak_normalize_only__after.wav",
+        "exists": true,
+        "size": 882732
+      },
+      "before_after_plot": {
+        "path": "artifacts/repair/w18_micro_repair_20260708/plots/mr_003__robot_warehouse_pick_001__naive__peak_normalize_only__before_after.png",
+        "exists": true,
+        "size": 157839
+      },
+      "before_peak_abs": "0.964844",
+      "after_peak_abs": "0.88",
+      "before_clip_ratio": "0.0",
+      "after_clip_ratio": "0.0",
+      "before_rms_mean": "0.099395",
+      "after_rms_mean": "0.090654",
+      "before_silence_ratio": "0.207898",
+      "after_silence_ratio": "0.213705"
+    },
+    {
+      "probe_id": "mr_004",
+      "failure_id": "fb_001",
+      "case_id": "forest_bird_branch_001",
+      "variant": "dss_global",
+      "failure_category": "clipping",
+      "repair_action": "clipping_attenuation",
+      "proxy_improved": "true",
+      "improve_reason": "peak_abs_down;clip_ratio_not_worse",
+      "before_audio": {
+        "path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/dss_global/w18_003_forest_bird_branch_001_dss_global.wav",
+        "exists": true,
+        "size": 702542
+      },
+      "after_audio": {
+        "path": "artifacts/repair/w18_micro_repair_20260708/wav/mr_004__forest_bird_branch_001__dss_global__clipping_attenuation__after.wav",
+        "exists": true,
+        "size": 702508
+      },
+      "before_after_plot": {
+        "path": "artifacts/repair/w18_micro_repair_20260708/plots/mr_004__forest_bird_branch_001__dss_global__clipping_attenuation__before_after.png",
+        "exists": true,
+        "size": 166979
+      },
+      "before_peak_abs": "1.0",
+      "after_peak_abs": "0.900757",
+      "before_clip_ratio": "0.00105913",
+      "after_clip_ratio": "0.0",
+      "before_rms_mean": "0.098846",
+      "after_rms_mean": "0.105811",
+      "before_silence_ratio": "0.023358",
+      "after_silence_ratio": "0.020438"
+    },
+    {
+      "probe_id": "mr_005",
+      "failure_id": "fb_012",
+      "case_id": "forest_bird_branch_001",
+      "variant": "dss_event_timeline",
+      "failure_category": "clipping",
+      "repair_action": "clipping_attenuation",
+      "proxy_improved": "true",
+      "improve_reason": "peak_abs_down;clip_ratio_not_worse",
+      "before_audio": {
+        "path": "artifacts/model_runs/w18_dss_ablation/forest_bird_branch_001/dss_event_timeline/w18_004_forest_bird_branch_001_dss_event_timeline.wav",
+        "exists": true,
+        "size": 702542
+      },
+      "after_audio": {
+        "path": "artifacts/repair/w18_micro_repair_20260708/wav/mr_005__forest_bird_branch_001__dss_event_timeline__clipping_attenuation__after.wav",
+        "exists": true,
+        "size": 702508
+      },
+      "before_after_plot": {
+        "path": "artifacts/repair/w18_micro_repair_20260708/plots/mr_005__forest_bird_branch_001__dss_event_timeline__clipping_attenuation__before_after.png",
+        "exists": true,
+        "size": 137754
+      },
+      "before_peak_abs": "1.0",
+      "after_peak_abs": "0.900757",
+      "before_clip_ratio": "1.139e-05",
+      "after_clip_ratio": "0.0",
+      "before_rms_mean": "0.041272",
+      "after_rms_mean": "0.04719",
+      "before_silence_ratio": "0.033577",
+      "after_silence_ratio": "0.024818"
+    },
+    {
+      "probe_id": "mr_006",
+      "failure_id": "fb_010",
+      "case_id": "glass_drop_room_001",
+      "variant": "dss_global",
+      "failure_category": "clipping",
+      "repair_action": "clipping_attenuation",
+      "proxy_improved": "true",
+      "improve_reason": "peak_abs_down;clip_ratio_not_worse",
+      "before_audio": {
+        "path": "artifacts/model_runs/w18_dss_ablation/glass_drop_room_001/dss_global/w18_008_glass_drop_room_001_dss_global.wav",
+        "exists": true,
+        "size": 614478
+      },
+      "after_audio": {
+        "path": "artifacts/repair/w18_micro_repair_20260708/wav/mr_006__glass_drop_room_001__dss_global__clipping_attenuation__after.wav",
+        "exists": true,
+        "size": 614444
+      },
+      "before_after_plot": {
+        "path": "artifacts/repair/w18_micro_repair_20260708/plots/mr_006__glass_drop_room_001__dss_global__clipping_attenuation__before_after.png",
+        "exists": true,
+        "size": 88153
+      },
+      "before_peak_abs": "0.992188",
+      "after_peak_abs": "0.896613",
+      "before_clip_ratio": "1.953e-05",
+      "after_clip_ratio": "0.0",
+      "before_rms_mean": "0.015949",
+      "after_rms_mean": "0.018034",
+      "before_silence_ratio": "0.429048",
+      "after_silence_ratio": "0.170284"
+    }
+  ],
+  "missing_assets": []
+}
