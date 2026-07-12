@@ -1,0 +1,16 @@
+# HELP week18_task_lifecycle_gate_pass Whether the Java lifecycle artifact passed the Cloud gate.
+# TYPE week18_task_lifecycle_gate_pass gauge
+week18_task_lifecycle_gate_pass 1
+# HELP week18_task_lifecycle_snapshot_tasks Task counts from the Java lifecycle artifact snapshot.
+# TYPE week18_task_lifecycle_snapshot_tasks gauge
+week18_task_lifecycle_snapshot_tasks{category="task_total"} 12
+week18_task_lifecycle_snapshot_tasks{category="winner_succeeded"} 6
+week18_task_lifecycle_snapshot_tasks{category="repair_required"} 6
+week18_task_lifecycle_snapshot_tasks{category="repair_applied"} 6
+week18_task_lifecycle_snapshot_tasks{category="result_bound"} 12
+week18_task_lifecycle_snapshot_tasks{category="missing_asset"} 0
+# HELP week18_task_lifecycle_boundary Claim-boundary flags preserved by the Cloud gate.
+# TYPE week18_task_lifecycle_boundary gauge
+week18_task_lifecycle_boundary{claim="production_slo_verified"} 0
+week18_task_lifecycle_boundary{claim="live_service_availability"} 0
+week18_task_lifecycle_boundary{claim="live_grafana_imported"} 0

@@ -1,0 +1,7 @@
+test_missing_asset_produces_fail_gate (__main__.Week18LifecycleCloudGateTest) ... ok
+test_valid_report_builds_pass_artifacts (__main__.Week18LifecycleCloudGateTest) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.009s
+
+OK

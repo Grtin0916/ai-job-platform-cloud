@@ -3,3 +3,9 @@
 # Terraform generated local working directories
 .terraform/
 **/.terraform/
+
+# Python bytecode caches
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class

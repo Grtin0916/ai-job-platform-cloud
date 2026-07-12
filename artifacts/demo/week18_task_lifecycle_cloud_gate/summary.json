@@ -1,0 +1,116 @@
+{
+  "boundaries": {
+    "liveGrafanaImported": false,
+    "liveServiceAvailabilityClaim": false,
+    "productionSloVerified": false
+  },
+  "checks": [
+    {
+      "actual": true,
+      "expected": true,
+      "name": "batch_orchestrated",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "name": "first_run_report_not_replayed",
+      "passed": true
+    },
+    {
+      "actual": 6,
+      "expected": 6,
+      "name": "winner_orchestration_matches_contract",
+      "passed": true
+    },
+    {
+      "actual": 6,
+      "expected": 6,
+      "name": "winner_success_matches_contract",
+      "passed": true
+    },
+    {
+      "actual": 6,
+      "expected": 6,
+      "name": "repair_orchestration_matches_contract",
+      "passed": true
+    },
+    {
+      "actual": 6,
+      "expected": 6,
+      "name": "repair_required_matches_contract",
+      "passed": true
+    },
+    {
+      "actual": 6,
+      "expected": 6,
+      "name": "repair_applied_matches_contract",
+      "passed": true
+    },
+    {
+      "actual": 12,
+      "expected": 12,
+      "name": "task_total_matches_contract",
+      "passed": true
+    },
+    {
+      "actual": 12,
+      "expected": 12,
+      "name": "orchestrated_total_matches_contract",
+      "passed": true
+    },
+    {
+      "actual": 12,
+      "expected": 12,
+      "name": "all_results_bound",
+      "passed": true
+    },
+    {
+      "actual": 0,
+      "expected": 0,
+      "name": "missing_assets_zero",
+      "passed": true
+    },
+    {
+      "actual": "d43e0077c4e0aa289306ff9bc86f075f71496d392feceaf0efab249137be34cc",
+      "expected": "64 lowercase hexadecimal characters",
+      "name": "source_contract_sha256_valid",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "name": "production_slo_claim_preserved",
+      "passed": true
+    },
+    {
+      "actual": false,
+      "expected": false,
+      "name": "live_service_claim_preserved",
+      "passed": true
+    }
+  ],
+  "counts": {
+    "missingAssetCount": 0,
+    "orchestratedRepairTaskCount": 6,
+    "orchestratedTaskCount": 12,
+    "orchestratedWinnerTaskCount": 6,
+    "repairAppliedCount": 6,
+    "repairProbeCount": 6,
+    "repairRequiredCount": 6,
+    "resultBoundCount": 12,
+    "succeededCount": 6,
+    "taskCount": 12,
+    "winnerCount": 6
+  },
+  "dashboardReady": true,
+  "failedChecks": [],
+  "gateName": "week18_task_lifecycle_cloud_gate",
+  "gateStatus": "PASS",
+  "generatedAtUtc": "2026-07-12T15:08:50.478277+00:00",
+  "inputReportPath": "artifacts/demo/week18_task_lifecycle_cloud_gate/inputs/java_w18_task_lifecycle_report_20260712.json",
+  "inputReportSha256": "524bf422a5ceeefcd100741fe682ce2138ad410f4c75b691b0670384aa9454de",
+  "prometheusSampleReady": true,
+  "schemaVersion": "1.0",
+  "sourceContractSha256": "d43e0077c4e0aa289306ff9bc86f075f71496d392feceaf0efab249137be34cc"
+}
