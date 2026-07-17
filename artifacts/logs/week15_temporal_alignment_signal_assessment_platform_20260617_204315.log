@@ -3,14 +3,14 @@
   "generatedAtUtc": "2026-06-17T12:43:15.706811+00:00",
   "platformDecision": "PASS_SIGNAL_ASSESSMENT_PARTIAL_PLATFORM_CONSUMPTION",
   "mainbaseSignalGate": {
-    "path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/reviews/week15_temporal_alignment_registry_backed_signal_assessment_gate.json",
+    "path": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/reviews/week15_temporal_alignment_registry_backed_signal_assessment_gate.json",
     "decision": "PASS_WEEK15_REGISTRY_BACKED_SIGNAL_ASSESSMENT_GATE",
     "visualRisk": "POSSIBLE_ONSET_PROXY_ANNOTATION_BUG_OR_OVER_SENSITIVE_THRESHOLD",
     "claimBoundary": "Gate enforces signal-only partial assessment. It must not promote HUMAN_REVIEW_PASS or semantic PASS.",
     "nextAllowedAction": "Manual human audition may be recorded only from explicit user-provided semantic/timing/usable judgements. Do not use this gate to claim human review pass."
   },
   "sourceSnapshot": {
-    "mainbaseRepoRoot": "/home/GRT/work/audio_engineering_repo_skeleton_v1",
+    "mainbaseRepoRoot": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1",
     "mainbaseHeadAtConsumption": "98af90c",
     "mainbaseOriginMainAtConsumption": "98af90c",
     "mainbaseGateSha256": "f413bcef7bf6384f7979502fc72c31d8a084a0e67512ec92ffb8c2b98f9cfc93",
@@ -35,7 +35,7 @@
     "visualRiskCarried": "POSSIBLE_ONSET_PROXY_ANNOTATION_BUG_OR_OVER_SENSITIVE_THRESHOLD"
   },
   "artifactLinks": {
-    "mainbaseSignalGate": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/reviews/week15_temporal_alignment_registry_backed_signal_assessment_gate.json",
+    "mainbaseSignalGate": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/reviews/week15_temporal_alignment_registry_backed_signal_assessment_gate.json",
     "cloudPlatformIndex": "loadtest/reports/week15_temporal_alignment_signal_assessment_platform_index.json",
     "cloudMetrics": "observability/prometheus/week15_temporal_alignment_signal_assessment_metrics.prom",
     "cloudGate": "loadtest/reports/week15_temporal_alignment_signal_assessment_platform_gate.json"

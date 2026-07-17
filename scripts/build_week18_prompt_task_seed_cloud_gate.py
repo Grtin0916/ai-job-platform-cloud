@@ -8,8 +8,8 @@ from pathlib import Path
 
 
 ROOT = Path(".").resolve()
-MAINBASE = Path.home() / "work/audio_engineering_repo_skeleton_v1"
-JAVA = Path.home() / "work/media-task-platform-java"
+MAINBASE = Path.home() / "work/grt_work/audio_engineering_repo_skeleton_v1"
+JAVA = Path.home() / "work/grt_work/media-task-platform-java"
 
 OUT_DIR = ROOT / "artifacts/demo/week18_prompt_task_seed_cloud_gate"
 INPUTS_DIR = OUT_DIR / "inputs"

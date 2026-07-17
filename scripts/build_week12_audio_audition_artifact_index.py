@@ -49,8 +49,8 @@ def load_jsonl(path: Path) -> list[dict[str, Any]]:
 
 
 def main() -> int:
-    mainbase = Path.home() / "work" / "audio_engineering_repo_skeleton_v1"
-    cloud = Path.home() / "work" / "ai-job-platform-cloud"
+    mainbase = Path.home() / "work" / "grt_work" / "audio_engineering_repo_skeleton_v1"
+    cloud = Path.home() / "work" / "grt_work" / "ai-job-platform-cloud"
 
     audition_manifest_rel = Path("artifacts/manifests/week12_procedural_audio_audition_manifest_v0.json")
     audition_metrics_jsonl_rel = Path("artifacts/manifests/week12_procedural_audio_audition_metrics_v0.jsonl")

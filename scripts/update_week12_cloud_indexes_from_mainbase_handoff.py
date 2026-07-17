@@ -103,9 +103,9 @@ def panel(panel_id: int, title: str, markdown: str, x: int, y: int, w: int, h: i
 
 
 def main() -> int:
-    cloud_root = Path.home() / "work" / "ai-job-platform-cloud"
-    mainbase_root = Path.home() / "work" / "audio_engineering_repo_skeleton_v1"
-    java_root = Path.home() / "work" / "media-task-platform-java"
+    cloud_root = Path.home() / "work" / "grt_work" / "ai-job-platform-cloud"
+    mainbase_root = Path.home() / "work" / "grt_work" / "audio_engineering_repo_skeleton_v1"
+    java_root = Path.home() / "work" / "grt_work" / "media-task-platform-java"
 
     handoff_root = mainbase_root / "artifacts/exports/week12_soundlayer_blueprint_v1_cloud_handoff"
     handoff_manifest_path = handoff_root / "handoff_manifest.json"

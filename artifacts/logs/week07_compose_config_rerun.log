@@ -19,17 +19,17 @@ services:
         protocol: tcp
     volumes:
       - type: bind
-        source: /home/GRT/work/ai-job-platform-cloud/observability/grafana/provisioning/datasources
+        source: /home/GRT/work/grt_work/ai-job-platform-cloud/observability/grafana/provisioning/datasources
         target: /etc/grafana/provisioning/datasources
         read_only: true
         bind: {}
       - type: bind
-        source: /home/GRT/work/ai-job-platform-cloud/observability/grafana/provisioning/dashboards
+        source: /home/GRT/work/grt_work/ai-job-platform-cloud/observability/grafana/provisioning/dashboards
         target: /etc/grafana/provisioning/dashboards
         read_only: true
         bind: {}
       - type: bind
-        source: /home/GRT/work/ai-job-platform-cloud/observability/grafana/dashboards
+        source: /home/GRT/work/grt_work/ai-job-platform-cloud/observability/grafana/dashboards
         target: /var/lib/grafana/dashboards
         read_only: true
         bind: {}
@@ -50,7 +50,7 @@ services:
         protocol: tcp
     volumes:
       - type: bind
-        source: /home/GRT/work/ai-job-platform-cloud/observability/prometheus/prometheus.yml
+        source: /home/GRT/work/grt_work/ai-job-platform-cloud/observability/prometheus/prometheus.yml
         target: /etc/prometheus/prometheus.yml
         read_only: true
         bind: {}

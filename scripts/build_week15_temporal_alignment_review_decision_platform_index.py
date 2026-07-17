@@ -27,7 +27,7 @@ def main() -> int:
     mainbase_root = Path(
         os.environ.get(
             "MAINBASE_REPO",
-            str(Path.home() / "work" / "audio_engineering_repo_skeleton_v1"),
+            str(Path.home() / "work" / "grt_work" / "audio_engineering_repo_skeleton_v1"),
         )
     )
 

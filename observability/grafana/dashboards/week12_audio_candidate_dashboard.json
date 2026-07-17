@@ -293,7 +293,7 @@
     "from": "now-6h",
     "to": "now"
   },
-  "week12StaticSource": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week12_audio_candidate_runtime_index.json",
+  "week12StaticSource": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week12_audio_candidate_runtime_index.json",
   "week12Boundary": [
     "local_cloud_index_only",
     "not_production_object_storage",

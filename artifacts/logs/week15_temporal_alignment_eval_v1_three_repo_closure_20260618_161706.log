@@ -21,6 +21,6 @@
     "preferredSourceMode": "java_explicit_risk_contract",
     "legacySourceMode": "cloud_inferred_taxonomy"
   },
-  "out": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_eval_v1_three_repo_closure_index.json",
-  "prom": "/home/GRT/work/ai-job-platform-cloud/observability/prometheus/week15_temporal_alignment_eval_v1_three_repo_closure_metrics.prom"
+  "out": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_eval_v1_three_repo_closure_index.json",
+  "prom": "/home/GRT/work/grt_work/ai-job-platform-cloud/observability/prometheus/week15_temporal_alignment_eval_v1_three_repo_closure_metrics.prom"
 }

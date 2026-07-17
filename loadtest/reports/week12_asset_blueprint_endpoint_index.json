@@ -4,28 +4,28 @@
   "status": "PASS",
   "repos": {
     "mainbase": {
-      "path": "/home/GRT/work/audio_engineering_repo_skeleton_v1",
+      "path": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1",
       "head": "0d7e146",
       "status": "## main...origin/main"
     },
     "java": {
-      "path": "/home/GRT/work/media-task-platform-java",
+      "path": "/home/GRT/work/grt_work/media-task-platform-java",
       "head": "7d3d51f",
       "status": "## main...origin/main"
     },
     "cloud": {
-      "path": "/home/GRT/work/ai-job-platform-cloud",
+      "path": "/home/GRT/work/grt_work/ai-job-platform-cloud",
       "head": "99c72a7",
       "status": "## main...origin/main\n?? artifacts/logs/week12_asset_blueprint_endpoint_index_20260601_191457.log\n?? scripts/build_week12_asset_blueprint_endpoint_index.py"
     }
   },
   "mainbase_blueprint_v1": {
-    "manifest_path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_blueprint_v1_manifest.json",
-    "final_summary_path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_blueprint_v1_final_summary.json",
-    "schema_path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/schemas/soundlayer_blueprint_v1.schema.json",
-    "timeline_jsonl_path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_event_timeline.jsonl",
-    "timeline_csv_path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_event_timeline.csv",
-    "contact_sheet_path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/visuals/week12_event_timeline_contact_sheet.png",
+    "manifest_path": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_blueprint_v1_manifest.json",
+    "final_summary_path": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_blueprint_v1_final_summary.json",
+    "schema_path": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/schemas/soundlayer_blueprint_v1.schema.json",
+    "timeline_jsonl_path": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_event_timeline.jsonl",
+    "timeline_csv_path": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_event_timeline.csv",
+    "contact_sheet_path": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/visuals/week12_event_timeline_contact_sheet.png",
     "manifest_summary": {
       "seed_count_in_source": 5,
       "blueprint_count": 5,
@@ -140,11 +140,11 @@
     ]
   },
   "java_asset_blueprint_endpoint": {
-    "controller_path": "/home/GRT/work/media-task-platform-java/src/main/java/com/ryan/media/api/MediaTaskAssetBlueprintController.java",
-    "binding_path": "/home/GRT/work/media-task-platform-java/src/main/java/com/ryan/media/model/MediaTaskAssetBlueprintBinding.java",
-    "view_path": "/home/GRT/work/media-task-platform-java/src/main/java/com/ryan/media/model/MediaTaskAssetBlueprintView.java",
-    "controller_test_path": "/home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskAssetBlueprintControllerTest.java",
-    "latest_http_log": "/home/GRT/work/media-task-platform-java/artifacts/logs/week12_asset_blueprint_controller_http_20260601_190347.log",
+    "controller_path": "/home/GRT/work/grt_work/media-task-platform-java/src/main/java/com/ryan/media/api/MediaTaskAssetBlueprintController.java",
+    "binding_path": "/home/GRT/work/grt_work/media-task-platform-java/src/main/java/com/ryan/media/model/MediaTaskAssetBlueprintBinding.java",
+    "view_path": "/home/GRT/work/grt_work/media-task-platform-java/src/main/java/com/ryan/media/model/MediaTaskAssetBlueprintView.java",
+    "controller_test_path": "/home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskAssetBlueprintControllerTest.java",
+    "latest_http_log": "/home/GRT/work/grt_work/media-task-platform-java/artifacts/logs/week12_asset_blueprint_controller_http_20260601_190347.log",
     "method": "GET",
     "path": "/api/media-tasks/{taskId}/asset-blueprint",
     "default_input_asset_uri": "file://samples/week12/city_walk.mp4",

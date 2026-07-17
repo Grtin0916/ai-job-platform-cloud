@@ -1,6 +1,6 @@
 ===== Week12 Cloud asset-blueprint endpoint index =====
 time=2026-06-01T19:14:57+08:00
-repo=/home/GRT/work/ai-job-platform-cloud
+repo=/home/GRT/work/grt_work/ai-job-platform-cloud
 head=99c72a7
 command=python scripts/build_week12_asset_blueprint_endpoint_index.py
 

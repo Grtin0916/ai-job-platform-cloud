@@ -3,12 +3,12 @@
   "generated_at_utc": "2026-07-02T03:13:55.941515+00:00",
   "source": "Mainbase true-aware platform bridge",
   "copied_artifacts": {
-    "bridge": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week17_true_aware_result_card/week17_true_aware_platform_bridge_payload_20260702.json",
-    "claim_guard": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week17_true_aware_result_card/week17_true_aware_claim_guard_20260702.json",
-    "raw_payload": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week17_true_aware_result_card/week17_true_aware_result_card_payload_20260702.json"
+    "bridge": "/home/GRT/work/grt_work/media-task-platform-java/artifacts/manifests/week17_true_aware_result_card/week17_true_aware_platform_bridge_payload_20260702.json",
+    "claim_guard": "/home/GRT/work/grt_work/media-task-platform-java/artifacts/manifests/week17_true_aware_result_card/week17_true_aware_claim_guard_20260702.json",
+    "raw_payload": "/home/GRT/work/grt_work/media-task-platform-java/artifacts/manifests/week17_true_aware_result_card/week17_true_aware_result_card_payload_20260702.json"
   },
-  "controller": "/home/GRT/work/media-task-platform-java/src/main/java/com/ryan/media/controller/Week17TrueAwareResultCardController.java",
-  "integration_test": "/home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/controller/Week17TrueAwareResultCardControllerIT.java",
+  "controller": "/home/GRT/work/grt_work/media-task-platform-java/src/main/java/com/ryan/media/controller/Week17TrueAwareResultCardController.java",
+  "integration_test": "/home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/controller/Week17TrueAwareResultCardControllerIT.java",
   "endpoints": [
     "GET /api/week17/true-aware/result-card/health",
     "GET /api/week17/true-aware/result-card/summary",

@@ -2,7 +2,7 @@
   "schemaVersion": "week12.asset-blueprint-runtime-index.v2",
   "generatedAt": "2026-06-03T08:54:35.285895+00:00",
   "status": "PASS",
-  "javaRuntimeSummaryPath": "/home/GRT/work/media-task-platform-java/artifacts/logs/week12_asset_blueprint_http_runtime_smoke_summary.json",
+  "javaRuntimeSummaryPath": "/home/GRT/work/grt_work/media-task-platform-java/artifacts/logs/week12_asset_blueprint_http_runtime_smoke_summary.json",
   "javaRuntimeSummarySha256": "7c22f9fe82ea5c9d63af8381d1e21fc4658cc1d69b72e7b287549cce2fc3350e",
   "javaRuntimeStatus": "PASS",
   "javaRuntimeHttpCode": "200",

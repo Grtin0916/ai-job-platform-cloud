@@ -4,19 +4,19 @@
   "status": "PASS",
   "source": "java.week12.audio_candidate_api_http_it",
   "java": {
-    "summaryUri": "/home/GRT/work/media-task-platform-java/artifacts/runtime/week12_audio_candidate_api_http_it_summary.json",
-    "bodyUri": "/home/GRT/work/media-task-platform-java/artifacts/runtime/week12_audio_candidate_api_http_it_body.json",
+    "summaryUri": "/home/GRT/work/grt_work/media-task-platform-java/artifacts/runtime/week12_audio_candidate_api_http_it_summary.json",
+    "bodyUri": "/home/GRT/work/grt_work/media-task-platform-java/artifacts/runtime/week12_audio_candidate_api_http_it_body.json",
     "endpoint": "/api/media-tasks/week12-demo-task/audio-candidates",
     "verificationMode": "SpringBootTest.RANDOM_PORT",
     "httpCode": 200
   },
   "mainbase": {
-    "reviewQueueUri": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/evals/week12_audio_audition_review_queue_v0.json",
+    "reviewQueueUri": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/evals/week12_audio_audition_review_queue_v0.json",
     "candidateCount": 10,
     "audioProbeOkCount": 10
   },
   "cloudPreviousIndex": {
-    "audioAuditionArtifactIndexUri": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week12_audio_audition_artifact_index.json",
+    "audioAuditionArtifactIndexUri": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week12_audio_audition_artifact_index.json",
     "present": true,
     "status": "PASS"
   },

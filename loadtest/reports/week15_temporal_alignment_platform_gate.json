@@ -4,8 +4,8 @@
   "status": "PASS",
   "platformDecision": "TEMPORAL_ALIGNMENT_REMEDIATION_PLATFORM_READY_INPUT",
   "inputs": {
-    "mainbaseRegressionGate": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/evals/week15_temporal_alignment_regression_gate.json",
-    "javaRemediationApiContractReport": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week15_temporal_alignment_remediation_api_contract_report.json"
+    "mainbaseRegressionGate": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/evals/week15_temporal_alignment_regression_gate.json",
+    "javaRemediationApiContractReport": "/home/GRT/work/grt_work/media-task-platform-java/artifacts/manifests/week15_temporal_alignment_remediation_api_contract_report.json"
   },
   "checks": {
     "mainbaseGatePass": true,

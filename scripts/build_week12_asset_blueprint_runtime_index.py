@@ -113,9 +113,9 @@ def extract_blocker(java_root: Path) -> dict[str, Any]:
 
 
 def main() -> int:
-    cloud_root = Path.home() / "work" / "ai-job-platform-cloud"
-    mainbase_root = Path.home() / "work" / "audio_engineering_repo_skeleton_v1"
-    java_root = Path.home() / "work" / "media-task-platform-java"
+    cloud_root = Path.home() / "work" / "grt_work" / "ai-job-platform-cloud"
+    mainbase_root = Path.home() / "work" / "grt_work" / "audio_engineering_repo_skeleton_v1"
+    java_root = Path.home() / "work" / "grt_work" / "media-task-platform-java"
 
     out_dir = cloud_root / "loadtest" / "reports"
     log_dir = cloud_root / "artifacts" / "logs"

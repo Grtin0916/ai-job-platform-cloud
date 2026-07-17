@@ -1,5 +1,5 @@
 {
-  "report": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week13_pod_audio_read_simulation_report.json",
+  "report": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week13_pod_audio_read_simulation_report.json",
   "status": "PASS",
   "candidateCount": 10,
   "podPathMappedCount": 10,

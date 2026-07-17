@@ -21,19 +21,19 @@
   },
   "inputs": {
     "mainbaseFeedback": {
-      "path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week13_platform_promotion_feedback_index.json",
+      "path": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week13_platform_promotion_feedback_index.json",
       "exists": true
     },
     "javaReadinessApiContract": {
-      "path": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week13_candidate_bank_demo_readiness_api_contract_report.json",
+      "path": "/home/GRT/work/grt_work/media-task-platform-java/artifacts/manifests/week13_candidate_bank_demo_readiness_api_contract_report.json",
       "exists": true
     },
     "cloudPromotionGate": {
-      "path": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week13_candidate_bank_platform_promotion_gate.json",
+      "path": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week13_candidate_bank_platform_promotion_gate.json",
       "exists": true
     }
   },
-  "latestCloudPromotionGateCheckerLog": "/home/GRT/work/ai-job-platform-cloud/artifacts/logs/week13_candidate_bank_platform_promotion_gate_check_20260611_174717.log",
+  "latestCloudPromotionGateCheckerLog": "/home/GRT/work/grt_work/ai-job-platform-cloud/artifacts/logs/week13_candidate_bank_platform_promotion_gate_check_20260611_174717.log",
   "summary": {
     "mainbaseStatus": "PASS",
     "mainbasePromotionDecision": "PROMOTE_TO_WEEK13_DEMO_READY",

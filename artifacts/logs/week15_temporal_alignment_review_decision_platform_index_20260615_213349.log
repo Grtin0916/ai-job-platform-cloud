@@ -4,8 +4,8 @@
   "status": "PASS",
   "platformDecision": "MANUAL_REVIEW_DECISION_CONSUMED_BY_CLOUD_PLATFORM_INDEX",
   "inputs": {
-    "mainbaseManualReviewDecision": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/reviews/week15_temporal_alignment_manual_review_decision.json",
-    "cloudEvidenceGate": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_evidence_gate.json"
+    "mainbaseManualReviewDecision": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/reviews/week15_temporal_alignment_manual_review_decision.json",
+    "cloudEvidenceGate": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_evidence_gate.json"
   },
   "sourceHeads": {
     "mainbaseManualReviewDecisionCommitHead": "3c4579a",
@@ -80,5 +80,5 @@
     "does_not_claim_production_slo"
   ]
 }
-WROTE_INDEX=/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_review_decision_platform_index.json
-WROTE_METRICS=/home/GRT/work/ai-job-platform-cloud/observability/prometheus/week15_temporal_alignment_review_decision_metrics.prom
+WROTE_INDEX=/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_review_decision_platform_index.json
+WROTE_METRICS=/home/GRT/work/grt_work/ai-job-platform-cloud/observability/prometheus/week15_temporal_alignment_review_decision_metrics.prom

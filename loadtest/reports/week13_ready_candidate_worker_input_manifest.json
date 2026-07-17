@@ -10,9 +10,9 @@
   },
   "javaApiEndpoint": "/api/week13/audio-artifact-registry/materialized-readiness",
   "sourceFiles": {
-    "mainbaseFeedback": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week13_cloud_materialization_feedback_index.json",
-    "cloudPodRead": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week13_pod_audio_read_simulation_report.json",
-    "javaApiContract": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week13_materialized_readiness_api_contract_report.json"
+    "mainbaseFeedback": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week13_cloud_materialization_feedback_index.json",
+    "cloudPodRead": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week13_pod_audio_read_simulation_report.json",
+    "javaApiContract": "/home/GRT/work/grt_work/media-task-platform-java/artifacts/manifests/week13_materialized_readiness_api_contract_report.json"
   },
   "blockers": [],
   "boundary": [

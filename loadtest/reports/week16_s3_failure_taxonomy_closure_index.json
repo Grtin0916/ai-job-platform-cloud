@@ -5,7 +5,7 @@
   "decisionErrors": [],
   "repositories": {
     "mainbase": {
-      "path": "/home/GRT/work/audio_engineering_repo_skeleton_v1",
+      "path": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1",
       "head": "70d6a7f",
       "originMain": "70d6a7f",
       "aheadBehind": "0 0",
@@ -21,7 +21,7 @@
       "cleanAndSynced": true
     },
     "java": {
-      "path": "/home/GRT/work/media-task-platform-java",
+      "path": "/home/GRT/work/grt_work/media-task-platform-java",
       "head": "03f8f21",
       "originMain": "03f8f21",
       "aheadBehind": "0 0",
@@ -37,7 +37,7 @@
       "cleanAndSynced": true
     },
     "cloud": {
-      "path": "/home/GRT/work/ai-job-platform-cloud",
+      "path": "/home/GRT/work/grt_work/ai-job-platform-cloud",
       "head": "b0eb8c1",
       "originMain": "b0eb8c1",
       "aheadBehind": "0 0",
@@ -58,7 +58,7 @@
   },
   "evidenceChain": {
     "mainbase": {
-      "path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/evals/week16_temporal_alignment_failure_regression_report.json",
+      "path": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/evals/week16_temporal_alignment_failure_regression_report.json",
       "decision": "PASS_WEEK16_FAILURE_REGRESSION_REPORT_V0_EVIDENCE_DRIVEN",
       "classificationMode": "evidence_driven_with_expected_fixture_consistency_guard",
       "summary": {
@@ -96,7 +96,7 @@
       }
     },
     "java": {
-      "path": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week16_java_temporal_alignment_rerun_plan_report.json",
+      "path": "/home/GRT/work/grt_work/media-task-platform-java/artifacts/manifests/week16_java_temporal_alignment_rerun_plan_report.json",
       "decision": "PASS_WEEK16_JAVA_RERUN_PLAN_IT",
       "apiEndpoint": "/api/week16/temporal-alignment/rerun-plan",
       "sourceMainbaseDecision": "PASS_WEEK16_FAILURE_REGRESSION_REPORT_V0_EVIDENCE_DRIVEN",
@@ -136,7 +136,7 @@
       }
     },
     "cloud": {
-      "path": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week16_failure_taxonomy_fault_drill.json",
+      "path": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week16_failure_taxonomy_fault_drill.json",
       "decision": "PASS_WEEK16_FAILURE_TAXONOMY_FAULT_DRILL",
       "sourceJavaDecision": "PASS_WEEK16_JAVA_RERUN_PLAN_IT",
       "sourceMainbaseDecision": "PASS_WEEK16_FAILURE_REGRESSION_REPORT_V0_EVIDENCE_DRIVEN",
@@ -200,8 +200,8 @@
   "artifacts": {
     "closureIndex": "loadtest/reports/week16_s3_failure_taxonomy_closure_index.json",
     "closureMetrics": "observability/prometheus/week16_s3_failure_taxonomy_closure_metrics.prom",
-    "mainbaseReport": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/evals/week16_temporal_alignment_failure_regression_report.json",
-    "javaReport": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week16_java_temporal_alignment_rerun_plan_report.json",
-    "cloudFaultDrillReport": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week16_failure_taxonomy_fault_drill.json"
+    "mainbaseReport": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/evals/week16_temporal_alignment_failure_regression_report.json",
+    "javaReport": "/home/GRT/work/grt_work/media-task-platform-java/artifacts/manifests/week16_java_temporal_alignment_rerun_plan_report.json",
+    "cloudFaultDrillReport": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week16_failure_taxonomy_fault_drill.json"
   }
 }

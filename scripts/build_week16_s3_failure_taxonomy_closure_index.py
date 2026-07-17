@@ -8,8 +8,8 @@ from pathlib import Path
 from typing import Any
 
 CLOUD = Path(os.environ.get("CLOUD", Path.cwd())).resolve()
-MAINBASE = Path(os.environ.get("MAINBASE", "~/work/audio_engineering_repo_skeleton_v1")).expanduser().resolve()
-JAVA = Path(os.environ.get("JAVA", "~/work/media-task-platform-java")).expanduser().resolve()
+MAINBASE = Path(os.environ.get("MAINBASE", "~/work/grt_work/audio_engineering_repo_skeleton_v1")).expanduser().resolve()
+JAVA = Path(os.environ.get("JAVA", "~/work/grt_work/media-task-platform-java")).expanduser().resolve()
 
 OUT_JSON = CLOUD / "loadtest/reports/week16_s3_failure_taxonomy_closure_index.json"
 OUT_METRICS = CLOUD / "observability/prometheus/week16_s3_failure_taxonomy_closure_metrics.prom"

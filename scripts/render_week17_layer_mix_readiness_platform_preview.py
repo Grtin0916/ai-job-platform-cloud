@@ -10,8 +10,8 @@ from typing import Any
 
 
 ROOT = Path.cwd()
-JAVA = Path(os.environ.get("JAVA", str(Path.home() / "work" / "media-task-platform-java")))
-MAINBASE = Path(os.environ.get("MAINBASE", str(Path.home() / "work" / "audio_engineering_repo_skeleton_v1")))
+JAVA = Path(os.environ.get("JAVA", str(Path.home() / "work" / "grt_work" / "media-task-platform-java")))
+MAINBASE = Path(os.environ.get("MAINBASE", str(Path.home() / "work" / "grt_work" / "audio_engineering_repo_skeleton_v1")))
 
 JAVA_REPORT = JAVA / "artifacts/manifests/week17_layer_mix_input_readiness_api_report.json"
 MAINBASE_REPORT = MAINBASE / "artifacts/evals/week16_s3_to_w17_layer_mix_input.json"

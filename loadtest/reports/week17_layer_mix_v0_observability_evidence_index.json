@@ -5,7 +5,7 @@
   "evidenceIndexReady": true,
   "git": {
     "mainbase": {
-      "path": "/home/GRT/work/audio_engineering_repo_skeleton_v1",
+      "path": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1",
       "exists": true,
       "isGitRepo": true,
       "branch": "main",
@@ -17,7 +17,7 @@
       "recentCommit": "d9a6df0 feat: run week17 layer mixer v0 placeholder mix"
     },
     "java": {
-      "path": "/home/GRT/work/media-task-platform-java",
+      "path": "/home/GRT/work/grt_work/media-task-platform-java",
       "exists": true,
       "isGitRepo": true,
       "branch": "main",
@@ -29,7 +29,7 @@
       "recentCommit": "d6928dc feat: expose week17 layer mix v0 result preview api"
     },
     "cloud": {
-      "path": "/home/GRT/work/ai-job-platform-cloud",
+      "path": "/home/GRT/work/grt_work/ai-job-platform-cloud",
       "exists": true,
       "isGitRepo": true,
       "branch": "main",
@@ -43,84 +43,84 @@
   },
   "inputStatus": {
     "mainbase_layer_mix_manifest": {
-      "path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/evals/week17_layer_mix_v0_manifest.json",
+      "path": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/evals/week17_layer_mix_v0_manifest.json",
       "exists": true,
       "sizeBytes": 11955,
       "jsonLoadable": true,
       "decision": "PASS_WEEK17_LAYER_MIX_V0_PLACEHOLDER_CONTROL"
     },
     "mainbase_layer_mix_wav": {
-      "path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/audio/week17_layer_mix_v0/week17_layer_mix_v0_placeholder_control_mix.wav",
+      "path": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/audio/week17_layer_mix_v0/week17_layer_mix_v0_placeholder_control_mix.wav",
       "exists": true,
       "sizeBytes": 88244,
       "jsonLoadable": null,
       "decision": null
     },
     "java_result_preview_report": {
-      "path": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week17_layer_mix_v0_result_preview_api_report.json",
+      "path": "/home/GRT/work/grt_work/media-task-platform-java/artifacts/manifests/week17_layer_mix_v0_result_preview_api_report.json",
       "exists": true,
       "sizeBytes": 1250,
       "jsonLoadable": true,
       "decision": "PASS_WEEK17_LAYER_MIX_V0_RESULT_PREVIEW_API"
     },
     "java_result_preview_payload": {
-      "path": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week17_layer_mix_v0_result_mainbase_payload.json",
+      "path": "/home/GRT/work/grt_work/media-task-platform-java/artifacts/manifests/week17_layer_mix_v0_result_mainbase_payload.json",
       "exists": true,
       "sizeBytes": 1337,
       "jsonLoadable": true,
       "decision": "PASS_WEEK17_LAYER_MIX_V0_PLACEHOLDER_CONTROL"
     },
     "cloud_result_platform_preview": {
-      "path": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week17_layer_mix_v0_result_platform_preview.json",
+      "path": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week17_layer_mix_v0_result_platform_preview.json",
       "exists": true,
       "sizeBytes": 1915,
       "jsonLoadable": true,
       "decision": "PASS_WEEK17_LAYER_MIX_V0_PLATFORM_PREVIEW"
     },
     "cloud_action_gate_report": {
-      "path": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week17_layer_mix_v0_action_gate.json",
+      "path": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week17_layer_mix_v0_action_gate.json",
       "exists": true,
       "sizeBytes": 4231,
       "jsonLoadable": true,
       "decision": "PASS_WEEK17_LAYER_MIX_V0_ACTION_GATE_WITH_NEGATIVE_CONTROLS"
     },
     "cloud_alert_rules_report": {
-      "path": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week17_layer_mix_v0_action_gate_alert_rules_report.json",
+      "path": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week17_layer_mix_v0_action_gate_alert_rules_report.json",
       "exists": true,
       "sizeBytes": 1573,
       "jsonLoadable": true,
       "decision": "PARTIAL_WEEK17_LAYER_MIX_V0_ALERT_RULES_PROMTOOL_BLOCKED_LOCAL_SEMANTIC_PASS"
     },
     "cloud_alert_semantic_fallback_report": {
-      "path": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week17_layer_mix_v0_action_gate_alert_rules_semantic_fallback_report.json",
+      "path": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week17_layer_mix_v0_action_gate_alert_rules_semantic_fallback_report.json",
       "exists": true,
       "sizeBytes": 7616,
       "jsonLoadable": true,
       "decision": "PARTIAL_WEEK17_LAYER_MIX_V0_ALERT_RULES_PROMTOOL_BLOCKED_LOCAL_SEMANTIC_PASS"
     },
     "cloud_alert_semantic_fallback_metrics_report": {
-      "path": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week17_layer_mix_v0_alert_semantic_fallback_metrics_report.json",
+      "path": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week17_layer_mix_v0_alert_semantic_fallback_metrics_report.json",
       "exists": true,
       "sizeBytes": 1672,
       "jsonLoadable": true,
       "decision": "PASS_WEEK17_LAYER_MIX_V0_ALERT_SEMANTIC_FALLBACK_METRICS_READY"
     },
     "cloud_alert_semantic_fallback_metrics_prom": {
-      "path": "/home/GRT/work/ai-job-platform-cloud/observability/prometheus/week17_layer_mix_v0_action_gate_alert_semantic_fallback.prom",
+      "path": "/home/GRT/work/grt_work/ai-job-platform-cloud/observability/prometheus/week17_layer_mix_v0_action_gate_alert_semantic_fallback.prom",
       "exists": true,
       "sizeBytes": 4605,
       "jsonLoadable": null,
       "decision": null
     },
     "cloud_action_gate_metrics_prom": {
-      "path": "/home/GRT/work/ai-job-platform-cloud/observability/prometheus/week17_layer_mix_v0_action_gate.prom",
+      "path": "/home/GRT/work/grt_work/ai-job-platform-cloud/observability/prometheus/week17_layer_mix_v0_action_gate.prom",
       "exists": true,
       "sizeBytes": 8941,
       "jsonLoadable": null,
       "decision": null
     },
     "cloud_official_promtool_report_optional": {
-      "path": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week17_layer_mix_v0_alert_promtool_official_report.json",
+      "path": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week17_layer_mix_v0_alert_promtool_official_report.json",
       "exists": false,
       "sizeBytes": 0,
       "jsonLoadable": false,

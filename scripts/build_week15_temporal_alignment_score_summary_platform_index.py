@@ -46,7 +46,7 @@ def main() -> int:
     java_repo = Path(
         os.environ.get(
             "JAVA_REPO",
-            str(Path.home() / "work" / "media-task-platform-java"),
+            str(Path.home() / "work" / "grt_work" / "media-task-platform-java"),
         )
     )
 

@@ -4,7 +4,7 @@
   "status": "PASS",
   "repos": {
     "mainbase": {
-      "root": "/home/GRT/work/audio_engineering_repo_skeleton_v1",
+      "root": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1",
       "git_status": "## main...origin/main",
       "head": "4992082",
       "origin_main": "4992082",
@@ -27,7 +27,7 @@
       }
     },
     "java": {
-      "root": "/home/GRT/work/media-task-platform-java",
+      "root": "/home/GRT/work/grt_work/media-task-platform-java",
       "git_status": "## main...origin/main",
       "head": "18f1f23",
       "origin_main": "18f1f23",
@@ -65,7 +65,7 @@
       }
     },
     "cloud": {
-      "root": "/home/GRT/work/ai-job-platform-cloud",
+      "root": "/home/GRT/work/grt_work/ai-job-platform-cloud",
       "git_status": "## main...origin/main\n?? scripts/build_week12_crossrepo_readiness_manifest.py",
       "head": "48ea3a1",
       "origin_main": "48ea3a1",

@@ -3,7 +3,7 @@
   "scope": "week12_trirepo_audio_timing_runtime_contract_closure_v3_finalized",
   "repoStateBeforeManifestWrite": {
     "mainbase": {
-      "path": "/home/GRT/work/audio_engineering_repo_skeleton_v1",
+      "path": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1",
       "head": "28e79ff",
       "originMain": "28e79ff",
       "cleanBeforeManifestWrite": true,
@@ -11,7 +11,7 @@
       "latestCommit": "28e79ff feat: add week12 audio timing alignment evidence"
     },
     "cloud": {
-      "path": "/home/GRT/work/ai-job-platform-cloud",
+      "path": "/home/GRT/work/grt_work/ai-job-platform-cloud",
       "head": "27b6b18",
       "originMain": "27b6b18",
       "cleanBeforeManifestWrite": false,
@@ -21,7 +21,7 @@
       "latestCommit": "27b6b18 fix: parse closure dirty paths robustly"
     },
     "java": {
-      "path": "/home/GRT/work/media-task-platform-java",
+      "path": "/home/GRT/work/grt_work/media-task-platform-java",
       "head": "88d8d28",
       "originMain": "88d8d28",
       "cleanBeforeManifestWrite": true,
@@ -46,9 +46,9 @@
       "commit": "28e79ff",
       "behavior": "binds 10 audio candidates to event timing windows and repairs temporal coordinate frame",
       "evidence": [
-        "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_audio_candidate_timing_binding_report_v2.json",
-        "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_temporal_alignment_probe_report_v1.json",
-        "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_mainbase_audio_timing_handoff_index.json"
+        "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_audio_candidate_timing_binding_report_v2.json",
+        "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_temporal_alignment_probe_report_v1.json",
+        "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_mainbase_audio_timing_handoff_index.json"
       ]
     },
     {
@@ -56,8 +56,8 @@
       "commit": "a1f7159",
       "behavior": "consumes Mainbase timing evidence and converts it into runtime placement semantics",
       "evidence": [
-        "/home/GRT/work/ai-job-platform-cloud/artifacts/manifests/week12_cloud_mainbase_audio_timing_runtime_index.json",
-        "/home/GRT/work/ai-job-platform-cloud/observability/grafana/dashboards/week12_audio_timing_alignment_runtime_stub.json"
+        "/home/GRT/work/grt_work/ai-job-platform-cloud/artifacts/manifests/week12_cloud_mainbase_audio_timing_runtime_index.json",
+        "/home/GRT/work/grt_work/ai-job-platform-cloud/observability/grafana/dashboards/week12_audio_timing_alignment_runtime_stub.json"
       ]
     },
     {
@@ -65,10 +65,10 @@
       "commit": "88d8d28",
       "behavior": "exposes Cloud-consumed runtime semantics through HTTP contract and RANDOM_PORT IT",
       "evidence": [
-        "/home/GRT/work/media-task-platform-java/artifacts/manifests/week12_java_audio_timing_runtime_contract_report.json",
-        "/home/GRT/work/media-task-platform-java/src/main/resources/week12/week12_cloud_mainbase_audio_timing_runtime_index.json",
-        "/home/GRT/work/media-task-platform-java/src/main/java/com/ryan/media/week12/Week12AudioTimingRuntimeContractController.java",
-        "/home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/week12/Week12AudioTimingRuntimeContractIT.java"
+        "/home/GRT/work/grt_work/media-task-platform-java/artifacts/manifests/week12_java_audio_timing_runtime_contract_report.json",
+        "/home/GRT/work/grt_work/media-task-platform-java/src/main/resources/week12/week12_cloud_mainbase_audio_timing_runtime_index.json",
+        "/home/GRT/work/grt_work/media-task-platform-java/src/main/java/com/ryan/media/week12/Week12AudioTimingRuntimeContractController.java",
+        "/home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/week12/Week12AudioTimingRuntimeContractIT.java"
       ]
     }
   ],

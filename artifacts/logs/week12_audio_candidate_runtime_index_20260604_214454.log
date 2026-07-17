@@ -6,6 +6,6 @@
   "semanticFidelityClaimedAny": false,
   "mixReadyClaimedAny": false,
   "blockers": [],
-  "index": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week12_audio_candidate_runtime_index.json",
-  "dashboard": "/home/GRT/work/ai-job-platform-cloud/observability/grafana/dashboards/week12_audio_candidate_dashboard.json"
+  "index": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week12_audio_candidate_runtime_index.json",
+  "dashboard": "/home/GRT/work/grt_work/ai-job-platform-cloud/observability/grafana/dashboards/week12_audio_candidate_dashboard.json"
 }

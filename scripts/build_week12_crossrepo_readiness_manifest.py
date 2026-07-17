@@ -9,8 +9,8 @@ from typing import Any
 
 
 CLOUD_ROOT = Path.cwd()
-MAINBASE_ROOT = Path.home() / "work" / "audio_engineering_repo_skeleton_v1"
-JAVA_ROOT = Path.home() / "work" / "media-task-platform-java"
+MAINBASE_ROOT = Path.home() / "work" / "grt_work" / "audio_engineering_repo_skeleton_v1"
+JAVA_ROOT = Path.home() / "work" / "grt_work" / "media-task-platform-java"
 
 OUT = CLOUD_ROOT / "artifacts" / "manifests" / "week12_crossrepo_readiness_manifest.json"
 LOG_DIR = CLOUD_ROOT / "artifacts" / "logs"

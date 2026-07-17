@@ -1,6 +1,6 @@
 {
-  "manifest": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week13_materialized_audio_artifact_manifest.json",
-  "mountContract": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week13_mount_read_contract.json",
+  "manifest": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week13_materialized_audio_artifact_manifest.json",
+  "mountContract": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week13_mount_read_contract.json",
   "status": "PASS",
   "mountStatus": "PASS",
   "candidateCount": 10,

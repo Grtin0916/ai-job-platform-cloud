@@ -17,8 +17,8 @@
     "ELIGIBLE_CONTROL_ONLY": 7,
     "MONITOR_ONLY_THRESHOLD_MARGIN": 1
   },
-  "outJson": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week17_layer_mix_readiness_platform_preview.json",
-  "outProm": "/home/GRT/work/ai-job-platform-cloud/observability/prometheus/week17_layer_mix_readiness_platform_preview.prom",
-  "outDashboard": "/home/GRT/work/ai-job-platform-cloud/observability/grafana/dashboards/week17_layer_mix_readiness_platform_preview.json",
-  "outRunbook": "/home/GRT/work/ai-job-platform-cloud/docs/runbooks/week17-layer-mix-readiness-platform-preview.md"
+  "outJson": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week17_layer_mix_readiness_platform_preview.json",
+  "outProm": "/home/GRT/work/grt_work/ai-job-platform-cloud/observability/prometheus/week17_layer_mix_readiness_platform_preview.prom",
+  "outDashboard": "/home/GRT/work/grt_work/ai-job-platform-cloud/observability/grafana/dashboards/week17_layer_mix_readiness_platform_preview.json",
+  "outRunbook": "/home/GRT/work/grt_work/ai-job-platform-cloud/docs/runbooks/week17-layer-mix-readiness-platform-preview.md"
 }

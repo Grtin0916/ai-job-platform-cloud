@@ -3,4 +3,4 @@ mainbase_artifacts_pass=True
 timeline_jsonl_rows=10
 timeline_csv_rows=10
 runtime_status=BLOCKED_BY_JAVA_RUNTIME
-out_path=/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week12_blueprint_artifact_path_index.json
+out_path=/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week12_blueprint_artifact_path_index.json

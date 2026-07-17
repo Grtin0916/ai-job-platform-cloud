@@ -89,7 +89,7 @@
       },
       "options": {
         "mode": "markdown",
-        "content": "## Java runtime blocker\n\n- Status: `CONFIRMED`\n- Type: `FLYWAY_H2_POSTGRESQL_TYPE_MISMATCH`\n- Evidence log: `/home/GRT/work/media-task-platform-java/artifacts/logs/week12_asset_blueprint_runtime_http_it_20260602_124842.log`\n\nThis dashboard does not claim Java HTTP runtime success."
+        "content": "## Java runtime blocker\n\n- Status: `CONFIRMED`\n- Type: `FLYWAY_H2_POSTGRESQL_TYPE_MISMATCH`\n- Evidence log: `/home/GRT/work/grt_work/media-task-platform-java/artifacts/logs/week12_asset_blueprint_runtime_http_it_20260602_124842.log`\n\nThis dashboard does not claim Java HTTP runtime success."
       }
     }
   ],

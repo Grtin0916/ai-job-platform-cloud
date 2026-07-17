@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(".")
-JAVA = Path.home() / "work" / "media-task-platform-java"
+JAVA = Path.home() / "work" / "grt_work" / "media-task-platform-java"
 
 JAVA_DIR = JAVA / "artifacts" / "manifests" / "week17_fallback_aware_model_race"
 JAVA_REPORT = JAVA_DIR / "week17_fallback_aware_model_race_api_report.json"

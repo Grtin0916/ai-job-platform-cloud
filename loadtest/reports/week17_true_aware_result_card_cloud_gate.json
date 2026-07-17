@@ -3,10 +3,10 @@
   "generated_at_utc": "2026-07-02T03:18:18.004766+00:00",
   "source_repo_role": "cloud",
   "input_contracts": {
-    "java_api_report": "/home/GRT/work/ai-job-platform-cloud/artifacts/demo/week17_true_aware_result_card_cloud_gate/inputs/week17_true_aware_result_card_api_report.json",
-    "java_bridge": "/home/GRT/work/ai-job-platform-cloud/artifacts/demo/week17_true_aware_result_card_cloud_gate/inputs/week17_true_aware_platform_bridge_payload_20260702.json",
-    "java_claim_guard": "/home/GRT/work/ai-job-platform-cloud/artifacts/demo/week17_true_aware_result_card_cloud_gate/inputs/week17_true_aware_claim_guard_20260702.json",
-    "mainbase_bridge": "/home/GRT/work/ai-job-platform-cloud/artifacts/demo/week17_true_aware_result_card_cloud_gate/inputs/week17_true_aware_platform_bridge_payload_20260702.json"
+    "java_api_report": "/home/GRT/work/grt_work/ai-job-platform-cloud/artifacts/demo/week17_true_aware_result_card_cloud_gate/inputs/week17_true_aware_result_card_api_report.json",
+    "java_bridge": "/home/GRT/work/grt_work/ai-job-platform-cloud/artifacts/demo/week17_true_aware_result_card_cloud_gate/inputs/week17_true_aware_platform_bridge_payload_20260702.json",
+    "java_claim_guard": "/home/GRT/work/grt_work/ai-job-platform-cloud/artifacts/demo/week17_true_aware_result_card_cloud_gate/inputs/week17_true_aware_claim_guard_20260702.json",
+    "mainbase_bridge": "/home/GRT/work/grt_work/ai-job-platform-cloud/artifacts/demo/week17_true_aware_result_card_cloud_gate/inputs/week17_true_aware_platform_bridge_payload_20260702.json"
   },
   "decision": {
     "readyForFridayDemoPack": true,

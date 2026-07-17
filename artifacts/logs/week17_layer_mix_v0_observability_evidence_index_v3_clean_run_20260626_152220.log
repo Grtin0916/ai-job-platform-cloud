@@ -11,8 +11,8 @@
   "allGitClean": true,
   "cloudWorktreeOnlyExpectedOutputs": true,
   "cloudUnexpectedChanges": [],
-  "json": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week17_layer_mix_v0_observability_evidence_index.json",
-  "prom": "/home/GRT/work/ai-job-platform-cloud/observability/prometheus/week17_layer_mix_v0_observability_evidence_index.prom",
-  "runbook": "/home/GRT/work/ai-job-platform-cloud/docs/runbooks/week17-layer-mix-v0-observability-evidence-index.md",
-  "log": "/home/GRT/work/ai-job-platform-cloud/artifacts/logs/week17_layer_mix_v0_observability_evidence_index_v3_20260626_152220.log"
+  "json": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week17_layer_mix_v0_observability_evidence_index.json",
+  "prom": "/home/GRT/work/grt_work/ai-job-platform-cloud/observability/prometheus/week17_layer_mix_v0_observability_evidence_index.prom",
+  "runbook": "/home/GRT/work/grt_work/ai-job-platform-cloud/docs/runbooks/week17-layer-mix-v0-observability-evidence-index.md",
+  "log": "/home/GRT/work/grt_work/ai-job-platform-cloud/artifacts/logs/week17_layer_mix_v0_observability_evidence_index_v3_20260626_152220.log"
 }

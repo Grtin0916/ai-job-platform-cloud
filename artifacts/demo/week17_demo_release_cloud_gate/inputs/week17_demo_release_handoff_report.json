@@ -3,8 +3,8 @@
   "generatedAtUtc": "2026-07-03T02:42:07.071698+00:00",
   "releaseHandoffReady": true,
   "source": {
-    "mainbaseRoot": "/home/GRT/work/audio_engineering_repo_skeleton_v1",
-    "releaseZip": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/demo/week17_true_aware_demo_release_20260703.zip",
+    "mainbaseRoot": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1",
+    "releaseZip": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/demo/week17_true_aware_demo_release_20260703.zip",
     "releaseZipExists": true,
     "releaseZipSizeBytes": 316311,
     "mainbaseVerifyDecision": "PASS",

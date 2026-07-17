@@ -4,9 +4,9 @@
   "status": "PASS",
   "platformDecision": "SCORE_SUMMARY_CONSUMED_BY_CLOUD_PLATFORM_INDEX",
   "inputs": {
-    "javaScoreSummaryContractReport": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week15_java_temporal_alignment_score_summary_contract_report.json",
-    "cloudDashboardReadyReport": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_dashboard_ready.json",
-    "cloudPlatformGateReport": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_platform_gate.json"
+    "javaScoreSummaryContractReport": "/home/GRT/work/grt_work/media-task-platform-java/artifacts/manifests/week15_java_temporal_alignment_score_summary_contract_report.json",
+    "cloudDashboardReadyReport": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_dashboard_ready.json",
+    "cloudPlatformGateReport": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_platform_gate.json"
   },
   "sourceHeads": {
     "mainbaseInputHead": "c0b4870",

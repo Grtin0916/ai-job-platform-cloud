@@ -12,11 +12,11 @@ from typing import Any
 
 DEFAULT_MAINBASE = os.environ.get(
     "MAINBASE",
-    str(Path.home() / "work/audio_engineering_repo_skeleton_v1"),
+    str(Path.home() / "work/grt_work/audio_engineering_repo_skeleton_v1"),
 )
 DEFAULT_JAVA = os.environ.get(
     "JAVA_REPO",
-    str(Path.home() / "work/media-task-platform-java"),
+    str(Path.home() / "work/grt_work/media-task-platform-java"),
 )
 
 DEFAULT_FEEDBACK = "artifacts/manifests/week13_cloud_materialization_feedback_index.json"

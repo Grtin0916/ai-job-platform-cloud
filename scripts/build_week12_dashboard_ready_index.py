@@ -33,7 +33,7 @@ def short_hash(value: str | None) -> str:
 
 
 def main() -> int:
-    cloud_root = Path.home() / "work" / "ai-job-platform-cloud"
+    cloud_root = Path.home() / "work" / "grt_work" / "ai-job-platform-cloud"
 
     artifact_index_path = cloud_root / "loadtest/reports/week12_blueprint_artifact_path_index.json"
     runtime_index_path = cloud_root / "loadtest/reports/week12_asset_blueprint_runtime_index.json"

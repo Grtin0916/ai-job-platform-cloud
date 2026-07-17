@@ -220,7 +220,7 @@ def main() -> int:
     ap.add_argument("--mount-contract", default=MOUNT_DEFAULT)
     ap.add_argument("--object-root", default=OBJECT_ROOT_DEFAULT)
     ap.add_argument("--pod-prefix", default=POD_PREFIX_DEFAULT)
-    ap.add_argument("--mainbase", default=os.environ.get("MAINBASE", str(Path.home() / "work/audio_engineering_repo_skeleton_v1")))
+    ap.add_argument("--mainbase", default=os.environ.get("MAINBASE", str(Path.home() / "work/grt_work/audio_engineering_repo_skeleton_v1")))
     args = ap.parse_args()
 
     cloud_root = Path.cwd().resolve()

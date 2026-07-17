@@ -9,21 +9,21 @@
   },
   "snapshots": {
     "mainbase": {
-      "repo": "/home/GRT/work/audio_engineering_repo_skeleton_v1",
+      "repo": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1",
       "head": "98af90c",
       "originMain": "98af90c",
       "aheadBehind": "0\t0",
       "porcelainCount": 0
     },
     "java": {
-      "repo": "/home/GRT/work/media-task-platform-java",
+      "repo": "/home/GRT/work/grt_work/media-task-platform-java",
       "head": "c62f304",
       "originMain": "c62f304",
       "aheadBehind": "0\t0",
       "porcelainCount": 0
     },
     "cloud": {
-      "repo": "/home/GRT/work/ai-job-platform-cloud",
+      "repo": "/home/GRT/work/grt_work/ai-job-platform-cloud",
       "head": "40ecc4e",
       "originMain": "40ecc4e",
       "aheadBehind": "0\t0",
@@ -37,11 +37,11 @@
     "cloudSignalPlatformGateSha256": "5190f74ee12d0c01dea4f7d140065532261420f43f7f95d5a219108856a5665d"
   },
   "inputs": {
-    "javaRegistryContract": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week15_java_temporal_alignment_review_state_registry_backed_contract_report.json",
-    "mainbaseSignalGate": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/reviews/week15_temporal_alignment_registry_backed_signal_assessment_gate.json",
-    "cloudRegistryPlatformGate": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_review_state_registry_backed_platform_gate.json",
-    "cloudSignalPlatformIndex": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_signal_assessment_platform_index.json",
-    "cloudSignalPlatformGate": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_signal_assessment_platform_gate.json"
+    "javaRegistryContract": "/home/GRT/work/grt_work/media-task-platform-java/artifacts/manifests/week15_java_temporal_alignment_review_state_registry_backed_contract_report.json",
+    "mainbaseSignalGate": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/reviews/week15_temporal_alignment_registry_backed_signal_assessment_gate.json",
+    "cloudRegistryPlatformGate": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_review_state_registry_backed_platform_gate.json",
+    "cloudSignalPlatformIndex": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_signal_assessment_platform_index.json",
+    "cloudSignalPlatformGate": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_signal_assessment_platform_gate.json"
   },
   "checks": {
     "mainbase_clean": true,

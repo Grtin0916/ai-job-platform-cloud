@@ -1,6 +1,6 @@
 {
-  "manifest": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week13_ready_candidate_worker_input_manifest.json",
-  "table": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week13_ready_candidate_worker_input_table.csv",
+  "manifest": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week13_ready_candidate_worker_input_manifest.json",
+  "table": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week13_ready_candidate_worker_input_table.csv",
   "status": "PASS",
   "candidateCount": 10,
   "workerReadyCount": 10,

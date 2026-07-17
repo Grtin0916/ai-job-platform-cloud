@@ -10,8 +10,8 @@ from typing import Any
 
 
 CLOUD_ROOT = Path.cwd()
-MAINBASE_ROOT = Path.home() / "work/audio_engineering_repo_skeleton_v1"
-JAVA_ROOT = Path.home() / "work/media-task-platform-java"
+MAINBASE_ROOT = Path.home() / "work/grt_work/audio_engineering_repo_skeleton_v1"
+JAVA_ROOT = Path.home() / "work/grt_work/media-task-platform-java"
 
 MAINBASE_PLACEMENT_TABLE = MAINBASE_ROOT / "artifacts/evals/week13_mix_global_placement_table.csv"
 MAINBASE_DRYRUN_MANIFEST = MAINBASE_ROOT / "artifacts/audio_mix/week13_mix_preview_manifest.json"

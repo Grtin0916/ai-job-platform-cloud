@@ -11,7 +11,7 @@ from typing import Any, Dict, List
 CLOUD_ROOT = Path(__file__).resolve().parents[1]
 MAINBASE_ROOT = Path(os.environ.get(
     "MAINBASE_PATH",
-    str(Path.home() / "work/audio_engineering_repo_skeleton_v1")
+    str(Path.home() / "work/grt_work/audio_engineering_repo_skeleton_v1")
 )).expanduser().resolve()
 
 MAINBASE_HANDOFF = MAINBASE_ROOT / "artifacts/manifests/week12_mainbase_audio_timing_handoff_index.json"

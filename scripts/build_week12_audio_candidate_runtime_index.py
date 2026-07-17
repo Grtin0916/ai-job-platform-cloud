@@ -29,8 +29,8 @@ from typing import Any, Dict, List
 
 
 ROOT = Path(".").resolve()
-JAVA = Path(os.environ.get("JAVA", str(Path.home() / "work" / "media-task-platform-java"))).resolve()
-MAINBASE = Path(os.environ.get("MAINBASE", str(Path.home() / "work" / "audio_engineering_repo_skeleton_v1"))).resolve()
+JAVA = Path(os.environ.get("JAVA", str(Path.home() / "work" / "grt_work" / "media-task-platform-java"))).resolve()
+MAINBASE = Path(os.environ.get("MAINBASE", str(Path.home() / "work" / "grt_work" / "audio_engineering_repo_skeleton_v1"))).resolve()
 
 JAVA_HTTP_SUMMARY = JAVA / "artifacts/runtime/week12_audio_candidate_api_http_it_summary.json"
 JAVA_HTTP_BODY = JAVA / "artifacts/runtime/week12_audio_candidate_api_http_it_body.json"

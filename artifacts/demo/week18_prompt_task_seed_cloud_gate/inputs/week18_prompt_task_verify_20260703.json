@@ -19,9 +19,9 @@
     "liveGrafanaImportVerified": false
   },
   "outputs": {
-    "jsonl": "/home/GRT/work/audio_engineering_repo_skeleton_v1/reports/week18_prompt_tasks_20260703.jsonl",
-    "summary_csv": "/home/GRT/work/audio_engineering_repo_skeleton_v1/reports/week18_prompt_task_summary_20260703.csv",
-    "artifact_jsonl": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/demo/week18_prompt_compiler_seed/week18_prompt_tasks_20260703.jsonl",
-    "manifest": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/demo/week18_prompt_compiler_seed/week18_prompt_task_manifest_20260703.json"
+    "jsonl": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/reports/week18_prompt_tasks_20260703.jsonl",
+    "summary_csv": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/reports/week18_prompt_task_summary_20260703.csv",
+    "artifact_jsonl": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/demo/week18_prompt_compiler_seed/week18_prompt_tasks_20260703.jsonl",
+    "manifest": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/demo/week18_prompt_compiler_seed/week18_prompt_task_manifest_20260703.json"
   }
 }

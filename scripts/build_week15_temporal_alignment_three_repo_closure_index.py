@@ -5,9 +5,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOTS = {
-    "mainbase": Path.home() / "work/audio_engineering_repo_skeleton_v1",
-    "java": Path.home() / "work/media-task-platform-java",
-    "cloud": Path.home() / "work/ai-job-platform-cloud",
+    "mainbase": Path.home() / "work/grt_work/audio_engineering_repo_skeleton_v1",
+    "java": Path.home() / "work/grt_work/media-task-platform-java",
+    "cloud": Path.home() / "work/grt_work/ai-job-platform-cloud",
 }
 
 CLOUD_SELF_ARTIFACT_PREFIXES = [

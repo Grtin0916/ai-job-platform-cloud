@@ -36,8 +36,8 @@ def git_head(path: str) -> str:
 
 def main() -> int:
     cloud_root = Path.cwd()
-    mainbase = Path.home() / "work" / "audio_engineering_repo_skeleton_v1"
-    java = Path.home() / "work" / "media-task-platform-java"
+    mainbase = Path.home() / "work" / "grt_work" / "audio_engineering_repo_skeleton_v1"
+    java = Path.home() / "work" / "grt_work" / "media-task-platform-java"
 
     base = cloud_root / "artifacts" / "demo" / "week17_model_race_cloud_gate"
     inputs = base / "inputs"

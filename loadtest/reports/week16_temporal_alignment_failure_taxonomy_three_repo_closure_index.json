@@ -5,7 +5,7 @@
   "decisionErrors": [],
   "repositories": {
     "mainbase": {
-      "path": "/home/GRT/work/audio_engineering_repo_skeleton_v1",
+      "path": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1",
       "head": "1fc18a4",
       "originMain": "1fc18a4",
       "aheadBehind": "0\t0",
@@ -14,7 +14,7 @@
       "excludedSelfArtifactDirtyLines": []
     },
     "java": {
-      "path": "/home/GRT/work/media-task-platform-java",
+      "path": "/home/GRT/work/grt_work/media-task-platform-java",
       "head": "8b0170f",
       "originMain": "8b0170f",
       "aheadBehind": "0\t0",
@@ -23,7 +23,7 @@
       "excludedSelfArtifactDirtyLines": []
     },
     "cloud": {
-      "path": "/home/GRT/work/ai-job-platform-cloud",
+      "path": "/home/GRT/work/grt_work/ai-job-platform-cloud",
       "head": "4c48c59",
       "originMain": "4c48c59",
       "aheadBehind": "0\t0",

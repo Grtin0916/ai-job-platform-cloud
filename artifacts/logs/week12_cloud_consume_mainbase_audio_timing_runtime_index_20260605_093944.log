@@ -2,10 +2,10 @@
   "status": "PASS",
   "scope": "cloud_consumes_week12_mainbase_audio_timing_alignment_handoff",
   "source": {
-    "mainbasePath": "/home/GRT/work/audio_engineering_repo_skeleton_v1",
+    "mainbasePath": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1",
     "mainbaseCommit": "28e79ff",
     "mainbaseOriginMain": "28e79ff",
-    "mainbaseHandoff": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_mainbase_audio_timing_handoff_index.json",
+    "mainbaseHandoff": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/manifests/week12_mainbase_audio_timing_handoff_index.json",
     "cloudCommitBefore": "9bbf43f"
   },
   "metrics": {

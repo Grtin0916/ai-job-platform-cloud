@@ -38,9 +38,9 @@ spec:
       volumes:
         - name: audio-candidates
           hostPath:
-            path: /home/GRT/work/ai-job-platform-cloud/artifacts/local-object-store/audio-candidates
+            path: /home/GRT/work/grt_work/ai-job-platform-cloud/artifacts/local-object-store/audio-candidates
             type: Directory
         - name: workspace
           hostPath:
-            path: /home/GRT/work/ai-job-platform-cloud
+            path: /home/GRT/work/grt_work/ai-job-platform-cloud
             type: Directory

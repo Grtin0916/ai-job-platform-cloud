@@ -7,7 +7,7 @@
   "winnerCount" : 6,
   "repairProbeCount" : 6,
   "missingAssetCount" : 0,
-  "sourceMainbaseContract" : "/home/GRT/work/media-task-platform-java/artifacts/week18/w18_selector_repair_handoff_20260708.json",
+  "sourceMainbaseContract" : "/home/GRT/work/grt_work/media-task-platform-java/artifacts/week18/w18_selector_repair_handoff_20260708.json",
   "sourceContractSha256" : "d43e0077c4e0aa289306ff9bc86f075f71496d392feceaf0efab249137be34cc",
   "productionSloVerified" : false,
   "liveServiceAvailabilityClaim" : false,

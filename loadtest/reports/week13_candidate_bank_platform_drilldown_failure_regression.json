@@ -16,7 +16,7 @@
     "/home/GRT/anaconda3/envs/audio-mini/bin/python",
     "scripts/build_week13_candidate_bank_platform_drilldown.py",
     "--mainbase-placement-table",
-    "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/evals/week13_mix_global_placement_table.csv",
+    "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/evals/week13_mix_global_placement_table.csv",
     "--cloud-worker-input-table",
     "loadtest/reports/week13_ready_candidate_worker_input_table.csv",
     "--cloud-worker-smoke-table",

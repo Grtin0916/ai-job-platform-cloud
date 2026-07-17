@@ -4,7 +4,7 @@
   "decision": "READY_FOR_W18_DSS_PROMPT_COMPILER",
   "week17_release": {
     "verify_decision": "PASS",
-    "release_zip": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/demo/week17_true_aware_demo_release_20260703.zip",
+    "release_zip": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/demo/week17_true_aware_demo_release_20260703.zip",
     "release_zip_exists": true,
     "release_zip_size_bytes": 316311,
     "zip_valid": true,
@@ -117,11 +117,11 @@
     }
   ],
   "source_artifacts": {
-    "release_verify": "/home/GRT/work/audio_engineering_repo_skeleton_v1/reports/week17_demo_release_verify_20260703.json",
-    "release_manifest": "/home/GRT/work/audio_engineering_repo_skeleton_v1/reports/week17_demo_release_manifest_20260703.json",
-    "claim_card": "/home/GRT/work/audio_engineering_repo_skeleton_v1/reports/week17_demo_claim_boundary_card_20260703.json",
-    "candidate_registry": "/home/GRT/work/audio_engineering_repo_skeleton_v1/reports/week17_true_aware_candidate_registry_20260702.csv",
-    "true_aware_winners": "/home/GRT/work/audio_engineering_repo_skeleton_v1/reports/week17_true_aware_winners_20260701.json",
-    "fallback_ranking": "/home/GRT/work/audio_engineering_repo_skeleton_v1/reports/week17_fallback_aware_ranking_20260701.csv"
+    "release_verify": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/reports/week17_demo_release_verify_20260703.json",
+    "release_manifest": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/reports/week17_demo_release_manifest_20260703.json",
+    "claim_card": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/reports/week17_demo_claim_boundary_card_20260703.json",
+    "candidate_registry": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/reports/week17_true_aware_candidate_registry_20260702.csv",
+    "true_aware_winners": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/reports/week17_true_aware_winners_20260701.json",
+    "fallback_ranking": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/reports/week17_fallback_aware_ranking_20260701.csv"
   }
 }

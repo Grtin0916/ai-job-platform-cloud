@@ -1,6 +1,6 @@
 status=DASHBOARD_READY_WITH_JAVA_RUNTIME_BLOCKED
-out_report=/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week12_dashboard_ready_index.json
-out_dashboard=/home/GRT/work/ai-job-platform-cloud/observability/grafana/dashboards/week12_soundlayer_artifact_dashboard.json
+out_report=/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week12_dashboard_ready_index.json
+out_dashboard=/home/GRT/work/grt_work/ai-job-platform-cloud/observability/grafana/dashboards/week12_soundlayer_artifact_dashboard.json
 mainbase_gate=PASS
 runtime_status=BLOCKED_BY_JAVA_RUNTIME
 java_blocker=FLYWAY_H2_POSTGRESQL_TYPE_MISMATCH

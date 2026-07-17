@@ -8,8 +8,8 @@ from typing import Any
 
 
 CLOUD_ROOT = Path(".").resolve()
-JAVA_ROOT = Path.home() / "work/media-task-platform-java"
-MAINBASE_ROOT = Path.home() / "work/audio_engineering_repo_skeleton_v1"
+JAVA_ROOT = Path.home() / "work/grt_work/media-task-platform-java"
+MAINBASE_ROOT = Path.home() / "work/grt_work/audio_engineering_repo_skeleton_v1"
 
 JAVA_REPORT = JAVA_ROOT / "artifacts/manifests/week17_true_aware_result_card/week17_true_aware_result_card_api_report.json"
 JAVA_BRIDGE = JAVA_ROOT / "artifacts/manifests/week17_true_aware_result_card/week17_true_aware_platform_bridge_payload_20260702.json"

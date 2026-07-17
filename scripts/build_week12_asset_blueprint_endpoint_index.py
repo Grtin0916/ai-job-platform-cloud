@@ -87,12 +87,12 @@ def main() -> int:
     parser.add_argument(
         "--mainbase",
         type=Path,
-        default=Path(os.environ.get("MAINBASE", str(Path.home() / "work/audio_engineering_repo_skeleton_v1"))),
+        default=Path(os.environ.get("MAINBASE", str(Path.home() / "work/grt_work/audio_engineering_repo_skeleton_v1"))),
     )
     parser.add_argument(
         "--java",
         type=Path,
-        default=Path(os.environ.get("JAVA", str(Path.home() / "work/media-task-platform-java"))),
+        default=Path(os.environ.get("JAVA", str(Path.home() / "work/grt_work/media-task-platform-java"))),
     )
     parser.add_argument(
         "--out",

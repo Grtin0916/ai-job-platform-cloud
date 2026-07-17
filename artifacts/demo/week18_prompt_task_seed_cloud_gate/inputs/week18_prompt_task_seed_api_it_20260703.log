@@ -12,10 +12,10 @@
 [INFO] --- compiler:3.14.1:compile (default-compile) @ media-task-platform-java ---
 [INFO] Recompiling the module because of changed source code.
 [INFO] Compiling 48 source files with javac [debug parameters release 21] to target/classes
-[INFO] /home/GRT/work/media-task-platform-java/src/main/java/com/ryan/media/week15/TemporalAlignmentReviewStateRegistry.java: /home/GRT/work/media-task-platform-java/src/main/java/com/ryan/media/week15/TemporalAlignmentReviewStateRegistry.java使用或覆盖了已过时的 API。
-[INFO] /home/GRT/work/media-task-platform-java/src/main/java/com/ryan/media/week15/TemporalAlignmentReviewStateRegistry.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
-[INFO] /home/GRT/work/media-task-platform-java/src/main/java/com/ryan/media/messaging/Consumer.java: /home/GRT/work/media-task-platform-java/src/main/java/com/ryan/media/messaging/Consumer.java使用了未经检查或不安全的操作。
-[INFO] /home/GRT/work/media-task-platform-java/src/main/java/com/ryan/media/messaging/Consumer.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[INFO] /home/GRT/work/grt_work/media-task-platform-java/src/main/java/com/ryan/media/week15/TemporalAlignmentReviewStateRegistry.java: /home/GRT/work/grt_work/media-task-platform-java/src/main/java/com/ryan/media/week15/TemporalAlignmentReviewStateRegistry.java使用或覆盖了已过时的 API。
+[INFO] /home/GRT/work/grt_work/media-task-platform-java/src/main/java/com/ryan/media/week15/TemporalAlignmentReviewStateRegistry.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] /home/GRT/work/grt_work/media-task-platform-java/src/main/java/com/ryan/media/messaging/Consumer.java: /home/GRT/work/grt_work/media-task-platform-java/src/main/java/com/ryan/media/messaging/Consumer.java使用了未经检查或不安全的操作。
+[INFO] /home/GRT/work/grt_work/media-task-platform-java/src/main/java/com/ryan/media/messaging/Consumer.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
 [INFO] 
 [INFO] --- resources:3.3.1:testResources (default-testResources) @ media-task-platform-java ---
 [INFO] Copying 3 resources from src/test/resources to target/test-classes
@@ -23,50 +23,50 @@
 [INFO] --- compiler:3.14.1:testCompile (default-testCompile) @ media-task-platform-java ---
 [INFO] Recompiling the module because of changed dependency.
 [INFO] Compiling 41 source files with javac [debug parameters release 21] to target/test-classes
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthIT.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthIT.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthIT.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthIT.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthIT.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[26,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[26,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[26,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[26,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[26,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[36,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[36,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[36,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[36,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[36,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[39,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[39,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[39,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[39,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[39,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[44,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[44,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[44,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[44,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[44,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[47,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[47,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[47,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[47,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[47,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/SmokeTest.java:[15,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/SmokeTest.java:[15,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/SmokeTest.java:[15,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/SmokeTest.java:[15,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[WARNING] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/SmokeTest.java:[15,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
-[INFO] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/PostgresSmokeIT.java: 某些输入文件使用或覆盖了已过时的 API。
-[INFO] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/PostgresSmokeIT.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
-[INFO] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/controller/Week15TemporalAlignmentReviewStateIT.java: 某些输入文件使用了未经检查或不安全的操作。
-[INFO] /home/GRT/work/media-task-platform-java/src/test/java/com/ryan/media/controller/Week15TemporalAlignmentReviewStateIT.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/AuthIT.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/AuthIT.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/AuthIT.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/AuthIT.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/AuthIT.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[26,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[26,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[26,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[26,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[26,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/AuthSecurityTest.java:[29,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[36,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[36,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[36,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[36,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[36,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[39,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[39,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[39,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[39,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/ContractIT.java:[39,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[44,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[44,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[44,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[44,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[44,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[47,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[47,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[47,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[47,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/MediaTaskQueryHttpIT.java:[47,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/SmokeTest.java:[15,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/SmokeTest.java:[15,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/SmokeTest.java:[15,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/SmokeTest.java:[15,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[WARNING] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/SmokeTest.java:[15,6] org.springframework.boot.test.mock.mockito 中的 org.springframework.boot.test.mock.mockito.MockBean 已过时, 且标记为待删除
+[INFO] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/PostgresSmokeIT.java: 某些输入文件使用或覆盖了已过时的 API。
+[INFO] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/PostgresSmokeIT.java: 有关详细信息, 请使用 -Xlint:deprecation 重新编译。
+[INFO] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/controller/Week15TemporalAlignmentReviewStateIT.java: 某些输入文件使用了未经检查或不安全的操作。
+[INFO] /home/GRT/work/grt_work/media-task-platform-java/src/test/java/com/ryan/media/controller/Week15TemporalAlignmentReviewStateIT.java: 有关详细信息, 请使用 -Xlint:unchecked 重新编译。
 [INFO] 
 [INFO] --- surefire:3.5.5:test (default-test) @ media-task-platform-java ---
 [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
@@ -87,7 +87,7 @@
 
  :: Spring Boot ::               (v3.5.13)
 
-2026-07-03T11:21:24.629+08:00  INFO 263223 --- [media-task-platform-java] [           main] c.r.m.c.Week18PromptTaskSeedControllerIT : Starting Week18PromptTaskSeedControllerIT using Java 21.0.10 with PID 263223 (started by GRT in /home/GRT/work/media-task-platform-java)
+2026-07-03T11:21:24.629+08:00  INFO 263223 --- [media-task-platform-java] [           main] c.r.m.c.Week18PromptTaskSeedControllerIT : Starting Week18PromptTaskSeedControllerIT using Java 21.0.10 with PID 263223 (started by GRT in /home/GRT/work/grt_work/media-task-platform-java)
 2026-07-03T11:21:24.630+08:00  INFO 263223 --- [media-task-platform-java] [           main] c.r.m.c.Week18PromptTaskSeedControllerIT : No active profile set, falling back to 1 default profile: "default"
 2026-07-03T11:21:25.630+08:00  INFO 263223 --- [media-task-platform-java] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
 2026-07-03T11:21:25.632+08:00  INFO 263223 --- [media-task-platform-java] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.

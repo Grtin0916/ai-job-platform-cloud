@@ -1,5 +1,5 @@
 {
-  "output": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_platform_gate.json",
+  "output": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_platform_gate.json",
   "status": "PASS",
   "platformDecision": "TEMPORAL_ALIGNMENT_REMEDIATION_PLATFORM_READY_INPUT",
   "summary": {

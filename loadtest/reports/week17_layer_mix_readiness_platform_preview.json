@@ -4,7 +4,7 @@
   "decision": "PASS_WEEK17_LAYER_MIX_READINESS_PLATFORM_PREVIEW",
   "decisionErrors": [],
   "source": "java_readiness_report",
-  "sourcePath": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week17_layer_mix_input_readiness_api_report.json",
+  "sourcePath": "/home/GRT/work/grt_work/media-task-platform-java/artifacts/manifests/week17_layer_mix_input_readiness_api_report.json",
   "sourceSha256": "7b7e4839b05eb3eaf22afaf6aabbf5db2e24fe5baa5ba1e5ceef5f6ac8f5ba78",
   "sourceDecision": "PASS_WEEK17_LAYER_MIX_INPUT_READINESS_CONSUMED",
   "sourceMainbaseDecision": "PASS_WEEK16_S3_TO_W17_LAYER_MIX_INPUT_READINESS",

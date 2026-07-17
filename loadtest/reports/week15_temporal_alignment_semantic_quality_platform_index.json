@@ -2,7 +2,7 @@
   "schemaVersion": "week15.semantic-quality-platform-index.v0",
   "generatedAtUtc": "2026-06-16T02:36:53.445472+00:00",
   "source": {
-    "mainbaseReviewJson": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/reviews/week15_temporal_alignment_semantic_quality_review_v0.json",
+    "mainbaseReviewJson": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/reviews/week15_temporal_alignment_semantic_quality_review_v0.json",
     "mainbaseSchemaVersion": "week15.semantic-quality-review.v0",
     "mainbaseGeneratedAtUtc": "2026-06-16T02:29:28.824984+00:00"
   },

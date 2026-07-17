@@ -4,7 +4,7 @@
   "platformDecision": "PASS_JAVA_REGISTRY_BACKED_REVIEW_STATE_PLATFORM_CONSUMPTION",
   "claimBoundaryOk": true,
   "javaContract": {
-    "path": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week15_java_temporal_alignment_review_state_registry_backed_contract_report.json",
+    "path": "/home/GRT/work/grt_work/media-task-platform-java/artifacts/manifests/week15_java_temporal_alignment_review_state_registry_backed_contract_report.json",
     "decision": "PASS_REGISTRY_BACKED_REVIEW_STATE_CONTRACT",
     "sourceType": "ARTIFACT_REGISTRY_BACKED",
     "artifactRegistryBacked": true,
@@ -26,7 +26,7 @@
     "platformClaim": "Cloud consumed Java lightweight registry contract only; RANDOM_PORT E2E compatibility is not claimed."
   },
   "artifactLinks": {
-    "javaRegistryBackedContractReport": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week15_java_temporal_alignment_review_state_registry_backed_contract_report.json",
+    "javaRegistryBackedContractReport": "/home/GRT/work/grt_work/media-task-platform-java/artifacts/manifests/week15_java_temporal_alignment_review_state_registry_backed_contract_report.json",
     "cloudPlatformIndex": "loadtest/reports/week15_temporal_alignment_review_state_registry_backed_platform_index.json",
     "cloudPrometheusReadyMetrics": "observability/prometheus/week15_temporal_alignment_review_state_registry_backed_metrics.prom"
   }

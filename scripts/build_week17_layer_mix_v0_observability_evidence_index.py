@@ -11,8 +11,8 @@ from typing import Any
 
 
 ROOT = Path.cwd()
-MAINBASE = Path(os.environ.get("MAINBASE", str(Path.home() / "work/audio_engineering_repo_skeleton_v1")))
-JAVA = Path(os.environ.get("JAVA", str(Path.home() / "work/media-task-platform-java")))
+MAINBASE = Path(os.environ.get("MAINBASE", str(Path.home() / "work/grt_work/audio_engineering_repo_skeleton_v1")))
+JAVA = Path(os.environ.get("JAVA", str(Path.home() / "work/grt_work/media-task-platform-java")))
 CLOUD = Path(os.environ.get("CLOUD", str(ROOT)))
 
 OUT_JSON = ROOT / "loadtest/reports/week17_layer_mix_v0_observability_evidence_index.json"

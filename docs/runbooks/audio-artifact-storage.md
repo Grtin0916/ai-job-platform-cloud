@@ -6,9 +6,9 @@ This runbook records local Docker Desktop / kind storage semantics for Week13 au
 
 Generated from:
 
-- Mainbase dry-run manifest: `/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/audio_mix/week13_mix_preview_manifest.json`
-- Mainbase placement table: `/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/evals/week13_mix_global_placement_table.csv`
-- Java registry report: `/home/GRT/work/media-task-platform-java/artifacts/manifests/week13_java_audio_artifact_registry_contract_report.json`
+- Mainbase dry-run manifest: `/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/audio_mix/week13_mix_preview_manifest.json`
+- Mainbase placement table: `/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/evals/week13_mix_global_placement_table.csv`
+- Java registry report: `/home/GRT/work/grt_work/media-task-platform-java/artifacts/manifests/week13_java_audio_artifact_registry_contract_report.json`
 
 ## Runtime context
 

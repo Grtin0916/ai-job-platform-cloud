@@ -28,7 +28,7 @@
       "after_clip_rate": 0.0,
       "before_silence_ratio": 0.064533,
       "after_silence_ratio": 0.058152,
-      "repaired_path": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/model_runs/week17_control_repaired/kitchen_chop_sizzle_001/kitchen_chop_sizzle_001__control_rule_foley_v0_repair_v1.wav",
+      "repaired_path": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/model_runs/week17_control_repaired/kitchen_chop_sizzle_001/kitchen_chop_sizzle_001__control_rule_foley_v0_repair_v1.wav",
       "repair_actions": "[{\"event_id\": \"knife_chops\", \"repair_action\": \"added 16 transient pulses in event window\", \"target_event_threshold\": 0.016}]"
     }
   ]

@@ -1,7 +1,7 @@
 {
-  "result": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week13_local_audio_worker_smoke_result.json",
-  "table": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week13_local_audio_worker_smoke_table.csv",
-  "jobTemplate": "/home/GRT/work/ai-job-platform-cloud/k8s/base/week13-audio-worker-job-template.yaml",
+  "result": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week13_local_audio_worker_smoke_result.json",
+  "table": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week13_local_audio_worker_smoke_table.csv",
+  "jobTemplate": "/home/GRT/work/grt_work/ai-job-platform-cloud/k8s/base/week13-audio-worker-job-template.yaml",
   "status": "PASS",
   "candidateCount": 10,
   "workerSuccessCount": 10,

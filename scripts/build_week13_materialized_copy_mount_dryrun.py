@@ -21,7 +21,7 @@ def main():
     )
     parser.add_argument(
         "--mainbase-root",
-        default=str(Path.home() / "work/audio_engineering_repo_skeleton_v1"),
+        default=str(Path.home() / "work/grt_work/audio_engineering_repo_skeleton_v1"),
     )
     parser.add_argument(
         "--out",

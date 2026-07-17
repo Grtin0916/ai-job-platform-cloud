@@ -63,9 +63,9 @@ def file_card(path: Path, role: str, logical_uri: str) -> dict[str, Any]:
 
 
 def main() -> int:
-    mainbase_root = Path.home() / "work" / "audio_engineering_repo_skeleton_v1"
-    java_root = Path.home() / "work" / "media-task-platform-java"
-    cloud_root = Path.home() / "work" / "ai-job-platform-cloud"
+    mainbase_root = Path.home() / "work" / "grt_work" / "audio_engineering_repo_skeleton_v1"
+    java_root = Path.home() / "work" / "grt_work" / "media-task-platform-java"
+    cloud_root = Path.home() / "work" / "grt_work" / "ai-job-platform-cloud"
 
     out_dir = cloud_root / "loadtest" / "reports"
     log_dir = cloud_root / "artifacts" / "logs"

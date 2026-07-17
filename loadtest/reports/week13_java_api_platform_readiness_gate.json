@@ -3,8 +3,8 @@
   "generatedAt": "2026-06-11T16:41:24",
   "status": "PASS",
   "scope": "cloud-dashboard-ready-platform-readiness-gate",
-  "sourceJavaApiContract": "/home/GRT/work/media-task-platform-java/artifacts/manifests/week13_candidate_bank_demo_readiness_api_contract_report.json",
-  "sourceCloudWorkerSmoke": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week13_local_audio_worker_smoke_result.json",
+  "sourceJavaApiContract": "/home/GRT/work/grt_work/media-task-platform-java/artifacts/manifests/week13_candidate_bank_demo_readiness_api_contract_report.json",
+  "sourceCloudWorkerSmoke": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week13_local_audio_worker_smoke_result.json",
   "endpoint": "/api/week13/candidate-bank-demo-readiness",
   "testMode": "SpringBootTest.RANDOM_PORT",
   "testSummary": {

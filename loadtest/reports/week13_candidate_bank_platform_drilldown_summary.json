@@ -3,7 +3,7 @@
   "generatedAt": "2026-06-11T16:57:40",
   "status": "PASS",
   "scope": "candidate-level-dashboard-drilldown-data",
-  "sourcePlacementTable": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/evals/week13_mix_global_placement_table.csv",
+  "sourcePlacementTable": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/evals/week13_mix_global_placement_table.csv",
   "sourceWorkerInputTable": "loadtest/reports/week13_ready_candidate_worker_input_table.csv",
   "sourceWorkerSmokeTable": "loadtest/reports/week13_local_audio_worker_smoke_table.csv",
   "sourceGate": "loadtest/reports/week13_java_api_platform_readiness_gate.json",

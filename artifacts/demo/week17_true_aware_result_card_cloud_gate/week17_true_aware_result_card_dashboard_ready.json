@@ -2,9 +2,9 @@
   "schema_version": "week17.true_aware.dashboard_ready.v1",
   "generated_at_utc": "2026-07-02T03:18:18.004783+00:00",
   "dashboard_ready": true,
-  "dashboard_path": "/home/GRT/work/ai-job-platform-cloud/observability/grafana/dashboards/week17_true_aware_result_card_dashboard.json",
-  "metrics_path": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week17_true_aware_result_card_metrics.prom",
-  "rules_path": "/home/GRT/work/ai-job-platform-cloud/observability/prometheus/week17_true_aware_result_card.rules.yml",
+  "dashboard_path": "/home/GRT/work/grt_work/ai-job-platform-cloud/observability/grafana/dashboards/week17_true_aware_result_card_dashboard.json",
+  "metrics_path": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week17_true_aware_result_card_metrics.prom",
+  "rules_path": "/home/GRT/work/grt_work/ai-job-platform-cloud/observability/prometheus/week17_true_aware_result_card.rules.yml",
   "seed_values": {
     "single_success": 1,
     "safe_true_count": 1,

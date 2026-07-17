@@ -1,5 +1,5 @@
 ===== Week12 cross-repo readiness gate =====
-repo=/home/GRT/work/ai-job-platform-cloud
+repo=/home/GRT/work/grt_work/ai-job-platform-cloud
 command=python scripts/verify_week12_crossrepo_readiness_gate.py
 
 [PASS] Week12 cross-repo readiness gate

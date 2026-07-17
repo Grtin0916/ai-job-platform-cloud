@@ -32,6 +32,6 @@ The gate must not claim:
 
 Java RANDOM_PORT IT explicit summary detection:
 
-`{'logExists': True, 'logPath': '/home/GRT/work/media-task-platform-java/artifacts/logs/week17_demo_release_handoff_api_it_20260703.log', 'logSizeBytes': 8820, 'summaryDetected': True, 'failureKeywordDetected': False, 'buildSuccessDetected': True, 'testsRunLineDetected': True, 'zeroFailureLineDetected': True, 'verified': True}`
+`{'logExists': True, 'logPath': '/home/GRT/work/grt_work/media-task-platform-java/artifacts/logs/week17_demo_release_handoff_api_it_20260703.log', 'logSizeBytes': 8820, 'summaryDetected': True, 'failureKeywordDetected': False, 'buildSuccessDetected': True, 'testsRunLineDetected': True, 'zeroFailureLineDetected': True, 'verified': True}`
 
 If the Maven log is quiet because of `-q`, the gate does not upgrade it to verified automatically. This is intentional: evidence is separated from inference.

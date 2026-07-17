@@ -5,13 +5,13 @@
   "candidateCount": 10,
   "readableCount": 10,
   "podPathPrefix": "/mnt/audio-candidates",
-  "objectRoot": "/home/GRT/work/ai-job-platform-cloud/artifacts/local-object-store",
+  "objectRoot": "/home/GRT/work/grt_work/ai-job-platform-cloud/artifacts/local-object-store",
   "blockers": [],
   "records": [
     {
       "candidateId": "procedural_v0_0001",
       "objectKey": "audio-candidates/week13/full_clip/procedural_v0_0001.wav",
-      "localObjectPath": "/home/GRT/work/ai-job-platform-cloud/artifacts/local-object-store/audio-candidates/week13/full_clip/procedural_v0_0001.wav",
+      "localObjectPath": "/home/GRT/work/grt_work/ai-job-platform-cloud/artifacts/local-object-store/audio-candidates/week13/full_clip/procedural_v0_0001.wav",
       "podPath": "/mnt/audio-candidates/week13/full_clip/procedural_v0_0001.wav",
       "existsInCloudLocal": true,
       "readableByPodPathContract": true,
@@ -24,7 +24,7 @@
     {
       "candidateId": "procedural_v0_0002",
       "objectKey": "audio-candidates/week13/event_local/procedural_v0_0002.wav",
-      "localObjectPath": "/home/GRT/work/ai-job-platform-cloud/artifacts/local-object-store/audio-candidates/week13/event_local/procedural_v0_0002.wav",
+      "localObjectPath": "/home/GRT/work/grt_work/ai-job-platform-cloud/artifacts/local-object-store/audio-candidates/week13/event_local/procedural_v0_0002.wav",
       "podPath": "/mnt/audio-candidates/week13/event_local/procedural_v0_0002.wav",
       "existsInCloudLocal": true,
       "readableByPodPathContract": true,
@@ -37,7 +37,7 @@
     {
       "candidateId": "procedural_v0_0003",
       "objectKey": "audio-candidates/week13/full_clip/procedural_v0_0003.wav",
-      "localObjectPath": "/home/GRT/work/ai-job-platform-cloud/artifacts/local-object-store/audio-candidates/week13/full_clip/procedural_v0_0003.wav",
+      "localObjectPath": "/home/GRT/work/grt_work/ai-job-platform-cloud/artifacts/local-object-store/audio-candidates/week13/full_clip/procedural_v0_0003.wav",
       "podPath": "/mnt/audio-candidates/week13/full_clip/procedural_v0_0003.wav",
       "existsInCloudLocal": true,
       "readableByPodPathContract": true,
@@ -50,7 +50,7 @@
     {
       "candidateId": "procedural_v0_0004",
       "objectKey": "audio-candidates/week13/event_local/procedural_v0_0004.wav",
-      "localObjectPath": "/home/GRT/work/ai-job-platform-cloud/artifacts/local-object-store/audio-candidates/week13/event_local/procedural_v0_0004.wav",
+      "localObjectPath": "/home/GRT/work/grt_work/ai-job-platform-cloud/artifacts/local-object-store/audio-candidates/week13/event_local/procedural_v0_0004.wav",
       "podPath": "/mnt/audio-candidates/week13/event_local/procedural_v0_0004.wav",
       "existsInCloudLocal": true,
       "readableByPodPathContract": true,
@@ -63,7 +63,7 @@
     {
       "candidateId": "procedural_v0_0005",
       "objectKey": "audio-candidates/week13/full_clip/procedural_v0_0005.wav",
-      "localObjectPath": "/home/GRT/work/ai-job-platform-cloud/artifacts/local-object-store/audio-candidates/week13/full_clip/procedural_v0_0005.wav",
+      "localObjectPath": "/home/GRT/work/grt_work/ai-job-platform-cloud/artifacts/local-object-store/audio-candidates/week13/full_clip/procedural_v0_0005.wav",
       "podPath": "/mnt/audio-candidates/week13/full_clip/procedural_v0_0005.wav",
       "existsInCloudLocal": true,
       "readableByPodPathContract": true,
@@ -76,7 +76,7 @@
     {
       "candidateId": "procedural_v0_0006",
       "objectKey": "audio-candidates/week13/event_local/procedural_v0_0006.wav",
-      "localObjectPath": "/home/GRT/work/ai-job-platform-cloud/artifacts/local-object-store/audio-candidates/week13/event_local/procedural_v0_0006.wav",
+      "localObjectPath": "/home/GRT/work/grt_work/ai-job-platform-cloud/artifacts/local-object-store/audio-candidates/week13/event_local/procedural_v0_0006.wav",
       "podPath": "/mnt/audio-candidates/week13/event_local/procedural_v0_0006.wav",
       "existsInCloudLocal": true,
       "readableByPodPathContract": true,
@@ -89,7 +89,7 @@
     {
       "candidateId": "procedural_v0_0007",
       "objectKey": "audio-candidates/week13/full_clip/procedural_v0_0007.wav",
-      "localObjectPath": "/home/GRT/work/ai-job-platform-cloud/artifacts/local-object-store/audio-candidates/week13/full_clip/procedural_v0_0007.wav",
+      "localObjectPath": "/home/GRT/work/grt_work/ai-job-platform-cloud/artifacts/local-object-store/audio-candidates/week13/full_clip/procedural_v0_0007.wav",
       "podPath": "/mnt/audio-candidates/week13/full_clip/procedural_v0_0007.wav",
       "existsInCloudLocal": true,
       "readableByPodPathContract": true,
@@ -102,7 +102,7 @@
     {
       "candidateId": "procedural_v0_0008",
       "objectKey": "audio-candidates/week13/event_local/procedural_v0_0008.wav",
-      "localObjectPath": "/home/GRT/work/ai-job-platform-cloud/artifacts/local-object-store/audio-candidates/week13/event_local/procedural_v0_0008.wav",
+      "localObjectPath": "/home/GRT/work/grt_work/ai-job-platform-cloud/artifacts/local-object-store/audio-candidates/week13/event_local/procedural_v0_0008.wav",
       "podPath": "/mnt/audio-candidates/week13/event_local/procedural_v0_0008.wav",
       "existsInCloudLocal": true,
       "readableByPodPathContract": true,
@@ -115,7 +115,7 @@
     {
       "candidateId": "procedural_v0_0009",
       "objectKey": "audio-candidates/week13/full_clip/procedural_v0_0009.wav",
-      "localObjectPath": "/home/GRT/work/ai-job-platform-cloud/artifacts/local-object-store/audio-candidates/week13/full_clip/procedural_v0_0009.wav",
+      "localObjectPath": "/home/GRT/work/grt_work/ai-job-platform-cloud/artifacts/local-object-store/audio-candidates/week13/full_clip/procedural_v0_0009.wav",
       "podPath": "/mnt/audio-candidates/week13/full_clip/procedural_v0_0009.wav",
       "existsInCloudLocal": true,
       "readableByPodPathContract": true,
@@ -128,7 +128,7 @@
     {
       "candidateId": "procedural_v0_0010",
       "objectKey": "audio-candidates/week13/event_local/procedural_v0_0010.wav",
-      "localObjectPath": "/home/GRT/work/ai-job-platform-cloud/artifacts/local-object-store/audio-candidates/week13/event_local/procedural_v0_0010.wav",
+      "localObjectPath": "/home/GRT/work/grt_work/ai-job-platform-cloud/artifacts/local-object-store/audio-candidates/week13/event_local/procedural_v0_0010.wav",
       "podPath": "/mnt/audio-candidates/week13/event_local/procedural_v0_0010.wav",
       "existsInCloudLocal": true,
       "readableByPodPathContract": true,

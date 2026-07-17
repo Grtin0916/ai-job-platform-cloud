@@ -10,7 +10,7 @@
     "releaseReady": true,
     "verifyDecision": "PASS",
     "releaseId": "week17_true_aware_demo_release_20260703",
-    "releaseZip": "/home/GRT/work/audio_engineering_repo_skeleton_v1/artifacts/demo/week17_true_aware_demo_release_20260703.zip",
+    "releaseZip": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/artifacts/demo/week17_true_aware_demo_release_20260703.zip",
     "releaseZipExists": true,
     "releaseZipSizeBytes": 316311,
     "zipValid": true,
@@ -25,7 +25,7 @@
     "endpoint": "/api/week17/demo-release-handoff",
     "randomPortIt": {
       "logExists": true,
-      "logPath": "/home/GRT/work/media-task-platform-java/artifacts/logs/week17_demo_release_handoff_api_it_20260703.log",
+      "logPath": "/home/GRT/work/grt_work/media-task-platform-java/artifacts/logs/week17_demo_release_handoff_api_it_20260703.log",
       "logSizeBytes": 8820,
       "summaryDetected": true,
       "failureKeywordDetected": false,

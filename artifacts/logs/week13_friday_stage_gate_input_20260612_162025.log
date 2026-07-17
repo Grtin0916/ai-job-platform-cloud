@@ -1,5 +1,5 @@
 {
-  "output": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week13_friday_stage_gate_input.json",
+  "output": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week13_friday_stage_gate_input.json",
   "status": "PASS",
   "stageGateDecision": "READY_FOR_FRIDAY_STAGE_GATE",
   "blockerCount": 0,

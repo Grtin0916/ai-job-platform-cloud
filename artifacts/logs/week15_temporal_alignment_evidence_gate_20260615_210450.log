@@ -4,8 +4,8 @@
   "status": "PASS",
   "gateDecision": "TEMPORAL_ALIGNMENT_EVIDENCE_GATE_PASS",
   "inputs": {
-    "scoreSummaryPlatformIndex": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_score_summary_platform_index.json",
-    "visualEvidencePlatformIndex": "/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_visual_evidence_platform_index.json"
+    "scoreSummaryPlatformIndex": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_score_summary_platform_index.json",
+    "visualEvidencePlatformIndex": "/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_visual_evidence_platform_index.json"
   },
   "sourceHeads": {
     "mainbaseWaveformRmsCommitHead": "3a5b12a",
@@ -52,5 +52,5 @@
     "does_not_claim_production_slo"
   ]
 }
-WROTE_REPORT=/home/GRT/work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_evidence_gate.json
-WROTE_METRICS=/home/GRT/work/ai-job-platform-cloud/observability/prometheus/week15_temporal_alignment_evidence_gate_metrics.prom
+WROTE_REPORT=/home/GRT/work/grt_work/ai-job-platform-cloud/loadtest/reports/week15_temporal_alignment_evidence_gate.json
+WROTE_METRICS=/home/GRT/work/grt_work/ai-job-platform-cloud/observability/prometheus/week15_temporal_alignment_evidence_gate_metrics.prom
