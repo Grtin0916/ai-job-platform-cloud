@@ -1,0 +1,91 @@
+{
+  "alertSummary": {
+    "gateStatus": "PASS",
+    "loadedRuleCount": 4,
+    "nonInactiveRules": [],
+    "unhealthyRules": []
+  },
+  "claimBoundary": {
+    "alertmanagerConfigured": false,
+    "dockerDesktopEngineHealthy": false,
+    "liveGrafanaImportVerified": false,
+    "productionAlertingVerified": false,
+    "productionPrometheusVerified": false
+  },
+  "counts": {
+    "alertRuleCount": 4,
+    "alertScenarioCount": 5,
+    "candidateCount": 30,
+    "caseCount": 6,
+    "dashboardPanelCount": 9,
+    "failureCount": 12,
+    "javaGaugeCount": 6,
+    "javaTaskCount": 12,
+    "promptTaskCount": 30,
+    "repairBeforeAfterCount": 6,
+    "repairProxyImproveCount": 6,
+    "winnerCount": 6
+  },
+  "failureCategoryCounts": {
+    "clipping": 8,
+    "layer_conflict_or_repairable": 1,
+    "naive_less_controllable": 2,
+    "silence": 1
+  },
+  "gateStatus": "PASS",
+  "invariants": {
+    "alertRulesEq4": true,
+    "alertsHealthy": true,
+    "candidatesEq30": true,
+    "casesEq6": true,
+    "failuresEq12": true,
+    "javaGaugesEq6": true,
+    "javaTasksEq12": true,
+    "repairPairsEq6": true,
+    "winnersEq6": true
+  },
+  "javaLifecycle": {
+    "batchOrchestrated": true,
+    "liveServiceAvailabilityClaim": false,
+    "missingAssetCount": 0,
+    "orchestratedRepairTaskCount": 6,
+    "orchestratedTaskCount": 12,
+    "orchestratedWinnerTaskCount": 6,
+    "productionSloVerified": false,
+    "repairAppliedCount": 6,
+    "repairProbeCount": 6,
+    "repairRequiredCount": 6,
+    "replayed": false,
+    "resultBoundCount": 12,
+    "sourceContractSha256": "d43e0077c4e0aa289306ff9bc86f075f71496d392feceaf0efab249137be34cc",
+    "sourceMainbaseContract": "/home/GRT/work/grt_work/media-task-platform-java/artifacts/week18/w18_selector_repair_handoff_20260708.json",
+    "succeededCount": 6,
+    "taskCount": 12,
+    "winnerCount": 6
+  },
+  "promptVariantCounts": {
+    "dss_event_timeline": 6,
+    "dss_global": 6,
+    "dss_layer_avoid": 6,
+    "naive": 6,
+    "naive_rich": 6
+  },
+  "repairActionCounts": {
+    "clipping_attenuation": 3,
+    "event_local_gain": 1,
+    "peak_normalize_only": 1,
+    "silence_trim_or_gain": 1
+  },
+  "schemaVersion": "w18-experiment-aggregation-v1",
+  "sources": {
+    "cloud": "/home/GRT/work/grt_work/ai-job-platform-cloud",
+    "java": "/home/GRT/work/grt_work/media-task-platform-java",
+    "mainbase": "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1"
+  },
+  "winnerVariantCounts": {
+    "dss_event_timeline": 1,
+    "dss_global": 1,
+    "dss_layer_avoid": 3,
+    "naive_rich": 1
+  }
+}

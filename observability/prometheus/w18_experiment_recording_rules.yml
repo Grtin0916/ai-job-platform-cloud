@@ -1,0 +1,19 @@
+groups:
+  - name: w18-experiment-release
+    interval: 30s
+    rules:
+      - record: w18_experiment:candidate_to_winner_ratio
+        expr: |
+          max(w18_experiment_count{category="winnerCount"})
+          /
+          max(w18_experiment_count{category="candidateCount"})
+      - record: w18_experiment:repair_proxy_improvement_ratio
+        expr: |
+          max(w18_experiment_repair_proxy_improved)
+          /
+          max(w18_experiment_count{category="repairBeforeAfterCount"})
+      - record: w18_experiment:artifact_binding_ratio
+        expr: |
+          max(w18_experiment_java_result_bound)
+          /
+          max(w18_experiment_count{category="javaTaskCount"})

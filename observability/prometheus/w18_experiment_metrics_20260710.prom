@@ -1,0 +1,31 @@
+# HELP w18_experiment_gate W18 local experiment release gate.
+# TYPE w18_experiment_gate gauge
+w18_experiment_gate 1
+w18_experiment_count{category="caseCount"} 6
+w18_experiment_count{category="promptTaskCount"} 30
+w18_experiment_count{category="candidateCount"} 30
+w18_experiment_count{category="winnerCount"} 6
+w18_experiment_count{category="failureCount"} 12
+w18_experiment_count{category="repairBeforeAfterCount"} 6
+w18_experiment_count{category="repairProxyImproveCount"} 6
+w18_experiment_count{category="javaTaskCount"} 12
+w18_experiment_count{category="javaGaugeCount"} 6
+w18_experiment_count{category="alertRuleCount"} 4
+w18_experiment_count{category="alertScenarioCount"} 5
+w18_experiment_count{category="dashboardPanelCount"} 9
+w18_experiment_prompt_variant_count{variant="naive"} 6
+w18_experiment_prompt_variant_count{variant="naive_rich"} 6
+w18_experiment_prompt_variant_count{variant="dss_global"} 6
+w18_experiment_prompt_variant_count{variant="dss_event_timeline"} 6
+w18_experiment_prompt_variant_count{variant="dss_layer_avoid"} 6
+w18_experiment_failure_count{category="clipping"} 8
+w18_experiment_failure_count{category="layer_conflict_or_repairable"} 1
+w18_experiment_failure_count{category="naive_less_controllable"} 2
+w18_experiment_failure_count{category="silence"} 1
+w18_experiment_repair_proxy_improved 6
+w18_experiment_java_result_bound 12
+w18_experiment_java_missing_asset 0
+w18_experiment_alert_rules_healthy 4
+w18_experiment_runtime_boundary{claim="production_prometheus"} 0
+w18_experiment_runtime_boundary{claim="live_grafana_import"} 0
+w18_experiment_runtime_boundary{claim="docker_desktop_engine"} 0

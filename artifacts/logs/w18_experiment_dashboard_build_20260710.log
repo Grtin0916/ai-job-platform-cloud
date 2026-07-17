@@ -1,0 +1,7 @@
+W18 experiment dashboard build: PASS
+cases=6 prompts=30 candidates=30 winners=6 failures=12 repair_pairs=6
+java_tasks=12 java_gauges=6 alert_rules=4 alert_scenarios=5 panels=9
+all_inputs_consumed=true
+productionPrometheusVerified=false
+liveGrafanaImportVerified=false
+dockerDesktopEngineHealthy=false

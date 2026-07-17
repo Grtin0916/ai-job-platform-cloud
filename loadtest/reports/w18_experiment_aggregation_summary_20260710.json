@@ -1,0 +1,30 @@
+{
+  "alertRuleCount": 4,
+  "alertScenarioCount": 5,
+  "allInputsConsumed": true,
+  "candidateCount": 30,
+  "caseCount": 6,
+  "dashboardPanelCount": 9,
+  "dockerDesktopEngineHealthy": false,
+  "failureCount": 12,
+  "gateStatus": "PASS",
+  "invariants": {
+    "alertRulesEq4": true,
+    "alertsHealthy": true,
+    "candidatesEq30": true,
+    "casesEq6": true,
+    "failuresEq12": true,
+    "javaGaugesEq6": true,
+    "javaTasksEq12": true,
+    "repairPairsEq6": true,
+    "winnersEq6": true
+  },
+  "javaGaugeCount": 6,
+  "javaTaskCount": 12,
+  "liveGrafanaImportVerified": false,
+  "productionPrometheusVerified": false,
+  "promptTaskCount": 30,
+  "repairBeforeAfterCount": 6,
+  "repairProxyImproveCount": 6,
+  "winnerCount": 6
+}
