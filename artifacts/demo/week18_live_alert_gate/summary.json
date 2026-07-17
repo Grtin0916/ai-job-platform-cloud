@@ -1,0 +1,42 @@
+{
+  "alertmanagerConfigured": false,
+  "expectedRuleCount": 4,
+  "gateStatus": "PASS",
+  "healthyInputExpected": true,
+  "loadedRuleCount": 4,
+  "localLiveAlertRulesVerified": true,
+  "missingRules": [],
+  "nonInactiveRules": [],
+  "productionAlertingVerified": false,
+  "rules": {
+    "Week18LifecycleMissingAsset": {
+      "activeAlertCount": 0,
+      "health": "ok",
+      "lastError": "",
+      "query": "max(media_week18_lifecycle_snapshot{category=\"missing_asset\",job=\"week18-java-lifecycle-live\"}) > 0",
+      "state": "inactive"
+    },
+    "Week18LifecycleRepairIncomplete": {
+      "activeAlertCount": 0,
+      "health": "ok",
+      "lastError": "",
+      "query": "max(media_week18_lifecycle_snapshot{category=\"repair_required\",job=\"week18-java-lifecycle-live\"}) - max(media_week18_lifecycle_snapshot{category=\"repair_applied\",job=\"week18-java-lifecycle-live\"}) > 0",
+      "state": "inactive"
+    },
+    "Week18LifecycleResultBindingGap": {
+      "activeAlertCount": 0,
+      "health": "ok",
+      "lastError": "",
+      "query": "max(media_week18_lifecycle_snapshot{category=\"task_total\",job=\"week18-java-lifecycle-live\"}) - max(media_week18_lifecycle_snapshot{category=\"result_bound\",job=\"week18-java-lifecycle-live\"}) > 0",
+      "state": "inactive"
+    },
+    "Week18LifecycleTargetDown": {
+      "activeAlertCount": 0,
+      "health": "ok",
+      "lastError": "",
+      "query": "min(up{job=\"week18-java-lifecycle-live\"}) == 0",
+      "state": "inactive"
+    }
+  },
+  "unhealthyRules": []
+}

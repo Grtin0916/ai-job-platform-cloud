@@ -1,0 +1,78 @@
+groups:
+  - name: week18-lifecycle-live
+    interval: 2s
+    rules:
+      - alert: Week18LifecycleTargetDown
+        expr: min(up{job="week18-java-lifecycle-live"}) == 0
+        for: 10s
+        labels:
+          severity: critical
+          scope: local-live
+        annotations:
+          summary: Java lifecycle scrape target is down
+          description: Prometheus cannot scrape the Week18 Java lifecycle service.
+
+      - alert: Week18LifecycleResultBindingGap
+        expr: |
+          max(
+            media_week18_lifecycle_snapshot{
+              job="week18-java-lifecycle-live",
+              category="task_total"
+            }
+          )
+          -
+          max(
+            media_week18_lifecycle_snapshot{
+              job="week18-java-lifecycle-live",
+              category="result_bound"
+            }
+          )
+          > 0
+        for: 4s
+        labels:
+          severity: warning
+          scope: local-live
+        annotations:
+          summary: Week18 lifecycle has unbound task results
+          description: The number of lifecycle tasks exceeds the number of bound results.
+
+      - alert: Week18LifecycleMissingAsset
+        expr: |
+          max(
+            media_week18_lifecycle_snapshot{
+              job="week18-java-lifecycle-live",
+              category="missing_asset"
+            }
+          )
+          > 0
+        for: 4s
+        labels:
+          severity: critical
+          scope: local-live
+        annotations:
+          summary: Week18 lifecycle references missing assets
+          description: At least one lifecycle task references an unavailable artifact.
+
+      - alert: Week18LifecycleRepairIncomplete
+        expr: |
+          max(
+            media_week18_lifecycle_snapshot{
+              job="week18-java-lifecycle-live",
+              category="repair_required"
+            }
+          )
+          -
+          max(
+            media_week18_lifecycle_snapshot{
+              job="week18-java-lifecycle-live",
+              category="repair_applied"
+            }
+          )
+          > 0
+        for: 4s
+        labels:
+          severity: warning
+          scope: local-live
+        annotations:
+          summary: Week18 lifecycle repair remains incomplete
+          description: Repair-required tasks exceed repair-applied tasks.

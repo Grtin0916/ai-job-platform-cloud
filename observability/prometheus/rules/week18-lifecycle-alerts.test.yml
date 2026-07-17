@@ -1,0 +1,102 @@
+rule_files:
+  - week18-lifecycle-alerts.yml
+
+evaluation_interval: 2s
+
+tests:
+  - name: healthy lifecycle keeps all alerts inactive
+    interval: 2s
+    input_series:
+      - series: 'up{job="week18-java-lifecycle-live"}'
+        values: '1 1 1 1 1 1 1 1 1 1 1'
+      - series: 'media_week18_lifecycle_snapshot{job="week18-java-lifecycle-live",category="task_total"}'
+        values: '12 12 12 12 12 12 12 12 12 12 12'
+      - series: 'media_week18_lifecycle_snapshot{job="week18-java-lifecycle-live",category="result_bound"}'
+        values: '12 12 12 12 12 12 12 12 12 12 12'
+      - series: 'media_week18_lifecycle_snapshot{job="week18-java-lifecycle-live",category="missing_asset"}'
+        values: '0 0 0 0 0 0 0 0 0 0 0'
+      - series: 'media_week18_lifecycle_snapshot{job="week18-java-lifecycle-live",category="repair_required"}'
+        values: '6 6 6 6 6 6 6 6 6 6 6'
+      - series: 'media_week18_lifecycle_snapshot{job="week18-java-lifecycle-live",category="repair_applied"}'
+        values: '6 6 6 6 6 6 6 6 6 6 6'
+    alert_rule_test:
+      - eval_time: 20s
+        alertname: Week18LifecycleTargetDown
+        exp_alerts: []
+      - eval_time: 20s
+        alertname: Week18LifecycleResultBindingGap
+        exp_alerts: []
+      - eval_time: 20s
+        alertname: Week18LifecycleMissingAsset
+        exp_alerts: []
+      - eval_time: 20s
+        alertname: Week18LifecycleRepairIncomplete
+        exp_alerts: []
+
+  - name: target down becomes critical
+    interval: 2s
+    input_series:
+      - series: 'up{job="week18-java-lifecycle-live"}'
+        values: '0 0 0 0 0 0 0 0'
+    alert_rule_test:
+      - eval_time: 12s
+        alertname: Week18LifecycleTargetDown
+        exp_alerts:
+          - exp_labels:
+              severity: critical
+              scope: local-live
+            exp_annotations:
+              summary: Java lifecycle scrape target is down
+              description: Prometheus cannot scrape the Week18 Java lifecycle service.
+
+  - name: result binding gap becomes warning
+    interval: 2s
+    input_series:
+      - series: 'media_week18_lifecycle_snapshot{job="week18-java-lifecycle-live",category="task_total"}'
+        values: '12 12 12 12 12'
+      - series: 'media_week18_lifecycle_snapshot{job="week18-java-lifecycle-live",category="result_bound"}'
+        values: '10 10 10 10 10'
+    alert_rule_test:
+      - eval_time: 8s
+        alertname: Week18LifecycleResultBindingGap
+        exp_alerts:
+          - exp_labels:
+              severity: warning
+              scope: local-live
+            exp_annotations:
+              summary: Week18 lifecycle has unbound task results
+              description: The number of lifecycle tasks exceeds the number of bound results.
+
+  - name: missing asset becomes critical
+    interval: 2s
+    input_series:
+      - series: 'media_week18_lifecycle_snapshot{job="week18-java-lifecycle-live",category="missing_asset"}'
+        values: '1 1 1 1 1'
+    alert_rule_test:
+      - eval_time: 8s
+        alertname: Week18LifecycleMissingAsset
+        exp_alerts:
+          - exp_labels:
+              severity: critical
+              scope: local-live
+            exp_annotations:
+              summary: Week18 lifecycle references missing assets
+              description: At least one lifecycle task references an unavailable artifact.
+
+  - name: incomplete repair becomes warning
+    interval: 2s
+    input_series:
+      - series: 'media_week18_lifecycle_snapshot{job="week18-java-lifecycle-live",category="repair_required"}'
+        values: '6 6 6 6 6'
+      - series: 'media_week18_lifecycle_snapshot{job="week18-java-lifecycle-live",category="repair_applied"}'
+        values: '4 4 4 4 4'
+    alert_rule_test:
+      - eval_time: 8s
+        alertname: Week18LifecycleRepairIncomplete
+        exp_alerts:
+          - exp_labels:
+              severity: warning
+              scope: local-live
+            exp_annotations:
+              summary: Week18 lifecycle repair remains incomplete
+              description: Repair-required tasks exceed repair-applied tasks.

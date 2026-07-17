@@ -1,0 +1,29 @@
+Prometheus tooling: 2.31.2+ds1
+
+Checking observability/prometheus/rules/week18-lifecycle-alerts.yml
+  SUCCESS: 4 rules found
+
+Unit Testing: week18-lifecycle-alerts.test.yml
+  SUCCESS
+
+Live runtime:
+  Java target health: up
+  loadedRuleCount: 4
+  missingRules: []
+  unhealthyRules: []
+  nonInactiveRules: []
+  activeAlerts: 0
+  gateStatus: PASS
+
+Claim boundary:
+  localLiveAlertRulesVerified: true
+  productionPrometheusVerified: false
+  alertmanagerConfigured: false
+  productionAlertingVerified: false
+
+Docker Desktop note:
+  Docker Desktop engine did not start. The host backend reported an inotify
+  "no space left on device" error followed by a missing ethernet-qemu socket;
+  the Desktop VM history also contains an ext4 deleted-inode error. No prune,
+  purge, reset, or destructive storage operation was performed. Static and live
+  rule verification used an independently extracted host Prometheus binary.
