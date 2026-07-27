@@ -1,0 +1,20 @@
+{
+  "title": "W19 Repair Decision Funnel",
+  "uid": "repair-release-w19",
+  "schemaVersion": 39,
+  "tags": ["repair", "decision-funnel", "integrity"],
+  "panels": [
+    {"id": 1, "title": "Repair records", "type": "stat", "targets": [{"expr": "repair_records"}]},
+    {"id": 2, "title": "Proxy improved (not human preference)", "type": "stat", "targets": [{"expr": "repair_proxy_improved_records"}]},
+    {"id": 3, "title": "Manual review pending", "type": "stat", "targets": [{"expr": "repair_manual_review_pending"}]},
+    {"id": 4, "title": "Manual review requested", "type": "stat", "targets": [{"expr": "repair_manual_review_requested"}]},
+    {"id": 5, "title": "Manual review completed", "type": "stat", "targets": [{"expr": "repair_manual_review_completed"}]},
+    {"id": 6, "title": "Final selected", "type": "stat", "targets": [{"expr": "repair_final_selected_records"}]},
+    {"id": 7, "title": "Rejected", "type": "stat", "targets": [{"expr": "repair_rejected_records"}]},
+    {"id": 8, "title": "Artifact references / unique blobs", "type": "timeseries", "targets": [{"expr": "repair_artifact_references"}, {"expr": "repair_artifact_unique_blobs"}]},
+    {"id": 9, "title": "Artifact integrity failures", "type": "stat", "targets": [{"expr": "repair_artifact_integrity_failures"}]},
+    {"id": 10, "title": "Source consistency", "type": "stat", "targets": [{"expr": "repair_source_consistency"}]},
+    {"id": 11, "title": "Onset samples (metric unavailable at zero)", "type": "stat", "targets": [{"expr": "repair_onset_sample_count"}]},
+    {"id": 12, "title": "Demo pack verified", "type": "stat", "targets": [{"expr": "repair_demo_pack_verified"}]}
+  ]
+}

@@ -1,0 +1,6 @@
+apiVersion: 1
+providers:
+  - name: repair-release-w19
+    type: file
+    options:
+      path: /var/lib/grafana/dashboards/repair-dashboard.json

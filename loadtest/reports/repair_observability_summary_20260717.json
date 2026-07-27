@@ -1,0 +1,18 @@
+{
+  "records": 20,
+  "manualReview": 18,
+  "rejected": 2,
+  "finalSelected": 0,
+  "artifactReferences": 40,
+  "artifactUniqueBlobs": 34,
+  "integrityFailures": 0,
+  "onsetMetricAvailable": false,
+  "demoPackVerified": true,
+  "finalSelectionReady": false,
+  "grafanaDashboardJsonValidated": true,
+  "grafanaProvisioningConfigValidated": true,
+  "liveGrafanaImportVerified": false,
+  "productionPrometheusVerified": false,
+  "alertmanagerConfigured": false,
+  "productionAlertingVerified": false
+}

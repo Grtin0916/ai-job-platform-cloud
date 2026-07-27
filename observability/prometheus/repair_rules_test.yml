@@ -1,0 +1,13 @@
+rule_files:
+  - repair_rules.yml
+evaluation_interval: 1m
+tests:
+  - interval: 1m
+    input_series:
+      - series: repair_artifact_integrity_failures
+        values: 1x10
+    alert_rule_test:
+      - eval_time: 5m
+        alertname: RepairArtifactIntegrityFailure
+        exp_alerts:
+          - {}

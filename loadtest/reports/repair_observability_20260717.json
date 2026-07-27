@@ -1,0 +1,85 @@
+{
+  "schemaVersion": "repair-observability/v1",
+  "sourceCommit": "b1e19c1",
+  "inputs": [
+    "/home/GRT/work/grt_work/media-task-platform-java/artifacts/manifests/repair_workflow_report_20260716.json",
+    "/home/GRT/work/grt_work/media-task-platform-java/artifacts/manifests/repair_artifact_index_20260716.json",
+    "/home/GRT/work/grt_work/audio_engineering_repo_skeleton_v1/reports/layer_semantic_repair_summary_20260715.json"
+  ],
+  "acousticEvidence": {
+    "recordCount": 20,
+    "proxyImprovedCount": 4,
+    "onsetSampleCount": 0,
+    "onsetMetricAvailable": false,
+    "repairActionCounts": {
+      "HEADROOM_ONLY": 3,
+      "MICRO_DECLIP_LINEAR_PROBE": 5,
+      "SILENCE_AWARE_TRIM": 2,
+      "SMOOTH_REGION_GAIN": 2,
+      "event_region_gain": 3,
+      "event_transplant": 4,
+      "smooth_region_attenuation": 1
+    },
+    "sourceModeCounts": {
+      "candidate_replace": 4,
+      "mixed_only": 16
+    }
+  },
+  "workflowDecision": {
+    "decisionCounts": {
+      "MANUAL_REVIEW": 18,
+      "REPAIR_REJECTED": 2
+    },
+    "manualReviewRequestedCount": 6,
+    "manualReviewCompletedCount": 0,
+    "manualReviewPendingCount": 18,
+    "finalSelectedCount": 0,
+    "rejectedCount": 2
+  },
+  "artifactIntegrity": {
+    "referenceCount": 40,
+    "uniqueBlobCount": 34,
+    "integrityFailureCount": 0,
+    "failures": []
+  },
+  "sourceConsistency": true,
+  "ratios": {
+    "proxyImprovementRatio": {
+      "numerator": 4,
+      "denominator": 20,
+      "available": true,
+      "value": 0.2
+    },
+    "manualReviewCompletionRatio": {
+      "numerator": 0,
+      "denominator": 6,
+      "available": true,
+      "value": 0.0
+    },
+    "finalSelectionRatio": {
+      "numerator": 0,
+      "denominator": 20,
+      "available": true,
+      "value": 0.0
+    },
+    "meanOnsetGainMs": {
+      "numerator": null,
+      "denominator": 0,
+      "available": false,
+      "value": null
+    }
+  },
+  "demoPackVerified": true,
+  "boundaries": {
+    "grafanaDashboardJsonValidated": true,
+    "grafanaProvisioningConfigValidated": true,
+    "liveGrafanaImportVerified": false,
+    "productionPrometheusVerified": false,
+    "alertmanagerConfigured": false,
+    "productionAlertingVerified": false
+  },
+  "releaseReadiness": {
+    "finalSelectionReady": false,
+    "demoReleaseReady": true
+  }
+}

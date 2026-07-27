@@ -1,0 +1,42 @@
+# HELP repair_records W19 repair release metric.
+# TYPE repair_records gauge
+repair_records 20
+# HELP repair_proxy_improved_records W19 repair release metric.
+# TYPE repair_proxy_improved_records gauge
+repair_proxy_improved_records 4
+# HELP repair_manual_review_pending W19 repair release metric.
+# TYPE repair_manual_review_pending gauge
+repair_manual_review_pending 18
+# HELP repair_manual_review_requested W19 repair release metric.
+# TYPE repair_manual_review_requested gauge
+repair_manual_review_requested 6
+# HELP repair_manual_review_completed W19 repair release metric.
+# TYPE repair_manual_review_completed gauge
+repair_manual_review_completed 0
+# HELP repair_final_selected_records W19 repair release metric.
+# TYPE repair_final_selected_records gauge
+repair_final_selected_records 0
+# HELP repair_rejected_records W19 repair release metric.
+# TYPE repair_rejected_records gauge
+repair_rejected_records 2
+# HELP repair_artifact_references W19 repair release metric.
+# TYPE repair_artifact_references gauge
+repair_artifact_references 40
+# HELP repair_artifact_unique_blobs W19 repair release metric.
+# TYPE repair_artifact_unique_blobs gauge
+repair_artifact_unique_blobs 34
+# HELP repair_artifact_integrity_failures W19 repair release metric.
+# TYPE repair_artifact_integrity_failures gauge
+repair_artifact_integrity_failures 0
+# HELP repair_source_consistency W19 repair release metric.
+# TYPE repair_source_consistency gauge
+repair_source_consistency 1
+# HELP repair_onset_sample_count W19 repair release metric.
+# TYPE repair_onset_sample_count gauge
+repair_onset_sample_count 0
+# HELP repair_demo_pack_build_attempted W19 repair release metric.
+# TYPE repair_demo_pack_build_attempted gauge
+repair_demo_pack_build_attempted 1
+# HELP repair_demo_pack_verified W19 repair release metric.
+# TYPE repair_demo_pack_verified gauge
+repair_demo_pack_verified 1

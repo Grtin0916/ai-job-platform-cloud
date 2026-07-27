@@ -1,0 +1,19 @@
+groups:
+  - name: repair-release-w19
+    rules:
+      - record: repair:manual_review_completion_ratio
+        expr: repair_manual_review_completed / clamp_min(repair_manual_review_requested, 1)
+      - record: repair:final_selection_ratio
+        expr: repair_final_selected_records / clamp_min(repair_records, 1)
+      - alert: RepairArtifactIntegrityFailure
+        expr: repair_artifact_integrity_failures > 0
+        for: 5m
+      - alert: RepairSourceInconsistency
+        expr: repair_source_consistency == 0
+        for: 5m
+      - alert: RepairReviewQueueStalled
+        expr: repair_manual_review_pending > 0 and repair_manual_review_completed == 0
+        for: 24h
+      - alert: RepairDemoPackBroken
+        expr: repair_demo_pack_build_attempted == 1 and repair_demo_pack_verified == 0
+        for: 5m
