@@ -1,0 +1,16 @@
+demo_cloud_job_records 3
+demo_cloud_job_attempts 1
+demo_cloud_jobs_by_execution_status{status="blocked"} 2
+demo_cloud_jobs_by_execution_status{status="succeeded"} 1
+demo_cloud_jobs_by_publish_decision{decision="provisional_selected"} 2
+demo_cloud_jobs_by_publish_decision{decision="repair_rejected"} 1
+demo_cloud_release_records 13
+demo_cloud_artifact_objects 20
+demo_cloud_artifact_integrity_failures 0
+demo_cloud_host_path_leaks 0
+demo_cloud_lease_conflicts_total 1
+demo_cloud_expired_lease_takeovers_total 1
+demo_cloud_stale_fence_rejections_total 1
+demo_cloud_k6_gate_pass 0
+demo_cloud_release_ready 0
+demo_cloud_human_gate_ready 0

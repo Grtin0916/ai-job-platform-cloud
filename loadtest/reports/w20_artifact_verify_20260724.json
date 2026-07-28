@@ -1,0 +1,12 @@
+{
+  "blockedOrRejectedCount": 2,
+  "decisionMutationCount": 0,
+  "finalSelectedCount": 0,
+  "hostPathLeakCount": 0,
+  "integrityFailureCount": 0,
+  "integrityFailures": [],
+  "provisionalCount": 10,
+  "recordCount": 12,
+  "uniqueObjectCount": 20,
+  "verified": true
+}

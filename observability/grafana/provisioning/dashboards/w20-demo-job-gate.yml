@@ -1,0 +1,7 @@
+apiVersion: 1
+providers:
+  - name: w20-demo-job-gate
+    type: file
+    updateIntervalSeconds: 30
+    options:
+      path: /var/lib/grafana/dashboards/w20-demo-job-gate.json

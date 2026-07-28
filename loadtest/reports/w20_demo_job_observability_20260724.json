@@ -1,0 +1,29 @@
+{
+  "artifactObjectCount": 20,
+  "attemptCount": 1,
+  "dashboardPanelCount": 12,
+  "finalSelectionReady": false,
+  "hostPathLeakCount": 0,
+  "humanGateReady": false,
+  "integrityFailureCount": 0,
+  "jobCount": 3,
+  "k6Executed": false,
+  "k6ExitCode": 125,
+  "k6SummaryPresent": true,
+  "k6ThresholdPassed": false,
+  "leaseRecoveryVerified": true,
+  "ledgerCounts": {
+    "artifacts": 20,
+    "attempts": 1,
+    "events": 6,
+    "imports": 1,
+    "jobs": 3,
+    "leases": 1,
+    "releases": 13
+  },
+  "liveGrafanaImportVerified": false,
+  "lowCardinalityMetricDesign": true,
+  "productionAlertingVerified": false,
+  "productionPrometheusVerified": false,
+  "productionWorkflowVerified": false
+}

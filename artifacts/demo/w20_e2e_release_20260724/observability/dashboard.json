@@ -1,0 +1,213 @@
+{
+  "panels": [
+    {
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "targets": [
+        {
+          "expr": "demo_cloud_job_records",
+          "refId": "A"
+        }
+      ],
+      "title": "Imported Jobs",
+      "type": "stat"
+    },
+    {
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 6,
+        "y": 0
+      },
+      "id": 2,
+      "targets": [
+        {
+          "expr": "demo_cloud_jobs_by_execution_status",
+          "refId": "A"
+        }
+      ],
+      "title": "Execution Status",
+      "type": "timeseries"
+    },
+    {
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 12,
+        "y": 0
+      },
+      "id": 3,
+      "targets": [
+        {
+          "expr": "demo_cloud_jobs_by_publish_decision",
+          "refId": "A"
+        }
+      ],
+      "title": "Publish Decision",
+      "type": "timeseries"
+    },
+    {
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 18,
+        "y": 0
+      },
+      "id": 4,
+      "targets": [
+        {
+          "expr": "demo_cloud_release_records",
+          "refId": "A"
+        }
+      ],
+      "title": "Provisional vs Final",
+      "type": "stat"
+    },
+    {
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
+        "y": 8
+      },
+      "id": 5,
+      "targets": [
+        {
+          "expr": "demo_cloud_job_records",
+          "refId": "A"
+        }
+      ],
+      "title": "Replay vs Blocked",
+      "type": "timeseries"
+    },
+    {
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 6,
+        "y": 8
+      },
+      "id": 6,
+      "targets": [
+        {
+          "expr": "demo_cloud_artifact_objects",
+          "refId": "A"
+        }
+      ],
+      "title": "Artifact Objects",
+      "type": "stat"
+    },
+    {
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 12,
+        "y": 8
+      },
+      "id": 7,
+      "targets": [
+        {
+          "expr": "demo_cloud_artifact_integrity_failures",
+          "refId": "A"
+        }
+      ],
+      "title": "Integrity Failures",
+      "type": "stat"
+    },
+    {
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 18,
+        "y": 8
+      },
+      "id": 8,
+      "targets": [
+        {
+          "expr": "demo_cloud_lease_conflicts_total",
+          "refId": "A"
+        }
+      ],
+      "title": "Lease Contention",
+      "type": "stat"
+    },
+    {
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
+        "y": 16
+      },
+      "id": 9,
+      "targets": [
+        {
+          "expr": "demo_cloud_expired_lease_takeovers_total",
+          "refId": "A"
+        }
+      ],
+      "title": "Lease Recovery",
+      "type": "stat"
+    },
+    {
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 6,
+        "y": 16
+      },
+      "id": 10,
+      "targets": [
+        {
+          "expr": "demo_cloud_stale_fence_rejections_total",
+          "refId": "A"
+        }
+      ],
+      "title": "Stale Fence Reject",
+      "type": "stat"
+    },
+    {
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 12,
+        "y": 16
+      },
+      "id": 11,
+      "targets": [
+        {
+          "expr": "demo_cloud_k6_gate_pass",
+          "refId": "A"
+        }
+      ],
+      "title": "k6 Gate",
+      "type": "stat"
+    },
+    {
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 18,
+        "y": 16
+      },
+      "id": 12,
+      "targets": [
+        {
+          "expr": "demo_cloud_release_ready",
+          "refId": "A"
+        }
+      ],
+      "title": "Release Readiness",
+      "type": "stat"
+    }
+  ],
+  "refresh": "30s",
+  "schemaVersion": 39,
+  "title": "W20 Durable Demo Job Gate",
+  "uid": "w20-demo-job-gate",
+  "version": 1
+}

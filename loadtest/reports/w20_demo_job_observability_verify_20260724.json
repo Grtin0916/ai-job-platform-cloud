@@ -1,0 +1,17 @@
+{
+  "alertRuleCount": 6,
+  "dashboardPanelCount": 12,
+  "forbiddenHighCardinalityLabelCount": 0,
+  "liveGrafanaImportVerified": false,
+  "malformedMetricCount": 0,
+  "metricSampleCount": 16,
+  "productionAlertingVerified": false,
+  "productionPrometheusVerified": false,
+  "promtoolAvailable": false,
+  "promtoolMetricsVerified": false,
+  "promtoolOutputs": {},
+  "promtoolRuleTestsVerified": false,
+  "promtoolRulesVerified": false,
+  "recordingRuleCount": 5,
+  "verified": true
+}

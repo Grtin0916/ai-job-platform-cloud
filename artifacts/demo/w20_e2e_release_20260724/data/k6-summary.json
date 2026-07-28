@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "w20-k6-runtime-boundary/v1",
+  "invocationAttempted": true,
+  "executed": false,
+  "exitCode": 125,
+  "thresholdPassed": false,
+  "runtimeBlockedReason": "DOCKER_DAEMON_UNAVAILABLE",
+  "sourceLog": "artifacts/logs/w20_demo_job_k6_20260724.log",
+  "simulatedPass": false
+}

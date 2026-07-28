@@ -1,0 +1,12 @@
+test_real_java_blobs_promote_without_host_path_leak (demo_gate.test_durable_demo_gate.ArtifactPromotionTest) ... ok
+test_fixture_has_no_final_selection (demo_gate.test_durable_demo_gate.ClaimBoundaryTest) ... ok
+test_changed_contract_for_same_java_job_is_rejected (demo_gate.test_durable_demo_gate.LedgerTest) ... ok
+test_duplicate_import_reuses_without_new_jobs (demo_gate.test_durable_demo_gate.LedgerTest) ... ok
+test_expired_lease_increments_fence_and_rejects_old_writer (demo_gate.test_durable_demo_gate.LedgerTest) ... ok
+test_missing_asset_produces_fail_gate (test_week18_task_lifecycle_cloud_gate.Week18LifecycleCloudGateTest) ... ok
+test_valid_report_builds_pass_artifacts (test_week18_task_lifecycle_cloud_gate.Week18LifecycleCloudGateTest) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.118s
+
+OK

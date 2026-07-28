@@ -1,0 +1,12 @@
+{
+  "artifactOriginCommit": "0334abe",
+  "cloudConsumerCommit": "5cd18aa",
+  "cloudConsumerRole": "build-base-commit",
+  "githubActionsBuilt": false,
+  "handoffProducerCommit": "fd1422d",
+  "javaConsumerCommit": "fb8ad4f",
+  "releaseBuildKind": "local-reproducible-zip",
+  "signedAttestation": false,
+  "slsaCompliant": false,
+  "sourceHandoffDigest": "9b27ef946ea5b05d838e19ec22656c6877444a67c89bd658c69bbaae4536fc5e"
+}

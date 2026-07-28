@@ -1,0 +1,11 @@
+{
+  "artifactReady": true,
+  "distributedExactlyOnce": false,
+  "finalSelectionReady": false,
+  "humanGateReady": false,
+  "k6Executed": false,
+  "k6ThresholdPassed": false,
+  "leaseRecoveryReady": true,
+  "ledgerReady": true,
+  "productionWorkflowVerified": false
+}

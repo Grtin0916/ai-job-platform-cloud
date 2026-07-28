@@ -1,0 +1,17 @@
+[1/6] required files
+[2/6] required directories
+[3/6] shell syntax
+[4/6] docker compose config
+[5/6] kubectl dry-run
+E0728 14:27:41.679332  103941 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://127.0.0.1:43443/api?timeout=32s\": dial tcp 127.0.0.1:43443: connect: connection refused"
+E0728 14:27:41.680177  103941 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://127.0.0.1:43443/api?timeout=32s\": dial tcp 127.0.0.1:43443: connect: connection refused"
+E0728 14:27:41.682298  103941 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://127.0.0.1:43443/api?timeout=32s\": dial tcp 127.0.0.1:43443: connect: connection refused"
+E0728 14:27:41.683069  103941 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://127.0.0.1:43443/api?timeout=32s\": dial tcp 127.0.0.1:43443: connect: connection refused"
+E0728 14:27:41.684793  103941 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://127.0.0.1:43443/api?timeout=32s\": dial tcp 127.0.0.1:43443: connect: connection refused"
+E0728 14:27:41.685722  103941 memcache.go:265] "Unhandled Error" err="couldn't get current server API group list: Get \"https://127.0.0.1:43443/api?timeout=32s\": dial tcp 127.0.0.1:43443: connect: connection refused"
+unable to recognize "k8s/base/gateway-deployment.yaml": Get "https://127.0.0.1:43443/api?timeout=32s": dial tcp 127.0.0.1:43443: connect: connection refused
+unable to recognize "k8s/base/gateway-deployment.yaml": Get "https://127.0.0.1:43443/api?timeout=32s": dial tcp 127.0.0.1:43443: connect: connection refused
+unable to recognize "k8s/base/java-app-deployment.yaml": Get "https://127.0.0.1:43443/api?timeout=32s": dial tcp 127.0.0.1:43443: connect: connection refused
+unable to recognize "k8s/base/java-app-service.yaml": Get "https://127.0.0.1:43443/api?timeout=32s": dial tcp 127.0.0.1:43443: connect: connection refused
+unable to recognize "k8s/base/namespace.yaml": Get "https://127.0.0.1:43443/api?timeout=32s": dial tcp 127.0.0.1:43443: connect: connection refused
+unable to recognize "k8s/base/week13-audio-worker-job-template.yaml": Get "https://127.0.0.1:43443/api?timeout=32s": dial tcp 127.0.0.1:43443: connect: connection refused

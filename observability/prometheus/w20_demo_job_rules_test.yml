@@ -1,0 +1,15 @@
+rule_files:
+  - w20_demo_job_rules.yml
+evaluation_interval: 1m
+tests:
+  - interval: 1m
+    input_series:
+      - series: demo_cloud_artifact_integrity_failures
+        values: 0
+      - series: demo_cloud_artifact_objects
+        values: 20
+    promql_expr_test:
+      - expr: demo:artifact_integrity_ratio
+        eval_time: 0m
+        exp_samples:
+          - value: 1

@@ -1,0 +1,10 @@
+test_real_java_blobs_promote_without_host_path_leak (test_durable_demo_gate.ArtifactPromotionTest) ... ok
+test_fixture_has_no_final_selection (test_durable_demo_gate.ClaimBoundaryTest) ... ok
+test_changed_contract_for_same_java_job_is_rejected (test_durable_demo_gate.LedgerTest) ... ok
+test_duplicate_import_reuses_without_new_jobs (test_durable_demo_gate.LedgerTest) ... ok
+test_expired_lease_increments_fence_and_rejects_old_writer (test_durable_demo_gate.LedgerTest) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.123s
+
+OK

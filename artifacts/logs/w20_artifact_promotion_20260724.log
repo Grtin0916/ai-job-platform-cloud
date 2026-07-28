@@ -1,0 +1,2 @@
+records=12 objects=20 integrityFailures=0 hostPathLeaks=0
+{'verified': True, 'recordCount': 12, 'provisionalCount': 10, 'blockedOrRejectedCount': 2, 'finalSelectedCount': 0, 'uniqueObjectCount': 20, 'integrityFailureCount': 0, 'integrityFailures': [], 'hostPathLeakCount': 0, 'decisionMutationCount': 0}
