@@ -1,0 +1,32 @@
+{
+  "baselineDecision": "HOLD_HUMAN_REVIEW",
+  "falsePromotionCount": 0,
+  "finalSelectedMutationCount": 0,
+  "gateOrder": [
+    "artifactIntegrityReady",
+    "registryReady",
+    "observabilityReady",
+    "preferenceDataReady",
+    "modelAvailable",
+    "oofAvailable",
+    "recommendationReady",
+    "humanGateReady",
+    "finalSelectionReady",
+    "productionWorkflowVerified"
+  ],
+  "gates": {
+    "artifactIntegrityReady": true,
+    "finalSelectionReady": false,
+    "humanGateReady": false,
+    "modelAvailable": false,
+    "observabilityReady": true,
+    "oofAvailable": false,
+    "preferenceDataReady": false,
+    "productionWorkflowVerified": false,
+    "recommendationReady": false,
+    "registryReady": true
+  },
+  "nextRequiredAction": "Complete blind preference review",
+  "overallDecision": "HOLD_HUMAN_REVIEW",
+  "schemaVersion": "ranker-release-gate/v1"
+}

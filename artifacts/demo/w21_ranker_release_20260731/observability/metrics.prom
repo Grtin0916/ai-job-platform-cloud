@@ -1,0 +1,44 @@
+# TYPE ranker_registry_versions gauge
+ranker_registry_versions{promotion_status="data_blocked"} 1
+# TYPE ranker_model_available gauge
+ranker_model_available 0
+# TYPE ranker_oof_available gauge
+ranker_oof_available 0
+# TYPE ranker_recommendation_records gauge
+ranker_recommendation_records 0
+# TYPE ranker_review_rows gauge
+ranker_review_rows 48
+# TYPE ranker_review_submitted gauge
+ranker_review_submitted 0
+# TYPE ranker_metric_available gauge
+ranker_metric_available{metric="oof_accuracy"} 0
+ranker_metric_available{metric="brier_score"} 0
+# TYPE ranker_artifact_integrity_failures gauge
+ranker_artifact_integrity_failures 0
+# TYPE ranker_bundle_contract_drift gauge
+ranker_bundle_contract_drift 0
+# TYPE ranker_invalid_promotion_transitions gauge
+ranker_invalid_promotion_transitions 0
+# TYPE ranker_metric_published_while_unavailable gauge
+ranker_metric_published_while_unavailable 0
+# TYPE ranker_recommendation_while_data_blocked gauge
+ranker_recommendation_while_data_blocked 0
+# TYPE ranker_final_selection_without_human_review gauge
+ranker_final_selection_without_human_review 0
+# TYPE ranker_release_manifest_broken gauge
+ranker_release_manifest_broken 0
+# TYPE ranker_human_review_pending gauge
+ranker_human_review_pending 1
+# TYPE ranker_release_gate_ready gauge
+ranker_release_gate_ready{gate="artifactIntegrityReady"} 1
+ranker_release_gate_ready{gate="registryReady"} 1
+ranker_release_gate_ready{gate="observabilityReady"} 1
+ranker_release_gate_ready{gate="preferenceDataReady"} 0
+ranker_release_gate_ready{gate="modelAvailable"} 0
+ranker_release_gate_ready{gate="oofAvailable"} 0
+ranker_release_gate_ready{gate="recommendationReady"} 0
+ranker_release_gate_ready{gate="humanGateReady"} 0
+ranker_release_gate_ready{gate="finalSelectionReady"} 0
+ranker_release_gate_ready{gate="productionWorkflowVerified"} 0
+# TYPE ranker_release_decision gauge
+ranker_release_decision{decision="hold_human_review"} 1

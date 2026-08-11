@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "w21-ranker-runtime-validation/v1",
+  "dockerContext": "default",
+  "dockerInfoExecuted": true,
+  "dockerReady": false,
+  "dockerComposeConfigValid": true,
+  "dockerComposeServices": [
+    "prometheus",
+    "grafana"
+  ],
+  "runtimeBlockedReason": "Docker daemon unavailable at the configured Docker Desktop socket",
+  "promtoolInstalledOnHost": false,
+  "promtoolCheckMetricsExecuted": false,
+  "promtoolCheckRulesExecuted": false,
+  "promtoolRuleTestsExecuted": false,
+  "rulesYamlParsed": true,
+  "dashboardJsonParsed": true,
+  "grafanaProvisionVerified": false,
+  "k6InstalledOnHost": false,
+  "k6Executed": false,
+  "k6ThresholdPassed": false,
+  "productionPrometheusVerified": false,
+  "productionWorkflowVerified": false
+}

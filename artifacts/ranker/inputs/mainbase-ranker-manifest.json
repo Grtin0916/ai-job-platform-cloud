@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "ranker-delivery-bundle/v1",
+  "rankerName": "preference-ranker",
+  "rankerVersion": "preference-ranker-v1-20260730",
+  "promotionStatus": "DATA_BLOCKED",
+  "modelPresent": false,
+  "oofAvailable": false,
+  "recommendationCount": 0,
+  "featureSchemaVersion": "preference-features-v1",
+  "featureSnapshotDigest": "463b958ba3a189b31a69da3b9197ff51ecf2aec76542039afd45760d42435d5f",
+  "trainingDatasetDigest": "b6de1b607f99cb598369337aa0cfd4e075a2c622a71d19ed14ac70bd3dc5b63a",
+  "trainingCodeCommit": "9740b2dfa9054ef2e138f0ddc7367b0c91e60bb3",
+  "sourceGitHead": "9740b2dfa9054ef2e138f0ddc7367b0c91e60bb3",
+  "reviewSubmittedCount": 0,
+  "humanReviewCompleted": false,
+  "finalSelectedMutationCount": 0,
+  "blockedReason": "independent pair count 0 is below 30; human quality gate remains blocked",
+  "activeLearningStatus": "ACTIVE_LEARNING_BLOCKED",
+  "artifacts": [
+    {
+      "relativePath": "claim-boundary.json",
+      "sha256": "d0e581a88eed5ffb5cd94e24c52036b3f68139028307b1c1858b7672faae678f",
+      "sizeBytes": 250,
+      "mediaType": "application/json",
+      "requiredForStatus": true
+    },
+    {
+      "relativePath": "feature-schema.json",
+      "sha256": "355aff330cbd29a5f8c9219399811ef7fd7ba33ac44a34c75545ba2bb78ad264",
+      "sizeBytes": 436,
+      "mediaType": "application/json",
+      "requiredForStatus": true
+    },
+    {
+      "relativePath": "model-card.json",
+      "sha256": "630d00c2b8f4136fadad4b2bb771ee3852ad891a78c775969bd7f479bd891af1",
+      "sizeBytes": 451,
+      "mediaType": "application/json",
+      "requiredForStatus": true
+    }
+  ],
+  "claimBoundary": {
+    "proxyOnly": true,
+    "humanGateRequired": true,
+    "autoFinalForbidden": true
+  },
+  "bundleDigest": "c89a88c5769f42cb184c030c99d20480cb4e0af3f396a1144c2b4dce3dd21e7f"
+}

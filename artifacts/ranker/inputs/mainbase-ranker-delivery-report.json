@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "ranker-delivery-report/v1",
+  "status": "DELIVERY_READY",
+  "promotionStatus": "DATA_BLOCKED",
+  "bundleDigest": "c89a88c5769f42cb184c030c99d20480cb4e0af3f396a1144c2b4dce3dd21e7f",
+  "bundleRelativePath": "artifacts/models/preference_ranker_v1/delivery",
+  "artifactCount": 3,
+  "directoryMembers": [
+    "checksums.sha256",
+    "claim-boundary.json",
+    "feature-schema.json",
+    "manifest.json",
+    "model-card.json"
+  ],
+  "memberSetMatches": true,
+  "checksumEntryCount": 4,
+  "checksumVerifiedCount": 4,
+  "modelPresent": false,
+  "oofAvailable": false,
+  "recommendationCount": 0,
+  "reviewSubmittedCount": 0,
+  "humanReviewCompleted": false,
+  "finalSelectedMutationCount": 0,
+  "blockedReason": "independent pair count 0 is below 30; human quality gate remains blocked"
+}

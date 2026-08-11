@@ -1,0 +1,42 @@
+{
+  "artifactIntegrity": {
+    "checksumCount": 4,
+    "checksumFailures": [],
+    "checksumVerifiedCount": 4,
+    "crossRepositoryDigestMatch": true,
+    "crossRepositoryPromotionMatch": true,
+    "ready": true
+  },
+  "claimBoundary": {
+    "autoFinalForbidden": true,
+    "humanGateRequired": true,
+    "productionWorkflowVerified": false,
+    "proxyOnly": true
+  },
+  "ranker": {
+    "blockedReason": "independent pair count 0 is below 30; human quality gate remains blocked",
+    "bundleDigest": "c89a88c5769f42cb184c030c99d20480cb4e0af3f396a1144c2b4dce3dd21e7f",
+    "finalSelectedMutationCount": 0,
+    "humanReviewCompleted": false,
+    "modelPresent": false,
+    "oofAvailable": false,
+    "promotionStatus": "DATA_BLOCKED",
+    "rankerName": "preference-ranker",
+    "rankerVersion": "preference-ranker-v1-20260730",
+    "recommendationCount": 0,
+    "reviewRows": 48,
+    "reviewSubmittedCount": 0
+  },
+  "registry": {
+    "eventCount": 2,
+    "registryImportResult": "REGISTERED_AND_REUSED",
+    "versionConflictCount": 0,
+    "versionCount": 1
+  },
+  "repositories": {
+    "cloudGitHead": "6cc984d",
+    "javaGitHead": "6ba01dc",
+    "mainbaseGitHead": "6007cdd"
+  },
+  "schemaVersion": "ranker-contract-snapshot/v1"
+}

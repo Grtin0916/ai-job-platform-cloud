@@ -1,0 +1,13 @@
+{
+  "grafanaProvisionVerified": false,
+  "metricAvailability": {
+    "brierScore": false,
+    "oofAccuracy": false
+  },
+  "normalHoldAlertCount": 0,
+  "productionPrometheusVerified": false,
+  "releaseDecision": "HOLD_HUMAN_REVIEW",
+  "sampleCount": 27,
+  "schemaVersion": "ranker-observability/v1",
+  "unavailableQualityMetricSampleCount": 0
+}

@@ -1,0 +1,33 @@
+{
+  "cases": [
+    {
+      "actualDecision": "BLOCK_CONTRACT_DRIFT",
+      "detected": true,
+      "expectedDecision": "BLOCK_CONTRACT_DRIFT",
+      "scenario": "blocked_contains_recommendations"
+    },
+    {
+      "actualDecision": "BLOCK_INVALID_PROMOTION",
+      "detected": true,
+      "expectedDecision": "BLOCK_INVALID_PROMOTION",
+      "scenario": "blocked_contains_model"
+    },
+    {
+      "actualDecision": "BLOCK_HUMAN_GATE_VIOLATION",
+      "detected": true,
+      "expectedDecision": "BLOCK_HUMAN_GATE_VIOLATION",
+      "scenario": "final_without_human_review"
+    },
+    {
+      "actualDecision": "BLOCK_ARTIFACT_INTEGRITY",
+      "detected": true,
+      "expectedDecision": "BLOCK_ARTIFACT_INTEGRITY",
+      "scenario": "bundle_digest_mismatch"
+    }
+  ],
+  "falsePromotionCount": 0,
+  "faultDetectionCount": 4,
+  "faultInjectionCount": 4,
+  "finalSelectedMutationCount": 0,
+  "schemaVersion": "ranker-gate-fault-injection/v1"
+}

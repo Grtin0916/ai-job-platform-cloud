@@ -1,0 +1,14 @@
+{
+  "audioExamplesAreRankerRecommendations": false,
+  "audioExamplesAreW20Provisional": true,
+  "audioExamplesProveHumanPreference": false,
+  "finalSelectedCount": 0,
+  "humanReviewCompleted": false,
+  "modelAvailable": false,
+  "nextRequiredAction": "Complete 48 blind preference reviews",
+  "oofAvailable": false,
+  "productionWorkflowVerified": false,
+  "promotionStatus": "DATA_BLOCKED",
+  "recommendationCount": 0,
+  "schemaVersion": "w21-ranker-claim-boundary/v1"
+}

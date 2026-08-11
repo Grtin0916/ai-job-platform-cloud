@@ -1,0 +1,35 @@
+test_blocked_model_is_rejected (test_ranker_contract.ContractInvariantTest) ... ok
+test_blocked_oof_is_rejected (test_ranker_contract.ContractInvariantTest) ... ok
+test_blocked_recommendation_is_rejected (test_ranker_contract.ContractInvariantTest) ... ok
+test_final_mutation_is_rejected (test_ranker_contract.ContractInvariantTest) ... ok
+test_integrity_failure_is_rejected (test_ranker_contract.ContractInvariantTest) ... ok
+test_valid_blocked_snapshot (test_ranker_contract.ContractInvariantTest) ... ok
+test_baseline_holds_for_human_review (test_ranker_contract.MonotonicGateTest) ... ok
+test_blocked_model_detected (test_ranker_contract.MonotonicGateTest) ... ok
+test_blocked_recommendation_detected (test_ranker_contract.MonotonicGateTest) ... ok
+test_digest_mismatch_detected (test_ranker_contract.MonotonicGateTest) ... ok
+test_final_without_review_detected (test_ranker_contract.MonotonicGateTest) ... ok
+test_gate_has_exact_ten_axes (test_ranker_contract.MonotonicGateTest) ... ok
+test_unknown_fault_is_rejected (test_ranker_contract.MonotonicGateTest) ... ok
+test_upstream_missing_axes_are_false (test_ranker_contract.MonotonicGateTest) ... ok
+test_real_checksums_are_complete (test_ranker_ingestion.RealCrossRepositoryIngestionTest) ... ok
+test_real_digest_matches (test_ranker_ingestion.RealCrossRepositoryIngestionTest) ... ok
+test_real_review_and_final_state_remain_empty (test_ranker_ingestion.RealCrossRepositoryIngestionTest) ... ok
+test_real_status_is_blocked_without_outputs (test_ranker_ingestion.RealCrossRepositoryIngestionTest) ... ok
+test_registry_has_registered_and_reused_events (test_ranker_ingestion.RealCrossRepositoryIngestionTest) ... ok
+test_availability_is_zero_without_quality_sample (test_ranker_observability.MissingnessMetricTest) ... ok
+test_dashboard_has_twelve_panels_and_stable_uid (test_ranker_observability.MissingnessMetricTest) ... ok
+test_four_faults_are_detected (test_ranker_observability.MissingnessMetricTest) ... ok
+test_hold_is_not_an_alert (test_ranker_observability.MissingnessMetricTest) ... ok
+test_metric_labels_are_low_cardinality (test_ranker_observability.MissingnessMetricTest) ... ok
+test_metric_type_declarations_are_unique (test_ranker_observability.MissingnessMetricTest) ... ok
+test_rules_define_exact_seven_alerts (test_ranker_observability.MissingnessMetricTest) ... ok
+test_audio_claim_boundary_denies_ranker_winner (test_ranker_release.BuiltReleaseTest) ... ok
+test_release_has_four_playable_provisional_examples (test_ranker_release.BuiltReleaseTest) ... ok
+test_release_integrity (test_ranker_release.BuiltReleaseTest) ... ok
+test_release_is_hold_with_no_final_selection (test_ranker_release.BuiltReleaseTest) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 0.166s
+
+OK

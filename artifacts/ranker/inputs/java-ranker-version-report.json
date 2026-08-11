@@ -1,0 +1,21 @@
+{
+  "schemaVersion" : "ranker-version-report/v1",
+  "versionCount" : 1,
+  "versions" : [ {
+    "rankerVersion" : "preference-ranker-v1-20260730",
+    "bundleDigest" : "c89a88c5769f42cb184c030c99d20480cb4e0af3f396a1144c2b4dce3dd21e7f",
+    "promotionStatus" : "DATA_BLOCKED",
+    "modelPresent" : false,
+    "oofAvailable" : false,
+    "recommendationCount" : 0,
+    "featureSchemaVersion" : "preference-features-v1",
+    "featureSnapshotDigest" : "463b958ba3a189b31a69da3b9197ff51ecf2aec76542039afd45760d42435d5f",
+    "reviewSubmittedCount" : 0,
+    "humanReviewCompleted" : false,
+    "finalSelectedMutationCount" : 0,
+    "blockedReason" : "independent pair count 0 is below 30; human quality gate remains blocked",
+    "storedBundlePath" : "artifacts/week21/rankers/sha256/c89a88c5769f42cb184c030c99d20480cb4e0af3f396a1144c2b4dce3dd21e7f",
+    "importedAt" : "2026-07-29T07:05:05.200149315Z"
+  } ],
+  "finalSelectedMutationCount" : 0
+}

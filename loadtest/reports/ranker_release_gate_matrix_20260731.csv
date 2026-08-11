@@ -1,0 +1,11 @@
+gate,ready
+artifactIntegrityReady,True
+registryReady,True
+observabilityReady,True
+preferenceDataReady,False
+modelAvailable,False
+oofAvailable,False
+recommendationReady,False
+humanGateReady,False
+finalSelectionReady,False
+productionWorkflowVerified,False

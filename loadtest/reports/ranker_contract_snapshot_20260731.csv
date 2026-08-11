@@ -1,0 +1,2 @@
+mainbaseGitHead,javaGitHead,cloudGitHead,rankerName,rankerVersion,bundleDigest,promotionStatus,modelPresent,oofAvailable,recommendationCount,reviewRows,reviewSubmittedCount,humanReviewCompleted,finalSelectedMutationCount,blockedReason,registryImportResult,versionConflictCount,artifactIntegrityReady
+6007cdd,6ba01dc,6cc984d,preference-ranker,preference-ranker-v1-20260730,c89a88c5769f42cb184c030c99d20480cb4e0af3f396a1144c2b4dce3dd21e7f,DATA_BLOCKED,False,False,0,48,0,False,0,independent pair count 0 is below 30; human quality gate remains blocked,REGISTERED_AND_REUSED,0,True

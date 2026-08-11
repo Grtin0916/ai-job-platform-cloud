@@ -1,0 +1,14 @@
+{
+  "forbiddenLabelCount": 0,
+  "forbiddenLabels": [],
+  "labelNames": [
+    "decision",
+    "gate",
+    "metric",
+    "promotion_status"
+  ],
+  "qualityMetricPublishedWhileUnavailableCount": 0,
+  "schemaVersion": "ranker-metric-cardinality/v1",
+  "unavailableMetricsRepresentedByAvailabilityOnly": true,
+  "valid": true
+}

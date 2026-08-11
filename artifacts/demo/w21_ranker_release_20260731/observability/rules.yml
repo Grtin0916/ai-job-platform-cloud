@@ -1,0 +1,17 @@
+groups:
+  - name: w21-ranker-release-alerts
+    rules:
+      - alert: RankerArtifactIntegrityFailure
+        expr: ranker_artifact_integrity_failures > 0
+      - alert: RankerBundleContractDrift
+        expr: ranker_bundle_contract_drift > 0
+      - alert: RankerInvalidPromotionTransition
+        expr: ranker_invalid_promotion_transitions > 0
+      - alert: RankerMetricPublishedWhileUnavailable
+        expr: ranker_metric_published_while_unavailable > 0
+      - alert: RankerRecommendationWhileDataBlocked
+        expr: ranker_recommendation_while_data_blocked > 0
+      - alert: RankerFinalSelectionWithoutHumanReview
+        expr: ranker_final_selection_without_human_review > 0
+      - alert: RankerReleaseManifestBroken
+        expr: ranker_release_manifest_broken > 0

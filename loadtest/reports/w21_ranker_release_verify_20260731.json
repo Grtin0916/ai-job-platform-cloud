@@ -1,0 +1,16 @@
+{
+  "checksumFailureCount": 0,
+  "claimBoundaryValid": true,
+  "finalSelectedCount": 0,
+  "memberSetMatches": true,
+  "playableAudioCount": 4,
+  "releaseDecision": "HOLD_HUMAN_REVIEW",
+  "schemaVersion": "w21-ranker-release-verify/v1",
+  "signedAttestationVerified": false,
+  "unreadableAudioCount": 0,
+  "unsafePathCount": 0,
+  "verified": true,
+  "zipPayloadsMatchDirectory": true,
+  "zipSha256": "1743a55aa83278913a4d4c0ffeb968d0714abcb43a1574049849af814b138129",
+  "zipTestResult": null
+}

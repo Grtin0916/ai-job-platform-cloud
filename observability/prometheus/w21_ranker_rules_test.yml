@@ -1,0 +1,51 @@
+rule_files:
+  - w21_ranker_rules.yml
+evaluation_interval: 1m
+tests:
+  - interval: 1m
+    input_series:
+      - series: ranker_artifact_integrity_failures
+        values: 1
+      - series: ranker_bundle_contract_drift
+        values: 1
+      - series: ranker_invalid_promotion_transitions
+        values: 1
+      - series: ranker_metric_published_while_unavailable
+        values: 1
+      - series: ranker_recommendation_while_data_blocked
+        values: 1
+      - series: ranker_final_selection_without_human_review
+        values: 1
+      - series: ranker_release_manifest_broken
+        values: 1
+      - series: ranker_human_review_pending
+        values: 1
+    alert_rule_test:
+      - eval_time: 0m
+        alertname: RankerArtifactIntegrityFailure
+        exp_alerts:
+          - exp_labels: {}
+      - eval_time: 0m
+        alertname: RankerBundleContractDrift
+        exp_alerts:
+          - exp_labels: {}
+      - eval_time: 0m
+        alertname: RankerInvalidPromotionTransition
+        exp_alerts:
+          - exp_labels: {}
+      - eval_time: 0m
+        alertname: RankerMetricPublishedWhileUnavailable
+        exp_alerts:
+          - exp_labels: {}
+      - eval_time: 0m
+        alertname: RankerRecommendationWhileDataBlocked
+        exp_alerts:
+          - exp_labels: {}
+      - eval_time: 0m
+        alertname: RankerFinalSelectionWithoutHumanReview
+        exp_alerts:
+          - exp_labels: {}
+      - eval_time: 0m
+        alertname: RankerReleaseManifestBroken
+        exp_alerts:
+          - exp_labels: {}

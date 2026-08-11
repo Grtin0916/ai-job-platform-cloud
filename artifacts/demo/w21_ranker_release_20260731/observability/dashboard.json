@@ -1,0 +1,21 @@
+{
+  "title": "W21 Missingness-aware Ranker Observatory",
+  "uid": "w21-ranker-observatory",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "30s",
+  "panels": [
+    {"id": 1, "title": "Ranker Version Count", "type": "stat", "targets": [{"refId": "A", "expr": "sum(ranker_registry_versions)"}], "gridPos": {"x": 0, "y": 0, "w": 6, "h": 6}},
+    {"id": 2, "title": "Promotion Status", "type": "stat", "targets": [{"refId": "A", "expr": "ranker_registry_versions"}], "gridPos": {"x": 6, "y": 0, "w": 6, "h": 6}},
+    {"id": 3, "title": "Model / OOF Availability", "type": "stat", "targets": [{"refId": "A", "expr": "ranker_model_available"}, {"refId": "B", "expr": "ranker_oof_available"}], "gridPos": {"x": 12, "y": 0, "w": 6, "h": 6}},
+    {"id": 4, "title": "Recommendation Count", "type": "stat", "targets": [{"refId": "A", "expr": "ranker_recommendation_records"}], "gridPos": {"x": 18, "y": 0, "w": 6, "h": 6}},
+    {"id": 5, "title": "Review Submitted vs Total", "type": "stat", "targets": [{"refId": "A", "expr": "ranker_review_submitted"}, {"refId": "B", "expr": "ranker_review_rows"}], "gridPos": {"x": 0, "y": 6, "w": 6, "h": 6}},
+    {"id": 6, "title": "Human Review Completion", "type": "stat", "targets": [{"refId": "A", "expr": "1 - ranker_human_review_pending"}], "gridPos": {"x": 6, "y": 6, "w": 6, "h": 6}},
+    {"id": 7, "title": "Publish Decision Funnel", "type": "timeseries", "targets": [{"refId": "A", "expr": "ranker_release_decision"}], "gridPos": {"x": 12, "y": 6, "w": 6, "h": 6}},
+    {"id": 8, "title": "Artifact Integrity", "type": "stat", "targets": [{"refId": "A", "expr": "ranker_artifact_integrity_failures"}], "gridPos": {"x": 18, "y": 6, "w": 6, "h": 6}},
+    {"id": 9, "title": "Contract Violations", "type": "timeseries", "targets": [{"refId": "A", "expr": "ranker_bundle_contract_drift + ranker_invalid_promotion_transitions"}], "gridPos": {"x": 0, "y": 12, "w": 6, "h": 6}},
+    {"id": 10, "title": "Registry Import Result", "type": "stat", "targets": [{"refId": "A", "expr": "ranker_registry_versions"}], "gridPos": {"x": 6, "y": 12, "w": 6, "h": 6}},
+    {"id": 11, "title": "Release Gate Axes", "type": "timeseries", "targets": [{"refId": "A", "expr": "ranker_release_gate_ready"}], "gridPos": {"x": 12, "y": 12, "w": 6, "h": 6}},
+    {"id": 12, "title": "Overall Decision / Next Action", "type": "stat", "targets": [{"refId": "A", "expr": "ranker_release_decision"}], "gridPos": {"x": 18, "y": 12, "w": 6, "h": 6}}
+  ]
+}
